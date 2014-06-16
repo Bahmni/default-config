@@ -91,4 +91,8 @@
                 values (@comment_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
         </sql>
     </changeSet>
+    <changeSet id="SAMPLE-OMRS-CONCEPT-005" author="tw">
+        <comment>Radiology concepts data</comment>
+        <sqlFile path="radiology-concept-data.sql"/>
+    </changeSet>
 </databaseChangeLog>

@@ -15,4 +15,23 @@
             VALUES ('emr.personImagesDirectory', '/home/bahmni/patient_images', 'Location of patient images - required by emrapi', uuid());
         </sql>
     </changeSet>
+    <changeSet id="SAMPLE-OMRS-MISC-002" author="tw">
+        <comment>Add concept set patient document and patient file concept as member</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Patient Document', 'Patient Document', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'PATIENT', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'DOCUMENT', 1);
+            set @patient_document_concept_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Patient file', 'Patient file', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'PATIENT,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'FILE', 1);
+            set @patient_file_concept_id = @concept_id;
+            call add_concept_set_members(@patient_document_concept_id,@patient_file_concept_id,1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
