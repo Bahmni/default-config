@@ -1,0 +1,73 @@
+[
+    {
+        "id": "bahmni.clinical",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.clinical.consultation.board",
+                "description": "Bahmni Clinical Consultation Page"
+            },
+            {
+                "id": "org.bahmni.clinical.conceptSetGroup.*",
+                "description": "Define conceptsets part of a conceptset group"
+            },
+            {
+                "id": "org.bahmni.clinical.orders",
+                "description": "Bahmni Orders Page"
+            },
+            {
+                "id":"org.bahmni.patient.search",
+                "description": "Bahmni Patient search, lookups Page"
+            }
+        ],
+        "contextModel": [
+            "patientUuid",
+            "visitUuid"
+        ],
+        "config" : {
+            "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
+            "otherInvestigationsMap": {
+                "Radiology": "Radiology Order",
+                "Endoscopy": "Endoscopy Order"
+            },
+            "maxConceptSetLevels": 3,
+            "conceptSetUI": {
+                "Chief Complaint Data": {
+                    "multiple": 3
+                },
+                "Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Posture" : {
+                    "autocomplete" : true
+                },
+                "Non-Coded Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                }
+            },
+            "patientDashboardSections": [
+                {
+                    "description": "Diagnosis",
+                    "name": "diagnosis"
+                },
+                {
+                    "description": "Active Treatments",
+                    "name": "treatment"
+                },
+                {
+                    "description": "Radiology",
+                    "name": "radiology"
+                },
+                {
+                    "description": "Lab Orders",
+                    "name": "labOrders"
+                },
+                {
+                    "description": "Vitals",
+                    "name": "vitals"
+                }
+            ]
+        }
+    }
+]

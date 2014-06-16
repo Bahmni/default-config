@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- This Liquibase file is meant to contain changesets for ID gen -->
+    <changeSet id="SAMPLE-OMRS-IDGEN-001" author="tw">
+        <comment>Add id gen sources and locations</comment>
+        <sql>
+            SELECT patient_identifier_type_id from patient_identifier_type where name = 'Bahmni Id' into @patient_identifier;
+
+            INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created)
+              VALUES (uuid(), 'GAN', 'ID sequence source for patients whose primary health center is Ganiyari', @patient_identifier, 1, curdate());
+            SET @source_id := LAST_INSERT_ID();
+            INSERT INTO idgen_seq_id_gen (id, next_sequence_value, base_character_set, first_identifier_base, prefix, suffix, min_length, max_length) VALUES (@source_id, 200000, '0123456789', '200000', 'GAN', '', 4, 9);
+
+            INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created)
+              VALUES (uuid(), 'SEM', 'ID sequence source for patients whose primary health center is Semariya', @patient_identifier, 1, curdate());
+            SET @source_id := LAST_INSERT_ID();
+            INSERT INTO idgen_seq_id_gen (id, next_sequence_value, base_character_set, first_identifier_base, prefix, suffix, min_length, max_length) VALUES (@source_id, 200000, '0123456789', '200000', 'SEM', '', 4, 9);
+
+            INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created)
+              VALUES (uuid(), 'SIV', 'ID sequence source for patients whose primary health center is Shivtarai', @patient_identifier, 1, curdate());
+            SET @source_id := LAST_INSERT_ID();
+            INSERT INTO idgen_seq_id_gen (id, next_sequence_value, base_character_set, first_identifier_base, prefix, suffix, min_length, max_length) VALUES (@source_id, 200000, '0123456789', '200000', 'SIV', '', 4, 9);
+
+            INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created)
+              VALUES (uuid(), 'BAM', 'ID sequence source for patients whose primary health center is Bahmini', @patient_identifier, 1, curdate());
+            SET @source_id := LAST_INSERT_ID();
+            INSERT INTO idgen_seq_id_gen (id, next_sequence_value, base_character_set, first_identifier_base, prefix, suffix, min_length, max_length) VALUES (@source_id, 200000, '0123456789', '200000', 'BAH', '', 4, 9);
+
+
+            -- Location details
+            INSERT INTO location_attribute_type (name, description, datatype, min_occurs, max_occurs, creator, date_created, uuid)
+              VALUES ('IdentifierSourceName', 'Identifier source name of the source that needs to be used for patients coming from this location', 'org.openmrs.customdatatype.datatype.FreeTextDatatype', 0, 1, 1, curdate(), uuid());
+
+            INSERT INTO location (name, description, creator, date_created, uuid)
+              VALUES ('Ganiyari', 'Ganiyari hospital', 1, curdate(), uuid());
+            SET @lastlocation = last_insert_id();
+            INSERT INTO location_attribute (location_id, attribute_type_id, value_reference, uuid, creator, date_created)
+              (SELECT  @lastlocation, location_attribute_type_id, 'GAN', uuid(), 1, curdate()
+               FROM location_attribute_type
+               WHERE name = 'IdentifierSourceName');
+
+            INSERT INTO location (name, description, creator, date_created, uuid)
+              VALUES ('Semariya', 'Semariya subcentre', 1, curdate(), uuid());
+            SET @lastlocation = last_insert_id();
+            INSERT INTO location_attribute (location_id, attribute_type_id, value_reference, uuid, creator, date_created)
+              (SELECT  @lastlocation, location_attribute_type_id, 'SEM', uuid(), 1, curdate()
+               FROM location_attribute_type
+               WHERE name = 'IdentifierSourceName');
+
+            INSERT INTO location (name, description, creator, date_created, uuid)
+              VALUES ('Shivtarai', 'Shivtarai subcentre', 1, curdate(), uuid());
+            SET @lastlocation = last_insert_id();
+            INSERT INTO location_attribute (location_id, attribute_type_id, value_reference, uuid, creator, date_created)
+              (SELECT  @lastlocation, location_attribute_type_id, 'SIV', uuid(), 1, curdate()
+               FROM location_attribute_type
+               WHERE name = 'IdentifierSourceName');
+
+            INSERT INTO location (name, description, creator, date_created, uuid)
+              VALUES ('Bahmni', 'Bahmni subcentre', 1, curdate(), uuid());
+            SET @lastlocation = last_insert_id();
+            INSERT INTO location_attribute (location_id, attribute_type_id, value_reference, uuid, creator, date_created)
+              (SELECT  @lastlocation, location_attribute_type_id, 'BAM', uuid(), 1, curdate()
+               FROM location_attribute_type
+               WHERE name = 'IdentifierSourceName');
+       </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- 
+        This Liquibase file is meant to contain OpenMRS Medical Concepts (Diseases, Symptoms, Diagnosis, Complaints, etc). 
+        This file could be large in future, in which case, we could consider splitting it, if needed. Refer to liqiubase.xml
+        to see how to include other liquibase files.
+    -->
+        
+    <changeSet id="SAMPLE-OMRS-CONCEPT-001" author="tw">
+        <comment>REGISTRATION FEES concept while Registering</comment>
+        <sql>
+
+            insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
+                values (1, 11, 0, 1, now(), 1, now(), uuid());
+            
+            select max(concept_id) from concept into @registration_fees_concept_id;
+            
+            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, uuid)
+                values (@registration_fees_concept_id, 'REGISTRATION FEES', 'en', 1, 1, now(), 'FULLY_SPECIFIED', uuid());
+
+            select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS' into @registration_concepts_concept_id;
+
+            insert into concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid)
+                values (@registration_fees_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
+    
+        </sql>
+    </changeSet>
+
+    <changeSet id="SAMPLE-OMRS-CONCEPT-002" author="tw">
+        <comment>WEIGHT concept while Registering</comment>
+        <sql>
+
+            insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
+                values (1, 1, 0, 1, now(), 1, now(), uuid());
+            
+            select max(concept_id) from concept into @weight_concept_id;
+            
+            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, uuid)
+                values (@weight_concept_id, 'WEIGHT', 'en', 1, 1, now(), 'FULLY_SPECIFIED', uuid());
+
+            select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS' into @registration_concepts_concept_id;
+
+            insert into concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid)
+                values (@weight_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
+    
+        </sql>
+    </changeSet>
+
+    <changeSet id="SAMPLE-OMRS-CONCEPT-003" author="tw">
+        <comment>HEIGHT concept while Registering</comment>
+        <sql>
+            insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
+                values (1, 1, 0, 1, now(), 1, now(), uuid());
+            
+            select max(concept_id) from concept into @height_concept_id;
+            
+            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, uuid)
+                values (@height_concept_id, 'HEIGHT', 'en', 1, 1, now(), 'FULLY_SPECIFIED', uuid());
+
+
+            select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS' into @registration_concepts_concept_id;
+
+            insert into concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid)
+                values (@height_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="SAMPLE-OMRS-CONCEPT-004" author="tw">
+        <comment>COMMENT concept while Registering</comment>
+        <sql>
+
+            insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
+                values (3, 12, 0, 1, now(), 1, now(), uuid());
+
+            select max(concept_id) from concept into @comment_concept_id;
+
+            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, uuid)
+                values (@comment_concept_id, 'COMMENT', 'en', 1, 1, now(), 'FULLY_SPECIFIED', uuid());
+
+            select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS' into @registration_concepts_concept_id;
+
+            insert into concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid)
+                values (@comment_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

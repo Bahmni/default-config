@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- This Liquibase file is meant to contain changesets for miscellaneous configuration Only -->
+    <changeSet id="SAMPLE-OMRS-MISC-001" author="tw">
+        <comment>Location on Server where the patient uploaded images will be stored</comment>
+        <sql>
+            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
+            VALUES ('emr.personImagesDirectory', '/home/bahmni/patient_images', 'Location of patient images - required by emrapi', uuid());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

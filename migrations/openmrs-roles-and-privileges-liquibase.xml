@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- 
+        This Liquibase file is meant to contain changesets for ALL ROLES and PRIVELIGES in OpenMRS/Bahmni.
+        Will help define the various roles and privileges that exist in the system, and who can perform
+        what actions.
+    -->
+    <changeSet id="SAMPLE-OMRS-ROLES-PVG-001" author="tw">
+        <comment>Create RegistrationClerk ROLE and Privileges</comment>
+        <sql>
+            insert into role (role, description) values ('RegistrationClerk', 'RegistrationClerk');
+
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Observations');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Delete Observations');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Patients');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add People');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Visits');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit Encounters');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit Patients');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit People');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit Visits');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Manage Address Hierarchy');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Manage Encounter Roles');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Administration Functions');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Concepts');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Encounter Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Encounters');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Global Properties');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Identifier Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Location Attribute Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Locations');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Navigation Menu');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Observations');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Patients');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View People');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Person Attribute Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Providers');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Users');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Visit Attribute Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Visit Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Visits');
+
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'app:registration');
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="SAMPLE-OMRS-ROLES-PVG-002" author="tw">
+        <comment>Create Document-Uploader ROLE and Privileges</comment>
+        <sql>
+            
+            INSERT INTO role (role, description) VALUES ('bahmni-document-uploader', 'bahmni-document-uploader');
+
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Add Observations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Add Encounters');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Edit Encounters');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Edit Visits');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Manage Encounter Roles');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Concepts');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Encounters');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Global Properties');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Identifier Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Location Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Locations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Observations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Patient Identifiers');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Patients');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View People');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Person Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Providers');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Users');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visit Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visit Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visits');
+            
+            INSERT INTO role_privilege(role, privilege) VALUES('bahmni-document-uploader', 'app:document-upload') ON DUPLICATE KEY UPDATE privilege = 'app:document-upload';
+        </sql>
+    </changeSet>
+</databaseChangeLog>
