@@ -8,7 +8,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!-- This Liquibase file is meant to contain changesets for ID gen -->
-    <changeSet id="SAMPLE-OMRS-IDGEN-001" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-IDGEN-001" author="tw">
         <comment>Add id gen sources and locations</comment>
         <sql>
             SELECT patient_identifier_type_id from patient_identifier_type where name = 'Bahmni Id' into @patient_identifier;

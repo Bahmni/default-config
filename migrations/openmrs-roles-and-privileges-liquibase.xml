@@ -12,7 +12,7 @@
         Will help define the various roles and privileges that exist in the system, and who can perform
         what actions.
     -->
-    <changeSet id="SAMPLE-OMRS-ROLES-PVG-001" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-001" author="tw">
         <comment>Create RegistrationClerk ROLE and Privileges</comment>
         <sql>
             insert into role (role, description) values ('RegistrationClerk', 'RegistrationClerk');
@@ -53,7 +53,7 @@
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'app:registration');
         </sql>
     </changeSet>
-    <changeSet id="SAMPLE-OMRS-ROLES-PVG-002" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-002" author="tw">
         <comment>Create Document-Uploader ROLE and Privileges</comment>
         <sql>
             
@@ -84,7 +84,7 @@
             INSERT INTO role_privilege(role, privilege) VALUES('bahmni-document-uploader', 'app:document-upload') ON DUPLICATE KEY UPDATE privilege = 'app:document-upload';
         </sql>
     </changeSet>
-    <changeSet id="SAMPLE-OMRS-ROLES-PVG-003" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-003" author="tw">
         <comment>Add clinical roles and privileges</comment>
         <insert tableName="role">
             <column name="role" value="Doctor" />
@@ -127,7 +127,7 @@
             <column name="uuid" valueComputed="uuid()"/>
         </insert>
     </changeSet>
-    <changeSet id="SAMPLE-OMRS-ROLES-PVG-004" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-004" author="tw">
         <comment>Adding privileges for doctor, nurse roles</comment>
         <sql>
             insert into role_privilege (role, privilege) values ('Doctor', 'Add Encounters');

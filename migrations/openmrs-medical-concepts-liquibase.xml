@@ -13,7 +13,7 @@
         to see how to include other liquibase files.
     -->
         
-    <changeSet id="SAMPLE-OMRS-CONCEPT-001" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-001" author="tw">
         <comment>REGISTRATION FEES concept while Registering</comment>
         <sql>
 
@@ -33,7 +33,7 @@
         </sql>
     </changeSet>
 
-    <changeSet id="SAMPLE-OMRS-CONCEPT-002" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-002" author="tw">
         <comment>WEIGHT concept while Registering</comment>
         <sql>
 
@@ -53,7 +53,7 @@
         </sql>
     </changeSet>
 
-    <changeSet id="SAMPLE-OMRS-CONCEPT-003" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-003" author="tw">
         <comment>HEIGHT concept while Registering</comment>
         <sql>
             insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
@@ -73,7 +73,7 @@
     </changeSet>
 
 
-    <changeSet id="SAMPLE-OMRS-CONCEPT-004" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-004" author="tw">
         <comment>COMMENT concept while Registering</comment>
         <sql>
 
@@ -91,7 +91,7 @@
                 values (@comment_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
         </sql>
     </changeSet>
-    <changeSet id="SAMPLE-OMRS-CONCEPT-005" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-005" author="tw">
         <comment>Radiology concepts data</comment>
         <sqlFile path="radiology-concept-data.sql"/>
     </changeSet>

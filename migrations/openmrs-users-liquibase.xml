@@ -10,7 +10,7 @@
     <!-- 
         This Liquibase file is meant to contain changesets for USERS and roles required by the system OpenMRS/Bahmni.
     -->
-    <changeSet id="SAMPLE-OMRS-USERS-001" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-USERS-001" author="tw">
         <comment>Adding superman user</comment>
         <sql>
             SET @puuid = uuid();
@@ -25,7 +25,7 @@
             INSERT INTO provider (person_id, identifier, creator, date_created, uuid, name) VALUES (@person_id, 'superman', 1, now(), uuid(), 'superman');
         </sql>
     </changeSet>
-    <changeSet id="SAMPLE-OMRS-USERS-002" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-USERS-002" author="tw">
         <comment>Add roles to superman user</comment>
         <sql>
             SELECT user_id INTO @user_id FROM users where username = 'superman';

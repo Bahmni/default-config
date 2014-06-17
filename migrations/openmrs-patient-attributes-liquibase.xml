@@ -8,7 +8,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!-- This Liquibase file is meant to contain changesets for Patient Attributes Only -->
-    <changeSet id="SAMPLE-OMRS-PA-001" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-PA-001" author="tw">
         <comment>Add patient attributes</comment>
         <sql>
             INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
@@ -29,7 +29,7 @@
             VALUES ('secondaryIdentifier', 'Secondary Identifier', 'java.lang.String', '1', 1, curdate(), 0, 11, uuid());
         </sql>
     </changeSet>
-    <changeSet id="SAMPLE-OMRS-PA-002" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-PA-002" author="tw">
         <comment>Add class, occupation, education concepts and associate to patient attributes</comment>
         <sql>
             set @concept_id = 0;

@@ -11,7 +11,7 @@
     This Liquibase file is meant to contain changesets for Address Hierarchy (Village/Town/Taluka/Center/etc)
     and location information only. 
     -->
-    <changeSet id="SAMPLE-ADDRESS-HIERARCHY-001" author="tw">
+    <changeSet id="BAHMNI-IMPL-ADDRESS-HIERARCHY-001" author="tw">
         <comment>Set up Address Hierarchy</comment>
         <sql>
 			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (3,'State',NULL,'STATE_PROVINCE','9426afa9-49da-41df-9910-5e929b8a997b',0);
@@ -22,7 +22,7 @@
 			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (8,'House No., Street',7,'ADDRESS_1','f934bbd7-e902-4ac5-a9ae-ef949f16beeb',0);
         </sql>
     </changeSet>
-    <changeSet id="SAMPLE-ADDRESS-HIERARCHY-002" author="tw">
+    <changeSet id="BAHMNI-IMPL-ADDRESS-HIERARCHY-002" author="tw">
         <comment>Address hierarchy entry data</comment>
         <sqlFile path="address-hierarchy-entry-data.sql"/>
     </changeSet>

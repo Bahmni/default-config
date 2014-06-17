@@ -1,18 +1,18 @@
-## Sample Bahmni configuration and data. 
+## Default Bahmni configuration and data. 
 ======================================================================
 
 #### Deploy
 - under server (apache) www directory
-- alias root (sample-config) to bahmni_config
+- alias root (default-config) to bahmni_config
 
 
 #### Dev commands
-* `./scripts/vagrant-link.sh` to link sample_config to vagrants /var/www/bahmni_config
+* `./scripts/vagrant-link.sh` to link default_config to vagrants /var/www/bahmni_config
 * `./scripts/vagrant-database.sh` to run liquibase migrations in vagrant 
 
 
 #### CI Deployment
-The `sample-config.zip` is created on the CI Server as part of the **Bahmni_MRS_Master** pipeline (*FunctionalTests* job). You can download the latest ZIP from this URL:
+The `default-config.zip` is created on the CI Server as part of the **Bahmni_MRS_Master** pipeline (*FunctionalTests* job). You can download the latest ZIP from this URL:
 
 Latest Builds: [Download Link](https://ci-bahmni.thoughtworks.com/go/files/Bahmni_MRS_Master/Latest/BuildStage/Latest/FunctionalTests/deployables/) 
 
