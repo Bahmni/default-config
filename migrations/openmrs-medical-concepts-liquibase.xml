@@ -306,4 +306,49 @@
             call add_concept_set_members(@discharge_summary_id,@concept_id,7);
         </sql>
     </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-009" author="tw">
+        <comment>Add History and Examination</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'History and Examination', 'History and Examination', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'History', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Examination', 1);
+            set @history_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Data', 'Chief Complaint Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            set @chief_complaint_data_id = @concept_id;
+            call add_concept_set_members(@history_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint', 'Chief Complaint', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_set_members(@chief_complaint_data_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Non-Coded Chief Complaint', 'Non-Coded Chief Complaint', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Non-Coded', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Coded', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_set_members(@chief_complaint_data_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Duration', 'Chief Complaint Duration', 'Numeric', 'Duration', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Duration', 1);
+            call add_concept_set_members(@chief_complaint_data_id, @concept_id, 0);
+            call add_concept_numeric(@concept_id, null, null, null);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'History and Examination Notes', 'Chief Complaint Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'History', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Examination', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes,', 1);
+            call add_concept_set_members(@history_id, @concept_id, 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
