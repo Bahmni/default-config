@@ -95,4 +95,215 @@
         <comment>Radiology concepts data</comment>
         <sqlFile path="radiology-concept-data.sql"/>
     </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-006" author="tw">
+        <comment>Add vitals concepts</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Vitals', 'Vitals', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Vitals', 1);
+
+            set @vitals_concept_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Pulse Data', 'Pulse Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Pulse', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            call add_concept_set_members(@vitals_concept_id, @concept_id,0);
+            set @pulse_data_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Pulse', 'Pulse', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Pulse', 1);
+            call add_concept_set_members(@pulse_data_id, @concept_id, 0);
+            call add_concept_numeric(@concept_id, 72, 72, '/min');
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Pulse Abnormal', 'Pulse Abnormal', 'Boolean', 'Abnormal', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Pulse', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Abnormal', 1);
+            call add_concept_set_members(@pulse_data_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Blood Pressure', 'Blood Pressure', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Blood', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Pressure', 1);
+            call add_concept_set_members(@vitals_concept_id, @concept_id,0);
+            set @blood_pressure_concept_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Systolic Data', 'Systolic Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Systolic', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            call add_concept_set_members(@blood_pressure_concept_id, @concept_id,0);
+            set @systolic_data_concept_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Systolic', 'Systolic', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Systolic', 1);
+            call add_concept_set_members(@systolic_data_concept_id, @concept_id, 0);
+            call add_concept_numeric(@concept_id, 110, 140, 'mm Hg');
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Systolic Abnormal', 'Systolic Abnormal', 'Boolean', 'Abnormal', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Systolic', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Abnormal', 1);
+            call add_concept_set_members(@systolic_data_concept_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Diastolic Data', 'Diastolic Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Diastolic', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            call add_concept_set_members(@blood_pressure_concept_id, @concept_id,0);
+            set @diastolic_data_concept_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Diastolic', 'Diastolic', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Diastolic', 1);
+            call add_concept_set_members(@diastolic_data_concept_id, @concept_id, 0);
+            call add_concept_numeric(@concept_id, 70, 85, 'mm Hg');
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Diastolic Abnormal', 'Diastolic Abnormal', 'Boolean', 'Abnormal', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Diastolic', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Abnormal', 1);
+            call add_concept_set_members(@diastolic_data_concept_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Temperature Data', 'Temperature Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Temperature', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            call add_concept_set_members(@vitals_concept_id, @concept_id,0);
+            set @temp_data_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Temperature', 'Temperature', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Temperature', 1);
+            call add_concept_set_members(@temp_data_id, @concept_id, 0);
+            call add_concept_numeric(@concept_id, 98.6, 98.6, 'F');
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Temperature Abnormal', 'Temperature Abnormal', 'Boolean', 'Abnormal', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Temperature', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Abnormal', 1);
+            call add_concept_set_members(@temp_data_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'RR Data', 'RR Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'RR', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            call add_concept_set_members(@vitals_concept_id, @concept_id,0);
+            set @rr_data_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'RR', 'RR', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'RR', 1);
+            call add_concept_set_members(@rr_data_id, @concept_id, 0);
+            call add_concept_numeric(@concept_id, 16, 20, '/min');
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'RR Abnormal', 'Temperature Abnormal', 'Boolean', 'Abnormal', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'RR', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Abnormal', 1);
+            call add_concept_set_members(@rr_data_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'SPO2 Data', 'SPO2 Data', 'N/A', 'Concept Details', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'SPO2', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Data', 1);
+            call add_concept_set_members(@vitals_concept_id, @concept_id,0);
+            set @spo2_data_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'SPO2', 'SPO2', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'SPO2', 1);
+            call add_concept_set_members(@spo2_data_id, @concept_id, 0);
+            call add_concept_numeric(@concept_id, 97, null, '%');
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'SPO2 Abnormal', 'Temperature Abnormal', 'Boolean', 'Abnormal', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'SPO2', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Abnormal', 1);
+            call add_concept_set_members(@spo2_data_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-007" author="tw">
+        <comment>Add Second Vitals Concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Second Vitals', 'Second Vitals', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'VITALS', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'CONCEPT', 1);
+            set @second_vitals_concept_id = @concept_id;
+
+            select concept_id INTO @concept_id from concept_name where name='Pulse Data' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+
+            select concept_id INTO @concept_id from concept_name where name='Blood Pressure' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+
+            select concept_id INTO @concept_id from concept_name where name='Temperature Data' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+
+            select concept_id INTO @concept_id from concept_name where name='RR Data' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+
+            select concept_id INTO @concept_id from concept_name where name='SPO2 Data' and locale_preferred = 1;
+            call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-008" author="tw">
+        <comment>Add Discharge Summary Concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Discharge Summary', 'Discharge Summary', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Discharge', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Summary', 1);
+            set @discharge_summary_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Hospital Course', 'Hospital Course', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Hospital,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Course', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'History and Examination Notes', 'History and Examination Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'History,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Examination', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, ' Surgeries and Procedures', ' Surgeries and Procedures', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Surgeries,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Procedures', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,2);
+            set @surgeries_and_procedure_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Date of Operation', 'Date of Operation', 'Date', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Date,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Operation', 1);
+            call add_concept_set_members(@surgeries_and_procedure_id,@concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Operative Procedure', 'Operative Procedure', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Operative,', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Procedure', 1);
+            call add_concept_set_members(@surgeries_and_procedure_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Follow up Date', 'Follow up Date', 'Date', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Follow up', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Follow', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Date', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,3);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Lab Investigation Notes', 'Lab Investigation Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Lab', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Investigation', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,4);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Radiology Notes', 'Radiology Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Radiology', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,5);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Other Notes', 'Other Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Other', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,6);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Additional Advice on Discharge', 'Additional Advice on Discharge', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Additional', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Advice', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Discharge', 1);
+            call add_concept_set_members(@discharge_summary_id,@concept_id,7);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
