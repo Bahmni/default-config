@@ -56,7 +56,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display":"Active",
-            "forwardUrl" : "/clinical/#/patient/{{patientUuid}}/dashboard"
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
         },
         "label": "Active",
         "order": 1,
@@ -68,7 +68,7 @@
         "type": "config",
         "extensionParams": {
             "display":"All",
-            "forwardUrl" : "/clinical/#/patient/{{patientUuid}}/dashboard"
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
         },
         "label": "All",
         "order": 2,

@@ -25,9 +25,9 @@
             "visitUuid"
         ],
         "config" : {
-            "onAdmissionForwardTo": "/adt/#/patient/search",
-            "onTransferForwardTo": "/adt/#/patient/search",
-            "onDischargeForwardTo": "/adt/#/patient/search",
+            "onAdmissionForwardTo": "#/patient/search",
+            "onTransferForwardTo": "#/patient/search",
+            "onDischargeForwardTo": "#/patient/search",
             "defaultVisitType": "IPD"
         }
     }

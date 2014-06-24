@@ -4,7 +4,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Registration",
-        "url": "registration/#/search",
+        "url": "../registration",
         "icon": "icon-user",
         "order": 1,
         "requiredPrivilege": "app:registration"
@@ -14,7 +14,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Clinical",
-        "url": "clinical/#/patient/search",
+        "url": "../clinical",
         "icon": "icon-stethoscope",
         "order": 3,
         "requiredPrivilege": "app:clinical"
@@ -24,7 +24,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Admission and Discharge",
-        "url": "adt/#/patient/search",
+        "url": "../adt",
         "icon": "icon-file",
         "order": 4,
         "requiredPrivilege": "app:adt"
@@ -34,7 +34,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Radiology Upload",
-        "url": "document-upload?encounterType=RADIOLOGY&topLevelConcept=Radiology",
+        "url": "../document-upload?encounterType=RADIOLOGY&topLevelConcept=Radiology",
         "icon": "icon-camera",
         "order": 5,
         "requiredPrivilege": "app:document-upload"
@@ -44,7 +44,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Patient Documents",
-        "url": "document-upload?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
+        "url": "../document-upload?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
         "icon": "icon-camera",
         "order": 6,
         "requiredPrivilege": "app:document-upload"

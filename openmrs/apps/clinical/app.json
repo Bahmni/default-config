@@ -52,8 +52,11 @@
                     "name": "diagnosis"
                 },
                 {
-                    "description": "Active Treatments",
-                    "name": "treatment"
+                    "description": "Treatments",
+                    "name": "treatment",
+                    "options": {
+                        "numberOfVisitsForPastTreatments": 1
+                    }
                 },
                 {
                     "description": "Radiology",
