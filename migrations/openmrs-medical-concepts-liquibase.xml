@@ -14,88 +14,40 @@
     -->
         
     <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-001" author="tw">
-        <comment>REGISTRATION FEES concept while Registering</comment>
+        <comment>Create set members of REGISTRATION_CONCEPTS</comment>
         <sql>
-
-            insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
-                values (1, 11, 0, 1, now(), 1, now(), uuid());
-            
-            select max(concept_id) from concept into @registration_fees_concept_id;
-            
-            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, uuid)
-                values (@registration_fees_concept_id, 'REGISTRATION FEES', 'en', 1, 1, now(), 'FULLY_SPECIFIED', uuid());
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
 
             select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS' into @registration_concepts_concept_id;
 
-            insert into concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid)
-                values (@registration_fees_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
-    
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'COMMENTS', 'COMMENTS', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'COMMENTS', 1);
+            call add_concept_set_members(@registration_concepts_concept_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'REGISTRATION FEES', 'REGISTRATION FEES', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'REGISTRATION FEES', 1);
+            call add_concept_set_members(@registration_concepts_concept_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'HEIGHT', 'HEIGHT', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'HEIGHT', 1);
+            call add_concept_set_members(@registration_concepts_concept_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'WEIGHT', 'WEIGHT', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'WEIGHT', 1);
+            call add_concept_set_members(@registration_concepts_concept_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'BMI', 'BMI', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'COMMENTS', 1);
+            call add_concept_set_members(@registration_concepts_concept_id,@concept_id,1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'BMI STATUS', 'BMI STATUS', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'BMI STATUS', 1);
+            call add_concept_set_members(@registration_concepts_concept_id,@concept_id,1);    
         </sql>
     </changeSet>
-
     <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-002" author="tw">
-        <comment>WEIGHT concept while Registering</comment>
-        <sql>
-
-            insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
-                values (1, 1, 0, 1, now(), 1, now(), uuid());
-            
-            select max(concept_id) from concept into @weight_concept_id;
-            
-            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, uuid)
-                values (@weight_concept_id, 'WEIGHT', 'en', 1, 1, now(), 'FULLY_SPECIFIED', uuid());
-
-            select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS' into @registration_concepts_concept_id;
-
-            insert into concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid)
-                values (@weight_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
-    
-        </sql>
-    </changeSet>
-
-    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-003" author="tw">
-        <comment>HEIGHT concept while Registering</comment>
-        <sql>
-            insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
-                values (1, 1, 0, 1, now(), 1, now(), uuid());
-            
-            select max(concept_id) from concept into @height_concept_id;
-            
-            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, uuid)
-                values (@height_concept_id, 'HEIGHT', 'en', 1, 1, now(), 'FULLY_SPECIFIED', uuid());
-
-
-            select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS' into @registration_concepts_concept_id;
-
-            insert into concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid)
-                values (@height_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
-        </sql>
-    </changeSet>
-
-
-    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-004" author="tw">
-        <comment>COMMENT concept while Registering</comment>
-        <sql>
-
-            insert into concept (datatype_id, class_id, is_set, creator, date_created, changed_by, date_changed, uuid)
-                values (3, 12, 0, 1, now(), 1, now(), uuid());
-
-            select max(concept_id) from concept into @comment_concept_id;
-
-            insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created, concept_name_type, uuid)
-                values (@comment_concept_id, 'COMMENT', 'en', 1, 1, now(), 'FULLY_SPECIFIED', uuid());
-
-            select concept_id from concept_name where name = 'REGISTRATION_CONCEPTS' into @registration_concepts_concept_id;
-
-            insert into concept_set (concept_id, concept_set, sort_weight, creator, date_created, uuid)
-                values (@comment_concept_id, @registration_concepts_concept_id, 1000, 1, now(), uuid());
-        </sql>
-    </changeSet>
-    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-005" author="tw">
-        <comment>Radiology concepts data</comment>
-        <sqlFile path="radiology-concept-data.sql"/>
-    </changeSet>
-    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-006" author="tw">
         <comment>Add vitals concepts</comment>
         <sql>
             set @concept_id = 0;
@@ -210,7 +162,7 @@
             call add_concept_set_members(@spo2_data_id, @concept_id, 0);
         </sql>
     </changeSet>
-    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-007" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-003" author="tw">
         <comment>Add Second Vitals Concept</comment>
         <sql>
             set @concept_id = 0;
@@ -238,7 +190,7 @@
             call add_concept_set_members(@second_vitals_concept_id, @concept_id,0);
         </sql>
     </changeSet>
-    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-008" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-004" author="tw">
         <comment>Add Discharge Summary Concept</comment>
         <sql>
             set @concept_id = 0;
@@ -306,7 +258,7 @@
             call add_concept_set_members(@discharge_summary_id,@concept_id,7);
         </sql>
     </changeSet>
-    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-009" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-005" author="tw">
         <comment>Add History and Examination</comment>
         <sql>
             set @concept_id = 0;
@@ -350,5 +302,9 @@
             call add_concept_word(@concept_id, @concept_name_short_id, 'Notes,', 1);
             call add_concept_set_members(@history_id, @concept_id, 1);
         </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-006" author="tw">
+        <comment>Radiology concepts data</comment>
+        <sqlFile path="radiology-concept-data.sql"/>
     </changeSet>
 </databaseChangeLog>
