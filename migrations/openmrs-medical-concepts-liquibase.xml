@@ -296,11 +296,21 @@
             call add_concept_set_members(@chief_complaint_data_id, @concept_id, 0);
             call add_concept_numeric(@concept_id, null, null, null);
 
-            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'History and Examination Notes', 'Chief Complaint Notes', 'Text', 'Misc', false);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'History', 1);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'Examination', 1);
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Notes', 'Chief Complaint Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
             call add_concept_word(@concept_id, @concept_name_short_id, 'Notes,', 1);
             call add_concept_set_members(@history_id, @concept_id, 1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'History Notes', 'History Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'History', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes,', 1);
+            call add_concept_set_members(@history_id, @concept_id, 2);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Examination Notes', 'Examination Notes', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Examination', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Notes,', 1);
+            call add_concept_set_members(@history_id, @concept_id, 3);
         </sql>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-006" author="tw">
