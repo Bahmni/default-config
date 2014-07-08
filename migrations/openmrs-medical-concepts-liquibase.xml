@@ -317,4 +317,58 @@
         <comment>Radiology concepts data</comment>
         <sqlFile path="radiology-concept-data.sql"/>
     </changeSet>
+     <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-007" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM concept_name where name = 'Fee Information' and locale_preferred = 1;
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set Fee Information</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Fee Information', 'Fee Information', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'FEE', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'INFORMATION', 1);
+            set @patient_document_concept_id = @concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-008" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_set where concept_set = (SELECT concept_id FROM concept_name where name = 'Fee Information' and locale_preferred = 1);
+            </sqlCheck>
+        </preConditions>
+        <comment>Add registration fee and comment ad group members to fee information concept</comment>
+        <sql>
+            set @fee_information_concept_set_id = 0;
+            SELECT concept_id into @fee_information_concept_set_id FROM concept_name where name = 'Fee Information' and locale_preferred = 1;
+            SELECT concept_id into @comment_concept_id FROM concept_name where name = 'COMMENTS' and locale_preferred = 1;
+            SELECT concept_id into @registration_concept_id FROM concept_name where name = 'REGISTRATION FEES' and locale_preferred = 1;
+            call add_concept_set_members(@fee_information_concept_set_id,@registration_concept_id,1);
+            call add_concept_set_members(@fee_information_concept_set_id,@comment_concept_id,1);
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-009" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="4">
+                SELECT count(*) from concept_set where concept_set = (SELECT concept_id FROM concept_name where name = 'REGISTRATION_CONCEPTS' and locale_preferred = 1);
+            </sqlCheck>
+        </preConditions>
+        <comment>Add registration fee and comment ad group members to fee information concept</comment>
+        <sql>
+            set @registration_concept_id = 0;
+            set @registration_fee_concept_id = 0;
+            set @comment_concept_id = 0;
+            
+            SELECT concept_id into @registration_concept_id FROM concept_name where name = 'REGISTRATION_CONCEPTS' and locale_preferred = 1;
+            SELECT concept_id into @comment_concept_id FROM concept_name where name = 'COMMENTS' and locale_preferred = 1;
+            SELECT concept_id into @registration_fee_concept_id FROM concept_name where name = 'REGISTRATION FEES' and locale_preferred = 1;
+            
+            delete from concept_set where concept_id = @registration_fee_concept_id and concept_set = @registration_concept_id;
+            delete from concept_set where concept_id = @comment_concept_id and concept_set = @registration_concept_id;
+        </sql>
+    </changeSet>
 </databaseChangeLog>
