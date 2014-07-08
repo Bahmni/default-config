@@ -29,7 +29,13 @@
             "showMiddleName": false,
             "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
             "supplementalPaperPrintLayout": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-            "localNameSearch": false
+            "localNameSearch": false,
+            "conceptSetUI": {
+                "REGISTRATION FEES": {
+                    "required": true,
+                    "label": "Fee"
+                }
+            }
         }
     }
 ]

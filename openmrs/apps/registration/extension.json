@@ -76,5 +76,16 @@
         },
         "order": 1,
         "requiredPrivilege": "Add Visits"
+    },
+    {
+        "id": "bahmni.registration.conceptSetGroup.feeInformation",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Fee Information",
+            "required":true
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
     }
 ]
