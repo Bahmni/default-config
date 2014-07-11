@@ -5,4 +5,4 @@ source $PATH_OF_CURRENT_SCRIPT/vagrant/vagrant_functions.sh
 
 run_in_vagrant -c "sudo rm -rf /var/www/bahmni_config"
 run_in_vagrant -c "sudo ln -s /Project/default-config /var/www/bahmni_config"
-run_in_vagrant -c "sudo chown -h bahmni:bahmni /var/www/bahmni_config"
+run_in_vagrant -c "sudo chown -h jss:jss /var/www/bahmni_config"
