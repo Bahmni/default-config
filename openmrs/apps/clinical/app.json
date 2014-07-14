@@ -39,11 +39,17 @@
                     "durationRequired" : false
                 },
                 "Posture" : {
-                    "autocomplete" : true
+                    "buttonSelect" : true
                 },
                 "Non-Coded Chief Complaint" : {
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
+                },
+                "M/C Days:" : {
+                    "grid" : true
+                },
+                "M/C Interval:" : {
+                    "grid" : true
                 }
             },
             "patientDashboardSections": [

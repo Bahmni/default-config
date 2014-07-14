@@ -371,4 +371,87 @@
             delete from concept_set where concept_id = @comment_concept_id and concept_set = @registration_concept_id;
         </sql>
     </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-010" author="tw">
+        <comment>Add posture to blood pressure</comment>
+        <sql>
+            SELECT concept_id into @blood_pressure_concept_id FROM concept_name where name = 'Blood Pressure' and locale_preferred = 1;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Posture', 'Posture', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Posture', 1);
+            call add_concept_set_members(@blood_pressure_concept_id, @concept_id, 2);
+            set @posture_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Sitting', 'Sitting', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Sitting', 1);
+            call add_concept_answer(@posture_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Supine', 'Supine', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Supine', 1);
+            call add_concept_answer(@posture_id, @concept_id, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-011" author="tw">
+        <comment>Add Obstetrics</comment>
+        <sql>
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Obstetrics', 'Obstetrics', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Obstetrics', 1);
+            set @obstetrics_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'P/A (PER ABDOMEN)', 'P/A (PER ABDOMEN)', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'P/A', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'PER', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'ABDOMEN', 1);
+            call add_concept_set_members(@obstetrics_id, @concept_id, 0);
+            set @per_abdomen_history_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Fundal Height (Weeks)', 'Fundal Height (Weeks)', 'Numeric', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Fundal', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Height', 1);
+            call add_concept_set_members(@per_abdomen_history_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'P/A Presenting Part', 'P/A Presenting Part', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'P/A', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Presenting', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Part', 1);
+            call add_concept_set_members(@per_abdomen_history_id, @concept_id, 1);
+            set @presenting_part_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Cephalic', 'Cephalic', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Cephalic', 1);
+            call add_concept_answer(@presenting_part_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Breech', 'Breech', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Breech', 1);
+            call add_concept_answer(@presenting_part_id, @concept_id, 1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Transverse', 'Transverse', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Transverse', 1);
+            call add_concept_answer(@presenting_part_id, @concept_id, 2);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'FHS', 'FHS', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'FHS', 1);
+            call add_concept_set_members(@per_abdomen_history_id, @concept_id, 2);
+            set @fhs_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Present', 'Present', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Present', 1);
+            call add_concept_answer(@fhs_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Absent', 'Absent', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Absent', 1);
+            call add_concept_answer(@fhs_id, @concept_id, 1); 
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'LMP', 'LMP', 'Date', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'LMP', 1);
+            call add_concept_set_members(@per_abdomen_history_id, @concept_id, 3);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Amount of Liquor', 'Amount of Liquor', 'Text', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Amount', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'of', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Liquor', 1);
+            call add_concept_set_members(@obstetrics_id, @concept_id, 1);   
+
+         
+        </sql>
+    </changeSet>
 </databaseChangeLog>

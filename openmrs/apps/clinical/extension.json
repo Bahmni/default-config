@@ -110,13 +110,23 @@
         "requiredPrivilege": "app:clinical"
     },
     {
+        "id": "bahmni.clinical.conceptSetGroup.observations.obstetrics",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Obstetrics"
+        },
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
         "id": "bahmni.clinical.conceptSetGroup.observations.dischargeSummary",
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
             "conceptName": "Discharge Summary"
         },
-        "order": 4,
+        "order": 5,
         "requiredPrivilege": "Discharge Summary"
-    }
+    }    
 ]
