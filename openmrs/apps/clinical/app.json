@@ -45,10 +45,10 @@
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
                 },
-                "M/C Days:" : {
+                "P/A Presenting Part" : {
                     "grid" : true
                 },
-                "M/C Interval:" : {
+                "FHS" : {
                     "grid" : true
                 }
             },
