@@ -77,7 +77,8 @@
                     "title": "Vitals",
                     "name": "vitals",
                     "conceptNames": ["Vitals", "BMI", "BMI STATUS", "HEIGHT", "WEIGHT"],
-                    "numberOfVisits": 2
+                    "numberOfVisits": 2,
+                    "isObservation": true
                 }
             ]
         }
