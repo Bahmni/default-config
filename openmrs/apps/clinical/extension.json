@@ -120,13 +120,23 @@
         "requiredPrivilege": "app:clinical"
     },
     {
+        "id": "bahmni.clinical.conceptSetGroup.observations.gynaecology",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Gynaecology"
+        },
+        "order": 5,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
         "id": "bahmni.clinical.conceptSetGroup.observations.dischargeSummary",
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
             "conceptName": "Discharge Summary"
         },
-        "order": 5,
+        "order": 6,
         "requiredPrivilege": "Discharge Summary"
     }    
 ]

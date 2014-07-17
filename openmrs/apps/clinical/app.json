@@ -46,9 +46,12 @@
                     "durationRequired" : false
                 },
                 "P/A Presenting Part" : {
-                    "grid" : true
+                    "buttonSelect" : true
                 },
                 "FHS" : {
+                    "buttonSelect" : true
+                },
+                "P/S (Per Speculum) - Cervix" : {
                     "grid" : true
                 }
             },

@@ -454,4 +454,54 @@
          
         </sql>
     </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-012" author="tw">
+        <comment>Add Gynaecology</comment>
+        <sql>
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Gynaecology', 'Gynaecology', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Gynaecology', 1);
+            set @gynaecology_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'P/S (Per Speculum) - Cervix', 'P/S (Per Speculum) - Cervix', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'P/S', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'PER', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Speculum', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Cervix', 1);
+            call add_concept_set_members(@gynaecology_id, @concept_id, 0);
+            set @per_speculum_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Cervix Size', 'Cervix Size', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Cervix ', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Size', 1);
+            call add_concept_set_members(@per_speculum_id, @concept_id, 0);
+            set @cervix_size_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Normal', 'Normal', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Normal', 1);
+            call add_concept_answer(@cervix_size_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Erosion', 'Erosion', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Erosion', 1);
+            call add_concept_answer(@cervix_size_id, @concept_id, 1);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Growth', 'Growth', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Growth', 1);
+            call add_concept_answer(@cervix_size_id, @concept_id, 2);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'VIA Test', 'VIA Test', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'VIA', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Test', 1);
+            call add_concept_set_members(@per_speculum_id, @concept_id, 1);
+            set @via_test_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'VIA +ve', 'VIA +ve', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'VIA', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, '+ve', 1);
+            call add_concept_answer(@via_test_id, @concept_id, 0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'VIA -ve', 'VIA -ve', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'VIA', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, '-ve', 1);
+            call add_concept_answer(@via_test_id, @concept_id, 1); 
+        </sql>
+    </changeSet>
 </databaseChangeLog>
