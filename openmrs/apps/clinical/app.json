@@ -57,27 +57,27 @@
             },
             "patientDashboardSections": [
                 {
-                    "description": "Diagnosis",
+                    "title": "Diagnosis",
                     "name": "diagnosis"
                 },
                 {
-                    "description": "Treatments",
+                    "title": "Treatments",
                     "name": "treatment",
-                    "options": {
-                        "numberOfVisitsForPastTreatments": 1
-                    }
+                    "numberOfVisits": 1
                 },
                 {
-                    "description": "Radiology",
+                    "title": "Radiology",
                     "name": "radiology"
                 },
                 {
-                    "description": "Lab Orders",
+                    "title": "Lab Orders",
                     "name": "labOrders"
                 },
                 {
-                    "description": "Vitals",
-                    "name": "vitals"
+                    "title": "Vitals",
+                    "name": "vitals",
+                    "conceptNames": ["Vitals", "BMI", "BMI STATUS", "HEIGHT", "WEIGHT"],
+                    "numberOfVisits": 2
                 }
             ]
         }
