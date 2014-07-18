@@ -5,6 +5,7 @@
         "type": "link",
         "label": "Observations",
         "url": "concept-set-group/observations",
+        "default": true,
         "icon": "icon-user-md",
         "order": 1,
         "requiredPrivilege": "app:clinical:observationTab"
