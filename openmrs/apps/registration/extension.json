@@ -78,6 +78,17 @@
         "requiredPrivilege": "Add Visits"
     },
     {
+        "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Nutritional Levels",
+            "scope": "latest",
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    },
+    {
         "id": "bahmni.registration.conceptSetGroup.feeInformation",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
@@ -85,7 +96,7 @@
             "conceptName": "Fee Information",
             "required":true
         },
-        "order": 1,
+        "order": 2,
         "requiredPrivilege": "Edit Visits"
     }
 ]
