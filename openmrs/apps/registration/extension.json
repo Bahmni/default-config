@@ -84,6 +84,7 @@
         "extensionParams": {
             "conceptName": "Nutritional Levels",
             "scope": "latest",
+            "required":true
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
