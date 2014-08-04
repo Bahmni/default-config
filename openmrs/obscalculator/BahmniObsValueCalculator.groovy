@@ -220,9 +220,9 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 return BmiStatus.SEVERELY_UNDERWEIGHT
             } else if(bmi < fifteenth) {
                 return BmiStatus.UNDERWEIGHT
-            } else if(bmi <= eightyFifth) {
+            } else if(bmi < eightyFifth) {
                 return BmiStatus.NORMAL
-            } else if(bmi <= ninetySeventh) {
+            } else if(bmi < ninetySeventh) {
                 return BmiStatus.OVERWEIGHT
             } else {
                 return BmiStatus.OBESE
