@@ -82,7 +82,7 @@
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "Nutritional Levels",
+            "conceptName": "Nutritional Values",
             "required":true,
             "showLatest": true
         },
