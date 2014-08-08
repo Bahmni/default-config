@@ -13,13 +13,13 @@ import org.joda.time.Months;
 
 public class BahmniObsValueCalculator implements ObsValueCalculator {
 
-    static int BMI_VERY_SEVERELY_UNDERWEIGHT = 16;
-    static int BMI_SEVERELY_UNDERWEIGHT = 17;
-    static int BMI_UNDERWEIGHT = 18.5;
-    static int BMI_NORMAL = 25;
-    static int BMI_OVERWEIGHT = 30;
-    static int BMI_OBESE = 35;
-    static int BMI_SEVERELY_OBESE = 40;
+    static Double BMI_VERY_SEVERELY_UNDERWEIGHT = 16.0;
+    static Double BMI_SEVERELY_UNDERWEIGHT = 17.0;
+    static Double BMI_UNDERWEIGHT = 18.5;
+    static Double BMI_NORMAL = 25.0;
+    static Double BMI_OVERWEIGHT = 30.0;
+    static Double BMI_OBESE = 35.0;
+    static Double BMI_SEVERELY_OBESE = 40.0;
 
     public enum BmiStatus {
         VERY_SEVERELY_UNDERWEIGHT("Very Severely Underweight"),
