@@ -504,4 +504,29 @@
             call add_concept_answer(@via_test_id, @concept_id, 1); 
         </sql>
     </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-CONCEPT-013" author="Indraneel">
+        <comment>Adding templates to all observation templates</comment>
+        <sql>
+            select c.uuid from concept_name cn inner join concept c on cn.concept_id = c.concept_id where cn.name = 'All Observation Templates' and cn.concept_name_type = 'FULLY_SPECIFIED' into @concept_set_uuid;
+            set @set_concept_id = @concept_id;
+
+            select c.uuid from concept_name cn inner join concept c on cn.concept_id = c.concept_id where cn.name = 'History and Examination' and cn.concept_name_type = 'FULLY_SPECIFIED' into @concept_set_uuid;
+            call add_concept_set_members (@set_concept_id,@concept_id,1);
+
+            select c.uuid from concept_name cn inner join concept c on cn.concept_id = c.concept_id where cn.name = 'Vitals' and cn.concept_name_type = 'FULLY_SPECIFIED' into @concept_set_uuid;
+            call add_concept_set_members (@set_concept_id,@concept_id,4);
+
+            select c.uuid from concept_name cn inner join concept c on cn.concept_id = c.concept_id where cn.name = 'Second Vitals' and cn.concept_name_type = 'FULLY_SPECIFIED' into @concept_set_uuid;
+            call add_concept_set_members (@set_concept_id,@concept_id,5);
+
+            select c.uuid from concept_name cn inner join concept c on cn.concept_id = c.concept_id where cn.name = 'Obstetrics' and cn.concept_name_type = 'FULLY_SPECIFIED' into @concept_set_uuid;
+            call add_concept_set_members (@set_concept_id,@concept_id,7);
+
+            select c.uuid from concept_name cn inner join concept c on cn.concept_id = c.concept_id where cn.name = 'Gynaecology' and cn.concept_name_type = 'FULLY_SPECIFIED' into @concept_set_uuid;
+            call add_concept_set_members (@set_concept_id,@concept_id,8);
+
+            select c.uuid from concept_name cn inner join concept c on cn.concept_id = c.concept_id where cn.name = 'Discharge Summary' and cn.concept_name_type = 'FULLY_SPECIFIED' into @concept_set_uuid;
+            call add_concept_set_members (@set_concept_id,@concept_id,9);
+        </sql>
+    </changeSet>
 </databaseChangeLog>

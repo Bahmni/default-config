@@ -80,7 +80,8 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "History and Examination"
+            "conceptName": "History and Examination",
+            "default":true
         },
         "order": 1,
         "requiredPrivilege": "app:clinical:history"
@@ -90,6 +91,7 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
+            "default":true,
             "conceptName": "Vitals"
         },
         "order": 2,
@@ -100,6 +102,7 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
+            "default":true,
             "conceptName": "Second Vitals",
             "showIf": [ "var visitTypes = [];",
                 "if(visitTypes.length === 0) return true;",
@@ -115,6 +118,7 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
+            "default":true,
             "conceptName": "Obstetrics"
         },
         "order": 4,
@@ -125,6 +129,7 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
+            "default":true,
             "conceptName": "Gynaecology"
         },
         "order": 5,
@@ -135,6 +140,7 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
+            "default":true,
             "conceptName": "Discharge Summary"
         },
         "order": 6,
