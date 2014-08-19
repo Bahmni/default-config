@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- 
+    This Liquibase file is meant to contain changesets for Address Hierarchy (Village/Town/Taluka/Center/etc)
+    and location information only. 
+    -->
+    <changeSet id="BAHMNI-IMPL-ADDRESS-HIERARCHY-001" author="tw">
+        <comment>Set up Address Hierarchy</comment>
+        <sql>
+			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (3,'State',NULL,'STATE_PROVINCE','9426afa9-49da-41df-9910-5e929b8a997b',0);
+			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (4,'District',3,'COUNTY_DISTRICT','575fabc0-404d-4b04-961c-f96db057bc2d',0);
+			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (5,'Tehsil',4,'ADDRESS_3','cf2f25b6-c770-4d6d-a72e-a27991a962d0',0);
+			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (6,'Village',5,'CITY_VILLAGE','eaf9c0ac-290b-4178-abde-83be082dd6c2',1);
+			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (7,'Gram Panchayat',6,'ADDRESS_2','961d4b44-709d-4247-a77b-2fd2a463f9b8',0);
+			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (8,'House No., Street',7,'ADDRESS_1','f934bbd7-e902-4ac5-a9ae-ef949f16beeb',0);
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-ADDRESS-HIERARCHY-002" author="tw">
+        <comment>Address hierarchy entry data</comment>
+        <sqlFile path="address-hierarchy-entry-data.sql"/>
+    </changeSet>
+</databaseChangeLog>

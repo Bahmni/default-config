@@ -1,0 +1,86 @@
+[
+    {
+        "id": "bahmni.clinical",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.clinical.consultation.board",
+                "description": "Bahmni Clinical Consultation Page"
+            },
+            {
+                "id": "org.bahmni.clinical.conceptSetGroup.*",
+                "description": "Define conceptsets part of a conceptset group"
+            },
+            {
+                "id": "org.bahmni.clinical.orders",
+                "description": "Bahmni Orders Page"
+            },
+            {
+                "id":"org.bahmni.patient.search",
+                "description": "Bahmni Patient search, lookups Page"
+            }
+        ],
+        "contextModel": [
+            "patientUuid",
+            "visitUuid"
+        ],
+        "config" : {
+            "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
+            "otherInvestigationsMap": {
+                "Radiology": "Radiology Order",
+                "Endoscopy": "Endoscopy Order"
+            },
+            "maxConceptSetLevels": 3,
+            "conceptSetUI": {
+                "Chief Complaint Data": {
+                    "multiple": 3
+                },
+                "Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Posture" : {
+                    "buttonSelect" : true
+                },
+                "Non-Coded Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "P/A Presenting Part" : {
+                    "buttonSelect" : true
+                },
+                "FHS" : {
+                    "buttonSelect" : true
+                },
+                "P/S (Per Speculum) - Cervix" : {
+                    "grid" : true
+                }
+            },
+            "patientDashboardSections": [
+                {
+                    "title": "Diagnosis",
+                    "name": "diagnosis"
+                },
+                {
+                    "title": "Treatments",
+                    "name": "treatment",
+                    "numberOfVisits": 1
+                },
+                {
+                    "title": "Radiology",
+                    "name": "radiology"
+                },
+                {
+                    "title": "Lab Orders",
+                    "name": "labOrders"
+                },
+                {
+                    "title": "Vitals",
+                    "name": "vitals",
+                    "conceptNames": ["Vitals", "BMI", "BMI STATUS", "HEIGHT", "WEIGHT"],
+                    "numberOfVisits": 2,
+                    "isObservation": true
+                }
+            ]
+        }
+    }
+]

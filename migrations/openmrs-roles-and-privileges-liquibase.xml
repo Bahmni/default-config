@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- 
+        This Liquibase file is meant to contain changesets for ALL ROLES and PRIVELIGES in OpenMRS/Bahmni.
+        Will help define the various roles and privileges that exist in the system, and who can perform
+        what actions.
+    -->
+    <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-001" author="tw">
+        <comment>Create RegistrationClerk ROLE and Privileges</comment>
+        <sql>
+            insert into role (role, description) values ('RegistrationClerk', 'RegistrationClerk');
+
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Observations');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Delete Observations');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Patients');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add People');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Visits');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit Encounters');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit Patients');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit People');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Edit Visits');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Manage Address Hierarchy');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Manage Encounter Roles');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Administration Functions');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Concepts');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Encounter Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Encounters');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Global Properties');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Identifier Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Location Attribute Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Locations');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Navigation Menu');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Observations');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Patients');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View People');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Person Attribute Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Providers');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Users');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Visit Attribute Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Visit Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Visits');
+
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'app:registration');
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-002" author="tw">
+        <comment>Create Document-Uploader ROLE and Privileges</comment>
+        <sql>
+            
+            INSERT INTO role (role, description) VALUES ('bahmni-document-uploader', 'bahmni-document-uploader');
+
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Add Observations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Add Encounters');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Edit Encounters');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Edit Visits');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Manage Encounter Roles');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Concepts');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Encounters');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Global Properties');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Identifier Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Location Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Locations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Observations');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Patient Identifiers');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Patients');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View People');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Person Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Providers');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Users');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visit Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visit Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Visits');
+            
+            INSERT INTO role_privilege(role, privilege) VALUES('bahmni-document-uploader', 'app:document-upload') ON DUPLICATE KEY UPDATE privilege = 'app:document-upload';
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-003" author="tw">
+        <comment>Add clinical roles and privileges</comment>
+        <insert tableName="role">
+            <column name="role" value="Doctor" />
+            <column name="description" value="Role for the doctor"/>
+            <column name="uuid" valueComputed="uuid()" />
+        </insert>
+        <insert tableName="role">
+            <column name="role" value="Nurse" />
+            <column name="description" value="Role for the nurse"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="Discharge Summary"/>
+            <column name="description" value="Discharge Summary Privilege"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:history"/>
+            <column name="description" value="JSS observation history view and edit"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:diagnosisTab"/>
+            <column name="description" value="View and Edit Diagnosis tab"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:dispositionTab"/>
+            <column name="description" value="View Disposition tab"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:observationTab"/>
+            <column name="description" value="View Disposition tab"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="privilege">
+            <column name="privilege" value="app:clinical:consultationTab"/>
+            <column name="description" value="View Disposition tab"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-004" author="tw">
+        <comment>Adding privileges for doctor, nurse roles</comment>
+        <sql>
+            insert into role_privilege (role, privilege) values ('Doctor', 'Add Encounters');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Add Observations');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Add Orders');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Add Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Add Patients');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Add People');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Add Visits');
+            insert into role_privilege (role, privilege) values ('Doctor', 'app:clinical');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Delete Orders');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Delete Patients');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Delete Visits');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Discharge Summary');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Edit Encounters');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Edit Observations');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Edit Orders');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Edit Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Edit Patients');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Edit People');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Edit Users');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Edit Visits');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Demographics Section');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Encounters Section');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Forms Section');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Graphs Section');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Overview Section');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Patient Summary');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Regimen Section');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Visits Section');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Classes');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Datatypes');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Map Types');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Reference Terms');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Sources');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Concepts');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Encounter Roles');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Encounter Types');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Encounters');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Locations');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Observations');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Order Types');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Orders');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Patients');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View People');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Person Attribute Types');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Privileges');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Providers');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Roles');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Users');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Visit Attribute Types');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Visit Types');
+            insert into role_privilege (role, privilege) values ('Doctor', 'View Visits');
+            insert into role_privilege (role, privilege) values ('Doctor', 'app:clinical:history');
+            insert into role_privilege (role, privilege) values ('Doctor', 'app:clinical:diagnosisTab');
+            insert into role_privilege (role, privilege) values ('Doctor', 'app:clinical:dispositionTab');
+            insert into role_privilege (role, privilege) values ('Doctor', 'app:clinical:observationTab');
+            insert into role_privilege (role, privilege) values ('Doctor', 'app:clinical:consultationTab');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Manage Encounter Roles');
+
+            insert into role_privilege (role, privilege) values ('Nurse', 'Add Encounters');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Add Observations');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Add Orders');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Add Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Add Patients');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Add People');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Add Visits');
+            insert into role_privilege (role, privilege) values ('Nurse', 'app:adt');
+            insert into role_privilege (role, privilege) values ('Nurse', 'app:clinical');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Delete Orders');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Delete Patients');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Delete Visits');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Discharge Summary');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Edit Encounters');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Edit Observations');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Edit Orders');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Edit Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Edit Patients');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Edit People');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Edit Users');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Edit Visits');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Demographics Section');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Encounters Section');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Forms Section');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Graphs Section');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Overview Section');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Patient Summary');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Regimen Section');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Visits Section');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Classes');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Datatypes');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Map Types');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Reference Terms');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Sources');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Concepts');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Encounter Roles');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Encounter Types');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Encounters');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Locations');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Observations');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Order Types');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Orders');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Patient Identifiers');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Patients');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View People');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Person Attribute Types');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Privileges');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Providers');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Roles');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Users');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Visit Attribute Types');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Visit Types');
+            insert into role_privilege (role, privilege) values ('Nurse', 'View Visits');
+            insert into role_privilege (role, privilege) values ('Nurse', 'app:clinical:observationTab');
+            insert into role_privilege (role, privilege) values ('Nurse', 'app:clinical:consultationTab');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Manage Encounter Roles');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

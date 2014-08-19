@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- 
+        This Liquibase file is meant to contain changesets for USERS and roles required by the system OpenMRS/Bahmni.
+    -->
+    <changeSet id="BAHMNI-IMPL-OMRS-USERS-001" author="tw">
+        <comment>Adding superman user</comment>
+        <sql>
+            SET @puuid = uuid();
+            INSERT INTO person(birthdate_estimated, dead, creator, date_created, uuid) VALUES(0, 0, 1, now(), @puuid);
+            
+            SELECT person_id INTO @person_id from person where uuid = @puuid;
+
+            INSERT INTO person_name(person_id, preferred, given_name, family_name, creator, date_created, uuid) VALUES(@person_id, 1, 'Super', 'Man', 1, now(), @puuid);
+
+            INSERT INTO users(system_id, creator, date_created, person_id, uuid, username, password, salt) VALUES ('superman', 1, now(),@person_id, uuid(), 'superman', 'e28e3ae84c66bfba6b2c50a406567f3e34fea1d76b17c006931571fe5d940f6c6b81e49cf8ea5e0adfca19fe3beb68d8ad79f7c3812e92b8d502a9afcf2029b2', '1c9d7e94aeeb7a2459ef45ed200b2944582e0e7088d75f9b57a3644861ea766c20a269b3fe2eadaff1bc445ecfbd9bd3c0c550dfd813de48d39423cd3d1a8b10');
+
+            INSERT INTO provider (person_id, identifier, creator, date_created, uuid, name) VALUES (@person_id, 'superman', 1, now(), uuid(), 'superman');
+        </sql>
+    </changeSet>
+    <changeSet id="BAHMNI-IMPL-OMRS-USERS-002" author="tw">
+        <comment>Add roles to superman user</comment>
+        <sql>
+            SELECT user_id INTO @user_id FROM users where username = 'superman';
+
+            INSERT INTO user_role(user_id, role) VALUES(@user_id, 'Provider');
+            INSERT INTO user_role(user_id, role) VALUES(@user_id, 'System Developer');        
+            INSERT INTO user_role(user_id, role) VALUES(@user_id, 'Doctor');
+            INSERT INTO user_role(user_id, role) VALUES(@user_id, 'Nurse');        
+            INSERT INTO user_role(user_id, role) VALUES(@user_id, 'bahmni-document-uploader');
+            INSERT INTO user_role(user_id, role) VALUES(@user_id, 'RegistrationClerk');        
+        </sql>
+    </changeSet>
+</databaseChangeLog>

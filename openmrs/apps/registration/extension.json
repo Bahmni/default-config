@@ -1,0 +1,103 @@
+[
+    {
+        "id": "bahmni.registration.navigation.patient.search",
+        "extensionPointId": "org.bahmni.registration.navigation",
+        "type": "link",
+        "label": "<u>S</u>earch",
+        "url": "/search",
+        "shortcutKey": "s",
+        "icon": "icon-search",
+        "order": 1,
+        "requiredPrivilege": "View Patients"
+    },
+    {
+        "id": "bahmni.registration.navigation.patient.create",
+        "extensionPointId": "org.bahmni.registration.navigation",
+        "type": "link",
+        "label": "Create <u>N</u>ew",
+        "url": "/patient/new",
+        "icon": "icon-plus",
+        "shortcutKey": "n",
+        "order": 2,
+        "requiredPrivilege": "Add Patients"
+    },
+    {
+        "id": "bahmni.patient.search.result.action.edit",
+        "extensionPointId": "org.bahmni.registration.patient.search.result.action",
+        "type": "link",
+        "label": "View",
+        "url": "/patient/{{patientUuid}}",
+        "icon": "icon-patient-edit",
+        "order": 1,
+        "requiredPrivilege": "Edit Patients"
+    },
+    {
+        "id": "bahmni.patient.edit.action.startVisit",
+        "extensionPointId": "org.bahmni.registration.patient.edit.action",
+        "type": "config",
+        "extensionParams" : {
+            "action" : "startVisit",
+            "display": "Start Visit",
+            "forwardUrl" : "/patient/{{patientUuid}}/visit"
+        },
+        "order": 1,
+        "requiredPrivilege": "Add Visits"
+    },
+    {
+        "id": "bahmni.patient.edit.action.editVisit",
+        "extensionPointId": "org.bahmni.registration.patient.edit.action",
+        "type": "config",
+        "extensionParams" : {
+            "action" : "enterVisitDetails",
+            "display": "Enter Visit Details"
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    },
+    {
+        "id": "bahmni.patient.edit.action.print",
+        "extensionPointId": "org.bahmni.registration.patient.edit.action",
+       "type": "config",
+        "extensionParams" : {
+            "action" : "print",
+            "display": "Save and Print"
+        },
+        "order": 2,
+        "requiredPrivilege": "Edit Patients"
+    },
+    {
+        "id": "bahmni.patient.create.action.startVisit",
+        "extensionPointId": "org.bahmni.registration.patient.create.action",
+        "type": "config",
+        "extensionParams" : {
+            "action" : "startVisit",
+            "display": "Start Visit",
+            "forwardUrl" : "/patient/{{patientUuid}}/visit"
+        },
+        "order": 1,
+        "requiredPrivilege": "Add Visits"
+    },
+    {
+        "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Nutritional Values",
+            "required":true,
+            "showLatest": true
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    },
+    {
+        "id": "bahmni.registration.conceptSetGroup.feeInformation",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Fee Information",
+            "required":true
+        },
+        "order": 2,
+        "requiredPrivilege": "Edit Visits"
+    }
+]
