@@ -1,7 +1,7 @@
 [
     {
         "id": "bahmni.registration",
-        "instanceOf":"bahmni.template.registration",
+        "instanceOf": "bahmni.template.registration",
         "description": "Bahmni Patient Registration App",
         "extensionPoints": [
             {
@@ -21,21 +21,8 @@
             "patientUuid",
             "activeVisitUuid"
         ],
-        "config" : {
-            "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
-            "defaultVisitType": "OPD",
-            "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "showMiddleName": false,
-            "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-            "supplementalPaperPrintLayout": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-            "localNameSearch": false,
-            "conceptSetUI": {
-                "REGISTRATION FEES": {
-                    "required": true,
-                    "label": "Fee"
-                }
-            }
+        "config": {
+            "autoCompleteFields": ["familyName", "caste"]
         }
     }
 ]

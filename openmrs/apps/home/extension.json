@@ -20,23 +20,13 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.adt",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Admission and Discharge",
-        "url": "../adt/",
-        "icon": "icon-file",
-        "order": 4,
-        "requiredPrivilege": "app:adt"
-    },
-    {
         "id": "bahmni.radiology.document.upload",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Radiology Upload",
         "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
         "icon": "icon-camera",
-        "order": 5,
+        "order": 4,
         "requiredPrivilege": "app:document-upload"
     },
     {
@@ -46,7 +36,7 @@
         "label": "Patient Documents",
         "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
         "icon": "icon-camera",
-        "order": 6,
+        "order": 5,
         "requiredPrivilege": "app:document-upload"
     }
 ]
