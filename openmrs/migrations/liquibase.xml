@@ -16,4 +16,5 @@
     <include file = "openmrs-medical-concepts-liquibase.xml"/>
     <include file = "openmrs-misc-config-liquibase.xml"/>
     <include file = "atomfeed-config-liquibase.xml"/>
+    <include file = "location-test-data-liquibase.xml"/>
 </databaseChangeLog>
