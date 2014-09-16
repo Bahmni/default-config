@@ -74,9 +74,16 @@
                     "name": "labOrders"
                 },
                 {
+                    "title": "Nutritional Values",
+                    "name": "vitals",
+                    "conceptNames": ["Nutritional Values"],
+                    "scope": "latest",
+                    "isObservation": true
+                },
+                {
                     "title": "Vitals",
                     "name": "vitals",
-                    "conceptNames": ["Vitals", "BMI", "BMI STATUS", "HEIGHT", "WEIGHT"],
+                    "conceptNames": ["Vitals"],
                     "numberOfVisits": 2,
                     "isObservation": true
                 }
