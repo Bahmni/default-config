@@ -33,7 +33,70 @@
                     "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
-                }
+                },
+		"Diagnosis status": {
+		    "buttonSelect" : true
+		},
+		"Exacerbation within 12 months": {
+		    "buttonSelect" : true
+		},
+		"Exacerbation treated as outpatient in last 12 months": {
+		    "buttonSelect" : true
+		},
+		"Treated at": {
+		    "buttonSelect" : true
+		},
+		"Hospitalizations": {
+		    "buttonSelect" : true
+		},
+		"Smoking history": {
+		    "buttonSelect" : true
+		},
+		"Current Smoker": {
+		    "buttonSelect" : true
+		},
+		"Alcohol abuse": {
+		    "buttonSelect" : true
+		},
+		"Currently exposed to Alcohol": {
+		    "buttonSelect" : true
+		},
+		"Non compliance": {
+		    "buttonSelect" : true
+		},
+		"Severity classification NYHA": {
+		    "buttonSelect" : true
+		},
+		"Evidence of Exacerbation today": {
+		    "buttonSelect" : true
+		},
+		"Family history of Diabetes": {
+		    "buttonSelect" : true
+		},
+		"Family history of Renal disease": {
+		    "buttonSelect" : true
+		},
+		"Albuminuria": {
+		    "buttonSelect" : true
+		},
+		"Decreased urine output": {
+		    "buttonSelect" : true
+		},
+		"Hematuria": {
+		    "buttonSelect" : true
+		},
+		"Edema": {
+		    "buttonSelect" : true
+		},
+		"History of NSAID abuse": {
+		    "buttonSelect" : true
+		},
+		"Family history of COPD": {
+		    "buttonSelect" : true
+		},
+		"Exacerbations per year": {
+		    "buttonSelect" : true
+		} 	
             },
             "patientDashboardSections": [
                 {
