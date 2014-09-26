@@ -65,7 +65,11 @@
 				},
 				"Reason for decompensation / Likely Etiology": {
 					"multiSelect" : true
-				}
+				},
+       			       "Procedure" : {
+                  			"answersConceptName" : "Procedure Answers",
+                  			"freeTextAutocomplete" : true
+                		}
 			},
             "patientDashboardSections": [
                 {
