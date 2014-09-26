@@ -29,75 +29,44 @@
             },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
-                "Chief Complaint" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                "Chief complaint" : {
+                    "durationRequired" : false,
+					"conciseText" : true
                 },
-		"Diagnosis status": {
-		    "buttonSelect" : true
-		},
-		"Exacerbation within 12 months": {
-		    "buttonSelect" : true
-		},
-		"Exacerbation treated as outpatient in last 12 months": {
-		    "buttonSelect" : true
-		},
-		"Treated at": {
-		    "buttonSelect" : true
-		},
-		"Hospitalizations": {
-		    "buttonSelect" : true
-		},
-		"Smoking history": {
-		    "buttonSelect" : true
-		},
-		"Current Smoker": {
-		    "buttonSelect" : true
-		},
-		"Alcohol abuse": {
-		    "buttonSelect" : true
-		},
-		"Currently exposed to Alcohol": {
-		    "buttonSelect" : true
-		},
-		"Non compliance": {
-		    "buttonSelect" : true
-		},
-		"Severity classification NYHA": {
-		    "buttonSelect" : true
-		},
-		"Evidence of Exacerbation today": {
-		    "buttonSelect" : true
-		},
-		"Family history of Diabetes": {
-		    "buttonSelect" : true
-		},
-		"Family history of Renal disease": {
-		    "buttonSelect" : true
-		},
-		"Albuminuria": {
-		    "buttonSelect" : true
-		},
-		"Decreased urine output": {
-		    "buttonSelect" : true
-		},
-		"Hematuria": {
-		    "buttonSelect" : true
-		},
-		"Edema": {
-		    "buttonSelect" : true
-		},
-		"History of NSAID abuse": {
-		    "buttonSelect" : true
-		},
-		"Family history of COPD": {
-		    "buttonSelect" : true
-		},
-		"Exacerbations per year": {
-		    "buttonSelect" : true
-		} 	
-            },
+				"Followed previously at": {
+					"conciseText" : true
+				},
+				"Diagnosis location":{
+					"conciseText" : true
+				},
+				"Details":{
+					"conciseText" : true
+				},
+				"Reason":{
+					"conciseText" : true
+				},
+				"Quit since":{
+					"conciseText" : true
+				},
+				"Severity classification NYHA" :{
+					"showHelpText" : true
+				},
+				"Rule out other causes of Fatigue" :{
+					"showHelpText" : true
+				},
+				"Rule out other causes of Edema" :{
+					"showHelpText" : true
+				},
+				"Rule out other causes of Dyspnea" :{
+					"showHelpText" : true
+				},
+				"Diagnostic Clues - CHF" :{
+					"showHelpText" : true
+				},
+				"Reason for decompensation / Likely Etiology": {
+					"multiSelect" : true
+				}
+			},
             "patientDashboardSections": [
                 {
                     "title": "Diagnosis",
