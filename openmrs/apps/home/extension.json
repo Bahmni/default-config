@@ -16,8 +16,18 @@
         "label": "Clinical",
         "url": "../clinical/",
         "icon": "icon-stethoscope",
-        "order": 3,
+        "order": 2,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.adt",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "ADT",
+        "url": "../adt/",
+        "icon": "icon-file",
+        "order": 3,
+        "requiredPrivilege": "app:adt"
     },
     {
         "id": "bahmni.radiology.document.upload",
@@ -39,4 +49,5 @@
         "order": 5,
         "requiredPrivilege": "app:document-upload"
     }
+
 ]
