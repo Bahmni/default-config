@@ -48,6 +48,30 @@
 				"Quit since":{
 					"conciseText" : true
 				},
+				"CHF - Major comorbidities" : {
+                                        "multiSelect" : true
+                                },
+                                "CHF - Home Medication - Cardiac" : {
+                                        "showHelpText" : true
+                                },
+                                "CHF - Physical Exam - Details" : {
+                                        "showHelpText" : true
+                                },
+                                "ER and likely IPD admission" : {
+                                        "showHelpText" : true
+                                },
+                                "CHF - Signs/Symptoms Decompensation" : {
+                                        "showHelpText" : true
+                                },
+                                "CHF - Checklist" : {
+                                        "showHelpText" : true
+                                },
+                                "CHF - Assessment" : {
+                                        "showHelpText" : true
+                                },
+                                "CHF - Management" : {
+                                        "showHelpText" : true
+                                },
 				"Severity classification NYHA" :{
 					"showHelpText" : true
 				},
