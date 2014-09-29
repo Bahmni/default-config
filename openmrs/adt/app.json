@@ -1,0 +1,34 @@
+[
+    {
+        "id": "bahmni.adt.admission",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.adt.admit.action",
+                "description": "Bahmni Patient Admission Action"
+            },
+            {
+                "id": "org.bahmni.adt.transfer.action",
+                "description": "Bahmni Patient Transfer Action"
+            },
+            {
+                "id": "org.bahmni.adt.discharge.action",
+                "description": "Bahmni Patient Discharge Action"
+            },
+            {
+                "id": "org.bahmni.patient.search",
+                "description": "Bahmni patient search, lookup Page"
+            }
+        ],
+        "contextModel": [ 
+            "patientUuid",
+            "encounterUuid",
+            "visitUuid"
+        ],
+        "config" : {
+            "onAdmissionForwardTo": "#/patient/search",
+            "onTransferForwardTo": "#/patient/search",
+            "onDischargeForwardTo": "#/patient/search",
+            "defaultVisitType": "General"
+        }
+    }
+]
