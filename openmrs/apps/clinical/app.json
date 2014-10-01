@@ -60,6 +60,9 @@
                                 "ER and likely IPD admission" : {
                                         "showHelpText" : true
                                 },
+				"CHF - Past diagnostics" : {
+					"showHelpText" : true
+				},
                                 "CHF - Signs/Symptoms Decompensation" : {
                                         "showHelpText" : true
                                 },
@@ -72,6 +75,9 @@
                                 "CHF - Management" : {
                                         "showHelpText" : true
                                 },
+				"CHF - New diagnostics": {
+					"showHelpText" : true
+				},
 				"Severity classification NYHA" :{
 					"showHelpText" : true
 				},
@@ -87,10 +93,43 @@
 				"Symptoms of Heart Failure" :{
 					"showHelpText" : true
 				},
+				"RHD - Medications / Treatment" : {
+					"showHelpText" : true
+				},
 				"Reason for decompensation / Likely Etiology": {
 					"multiSelect" : true
 				},
-       			       "Operative Procedure" : {
+				"Meets all 5 criteria": {
+					"multiSelect" : true
+				},
+				"Meets all 3 criteria": {
+                                        "multiSelect" : true
+                                },
+				"CHF - Assessment": {
+					"multiSelect" : true
+				},
+				"CAD - Diagnosis": {
+				       "multiSelect" : true
+				},
+				"CAD - Risk factors": {
+				       "multiSelect" : true
+				},
+				"CAD - Soft risk factors": {
+					"multiSelect" : true
+				},
+				"Exercise": {
+					"multiSelect" : true
+				},
+				"CAD - Symptoms of Angina today": {
+					"multiSelect" : true
+				},
+				"CAD - Assessment": {
+					"multiSelect" : true
+				},
+				"CAD - Management" : {
+					"showHelpText" : true
+				},
+       				"Operative Procedure" : {
                   			"answersConceptName" : "Procedure Answers",
                   			"freeTextAutocomplete" : true
                 		}
