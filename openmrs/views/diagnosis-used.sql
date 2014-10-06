@@ -1,0 +1,4 @@
+select concept_id, concept_name from concept_view where
+concept_class_name = 'Diagnosis' and
+concept_id in
+(select answer_concept_id from coded_obs_view where concept_name = 'Coded Diagnosis') order by concept_name;
