@@ -1,1 +1,0 @@
-select value Diagnosis, count(value) Total from coded_obs_view where concept_name = 'Coded Diagnosis' group by value order by total desc;
