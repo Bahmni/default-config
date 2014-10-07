@@ -575,8 +575,8 @@ set @test_f256e46100b9b4c443a5b7cd3a52d1d2 = @concept_id;
 call add_concept_set_members(@investigation_0333e700220b8a5b1dace16b34380773,@test_f256e46100b9b4c443a5b7cd3a52d1d2,1);
 call add_concept_set_members(@category_826b87e8826239260b38566579f735c3,@test_f256e46100b9b4c443a5b7cd3a52d1d2,1);
 
---  Row 44 
-call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Other', 'other', 'N/A', 'ConvSet', true);
+--  Row 44
+call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Other Radiology', 'other', 'N/A', 'ConvSet', true);
 call add_concept_word(@concept_id, @concept_name_short_id, 'OTHER', 1);
 set @category_dd9d5ba28690c78f7dac5a4aba986edb = @concept_id;
 call add_concept_set_members(@other_investigations_categories_concept_id,@category_dd9d5ba28690c78f7dac5a4aba986edb,1);

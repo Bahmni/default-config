@@ -30,7 +30,7 @@
 
             INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
             VALUES((Select location_id from location where name ='OPD-1'),
-            (Select encounter_type_id from encounter_type where name ='OPD'), 1, now(), uuid());
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, now(), uuid());
         </sql>
     </changeSet>
 </databaseChangeLog>
