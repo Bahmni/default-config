@@ -48,49 +48,97 @@
 				"Quit since":{
 					"conciseText" : true
 				},
+				"Congestive heart failure - Intake" : {
+					"showHelpText" : false
+				},
+				"Last visit (Bayalpata)" : {
+                                        "showHelpText" : false
+                                },
+				"Diagnosis Details" : {
+                                        "showHelpText" : false
+                                },
+				"Diagnosis status" : {
+                                        "showHelpText" : false
+                                },
+				"No previous diagnosis" : {
+                                        "showHelpText" : false
+                                },
+				"Confirmed elsewhere" : {
+                                        "showHelpText" : false
+                                },
+				"Date confirmed" : {
+                                        "showHelpText" : false
+                                },
+				"Last exacerbation" : {
+                                        "showHelpText" : false
+                                },
+				"Exacerbation within 12 months" : {
+                                        "showHelpText" : false
+                                },
+				"Exacerbation date" : {
+                                        "showHelpText" : false
+                                },
+				"Exacerbation Treated at" : {
+                                        "showHelpText" : false
+                                },
+				"Home" : {
+                                        "showHelpText" : false
+                                },
+				"Inpatient" : {
+					"showHelpText" : false
+				},
+				"Exacerbation Inpatient details" : {
+                                        "showHelpText" : false
+                                },
+				"Alcohol abuse" : {
+                                        "showHelpText" : false
+                                },
+				"Alcohol abuse - Details" : {
+                                        "showHelpText" : false
+                                },
+				"Diagnostic Clues - CHF" : {
+                                        "showHelpText" : false
+                                },
+                "CAD - Risk factors" : {
+                                        "showHelpText" : false
+                                },
+                "CAD - Soft risk factors" : {
+                                        "showHelpText" : false
+                                },                                                
 				"CHF - Major comorbidities" : {
                                         "multiSelect" : true
                                 },
-                                "CHF - Home Medication - Cardiac" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Physical Exam - Details" : {
-                                        "showHelpText" : true
-                                },
-                                "ER and likely IPD admission" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Signs/Symptoms Decompensation" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Checklist" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Assessment" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Management" : {
-                                        "showHelpText" : true
-                                },
-				"Severity classification NYHA" :{
-					"showHelpText" : true
-				},
-				"Rule out other causes of Fatigue" :{
-					"showHelpText" : true
-				},
-				"Rule out other causes of Edema" :{
-					"showHelpText" : true
-				},
-				"Rule out other causes of Dyspnea" :{
-					"showHelpText" : true
-				},
-				"Symptoms of Heart Failure" :{
-					"showHelpText" : true
-				},
 				"Reason for decompensation / Likely Etiology": {
 					"multiSelect" : true
 				},
-       			       "Operative Procedure" : {
+				"Meets all 5 criteria": {
+					"multiSelect" : true
+				},
+				"Meets all 3 criteria": {
+                                        "multiSelect" : true
+                                },
+				"CHF - Assessment": {
+					"multiSelect" : true
+				},
+				"CAD - Diagnosis": {
+				       "multiSelect" : true
+				},
+				"CAD - Risk factors": {
+				       "multiSelect" : true
+				},
+				"CAD - Soft risk factors": {
+					"multiSelect" : true
+				},
+				"Exercise": {
+					"multiSelect" : true
+				},
+				"CAD - Symptoms of Angina today": {
+					"multiSelect" : true
+				},
+				"CAD - Assessment": {
+					"multiSelect" : true
+				},
+       				"Operative Procedure" : {
                   			"answersConceptName" : "Procedure Answers",
                   			"freeTextAutocomplete" : true
                 		}
