@@ -99,10 +99,10 @@
 				"Diagnostic Clues - CHF" : {
                                         "showHelpText" : false
                                 },
-                "CAD - Risk factors" : {
+                		"CAD - Risk factors" : {
                                         "showHelpText" : false
                                 },
-                "CAD - Soft risk factors" : {
+                		"CAD - Soft risk factors" : {
                                         "showHelpText" : false
                                 },                                                
 				"CHF - Major comorbidities" : {
@@ -130,9 +130,6 @@
 					"multiSelect" : true
 				},
 				"Exercise": {
-					"multiSelect" : true
-				},
-				"CAD - Symptoms of Angina today": {
 					"multiSelect" : true
 				},
 				"CAD - Assessment": {
