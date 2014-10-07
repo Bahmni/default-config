@@ -104,6 +104,9 @@
                                 },
                 		"CAD - Soft risk factors" : {
                                         "showHelpText" : false
+                                },
+				"CAD - Symptoms of Angina today": {
+					"multiSelect" : true
                                 },                                                
 				"CHF - Major comorbidities" : {
                                         "multiSelect" : true
