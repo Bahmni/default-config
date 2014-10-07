@@ -138,6 +138,21 @@
 				"CAD - Assessment": {
 					"multiSelect" : true
 				},
+				"Diagnostic clues - COPD" : {
+					"multiSelect" : true
+				},
+				"Considered top differential diagnosis" : {
+					"multiSelect" : true
+				},
+				"Considered top differential diagnosis" : {
+					"showHelpText" : false
+				},
+				"Symptoms of Heart Failure" : {
+					"showHelpText" : false
+				},
+				"Symptoms of Heart Failure" : {
+					"multiSelect" : true
+				},
        				"Operative Procedure" : {
                   			"answersConceptName" : "Procedure Answers",
                   			"freeTextAutocomplete" : true
