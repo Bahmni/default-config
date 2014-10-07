@@ -51,51 +51,6 @@
 				"CHF - Major comorbidities" : {
                                         "multiSelect" : true
                                 },
-                                "CHF - Home Medication - Cardiac" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Physical Exam - Details" : {
-                                        "showHelpText" : true
-                                },
-                                "ER and likely IPD admission" : {
-                                        "showHelpText" : true
-                                },
-				"CHF - Past diagnostics" : {
-					"showHelpText" : true
-				},
-                                "CHF - Signs/Symptoms Decompensation" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Checklist" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Assessment" : {
-                                        "showHelpText" : true
-                                },
-                                "CHF - Management" : {
-                                        "showHelpText" : true
-                                },
-				"CHF - New diagnostics": {
-					"showHelpText" : true
-				},
-				"Severity classification NYHA" :{
-					"showHelpText" : true
-				},
-				"Rule out other causes of Fatigue" :{
-					"showHelpText" : true
-				},
-				"Rule out other causes of Edema" :{
-					"showHelpText" : true
-				},
-				"Rule out other causes of Dyspnea" :{
-					"showHelpText" : true
-				},
-				"Symptoms of Heart Failure" :{
-					"showHelpText" : true
-				},
-				"RHD - Medications / Treatment" : {
-					"showHelpText" : true
-				},
 				"Reason for decompensation / Likely Etiology": {
 					"multiSelect" : true
 				},
@@ -125,9 +80,6 @@
 				},
 				"CAD - Assessment": {
 					"multiSelect" : true
-				},
-				"CAD - Management" : {
-					"showHelpText" : true
 				},
        				"Operative Procedure" : {
                   			"answersConceptName" : "Procedure Answers",
