@@ -39,6 +39,15 @@
 				"Diagnosis location":{
 					"conciseText" : true
 				},
+				"Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Current Medicines - Details" : {
+                                        "conciseText" : true
+                                },
+                                "Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Current Medicines - Reason" : {
+                                        "conciseText" : true
+                                },
+				"Congestive Heart Failure - Examination / Follow Up - Onset - Chief Complaint Data - Chief Complaint" : {
+                                        "conciseText" : true
+                                },
 				"Details":{
 					"conciseText" : true
 				},
@@ -48,7 +57,7 @@
 				"Quit since":{
 					"conciseText" : true
 				},
-				"Congestive heart failure - Intake" : {
+				"Congestive Heart Failure - Intake" : {
 					"showHelpText" : false
 				},
 				"Last visit (Bayalpata)" : {
@@ -108,19 +117,19 @@
 				"CAD - Symptoms of Angina today": {
 					"multiSelect" : true
                                 },                                                
-				"CHF - Major comorbidities" : {
+				"Congestive Heart Failure - Major comorbidities" : {
                                         "multiSelect" : true
                                 },
-				"Reason for decompensation / Likely Etiology": {
-					"multiSelect" : true
-				},
+				"Congestive Heart Failure - Examination / Follow Up - Reason for Decompensation / Etiology - Reason for decompensation / Likely Etiology": {
+                                        "multiSelect" : true
+                                },
 				"Meets all 5 criteria": {
 					"multiSelect" : true
 				},
 				"Meets all 3 criteria": {
                                         "multiSelect" : true
                                 },
-				"CHF - Assessment": {
+				"Congestive Heart Failure - Examination / Follow Up - Assessment / Follow up - Assessment": {
 					"multiSelect" : true
 				},
 				"CAD - Diagnosis": {
@@ -147,10 +156,16 @@
 				"Considered top differential diagnosis" : {
 					"showHelpText" : false
 				},
-				"Symptoms of Heart Failure" : {
+				"Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Symptoms of Heart Failure" : {
 					"showHelpText" : false
 				},
-				"Symptoms of Heart Failure" : {
+				"Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Symptoms of Heart Failure" : {
+					"multiSelect" : true
+				},
+				"Hypertension - Risk factors" : {
+					"showHelpText" : false
+				},
+				"Hypertension - Risk factors" : {
 					"multiSelect" : true
 				},
        				"Operative Procedure" : {
