@@ -135,34 +135,22 @@ from concept_view parent
 LEFT OUTER JOIN concept_set ON parent.concept_id = concept_set.concept_set
 LEFT OUTER JOIN concept_view child ON child.concept_id = concept_set.concept_id;
 
-create or replace view panel_view as
-select * 
-from concept_children_view 
-where parent_concept_class_name='Labset';
 
-create or replace view test_panel_view as
+create or replace view labtest_panel_department_view as
 select
 concept_view.concept_full_name as test_concept_name,
 concept_view.concept_id as test_concept_id,
-panel_view.parent_concept_name as panel_concept_name,
-panel_view.parent_concept_id as panel_concept_id
+panel.parent_concept_name as panel_concept_name,
+panel.parent_concept_id as panel_concept_id,
+department.parent_concept_name as department_concept_name,
+department.parent_concept_id as department_concept_id
 from concept_view
-left outer join 
-panel_view
-on concept_view.concept_id = panel_view.child_concept_id
+left outer join concept_children_view panel
+on concept_view.concept_id = panel.child_concept_id AND panel.parent_concept_class_name='Labset'
+inner join concept_children_view department
+on concept_view.concept_id = department.child_concept_id AND department.parent_concept_class_name='Department'
 where concept_view.concept_class_name='Test';
 
-
-create or replace view labtest_panel_department_view as
-select 
-test_department_details.parent_concept_name as test_department_name,
-test_panel_view.panel_concept_name as test_panel_name,
-test_department_details.child_concept_name as test_name,
-test_department_details.child_concept_id as test_concept_id
-from concept_children_view as test_department_details
-left outer join test_panel_view
-on test_department_details.child_concept_id = test_panel_view.test_concept_id
-where test_department_details.child_concept_class_name = 'Test' and test_department_details.parent_concept_class_name = 'Department';
 
 create or replace view concept_answer_view as
 select
