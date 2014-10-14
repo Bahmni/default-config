@@ -31,3 +31,13 @@ INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max
 			VALUES('50 ‐ 59 Years', 'Inpatient Discharge Reports', 50, 0, 60, -1, 9);
 INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			VALUES('≥ 60 Years', 'Inpatient Discharge Reports', 60, 0, 999, 0, 10);
+            
+            
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('0 - 09 Years', 'Client Service Reports', 0, 0, 10, -1, 1); 
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('10 - 19 Years', 'Client Service Reports', 10, 0, 20, -1, 2); 
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('20 - 59 Years', 'Client Service Reports', 20, 0, 60, -1, 3); 
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('≥ 60 Years', 'Client Service Reports', 60, 0, 999, 0, 4); 
