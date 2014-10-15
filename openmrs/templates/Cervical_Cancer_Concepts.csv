@@ -1,97 +1,97 @@
-name;description;class;datatype;shortname;synonym.1;synonym.2;reference-term-source;reference-term-code;reference-term-relationship;answer.1;answer.2;answer.3;answer.4;Answer.5;Answer.6
-Cervical Cancer - Disease Workup - This is a New DST for for Change of treatment intent;;Misc;Boolean;This is a New DST form for change of treatment intent;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report - Pathology Report Applicable;;Misc;Boolean;Report Applicable;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report - Pathology Report Date;;Misc;Date;Report Date;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report - BWH;;Misc;N/A;BWH;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – Butaro;;Misc;N/A;Butaro;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – KFH;;Misc;N/A;KFH;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – CHUK;;Misc;N/A;CHUK;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – CHUB;;Misc;N/A;CHUB;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – Other;;Misc;N/A;Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report Notes for Other;;Misc;Text;Notes for Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report;;Misc;Coded;Institution issuing Pathology report;;;;;;Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report - BWH;Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – Butaro;Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – KFH;Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – CHUK;Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – CHUB;Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – Other
-Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Squamous Cell Carcinoma;;Diagnosis;N/A;Squamous Cell Carcinoma;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Adenocarcinoma;;Diagnosis;N/A;Adenocarcinoma;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Other;;Diagnosis;N/A;Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis Notes for Other;;Diagnosis;Text;Notes for Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis;;Diagnosis;Coded;Pathology Diagnosis;;;;;;Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Squamous Cell Carcinoma;Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Adenocarcinoma;Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Other;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray;;Misc;Boolean;Chest Xray;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Study Date;;Misc;Date;Study Date;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site - Butaro;;Misc;N/A;Butaro;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site – Other;;Misc;N/A;Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site Notes for Other;;Misc;Text;Notes for Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site;;Misc;Coded;Site;;;;;;Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site - Butaro;Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site – Other;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound;;Misc;Boolean;Abdominal/Pelvic Ultrasound;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Study Date;;Misc;Date;Study Date;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site - Butaro;;Misc;N/A;Butaro;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site – Other;;Misc;N/A;Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site Notes for other;;Misc;Text;Notes for Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site;;Misc;Coded;Site;;;;;;Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site - Butaro;Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site – Other;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis;;Misc;Boolean;CT Scan of Chest/Abdomen/Pelvis;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Study Date;;Misc;Date;Study Date;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site – Butaro;;Misc;N/A;Butaro;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site – Other;;Misc;N/A;Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site Notes for Other;;Misc;Text;Notes for Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site;;Misc;Coded;Site;;;;;;Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site – Butaro;Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site – Other;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Other;;Misc;Boolean;Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Other Study Date;;Misc;Date;Study Date;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Other Site – Butaro;;Misc;N/A;Butaro;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Other Site – Other;;Misc;N/A;Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Other Site Notes for Other;;Misc;Text;Notes for Other;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Other Site;;Misc;Coded;Site;;;;;;Cervical Cancer - Disease Workup – Imaging Studies – Other Site – Butaro;Cervical Cancer - Disease Workup – Imaging Studies – Other Site – Other;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – None;;Misc;Boolean;None;;;;;;;;;;;
-Cervical Cancer - Disease Workup – Imaging Studies – Imaging Assessment & Findings;;Misc;Text;Imaging Assessment & Findings;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Mass Location;;Misc;Text;Mass Location;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Mass Size;;Misc;Text;Mass Size;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Mass Notes;;Misc;Text;Mass Notes;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I – I A;;Misc;N/A;I A;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I – I B;;Misc;N/A;I B;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I;;Misc;Coded;I;;;;;;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I – I A;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I – I B;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II – II A;;Misc;N/A;II A;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II – II B;;Misc;N/A;II B;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II;;Misc;Coded;II;;;;;;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II – II A;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II – II B;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III – III A;;Misc;N/A;III A;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III – III B;;Misc;N/A;III B;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III;;Misc;Coded;III;;;;;;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III – III A;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III – III B;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV – IV A;;Misc;N/A;IV A;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV – IV B;;Misc;N/A;IV B;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV;;Misc;Coded;IV;;;;;;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV – IV A;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV – IV B;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Surgery;;Misc;N/A;S/P Surgery;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Chemotherapy;;Misc;N/A;S/P Chemotherapy;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Radiotherapy;;Misc;N/A;S/P Radiotherapy;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – Other;;Misc;N/A;Other;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage Notes for Other;;Misc;Text;Notes for Other;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage;;Misc;Coded;Unable to Stage (Select reason);;;;;;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Surgery;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Chemotherapy;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Radiotherapy;Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – Other;;
-Cervical Cancer – Final Diagnosis and Staging – All Current Medications;;Misc;Text;All Current Medications;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – All Known Allergies;;Misc;Text;All Known Allergies;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – HIV Status – Negative;;Misc;N/A;Negative;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – HIV Status – Positive;;Misc;N/A;Positive;;;;;;;;;;;
-Cervical Cancer – Final Diagnosis and Staging – HIV Status;;Misc;Coded;HIV Status;;;;;;Cervical Cancer – Final Diagnosis and Staging – HIV Status – Negative;Cervical Cancer – Final Diagnosis and Staging – HIV Status – Positive;;;;
-Cervical Cancer – Treatment Plan – Intent – Curative;;Misc;N/A;Curative;;;;;;;;;;;
-Cervical Cancer – Treatment Plan – Intent – Palliative Systemic Therapy;;Misc;N/A;Palliative Systemic Therapy;;;;;;;;;;;
-Cervical Cancer – Treatment Plan – Intent – Palliation ONLY;;Misc;N/A;Palliation ONLY;;;;;;;;;;;
-Cervical Cancer – Treatment Plan – Intent;;Misc;Coded;Intent;;;;;;Cervical Cancer – Treatment Plan – Intent – Curative;Cervical Cancer – Treatment Plan – Intent – Palliative Systemic Therapy;Cervical Cancer – Treatment Plan – Intent – Palliation ONLY;;;
-Cervical Cancer – Surgery – Planned;;Misc;Boolean;Planned;;;;;;;;;;;
-Cervical Cancer – Surgery - Facility;;Misc;Text;Facility;;;;;;;;;;;
-Cervical Cancer – Surgery – Planned Date;;Misc;Date;Planned Date;;;;;;;;;;;
-Cervical Cancer – Surgery – Surgery Type;;Misc;Text;Surgery Type;;;;;;;;;;;
-Cervical Cancer – Radiation Therapy – Planned;;Misc;Boolean;Planned;;;;;;;;;;;
-Cervical Cancer – Radiation Therapy – Facility;;Misc;Text;Facility;;;;;;;;;;;
-Cervical Cancer – Radiation Therapy – Planned Date;;Misc;Date;Planned Date;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Planned;;Misc;Boolean;Planned;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Regimen Timing - Adjuvant;;Misc;N/A;Adjuvant;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Regimen Timing - Neoadjuvant;;Misc;N/A;Neoadjuvant;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Regimen Timing - Concurrent;;Misc;N/A;Concurrent;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Regimen Timing;;Misc;Coded;Regimen Timing;;;;;;Cervical Cancer – Chemotherapy – Regimen Timing - Adjuvant;Cervical Cancer – Chemotherapy – Regimen Timing - Neoadjuvant;Cervical Cancer – Chemotherapy – Regimen Timing - Concurrent;;;
-Cervical Cancer – Chemotherapy – Regimen Type – Carboplatin/Paclitaxel;;Misc;N/A;Carboplatin/Paclitaxel;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Regimen Type – Cisplatin;;Misc;N/A;Cisplatin;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Regimen Type – Other;;Misc;N/A;Other;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Regimen Type Notes for Other;;Misc;Text;Notes for Other;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Regimen Type;;Misc;Coded;Regimen Type;;;;;;Cervical Cancer – Chemotherapy – Regimen Type – Carboplatin/Paclitaxel;Cervical Cancer – Chemotherapy – Regimen Type – Cisplatin;Cervical Cancer – Chemotherapy – Regimen Type – Other;;;
-Cervical Cancer – Chemotherapy – Number of Cycles;;Misc;Text;Number of Cycles;;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Planned First Cycle (Start Date);;Misc;Date;Planned First Cycle (Start Date);;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Planned Regimen End (End Date);;Misc;Date;Planned Regimen End (End Date);;;;;;;;;;;
-Cervical Cancer – Chemotherapy – Planned Changes to Standard Regimen;;Misc;Text;Planned Changes to Standard Regimen;;;;;;;;;;;
-Cervical Cancer – Specialists Consulted on this Case – Oncologist :;;Misc;Text;Oncologist;;;;;;;;;;;
-Cervical Cancer – Specialists Consulted on this Case – OB/GYN :;;Misc;Text;OB/GYN;;;;;;;;;;;
-Cervical Cancer – Staging and Treatment Plan Confirmed By :;;Misc;Text;Staging and Treatment Plan Confirmed By:;;;;;;;;;;;
+uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,Answer.5,Answer.6
+,Cervical Cancer - Disease Workup - This is a New DST for for Change of treatment intent,,Misc,Boolean,This is a New DST form for change of treatment intent,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report - Pathology Report Applicable,,Misc,Boolean,Report Applicable,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report - Pathology Report Date,,Misc,Date,Report Date,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report - BWH,,Misc,N/A,BWH,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – Butaro,,Misc,N/A,Butaro,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – KFH,,Misc,N/A,KFH,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – CHUK,,Misc,N/A,CHUK,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – CHUB,,Misc,N/A,CHUB,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – Other,,Misc,N/A,Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report Notes for Other,,Misc,Text,Notes for Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report,,Misc,Coded,Institution issuing Pathology report,,,,,,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report - BWH,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – Butaro,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – KFH,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – CHUK,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – CHUB,Cervical Cancer - Disease Workup - Pathology Report – Institution issuing Pathology report – Other
+,Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Squamous Cell Carcinoma,,Diagnosis,N/A,Squamous Cell Carcinoma,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Adenocarcinoma,,Diagnosis,N/A,Adenocarcinoma,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Other,,Diagnosis,N/A,Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis Notes for Other,,Diagnosis,Text,Notes for Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis,,Diagnosis,Coded,Pathology Diagnosis,,,,,,Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Squamous Cell Carcinoma,Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Adenocarcinoma,Cervical Cancer - Disease Workup - Pathology Report – Pathology Diagnosis – Other,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray,,Misc,Boolean,Chest Xray,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Study Date,,Misc,Date,Study Date,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site - Butaro,,Misc,N/A,Butaro,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site – Other,,Misc,N/A,Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site Notes for Other,,Misc,Text,Notes for Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site,,Misc,Coded,Site,,,,,,Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site - Butaro,Cervical Cancer - Disease Workup – Imaging Studies – Chest Xray Site – Other,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound,,Misc,Boolean,Abdominal/Pelvic Ultrasound,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Study Date,,Misc,Date,Study Date,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site - Butaro,,Misc,N/A,Butaro,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site – Other,,Misc,N/A,Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site Notes for other,,Misc,Text,Notes for Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site,,Misc,Coded,Site,,,,,,Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site - Butaro,Cervical Cancer - Disease Workup – Imaging Studies – Abdominal/Pelvic Ultrasound Site – Other,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis,,Misc,Boolean,CT Scan of Chest/Abdomen/Pelvis,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Study Date,,Misc,Date,Study Date,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site – Butaro,,Misc,N/A,Butaro,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site – Other,,Misc,N/A,Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site Notes for Other,,Misc,Text,Notes for Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site,,Misc,Coded,Site,,,,,,Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site – Butaro,Cervical Cancer - Disease Workup – Imaging Studies – CT Scan of Chest/Abdomen/Pelvis Site – Other,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Other,,Misc,Boolean,Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Other Study Date,,Misc,Date,Study Date,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Other Site – Butaro,,Misc,N/A,Butaro,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Other Site – Other,,Misc,N/A,Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Other Site Notes for Other,,Misc,Text,Notes for Other,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Other Site,,Misc,Coded,Site,,,,,,Cervical Cancer - Disease Workup – Imaging Studies – Other Site – Butaro,Cervical Cancer - Disease Workup – Imaging Studies – Other Site – Other,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – None,,Misc,Boolean,None,,,,,,,,,,,
+,Cervical Cancer - Disease Workup – Imaging Studies – Imaging Assessment & Findings,,Misc,Text,Imaging Assessment & Findings,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Mass Location,,Misc,Text,Mass Location,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Mass Size,,Misc,Text,Mass Size,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Mass Notes,,Misc,Text,Mass Notes,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I – I A,,Misc,N/A,I A,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I – I B,,Misc,N/A,I B,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I,,Misc,Coded,I,,,,,,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I – I A,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – I – I B,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II – II A,,Misc,N/A,II A,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II – II B,,Misc,N/A,II B,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II,,Misc,Coded,II,,,,,,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II – II A,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – II – II B,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III – III A,,Misc,N/A,III A,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III – III B,,Misc,N/A,III B,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III,,Misc,Coded,III,,,,,,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III – III A,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – III – III B,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV – IV A,,Misc,N/A,IV A,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV – IV B,,Misc,N/A,IV B,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV,,Misc,Coded,IV,,,,,,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV – IV A,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – IV – IV B,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Surgery,,Misc,N/A,S/P Surgery,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Chemotherapy,,Misc,N/A,S/P Chemotherapy,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Radiotherapy,,Misc,N/A,S/P Radiotherapy,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – Other,,Misc,N/A,Other,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage Notes for Other,,Misc,Text,Notes for Other,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage,,Misc,Coded,Unable to Stage (Select reason),,,,,,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Surgery,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Chemotherapy,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – S/P Radiotherapy,Cervical Cancer – Final Diagnosis and Staging – Confirmed Disease Stage (Overall Stage) – Unable to Stage – Other,,
+,Cervical Cancer – Final Diagnosis and Staging – All Current Medications,,Misc,Text,All Current Medications,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – All Known Allergies,,Misc,Text,All Known Allergies,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – HIV Status – Negative,,Misc,N/A,Negative,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – HIV Status – Positive,,Misc,N/A,Positive,,,,,,,,,,,
+,Cervical Cancer – Final Diagnosis and Staging – HIV Status,,Misc,Coded,HIV Status,,,,,,Cervical Cancer – Final Diagnosis and Staging – HIV Status – Negative,Cervical Cancer – Final Diagnosis and Staging – HIV Status – Positive,,,,
+,Cervical Cancer – Treatment Plan – Intent – Curative,,Misc,N/A,Curative,,,,,,,,,,,
+,Cervical Cancer – Treatment Plan – Intent – Palliative Systemic Therapy,,Misc,N/A,Palliative Systemic Therapy,,,,,,,,,,,
+,Cervical Cancer – Treatment Plan – Intent – Palliation ONLY,,Misc,N/A,Palliation ONLY,,,,,,,,,,,
+,Cervical Cancer – Treatment Plan – Intent,,Misc,Coded,Intent,,,,,,Cervical Cancer – Treatment Plan – Intent – Curative,Cervical Cancer – Treatment Plan – Intent – Palliative Systemic Therapy,Cervical Cancer – Treatment Plan – Intent – Palliation ONLY,,,
+,Cervical Cancer – Surgery – Planned,,Misc,Boolean,Planned,,,,,,,,,,,
+,Cervical Cancer – Surgery - Facility,,Misc,Text,Facility,,,,,,,,,,,
+,Cervical Cancer – Surgery – Planned Date,,Misc,Date,Planned Date,,,,,,,,,,,
+,Cervical Cancer – Surgery – Surgery Type,,Misc,Text,Surgery Type,,,,,,,,,,,
+,Cervical Cancer – Radiation Therapy – Planned,,Misc,Boolean,Planned,,,,,,,,,,,
+,Cervical Cancer – Radiation Therapy – Facility,,Misc,Text,Facility,,,,,,,,,,,
+,Cervical Cancer – Radiation Therapy – Planned Date,,Misc,Date,Planned Date,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Planned,,Misc,Boolean,Planned,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Regimen Timing - Adjuvant,,Misc,N/A,Adjuvant,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Regimen Timing - Neoadjuvant,,Misc,N/A,Neoadjuvant,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Regimen Timing - Concurrent,,Misc,N/A,Concurrent,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Regimen Timing,,Misc,Coded,Regimen Timing,,,,,,Cervical Cancer – Chemotherapy – Regimen Timing - Adjuvant,Cervical Cancer – Chemotherapy – Regimen Timing - Neoadjuvant,Cervical Cancer – Chemotherapy – Regimen Timing - Concurrent,,,
+,Cervical Cancer – Chemotherapy – Regimen Type – Carboplatin/Paclitaxel,,Misc,N/A,Carboplatin/Paclitaxel,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Regimen Type – Cisplatin,,Misc,N/A,Cisplatin,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Regimen Type – Other,,Misc,N/A,Other,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Regimen Type Notes for Other,,Misc,Text,Notes for Other,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Regimen Type,,Misc,Coded,Regimen Type,,,,,,Cervical Cancer – Chemotherapy – Regimen Type – Carboplatin/Paclitaxel,Cervical Cancer – Chemotherapy – Regimen Type – Cisplatin,Cervical Cancer – Chemotherapy – Regimen Type – Other,,,
+,Cervical Cancer – Chemotherapy – Number of Cycles,,Misc,Text,Number of Cycles,,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Planned First Cycle (Start Date),,Misc,Date,Planned First Cycle (Start Date),,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Planned Regimen End (End Date),,Misc,Date,Planned Regimen End (End Date),,,,,,,,,,,
+,Cervical Cancer – Chemotherapy – Planned Changes to Standard Regimen,,Misc,Text,Planned Changes to Standard Regimen,,,,,,,,,,,
+,Cervical Cancer – Specialists Consulted on this Case – Oncologist :,,Misc,Text,Oncologist,,,,,,,,,,,
+,Cervical Cancer – Specialists Consulted on this Case – OB/GYN :,,Misc,Text,OB/GYN,,,,,,,,,,,
+,Cervical Cancer – Staging and Treatment Plan Confirmed By :,,Misc,Text,Staging and Treatment Plan Confirmed By:,,,,,,,,,,,
