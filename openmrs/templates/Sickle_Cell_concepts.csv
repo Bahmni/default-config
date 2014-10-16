@@ -4,5 +4,5 @@ uuid,name,description,class,datatype,shortname,answer.1,answer.2,answer.3,answer
 ,"Sickle Cell, Under Treatment",,Misc,Boolean,Under Treatment,,,,,,,,,,,,,,,,
 ,"Sickle Cell, Got Malaria Ever",,Misc,Boolean,Got Malaria Ever,,,,,,,,,,,,,,,,
 ,"Sickle Cell, Associated Disease",,Misc,Text,Associated Disease,,,,,,,,,,,,,,,,
-,"Sickle Cell, Other Current Status Notes",,Misc,Text,Notes for Other,,,,,,,,,,,,,,,,
+,"Sickle Cell, Current Status Notes",,Misc,Text,Current Status Notes,,,,,,,,,,,,,,,,
 ,"Sickle Cell, Current Status",,Misc,Coded,Current Status,Death,Good Condition,Not in Good Condition,Numbness of Fingers,Treatment Not Continued,Other,,,,,,,,,,
