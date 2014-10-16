@@ -1,0 +1,10 @@
+uuid,name,description,class,datatype,shortname,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14,answer.15,answer.16
+,"Undernutrition, Chief Complaint",,Misc,Text,Chief Complaint,,,,,,,,,,,,,,,,
+,"Undernutrition, Diagnosed Date",,Misc,Date,Diagnosed Date,,,,,,,,,,,,,,,,
+,"Undernutrition, Medicine Name",,Misc,Text,Medicine Name,,,,,,,,,,,,,,,,
+,"Undernutrition, On Treatment",,Misc,Boolean,On Treatment,,,,,,,,,,,,,,,,
+,"Undernutrition, If Not Why",,Misc,Text,"If Not, Why",,,,,,,,,,,,,,,,
+,"Undernutrition, Stopped Since When",,Misc,Text,Stopped Since When,,,,,,,,,,,,,,,,
+,"Undernutrition, Current Status",,Misc,Text,Current Status,,,,,,,,,,,,,,,,
+,"Undernutrition, BP Systolic",,Misc,Numeric,BP Systolic,,,,,,,,,,,,,,,,
+,"Undernutrition, BP Diastolic",,Misc,Numeric,BP Diastolic,,,,,,,,,,,,,,,,
