@@ -1,0 +1,10 @@
+uuid,name,description,class,datatype,shortname,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14,answer.15,answer.16
+,"Anaemia, Chief Complaint",,Misc,Text,Chief Complaint,,,,,,,,,,,,,,,,
+,"Anaemia, Diagnosed Date",,Misc,Date,Diagnosed Date,,,,,,,,,,,,,,,,
+,"Anaemia, Medicine Name",,Misc,Text,Medicine Name,,,,,,,,,,,,,,,,
+,"Anaemia, On Treatment",,Misc,Boolean,On Treatment,,,,,,,,,,,,,,,,
+,"Anaemia, If Not Why",,Misc,Text,"If Not, Why",,,,,,,,,,,,,,,,
+,"Anaemia, Stopped Since When",,Misc,Text,Stopped Since When,,,,,,,,,,,,,,,,
+,"Anaemia, Current Status",,Misc,Text,Current Status,,,,,,,,,,,,,,,,
+,"Anaemia, BP Systolic",,Misc,Numeric,BP Systolic,,,,,,,,,,,,,,,,
+,"Anaemia, BP Diastolic",,Misc,Numeric,BP Diastolic,,,,,,,,,,,,,,,,
