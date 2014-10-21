@@ -42,7 +42,7 @@ Change in treatment plan because of other result",Misc,Text,This is a follow up 
 ,"Gastric, TNM Pathologic Staging, T",,Misc,Text,TNM Pathologic Staging - T,,,,,,,,,,,
 ,"Gastric, TNM Pathologic Staging, N",,Misc,Text,TNM Pathologic Staging – N,,,,,,,,,,,
 ,"Gastric, TNM Pathologic Staging, M",,Misc,Text,TNM Pathologic Staging – M,,,,,,,,,,,
-,"Gastric, Overall Stage",,Misc,Coded,Overall Stage,,,,,,"Gastric, Overall Stage - 0","Gastric, Overall Stage – 1","Gastric, Overall Stage – 2","Gastric, Overall Stage – 3","Gastric, Overall Stage – 4",
+,"Gastric, Overall Stage",,Misc,Coded,Overall Stage,,,,,,"Overall stage, 0","Overall stage, I","Overall stage, II","Overall stage, III","Overall stage, IV",
 ,"Gastric, H Pylori Status – Positive",,Misc,Boolean,Positive,,,,,,,,,,,
 ,"Gastric, H Pylori Status – Negative",,Misc,Boolean,Negative,,,,,,,,,,,
 ,"Gastric, H Pylori Status – Not Determined",,Misc,Boolean,Not Determined,,,,,,,,,,,

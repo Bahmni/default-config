@@ -41,10 +41,10 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-ter
 ,"Nephroblastoma, Surgical pathology, report date",,Misc,Date,Surgical pathology report date,,,,,,,,,,,
 ,"Nephroblastoma, Surgical, Pathological diagnosis, Nephroblastoma",,Misc,Boolean,Pathological diagnosis – Nephroblastoma,,,,,,,,,,,
 ,"Nephroblastoma, Surgical, Pathological diagnosis, Other",,Misc,Text,Pathological diagnosis – Other,,,,,,,,,,,
-,"Nephroblastoma, Overall stage",,Misc,Coded,Overall stage,,,,,,"Nephroblastoma, Overall stage, 0","Nephroblastoma, Overall stage, 1","Nephroblastoma, Overall stage, 2","Nephroblastoma, Overall stage, 3","Nephroblastoma, Overall stage, 4","Nephroblastoma, Overall stage, 5"
+,"Nephroblastoma, Overall stage",,Misc,Coded,Overall stage,,,,,,"Overall stage, 0","Overall stage, I","Overall stage, II","Overall stage, III","Overall stage, IV","Overall stage, V"
 ,"Nephroblastoma, Bilateral staging, Right",,Misc,Coded,Right,,,,,,"Nephroblastoma, Bilateral staging, I","Nephroblastoma, Bilateral staging, II","Nephroblastoma, Bilateral staging, III",,,
 ,"Nephroblastoma, Bilateral staging, Left",,Misc,Coded,Left,,,,,,"Nephroblastoma, Bilateral staging, I","Nephroblastoma, Bilateral staging, II","Nephroblastoma, Bilateral staging, III",,,
-,"Nephroblastoma, Post-operative treatment intent",,Misc,Coded,Treatment plan,,,,,,Curative,Palliative systemic,Palliation only,,,
+,"Nephroblastoma, Post-operative treatment intent",,Misc,Coded,Treatment plan,,,,,,Curative,Palliative systemic therapy,Palliation Only,,,
 ,"Nephroblastoma, Post-operative Chemotherapy, Planned",,Misc,Boolean,Planned Post-operative Chemotherapy,,,,,,,,,,,
 ,"Nephroblastoma, Post-operative Chemotherapy, Regimen",,Misc,Coded,Regimen,,,,,,Vincristine / Actinomycin D,Vincristine / Actinomycin D / Doxorubicin,,,,
 ,"Nephroblastoma, Post-operative Chemotherapy, Planned first cycle",,Misc,Date,Planned first cycle,,,,,,,,,,,
