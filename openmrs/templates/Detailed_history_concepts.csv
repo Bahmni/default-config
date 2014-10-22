@@ -1,0 +1,10 @@
+uuid,name,description,class,datatype,shortname,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14,answer.15,answer.16
+,"Detailed History, Socia-Economic Profile",,Misc,Text,Socio-Economic Profile,Intake,,,,,,,,,,,,,,,,,,
+,"Detailed History, Family History",,Misc,Text,Family History,Intake,,,,,,,,,,,,,,,,,,
+,"Detailed History, Past History",,Misc,Text,Past History,Intake,,,,,,,,,,,,,,,,,,
+,"Detailed History, Treatment History",,Misc,Text,Treatment History,Progress,,,,,,,,,,,,,,,,,,
+,"Detailed History, Immunization History",,Misc,Text,Immunization History,Intake,,,,,,,,,,,,,,,,,,
+,"Detailed History, Personal History",,Misc,Text,Personal History,Intake,,,,,,,,,,,,,,,,,,
+,"Detailed History, Alcohol Use",,Misc,Boolean,Alcohol Use,Progress,,,,,,,,,,,,,,,,,,
+,"Detailed History, Smoker",,Misc,Boolean,Smoker,Progress,,,,,,,,,,,,,,,,,,
+,"Detailed History, Occupational History",,Misc,Text,Occupational History,Intake,,,,,,,,,,,,,,,,,,
