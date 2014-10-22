@@ -53,7 +53,10 @@
                 },
                 "P/S (Per Speculum) - Cervix" : {
                     "grid" : true
-                }
+                },
+		"Anaemia, Stopped Since When" : {
+			"conciseText" : true
+		}
             },
             "patientDashboardSections": [
                 {
