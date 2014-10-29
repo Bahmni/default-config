@@ -12,7 +12,7 @@ uuid,name,description,class,datatype,shortname,reference-term-source,reference-t
 ,"Leprosy, Multidrug Therapy Duration",in months,Misc,Numeric,Multidrug Therapy Duration,,,,,,,,,,,,,,,,,,,
 ,"Leprosy, WHO Classification",,Misc,Coded,WHO Classification,,,,Multibacillary Leprosy,Paucibacillary Leprosy,,,,,,,,,,,,,,
 ,"Leprosy, Disability Score",,Misc,Numeric,Disability Score,,,,,,,,,,,,,,,,,,,
-,"Leprosy, Presence of neurodeficit at Presentation","We have defined neurodeficit as  perception of only 300g nylon filament at some point in the soles, only 10g nylon filament at some point in the palms or power Grade 3 on MRC scale in a distal limb muscle or lagophthalmos",Misc,Boolean,Presence of neurodeficit at Presentation,,,,,,,,,,,,,,,,,,,
+,"Leprosy, Presence of Neurodeficit at Presentation","We have defined neurodeficit as  perception of only 300g nylon filament at some point in the soles, only 10g nylon filament at some point in the palms or power Grade 3 on MRC scale in a distal limb muscle or lagophthalmos",Misc,Boolean,Presence of Neurodeficit at Presentation,,,,,,,,,,,,,,,,,,,
 ,"Leprosy, On Complete Anesthesia",,Misc,Boolean,On Complete Anesthesia,,,,,,,,,,,,,,,,,,,
 ,"Leprosy, Deformity",,Misc,Text,Deformity,,,,,,,,,,,,,,,,,,,
 ,"Leprosy, Presence of Ulcer at Presentation","We have defined neurodeficit as  perception of only 300g nylon filament at some point in the soles, only 10g nylon filament at some point in the palms or power Grade 3 on MRC scale in a distal limb muscle or lagophthalmos",Misc,Boolean,Presence of Ulcer at Presentation,,,,,,,,,,,,,,,,,,,
