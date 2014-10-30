@@ -25,9 +25,9 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-ter
 ,"Gastric Cancer, Surgery, Type",,Misc,Coded,Type,,,,,,Gastrectomy,Esophagectomy,Other,,,,,
 ,"Gastric Cancer, Surgery, Other",,Misc,Text,Other Surgery,,,,,,,,,,,,,
 ,"Gastric Cancer, Surgical Pathology Report Date",,Misc,Date,Surgical Pathology Report Date,,,,,,,,,,,,,
-,"Gastric Cancer, TNM Pathologic Staging, Tumor Values",,Misc,Coded,Tumor Values,,,,,,T0,T1,T2,T3,T4,TX,Tis,Td4
-,"Gastric Cancer, TNM Pathologic Staging, Lymph Node Values",,Misc,Coded,Lymph Node Values,,,,,,N0,N1,N2,N3,NX,,,
-,"Gastric Cancer, TNM Pathologic Staging, Metastatic Values",,Misc,Coded,Metastatic Values,,,,,,M0,M1,MX,,,,,
+,"Gastric Cancer, TNM Pathologic Staging, Tumor Stage",,Misc,Coded,Tumor Stage,,,,,,T0 Tumor Stage,T1 Tumor Stage,T2 Tumor Stage,T3 Tumor Stage,T4 Tumor Stage,TX Tumor Stage,Tis Tumor Stage,Td4 Tumor Stage
+,"Gastric Cancer, TNM Pathologic Staging, Lymph Node Stage",,Misc,Coded,Lymph Node Stage,,,,,,N0 Lymph Node Stage,N1 Lymph Node Stage,N2 Lymph Node Stage,N3 Lymph Node Stage,NX Lymph Node Stage,,,
+,"Gastric Cancer, TNM Pathologic Staging, Metastatic Stage",,Misc,Coded,Metastatic Stage,,,,,,M0 Metastatic Stage,M1 Metastatic Stage,MX Metastatic Stage,,,,,
 ,"Gastric Cancer, Overall Stage",,Misc,Coded,Overall Stage,,,,,,Stage 0,Stage I,Stage IIA,Stage IIB,Stage IIIA,Stage IIIB,Stage IIIC,Stage IV
 ,"Gastric Cancer, H. pylori Status",,Misc,Coded,H. pylori Status,,,,,,Positive,Negative,Not determined,,,,,
 ,"Gastric Cancer, Pre-Operative Chemotherapy, Folfox",,Misc,Boolean,Folfox,,,,,,,,,,,,,
