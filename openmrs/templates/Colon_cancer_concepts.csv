@@ -2,7 +2,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-ter
 ,"Colon Cancer, Pathology Report Date",                                                                  ,Misc,Date,Pathology Report Date,,,,,,,,,,,,,
 ,"Colon Cancer, Pathologic Diagnosis, Invasive Adenocarcinoma",                                                                     ,Misc,Boolean,Invasive Adenocarcinoma,,,,,,,,,,,,,
 ,"Colon Cancer, Pathologic Diagnosis, Other",,Misc,Text,Other,,,,,,,,,,,,,
-,"Colon Cancer, Colonoscopy, Date",,Misc,Text,Date,,,,,,,,,,,,,
+,"Colon Cancer, Colonoscopy, Date",,Misc,Date,Date,,,,,,,,,,,,,
 ,"Colon Cancer, Colonoscopy, Findings",,Misc,Text,Findings,,,,,,,,,,,,,
 ,"Colon Cancer, Chest X-ray",,Misc,Text,Chest X-ray,,,,,,,,,,,,,
 ,"Colon Cancer, Chest X-ray Study Date",,Misc,Date,Study Date,,,,,,,,,,,,,

@@ -2,7 +2,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-ter
 ,"Gastric Cancer, Pathology Report Date",,Misc,Date,Pathology Report Date,,,,,,,,,,,,,
 ,"Gastric Cancer, Pathologic Diagnosis, Invasive Adenocarcinoma",,Misc,Boolean,Invasive Adenocarcinoma,,,,,,,,,,,,,
 ,"Gastric Cancer, Pathologic Diagnosis, Other",,Misc,Text,Other,,,,,,,,,,,,,
-,"Gastric Cancer, Endoscopy, Date",,Misc,Text,Date,,,,,,,,,,,,,
+,"Gastric Cancer, Endoscopy, Date",,Misc,Date,Date,,,,,,,,,,,,,
 ,"Gastric Cancer, Endoscopy, Findings",,Misc,Text,Findings,,,,,,,,,,,,,
 ,"Gastric Cancer, Chest X-ray",,Misc,Text,Chest X-ray,,,,,,,,,,,,,
 ,"Gastric Cancer, Chest X-ray Study Date",,Misc,Date,Study Date,,,,,,,,,,,,,

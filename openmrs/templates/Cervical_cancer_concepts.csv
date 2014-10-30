@@ -11,7 +11,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-ter
 ,"Cervical Cancer, Imaging Studies, Other",,Misc,Text,Other Imaging,,,,,,,,,,,,,
 ,"Cervical Cancer, Imaging Assessment & Findings",,Misc,Text,Imaging Assessment & Findings,,,,,,,,,,,,,
 ,"Cervical Cancer, Mass, Location",,Misc,Text,Location,,,,,,,,,,,,,
-,"Cervical Cancer, Mass, Size",,Misc,Numeric,Size,,,,,,,,,,,,,
+,"Cervical Cancer, Mass, Size",,Misc,Text,Size,,,,,,,,,,,,,
 ,"Cervical Cancer, Mass, Notes",,Misc,Text,Notes,,,,,,,,,,,,,
 ,"Cervical Cancer, Confirmed Disease Stage, Overall Stage",,Misc,Coded,Overall Stage,,,,,,Stage IA,Stage IB,Stage IIA,Stage IIB,Stage IIIA,Stage IIIB,Stage IVA,Stage IVB
 ,"Cervical Cancer, Confirmed Disease Stage, Unable to stage",,Misc,Coded,Reason if unable to stage,,,,,,S/P Surgery,S/P Chemotherapy,S/P Radiotherapy,Other,,,,
