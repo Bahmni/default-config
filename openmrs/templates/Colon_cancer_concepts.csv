@@ -34,5 +34,5 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-ter
 ,"Colon Cancer, Post-Operative / Palliative Chemotherapy, Cycles",,Misc,Text,No of Cycles,,,,,,,,,,,,,
 ,"Colon Cancer, Post-Operative / Palliative Chemotherapy, Planned First Cycle",,Misc,Date,Planned First Cycle,,,,,,,,,,,,,
 ,"Colon Cancer, Post-Operative / Palliative Chemotherapy, Planned Regimen End",,Misc,Date,Planned Regimen End,,,,,,,,,,,,,
-,"Colon Cancer, Post-Operative / Palliative Chemotherapy, Planned change to standard regimen",,Misc,Text,Planned changes to standard regimen,,,,,,,,,,,,,
+,"Colon Cancer, Post-Operative / Palliative Chemotherapy, Planned changes to standard regimen",,Misc,Text,Planned changes to standard regimen,,,,,,,,,,,,,
 ,"Colon Cancer, Radiation Therapy Planned Date",,Misc,Date,Planned Date,,,,,,,,,,,,,
