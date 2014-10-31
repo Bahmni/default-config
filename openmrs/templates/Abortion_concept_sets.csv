@@ -1,0 +1,5 @@
+uuid,name,shortname,description,class,reference-term-source,reference-term-code,reference-term-relationship,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,Child.10,Child.11,child.15,child.16,child.17,child.18,child.19,child.20,child.21,child.22,child.23,child.24,child.25,child.26
+,Surgical Abortion,,,,,,,"Surgical Abortion, Immediate complications","Surgical Abortion, Late complications",,,,,,,,,,,,,,,,,,,,,
+,Medical Abortion,,,,,,,Medical Abortion complications,Medical Abortion follow up status,,,,,,,,,,,,,,,,,,,,,
+,Post Abortion Care,,,,,,,"PAC, Cause","PAC, Diagnosis",,,,,,,,,,,,,,,,,,,,,
+,Safe Abortion,,,,,,,Number of living children,Weeks of current gestation by LMP method,Weeks of current gestation by examination,Referred from,Abortion procedure,Pain management given,Surgical Abortion,Medical Abortion,Post Abortion Care,Accepted Family Planning methods,Outcome of CAC/PAC,,,,,,,,,,,,
