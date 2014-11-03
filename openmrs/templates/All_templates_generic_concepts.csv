@@ -322,7 +322,6 @@ uuid,name,description,class,datatype,shortname,template,synonym.1,synonym.2,refe
 ,Medical Abortion,,Procedure,N/A,Medical Abortion,Abortion,,,,,,,,,,,
 ,Medical Induction,,Procedure,N/A,Medical Induction,Abortion,,,,,,,,,,,
 ,Dilation and Evacuation,,Procedure,N/A,Dilation and Evacuation,Abortion,,,,,,,,,,,
-,Bleeding requiring >1 pint of IV fluid or blood transfusion,,Finding,N/A,Bleeding requiring >1 pint of IV fluid or blood transfusion,Abortion,,,,,,,,,,,
 ,Uterine or Intra-abdominal injury,,Finding,N/A,Uterine or Intra-abdominal injury,Abortion,,,,,,,,,,,
 ,Incomplete abortion requiring repeat procedure,,Finding,N/A,Incomplete abortion requiring repeat procedure,Abortion,,,,,,,,,,,
 ,Requiring laparotomy,,Finding,N/A,Requiring laparotomy,Abortion,,,,,,,,,,,
