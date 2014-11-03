@@ -3,7 +3,7 @@ uuid,name,description,class,datatype,shortname,reference-term-source,reference-t
 ,Weeks of current gestation by LMP method,,Misc,Numeric,Weeks of current gestation by LMP method,,,,,,,,,,,,,,,,,,,
 ,Weeks of current gestation by examination,,Misc,Numeric,Weeks of current gestation by examination,,,,,,,,,,,,,,,,,,,
 ,Referred from,,Misc,Coded,Referred from,,,,FCHV,Healthcare provider,Other,,,,,,,,,,,,,
-,Abortion procedure,,Misc,Coded,Abortion procedure,,,,Manual Vacuum Aspiration,Electric Vacuum Aspiration,Medical Abortion,Medical Induction,Dilation and Evacuation,,,,,,,,,,,
+,Abortion procedure,,Misc,Coded,Abortion procedure,,,,Manual Vacuum Aspiration,Electric Vacuum Aspiration,Medical Abortion,Medical Induction,Dilation and Evacuation,Other abortion procedures,,,,,,,,,,
 ,Pain management given,,Misc,Boolean,Pain management given,,,,,,,,,,,,,,,,,,,
 ,"Surgical Abortion, Immediate complications",,Misc,Coded,Immediate complications,,,,Bleeding requiring >1 pint of IV fluid,Bleeding requiring blood transfusion,Uterine or Intra-abdominal injury,,,,,,,,,,,,,
 ,"Surgical Abortion, Late complications",,Misc,Coded,Late complications,,,,Incomplete abortion requiring repeat procedure,Requiring laparotomy,Infection requiring hospitalization/IV antibiotics,Failed abortion,Septic Abortion,,,,,,,,,,,
