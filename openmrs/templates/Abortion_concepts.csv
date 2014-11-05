@@ -9,8 +9,7 @@ uuid,name,description,class,datatype,shortname,reference-term-source,reference-t
 ,"Surgical Abortion, Late complications",,Misc,Coded,Late complications,,,,Incomplete abortion requiring repeat procedure,Requiring laparotomy,Infection requiring hospitalization/IV antibiotics,Failed abortion,Septic Abortion,,,,,,,,,,,
 ,Medical Abortion complications,,Misc,Coded,Complications,,,,Bleeding requiring >1 pint of IV fluid,Bleeding requiring blood transfusion,Infection requiring hospitalization/IV antibiotics,,,,,,,,,,,,,
 ,Medical Abortion follow up status,,Misc,Coded,Follow up status,,,,Complete,Not Complete,,,,,,,,,,,,,,
-,"PAC, Cause",,Misc,Coded,Cause,,,,Induced abortion,Spontaneous abortion,,,,,,,,,,,,,,
-:q
-,"PAC, Diagnosis",,Misc,Coded,Diagnosis,,,,Bleeding requiring >1 pint of IV fluid,Bleeding requiring blood transfusion,Incomplete abortion requiring repeat procedure,Uterine or Intra-abdominal injury,Infection requiring hospitalization/IV antibiotics,,,,,,,,,,,
+,PAC Cause,,Misc,Coded,Cause,,,,"PAC Cause, Surgical abortion","PAC Cause, Medical abortion","PAC Cause, Spontaneous abortion",,,,,,,,,,,,,
+,PAC Diagnosis,,Misc,Coded,Diagnosis,,,,Bleeding requiring >1 pint of IV fluid,Bleeding requiring blood transfusion,Incomplete abortion requiring repeat procedure,Uterine or Intra-abdominal injury,Infection requiring hospitalization/IV antibiotics,,,,,,,,,,,
 ,Accepted Family Planning methods,,Misc,Coded,Accepted Family Planning methods,,,,Condom,Pills,Depo Provera,Female sterilization,Male sterilization,Implant,Intra Uterine Contraceptive Device,,,,,,,,,
 ,Outcome of CAC/PAC,,Misc,Coded,Outcome of CAC/PAC,,,,Normal,Leaving Against Medical Advice,Referred out,Death,,,,,,,,,,,,

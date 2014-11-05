@@ -32,7 +32,6 @@ INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max
 INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			VALUES('≥ 60 Years', 'Inpatient Discharge Reports', 60, 0, 999, 0, 10);
             
-            
 INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			VALUES('0 - 09 Years', 'Client Service Reports', 0, 0, 10, -1, 1); 
 INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
@@ -41,3 +40,8 @@ INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max
 			VALUES('20 - 59 Years', 'Client Service Reports', 20, 0, 60, -1, 3); 
 INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			VALUES('≥ 60 Years', 'Client Service Reports', 60, 0, 999, 0, 4); 
+
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('< 20 Years', 'Safe Abortion Service', 0, 0, 20, -1, 1); 
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('≥ 20 Years', 'Safe Abortion Service', 20, 0, 999, 0, 2);          
