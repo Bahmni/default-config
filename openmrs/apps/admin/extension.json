@@ -3,6 +3,9 @@
         "id": "bahmni.admin.csv",
         "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
+        "extensionParams": {
+            "patientMatchingAlgorithm": ""
+        },
         "label": "CSV Upload",
         "url": "#/csv",
         "icon": "icon-user",
@@ -13,6 +16,9 @@
         "id": "bahmni.admin.csvExport",
         "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
+        "extensionParams": {
+            "patientMatchingAlgorithm": ""
+        },
         "label": "CSV Export",
         "url": "#/csvExport",
         "icon": "icon-user",
