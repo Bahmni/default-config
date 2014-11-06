@@ -48,8 +48,8 @@
         "extensionPointId": "org.bahmni.registration.patient.edit.action",
        "type": "config",
         "extensionParams" : {
-            "action" : "print",
-            "display": "Save and Print"
+            "action" : "Save",
+            "display": "Save"
         },
         "order": 2,
         "requiredPrivilege": "Edit Patients"
