@@ -48,7 +48,7 @@
         "extensionPointId": "org.bahmni.registration.patient.edit.action",
        "type": "config",
         "extensionParams" : {
-            "action" : "Save",
+            "action" : "save",
             "display": "Save"
         },
         "order": 2,
