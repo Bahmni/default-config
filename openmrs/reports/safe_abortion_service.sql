@@ -37,18 +37,18 @@ INNER JOIN valid_coded_obs_view AS obs_fp ON obs_procedure.obs_group_id = obs_fp
 GROUP BY procedures_fp_methods.fp_name);
 
 
-SELECT pac.pac_cause AS 'PAC',
-	IF(pac.pac_abortion IS NULL, 0, SUM(1)) as Facility,
-    IF(pac.pac_abortion IS NULL, SUM(1), 0) as Others
+SELECT pac.pac_category AS 'PAC',
+	SUM(IF(pac.pac_cause IS NULL, 0, IF(pac.pac_abortion IS NULL, 0, 1))) AS Facility,
+    SUM(IF(pac.pac_cause IS NULL, 0, IF(pac.pac_abortion IS NULL, 1, 0))) AS Others
 FROM  
-(SELECT obs_pac_cause.value_concept_full_name as pac_cause,
-	    obs_abortion.obs_id as pac_abortion
-FROM coded_obs_view as obs_pac_cause
-LEFT OUTER JOIN obs_view AS obs_abortion ON obs_abortion.person_id = obs_pac_cause.person_id
-    AND obs_pac_cause.concept_full_name = 'PAC Cause'
-	AND DATE(obs_pac_cause.obs_datetime) BETWEEN @start_date AND @end_date
+(SELECT pac_cause_list.answer_concept_name AS pac_category, coded_obs_view.value_concept_full_name AS pac_cause, obs_abortion.obs_id AS pac_abortion
+FROM
+(SELECT answer_concept_name FROM concept_answer_view WHERE question_concept_name = 'PAC Cause') AS pac_cause_list
+LEFT OUTER JOIN coded_obs_view ON pac_cause_list.answer_concept_name = coded_obs_view.value_concept_full_name
+				AND coded_obs_view.concept_full_name = 'PAC Cause'
+				AND DATE(coded_obs_view.obs_datetime) BETWEEN @start_date AND @end_date
+LEFT OUTER JOIN obs_view AS obs_abortion ON obs_abortion.person_id = coded_obs_view.person_id
     AND obs_abortion.concept_full_name = 'Abortion procedure'
-    AND DATE(obs_abortion.obs_datetime) BETWEEN DATE_SUB(@start_date, INTERVAL 1 MONTH) AND @end_date
-)AS pac
-GROUP BY pac.pac_cause;
-
+    AND DATE(obs_abortion.obs_datetime) BETWEEN DATE_SUB(@start_date, INTERVAL 1 MONTH) AND @end_date)
+AS pac
+GROUP BY pac.pac_category;
