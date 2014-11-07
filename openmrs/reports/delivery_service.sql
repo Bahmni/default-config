@@ -1,6 +1,6 @@
 -- Parameters
 SET @start_date = '2014-10-05';
-SET @end_date = '2014-12-01';
+SET @end_date = '2014-12-05';
 
 -- Query
 
@@ -37,8 +37,6 @@ GROUP BY delivery_presentation.delivery_method;
 
 
 -- Gestation and Delivery Outcome
-
-
 (SELECT 'Number of Mothers' AS name,
  SUM(IF(delivery_outcome_total.delivery_outcome_type = 'Single live birth'||'Single stillbirth',1,0)) AS 'Single',
  SUM(IF(delivery_outcome_total.delivery_outcome_type = 'Twins both liveborn' || 'Twins one liveborn and one stillborn' || 'Twins both stillborn',1,0)) AS 'Twin',
@@ -51,6 +49,7 @@ FROM coded_obs_view as obs_delivery_outcome
 AS delivery_outcome_total)
 
 UNION
+
 (SELECT 'Number of live births' AS name,
  SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Single live birth',1,0)) AS 'Single',
  SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Twins both liveborn' || 'Twins one liveborn and one stillborn',1,0)) AS 'Twin',
@@ -61,45 +60,34 @@ FROM coded_obs_view as obs_delivery_outcome	WHERE obs_delivery_outcome.concept_f
 	AND DATE(obs_delivery_outcome.obs_datetime) BETWEEN @start_date AND @end_date
     AND obs_delivery_outcome.value_concept_full_name IN ('Single live birth','Twins both liveborn','Twins one liveborn and one stillborn', 'Other multiple births all liveborn','Other multiple births some liveborn'))
 AS delivery_outcome_liveborn)
-      
+
 UNION
 (SELECT delivery_outcome_stillborn.stillbirth_type AS name,
 	SUM(IF(delivery_outcome_stillborn.delivery_outcome_type = 'Single stillbirth',1,0)) AS 'Single',
 	SUM(IF(delivery_outcome_stillborn.delivery_outcome_type = 'Twins one liveborn and one stillborn' || 'Twins both stillborn',1,0)) AS 'Twin',
 	SUM(IF(delivery_outcome_stillborn.delivery_outcome_type = 'Other multiple births some liveborn' || 'Other multiple births all stillborn',1,0)) AS '>/Triplet'
 FROM
-(SELECT stillbirth_types.stillbirth_type, del_outcomes_with_sb_types.delivery_outcome_type
+(
+SELECT stillbirth_types.answer_concept_name AS stillbirth_type, del_outcomes_with_sb_types.delivery_outcome_type
 FROM
 (SELECT obs_stillbirth_type.value_concept_full_name as stillbirth_type,
-	    obs_delivery_outcome.value_concept_full_name as delivery_outcome_type
+	   obs_delivery_outcome.value_concept_full_name as delivery_outcome_type
 FROM
-coded_obs_view as obs_stillbirth_type WHERE obs_stillbirth_type.concept_id = 'Stillbirth type'
-    AND DATE(obs_stillbirth_type.obs_datetime) BETWEEN @start_date AND @end_date
+coded_obs_view as obs_stillbirth_type 
 INNER JOIN coded_obs_view as obs_delivery_outcome ON obs_delivery_outcome.obs_group_id = obs_stillbirth_type.obs_group_id
-	AND obs_stillbirth_type.concept_id = 'Outcome of Delivery'
-    AND delivery_outcome_value.concept_full_name IN ('Single stillbirth', 'Twins one liveborn and one stillborn', 'Twins both stillborn','Other multiple births some liveborn','Other multiple births all stillborn'))
+	AND obs_stillbirth_type.concept_full_name = 'Stillbirth type'
+	AND obs_delivery_outcome.concept_full_name = 'Outcome of Delivery'
+    AND obs_delivery_outcome.value_concept_full_name IN ('Single stillbirth', 'Twins one liveborn and one stillborn', 'Twins both stillborn','Other multiple births some liveborn','Other multiple births all stillborn')
+	AND DATE(obs_stillbirth_type.obs_datetime) BETWEEN @start_date AND @end_date)
 AS del_outcomes_with_sb_types    
 RIGHT OUTER JOIN
-(SELECT answer_concept_name AS stillbirth_type FROM concept_answer_view WHERE question_concept_name = 'Stillbirth type' AND answer_concept_name != 'Not Applicable')
-AS stillbirth_types
-ON del_outcomes_with_sb_types.stillbirth_type = stillbirth_types.stillbirth_type
+(SELECT answer_concept_name FROM concept_answer_view WHERE question_concept_name = 'Stillbirth type' AND answer_concept_name != 'Not Applicable')
+AS stillbirth_types ON del_outcomes_with_sb_types.stillbirth_type = stillbirth_types.answer_concept_name
+
 )
 AS delivery_outcome_stillborn
-GROUP BY delivery_outcome_stillborn.stillbirth_type);
-
-
-SELECT stillbirth_types.stillbirth_type, del_outcomes_with_sb_types.delivery_outcome_type
-FROM
-(SELECT obs_stillbirth_type.value_concept_full_name as stillbirth_type,
-	    obs_delivery_outcome.value_concept_full_name as delivery_outcome_type
-FROM
-coded_obs_view as obs_stillbirth_type WHERE obs_stillbirth_type.concept_id = 'Stillbirth type'
-    AND DATE(obs_stillbirth_type.obs_datetime) BETWEEN @start_date AND @end_date
-INNER JOIN coded_obs_view as obs_delivery_outcome ON obs_delivery_outcome.obs_group_id = obs_stillbirth_type.obs_group_id
-	AND obs_stillbirth_type.concept_id = 'Outcome of Delivery'
-    AND delivery_outcome_value.concept_full_name IN ('Single stillbirth', 'Twins one liveborn and one stillborn', 'Twins both stillborn','Other multiple births some liveborn','Other multiple births all stillborn'))
-
-
+GROUP BY delivery_outcome_stillborn.stillbirth_type
+);
 
 -- Birth Weight
 SELECT birth_weight.name as 'Birth Weight',
