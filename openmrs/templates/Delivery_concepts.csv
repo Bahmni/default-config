@@ -15,7 +15,7 @@ uuid,name,description,class,datatype,shortname,reference-term-source,reference-t
 ,Post delivery drugs,,Misc,Text,Post delivery drugs,,,,,,,,,,,,,,,,,,,
 ,Blood transfusion provided,,Misc,Boolean,Blood transfusion provided,,,,,,,,,,,,,,,,,,,
 ,Blood transfusion quantity,,Misc,Numeric,Blood transfusion quantity,,,,,,,,,,,,,,,,,,,
-,"Liveborn, gender",,Misc,Coded,Infant gender,,,,Male,Female,Other,,,,,,,,,,,,,
+,"Liveborn, gender",,Misc,Coded,Infant gender,,,,Male,Female,,,,,,,,,,,,,,
 ,"Liveborn, weight",,Misc,Numeric,Infant weight,,,,,,,,,,,,,,,,,,,
 ,"Liveborn, APGAR score at 1 minute",,Misc,Numeric,APGAR score at 1 minute,,,,,,,,,,,,,,,,,,,
 ,"Liverborn, APGAR score at 5 minutes",,Misc,Numeric,APGAR score at 5 minutes,,,,,,,,,,,,,,,,,,,

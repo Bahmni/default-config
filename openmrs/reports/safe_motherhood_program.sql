@@ -1,6 +1,6 @@
 -- Parameters
-SET @start_date = '2014-10-05';
-SET @end_date = '2014-12-05';
+SET @start_date = '2014-11-01';
+SET @end_date = '2014-11-30';
 
 -- Query
 
