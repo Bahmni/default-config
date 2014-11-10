@@ -1,0 +1,7 @@
+uuid,name,class,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,child.1,child.2,child.3,child.4,child.5,child.6
+,"Hypertension, Diagnosis Details",Misc,Diagnosis Details,,,,,"Hypertension, Last Visit Date","Hypertension, Previous Followup Location","Hypertension, Diagnosis Status","Hypertension, Date Confirmed",,
+,"Hypertension, Hypertensive Emergency",Misc,Hypertensive Emergency,,,,,"Hypertension, Hypertensive Emergency 12 Months","Hypertension, Hypertensive Emergency Cause",,,,
+,"Hypertension, Past Diagnostics",Misc,Past Diagnostics,,,,,"Hypertension, EKG","Hypertension, Echocardiogram","Hypertension, Lipids",,,
+,"Hypertension, Etiology",Misc,Etiology,,,,,"Hypertension, Primary Hypertension","Hypertension, Secondary Hypertension",,,,
+,"Hypertension, Exposures",Misc,Exposures,,,,,"Hypertension, Smoking History","Hypertension, Smokes Packs Per Day","Hypertension, Number of years since smoking","Hypertension, Alcohol Abuse","Hypertension, Alcohol Abuse Details",
+,"Hypertension, Intake",Misc,Hypertension – Intake,,,,,"Hypertension, Diagnosis Details","Hypertension, Hypertensive Emergency","Hypertension, Past Diagnostics","Hypertension, Etiology","Hypertension, Exposures","Hypertension, Current Home Medications"

@@ -1,0 +1,5 @@
+uuid,name,shortname,description,class,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8
+,"COPD, Diagnosis details",Diagnosis details,,Misc,"COPD, Last Visit Date","COPD, Previous followup location","COPD, Diagnosis Status","COPD, Date Confirmed","COPD, Diagnosis Location",,,
+,"COPD, Exposures",Exposures,,Misc,"COPD, Smoking history","COPD, Packs per Day","COPD, Numbers of years","COPD, Non Smoker",,,,
+,"COPD, Past diagnostics",Past diagnostics,,Misc,"COPD, Chest X-ray","COPD, Peak expiratory flow","COPD, FEV1 / FVC","COPD, CT Scan",,,,
+,"COPD, Intake",COPD – Intake,,Misc,"COPD, Diagnosis details","COPD, Exposures","COPD, Diagnostic clues","COPD, Note for all other Diagnostic clues","COPD, Past diagnostics","COPD, Family history of COPD","COPD, Current Home Medications","COPD, All other medicines"

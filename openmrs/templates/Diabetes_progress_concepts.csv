@@ -1,0 +1,58 @@
+uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
+,"Diabetes, Measuring Severity",,Misc,Coded,Measuring severity of illness / compliance,,,,,,Diet Control,Exercise,Adverse Effect of Medicine,Symptoms of Hypoglycemia,Worsened Comorbid Illness,,,
+,"Diabetes, Symptoms Of Complications",,Misc,Coded,Signs / Symptoms of Complications,,,,,,Decreased Vision,Numbness,Tingling,Burning Pain in Extremeties,Shortness of Breath,Dyspnea,Angina,Edema
+,"Diabetes, Chief Complaint",,Misc,Text,Chief Complaint,,,,,,,,,,,,,
+,"Diabetes, Current Medicines",,Misc,Coded,Current Medicines,,,,,,Metformin,Sulfonuria,Insulin Short Acting,Insulin Long Acting,Insulin 70/30,,,
+,"Diabetes, Non Compliance",,Misc,Boolean,Non Compliance,,,,,,,,,,,,,
+,"Diabetes, Reason for Non Compliance",,Misc,Text,Reason for Non Compliance,,,,,,,,,,,,,
+,"Diabetes, Systolic",,Misc,Numeric,Systolic,,,,,,,,,,,,,
+,"Diabetes, Systolic Abnormal",,Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,
+,"Diabetes, Diastolic",,Misc,Numeric,Diastolic,,,,,,,,,,,,,
+,"Diabetes, Diastolic Abnormal",,Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,
+,"Diabetes, Pulse",,Misc,Numeric,Pulse,,,,,,,,,,,,,
+,"Diabetes, Pulse Abnormal",,Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,,
+,"Diabetes, RR",,Misc,Numeric,RR,,,,,,,,,,,,,
+,"Diabetes, RR Abnormal",,Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,,
+,"Diabetes, SAT",,Misc,Numeric,SAT,,,,,,,,,,,,,
+,"Diabetes, SAT Abnormal",,Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,,
+,"Diabetes, Temperature",,Misc,Numeric,Temperature,,,,,,,,,,,,,
+,"Diabetes, Temperature Abnormal",,Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,,
+,"Diabetes, Physical Examination Details","GENERAL - thin or obese <br>                   
+NEURO - check for sensation<br>        
+NECK<br> 
+CARDIO - murmur<br>
+LUNGS<br> 
+ABDOMEN - renal bruits<br>
+EXTREMITIES - edema<br>
+SKIN - check for foot ulcuers<br>
+
+VISION cover each eye<br> 
+Gross exam: (finger count etc)<br>
+
+NEW DIAGNOSTICS – SEE CHECKLIST<br>
+- lipids<br>
+- A1C<br>
+- Cr (then calculate GFR)<br>",Misc,Text,Physical Examination Details,,,,,,,,,,,,,
+,"Diabetes, Assessment And Followup","- Not at A1c goal –increase meds/add 2nd agent-> 2 weeks<br>
+- A1C at goal+clinic stable –> 3 months for A1C<br>
+- A1C at goal but comorbidity needs f/u (htn/hld etc) --> 1 month<br>
+
+MEDS <br>                                
+ MAKE SURE PATIENT DOES NOT SKIP MEALS WHILE ON MED<br>
+- metformin<br>                       
+- sulfonuria / glimepiride<br>  
+- insulin mixtard 30/70<br>     
+- insulin regular<br>
+
+CHECKLIST<br>
+- Counsel smoking/diet/exercise<br>
+- A1C q3 months<br>
+- Screen lipids q12mo.goal LDL<100<br>
+- Cr q12mo, start ACE if protein+<br>
+- Foot ulcers, screen every visit<br>
+- Near+far visit vision every visit<br>
+- Slit lamp recommended Q12mo.<br>
+
+ER REFERRAL/ IPD admission<br>
+- DO NOT SEND VISIBLY SICK/UNSTABLE PT HOME<br>
+IF patient appears dehydrated, abdominal pain, lighteadedness, or diaphoretic. Consider HHS or DKA (check f/s gluc, urine ketones, give fluids).<br>",Misc,N/A,Assessment and Followup,,,,,,,,,,,,,

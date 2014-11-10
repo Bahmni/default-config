@@ -1,0 +1,31 @@
+uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4
+,"Chronic Kidney Disease, Last Visit Date",Misc,Date,Last Visit Date,,,,,,,,,
+,"Chronic Kidney Disease, Previous followup location",Misc,Text,Previous followup location,,,,,,,,,
+,"Chronic Kidney Disease, Diagnosis Status",Misc,Coded,Diagnosis Status,,,,,,No previous diagnosis,Confirmed elsewhere,,
+,"Chronic Kidney Disease, Date Confirmed",Misc,Date,Date Confirmed,,,,,,,,,
+,"Chronic Kidney Disease, Diagnosis Location",Misc,Text,Diagnosis Location,,,,,,,,,
+,"Chronic Kidney Disease, Last Visit Date",Misc,Date,Last Visit Date,,,,,,,,,
+,"Chronic Kidney Disease, Last Known CR",Misc,Text,Last known CR,,,,,,,,,
+,"Chronic Kidney Disease, Diagnostic Criteria",Misc,Coded,Diagnostic Criteria,"- ≥3 months presence of kidney damage (usually detected as urinary albumin excretion of ≥30 mg/day, or equivalent)<br>
+- decreased kidney function (defined as estimated glomerular filtration rate [eGFR] <60 mL/min per 1.73 m2)<br>",,,,,"≥3 Months Presence Of Kidney Damage
+",Decreased Kidney Function,,
+,"Chronic Kidney Disease, Likely cause of CKD",Misc,Coded,Known / Likely cause of CKD,"- Glomerular diseases (diabetes, autoimmune diseases, systemic infections, drugs, neoplasia).<br>
+- Vascular diseases (atherosclerosis, hypertension, ischemia, vasculitis, thrombotic microangiopathy).<br>
+- Tubulointerstitial diseases (urinary tract infections, stones, obstruction, drug toxicity).<br>
+- Cystic disease (polycystic kidney disease).<br>",,,,,Glomerular Diseases,Vascular Diseases,Tubulointerstitial Diseases,Cystic Disease
+,"Chronic Kidney Disease, Other Likely cause of CKD",Misc,Text,Other Likely cause of CKD,,,,,,,,,
+,"Chronic Kidney Disease, Polycystic Kidney",Misc,Text,Polycystic Kidney,,,,,,,,,
+,"Chronic Kidney Disease, Hyderonephrosis Due To Obstruction",Misc,Text,Hyderonephrosis due to obstruction,,,,,,,,,
+,"Chronic Kidney Disease, Cortical Scarring",Misc,Text,Cortical Scarring,"Cortical scarring due to infarcts, pyelonephritis or vesicoureteral reflux",,,,,,,,
+,"Chronic Kidney Disease, Renal Masses",Misc,Text,Renal Masses,Renal masses or enlarged kidneys due to infiltrative diseases,,,,,,,,
+,"Chronic Kidney Disease, Small and echogenic kidneys",Misc,Text,Small and echogenic kidneys,Small and echogenic kidneys (common in later stages of CKD due to many parenchymal diseases),,,,,,,,
+,"Chronic Kidney Disease, Renal artery stenosis",Misc,Text,Renal artery stenosis,,,,,,,,,
+,"Chronic Kidney Disease, Family History Of Renal Disease",Misc,Boolean,Family History Of Renal Disease,,,,,,,,,
+,"Chronic Kidney Disease, Smoking History",Misc,Boolean,Smoking History,,,,,,,,,
+,"Chronic Kidney Disease, Packs per day",Misc,Numeric,Packs per day,,,,,,,,,
+,"Chronic Kidney Disease, Number of years",Misc,Numeric,Number of years,,,,,,,,,
+,"Chronic Kidney Disease, Current Smoker",Misc,Boolean,Current Smoker,,,,,,,,,
+,"Chronic Kidney Disease, Quit Smoking Since",Misc,Text,Quit Smoking Since,,,,,,,,,
+,"Chronic Kidney Disease, Alcohol Abuse",Misc,Boolean,Alcohol Abuse,,,,,,,,,
+,"Chronic Kidney Disease, Current Home Medications",Misc,Coded,Current Home Medications,,,,,,Ace Inhibitor,Furosemide,Spironolactone,
+,"Chronic Kidney Disease, All Other Medicines",Misc,Text,All Other Medicines,,,,,,,,,

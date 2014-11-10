@@ -1,0 +1,17 @@
+uuid,name,class,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,
+,"Seizure Disorder, History Question",Misc,History questions,,,,,"Seizure Disorder, Age of First Onset Symptoms","Seizure Disorder, History of Head Trauma Preceded the Seizure Disorder","Seizure Disorder, Seizure Triggers","Seizure Disorder, Other Seizure Triggers",,,,,,,,,
+,"Seizure Disorder, Physical Examination",Misc,Physical Examination,,,,,"Seizure Disorder, Systolic","Seizure Disorder, Systolic Abnormal","Seizure Disorder, Diastolic","Seizure Disorder, Diastolic Abnormal","Seizure Disorder, Pulse","Seizure Disorder, Pulse Abnormal","Seizure Disorder, RR","Seizure Disorder, RR Abnormal","Seizure Disorder, SAT","Seizure Disorder, SAT Abnormal","Seizure Disorder, Temperature","Seizure Disorder, Temperature Abnormal","Seizure Disorder, Physical Examination Details"
+,"Seizure Disorder, Treatment",Misc,Treatment,"CONSIDER STARTING ANTI-EPILEPTIC TREATMENT <br
+>AFTER THE SECOND EPISODE <br>
+STRATEGY <br>
+1/ Start with single drug (monotherapy)<br>
+2/ titrate the dosage to that which is maximally tolerated <br>
+and/or produces optimal control (start low and go slow) <br>
+3/ Avoid valproate pregnancy<br>",,,,,,,,,,,,,,,,
+,"Seizure Disorder, Initial Diagnosis / First Visit",Misc,Consider labs at the time of Initial diagnosis / First visit,"electrolytes, glucose, calcium, magnesium, hematology studies,<br>
+ renal function tests, liver function tests<br>",,,,,,,,,,,,,,,,
+,"Seizure Disorder, Assessment and Followup",Misc,Assessment and Followup,"- FOLLOW UP IF PATIENT IS STABLE IE.<br>
+ CURRENT MEDICATION IS WORKING  – > 3 MONTHS<br>
+- FOLLOW UP IF DRUG IS NOT WORKING  → FOLLOW UP EVERY 2 WEEKS<br>
+NOTE Change to a different drug by gradually reducing dose of initial agent while<br> simultaneously introducing the new one. This usually takes 3-4 weeks. <br>",,,,,,,,,,,,,,,,
+,"Seizure Disorder, Followup",Misc,Seizure Disorder – Followup,,,,,"Seizure Disorder, Chief Complaint","Seizure Disorder, New Symptoms","Seizure Disorder, History Question","Seizure Disorder, Seizure Classification","Seizure Disorder, Description of Seizure Episodes","Seizure Disorder, Current Home Medications","Seizure Disorder, Physical Examination","Seizure Disorder, Treatment","Seizure Disorder, Initial Diagnosis / First Visit","Seizure Disorder, Assessment and Followup",,,

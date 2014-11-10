@@ -1,0 +1,19 @@
+uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,,synonym.1,answer.1,answer.2,answer.3,answer.4
+,"Asthma, Last Visit Date",,Misc,Date,Last Visit Date,,,,,,,,,
+,"Asthma, Previous Followup Location",,Misc,Text,Previous Followup Location,,,,,,,,,
+,"Asthma, Diagnosis Status",,Misc,Coded,Diagnosis Status,,,,,,No Previous Diagnosis,Confirmed Elsewhere,,
+,"Asthma, Date Confirmed",,Misc,Date,Date Confirmed,,,,,,,,,
+,"Asthma, Diagnosis Location",,Misc,Text,Diagnosis Location,,,,,,,,,
+,"Asthma, Last Exacerbation Within 12 months",,Question,Boolean,Exacerbation within 12months,,,,,,,,,
+,"Asthma, Last Exacerbation date",,Misc,Date,Last Exacerbation date,,,,,,,,,
+,"Asthma, Last Exacerbation Treated at",,Misc,Coded,Treated at,,,,,,"Treated at, Home","Treated at, Inpatient",,
+,"Asthma, Last Exacerbation Inpatient Details",,Misc,Text,Impatient details,,,,,,,,,
+,"Asthma, Hospitalizations",,Misc,Coded,Hospitalizations,,,,,,Zero,One,Two,Greater than or 3
+,"Asthma, Treated as Outpatient",,Misc,Coded,Treated as Outpatient,,,,,,Zero,One,Two,Greater than or 3
+,"Asthma, Peak Expiratory Flow",,Misc,Text,Peak expiratory flow,,,,,,,,,
+,"Asthma, Spirometry",,Misc,Text,Spirometry,,,,,,,,,
+,"Asthma, Tests For Allergy",,Misc,Text,Tests for allergy,,,,,,,,,
+,"Asthma, Assess Classic Symptoms",,Misc,Coded,Assess classic symptoms,,,,,,Wheezing,Cough,Shortness of Breath,Difficulty Breathing
+,"Asthma, Other Clues",,Misc,Coded,Other clues,,,,,,Chest tightness,Family History of Asthma,Personal History of Atopic Disease,Asthmatic Symptoms as Child
+,"Asthma, Current Home Medications",,Misc,Coded,Current home medications,,,,,,B Agonist,Inhaled Steroid,Ipratropium,Oral Steroid
+,"Asthma, All Other Medicines",,Misc,Text,All other medicines,,,,,,,,,

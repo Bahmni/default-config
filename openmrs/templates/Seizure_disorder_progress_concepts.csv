@@ -1,0 +1,30 @@
+uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14
+,"Seizure Disorder, Chief Complaint",Misc,Text,Chief Complaint,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, New Symptoms",Misc,Text,New Symptoms / History of present illness,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Age of First Onset Symptoms",Misc,Numeric,At what age did the patient first have onset of symptoms ?,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, History of Head Trauma Preceded the Seizure Disorder",Misc,Boolean,"Is there a history of head trauma, did it preceed the seizure disorder ?",,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Seizure Triggers",Misc,Coded,Seizures triggers,,,,,,Sleep Deprivation,Stress,Alcohol,Menses,,,,,,,,,,
+,"Seizure Disorder, Other Seizure Triggers",Misc,Text,Other Seizure triggers,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Systolic",Misc,Numeric,Systolic,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Systolic Abnormal",Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Diastolic",Misc,Numeric,Diastolic,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Diastolic Abnormal",Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Pulse",Misc,Numeric,Pulse,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Pulse Abnormal",Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, RR",Misc,Numeric,RR,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, RR Abnormal",Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, SAT",Misc,Numeric,SAT,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, SAT Abnormal",Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Temperature",Misc,Numeric,Temperature,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Temperature Abnormal",Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Physical Examination Details",Misc,Text,Physical Examination Details,"GENERAL Alert – visibly dyspneaic<br>                                 
+Vision<br>
+NEURO <br> 
+pupils - facial droop<br>                                                                    
+EOMs<br>
+HEENT <br>
+CARDIO - murmur - regular<br>
+LUNGS - wheeze<br>
+ABDOMEN <br>
+EXTREMITIES  - edema (CHF)<br>
+SKIN - signs of atopy<br>",,,,,,,,,,,,,,,,,,

@@ -1,0 +1,6 @@
+uuid,name,class,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8
+,"Diabetes, Diagnosis Details",Misc,Diagnosis details,,,,,"Diabetes, Last Visit Date","Diabetes, Previous Followup Location","Diabetes, Diagnosis Confirmed","Diabetes, Diabetes Type","Diabetes, Last Known A1C Date","Diabetes, Last known A1C Result","Diabetes, Last Known Fasting Blood Sugar","Diabetes, Last known A1C Result"
+,"Diabetes, Diagnostic Clues",Misc,Diagnostic clues,,,,,"Diabetes, Suspicion","Diabetes, Cormorbidities","Diabetes, Family History of Diabetes","Diabetes, Details Of Family History Of Diabetes",,,,
+,"Diabetes, Past Diagnosis",Misc,Past diagnosis,,,,,"Diabetes, A1C","Diabetes, Fasting Glucose","Diabetes, Lipid Panel",,,,,
+,"Diabetes, Exposures",Misc,Exposures,,,,,"Diabetes, Smoking History","Diabetes, Packs Per Day","Diabetes, Number Of Years","Diabetes, Alcohol Abuse","Diabetes, Details Of Alcohol Abuse",,,
+,"Diabetes, Intake",Misc,Diabetes – Intake,,,,,"Diabetes, Diagnosis Details","Diabetes, Diagnostic Clues","Diabetes, Past Diagnosis","Diabetes, Exercise","Diabetes, Exposures","Diabetes, Current Home Medications","Diabetes, Other Current Home Medications",

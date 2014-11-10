@@ -1,0 +1,42 @@
+uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14
+,"Congestive Heart Failure, Symptoms of Heart Failure Clues",Diagnosis,Coded,Symptoms of Heart Failure Clues,,,,,,,Dyspnea,On exertion,Orthopnea,Paroxysmal nocturnal dyspnea,Edema,Cough,All other,,,,,,,
+,"Congestive Heart Failure, Symptoms of Heart Failure All other details",Misc,Text,All other details,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Rule out other causes of Edema",Misc,Text,Rule out other causes of Edema,"Redness/warmth/unilateral --> thrombosis
+<br/>Redness/warmth/unilateral/fever --> cellulitis",,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Rule out other causes of Dyspnea",Misc,Text,Rule out other causes of Dyspnea,Fever/ Productive cough → pneumonia<br/>Chest pain → myocardial infarction<br/>Dyspnea at rest + smoking hx → COPD,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Rule out other causes of Fatigue",Misc,Text,Rule out other causes of Fatigue,"Deconditioning, sleep apnea, and depression",,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Current Medicines",Misc,Text,Current Medicines,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Non-compliance",Misc,Boolean,Non-compliance,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Non-compliance Reason",Misc,Text,Non-compliance Reason,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, First Onset Age",Misc,Numeric,Age of First Onset,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Chief Complaint",Misc,Text,Chief Complaint,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Chief Complaint Duration",Duration,Numeric,Chief Complaint Duration,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, New symptoms",Misc,Text,New symptoms / History of present Illness,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Severity classification NYHA",Misc,Coded,Severity classification NYHA,"<b>Class I</b> - symptoms of HEART FAILURE only at activity levels that would limit normal individuals<br/>
+<b>Class II</b> - symptoms of HEART FAILURE with ordinary exertion<br/>
+<b>Class III</b> - symptoms of HEART FAILURE with less than ordinary exertion<br/>
+<b>Class IV</b> - symptoms of HEART FAILURE at rest",,,,,,Severity classification NYHA - Class I,Severity classification NYHA - Class II,Severity classification NYHA - Class III,Severity classification NYHA - Class VI,,,,,,,,,,
+,"Congestive Heart Failure, Evidence of Exacerbation today",Misc,Boolean,Evidence of Exacerbation today,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Exacerbation Symptoms",Misc,Text,Exacerbation Symptoms,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Likely Etiology",Question,Coded,Reason of Decompensation / Likely Etiology,,,,,,,Med non adherence,Change in diet,Recent illness,Worsening valvular disease,Pregnancy,Arythmia,Worsening Hypertension,Valvular disease,Viral Cardiomyopathy,Acute Rheumatic fever,Peripartum C'mpathy,Idiopathic,HIV,Hypertension
+,"Congestive Heart Failure, Other Etiology Details",Misc,Text,Other Etiology Details,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Systolic",Misc,Numeric,Systolic,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Systolic Abnormal",Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Diastolic",Misc,Numeric,Diastolic,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Diastolic Abnormal",Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Pulse",Misc,Numeric,Pulse,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Pulse Abnormal",Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, RR",Misc,Numeric,RR,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, RR Abnormal",Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, SAT",Misc,Numeric,SAT,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, SAT Abnormal",Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Temperature",Misc,Numeric,Temperature,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Temperature Abnormal",Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Physical Examination Details",Misc,Text,Physical Examination Details,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, ER and likely IPD admission",Diagnosis,Boolean,ER and likely IPD admission,"If hypoxic, visibly distressed, or unable to care for self at home → admit to ER for IV diuresis",,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Symptoms Decompensation",Diagnosis,Boolean,Signs and Symptoms Decompensation,BP &#60, 80 or &#62, 180<br>Pulse &#60, 40 or &#62, 120<br>Adults RR &#62, 24<br>Low O2 sat,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Checklist",Misc,Text,Checklist,"<b>EKG:</b> q12 months if stable, SOS if change in status<br><b> LABS:</b> *Once- patients > age 65 thyroid test <br>*q3months – electrolytes and Cr date / result<br> *q6months: <br> Hyperlipidemia – date / result<br>Diabetes – date / result<br> *Once/year – CBC (anemia can exacerbate CHF) date / result",,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Assessment",Misc,Coded,Assessment,If blood pressure and symptoms stable  --> 4months <br>If hypertension – change medication      --> 1 month<br>If worse dyspnea – increase furosemide --> 2 weeks,,,,,,no change in medicine,uptitrate medicine as below,Acute decompensation,Other acute illness,,,,,,,,,,
+,"Congestive Heart Failure, Notes for other Assessment",Misc,Text,Notes for other Assessment,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Assessment Follow up",Misc,Text,Assessment Follow up,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Prescriptions",Misc,Text,Prescriptions,,,,,,,,,,,,,,,,,,,,
