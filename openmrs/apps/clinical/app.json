@@ -54,9 +54,9 @@
                 "P/S (Per Speculum) - Cervix" : {
                     "grid" : true
                 },
-		"Anaemia, Stopped Since When" : {
-			"conciseText" : true
-		}
+        		"Anaemia, Stopped Since When" : {
+        			"conciseText" : true
+        		}
             },
             "patientDashboardSections": [
                 {
@@ -90,7 +90,30 @@
                     "numberOfVisits": 2,
                     "isObservation": true
                 }
-            ]
+            ],
+            "drugOrder": {
+                "defaultRoute": "Oral",
+                "defaultDurationUnit": "Day(s)",
+                "defaultDoseUnit": "Tablet(s)",
+                "defaultInstructions": "As directed",
+                "drugFormDefaults" : {
+                    "Ayurvedic" : {
+                        "doseUnits": "Teaspoon",
+                        "route": "Oral"    
+                    },
+                    "Capsule" : {
+                        "doseUnits": "Capsule(s)",
+                        "route": "Oral"    
+                    },
+                    "Powder" : {
+                        "route": "Intrathecal"    
+                    },
+                    "Injection" : {
+                        "doseUnits": "mg",
+                        "route": "Intravenous"    
+                    }
+                }
+            }
         }
     }
 ]
