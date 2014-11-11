@@ -6,7 +6,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,reference-term-source,r
 ,"PSBI/LBI/NBI, Temperature",,Misc,Coded,Temperature,,,,,Greater than 99.5F,Less than 99.5F,,,,,
 ,"PSBI/LBI/NBI, Skin Pustules",,Misc,Coded,Skin pustules,,,,,Less than 10mm,Severe and larger than 10mm,,,,,
 ,"PSBI/LBI/NBI, Movement",,Misc,Coded,Movement,,,,,Normal,Less than normal,,,,,
-,"PSBI/LBI/NBI, Jaundice",,Misc,Coded,Jaundice,,,,,Jaundice present,Jaundice upto hands and feet,,,,,
+,"PSBI/LBI/NBI, Jaundice",,Misc,Coded,Jaundice status,,,,,Jaundice present,Jaundice upto hands and feet,,,,,
 ,"Childhood Illness, Diarrhoea present",,Misc,Boolean,Diarrhoea present,,,,,,,,,,,
 ,"Diarrhoea, Days",,Misc,Numeric,How many days?,,,,,,,,,,,
 ,"Diarrhoea, Symptoms",,Misc,Coded,Symptoms,,,,,Blood,Restless/ Irritable,Sunken eyes,Lethargic/ Unconscious,Unable to drink,Drinks eagerly,
