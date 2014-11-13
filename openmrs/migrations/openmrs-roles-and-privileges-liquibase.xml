@@ -102,11 +102,6 @@
             <column name="uuid" valueComputed="uuid()"/>
         </insert>
         <insert tableName="privilege">
-            <column name="privilege" value="app:clinical:history"/>
-            <column name="description" value="JSS observation history view and edit"/>
-            <column name="uuid" valueComputed="uuid()"/>
-        </insert>
-        <insert tableName="privilege">
             <column name="privilege" value="app:clinical:diagnosisTab"/>
             <column name="description" value="View and Edit Diagnosis tab"/>
             <column name="uuid" valueComputed="uuid()"/>
