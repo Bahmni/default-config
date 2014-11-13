@@ -101,26 +101,6 @@
             <column name="description" value="Discharge Summary Privilege"/>
             <column name="uuid" valueComputed="uuid()"/>
         </insert>
-        <insert tableName="privilege">
-            <column name="privilege" value="app:clinical:diagnosisTab"/>
-            <column name="description" value="View and Edit Diagnosis tab"/>
-            <column name="uuid" valueComputed="uuid()"/>
-        </insert>
-        <insert tableName="privilege">
-            <column name="privilege" value="app:clinical:dispositionTab"/>
-            <column name="description" value="View Disposition tab"/>
-            <column name="uuid" valueComputed="uuid()"/>
-        </insert>
-        <insert tableName="privilege">
-            <column name="privilege" value="app:clinical:observationTab"/>
-            <column name="description" value="View Disposition tab"/>
-            <column name="uuid" valueComputed="uuid()"/>
-        </insert>
-        <insert tableName="privilege">
-            <column name="privilege" value="app:clinical:consultationTab"/>
-            <column name="description" value="View Disposition tab"/>
-            <column name="uuid" valueComputed="uuid()"/>
-        </insert>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-004" author="tw">
         <comment>Adding privileges for doctor, nurse roles</comment>
