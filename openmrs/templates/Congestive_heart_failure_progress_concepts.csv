@@ -34,7 +34,10 @@ uuid,name,class,datatype,shortname,description,reference-term-code,reference-ter
 ,"Congestive Heart Failure, Temperature Abnormal",Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,,,,,,,,,
 ,"Congestive Heart Failure, Physical Examination Details",Misc,Text,Physical Examination Details,,,,,,,,,,,,,,,,,,,,
 ,"Congestive Heart Failure, ER and likely IPD admission",Diagnosis,Boolean,ER and likely IPD admission,"If hypoxic, visibly distressed, or unable to care for self at home → admit to ER for IV diuresis",,,,,,,,,,,,,,,,,,,
-,"Congestive Heart Failure, Symptoms Decompensation",Diagnosis,Boolean,Signs and Symptoms Decompensation,BP &#60, 80 or &#62, 180<br>Pulse &#60, 40 or &#62, 120<br>Adults RR &#62, 24<br>Low O2 sat,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Symptoms Decompensation",Diagnosis,Boolean,Signs and Symptoms Decompensation,"BP less than 80 or greater than 180<br>         
+Pulse less than 40 or greater than 120 adults<br>
+RR greater than 24<br>                      
+Low O2 sat<br>",,,,,,,,,,,,,,,,,,,
 ,"Congestive Heart Failure, Checklist",Misc,Text,Checklist,"<b>EKG:</b> q12 months if stable, SOS if change in status<br><b> LABS:</b> *Once- patients > age 65 thyroid test <br>*q3months – electrolytes and Cr date / result<br> *q6months: <br> Hyperlipidemia – date / result<br>Diabetes – date / result<br> *Once/year – CBC (anemia can exacerbate CHF) date / result",,,,,,,,,,,,,,,,,,,
 ,"Congestive Heart Failure, Assessment",Misc,Coded,Assessment,If blood pressure and symptoms stable  --> 4months <br>If hypertension – change medication      --> 1 month<br>If worse dyspnea – increase furosemide --> 2 weeks,,,,,,no change in medicine,uptitrate medicine as below,Acute decompensation,Other acute illness,,,,,,,,,,
 ,"Congestive Heart Failure, Notes for other Assessment",Misc,Text,Notes for other Assessment,,,,,,,,,,,,,,,,,,,,

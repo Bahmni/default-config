@@ -1,33 +1,33 @@
 uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7
-,"Rheumatoid Heart Disease, Chief Complaint",Misc,Text,Chief Complaint,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Symptoms of Heart Failure Today",Misc,Boolean,Symptoms of heart failure today ?,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Assess Severity",Misc,Coded,Assess severity (NYHA Classification),"- Class I — symptoms of HEART FAILURE only at activity levels that would limit normal individuals<br>
+,"Rheumatic Heart Disease, Chief Complaint",Misc,Text,Chief Complaint,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Symptoms of Heart Failure Today",Misc,Boolean,Symptoms of heart failure today ?,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Assess Severity",Misc,Coded,Assess severity (NYHA Classification),"- Class I — symptoms of HEART FAILURE only at activity levels that would limit normal individuals<br>
 - Class II — symptoms of HEART FAILURE  with ordinary exertion<br>
 - Class III — symptoms of HEART FAILURE  with less than ordinary exertion<br>
 - Class IV — symptoms of HEART FAILURE  at rest<br>",,,,,Severity classification NYHA - Class I,Severity classification NYHA - Class II,Severity classification NYHA - Class III,Severity classification NYHA - Class VI,,,
-,"Rheumatoid Heart Disease, New Symptoms",Misc,Text,New symptoms / History of present illness,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Suspicion of Recurrent Rheumatic Fever Today",Misc,Boolean,Any suspicion today of Recurrent Rheumatic Fever,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Details of Recurrent Rheumatic Fever Today",Misc,Text,Details of suspicion today of Recurrent Rheumatic Fever,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Current Home Medications",Misc,Coded,Current home medications,"- penicillin for secondary prophylaxis SEE #<br>
+,"Rheumatic Heart Disease, New Symptoms",Misc,Text,New symptoms / History of present illness,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Suspicion of Recurrent Rheumatic Fever Today",Misc,Boolean,Any suspicion today of Recurrent Rheumatic Fever,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Details of Recurrent Rheumatic Fever Today",Misc,Text,Details of suspicion today of Recurrent Rheumatic Fever,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Current Home Medications",Misc,Coded,Current home medications,"- penicillin for secondary prophylaxis SEE #<br>
 - heart failure medications – (circle ) ACEi, Bblocker, furosemide<br>",,,,,Penicillin,Heart Failure Medicines,,,,,
-,"Rheumatoid Heart Disease, All Other Medicines",Misc,Text,All other medicines,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Non-compliance",Misc,Boolean,Non Compliance,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Non-compliance Reason",Misc,Test,Non Compliance Reason,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Type of Murmur Documented Prior",Misc,Coded,Type of Murmur documented prior visit,,,,,,Mitral Regurg,Mitral Stenosis,Aortic Regurg,Aortic Stenosis,Mild,Moderate,Severe
-,"Rheumatoid Heart Disease, Other Type of Murmur",Misc,Test,Other types of Murmur,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Systolic",Misc,Numeric,Systolic,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Systolic Abnormal",Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Diastolic",Misc,Numeric,Diastolic,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Diastolic Abnormal",Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Pulse",Misc,Numeric,Pulse,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Pulse Abnormal",Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, RR",Misc,Numeric,RR,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, RR Abnormal",Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, SAT",Misc,Numeric,SAT,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, SAT Abnormal",Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Temperature",Misc,Numeric,Temperature,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Temperature Abnormal",Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,
-,"Rheumatoid Heart Disease, Physical Examination Details",Misc,Text,Physical Examination Details,"GENERAL - visibly dyspneaic<br>
+,"Rheumatic Heart Disease, All Other Medicines",Misc,Text,All other medicines,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Non-compliance",Misc,Boolean,Non Compliance,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Non-compliance Reason",Misc,Test,Non Compliance Reason,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Type of Murmur Documented Prior",Misc,Coded,Type of Murmur documented prior visit,,,,,,Mitral Regurg,Mitral Stenosis,Aortic Regurg,Aortic Stenosis,Mild,Moderate,Severe
+,"Rheumatic Heart Disease, Other Type of Murmur",Misc,Test,Other types of Murmur,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Systolic",Misc,Numeric,Systolic,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Systolic Abnormal",Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Diastolic",Misc,Numeric,Diastolic,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Diastolic Abnormal",Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Pulse",Misc,Numeric,Pulse,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Pulse Abnormal",Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,
+,"Rheumatic Heart Disease, RR",Misc,Numeric,RR,,,,,,,,,,,,
+,"Rheumatic Heart Disease, RR Abnormal",Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,
+,"Rheumatic Heart Disease, SAT",Misc,Numeric,SAT,,,,,,,,,,,,
+,"Rheumatic Heart Disease, SAT Abnormal",Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Temperature",Misc,Numeric,Temperature,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Temperature Abnormal",Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Physical Examination Details",Misc,Text,Physical Examination Details,"GENERAL - visibly dyspneaic<br>
 NEURO<br>
 NECK- jugular venous distension<br>
 CARDIO - murmur - irregular<br>                          MURMUR TYPE NOW<br>

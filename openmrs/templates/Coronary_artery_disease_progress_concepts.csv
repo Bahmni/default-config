@@ -44,14 +44,14 @@ consider referral to Kathmandu for stress+angio",,,,,,,,,
 - Symptoms uncontrolled, uptitrate medicines/ or add second line agent (SEE medication page) → 2 weeks<br>
 - Suspected unstable angina / acute MI → SEND TO ER<br>
 - Other cause of chest pain likely, not cardiac → manage and 3 months follow up unless unstable, then ER<br>",,,,,,3 months,2 week,Send to ER,Manage and 3 months
-,"Coronary Artery Disease, Management",Misc,N/A,Management,"- B-blocker / atenolol<br>
+,"Coronary Artery Disease, Management",Misc,Text,Management,"- B-blocker / atenolol<br>
 - Nitrates<br>
 - CalcChan blocker/verapimil<br>",,,,,,,,,
-,"Coronary Artery Disease, Checklist",Misc,N/A,Checklist,"- Baseline ECG then q12mo.<br>
-- Screen 6mo. A1C   goal <7<br>
-- Screen lipids q6mo.LDL<100<br>
-- Control htn goal <130/<br>",,,,,,,,,
-,"Coronary Artery Disease, Preventive therapies",Misc,N/A,Preventive therapies,"- aspirin 100mg po unless contraindications<br>
+,"Coronary Artery Disease, Checklist",Misc,Text,Checklist,"- Baseline ECG then q12mo.<br>
+- Screen 6mo. A1C   goal less than 7<br>
+- Screen lipids q6mo.LDL less than 100<br>
+- Control htn goal less than 130/<br>",,,,,,,,,
+,"Coronary Artery Disease, Preventive therapies",Misc,Text,Preventive therapies,"- aspirin 100mg po unless contraindications<br>
 - atorvastatin start 20mg po qhs  if past MI, OR to treat LDL goal<br>
 
 <b>COUNSELING<b><br>

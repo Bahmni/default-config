@@ -6,8 +6,8 @@ uuid,name,class,datatype,shortname,description,reference-term-code,reference-ter
 ,"Chronic Kidney Disease, Diagnosis Location",Misc,Text,Diagnosis Location,,,,,,,,,
 ,"Chronic Kidney Disease, Last Visit Date",Misc,Date,Last Visit Date,,,,,,,,,
 ,"Chronic Kidney Disease, Last Known CR",Misc,Text,Last known CR,,,,,,,,,
-,"Chronic Kidney Disease, Diagnostic Criteria",Misc,Coded,Diagnostic Criteria,"- ≥3 months presence of kidney damage (usually detected as urinary albumin excretion of ≥30 mg/day, or equivalent)<br>
-- decreased kidney function (defined as estimated glomerular filtration rate [eGFR] <60 mL/min per 1.73 m2)<br>",,,,,"≥3 Months Presence Of Kidney Damage
+,"Chronic Kidney Disease, Diagnostic Criteria",Misc,Coded,Diagnostic Criteria,"- Greater than 3 months presence of kidney damage (usually detected as urinary albumin excretion of more than 30 mg/day, or equivalent)<br>
+- decreased kidney function (defined as estimated glomerular filtration rate [eGFR] less than 60 mL/min per 1.73 m2)<br>",,,,,"≥3 Months Presence Of Kidney Damage
 ",Decreased Kidney Function,,
 ,"Chronic Kidney Disease, Likely cause of CKD",Misc,Coded,Known / Likely cause of CKD,"- Glomerular diseases (diabetes, autoimmune diseases, systemic infections, drugs, neoplasia).<br>
 - Vascular diseases (atherosclerosis, hypertension, ischemia, vasculitis, thrombotic microangiopathy).<br>

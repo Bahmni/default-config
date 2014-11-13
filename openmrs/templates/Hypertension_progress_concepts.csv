@@ -1,10 +1,10 @@
 uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10
-,"Hypertension, Diagnostic Criteria","- Normal blood pressure: systolic <120 mmHg and diastolic <80 mmHg<br>
+,"Hypertension, Diagnostic Criteria","- Normal blood pressure: systolic less than 120 mmHg and diastolic less than 80 mmHg<br>
 - Prehypertension: systolic 120 to 139 mmHg or diastolic 80 to 89 mmHg<br>
 - Hypertension:<br>
 - Stage 1: systolic 140 to 159 mmHg or diastolic 90 to 99 mmHg<br>
-- Stage 2: systolic ≥160 or diastolic ≥100 mmHg<br>
-- Stage 3: >180 systolic and >110 diastolic<br>",Misc,Coded,Diagnostic Criteria,,,,,Normal Blood Pressure,Prehypertension,Hypertension,Stage 1,Stage 2,Stage 3,,,,
+- Stage 2: systolic greater than equal to 160 or diastolic greater than equal to 100 mmHg<br>
+- Stage 3: greater than 180 systolic and greater than 110 diastolic<br>",Misc,Coded,Diagnostic Criteria,,,,,Normal Blood Pressure,Prehypertension,Hypertension,Stage 1,Stage 2,Stage 3,,,,
 ,"Hypertension, Risk Factors",,Misc,Coded,Risk Factors,,,,,Excess Sodium Intake,Obesity And Weight Gain,Excess Alcohol Intake,Lack of exercise,Dyslipidemia,Family History,,,,
 ,"Hypertension, Chief Complaint",,Misc,Text,Chief Complaint,,,,,,,,,,,,,,
 ,"Hypertension, New Symptoms ",,Misc,Text,New Symptoms / History Present Illness,,,,,,,,,,,,,,

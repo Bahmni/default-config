@@ -1,6 +1,6 @@
 uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2
 ,"Death Note, Pronounced Death Date",Misc,Date,Pronounced Death date,,,,,,,
-,"Death Note, Pronounced Death Time",Misc,Time,Pronounced Death tim,,,,,,,
+,"Death Note, Pronounced Death Time",Misc,Time,Pronounced Death time,,,,,,,
 ,"Death Note, Provider Name",Misc,Text,Provider name who pronounced death,,,,,,,
 ,"Death Note, Cause of Death",Misc,Text,Cause of Death,,,,,,,
 ,"Death Note, Expected / Unexpected",Misc,Coded,Expected / Unexpected,,,,,,Expected,Unexpected

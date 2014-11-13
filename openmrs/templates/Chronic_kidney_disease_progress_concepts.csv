@@ -1,13 +1,15 @@
 uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
 ,"Chronic Kidney Disease, Staging KIDGO",Misc,Coded,Staging KIDGO ,"Staging KIDGO Kidney Dis Improving Global Outcomes Use Cockroft-Gault equation<br>
 MALE – [1.23 X Weight X (140 – Age) / Creatinine ]<br>
+
 FEMALE – [1.08 X Weight X (140 – Age) / Creatinine ]<br>
-- G1 	GFR>90 Normal or high<br>
-- G2 	60 to 89 	Mildly decreased<br>
-- G3a 	45 to 59 	Mildly to moderately decreased<br>
-- G3b 	30 to 44 	Moderately to severely decreased<br>
-- G4 	15 to 29 	Severely decreased<br>
-- G5 	GFR<15 Kidney failure (add D if treated by dialysis)<br>",,,,,KIDGO G1,KIDGO G2,KIDGO G3a,KIDGO G3b,KIDGO G4,KIDGO G5,,
+
+- G1 	GFR Greater than 90 Normal or high<br>
+- G2         60 to 89Mildly decreased<br>
+- G3a 	45 to 59 Mildly to Moderately decreased<br>
+- G3b 	30 to 44 Moderately to severely decreased<br>
+- G4 	15 to 29 Severely decreased<br>
+- G5 	GFR Less than 15 Kidney failure (add D if treated by dialysis)<br>",,,,,KIDGO G1,KIDGO G2,KIDGO G3a,KIDGO G3b,KIDGO G4,KIDGO G5,,
 ,"Chronic Kidney Disease, Albuminuria",Misc,Coded,Albuminuria,,,,,,"Albuminuria, A1","Albuminuria, A2","Albuminuria, A3",,,,,
 ,"Chronic Kidney Disease, Past Diagnostic Findings",Misc,Coded,Any past diagnostic findings,"-   Polycystic kidneys<br>
 -   Hydronephrosis due to obstruction<br>

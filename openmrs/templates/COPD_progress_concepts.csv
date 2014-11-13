@@ -66,7 +66,7 @@ Consider CXR: IF  change in symptoms suggests a   complication of COPD (eg, pneu
 COUNSEL ALL PATIENTS TO STOP SMOKING<br>",,,,,Stable,Mild Exacerbation,Moderate Exacerbation,Severe Exacerbation,
 ,"COPD, Medications",Drug,Coded,Medications,"- salbutamol 100mg inhaled q8-q4h sos <br>
 - ipratropium 20mcg inhaled bid-tid  <br>",,,,,Salbutamol,Ipratropium,,,
-,"COPD, Referral / IPD admission",Misc,N/A,Consider ER Referral / IPD admission,"- Inadequate response to outpatient management<br>
+,"COPD, Referral / IPD admission",Misc,Boolean,Consider ER Referral / IPD admission,"- Inadequate response to outpatient management<br>
 - Marked increase in dyspne<br>   
 - Inability to eat or sleep<br>
 - Worsening hypoxemia<br>

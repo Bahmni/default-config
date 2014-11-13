@@ -7,7 +7,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"Asthma, Last Exacerbation Within 12 months",,Question,Boolean,Exacerbation within 12months,,,,,,,,,
 ,"Asthma, Last Exacerbation date",,Misc,Date,Last Exacerbation date,,,,,,,,,
 ,"Asthma, Last Exacerbation Treated at",,Misc,Coded,Treated at,,,,,,"Treated at, Home","Treated at, Inpatient",,
-,"Asthma, Last Exacerbation Inpatient Details",,Misc,Text,Impatient details,,,,,,,,,
+,"Asthma, Last Exacerbation Inpatient Details",,Misc,Text,Inpatient details,,,,,,,,,
 ,"Asthma, Hospitalizations",,Misc,Coded,Hospitalizations,,,,,,Zero,One,Two,Greater than or 3
 ,"Asthma, Treated as Outpatient",,Misc,Coded,Treated as Outpatient,,,,,,Zero,One,Two,Greater than or 3
 ,"Asthma, Peak Expiratory Flow",,Misc,Text,Peak expiratory flow,,,,,,,,,

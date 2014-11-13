@@ -7,7 +7,7 @@ uuid,name,class,datatype,shortname,description,reference-term-code,reference-ter
 ,"Rheumatoid Arthritis, Chief Complaint",Misc,Text,Chief complaint,,,,,,,,,,,,
 ,"Rheumatoid Arthritis, New Symptoms",Misc,Text,New Symptoms / History of Present Illness,,,,,,,,,,,,
 ,"Rheumatoid Arthritis, Recent Steroid Treatment",Misc,Text,Recent PO steroid treatment for Flare,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Current Home Medications",Misc,Coded,Current home medications,,,,,,Methotrexate,NSAID,Prednisone,,,,
+,"Rheumatoid Arthritis, Current Home Medications",Misc,Coded,Current home medications,,,,,,Methotrexade,NSAID,Prednisone,,,,
 ,"Rheumatoid Arthritis, All Other Medicines",Misc,Text,All other Medicines,,,,,,,,,,,,
 ,"Rheumatoid Arthritis, Systolic",Misc,Numeric,Systolic,,,,,,,,,,,,
 ,"Rheumatoid Arthritis, Systolic Abnormal",Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,

@@ -7,10 +7,10 @@ uuid,name,class,shortname,description,reference-term-code,reference-term-relatio
 - Signs/symtoms HTN emergency → send to ER<br>
 COUNSEL ALL PATIENTS ON MEDICATION SIDE EFFECTS<br>
 MEDS<br>                                 
-[ ] hctz<br>                        
-[ ] ACEi (do not give to pregnant women <br>
-[ ] ca-ch-block amlodipine<br> 
-[ ] b blocker / atenolol<br>       
+- hctz<br>                        
+- ACEi (do not give to pregnant women <br>
+- ca-ch-block amlodipine<br> 
+- b blocker / atenolol<br>       
 Checklist <br>
 - 1 time initially CBC, lytes, thyroid, EKG<br>
 - q12mo creatitine, Urine for protein <br>
@@ -19,4 +19,4 @@ Checklist <br>
 ER REFERRAL/ IPD admission<br>
 IF patient for Hypertensive Emergency (BP > 200/120 mmHg with evidence of headache,blurred vision, chest pain, dyspnea)<br>",,,,"Hypertension, At Goal Today",,,,,,,,,,,,
 ,"Hypertension, Physical Examination",Misc,Physical Examination,,,,,"Hypertension, Systolic","Hypertension, Systolic Abnormal","Hypertension, Diastolic","Hypertension, Diastolic Abnormal","Hypertension, Pulse","Hypertension, Pulse Abnormal","Hypertension, RR","Hypertension, RR Abnormal","Hypertension, SAT","Hypertension, SAT Abnormal","Hypertension, Temperature","Hypertension, Temperature Abnormal","Hypertension, Physical Examination Details"
-,"Hypertension, Followup",Misc,Hypertension – Followup,,,,,"Hypertension, Diagnostic Criteria","Hypertension, Risk Factors","Hypertension, Etiology","Hypertension, Exposures","Hypertension, Past Diagnostics","Hypertension, Chief Complaint","Hypertension, New Symptoms ","Hypertension, Current Medications","Hypertension, Non Compliance","Hypertension, Non Compliance Reasons","Hypertension, Symptoms Of Complication","Hypertension, Physical Examination","Hypertension, Assessment And Management"
+,"Hypertension, Followup",Misc,"Hypertension, Progress",,,,,"Hypertension, Diagnostic Criteria","Hypertension, Risk Factors","Hypertension, Etiology","Hypertension, Exposures","Hypertension, Past Diagnostics","Hypertension, Chief Complaint","Hypertension, New Symptoms ","Hypertension, Current Medications","Hypertension, Non Compliance","Hypertension, Non Compliance Reasons","Hypertension, Symptoms Of Complication","Hypertension, Physical Examination","Hypertension, Assessment And Management"
