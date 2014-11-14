@@ -46,3 +46,9 @@ INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max
 INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			VALUES('No. of women ≥ 20 Years', 'Safe Abortion Service', 20, 0, 999, 0, 2);          
             
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('</ 28 days', 'Childhood Illness 2months', 0, 0, 0, 28, 1);     
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('29 - 59 days', 'Childhood Illness 2months', 0, 29, 0, 59, 2);
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('2 - 59 months', 'Childhood Illness 59months', 0, 60, 5, -1, 1);

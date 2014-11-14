@@ -27,7 +27,7 @@
             "obsIgnoreList" : ["Patient file"],
             "otherInvestigationsMap": {
             },
-            "maxConceptSetLevels": 3,
+            "maxConceptSetLevels": 55555,
             "conceptSetUI": {
                 "Chief complaint" : {
                     "durationRequired" : false,

@@ -17,7 +17,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,reference-term-source,r
 ,Receive other food and drinks,,Misc,Boolean,,,,,,,,,,,,
 ,Other food and drinks frequency,,Misc,Numeric,How many times in 24 hours?,,,,,,,,,,,
 ,Other food and drinks fed by,,Misc,Coded,Fed by,,,,,Bottle,Spoon,,,,,
-,Weight condition,,Misc,Coded,Weight,,,,,Normal weight,Low weight,Very low weight,,,,
+,Weight condition,,Misc,Coded,Weight condition,,,,,Normal weight,Low weight,Very low weight,,,,
 ,Thrush in the mouth,,Misc,Boolean,,,,,,,,,,,,
 ,Breastfeeding attachment,,Misc,Coded,Attachment,,,,,Good,Not well,Not at all,,,,
 ,Breastfeeding suckling,,Misc,Coded,Suckling,,,,,Effective,Not Effective,Not at all,,,,
