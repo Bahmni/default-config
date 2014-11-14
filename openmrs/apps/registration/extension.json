@@ -55,12 +55,12 @@
         "requiredPrivilege": "Edit Visits"
     },
     {
-        "id": "bahmni.patient.edit.action.save",
+        "id": "bahmni.patient.edit.action.print",
         "extensionPointId": "org.bahmni.registration.patient.edit.action",
        "type": "config",
         "extensionParams" : {
-            "action" : "save",
-            "display": "Save"
+            "action" : "print",
+            "display": "Save and Print"
         },
         "order": 2,
         "requiredPrivilege": "Edit Patients"
@@ -99,19 +99,5 @@
         },
         "order": 2,
         "requiredPrivilege": "Edit Visits"
-    },
-    {
-        "id": "bahmni.registration.printOptions.print",
-        "extensionPointId": "org.bahmni.registration.printOptions",
-        "type": "config",
-        "label": "Print Registration Card",
-        "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html"
-    },
-    {
-        "id": "bahmni.registration.printOptions.printSupplemental",
-        "extensionPointId": "org.bahmni.registration.printOptions",
-        "type": "config",
-        "label": "Print Supplemental Paper",
-        "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html"
     }
 ]
