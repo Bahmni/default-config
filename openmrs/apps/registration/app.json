@@ -27,9 +27,17 @@
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
-            "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-            "supplementalPaperPrintLayout": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
             "localNameSearch": false,
+            "printOptions": [
+                {
+                    "label": "Print Registration Card",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html"
+                },
+                {
+                    "label": "Print Supplemental Paper",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html"
+                }
+            ],
             "conceptSetUI": {
                 "REGISTRATION FEES": {
                     "required": true,
