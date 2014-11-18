@@ -21,4 +21,4 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"General Chronic Disease OPD, Investigations",,Misc,Text,Investigations,,,,,,,,,,,,,,,
 ,"General Chronic Disease OPD, Assessment / Plan",,Misc,Text,Assessment / Plan,,,,,,,,,,,,,,,
 ,"General Chronic Disease OPD, Counseling",,Misc,Coded,Counseling,,,,,Diet,Quit Smoking,Quit Alcohol,Medication Compliance,,,,,,,
-,"General Chronic Disease OPD, Followup",,Misc,Coded,Followup,,,,,1 - 2 Weeks,1 Month,3 month,6 Months,12 Months,,,,,,
+,"General Chronic Disease OPD, Followup",,Misc,Coded,Followup,,,,,1 - 2 Weeks,1 Month,3 months,6 Months,12 Months,,,,,,
