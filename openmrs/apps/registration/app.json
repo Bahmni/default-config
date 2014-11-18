@@ -31,12 +31,14 @@
             "localNameSearch": false,
             "printOptions": [
                 {
-                    "label": "Print Registration Card",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html"
+                    "label": "<u>P</u>rint Registration Card",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+                    "shortcutKey": "p"
                 },
                 {
-                    "label": "Print Supplemental Paper",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html"
+                    "label": "P<u>r</u>int Supplemental Paper",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+                    "shortcutKey": "r"
                 }
             ],
             "conceptSetUI": {
