@@ -50,7 +50,7 @@
         "extensionParams" : {
             "action" : "enterVisitDetails",
             "display": "Enter <u>V</u>isit Details",
-            "shortcutKey": "v",
+            "shortcutKey": "v"
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
@@ -62,7 +62,7 @@
         "extensionParams" : {
             "action" : "save",
             "display": "<u>S</u>ave",
-            "shortcutKey": "s",
+            "shortcutKey": "s"
         },
         "order": 2,
         "requiredPrivilege": "Edit Patients"
