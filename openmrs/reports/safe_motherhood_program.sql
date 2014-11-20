@@ -5,15 +5,19 @@ SET @end_date = '2014-11-30';
 -- Query
 
 -- Delivery Service
-
-SELECT delivery.delivery_service_worker AS 'Delivery Service', COUNT(*) as Facility
+SELECT names.name AS 'Delivery Service', IF(counts.facility IS NULL, 0, counts.facility) AS 'Facility'
+FROM
+(SELECT name FROM concept_name WHERE name IN ('Skilled Birth Attendant', 'Non SBA Health worker')) AS names
+LEFT OUTER JOIN
+(SELECT delivery.delivery_service_worker, COUNT(*) AS facility
 FROM  
 (SELECT obs_delivery_service.value_concept_full_name as delivery_service_worker
 FROM coded_obs_view as obs_delivery_service
 WHERE obs_delivery_service.concept_full_name = 'Delivery service done by'
 	  AND DATE(obs_delivery_service.obs_datetime) BETWEEN @start_date AND @end_date)
 AS delivery
-GROUP BY delivery.delivery_service_worker;
+GROUP BY delivery.delivery_service_worker) AS counts
+ON names.name = counts.delivery_service_worker;
 
 -- Type of Delivery
 
@@ -159,10 +163,12 @@ ORDER BY abortion_procedures.sort_order)
 
 UNION
 
-(SELECT procedures_fp_methods.fp_name AS 'Post Abortion FP Methods',
-	IF(procedures_fp_methods.procedure_name IS NULL, 0, SUM(IF(procedures_fp_methods.procedure_name = 'Medical Abortion' || procedures_fp_methods.procedure_name = 'Medical Induction' || procedures_fp_methods.procedure_name = 'Other abortion procedures', 1, 0))) as Medical,
-    IF(procedures_fp_methods.procedure_name IS NULL, 0, SUM(IF(procedures_fp_methods.procedure_name = 'Manual Vacuum Aspiration' || procedures_fp_methods.procedure_name = 'Electric Vacuum Aspiration' || procedures_fp_methods.procedure_name = 'Dilation and Evacuation', 1, 0))) as Surgical
-FROM  
+(SELECT methods_list.parent_concept_name AS 'Post Abortion FP methods',
+	SUM(IF(procedures_fp_methods.procedure_name IS NULL, 0, IF(procedures_fp_methods.procedure_name = 'Medical Abortion' || procedures_fp_methods.procedure_name = 'Medical Induction' || procedures_fp_methods.procedure_name = 'Other abortion procedures', 1, 0))) as Medical,
+    SUM(IF(procedures_fp_methods.procedure_name IS NULL, 0, IF(procedures_fp_methods.procedure_name = 'Manual Vacuum Aspiration' || procedures_fp_methods.procedure_name = 'Electric Vacuum Aspiration' || procedures_fp_methods.procedure_name = 'Dilation and Evacuation', 1, 0))) as Surgical
+FROM
+(SELECT parent_concept_name, child_concept_name from concept_children_view where parent_concept_name IN ('Short term family planning methods', 'Long term family planning methods'))AS methods_list
+LEFT OUTER JOIN
 (SELECT obs_procedure.value_concept_full_name as procedure_name,
 	    obs_fp.value_concept_full_name as fp_name
 FROM valid_coded_obs_view as obs_procedure
@@ -170,7 +176,9 @@ INNER JOIN valid_coded_obs_view AS obs_fp ON obs_procedure.obs_group_id = obs_fp
 	AND obs_fp.concept_full_name = 'Accepted Family Planning methods'
 	AND obs_procedure.concept_full_name = 'Abortion procedure'
 	AND DATE(obs_procedure.obs_datetime) BETWEEN @start_date AND @end_date) AS procedures_fp_methods
-GROUP BY procedures_fp_methods.fp_name);
+ON methods_list.child_concept_name = procedures_fp_methods.fp_name
+GROUP BY methods_list.parent_concept_name);
+
 
 -- Safe Abortion service (Post abortion care)
 SELECT pac.pac_category AS 'PAC',

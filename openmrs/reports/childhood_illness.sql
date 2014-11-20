@@ -101,12 +101,12 @@ SELECT total.name AS '2-59 months Children',
        diseases.other_fever AS 'Other fever',
        diseases.severe_malnutrition AS 'Severe malnutrition',
        diseases.anaemia AS 'Anaemia',
-       'Other',
+       diseases.others AS 'Other',
 	   treatment.cotrim AS 'Treatment - Cotrim Paediatrics',
 	   'Treatment - Other antibiotics',
        'Treatment - IV fluid',
-       treatment.zinc AS 'Treatment - ORS and Zinc',
-       treatment.ors AS 'Treatment - ORS',
+       treatment_ors_zinc.count AS 'Treatment - ORS and Zinc',
+       treatment.ors AS 'Treatment - ORS Only',
        treatment.anti_helminthes AS 'Treatment - Anti-helminthes',
        treatment.vitamin_a AS 'Treatment - Vitamin A',
        refer.refer_ari AS 'Refer - ARI',
@@ -244,12 +244,13 @@ INNER JOIN
     SUM(IF( coded_obs_view.value_concept_full_name = 'Pyrexia of Unknown Origin', 1, 0)) AS other_fever,
     SUM(IF( coded_obs_view.value_concept_full_name = 'Anaemia', 1, 0)) AS anaemia,
     SUM(IF( coded_obs_view.value_concept_full_name = 'Malnutrition', 1, 0)) AS severe_malnutrition,
-    SUM(IF( coded_obs_view.value_concept_full_name = 'Measles', 1, 0)) AS measles
+    SUM(IF( coded_obs_view.value_concept_full_name = 'Measles', 1, 0)) AS measles,
+    SUM(IF( coded_obs_view.value_concept_full_name NOT IN ( 'Clinical Malaria', 'Plasmodium Falciparum', 'Typhoid', 'Severe pneumonia', 'Meningitis', 'Lower respiratory tract infection', 'Acute Suppurative Otitis Media', 'Chronic Suppurative Otitis Media', 'Pyrexia of Unknown Origin', 'Anaemia', 'Malnutrition', 'Measles'), 1, 0)) AS others
     FROM person 
 INNER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
-	AND coded_obs_view.value_concept_full_name IN ('Clinical Malaria', 'Plasmodium Falciparum', 'Typhoid', 'Severe pneumonia', 'Meningitis', 'Lower respiratory tract infection',
-    'Acute Suppurative Otitis Media', 'Chronic Suppurative Otitis Media', 'Pyrexia of Unknown Origin', 'Anaemia', 'Malnutrition', 'Measles')
+	-- AND coded_obs_view.value_concept_full_name IN ('Clinical Malaria', 'Plasmodium Falciparum', 'Typhoid', 'Severe pneumonia', 'Meningitis', 'Lower respiratory tract infection',
+    -- 'Acute Suppurative Otitis Media', 'Chronic Suppurative Otitis Media', 'Pyrexia of Unknown Origin', 'Anaemia', 'Malnutrition', 'Measles')
     AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
 INNER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
@@ -264,8 +265,7 @@ INNER JOIN
 (SELECT possible_age_group.name,
 	SUM(IF(concept_view.concept_full_name IS NULL, 0, IF(concept_view.concept_full_name = 'Cotrimoxazole',1,0))) AS cotrim,
     SUM(IF(concept_view.concept_full_name IS NULL, 0, IF(concept_view.concept_full_name = 'Gentamycin',1,0))) AS gentamycin,
-	SUM(IF(concept_view.concept_full_name IS NULL, 0, IF(concept_view.concept_full_name = 'Gentamycin',1,0))) AS ors,
-    SUM(IF(concept_view.concept_full_name IS NULL, 0, IF(concept_view.concept_full_name = 'Gentamycin',1,0))) AS zinc,
+	SUM(IF(concept_view.concept_full_name IS NULL, 0, IF(concept_view.concept_full_name = 'ORS',1,0))) AS ors,
     SUM(IF(concept_view.concept_full_name IS NULL, 0, IF(concept_view.concept_full_name = 'Anti-helminthes',1,0))) AS anti_helminthes,
     SUM(IF(concept_view.concept_full_name IS NULL, 0, IF(concept_view.concept_full_name = 'Vitamin-A',1,0))) AS vitamin_a
 FROM orders
@@ -282,3 +282,29 @@ WHERE possible_age_group.report_group_name = 'Childhood Illness 59months'
 GROUP BY possible_age_group.name
 ORDER BY possible_age_group.sort_order) AS treatment
 ON diseases.name = treatment.name
+INNER JOIN
+-- ORS and Zinc
+(SELECT possible_age_group.name,
+ 	SUM(IF(first_concept_view.concept_full_name IS NOT NULL && second_concept_view.concept_full_name IS NOT NULL, 1, 0)) AS count
+FROM orders AS first_order
+INNER JOIN person ON first_order.patient_id = person.person_id
+	AND first_order.date_activated BETWEEN @start_date AND @end_date
+    AND first_order.order_action IN ('NEW', 'REVISED')
+INNER JOIN drug_order AS first_drug_order ON first_order.order_id = first_drug_order.order_id
+INNER JOIN drug AS first_drug ON first_drug_order.drug_inventory_id = first_drug.drug_id
+INNER JOIN concept_view AS first_concept_view ON first_drug.concept_id = first_concept_view.concept_id
+	AND first_concept_view.concept_full_name = 'ORS'
+INNER JOIN orders AS second_order ON second_order.patient_id = person.person_id
+	AND second_order.order_action IN ('NEW', 'REVISED')
+    AND second_order.date_activated BETWEEN @start_date AND @end_date
+INNER JOIN drug_order AS second_drug_order ON second_order.order_id = second_drug_order.order_id
+INNER JOIN drug AS second_drug ON second_drug_order.drug_inventory_id = second_drug.drug_id
+INNER JOIN concept_view AS second_concept_view ON second_drug.concept_id = second_concept_view.concept_id
+	AND second_concept_view.concept_full_name = 'Zinc'
+RIGHT OUTER JOIN possible_age_group ON first_order.date_activated BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.min_years YEAR), INTERVAL possible_age_group.min_days DAY)) 
+						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.max_years YEAR), INTERVAL possible_age_group.max_days DAY))
+WHERE possible_age_group.report_group_name = 'Childhood Illness 59months'
+GROUP BY possible_age_group.name
+ORDER BY possible_age_group.sort_order) AS treatment_ors_zinc
+ON treatment.name = treatment_ors_zinc.name;
+
