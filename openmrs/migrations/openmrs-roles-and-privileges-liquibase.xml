@@ -85,6 +85,8 @@
         </sql>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-003" author="tw">
+        <validCheckSum>3:2d94316c41ea4ad5f8194e4ab7cf569b</validCheckSum>
+        <validCheckSum>3:f7acfab952a62d8e46dc30ce0055cd3a</validCheckSum>
         <comment>Add clinical roles and privileges</comment>
         <insert tableName="role">
             <column name="role" value="Doctor" />
