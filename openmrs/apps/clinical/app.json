@@ -66,7 +66,8 @@
                 {
                     "title": "Treatments",
                     "name": "treatment",
-                    "numberOfVisits": 1
+                    "numberOfVisits": 1,
+                    "active": true
                 },
                 {
                     "title": "Radiology",
