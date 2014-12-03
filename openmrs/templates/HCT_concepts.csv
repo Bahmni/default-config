@@ -1,5 +1,5 @@
 uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14,answer.15,answer.16
-,"HCT, Pre-test Counceling",,Misc,Boolean,Pre-test Counseling,,,,,,,,,,,,,,,,,,,,
+,"HCT, Pre-test Counseling",,Misc,Boolean,Pre-test Counseling,,,,,,,,,,,,,,,,,,,,
 ,"HCT, Tested before",,Misc,Boolean,HIV Tested Before,,,,,,,,,,,,,,,,,,,,
 ,"HCT, Result if tested",,Misc,Coded,"If tested, Result",,,,,Negative,Positive,,,,,,,,,,,,,,
 ,"HCT, Reason for test",,Misc,Coded,Medical Reason for Test,,,,,STI,TB,Pregnancy,HIV/AIDS Symptoms,None,Others,,,,,,,,,,
@@ -9,7 +9,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"HCT, Other Risk Group",,Misc,Text,Other(Specify),,,,,,,,,,,,,,,,,,,,
 ,"HCT, Informed Consent",,Misc,Boolean,Informed Consent,,,,,,,,,,,,,,,,,,,,
 ,"HCT, Initial",,Misc,Coded,Initial,,,,,Negative,Positive,Not Applicable,,,,,,,,,,,,,
-,"HCT, Confirmatory",,Misc,Boolean,Confirmatory,,,,,Negative,Positive,Not Applicable,,,,,,,,,,,,,
+,"HCT, Confirmatory",,Misc,Coded,Confirmatory,,,,,Negative,Positive,Not Applicable,,,,,,,,,,,,,
 ,"HCT, Post-test Counseling",,Misc,Boolean,Post-test Counseling,,,,,,,,,,,,,,,,,,,,
 ,"HCT, Result Recieved",,Misc,Boolean,Result Recieved,,,,,,,,,,,,,,,,,,,,
 ,"HCT, Result",,Misc,Coded,Test Result,,,,,Negative,Positive,,,,,,,,,,,,,,
