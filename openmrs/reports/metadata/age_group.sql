@@ -51,4 +51,21 @@ INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max
 INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			VALUES('29 - 59 days', 'Childhood Illness 2months', 0, 29, 0, 59, 2);
 INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-			VALUES('2 - 59 months', 'Childhood Illness 59months', 0, 60, 5, -1, 1);
+			VALUES('2 - 59 months', 'Childhood Illness 59months', 0, 60, 5, -1, 3);
+            
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('0 - 4 years', 'Tuberculosis registration', 0, 0, 5, -1, 1);
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('5 - 14 years', 'Tuberculosis registration', 5, 0, 15, -1, 2);
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('15 - 24 years', 'Tuberculosis registration', 15, 0, 25, -1, 3);
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('25 - 34 years', 'Tuberculosis registration', 25, 0, 35, -1, 4);
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('35 - 44 years', 'Tuberculosis registration', 35, 0, 45, -1, 5);
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('45 - 54 years', 'Tuberculosis registration', 45, 0, 55, -1, 6);
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('55 - 64 years', 'Tuberculosis registration', 55, 0, 65, -1, 7);
+INSERT INTO possible_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			VALUES('>/65 years', 'Tuberculosis registration', 65, 0, 999, 0, 8);
