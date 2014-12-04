@@ -1,7 +1,9 @@
 -- Parameters
 SET @start_date = '2014-10-05';
-SET @end_date = '2014-11-01';
-
+SET @end_date = '2014-12-30';
+-- Dependency 
+-- Run metadata/age_group.sql
+-- create index visit_date_started on visit(date_started);
 -- Constants
 SET @report_group_name = 'Client Service Reports';
 
@@ -28,5 +30,6 @@ WHERE observed_age_group.report_group_name = @report_group_name) AS client_visit
 GROUP BY client_visits.age_group
 ORDER BY client_visits.sort_order;
 
-create index visit_date_started on visit(date_started);
+-- Would need this index
+-- create index visit_date_started on visit(date_started);
 
