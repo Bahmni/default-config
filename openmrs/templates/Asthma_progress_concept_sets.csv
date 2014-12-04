@@ -1,18 +1,2 @@
 uuid,name,shortname,description,class,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13,child.14
-,"Asthma, Focused Questions",Focused questions for Asthma,,Misc,"Asthma, Inhaler Use Per Week","Asthma, Exacerbations in 3 Months","Asthma, Day Time Symptoms per Day","Asthma, Night Time Symptoms per Month","Asthma, Triggers","Asthma, Other Triggers","Asthma, Unable to Perform Tasks",,,,,,,
-,"Asthma, Physical Examination",Physical Examination,,Misc,"Asthma, Systolic","Asthma, Systolic Abnormal","Asthma, Diastolic","Asthma, Diastolic Abnormal","Asthma, Pulse","Asthma, Pulse Abnormal","Asthma, RR","Asthma, RR Abnormal","Asthma, SAT","Asthma, SAT Abnormal","Asthma, Temperature","Asthma, Temperature Abnormal","Asthma, Physical Examination Details",
-,"Asthma, Assessment and Management",Assessment and Management,"FOLLOW UP<br>
-- If symptoms well controlled--> 3 months<br>
-- Symptoms not controlled → check inhalation technique and medication frequency, step up as per algorithm (left)-->2 weeks<br>
-- Visibly ill appearing →  ER referral<br>
-ER REFERRAL CRITERIA/GUIDE<br>
-- SOB at rest<br>
-- Cannot complete a sentence in one breath<br>
-- Cyanosis<br> 
-- Drowsiness<br>      
-- Use of accessory muscles<br>
-COUNSELING<br>
-- Quit smoking<br>
-- WHAT TO DO AT HOME IN CASE OF EXACERBATION- <br>
-four puffs every 10 minutes, or eight puffs every 20 minutes of beta-agonist (salbutamol)<br>",Misc,,,,,,,,,,,,,,
-,"Asthma, Progress",Asthma – Progress,,Misc,"Asthma, Consider Alternative Diagnosis","Asthma, Differential Diagnosis Dyspnea","Asthma, Differential Diagnosis Cough","Asthma, Differential Diagnosis Wheeze","Asthma, Focused Questions","Asthma, Symptoms of Exacerbation","Asthma, Chief Complaint","Asthma, New Symptoms","Asthma, Current Medications","Asthma, Non Compliance","Asthma, Non Compliance Reason","Asthma, Physical Examination","Asthma, Diagnostic Result","Asthma, Assessment and Management"
+,"Asthma, Progress",Asthma – Progress,,Misc,"Asthma, Peak flow Today","Asthma, Exacerbations This Year","Asthma, Hospitalizations in Past Year","Asthma, Weekly Usage of Rescue Inhaler","Asthma, Weekly Nighttime Awakenings",,,,,,,,,

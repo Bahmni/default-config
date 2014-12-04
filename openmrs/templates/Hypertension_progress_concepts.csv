@@ -1,37 +1,9 @@
 uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10
-,"Hypertension, Diagnostic Criteria","- Normal blood pressure: systolic less than 120 mmHg and diastolic less than 80 mmHg<br>
-- Prehypertension: systolic 120 to 139 mmHg or diastolic 80 to 89 mmHg<br>
-- Hypertension:<br>
-- Stage 1: systolic 140 to 159 mmHg or diastolic 90 to 99 mmHg<br>
-- Stage 2: systolic greater than equal to 160 or diastolic greater than equal to 100 mmHg<br>
-- Stage 3: greater than 180 systolic and greater than 110 diastolic<br>",Misc,Coded,Diagnostic Criteria,,,,,Normal Blood Pressure,Prehypertension,Hypertension,Stage 1,Stage 2,Stage 3,,,,
-,"Hypertension, Risk Factors",,Misc,Coded,Risk Factors,,,,,Excess Sodium Intake,Obesity And Weight Gain,Excess Alcohol Intake,Lack of exercise,Dyslipidemia,Family History,,,,
-,"Hypertension, Chief Complaint",,Misc,Text,Chief Complaint,,,,,,,,,,,,,,
-,"Hypertension, New Symptoms ",,Misc,Text,New Symptoms / History Present Illness,,,,,,,,,,,,,,
-,"Hypertension, Current Medications",,Misc,Coded,Current Medications,,,,,HCTZ,Atenolol,Amoldipine,Enalapril,,,,,,
-,"Hypertension, Non Compliance",,Misc,Boolean,Non Compliance,,,,,,,,,,,,,,
-,"Hypertension, Non Compliance Reasons",,Misc,Text,Non Compliance Reasons,,,,,,,,,,,,,,
-,"Hypertension, Symptoms Of Complication",,Misc,Coded,Signs / Symptoms of Complication,,,,,Edema,Dyspnea,PND,Orthopnea,Angina,Weakness / Facial Droop,Urinary Disease,Acute Headache,Crushing Chest Pain,Blurred Vision
 ,"Hypertension, Systolic",,Misc,Numeric,Systolic,,,,,,,,,,,,,,
 ,"Hypertension, Systolic Abnormal",,Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,,
 ,"Hypertension, Diastolic",,Misc,Numeric,Diastolic,,,,,,,,,,,,,,
 ,"Hypertension, Diastolic Abnormal",,Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,,
-,"Hypertension, Pulse",,Misc,Numeric,Pulse,,,,,,,,,,,,,,
-,"Hypertension, Pulse Abnormal",,Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,,,
-,"Hypertension, RR",,Misc,Numeric,RR,,,,,,,,,,,,,,
-,"Hypertension, RR Abnormal",,Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,,,
-,"Hypertension, SAT",,Misc,Numeric,SAT,,,,,,,,,,,,,,
-,"Hypertension, SAT Abnormal",,Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,,,
-,"Hypertension, Temperature",,Misc,Numeric,Temperature,,,,,,,,,,,,,,
-,"Hypertension, Temperature Abnormal",,Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,,,
-,"Hypertension, Physical Examination Details","GENERAL - thin or obese<br>
-VISION - (cover each eye)<br>
-NEURO<br>                                                      
-Gross exam (count fingers etc)<br>
-NECK <br>
-CARDIO - murmur  - regular<br>
-LUNGS <br>
-ABDOMEN - renal bruits<br>
-EXTREMITIES - edema<br>
-SKIN<br>",Misc,Text,Physical Examination Details,,,,,,,,,,,,,,
-,"Hypertension, At Goal Today",,Misc,Boolean,At Goal Today,,,,,,,,,,,,,,
+,"Hypertension, Last Cr",Check at least once yearly with urine protein to assess for kidney damage,Misc,Text,Last CR,,,,,,,,,,,,,,
+,"Hypertension, Last Cr Date",,Misc,Date,Last CR date,,,,,,,,,,,,,,
+,"Hypertension, Last LDL",Goal is less than 130,Misc,Text,Last LDL,,,,,,,,,,,,,,
+,"Hypertension, Last LDL Date",Do not check more than once yearly,Misc,Date,Last LDL date,,,,,,,,,,,,,,

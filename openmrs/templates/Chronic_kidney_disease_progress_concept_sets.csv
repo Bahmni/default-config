@@ -1,19 +1,2 @@
 uuid,name,shortname,description,class,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13,child.14,child.15,child.16,child.17,child.18,child.19
-,"Chronic Kidney Disease, Comorbidity Goals",Comorbidity Goals,,Misc,"Chronic Kidney Disease, If Diabetic","Chronic Kidney Disease, If Hypertensive","Chronic Kidney Disease, If Hypercholes",,,,,,,,,,,,,,,,
-,"Chronic Kidney Disease, Physical Examination",Physical Examination,,Misc,"Chronic Kidney Disease, Systolic","Chronic Kidney Disease, Systolic Abnormal","Chronic Kidney Disease, Diastolic","Chronic Kidney Disease, Diastolic Abnormal","Chronic Kidney Disease, Pulse","Chronic Kidney Disease, Pulse Abnormal","Chronic Kidney Disease, RR","Chronic Kidney Disease, RR Abnormal","Chronic Kidney Disease, SAT","Chronic Kidney Disease, SAT Abnormal","Chronic Kidney Disease, Temperature","Chronic Kidney Disease, Temperature Abnormal","Chronic Kidney Disease, Physical Examination Details",,,,,,
-,"Chronic Kidney Disease, Assessment and Followup",Assessment and Follow Up,"- Asymptomatic → q3 months<br>
-- Volumem overload sx-> start furosemide after checking Cr and K-> follow up in 1 week<br>
-- Unstable appearing or evidence of acute process → refer to ER/IPD<br>
-(sudden anasarca, little/no urine, rapidly changing Cr over few days)<br>
-- Stage G4/G5 → consider referral to tertiary center<br>
-
-MEDICATIONS – ACE-i is renal protective!<br>
-- ACEi FIRST LINE– enalapril 5mg po daily for stage G2 and worse<br>
-- Fluid overload: lasix first line, start 20mg po bid after confirming there is no hypokalemia (low K)<br>
-
-CONSIDER REFERRAL FOR DIALYSIS<br>
-- rapid rate of progression 
-- uremic encephalopathy or neuropathy<br>
-- Fluid overload not responding to furosemide<br>
-- refractory hyperkalemia, hyponatremia, metabolic acidosis<br>",Misc,,,,,,,,,,,,,,,,,,,
-,"Chronic Kidney Disease, Progress",Chronic Kidney Disease – Progress,,Misc,"Chronic Kidney Disease, Staging KDIGO","Chronic Kidney Disease, Albuminuria","Chronic Kidney Disease, Past Diagnostic Findings","Chronic Kidney Disease, Smoking History","Chronic Kidney Disease, Current Home Medications","Chronic Kidney Disease, All Other Medications","Chronic Kidney Disease, Non Compliance","Chronic Kidney Disease, Non Compliance Reason","Chronic Kidney Disease, Comorbidity Goals","Chronic Kidney Disease, Checklist","Chronic Kidney Disease, Chief Complaint","Chronic Kidney Disease, New Symptoms","Chronic Kidney Disease, Symptoms of Umeria","Chronic Kidney Disease, Decreased Urine Output","Chronic Kidney Disease, Hematuria","Chronic Kidney Disease, Edema","Chronic Kidney Disease, NSAID Abuse","Chronic Kidney Disease, Physical Examination","Chronic Kidney Disease, Assessment and Followup"
+,"Chronic Kidney Disease, Progress",Chronic Kidney Disease – Progress,,Misc,"Chronic Kidney Disease, Evidence of Volume Overload Today","Chronic Kidney Disease, Patient on Enalapril","Chronic Kidney Disease, Last istat Checked Date","Chronic Kidney Disease, Any Abnormalities",,,,,,,,,,,,,,,

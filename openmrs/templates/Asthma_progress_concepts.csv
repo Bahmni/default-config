@@ -1,44 +1,6 @@
 uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9
-,"Asthma, Consider Alternative Diagnosis",Misc,Coded,Consider alternative diagnosis if ,,,,,,Fever,Chronic Purulent Suptum Production,Hemoptysis,Clubbing,Inspiratory Crackles,Hypoxemia,Weight Loss,,
-,"Asthma, Differential Diagnosis Dyspnea",Misc,Coded,Dyspnea differential diagnosis,,,,,,COPD,Heart Failure,Pulmonary Embolism,Sarcoidosis,,,,,
-,"Asthma, Differential Diagnosis Cough",Misc,Coded,Cough differential diagnosis,"Cough – Induced by angiotensin converting enzyme inhibitors, and infection ",,,,,Rhinitis,Rhinosinositis,GRED - Gestroesophageal Reflux Disease,Post Viral Tussive Syndrome,Eosinophilic Bhronchitis,Cough,,,
-,"Asthma, Differential Diagnosis Wheeze",Misc,Coded,Wheeze differential diagnosis,,,,,,Anaphylaxis,Laryngeal Stenosis,Tonsillar Hypertrophy,Goiter,Postnasal Drip Syndrome,Mucous Plug,Tumor,Bronchiectasis,CHF
-,"Asthma, Inhaler Use Per Week",Misc,Numeric,How many times/week using rescue inhaler (Salbutamol),,,,,,,,,,,,,,
-,"Asthma, Exacerbations in 3 Months",Misc,Numeric,Exacerbations in last 3 months,,,,,,,,,,,,,,
-,"Asthma, Day Time Symptoms per Day",Misc,Text,Day time symptoms per day,,,,,,,,,,,,,,
-,"Asthma, Night Time Symptoms per Month",Misc,Text,Night time symptoms per Month,,,,,,,,,,,,,,
-,"Asthma, Triggers",Misc,Coded,Triggers,,,,,,Exercise,Cold Air,Exposure to Allergens,,,,,,
-,"Asthma, Other Triggers",Misc,Text,Other trigger details,,,,,,,,,,,,,,
-,"Asthma, Unable to Perform Tasks",Misc,Coded,Is it keeping you from getting tasks done ?,,,,,,All the Time,Mostly,Sometimes,Little,None,,,,
-,"Asthma, Symptoms of Exacerbation",Misc,Coded,Signs / Symptoms of Exacerbation,"One or more of the following:<br>  
-- Cough increases in frequency and severity<br> 
-- Sputum production increases in volume and/or changes character<br> 
-- Dyspnea worse<br>",,,,,Increase in Cough,Increase in Sputum Production,Dyspnea Worse,,,,,,
-,"Asthma, Chief Complaint",Misc,Text,Chief Complaint,,,,,,,,,,,,,,
-,"Asthma, New Symptoms",Misc,Text,New Symptoms / History of present Illness,,,,,,,,,,,,,,
-,"Asthma, Current Medications",Misc,Text,Current Medications,,,,,,,,,,,,,,
-,"Asthma, Non Compliance",Misc,Boolean,Non Compliance,,,,,,,,,,,,,,
-,"Asthma, Non Compliance Reason",Misc,Text,Reason for Non Compliance,,,,,,,,,,,,,,
-,"Asthma, Systolic",Misc,Numeric,Systolic,,,,,,,,,,,,,,
-,"Asthma, Systolic Abnormal",Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,,
-,"Asthma, Diastolic",Misc,Numeric,Diastolic,,,,,,,,,,,,,,
-,"Asthma, Diastolic Abnormal",Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,,
-,"Asthma, Pulse",Misc,Numeric,Pulse,,,,,,,,,,,,,,
-,"Asthma, Pulse Abnormal",Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,,,
-,"Asthma, RR",Misc,Numeric,RR,,,,,,,,,,,,,,
-,"Asthma, RR Abnormal",Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,,,
-,"Asthma, SAT",Misc,Numeric,SAT,,,,,,,,,,,,,,
-,"Asthma, SAT Abnormal",Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,,,
-,"Asthma, Temperature",Misc,Numeric,Temperature,,,,,,,,,,,,,,
-,"Asthma, Temperature Abnormal",Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,,,
-,"Asthma, Physical Examination Details",Misc,Text,Physical Examination Details,"GENERAL - visibly dyspneaic<br>  
-NEURO<br> -use of the accessory respiratory musc<br>
-HEENT<br> 
-CARDIO - murmur - regular<br>
-LUNGS - wheeze<br>
-ABDOMEN <br>
-EXTREMITIES - edema (CHF)<br>
-SKIN - signs of atopy<br>",,,,,,,,,,,,,
-,"Asthma, Diagnostic Result",Misc,Text,Diagnostic result,"DIAGNOSTICS TODAY<br>
-Consider CXR IF diagnosis is unclear (eg, pneumonia, pneumothorax)<br>
-, hemoptysis, fever > 1 week – <br>",,,,,,,,,,,,,
+,"Asthma, Peak flow Today",Misc,Text,What is peak flow today ?,,,,,,,,,,,,,,
+,"Asthma, Exacerbations This Year",Misc,Numeric,Number of Exacerbations this year,,,,,,,,,,,,,,
+,"Asthma, Hospitalizations in Past Year",Misc,Numeric,Number of Hospitalizations in last year,If more than 2 consider step-up current therapy to next level of treatment,,,,,,,,,,,,,
+,"Asthma, Weekly Usage of Rescue Inhaler",Misc,Numeric,How many times per week does patient utilize rescue inhaler,"If patient using more than  2 days / week, consider step-up therapy to next level of treatment",,,,,,,,,,,,,
+,"Asthma, Weekly Nighttime Awakenings",Misc,Numeric,Times per week does patient have nighttime awakenings secondary to shortness of breath,If 1-3x/ week consider step-up therapy to next level of treatment,,,,,,,,,,,,,

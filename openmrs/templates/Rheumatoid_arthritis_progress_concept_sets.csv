@@ -1,15 +1,2 @@
-uuid,name,shortname,description,class,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13
-,"Rheumatoid Arthritis, Evidence Of Other Cause",Any evidence of other cause for Joint Pain / Swelling,,Misc,"Rheumatoid Arthritis, Top Differential Diagnosis","Rheumatoid Arthritis, Pain Assessment","Rheumatoid Arthritis, Pain Assessment Abnormal ","Rheumatoid Arthritis, Pain Assessment Today","Rheumatoid Arthritis, Joints Affected Today",,,,,,,,
-,"Rheumatoid Arthritis, Current Medication Details",Current medication details,,Misc,"Rheumatoid Arthritis, Current Home Medications","Rheumatoid Arthritis, All Other Medicines","Rheumatoid Arthritis, Non-compliance","Rheumatoid Arthritis, Non-compliance Reason",,,,,,,,,
-,"Rheumatoid Arthritis, Physical Examination",Physical Examination,,Misc,"Rheumatoid Arthritis, Systolic","Rheumatoid Arthritis, Systolic Abnormal","Rheumatoid Arthritis, Diastolic","Rheumatoid Arthritis, Diastolic Abnormal","Rheumatoid Arthritis, Pulse","Rheumatoid Arthritis, Pulse Abnormal","Rheumatoid Arthritis, RR","Rheumatoid Arthritis, RR Abnormal","Rheumatoid Arthritis, SAT","Rheumatoid Arthritis, SAT Abnormal","Rheumatoid Arthritis, Temperature","Rheumatoid Arthritis, Temperature Abnormal","Rheumatoid Arthritis, Physical Examination Details"
-,"Rheumatoid Arthritis, Labs",Labs,"First diagnosis / prior to methotrexate<br> 
-ORDER-<br>
-- baseline complete blood count, serum creatinine, aminotransferases,<br>
- erythrocyte sedimentation rate (ESR), and C-reactive protein (CRP)<br>
- in all patients q6months Chest Xray, LFTs<br>",Misc,,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Assessment ",Assessment and Followup,"- Symptoms controlled, keep on mtx → f/u 3 months for LFTs<br>
-- Not controlled, uptitrate mtx 2.5 mg and add NSAID and prednisolone<br>
- 10mg po daily→ f/u in 1 week<br>
-- Still not controlled on prednis 10 → titrate up--> f/u 1 week<br>
-- Severe intractable pain / febrile / ill appearing → refer to ER/IPD<br>",Misc,,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Progress",Rheumatoid Arthritis – Progress,,Misc,"Rheumatoid Arthritis, Evidence Of Other Cause","Rheumatoid Arthritis, Chief Complaint","Rheumatoid Arthritis, New Symptoms","Rheumatoid Arthritis, Recent Steroid Treatment","Rheumatoid Arthritis, Current Medication Details","Rheumatoid Arthritis, Physical Examination","Rheumatoid Arthritis, Labs","Rheumatoid Arthritis, Assessment ",,,,,
+uuid,name,shortname,description,class,child.1,child.2,child.3
+,"Rheumatoid Arthritis, Progress",Rheumatoid Arthritis – Progress,,Misc,"Rheumatoid Arthritis, Joint Pain or Joint Swelling Today","Rheumatoid Arthritis, Needs Acute Pain Management Today","Rheumatoid Arthritis, Patient on Methotrexate"

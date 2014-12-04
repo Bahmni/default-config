@@ -1,22 +1,8 @@
-uuid,name,class,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13
-,"Hypertension, Assessment And Management",Misc,Assessment And Management,"Follow up 
-- Pre-htn q12month exam only <br>
-- Stage 1 lifestyle--> 6mo.<br>
-- S1/2/3 at BP goal on meds, cont meds → see in 3 months<br>
-- Not at goal, titrate up or add 2nd agent → see in 1 week, counsel to return if severe headache, blurry vision, chest pain, or dyspnea. <br>
-- Signs/symtoms HTN emergency → send to ER<br>
-COUNSEL ALL PATIENTS ON MEDICATION SIDE EFFECTS<br>
-MEDS<br>                                 
-- hctz<br>                        
-- ACEi (do not give to pregnant women <br>
-- ca-ch-block amlodipine<br> 
-- b blocker / atenolol<br>       
-Checklist <br>
-- 1 time initially CBC, lytes, thyroid, EKG<br>
-- q12mo creatitine, Urine for protein <br>
-- Screen lipids q12mo<br>
-- Advise q12mo eye exam by ophthalmologist<br>
-ER REFERRAL/ IPD admission<br>
-IF patient for Hypertensive Emergency (BP > 200/120 mmHg with evidence of headache,blurred vision, chest pain, dyspnea)<br>",,,,"Hypertension, At Goal Today",,,,,,,,,,,,
-,"Hypertension, Physical Examination",Misc,Physical Examination,,,,,"Hypertension, Systolic","Hypertension, Systolic Abnormal","Hypertension, Diastolic","Hypertension, Diastolic Abnormal","Hypertension, Pulse","Hypertension, Pulse Abnormal","Hypertension, RR","Hypertension, RR Abnormal","Hypertension, SAT","Hypertension, SAT Abnormal","Hypertension, Temperature","Hypertension, Temperature Abnormal","Hypertension, Physical Examination Details"
-,"Hypertension, Followup",Misc,"Hypertension, Progress",,,,,"Hypertension, Diagnostic Criteria","Hypertension, Risk Factors","Hypertension, Etiology","Hypertension, Exposures","Hypertension, Past Diagnostics","Hypertension, Chief Complaint","Hypertension, New Symptoms ","Hypertension, Current Medications","Hypertension, Non Compliance","Hypertension, Non Compliance Reasons","Hypertension, Symptoms Of Complication","Hypertension, Physical Examination","Hypertension, Assessment And Management"
+uuid,name,class,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,child.1,child.2,child.3,child.4,child.5,child.6
+,"Hypertension, Systolic data",Concept Details,Systolic data,,,,,"Hypertension, Systolic","Hypertension, Systolic Abnormal",,,,
+,"Hypertension, Diastolic Data",Concept Details,Diastolic data,,,,,"Hypertension, Diastolic","Hypertension, Diastolic Abnormal",,,,
+,"Hypertension, Blood Pressure",ConvSet,Blood pressure,"Goal: most patients goal BP Greater than 140/90;<br>
+Age Greater than 60 goal Greater than 150/90;<br>
+Diabetics goal Greater than 130/80<br>",,,,"Hypertension, Systolic data","Hypertension, Diastolic Data",,,,
+,"Hypertension, What was BP at last visit",ConvSet,What was BP at last visit,,,,,"Hypertension, Systolic data","Hypertension, Diastolic Data",,,,
+,"Hypertension, Progress",Misc,Hypertension – Progress,,,,,"Hypertension, Blood Pressure","Hypertension, What was BP at last visit","Hypertension, Last Cr","Hypertension, Last Cr Date","Hypertension, Last LDL","Hypertension, Last LDL Date"

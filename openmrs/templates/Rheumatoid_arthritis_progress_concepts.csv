@@ -1,35 +1,7 @@
 uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7
-,"Rheumatoid Arthritis, Top Differential Diagnosis",Misc,Coded,Top differential diagnosis,,,,,,Osteoarthritis,Syetematic Rheumatic Diseases,Acute Viral Polyarthritis,Psoriatic Arthritis,Crystalline Arthritis,Fibromyalgia,Reactive Arthritis
-,"Rheumatoid Arthritis, Pain Assessment",Misc,Numeric,Pain assessment,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Pain Assessment Abnormal ",Misc,Boolean,Pain Assessment Abnormal,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Pain Assessment Today",Misc,Coded,Pain assessment today,,,,,,No Pain,Worst in Life,,,,,
-,"Rheumatoid Arthritis, Joints Affected Today",Misc,Text,Joints affected today,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Chief Complaint",Misc,Text,Chief complaint,,,,,,,,,,,,
-,"Rheumatoid Arthritis, New Symptoms",Misc,Text,New Symptoms / History of Present Illness,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Recent Steroid Treatment",Misc,Text,Recent PO steroid treatment for Flare,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Current Home Medications",Misc,Coded,Current home medications,,,,,,Methotrexade,NSAID,Prednisone,,,,
-,"Rheumatoid Arthritis, All Other Medicines",Misc,Text,All other Medicines,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Systolic",Misc,Numeric,Systolic,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Systolic Abnormal",Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Diastolic",Misc,Numeric,Diastolic,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Diastolic Abnormal",Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Pulse",Misc,Numeric,Pulse,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Pulse Abnormal",Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,
-,"Rheumatoid Arthritis, RR",Misc,Numeric,RR,,,,,,,,,,,,
-,"Rheumatoid Arthritis, RR Abnormal",Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,
-,"Rheumatoid Arthritis, SAT",Misc,Numeric,SAT,,,,,,,,,,,,
-,"Rheumatoid Arthritis, SAT Abnormal",Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Temperature",Misc,Numeric,Temperature,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Temperature Abnormal",Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Physical Examination Details",Misc,Text,Physical Examination Details,"GENERAL<br>
-NEURO<br>                                          
-HEENT<br> 
-CARDIO - murmur  - regular<br>
-LUNGS<br> 
-ABDOMEN<br> 
-EXTREMITIES - edema<br>
-JOINTS - inflammation in at least one joint<br>
-SKIN - psoriatic scale<br>
-NAILS – pitting<br>",,,,,,,,,,,
-,"Rheumatoid Arthritis, Non-compliance",Misc,Boolean,Non-compliance,,,,,,,,,,,,
-,"Rheumatoid Arthritis, Non-compliance Reason",Misc,Text,Non-compliance Reason,,,,,,,,,,,,
+,"Rheumatoid Arthritis, Joint Pain or Joint Swelling Today",Misc,Boolean,Patient has joint pain or joint swelling today,,,,,,,,,,,,
+,"Rheumatoid Arthritis, Needs Acute Pain Management Today",Misc,Boolean,Patient needs acute pain management today,"Pain control -- NSAIDs: paracetamol 500mg po qid, and/or ibuprofen 400mg po tid.<br>
+Acute flare w/ evidence of joint swelling or effusions -- prednisolone 10mg po daily x 7 days.<br>
+** STOP prednisone and NSAIDs when disease control is achieved.<br>",,,,,,,,,,,
+,"Rheumatoid Arthritis, Patient on Methotrexate",Misc,Boolean,Is patient on Methotrexate,"CONTRAINDICATIONS  pregnant, breast-feeding, patients with liver disease or alcohol intake, <br>
+renal impairment, immunodeficiency syndrome<br>",,,,,,,,,,,

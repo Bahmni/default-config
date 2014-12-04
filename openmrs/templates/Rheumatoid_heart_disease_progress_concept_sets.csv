@@ -1,18 +1,2 @@
-uuid,name,shortname,description,class,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13,child.14,child.15,child.16
-,"Rheumatic Heart Disease, Medications / Treatment",Medications / Treatment,"- No drugs affect clinical course BUT chronic antibiotic therapy can prevent RF recurrence<br>
-- Patients with mild carditis (eg, mild mitral regurgitation or healed carditis) should receive<br>
- secondary prophylaxis for 10 years after the last attack or at least until 25 years of age (whichever is longer)<br>
-- Patients with more severe valvular damage (eg, causing heart failure), or after valve surgery, should<br>
- receive lifelong secondary prophylaxis. <br>",Misc,,,,,,,,,,,,,,,,
-,"Rheumatic Heart Disease, Prophylaxis",Prophylaxis,"Benzathine penicillin G<br>
-Adults above 27kg =<br>
-1.2 million units IM once / 4 weeks<br>
-Children less than 27kg =<br>
-600 000 units IM once/ 4 weeks<br>",Misc,,,,,,,,,,,,,,,,
-,"Rheumatic Heart Disease, Assessment and Followup",Assessment and follow up,"- Clinically stable, age less than 25 or  less than 10 years after last attack cont q1month penicillin secondary prevention<br>
-- Clinically stable off antibiotic prophylaxis q6 month visit<br>
-- Severe symptomatic valvular disease → advise/counsel patient about need for valvuloplasty/surgery (dyspnea, reduced<br> exercise tolerance, exertional chest pain, lightheadedness, and syncope)<br>
-- Acute CHF decompensation-> see CHF algorithm<br>
-- Recurrent Rheum Fever-> send to ER for treatment<br>",Misc,,,,,,,,,,,,,,,,
-,"Rheumatic Heart Disease, Physical Examination",Physical Examination,,Misc,"Rheumatic Heart Disease, Systolic","Rheumatic Heart Disease, Systolic Abnormal","Rheumatic Heart Disease, Diastolic","Rheumatic Heart Disease, Diastolic Abnormal","Rheumatic Heart Disease, Pulse","Rheumatic Heart Disease, Pulse Abnormal","Rheumatic Heart Disease, RR","Rheumatic Heart Disease, RR Abnormal","Rheumatic Heart Disease, SAT","Rheumatic Heart Disease, SAT Abnormal","Rheumatic Heart Disease, Temperature","Rheumatic Heart Disease, Temperature Abnormal","Rheumatic Heart Disease, Physical Examination Details",,,
-,"Rheumatic Heart Disease, Progress",Rheumatic Heart Disease – Progress,,Misc,"Rheumatic Heart Disease, Chief Complaint","Rheumatic Heart Disease, Symptoms of Heart Failure Today","Rheumatic Heart Disease, Assess Severity","Rheumatic Heart Disease, New Symptoms","Rheumatic Heart Disease, Suspicion of Recurrent Rheumatic Fever Today","Rheumatic Heart Disease, Details of Recurrent Rheumatic Fever Today","Rheumatic Heart Disease, Current Home Medications","Rheumatic Heart Disease, All Other Medicines","Rheumatic Heart Disease, Non-compliance","Rheumatic Heart Disease, Non-compliance Reason","Rheumatic Heart Disease, Type of Murmur Documented Prior","Rheumatic Heart Disease, Other Type of Murmur","Rheumatic Heart Disease, Physical Examination","Rheumatic Heart Disease, Medications / Treatment","Rheumatic Heart Disease, Prophylaxis","Rheumatic Heart Disease, Assessment and Followup"
+uuid,name,shortname,description,class,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9
+,"Rheumatic Heart Disease, Progress",Rheumatic Heart Disease – Progress,,Misc,"Rheumatic Heart Disease, Symptoms of Heart Failure Today","Rheumatic Heart Disease, NYHA Stage","Rheumatic Heart Disease, Patient Had Valve Replacement","Rheumatic Heart Disease, On Appropriate Anti-Coagulation","Rheumatic Heart Disease, Details of On Appropriate Anti-Coagulation","Rheumatic Heart Disease, Patient Younger than 25 Years","Rheumatic Heart Disease, Less than 10 Years Since Last RHD Attack","Rheumatic Heart Disease, IfEither Question Above is Yes","Rheumatic Heart Disease, Is Patient Getting q1 Month Penicillin"

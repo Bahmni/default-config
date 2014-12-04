@@ -1,58 +1,14 @@
 uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,,synonym.1,answer.1,answer.2,answer.3,answer.4
-,"Coronary Artery Disease, Symptoms of Angina today",Question,Coded,Symptoms of Angina today,,,,,,,Crushing chest pain,Dyspnea,Chest pain worse on exercise,Fatigue
-,"Coronary Artery Disease, Measuring Severity of illness",Misc,Text,Measuring Severity of illness,"- Change in physical activity, why? (cp or dyspnea)<br>
-- Change in the frequency, severity, or pattern of angina<br>
-- Modification of risk factors<br>
-- New or worsened comorbid illnesses (diabetes, hypercholesterolemia)<br>",,,,,,,,,
-,"Coronary Artery Disease, Chief complaint",Misc,Text,Chief Complaint,,,,,,,,,,
-,"Coronary Artery Disease, New symptoms",Misc,Text,New symptom / History of present illness,,,,,,,,,,
-,"Coronary Artery Disease, Current Medicines",Misc,Text,Current medicines details,,,,,,,,,,
-,"Coronary Artery Disease, Non compliance",Misc,Boolean,Non-Compliance,,,,,,,,,,
-,"Coronary Artery Disease, Non compliance Reason",Misc,Text,Reason,,,,,,,,,,
+,"Coronary Artery Disease, EKG",Misc,Text,Last EKG,,,,,,,,,,
+,"Coronary Artery Disease, Last EKG Date",Misc,Date,Last EKG date,,,,,,,,,,
+,"Coronary Artery Disease, Changes in EKG",Misc,Text,Any changes in EKG,Baseline and then q12 months unless symptoms of chest pain,,,,,,,,,
+,"Coronary Artery Disease, Symptoms of Angina or Heart Failure",Misc,Boolean,Symptoms of Angina or heart failure since last visit,,,,,,,,,,
+,"Coronary Artery Disease, Details for Symptoms of Angina or Heart Failure",Misc,Text,Details of symptoms of Angina or heart failure since last visit,,,,,,,,,,
+,"Coronary Artery Disease, Is on Max Dose Anti-Anginal",Misc,Boolean,Is patient on max dose anti-anginal medicines,Atenolol and nitrates are first-line treatment for angina,,,,,,,,,
 ,"Coronary Artery Disease, Systolic",Misc,Numeric,Systolic,,,,,,,,,,
 ,"Coronary Artery Disease, Systolic Abnormal",Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,
 ,"Coronary Artery Disease, Diastolic",Misc,Numeric,Diastolic,,,,,,,,,,
 ,"Coronary Artery Disease, Diastolic Abnormal",Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,
-,"Coronary Artery Disease, Pulse",Misc,Numeric,Pulse,,,,,,,,,,
-,"Coronary Artery Disease, Pulse Abnormal",Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,
-,"Coronary Artery Disease, RR",Misc,Numeric,RR,,,,,,,,,,
-,"Coronary Artery Disease, RR Abnormal",Abnormal,Boolean,RR Abnormal,,,,,,,,,,
-,"Coronary Artery Disease, SAT",Misc,Numeric,SAT,,,,,,,,,,
-,"Coronary Artery Disease, SAT Abnormal",Abnormal,Boolean,SAT Abnormal,,,,,,,,,,
-,"Coronary Artery Disease, Temperature",Misc,Numeric,Temperature,,,,,,,,,,
-,"Coronary Artery Disease, Temperature Abnormal",Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,
-,"Coronary Artery Disease, Physical Examination Details",Misc,Text,Physical Examination Details,"GENERAL ?visibly dyspneaic<br>
-NEURO<br>
-NECK ?carotid bruits<br>
-CARDIO ?murmur ?irregular<br>
-LUNGS ?crackles<br>
-ABDOMEN ?renal bruits<br>
-EXTREMITIES ?edema<br>
-SKIN<br>",,,,,,,,,
-,"Coronary Artery Disease, ER and likely IPD admission",Diagnosis,Boolean,ER and likely IPD admission,"IF ill appearing; with diaphoresis, vomiting, chest pain
-treat as Unstable Angina / NSTEMI<br>
--oxygen<br>
--give aspirin 75mg X 4 tablets (300mg) po stat <br>
--atorvastatin 80mg po stat<br>
--if BP>100 systolic give sublingual nitroglycerin <br>
-- if BP>100 systolic give atenolol 50<br>
--morphine 2mg IV can repeat 5-15min<br>
--stat EKG -insert IV and draw troponin -call medical doctor<br>",,,,,,,,,
-,"Coronary Artery Disease, Refer to outside hospital",Diagnosis,Boolean,Refer to outside hospital,"If patient appears clinically stable, but complaints of angina despite max dose 1st line agents + 2nd line agents-->
-consider referral to Kathmandu for stress+angio",,,,,,,,,
-,"Coronary Artery Disease, Assessment",Question,Coded,Assessment,"- Stable angina, no change in medicine → 3months<br>
-- Symptoms uncontrolled, uptitrate medicines/ or add second line agent (SEE medication page) → 2 weeks<br>
-- Suspected unstable angina / acute MI → SEND TO ER<br>
-- Other cause of chest pain likely, not cardiac → manage and 3 months follow up unless unstable, then ER<br>",,,,,,3 months,2 week,Send to ER,Manage and 3 months
-,"Coronary Artery Disease, Management",Misc,Text,Management,"- B-blocker / atenolol<br>
-- Nitrates<br>
-- CalcChan blocker/verapimil<br>",,,,,,,,,
-,"Coronary Artery Disease, Checklist",Misc,Text,Checklist,"- Baseline ECG then q12mo.<br>
-- Screen 6mo. A1C   goal less than 7<br>
-- Screen lipids q6mo.LDL less than 100<br>
-- Control htn goal less than 130/<br>",,,,,,,,,
-,"Coronary Artery Disease, Preventive therapies",Misc,Text,Preventive therapies,"- aspirin 100mg po unless contraindications<br>
-- atorvastatin start 20mg po qhs  if past MI, OR to treat LDL goal<br>
-
-<b>COUNSELING<b><br>
-- smoking/diet/exercise<br>",,,,,,,,,
+,"Coronary Artery Disease, Patient on Atorvastatin ",Misc,Boolean,Is patient on Atorvastatin (at least 20 mg),All patient w/ CAD should be on at least 20mg atorvastatin or 40mg,,,,,,,,,
+,"Coronary Artery Disease, Patient on Low Dose Aspirin",Misc,Boolean,Is patient on low dose aspirin ?,,,,,,,,,,
+,"Coronary Artery Disease, If Not Aspirin What is the Contraindication",Misc,Text,If not on aspirin what is the contraindication,All patients with CAD should be on low-dose aspirin for prevention unless a contraindication exists,,,,,,,,,
