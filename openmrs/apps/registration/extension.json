@@ -3,9 +3,9 @@
         "id": "bahmni.registration.navigation.patient.search",
         "extensionPointId": "org.bahmni.registration.navigation",
         "type": "link",
-        "label": "<u>S</u>earch",
+        "label": "Se<u>a</u>rch",
         "url": "/search",
-        "shortcutKey": "s",
+        "shortcutKey": "a",
         "icon": "icon-search",
         "order": 1,
         "requiredPrivilege": "View Patients"
