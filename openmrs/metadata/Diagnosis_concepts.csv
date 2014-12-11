@@ -1,233 +1,235 @@
-uuid,name,description,class,datatype,shortname,reference-term-source,reference-term-code,reference-term-relationship,synonym.1,synonym.2,synonym.3,answer.1
-,Measles,,Diagnosis,N/A,,,,,,,,
-,Diptheria,,Diagnosis,N/A,,,,,,,,
-,Whooping Cough,,Diagnosis,N/A,,,,,,,,
-,Neonatal Tetanus,,Diagnosis,N/A,,,,,,,,
-,Tetanus,,Diagnosis,N/A,,,,,,,,
-,Tuberculosis,,Diagnosis,N/A,,,,,,,,
-,Acute Flaccid Paralysis,,Diagnosis,N/A,AFP,,,,,,,
-,Rubella,,Diagnosis,N/A,,,,,,,,
-,Mumps,,Diagnosis,N/A,,,,,,,,
-,Chicken Pox,,Diagnosis,N/A,,,,,,,,
-,Hepatitis B,,Diagnosis,N/A,,,,,,,,
-,Acute Encephalitis like Syndrome,,Diagnosis,N/A,AES,,,,,,,
-,Filariasis,,Diagnosis,N/A,,,,,,,,
-,Clinical Malaria,,Diagnosis,N/A,,,,,,,,
-,Plasmodium Falciparum,,Diagnosis,N/A,Malaria,,,,,,,
-,Plasmodium Vivax,,Diagnosis,N/A,Malaria,,,,,,,
-,Dengue Fever,,Diagnosis,N/A,,,,,,,,
-,Kala‐azar,,Diagnosis,N/A,,,,,Leshmaniasis,,,
-,Typhoid,,Diagnosis,N/A,,,,,Enteric Fever,,,
-,Acute gastro‐enteritis,,Diagnosis,N/A,AGE,,,,,,,
-,Amoebic Dysentery,,Diagnosis,N/A,,,,,Amoebiasis,,,
-,Bacillary Dysentery,,Diagnosis,N/A,,,,,Shigellosis,,,
-,Presumed non‐infectious diarrhoea,,Diagnosis,N/A,,,,,,,,
-,Cholera,,Diagnosis,N/A,,,,,,,,
-,Intestinal Worms,,Diagnosis,N/A,,,,,,,,
-,Jaundice,,Diagnosis,N/A,,,,,,,,
-,Hepatitis A,,Diagnosis,N/A,,,,,,,,
-,Hepatitis E,,Diagnosis,N/A,,,,,,,,
-,Volume Depletion,,Diagnosis,N/A,,,,,Dehydration,,,
-,Leprosy,,Diagnosis,N/A,,,,,,,,
-,Meningitis,,Diagnosis,N/A,,,,,,,,
-,HIV Infection,,Diagnosis,N/A,,,,,,,,
-,Urethral Discharge Syndrome,,Diagnosis,N/A,UDS,,,,,,,
-,Scrotal Swelling Syndrome,,Diagnosis,N/A,SSS,,,,,,,
-,Vaginal Discharge Syndrome,,Diagnosis,N/A,VDS,,,,,,,
-,Lower Abdominal Pain Syndrome,,Diagnosis,N/A,LAPS,,,,,,,
-,Neonatal Conjuctive Syndrome,,Diagnosis,N/A,NCS,,,,,,,
-,Genital User Disease Syndrome ‐ female,,Diagnosis,N/A,GUDS,,,,,,,
-,Genital User Disease Syndrome ‐ male,,Diagnosis,N/A,GUDS,,,,,,,
-,Inguinal Bubo Syndrome ,,Diagnosis,N/A,IBS,,,,,,,
-,Syphilis,,Diagnosis,N/A,,,,,,,,
-,Lower respiratory tract infection,,Diagnosis,N/A,LRTI,,,,ARI,,,
-,Upper respiratory tract infection,,Diagnosis,N/A,URTI,,,,,,,
-,Pneumonia,,Diagnosis,N/A,,,,,,,,
-,Severe pneumonia,,Diagnosis,N/A,,,,,,,,
-,Bronchitis (Acute & chronic),,Diagnosis,N/A,,,,,,,,
-,Urinary Tract Infection,,Diagnosis,N/A,UTI,,,,,,,
-,Viral Influenza,,Diagnosis,N/A,,,,,,,,
-,Reproductive Tract Infection‐Female,,Diagnosis,N/A,RTI–Female,,,,,,,
-,Reproductive Tract Infection-Male,,Diagnosis,N/A,RTI-Male,,,,,,,
-,"Goitre, Cretinism",,Diagnosis,N/A,,,,,,,,
-,Diabetes Mellitus,,Diagnosis,N/A,DM,,,,,,,
-,Malnutrition,,Diagnosis,N/A,,,,,,,,
-,Avitaminoses & other nutrient deficiency,,Diagnosis,N/A,,,,,,,,
-,Obesity,,Diagnosis,N/A,,,,,,,,
-,Anaemia / Polyneuropathy,,Diagnosis,N/A,,,,,,,,
-,Polyneuritis,,Diagnosis,N/A,,,,,,,,
-,Acne,,Diagnosis,N/A,,,,,,,,
-,Warts,,Diagnosis,N/A,,,,,,,,
-,Chloasma,,Diagnosis,N/A,,,,,Melasma,,,
-,Urticaria,,Diagnosis,N/A,,,,,,,,
-,Dermatitis,,Diagnosis,N/A,,,,,Eczema,,,
-,Alopecia,,Diagnosis,N/A,,,,,,,,
-,Vitiligo,,Diagnosis,N/A,,,,,,,,
-,Albinism,,Diagnosis,N/A,,,,,,,,
-,Herpes simplex,,Diagnosis,N/A,,,,,,,,
-,Herpes zoster,,Diagnosis,N/A,,,,,,,,
-,Erythroderma,,Diagnosis,N/A,,,,,,,,
-,Impetigo,,Diagnosis,N/A,,,,,,,,
-,Boils,,Diagnosis,N/A,,,,,,,,
-,Abscess,,Diagnosis,N/A,,,,,,,,
-,Furunculosis,,Diagnosis,N/A,,,,,,,,
-,Fungal infection,,Diagnosis,N/A,,,,,Lichen planus,,,
-,Scabies,,Diagnosis,N/A,,,,,,,,
-,Leukoderma,,Diagnosis,N/A,,,,,,,,
-,Psoriasis,,Diagnosis,N/A,,,,,,,,
-,Acute Lymphadenitis,,Diagnosis,N/A,,,,,,,,
-,Acute Suppurative Otitis Media,,Diagnosis,N/A,,,,,,,,
-,Chronic Suppurative Otitis Media,,Diagnosis,N/A,,,,,,,,
-,Sinusitis,,Diagnosis,N/A,,,,,,,,
-,Acute Tonsilitis,,Diagnosis,N/A,,,,,,,,
-,Pharyngitis,,Diagnosis,N/A,,,,,Sore throat,,,
-,Foreign body in ear,,Diagnosis,N/A,,,,,,,,
-,Foreign body in nose ,,Diagnosis,N/A,,,,,,,,
-,Foreign body in throat,,Diagnosis,N/A,,,,,,,,
-,Wax,,Diagnosis,N/A,,,,,,,,
-,Nasal Polyps,,Diagnosis,N/A,,,,,,,,
-,Deviated nasal septum,,Diagnosis,N/A,DNS,,,,,,,
-,Rhinitis,,Diagnosis,N/A,,,,,,,,
-,Otitis externa,,Diagnosis,N/A,,,,,,,,
-,Reflux laryngitis,,Diagnosis,N/A,,,,,,,,
-,Dental caries,,Diagnosis,N/A,,,,,,,,
-,Toothache,,Diagnosis,N/A,,,,,,,,
-,Periodontal disease,,Diagnosis,N/A,,,,,Gum disease,,,
-,Other disorder of teeth,,Diagnosis,N/A,,,,,,,,
-,Aphthous oral ulcer,,Diagnosis,N/A,,,,,Herpetic oral ulcer,,,
-,Tooth impaction,,Diagnosis,N/A,,,,,,,,
-,Hypoplasia,,Diagnosis,N/A,,,,,,,,
-,Fungal infection Lichen planus,,Diagnosis,N/A,Lichen planus,,,,,,,
-,Fungal infection Candidiasis,,Diagnosis,N/A,Candidiasis,,,,,,,
-,Oral space infection and  abscess,,Diagnosis,N/A,,,,,,,,
-,Conjunctivitis,,Diagnosis,N/A,,,,,,,,
-,Trachoma,,Diagnosis,N/A,,,,,,,,
-,Cataract,,Diagnosis,N/A,,,,,,,,
-,Blindness,,Diagnosis,N/A,,,,,,,,
-,Refractive error,,Diagnosis,N/A,,,,,,,,
-,Glaucoma,,Diagnosis,N/A,,,,,,,,
-,Colour blindness,,Diagnosis,N/A,,,,,,,,
-,Exophthalmos,,Diagnosis,N/A,,,,,,,,
-,Sty,,Diagnosis,N/A,,,,,,,,
-,Chalazion,,Diagnosis,N/A,,,,,,,,
-,Pterygium,,Diagnosis,N/A,,,,,,,,
-,Diabetic retinopathy,,Diagnosis,N/A,,,,,,,,
-,Hypertensive retinopathy,,Diagnosis,N/A,,,,,,,,
-,Entropion,,Diagnosis,N/A,,,,,,,,
-,Ectropion,,Diagnosis,N/A,,,,,,,,
-,Traumatic eye disease,,Diagnosis,N/A,,,,,,,,
-,Uveitis,,Diagnosis,N/A,,,,,,,,
-,Age related macular degeneration,,Diagnosis,N/A,,,,,,,,
-,Amblyopia,,Diagnosis,N/A,,,,,Lazy eye,,,
-,Squint,,Diagnosis,N/A,,,,,,,,
-,Retinitis pigmentosa,,Diagnosis,N/A,,,,,,,,
-,Night blindness,,Diagnosis,N/A,,,,,Visual disturbance,,,
-,Retinoblastoma,,Diagnosis,N/A,,,,,,,,
-,Ectopic Pregnancy,,Diagnosis,N/A,,,,,,,,
-,Abortion Complication,,Diagnosis,N/A,,,,,,,,
-,Pregnancy Induced Hypertension,,Diagnosis,N/A,PIH,,,,,,,
-,Pre‐eclampsia,,Diagnosis,N/A,,,,,Severe pre‐eclampsia,,,
-,Antepartum Eclampsia,,Diagnosis,N/A,,,,,,,,
-,Intrapartum Eclampsia,,Diagnosis,N/A,,,,,,,,
-,Postpartum Eclampsia,,Diagnosis,N/A,,,,,,,,
-,Hyperemesis Grivadarum,,Diagnosis,N/A,,,,,,,,
-,Antepartum Haemorrhage,,Diagnosis,N/A,,,,,,,,
-,Prolonged labour,,Diagnosis,N/A,,,,,,,,
-,Obstructed Labor,,Diagnosis,N/A,,,,,,,,
-,Ruptured Uterus,,Diagnosis,N/A,,,,,,,,
-,Postpartum Haemorrhage,,Diagnosis,N/A,,,,,,,,
-,Retained Placenta,,Diagnosis,N/A,,,,,,,,
-,Other Complications of labor and delivery,,Diagnosis,N/A,,,,,,,,
-,Pueperal Sepsis,,Diagnosis,N/A,,,,,,,,
-,Pelvic Inflammatory Disease,,Diagnosis,N/A,PID,,,,,,,
-,Prolapsed uterus,,Diagnosis,N/A,,,,,,,,
-,Menstrual disorder,,Diagnosis,N/A,,,,,,,,
-,Dysfunctional Uterine Bleeding,,Diagnosis,N/A,DUB,,,,,,,
-,Sub‐fertility (Female),,Diagnosis,N/A,,,,,,,,
-,Sub‐fertility (Male),,Diagnosis,N/A,,,,,Infertility(Male),,,
-,Dementia,,Diagnosis,N/A,,,,,,,,
-,Addiction,,Diagnosis,N/A,,,,,Alcoholism,Dipsomania,Drug Addiction,
-,Schizophrenia,,Diagnosis,N/A,,,,,,,,
-,Psychosis,,Diagnosis,N/A,,,,,,,,
-,Bipolar affective disorder,,Diagnosis,N/A,,,,,,,,
-,Depression,,Diagnosis,N/A,,,,,,,,
-,Phobic Anxiety,,Diagnosis,N/A,,,,,,,,
-,Other Anxiety,,Diagnosis,N/A,,,,,,,,
-,Obsessive-compulsive disorder,,Diagnosis,N/A,,,,,,,,
-,Conversive disorder,,Diagnosis,N/A,,,,,Hysteria,,,
-,Neurosis,,Diagnosis,N/A,,,,,,,,
-,Mental retardation,,Diagnosis,N/A,,,,,,,,
-,Epilepsy,,Diagnosis,N/A,,,,,,,,
-,Migraine,,Diagnosis,N/A,,,,,,,,
-,Mental illness,,Diagnosis,N/A,,,,,Mental disorder,,,
-,Breast cancer,,Diagnosis,N/A,,,,,,,,
-,Cervical Cancer,,Diagnosis,N/A,,,,,Uteri cancer,,,
-,Lung Cancer,,Diagnosis,N/A,,,,,Brunchial Cancer,,,
-,Oesophagus cancer,,Diagnosis,N/A,,,,,,,,
-,Stomach cancer,,Diagnosis,N/A,,,,,,,,
-,Thyroid cancer,,Diagnosis,N/A,,,,,,,,
-,Liver cancer,,Diagnosis,N/A,,,,,,,,
-,Pancreatic cancer,,Diagnosis,N/A,,,,,,,,
-,Bone  marrow cancer,,Diagnosis,N/A,,,,,,,,
-,Gall bladder cancer,,Diagnosis,N/A,,,,,,,,
-,Colorectal cancer,,Diagnosis,N/A,,,,,Colon with rectum cancer,,,
-,Oral cancer,,Diagnosis,N/A,,,,,,,,
-,Lymphoma cancer,,Diagnosis,N/A,,,,,,,,
-,Ovary cancer,,Diagnosis,N/A,,,,,,,,
-,Urinary bladder cancer,,Diagnosis,N/A,,,,,,,,
-,Nasopharyngeal cancer,,Diagnosis,N/A,,,,,,,,
-,Head & neck cancer,,Diagnosis,N/A,,,,,,,,
-,Other Cancer,,Diagnosis,N/A,,,,,,,,
-,Hypertension,,Diagnosis,N/A,,,,,,,,
-,Congestive heart failure ,,Diagnosis,N/A,,,,,,,,
-,Cardiac heart failure,,Diagnosis,N/A,,,,,,,,
-,Chronic Obstructive Pulmonary Disease,,Diagnosis,N/A,COPD,,,,,,,
-,Acute rheumatic fever,,Diagnosis,N/A,,,,,,,,
-,Rheumatic heart disease,,Diagnosis,N/A,RHD,,,,,,,
-,Ischemic heart disease,,Diagnosis,N/A,,,,,,,,
-,Other cardiovascular problems,,Diagnosis,N/A,,,,,,,,
-,Bronchial asthma,,Diagnosis,N/A,,,,,,,,
-,Acute Renal failure,,Diagnosis,N/A,,,,,,,,
-,Chronic Renal failure,,Diagnosis,N/A,,,,,,,,
-,Nephritis,,Diagnosis,N/A,,,,,,,,
-,Nephrotic syndrome,,Diagnosis,N/A,,,,,,,,
-,Headache,,Diagnosis,N/A,,,,,,,,
-,Pyrexia of Unknown Origin,,Diagnosis,N/A,PUO,,,,,,,
-,Gastritis,,Diagnosis,N/A,APD,,,,,,,
-,Insect bite,,Diagnosis,N/A,,,,,Wasp bite,,,
-,Abdominal Pain,,Diagnosis,N/A,,,,,,,,
-,Cirrhosis of liver,,Diagnosis,N/A,,,,,,,,
-,Burns and Scalds,,Diagnosis,N/A,,,,,,,,
-,Toxic Effect,,Diagnosis,N/A,,,,,,,,
-,Dog Bite,,Diagnosis,N/A,,,,,,,,
-,Other rabies susceptible animal bite,,Diagnosis,N/A,,,,,,,,
-,Snake bite: Poisonous,,Diagnosis,N/A,,,,,,,,
-,Snake bite: Non‐poisonous,,Diagnosis,N/A,,,,,,,,
-,Physical Disability,,Diagnosis,N/A,,,,,Disabled Person,,,
-,Falls,,Diagnosis,N/A,,,,,Injuries,Fractures,,
-,Road Traffic Accident,,Diagnosis,N/A,RTA,,,,,,,
-,Rheumatoid arthritis,,Diagnosis,N/A,,,,,,,,
-,Arthritis,,Diagnosis,N/A,,,,,,,,
-,Osteo arthrosis,,Diagnosis,N/A,,,,,,,,
-,Back ache,,Diagnosis,N/A,,,,,Musculo‐skeletal pain,,,
-,Acid peptic disorders,,Diagnosis,N/A,,,,,,,,
-,Anal Fissure,,Diagnosis,N/A,,,,,,,,
-,Anal fistula,,Diagnosis,N/A,,,,,,,,
-,Fistula of Intestine,,Diagnosis,N/A,,,,,,,,
-,Renal stones,,Diagnosis,N/A,,,,,,,,
-,Breast lumps,,Diagnosis,N/A,,,,,Adenoma,,,
-,Mastitis,,Diagnosis,N/A,,,,,Breast abscess,Ignored breast,,
-,Mastalgia breast,,Diagnosis,N/A,,,,,,,,
-,Lumps,,Diagnosis,N/A,,,,,Lipoma,,,
-,Sebaceous cyst,,Diagnosis,N/A,,,,,,,,
-,Pilonidal sinus,,Diagnosis,N/A,,,,,,,,
-,Appendicitis,,Diagnosis,N/A,,,,,,,,
-,Cholecystitis,,Diagnosis,N/A,,,,,,,,
-,Cholelithiasis,,Diagnosis,N/A,,,,,Gall stone,,,
-,Hernia,,Diagnosis,N/A,,,,,,,,
-,Hydrocoele,,Diagnosis,N/A,,,,,,,,
-,Phimosis,,Diagnosis,N/A,,,,,Para‐phimosis,,,
-,Haemorrhoids,,Diagnosis,N/A,,,,,Piles,,,
-,Epididymitis,,Diagnosis,N/A,,,,,Orchitis,,,
-,Prostatism,,Diagnosis,N/A,,,,,BEP,BPH,,
-,Not mentioned above and other,,Diagnosis,N/A,,,,,,,,
+uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,synonym.3,answer.1,referenceTermSource,referenceTermCode,referenceTermRelationship
+,Measles,,Diagnosis,N/A,,,,,,ICD-10-WHO,B05,SAME-AS
+,Diptheria,,Diagnosis,N/A,,,,,,ICD-10-WHO,A36,SAME-AS
+,Whooping Cough,,Diagnosis,N/A,,,,,,ICD-10-WHO,A37,SAME-AS
+,Neonatal Tetanus,,Diagnosis,N/A,,,,,,ICD-10-WHO,A33,SAME-AS
+,Tetanus,,Diagnosis,N/A,,,,,,ICD-10-WHO,A35,SAME-AS
+,Tuberculosis,,Diagnosis,N/A,,,,,,ICD-10-WHO,A16,SAME-AS
+,Multi Drug Resistant Tuberculosis,,Diagnosis,N/A,MDR Tuberculosis,,,,,,,
+,Extremely Drug Resistant Tuberculosis,,Diagnosis,N/A,XDR Tuberculosis,,,,,,,
+,Acute Flaccid Paralysis,,Diagnosis,N/A,AFP,,,,,ICD-10-WHO,G83,SAME-AS
+,Rubella,,Diagnosis,N/A,,,,,,ICD-10-WHO,B06,SAME-AS
+,Mumps,,Diagnosis,N/A,,,,,,ICD-10-WHO,B26,SAME-AS
+,Chicken Pox,,Diagnosis,N/A,,,,,,ICD-10-WHO,B01,SAME-AS
+,Hepatitis B,,Diagnosis,N/A,,,,,,ICD-10-WHO,B16,SAME-AS
+,Acute Encephalitis Like Syndrome,,Diagnosis,N/A,AES,,,,,ICD-10-WHO,A86,SAME-AS
+,Filariasis,,Diagnosis,N/A,,,,,,ICD-10-WHO,B74.9,SAME-AS
+,Clinical Malaria,,Diagnosis,N/A,,,,,,ICD-10-WHO,B54,SAME-AS
+,Plasmodium Falciparum,,Diagnosis,N/A,Malaria,,,,,ICD-10-WHO,B50.9,SAME-AS
+,Plasmodium Vivax,,Diagnosis,N/A,Malaria,,,,,ICD-10-WHO,B51.9,SAME-AS
+,Dengue Fever,,Diagnosis,N/A,,,,,,ICD-10-WHO,A90,SAME-AS
+,Kala‐Azar,,Diagnosis,N/A,,Leshmaniasis,,,,ICD-10-WHO,B55.9,SAME-AS
+,Typhoid,,Diagnosis,N/A,,Enteric Fever,,,,ICD-10-WHO,A01.0,SAME-AS
+,Acute Gastro‐Enteritis,,Diagnosis,N/A,AGE,,,,,ICD-10-WHO,A09,SAME-AS
+,Amoebic Dysentery,,Diagnosis,N/A,,Amoebiasis,,,,ICD-10-WHO,A06.9,SAME-AS
+,Bacillary Dysentery,,Diagnosis,N/A,,Shigellosis,,,,ICD-10-WHO,A03.9,SAME-AS
+,Presumed Non‐Infectious Diarrhoea,,Diagnosis,N/A,,,,,,ICD-10-WHO,K52.9,SAME-AS
+,Cholera,,Diagnosis,N/A,,,,,,ICD-10-WHO,A00.9,SAME-AS
+,Intestinal Worms,,Diagnosis,N/A,,,,,,ICD-10-WHO,B82.9,SAME-AS
+,Jaundice,,Diagnosis,N/A,,,,,,ICD-10-WHO,R17,SAME-AS
+,Hepatitis A,,Diagnosis,N/A,,,,,,ICD-10-WHO,B15.9,SAME-AS
+,Hepatitis E,,Diagnosis,N/A,,,,,,ICD-10-WHO,B17.2,SAME-AS
+,Volume Depletion,,Diagnosis,N/A,,Dehydration,,,,ICD-10-WHO,E86,SAME-AS
+,Leprosy,,Diagnosis,N/A,,,,,,ICD-10-WHO,A30.9,SAME-AS
+,Meningitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,G03.9,SAME-AS
+,HIV Infection,,Diagnosis,N/A,,,,,,ICD-10-WHO,B20,SAME-AS
+,Urethral Discharge Syndrome,,Diagnosis,N/A,UDS,,,,,ICD-10-WHO,A54.0,SAME-AS
+,Scrotal Swelling Syndrome,,Diagnosis,N/A,SSS,,,,,ICD-10-WHO,N49.9,SAME-AS
+,Vaginal Discharge Syndrome,,Diagnosis,N/A,VDS,,,,,ICD-10-WHO,N89.8,SAME-AS
+,Lower Abdominal Pain Syndrome,,Diagnosis,N/A,LAPS,,,,,ICD-10-WHO,N74,SAME-AS
+,Neonatal Conjuctive Syndrome,,Diagnosis,N/A,NCS,,,,,ICD-10-WHO,A54.3,SAME-AS
+,Genital User Disease Syndrome ‐ Female,,Diagnosis,N/A,GUDS,,,,,ICD-10-WHO,N76.6,SAME-AS
+,Genital User Disease Syndrome ‐ Male,,Diagnosis,N/A,GUDS,,,,,ICD-10-WHO,N50.8,SAME-AS
+,Inguinal Bubo Syndrome ,,Diagnosis,N/A,IBS,,,,,ICD-10-WHO,A55,SAME-AS
+,Syphilis,,Diagnosis,N/A,,,,,,ICD-10-WHO,A51,SAME-AS
+,Lower Respiratory Tract Infection,,Diagnosis,N/A,LRTI,ARI,,,,ICD-10-WHO,J22,SAME-AS
+,Upper Respiratory Tract Infection,,Diagnosis,N/A,URTI,,,,,ICD-10-WHO,J06.9,SAME-AS
+,Pneumonia,,Diagnosis,N/A,,,,,,ICD-10-WHO,J18.9,SAME-AS
+,Severe Pneumonia,,Diagnosis,N/A,,,,,,ICD-10-WHO,J15,SAME-AS
+,Bronchitis (Acute & Chronic),,Diagnosis,N/A,,,,,,ICD-10-WHO,J40,SAME-AS
+,Urinary Tract Infection,,Diagnosis,N/A,UTI,,,,,ICD-10-WHO,N39.9,SAME-AS
+,Viral Influenza,,Diagnosis,N/A,,,,,,ICD-10-WHO,J11,SAME-AS
+,Reproductive Tract Infection‐Female,,Diagnosis,N/A,RTI–Female,,,,,ICD-10-WHO,N99.9,SAME-AS
+,Reproductive Tract Infection-Male,,Diagnosis,N/A,RTI-Male,,,,,ICD-10-WHO,N51,SAME-AS
+,"Goitre, Cretinism",,Diagnosis,N/A,,,,,,ICD-10-WHO,E04.9,SAME-AS
+,Diabetes Mellitus,,Diagnosis,N/A,DM,,,,,ICD-10-WHO,E14,SAME-AS
+,Malnutrition,,Diagnosis,N/A,,,,,,ICD-10-WHO,E46,SAME-AS
+,Avitaminoses & Other Nutrient Deficiency,,Diagnosis,N/A,,,,,,ICD-10-WHO,E50.9,SAME-AS
+,Obesity,,Diagnosis,N/A,,,,,,ICD-10-WHO,E66.9,SAME-AS
+,Anaemia / Polyneuropathy,,Diagnosis,N/A,,,,,,ICD-10-WHO,D64.9,SAME-AS
+,Polyneuritis,,Diagnosis,N/A,,,,,,ICD-10-WHO,G62.9,SAME-AS
+,Acne,,Diagnosis,N/A,,,,,,ICD-10-WHO,L70,SAME-AS
+,Warts,,Diagnosis,N/A,,,,,,ICD-10-WHO,B07,SAME-AS
+,Chloasma,,Diagnosis,N/A,,Melasma,,,,ICD-10-WHO,L81.1,SAME-AS
+,Urticaria,,Diagnosis,N/A,,,,,,ICD-10-WHO,L50,SAME-AS
+,Dermatitis,,Diagnosis,N/A,,Eczema,,,,ICD-10-WHO,L30.9,SAME-AS
+,Alopecia,,Diagnosis,N/A,,,,,,ICD-10-WHO,L65,SAME-AS
+,Vitiligo,,Diagnosis,N/A,,,,,,ICD-10-WHO,L80,SAME-AS
+,Albinism,,Diagnosis,N/A,,,,,,ICD-10-WHO,E70.3,SAME-AS
+,Herpes Simplex,,Diagnosis,N/A,,,,,,ICD-10-WHO,B00,SAME-AS
+,Herpes Zoster,,Diagnosis,N/A,,,,,,ICD-10-WHO,B02,SAME-AS
+,Erythroderma,,Diagnosis,N/A,,,,,,ICD-10-WHO,L53.9,SAME-AS
+,Impetigo,,Diagnosis,N/A,,,,,,ICD-10-WHO,L01.0,SAME-AS
+,Boils,,Diagnosis,N/A,,,,,,ICD-10-WHO,L02,SAME-AS
+,Abscess,,Diagnosis,N/A,,,,,,ICD-10-WHO,L02.0,SAME-AS
+,Furunculosis,,Diagnosis,N/A,,,,,,ICD-10-WHO,L02.9,SAME-AS
+,Fungal Infection,,Diagnosis,N/A,,Lichen Planus,,,,ICD-10-WHO,L43,SAME-AS
+,Scabies,,Diagnosis,N/A,,,,,,ICD-10-WHO,B86,SAME-AS
+,Leukoderma,,Diagnosis,N/A,,,,,,ICD-10-WHO,L81.5,SAME-AS
+,Psoriasis,,Diagnosis,N/A,,,,,,ICD-10-WHO,L40,SAME-AS
+,Acute Lymphadenitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,L04,SAME-AS
+,Acute Suppurative Otitis Media,,Diagnosis,N/A,,,,,,ICD-10-WHO,H66.0,SAME-AS
+,Chronic Suppurative Otitis Media,,Diagnosis,N/A,,,,,,ICD-10-WHO,H66.1,SAME-AS
+,Sinusitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,J32,SAME-AS
+,Acute Tonsilitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,J03,SAME-AS
+,Pharyngitis,,Diagnosis,N/A,,Sore Throat,,,,ICD-10-WHO,J02,SAME-AS
+,Foreign Body In Ear,,Diagnosis,N/A,,,,,,ICD-10-WHO,T16,SAME-AS
+,Foreign Body In Nose ,,Diagnosis,N/A,,,,,,ICD-10-WHO,T17.1,SAME-AS
+,Foreign Body In Throat,,Diagnosis,N/A,,,,,,ICD-10-WHO,T17.2,SAME-AS
+,Wax,,Diagnosis,N/A,,,,,,ICD-10-WHO,H61.2,SAME-AS
+,Nasal Polyps,,Diagnosis,N/A,,,,,,ICD-10-WHO,J33,SAME-AS
+,Deviated Nasal Septum,,Diagnosis,N/A,DNS,,,,,ICD-10-WHO,J34.2,SAME-AS
+,Rhinitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,J31,SAME-AS
+,Otitis Externa,,Diagnosis,N/A,,,,,,ICD-10-WHO,H60,SAME-AS
+,Reflux Laryngitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,K21.0,SAME-AS
+,Dental Caries,,Diagnosis,N/A,,,,,,ICD-10-WHO,K02,SAME-AS
+,Toothache,,Diagnosis,N/A,,,,,,ICD-10-WHO,K08.8,SAME-AS
+,Periodontal Disease,,Diagnosis,N/A,,Gum Disease,,,,ICD-10-WHO,K05,SAME-AS
+,Other Disorder Of Teeth,,Diagnosis,N/A,,,,,,ICD-10-WHO,K08.9,SAME-AS
+,Aphthous Oral Ulcer,,Diagnosis,N/A,,Herpetic Oral Ulcer,,,,ICD-10-WHO,K12,SAME-AS
+,Tooth Impaction,,Diagnosis,N/A,,,,,,ICD-10-WHO,K01.1,SAME-AS
+,Hypoplasia,,Diagnosis,N/A,,,,,,ICD-10-WHO,K00.4,SAME-AS
+,Fungal Infection Lichen Planus,,Diagnosis,N/A,Lichen Planus,,,,,ICD-10-WHO,L43,SAME-AS
+,Fungal Infection Candidiasis,,Diagnosis,N/A,Candidiasis,,,,,ICD-10-WHO,B37,SAME-AS
+,Oral Space Infection And  Abscess,,Diagnosis,N/A,,,,,,ICD-10-WHO,K04,SAME-AS
+,Conjunctivitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,H10,SAME-AS
+,Trachoma,,Diagnosis,N/A,,,,,,ICD-10-WHO,A71,SAME-AS
+,Cataract,,Diagnosis,N/A,,,,,,ICD-10-WHO,H26,SAME-AS
+,Blindness,,Diagnosis,N/A,,,,,,ICD-10-WHO,H54,SAME-AS
+,Refractive Error,,Diagnosis,N/A,,,,,,ICD-10-WHO,H52,SAME-AS
+,Glaucoma,,Diagnosis,N/A,,,,,,ICD-10-WHO,H40,SAME-AS
+,Colour Blindness,,Diagnosis,N/A,,,,,,ICD-10-WHO,H53.5,SAME-AS
+,Exophthalmos,,Diagnosis,N/A,,,,,,ICD-10-WHO,H05.2,SAME-AS
+,Sty,,Diagnosis,N/A,,,,,,ICD-10-WHO,H00.0,SAME-AS
+,Chalazion,,Diagnosis,N/A,,,,,,ICD-10-WHO,H00.1,SAME-AS
+,Pterygium,,Diagnosis,N/A,,,,,,ICD-10-WHO,H11.0,SAME-AS
+,Diabetic Retinopathy,,Diagnosis,N/A,,,,,,ICD-10-WHO,E14.3†,SAME-AS
+,Hypertensive Retinopathy,,Diagnosis,N/A,,,,,,ICD-10-WHO,H35,SAME-AS
+,Entropion,,Diagnosis,N/A,,,,,,ICD-10-WHO,H02,SAME-AS
+,Ectropion,,Diagnosis,N/A,,,,,,ICD-10-WHO,H02.1,SAME-AS
+,Traumatic Eye Disease,,Diagnosis,N/A,,,,,,ICD-10-WHO,H26.1,SAME-AS
+,Uveitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,H20,SAME-AS
+,Age Related Macular Degeneration,,Diagnosis,N/A,,,,,,ICD-10-WHO,H35.3,SAME-AS
+,Amblyopia,,Diagnosis,N/A,,Lazy Eye,,,,ICD-10-WHO,H53.0,SAME-AS
+,Squint,,Diagnosis,N/A,,,,,,ICD-10-WHO,H50,SAME-AS
+,Retinitis Pigmentosa,,Diagnosis,N/A,,,,,,ICD-10-WHO,H35.5,SAME-AS
+,Night Blindness,,Diagnosis,N/A,,Visual Disturbance,,,,ICD-10-WHO,H53.6,SAME-AS
+,Retinoblastoma,,Diagnosis,N/A,,,,,,ICD-10-WHO,C69.2,SAME-AS
+,Ectopic Pregnancy,,Diagnosis,N/A,,,,,,ICD-10-WHO,O00,SAME-AS
+,Abortion Complication,,Diagnosis,N/A,,,,,,ICD-10-WHO,O08,SAME-AS
+,Pregnancy Induced Hypertension,,Diagnosis,N/A,PIH,,,,,ICD-10-WHO,O13,SAME-AS
+,Pre‐Eclampsia,,Diagnosis,N/A,,Severe Pre‐Eclampsia,,,,ICD-10-WHO,O14,SAME-AS
+,Antepartum Eclampsia,,Diagnosis,N/A,,,,,,ICD-10-WHO,O15.0,SAME-AS
+,Intrapartum Eclampsia,,Diagnosis,N/A,,,,,,ICD-10-WHO,O15.1,SAME-AS
+,Postpartum Eclampsia,,Diagnosis,N/A,,,,,,ICD-10-WHO,O15.2,SAME-AS
+,Hyperemesis Grivadarum,,Diagnosis,N/A,,,,,,ICD-10-WHO,O21,SAME-AS
+,Antepartum Haemorrhage,,Diagnosis,N/A,,,,,,ICD-10-WHO,O46,SAME-AS
+,Prolonged Labour,,Diagnosis,N/A,,,,,,ICD-10-WHO,O63,SAME-AS
+,Obstructed Labor,,Diagnosis,N/A,,,,,,ICD-10-WHO,O64‐O66,SAME-AS
+,Ruptured Uterus,,Diagnosis,N/A,,,,,,ICD-10-WHO,S37,SAME-AS
+,Postpartum Haemorrhage,,Diagnosis,N/A,,,,,,ICD-10-WHO,O72,SAME-AS
+,Retained Placenta,,Diagnosis,N/A,,,,,,ICD-10-WHO,O73,SAME-AS
+,Other Complications Of Labor And Delivery,,Diagnosis,N/A,,,,,,ICD-10-WHO,O75,SAME-AS
+,Pueperal Sepsis,,Diagnosis,N/A,,,,,,ICD-10-WHO,O85,SAME-AS
+,Pelvic Inflammatory Disease,,Diagnosis,N/A,PID,,,,,ICD-10-WHO,N73,SAME-AS
+,Prolapsed Uterus,,Diagnosis,N/A,,,,,,ICD-10-WHO,N81.4,SAME-AS
+,Menstrual Disorder,,Diagnosis,N/A,,,,,,ICD-10-WHO,N92,SAME-AS
+,Dysfunctional Uterine Bleeding,,Diagnosis,N/A,DUB,,,,,ICD-10-WHO,N93,SAME-AS
+,Sub‐Fertility (Female),,Diagnosis,N/A,,,,,,ICD-10-WHO,N97,SAME-AS
+,Sub‐Fertility (Male),,Diagnosis,N/A,,Infertility(Male),,,,ICD-10-WHO,N46,SAME-AS
+,Dementia,,Diagnosis,N/A,,,,,,ICD-10-WHO,F03,SAME-AS
+,Addiction,,Diagnosis,N/A,,Alcoholism,Dipsomania,Drug Addiction,,ICD-10-WHO,F10,SAME-AS
+,Schizophrenia,,Diagnosis,N/A,,,,,,ICD-10-WHO,F20,SAME-AS
+,Psychosis,,Diagnosis,N/A,,,,,,ICD-10-WHO,F29,SAME-AS
+,Bipolar Affective Disorder,,Diagnosis,N/A,,,,,,ICD-10-WHO,F31,SAME-AS
+,Depression,,Diagnosis,N/A,,,,,,ICD-10-WHO,F32,SAME-AS
+,Phobic Anxiety,,Diagnosis,N/A,,,,,,ICD-10-WHO,F40,SAME-AS
+,Other Anxiety,,Diagnosis,N/A,,,,,,ICD-10-WHO,F41,SAME-AS
+,Obsessive-Compulsive Disorder,,Diagnosis,N/A,,,,,,ICD-10-WHO,F42,SAME-AS
+,Conversive Disorder,,Diagnosis,N/A,,Hysteria,,,,ICD-10-WHO,F44,SAME-AS
+,Neurosis,,Diagnosis,N/A,,,,,,ICD-10-WHO,F48,SAME-AS
+,Mental Retardation,,Diagnosis,N/A,,,,,,ICD-10-WHO,F79,SAME-AS
+,Epilepsy,,Diagnosis,N/A,,,,,,ICD-10-WHO,G40,SAME-AS
+,Migraine,,Diagnosis,N/A,,,,,,ICD-10-WHO,G43,SAME-AS
+,Mental Illness,,Diagnosis,N/A,,Mental Disorder,,,,ICD-10-WHO,F99,SAME-AS
+,Breast Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C50,SAME-AS
+,Cervical Cancer,,Diagnosis,N/A,,Uteri Cancer,,,,ICD-10-WHO,C53,SAME-AS
+,Lung Cancer,,Diagnosis,N/A,,Brunchial Cancer,,,,ICD-10-WHO,C34,SAME-AS
+,Oesophagus Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C15,SAME-AS
+,Stomach Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C16,SAME-AS
+,Thyroid Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C73,SAME-AS
+,Liver Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C22,SAME-AS
+,Pancreatic Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C25,SAME-AS
+,Bone  Marrow Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C79.5,SAME-AS
+,Gall Bladder Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C23,SAME-AS
+,Colorectal Cancer,,Diagnosis,N/A,,Colon With Rectum  Cancer,,,,ICD-10-WHO,C19,SAME-AS
+,Oral Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C06,SAME-AS
+,Lymphoma Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C85,SAME-AS
+,Ovary Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C56,SAME-AS
+,Urinary Bladder Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C67,SAME-AS
+,Nasopharyngeal Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C11,SAME-AS
+,Head & Neck Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C49.0,SAME-AS
+,Other Cancer,,Diagnosis,N/A,,,,,,ICD-10-WHO,C80,SAME-AS
+,Hypertension,,Diagnosis,N/A,,,,,,ICD-10-WHO,I10,SAME-AS
+,Congestive Heart Failure ,,Diagnosis,N/A,,,,,,ICD-10-WHO,I50.0,SAME-AS
+,Cardiac Heart Failure,,Diagnosis,N/A,,,,,,ICD-10-WHO,I50.9,SAME-AS
+,Chronic Obstructive Pulmonary Disease,,Diagnosis,N/A,COPD,,,,,ICD-10-WHO,J44,SAME-AS
+,Acute Rheumatic Fever,,Diagnosis,N/A,,,,,,ICD-10-WHO,I01,SAME-AS
+,Rheumatic Heart Disease,,Diagnosis,N/A,RHD,,,,,ICD-10-WHO,I09,SAME-AS
+,Ischemic Heart Disease,,Diagnosis,N/A,,,,,,ICD-10-WHO,I24,SAME-AS
+,Other Cardiovascular Problems,,Diagnosis,N/A,,,,,,ICD-10-WHO,I52,SAME-AS
+,Bronchial Asthma,,Diagnosis,N/A,,,,,,ICD-10-WHO,J45,SAME-AS
+,Acute Renal Failure,,Diagnosis,N/A,,,,,,ICD-10-WHO,N17,SAME-AS
+,Chronic Renal Failure,,Diagnosis,N/A,,,,,,ICD-10-WHO,N18,SAME-AS
+,Nephritis,,Diagnosis,N/A,,,,,,ICD-10-WHO,N05,SAME-AS
+,Nephrotic Syndrome,,Diagnosis,N/A,,,,,,ICD-10-WHO,N04,SAME-AS
+,Headache,,Diagnosis,N/A,,,,,,ICD-10-WHO,R51,SAME-AS
+,Pyrexia Of Unknown Origin,,Diagnosis,N/A,PUO,,,,,ICD-10-WHO,R50,SAME-AS
+,Gastritis,,Diagnosis,N/A,APD,,,,,ICD-10-WHO,K29,SAME-AS
+,Insect Bite,,Diagnosis,N/A,,Wasp Bite,,,,ICD-10-WHO,W57,SAME-AS
+,Abdominal Pain,,Diagnosis,N/A,,,,,,ICD-10-WHO,R10,SAME-AS
+,Cirrhosis Of Liver,,Diagnosis,N/A,,,,,,ICD-10-WHO,K74,SAME-AS
+,Burns And Scalds,,Diagnosis,N/A,,,,,,ICD-10-WHO,T30,SAME-AS
+,Toxic Effect,,Diagnosis,N/A,,,,,,ICD-10-WHO,T65,SAME-AS
+,Dog Bite,,Diagnosis,N/A,,,,,,ICD-10-WHO,W54,SAME-AS
+,Other Rabies Susceptible Animal Bite,,Diagnosis,N/A,,,,,,ICD-10-WHO,A82,SAME-AS
+,Snake Bite: Poisonous,,Diagnosis,N/A,,,,,,ICD-10-WHO,T63.0,SAME-AS
+,Snake Bite: Non‐Poisonous,,Diagnosis,N/A,,,,,,ICD-10-WHO,W59,SAME-AS
+,Physical Disability,,Diagnosis,N/A,,Disabled Person,,,,ICD-10-WHO,Z73,SAME-AS
+,Falls,,Diagnosis,N/A,,Injuries,Fractures,,,ICD-10-WHO,T14,SAME-AS
+,Road Traffic Accident,,Diagnosis,N/A,RTA,,,,,ICD-10-WHO,V89,SAME-AS
+,Rheumatoid Arthritis,,Diagnosis,N/A,,,,,,ICD-10-WHO,M06,SAME-AS
+,Arthritis,,Diagnosis,N/A,,,,,,ICD-10-WHO,M13,SAME-AS
+,Osteo Arthrosis,,Diagnosis,N/A,,,,,,ICD-10-WHO,M19,SAME-AS
+,Back Ache,,Diagnosis,N/A,,Musculo‐Skeletal Pain,,,,ICD-10-WHO,M54.9,SAME-AS
+,Acid Peptic Disorders,,Diagnosis,N/A,,,,,,ICD-10-WHO,K27,SAME-AS
+,Anal Fissure,,Diagnosis,N/A,,,,,,ICD-10-WHO,K60.2,SAME-AS
+,Anal Fistula,,Diagnosis,N/A,,,,,,ICD-10-WHO,K60.3,SAME-AS
+,Fistula Of Intestine,,Diagnosis,N/A,,,,,,ICD-10-WHO,K63.2,SAME-AS
+,Renal Stones,,Diagnosis,N/A,,,,,,ICD-10-WHO,N20.0,SAME-AS
+,Breast Lumps,,Diagnosis,N/A,,Adenoma,,,,ICD-10-WHO,N63,SAME-AS
+,Mastitis,,Diagnosis,N/A,,Breast Abscess,Ignored breast,,,ICD-10-WHO,N61,SAME-AS
+,Mastalgia Breast,,Diagnosis,N/A,,,,,,ICD-10-WHO,N64.4,SAME-AS
+,Lumps,,Diagnosis,N/A,,Lipoma,,,,ICD-10-WHO,D17,SAME-AS
+,Sebaceous Cyst,,Diagnosis,N/A,,,,,,ICD-10-WHO,L72.1,SAME-AS
+,Pilonidal Sinus,,Diagnosis,N/A,,,,,,ICD-10-WHO,J32,SAME-AS
+,Appendicitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,K37,SAME-AS
+,Cholecystitis,,Diagnosis,N/A,,,,,,ICD-10-WHO,K81,SAME-AS
+,Cholelithiasis,,Diagnosis,N/A,,Gall Stone,,,,ICD-10-WHO,K80,SAME-AS
+,Hernia,,Diagnosis,N/A,,,,,,ICD-10-WHO,K46,SAME-AS
+,Hydrocoele,,Diagnosis,N/A,,,,,,ICD-10-WHO,N43,SAME-AS
+,Phimosis,,Diagnosis,N/A,,Para‐Phimosis,,,,ICD-10-WHO,N47,SAME-AS
+,Haemorrhoids,,Diagnosis,N/A,,Piles,,,,ICD-10-WHO,I84,SAME-AS
+,Epididymitis,,Diagnosis,N/A,,Orchitis,,,,ICD-10-WHO,N45,SAME-AS
+,Prostatism,,Diagnosis,N/A,,BEP,BPH,,,ICD-10-WHO,N41,SAME-AS
+,Not Mentioned Above And Other,,Diagnosis,N/A,,,,,,ICD-10-WHO,R69,SAME-AS
