@@ -23,7 +23,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"Tuberculosis, Referred by",,Misc,Coded,Referred by,,,,,Community,Private Health Facility,Diagnosed by contact tracing,,,,,
 ,"Tuberculosis, Treatment Type",,Misc,Coded,Treatment type,,,,,Category I,Category II,Category III,,,,,
 ,"Tuberculosis, Remarks",,Misc,Text,Remarks,,,,,,,,,,,,
-,"Tuberculosis, Drug Resistance",,Misc,Boolean,Resistance to drugs,,,,,,,,,,,,
+,"Tuberculosis, Drug Resistance",,Misc,Coded,Resistance to drugs,,,,,Yes,No,Unknown,,,,,
 ,"MDRTuberculosis, Type",,Misc,Coded,Type,,,,,Pulmonary,Extra pulmonary,Not Applicable,,,,,
 ,"MDRTuberculosis, Diagnosis Category",,Misc,Coded,Category of diagnosis,,,,,New Diagnosis,Relapse,Treatment after loss to follow-up,Treatment After Failure Category I,Treatment After Failure Category II,Transfer In,Others,
 ,"MDRTuberculosis, Other Details of Category of Diagnosis",,Misc,Text,Other Details of Diagnosis Category,,,,,,,,,,,,

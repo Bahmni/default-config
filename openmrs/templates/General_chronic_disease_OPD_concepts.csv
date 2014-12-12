@@ -22,7 +22,7 @@ when diagnosed, or suspected diagnosis<br>",Misc,Text,Specifics of Chronic disea
 ,"General Chronic Disease OPD, Physical Examination Details",,Misc,Text,Physical Examination Details,,,,,,,,,,,,,,,
 ,"General Chronic Disease OPD, Investigations","for PRIOR investigations, include those most relevant to diseases <br>
 and include date of test<br>",Misc,Text,Investigations,,,,,,,,,,,,,,,
-,"General Chronic Disease OPD, Assessment / Plan","please list patient problem lis with plan<br>
+,"General Chronic Disease OPD, Assessment / Plan","please list patient problem list with plan<br>
 (i.e. medicines, investigations, counseling) for each problem<br>",Misc,Text,Assessment / Plan,,,,,,,,,,,,,,,
 ,"General Chronic Disease OPD, Counseling",,Misc,Coded,Counseling,,,,,Diet,Quit Smoking,Quit Alcohol,Medication Compliance,,,,,,,
 ,"General Chronic Disease OPD, Followup",,Misc,Coded,Followup,,,,,1 - 2 Weeks,1 Month,3 months,6 Months,12 Months,,,,,,

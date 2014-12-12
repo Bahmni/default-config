@@ -1,5 +1,5 @@
 uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7
-,"Rheumatic Heart Disease, Symptoms of Heart Failure Today",Misc,Boolean,Symptoms of heart failure today ?,,,,,,,,,,,,
+,"Rheumatic Heart Disease, Symptoms of Heart Failure Today",Misc,Boolean,Symptoms of heart failure today ?,"if yes, patients with resultant CHF or valve damage should be on lifelong penicillin, SEE BELOW for dosing regimen<br>",,,,,,,,,,,
 ,"Rheumatic Heart Disease, NYHA Stage",Misc,Coded,NYHA Stage,"- Class I — symptoms of HEART FAILURE only at activity levels that would limit normal individuals<br>
 - Class II — symptoms of HEART FAILURE  with ordinary exertion<br>
 - Class III — symptoms of HEART FAILURE  with less than ordinary exertion<br>
@@ -10,7 +10,7 @@ SEE BELOW for dosing regimen<br>",,,,,,,,,,,
 ,"Rheumatic Heart Disease, Details of On Appropriate Anti-Coagulation",Misc,Text,Details of on appropriate anti-coagulation,Patients with mechanical valves should be on Coumadin with goal INR 2.5-3.5,,,,,,,,,,,
 ,"Rheumatic Heart Disease, Patient Younger than 25 Years",Misc,Boolean,Is the patient younger than 25 Years,,,,,,,,,,,,
 ,"Rheumatic Heart Disease, Less than 10 Years Since Last RHD Attack",Misc,Boolean,Is it less than 10 years since last attack of RHD,,,,,,,,,,,,
-,"Rheumatic Heart Disease, IfEither Question Above is Yes",Misc,Boolean,If either question above is yes,"if either question above is yes,<br>
+,"Rheumatic Heart Disease, If Either Question Above is Yes",Misc,Boolean,If either question above is yes,"if either question above is yes,<br>
 then patient needs to be on penicillin until one of these requirements are met.<br> 
 See below for dosing regimen<br>",,,,,,,,,,,
 ,"Rheumatic Heart Disease, Is Patient Getting q1 Month Penicillin",Misc,Boolean,Is patient getting q1 month penicillin,"Should get PCN with doses Benzathine penicillin G<br>

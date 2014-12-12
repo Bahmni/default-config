@@ -6,7 +6,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-ter
 ,"Diabetes, A1C","Goal less than 6.5, do NOT order more than every 3 months",Misc,Text,Last A1C,,,,,,,,,,,,,
 ,"Diabetes, Last A1C Date",,Misc,Date,Last A1C date,,,,,,,,,,,,,
 ,"Diabetes, Patient on Enalapril","patients with DM need renoprotection with ACEi, check Cr and urine protein",Misc,Boolean,Is Patient on enalapril ,,,,,,,,,,,,,
-,"Diabetes, LDL",patients w/ DM should be on at least 20mg given daily increased risk of CAD,Misc,Text,Last LDL,,,,,,,,,,,,,
+,"Diabetes, LDL",patients with DM should be on at least atorvastatin 20mg given daily increased risk of CAD,Misc,Text,Last LDL,,,,,,,,,,,,,
 ,"Diabetes, Last LDL Date",should check LDL at least yearly,Misc,Date,last LDL date,,,,,,,,,,,,,
 ,"Diabetes, Ulcers on Feet",Examine feet for diabetic foot ulcers at every visit to prevent risk of amputation,Misc,Boolean,Ulcers present on feet,,,,,,,,,,,,,
 ,"Diabetes, Last Eye Exam Date",Patient should have eye exam yearly,Misc,Date,Last eye exam date,,,,,,,,,,,,,
