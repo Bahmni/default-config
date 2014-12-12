@@ -1,0 +1,37 @@
+uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
+,"Trauma Notes, History of Present Illness",,Misc,Text,History of present illness,,,,,,,,,,,,,
+,"Trauma Notes, PMHx",,Misc,Text,PMHx,,,,,,,,,,,,,
+,"Trauma Notes, PSHx",,Misc,Text,PSHx,,,,,,,,,,,,,
+,"Trauma Notes, Social Hx",,Misc,Text,Social Hx,,,,,,,,,,,,,
+,"Trauma Notes, Systolic",,Misc,Numeric,Systolic,,,,,,,,,,,,,
+,"Trauma Notes, Systolic Abnormal",,Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,
+,"Trauma Notes, Diastolic",,Misc,Numeric,Diastolic,,,,,,,,,,,,,
+,"Trauma Notes, Diastolic Abnormal",,Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,
+,"Trauma Notes, Pulse",,Misc,Numeric,Pulse,,,,,,,,,,,,,
+,"Trauma Notes, Pulse Abnormal",,Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,,
+,"Trauma Notes, RR",,Misc,Numeric,RR,,,,,,,,,,,,,
+,"Trauma Notes, RR Abnormal",,Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,,
+,"Trauma Notes, SAT",,Misc,Numeric,SAT,,,,,,,,,,,,,
+,"Trauma Notes, SAT Abnormal",,Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,,
+,"Trauma Notes, Temperature",,Misc,Numeric,Temperature,,,,,,,,,,,,,
+,"Trauma Notes, Temperature Abnormal",,Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,,
+,"Trauma Notes, Physical Examination Details","Hgt:<br>
+Wgt:<br>
+General:<br>
+GCS: E: V: M:<br>
+HEENT:<br>
+NECK:<br>
+Heart:<br>
+Chest/Lungs:<br>
+Abdomen:<br>
+Back:<br>
+Rectal:<br>
+Extremities:<br>
+Neurologic:<br>",Misc,Text,Physical Examination Details,,,,,,,,,,,,,
+,"Trauma Notes, List of Injuries to Date",,Misc,Text,List of Injuries to date,,,,,,,,,,,,,
+,"Trauma Notes, Chest X Ray",,Misc,Text,Chest X Ray,,,,,,,,,,,,,
+,"Trauma Notes, Pelvis",,Misc,Text,Pelvis,,,,,,,,,,,,,
+,"Trauma Notes, C Spine",,Misc,Text,C Spine,,,,,,,,,,,,,
+,"Trauma Notes, T/L/S Spine",,Misc,Text,T/L/S Spine,,,,,,,,,,,,,
+,"Trauma Notes, Extremity",,Misc,Text,Extremity,,,,,,,,,,,,,
+,"Trauma Notes, Lab Trends",,Misc,Text,Lab Trends,,,,,,,,,,,,,

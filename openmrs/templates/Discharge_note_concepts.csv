@@ -1,0 +1,9 @@
+uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
+,"Discharge Note, Admission Date",,Misc,Date,Date of Admission,,,,,,,,,,,,
+,"Discharge Note, Discharge Date",,Misc,Date,Date of Discharge,,,,,,,,,,,,
+,"Discharge Note, Discharged to ","Discharged to Home, Discharged to Higher center<br>",Misc,Text,Discharged to,,,,,,,,,,,,
+,"Discharge Note, Diagnosis",,Misc,Text,Diagnosis,,,,,,,,,,,,
+,"Discharge Note, Brief Hospital Course",,Misc,Text,Brief hospital course,,,,,,,,,,,,
+,"Discharge Note, Medications on Discharged",As compared to those on admission<br>,Misc,Text,Medication on discharged,,,,,,,,,,,,
+,"Discharge Note, Followup Instructions","When to return to OPD or ER, etc.<br>",Misc,Text,Followup instructions,,,,,,,,,,,,
+,"Discharge Note, Name of Doctor to contact for more information",,Misc,Text,Name of Doctor for more information,,,,,,,,,,,,
