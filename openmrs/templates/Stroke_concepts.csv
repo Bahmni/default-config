@@ -3,7 +3,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"Stroke, Systolic Abnormal",,Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,
 ,"Stroke, Diastolic",,Misc,Numeric,Diastolic,,,,,,,,,,,,
 ,"Stroke, Diastolic Abnormal",,Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,
-,"Stroke, LDL",,Text,Text,LDL,,,,,,,,,,,,
+,"Stroke, LDL",,Misc,Text,LDL,,,,,,,,,,,,
 ,"Stroke, Last LDL Date",,Misc,Date,Last LDL date,,,,,,,,,,,,
 ,"Stroke, Qualifies for Atorvastatin",,Misc,Boolean,Does patient qualify for atorvastatin,,,,,,,,,,,,
 ,"Stroke, Patient is Diabetic",,Misc,Boolean,Does patient has diabetes,,,,,,,,,,,,
