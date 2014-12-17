@@ -402,5 +402,34 @@ RIGHT OUTER JOIN
 	(SELECT 'HIV +ve, All Types' AS name) AS hiv_header ON hiv_header.name = 'HIV +ve, All Types'
 GROUP BY hiv_header.name;
 
-
+SELECT 'HIV +ve RR/MDR-TB' AS 'Diagnosis type',
+	SUM(IF(tuberculosis_type.value_concept_full_name IS NOT NULL && person.gender = 'F',1,0)) AS 'No. of cases regd.-F', 
+    SUM(IF(tuberculosis_type.value_concept_full_name IS NOT NULL && person.gender = 'M',1,0)) AS 'No. of cases regd.-M',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Treatment cured' && person.gender = 'F',1,0)) AS 'Cured-F',
+	SUM(IF(treatment_outcome.value_concept_full_name = 'Treatment cured' && person.gender = 'M',1,0)) AS 'Cured-M',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Treatment completed' && person.gender = 'F',1,0)) AS 'Completed-F',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Treatment completed' && person.gender = 'M',1,0)) AS 'Completed-M',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Treatment failed' && person.gender = 'F',1,0)) AS 'Failure-F',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Treatment failed' && person.gender = 'M',1,0)) AS 'Failure-M',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Death during treatment' && person.gender = 'F',1,0)) AS 'Died-F',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Death during treatment' && person.gender = 'M',1,0)) AS 'Died-M',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Treatment defaulted' && person.gender = 'F',1,0)) AS 'Loss to follow-up-F',
+    SUM(IF(treatment_outcome.value_concept_full_name = 'Treatment defaulted' && person.gender = 'M',1,0)) AS 'Loss to follow-up-M',
+    SUM(IF(treatment_outcome.value_concept_full_name IS NULL && person.gender = 'F',1,0)) AS 'Not Evaluated-F',
+    SUM(IF(treatment_outcome.value_concept_full_name IS NULL && person.gender = 'M',1,0)) AS 'Not Evaluated-M'
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN coded_obs_view AS tuberculosis_type ON encounter.encounter_id = tuberculosis_type.encounter_id
+	AND tuberculosis_type.concept_full_name = 'MDRTuberculosis, Type'
+INNER JOIN coded_obs_view AS hiv_status ON hiv_status.obs_group_id = tuberculosis_type.obs_group_id
+	AND hiv_status.concept_full_name = 'MDRTuberculosis, HIV Infection'
+    AND hiv_status.value_concept_full_name = 'Yes'
+LEFT OUTER JOIN coded_obs_view AS treatment_outcome ON treatment_outcome.person_id = tuberculosis_type.person_id
+	AND treatment_outcome.concept_full_name = 'Tuberculosis, Treatment Outcome'
+    AND DATE(treatment_outcome.obs_datetime) BETWEEN @start_date AND @end_date
+RIGHT OUTER JOIN
+	(SELECT 'All confirmed XDR-TB' AS name) AS xdr_tb_header ON xdr_tb_header.name = 'All confirmed XDR-TB'
+GROUP BY xdr_tb_header.name;
 
