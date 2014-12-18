@@ -25,7 +25,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"PMTCT, Baby birth status",,Misc,Coded,Baby birth status,,,,,Livebirth,Stillbirth,Stillbirth Macerated,,,,,,,,,,,,,
 ,"PMTCT, Postpartum",,Misc,Coded,Postpartum,,,,,On Treatment,Stopped Treatment,Transferred Out,Missing,Lost to Follow-up,Death,,,,,,,,,,
 ,"PMTCT, Live Birth",,Misc,Numeric,Live Birth,,,,,,,,,,,,,,,,,,,,
-,"PMTCT, Bright Weight",,Misc,Numeric,Bright Weight,,,,,,,,,,,,,,,,,,,,
+,"PMTCT, Birth Weight",,Misc,Numeric,Birth Weight,,,,,,,,,,,,,,,,,,,,
 ,"PMTCT, Started ARV Prophylaxis for Baby",,Misc,Boolean,Started ARV Prophylaxis for Baby,,,,,,,,,,,,,,,,,,,,
 ,"PMTCT, Breast feeding options opted by HIV +ve mother",,Misc,Coded,Breast feeding options opted by HIV +ve mother,,,,,Exclusive Breast Feeding,Replacement Breast Feeding,Mixed Breast Feeding,,,,,,,,,,,,,
 ,"PMTCT, FP services during",,Misc,Boolean,FP services during,,,,,,,,,,,,,,,,,,,,

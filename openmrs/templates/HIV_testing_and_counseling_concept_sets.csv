@@ -1,0 +1,5 @@
+uuid,name,shortname,description,class,reference-term-code,reference-term-relationship,reference-term-source,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8
+,"HTC, Pre-test Counseling Set",Pre-test Counseling,,Misc,,,,"HTC, Pre-test Counseling","HTC, Tested before","HTC, Result if tested","HTC, Reason for test","HTC, Other reason for test","HTC, Pregnancy Status","HTC, Risk Group","HTC, Other Risk Group"
+,"HTC, HIV Test",HIV Test,,Misc,,,,"HTC, Informed Consent","HTC, Initial","HTC, Confirmatory",,,,,
+,"HTC, Post-test Counseling Set",Post-test Counseling,,Misc,,,,"HTC, Post-test Counseling","HTC, Result Recieved","HTC, Result","HTC, Partner Counseling","HTC, WHO Staging","HTC, CD4 Count","HTC, Referral",
+,HIV Testing and Counseling Intake Template,HIV Testing and Counseling - Intake,,Misc,,,,"HTC, Pre-test Counseling Set","HTC, HIV Test","HTC, Post-test Counseling Set",,,,,
