@@ -31,30 +31,30 @@ GROUP BY patient_last_month.column_name
 
 UNION
 -- Total additions
-SELECT
-	leprosy_case_types_list.answer_concept_name,
+(SELECT
+	total_additions_header_names.name,
 	SUM(IF(person.gender = 'F' && leprosy_type.value_concept_full_name = 'Multi Bacillary', 1, 0)) AS 'Multi Bacillary, Female',
     SUM(IF(person.gender = 'M' && leprosy_type.value_concept_full_name = 'Multi Bacillary', 1, 0)) AS 'Multi Bacillary, Male',
     SUM(IF(person.gender = 'F' && leprosy_type.value_concept_full_name = 'Pauci Bacillary', 1, 0)) AS 'Pauci Bacillary, Female',
     SUM(IF(person.gender = 'M' && leprosy_type.value_concept_full_name = 'Pauci Bacillary', 1, 0)) AS 'Pauci Bacillary, Male'
-
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
 	AND visit.date_started BETWEEN @start_date AND @end_date
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS leprosy_case_type ON encounter.encounter_id = leprosy_case_type.encounter_id
 	AND leprosy_case_type.concept_full_name = 'Leprosy, Case Type'
+	AND leprosy_case_type.value_concept_full_name NOT IN ('Classification Change')
 INNER JOIN coded_obs_view AS leprosy_type ON leprosy_case_type.obs_group_id = leprosy_type.obs_group_id
 	AND leprosy_type.concept_full_name = 'Leprosy, Leprosy Type'
-    AND leprosy_type.concept_full_name NOT IN ('Classification Change')
 RIGHT OUTER JOIN
-(SELECT answer_concept_name FROM concept_answer_view WHERE question_concept_name = 'Leprosy, Case Type' and answer_concept_name NOT IN ('Classification Change')) AS leprosy_case_types_list ON leprosy_case_type.value_concept_full_name = leprosy_case_types_list.answer_concept_name
-GROUP BY leprosy_case_types_list.answer_concept_name
+(SELECT name, sort_order, concept_full_name FROM row_header_concept_map WHERE report_group_name = 'Leprosy-Total Additions' ) AS total_additions_header_names ON leprosy_case_type.value_concept_full_name = total_additions_header_names.concept_full_name
+GROUP BY total_additions_header_names.name
+ORDER BY total_additions_header_names.sort_order)
 
 UNION
 -- Total deducted: 
 SELECT
-	leprosy_deduction_types_list.answer_concept_name,
+	total_deducted.column_name,
 	SUM(IF(person.gender = 'F' && leprosy_type.value_concept_full_name = 'Multi Bacillary', 1, 0)) AS 'Multi Bacillary, Female',
     SUM(IF(person.gender = 'M' && leprosy_type.value_concept_full_name = 'Multi Bacillary', 1, 0)) AS 'Multi Bacillary, Male',
     SUM(IF(person.gender = 'F' && leprosy_type.value_concept_full_name = 'Pauci Bacillary', 1, 0)) AS 'Pauci Bacillary, Female',
@@ -69,8 +69,31 @@ INNER JOIN coded_obs_view AS leprosy_deduction_type ON encounter.encounter_id = 
 INNER JOIN coded_obs_view AS leprosy_type ON leprosy_deduction_type.obs_group_id = leprosy_type.obs_group_id
 	AND leprosy_type.concept_full_name = 'Leprosy, Leprosy Type'
 RIGHT OUTER JOIN
-(SELECT answer_concept_name FROM concept_answer_view WHERE question_concept_name = 'Leprosy, Patient Deduction Type' ) AS leprosy_deduction_types_list ON leprosy_deduction_type.value_concept_full_name = leprosy_deduction_types_list.answer_concept_name
-GROUP BY leprosy_deduction_types_list.answer_concept_name
+(SELECT 'Total Deducted - No. of patients treated in this month' AS column_name) AS total_deducted ON column_name = 'Total Deducted - No. of patients treated in this month'
+
+-- Deducted: RFT, Transferred, Defaulters, Other deducted
+UNION
+(
+SELECT
+	total_deductions_header_names.name,
+	SUM(IF(person.gender = 'F' && leprosy_type.value_concept_full_name = 'Multi Bacillary', 1, 0)) AS 'Multi Bacillary, Female',
+    SUM(IF(person.gender = 'M' && leprosy_type.value_concept_full_name = 'Multi Bacillary', 1, 0)) AS 'Multi Bacillary, Male',
+    SUM(IF(person.gender = 'F' && leprosy_type.value_concept_full_name = 'Pauci Bacillary', 1, 0)) AS 'Pauci Bacillary, Female',
+    SUM(IF(person.gender = 'M' && leprosy_type.value_concept_full_name = 'Pauci Bacillary', 1, 0)) AS 'Pauci Bacillary, Male'
+
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN coded_obs_view AS leprosy_deduction_type ON encounter.encounter_id = leprosy_deduction_type.encounter_id
+	AND leprosy_deduction_type.concept_full_name = 'Leprosy, Patient Deduction Type'
+INNER JOIN coded_obs_view AS leprosy_type ON leprosy_deduction_type.obs_group_id = leprosy_type.obs_group_id
+	AND leprosy_type.concept_full_name = 'Leprosy, Leprosy Type'
+RIGHT OUTER JOIN
+(SELECT name, concept_full_name, sort_order FROM row_header_concept_map WHERE report_group_name = 'Leprosy-Total Deducted' ) AS total_deductions_header_names ON leprosy_deduction_type.value_concept_full_name = total_deductions_header_names.concept_full_name
+GROUP BY total_deductions_header_names.name
+ORDER BY total_deductions_header_names.sort_order
+)
 UNION
 -- Patient at the end of this month
 SELECT
