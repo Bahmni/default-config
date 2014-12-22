@@ -65,3 +65,6 @@ INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
     AND DATE(value_datetime) BETWEEN  @start_date AND @end_date) AS entries
 RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Patient Origin Type' ) AS origin_types ON entries.Origin = origin_types.child_concept_name
 GROUP BY origin_types.child_concept_name;
+
+
+

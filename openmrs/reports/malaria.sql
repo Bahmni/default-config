@@ -94,4 +94,44 @@ INNER JOIN obs_view AS malaria_drug ON malaria_drug.obs_group_id = malaria_type.
     AND malaria_drug.value_text IS NOT NULL AND malaria_drug.value_text != ""
 RIGHT OUTER JOIN (SELECT name_key, name_value, sort_order FROM row_header_name_map WHERE report_group_name = 'Malaria-Treatment of Malaria' ) AS malaria_types_list ON malaria_type.value_concept_full_name = malaria_types_list.name_key
 GROUP BY malaria_types_list.name_value
-ORDER BY malaria_types_list.sort_order);
+ORDER BY malaria_types_list.sort_order)
+
+UNION
+    
+(SELECT 		
+	IF(malaria_finding.value_concept_full_name = 'Suspected / Probable' || malaria_finding.value_concept_full_name = 'Probable Severe', 'Died - Probable', 
+		IF((malaria_finding.value_concept_full_name = 'Confirmed Uncomplicated' || malaria_finding.value_concept_full_name = 'Confirmed Severe') && malaria_type.value_concept_full_name = 'Plasmodium Vivax', 'Died - Confirmed PV',
+			IF((malaria_finding.value_concept_full_name = 'Confirmed Uncomplicated' || malaria_finding.value_concept_full_name = 'Confirmed Severe') && malaria_type.value_concept_full_name = 'Plasmodium Falciparum', 'Died - Confirmed PF','Died - Probable'))) AS death_reason,
+	SUM(IF(entries.gender = 'F' && TIMESTAMPDIFF(YEAR, entries.birthdate, latest_finding) < 5, 1, 0)) AS 'Female, <5 years',
+    SUM(IF(entries.gender = 'M' && TIMESTAMPDIFF(YEAR, entries.birthdate, latest_finding) < 5, 1, 0)) AS 'Male, <5 years',
+    SUM(IF(entries.gender = 'F' && TIMESTAMPDIFF(YEAR, entries.birthdate, latest_finding) >= 5, 1, 0)) AS 'Female, >= 5 years',
+    SUM(IF(entries.gender = 'M' && TIMESTAMPDIFF(YEAR, entries.birthdate, latest_finding) >= 5, 1, 0)) AS 'Male, >=5 years'
+FROM    
+(SELECT person.person_id,
+		person.gender,
+        person.birthdate,
+        MAX(coded_obs_view.obs_datetime) AS latest_finding,
+        MAX(malaria_type.obs_datetime) AS latest_type
+FROM person 
+INNER JOIN obs_view AS malaria_death ON malaria_death.person_id = person.person_id
+	AND malaria_death.concept_full_name = 'Malaria, Death Date'
+    AND malaria_death.value_datetime BETWEEN @start_date AND @end_date
+ LEFT OUTER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
+	AND coded_obs_view.concept_full_name = 'Malaria, Finding'
+    AND DATE(coded_obs_view.obs_datetime) BETWEEN DATE_SUB(@start_date, INTERVAL 11 MONTH) AND @end_date 
+ LEFT OUTER JOIN coded_obs_view AS malaria_type ON malaria_type.person_id = person.person_id
+ 	AND malaria_type.concept_full_name = 'Malaria, Malaria type'
+    AND DATE(malaria_type.obs_datetime) BETWEEN DATE_SUB(@start_date, INTERVAL 11 MONTH) AND @end_date
+GROUP BY person.person_id) AS entries
+LEFT OUTER JOIN coded_obs_view AS malaria_finding
+	ON malaria_finding.obs_datetime = entries.latest_finding
+    AND malaria_finding.concept_full_name = 'Malaria, Finding'
+    AND malaria_finding.person_id = entries.person_id
+LEFT OUTER JOIN coded_obs_view AS malaria_type
+ 	ON malaria_type.obs_datetime = entries.latest_type
+    AND malaria_type.concept_full_name = 'Malaria, Malaria type'
+    AND malaria_type.person_id = entries.person_id
+GROUP BY death_reason);
+
+
+
