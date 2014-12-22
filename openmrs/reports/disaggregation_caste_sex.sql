@@ -1,0 +1,168 @@
+-- Disaggregation by Sex & Caste/Ethnicity
+
+-- Parameters
+SET @start_date = '2014-11-01';
+SET @end_date = '2014-12-30';
+
+-- Query
+
+-- CBIMCI
+SELECT  cbimci.caste_ethnicity AS 'Caste/Ethnicity',
+		cbimci_female AS 'Enroll in CBIMCI programme-Female',
+		cbimci_male AS 'Enroll in CBIMCI programme-Male',
+        delivery_count AS 'Institutional Delivery',
+        abortion_count AS 'Abortion Cases',
+        op_cases_female AS 'Out patient cases-Female',
+        op_cases_male AS 'Out patient cases-Male',
+        ip_cases_female AS 'In patient cases-Female',
+        ip_cases_male AS 'In patient cases-Male',
+        hiv_female AS 'New HIV+ Cases-Female',
+        hiv_male AS 'New HIV+ Cases-Male',
+        leprosy_female AS 'New Leprosy Cases-Female',
+        leprosy_male AS 'New Leprosy Cases-Male',
+        tb_female AS 'New TB Cases-Female',
+        tb_male AS 'New TB Cases-Male'
+FROM
+(SELECT
+	caste_list.child_concept_name AS caste_ethnicity,
+	SUM(IF(person.gender = 'F', 1, 0)) AS cbimci_female,
+    SUM(IF(person.gender = 'M', 1, 0)) AS cbimci_male
+ 
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
+INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
+	AND person_attribute_type.name = 'caste'
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
+	AND obs_view.concept_full_name IN ('Childhood Illness( Children aged below 2 months)', 'Childhood Illness( Children aged 2 months to 5 years)')
+RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Caste Type' ) AS caste_list ON caste_list.child_concept_name = person_attribute.value
+GROUP BY caste_list.child_concept_name) AS cbimci
+INNER JOIN
+-- Institiutional Delivery
+(SELECT
+	caste_list.child_concept_name AS caste_ethnicity,
+	SUM(IF(person.person_id IS NOT NULL, 1, 0)) AS delivery_count
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
+INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
+	AND person_attribute_type.name = 'caste'
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
+	AND obs_view.concept_full_name = 'Delivery Note, Delivery date and time'
+    AND DATE(obs_view.value_datetime) BETWEEN @start_date AND @end_date
+RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Caste Type' ) AS caste_list ON caste_list.child_concept_name = person_attribute.value
+GROUP BY caste_list.child_concept_name) AS delivery ON delivery.caste_ethnicity = cbimci.caste_ethnicity
+INNER JOIN
+-- Abortion cases
+(SELECT
+	caste_list.child_concept_name AS caste_ethnicity,
+	SUM(IF(person.person_id IS NOT NULL, 1, 0)) AS abortion_count
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
+INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
+	AND person_attribute_type.name = 'caste'
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
+	AND coded_obs_view.concept_full_name = 'Abortion procedure'
+    AND coded_obs_view.value_concept_full_name IS NOT NULL
+RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Caste Type' ) AS caste_list ON caste_list.child_concept_name = person_attribute.value
+GROUP BY caste_list.child_concept_name) AS abortion ON abortion.caste_ethnicity = delivery.caste_ethnicity
+INNER JOIN
+-- Out patient cases
+(SELECT
+	 caste_list.child_concept_name AS caste_ethnicity,
+	 SUM(IF(person.gender = 'F', 1, 0)) AS op_cases_female,
+     SUM(IF(person.gender = 'M', 1, 0)) AS op_cases_male
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
+INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
+	AND person_attribute_type.name = 'caste'
+AND NOT EXISTS(SELECT * 
+					FROM encounter_view 
+					WHERE encounter_view.visit_id = visit.visit_id AND encounter_view.encounter_type_name = 'ADMISSION' )
+RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Caste Type' ) AS caste_list ON caste_list.child_concept_name = person_attribute.value
+GROUP BY caste_list.child_concept_name) AS op_cases ON abortion.caste_ethnicity = op_cases.caste_ethnicity
+INNER JOIN
+
+-- In patient cases
+(SELECT
+	caste_list.child_concept_name AS caste_ethnicity,
+	SUM(IF(person.gender = 'F', 1, 0)) AS ip_cases_female,
+    SUM(IF(person.gender = 'M', 1, 0)) AS ip_cases_male
+
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
+INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
+	AND person_attribute_type.name = 'caste'
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN encounter_type ON encounter.encounter_type = encounter_type.encounter_type_id
+	AND encounter_type.name = 'ADMISSION'
+RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Caste Type' ) AS caste_list ON caste_list.child_concept_name = person_attribute.value
+GROUP BY caste_list.child_concept_name) AS ip_cases ON op_cases.caste_ethnicity = ip_cases.caste_ethnicity
+INNER JOIN
+
+-- New HIV+ cases
+(SELECT
+	 caste_list.child_concept_name AS caste_ethnicity,
+	 SUM(IF(person.gender = 'F', 1, 0)) AS hiv_female,
+     SUM(IF(person.gender = 'M', 1, 0)) AS hiv_male
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
+INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
+	AND person_attribute_type.name = 'caste'
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
+	AND coded_obs_view.concept_full_name = 'HIVTC, Entry Point'
+    AND coded_obs_view.value_concept_full_name IS NOT NULL
+RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Caste Type' ) AS caste_list ON caste_list.child_concept_name = person_attribute.value
+GROUP BY caste_list.child_concept_name) AS hiv_cases ON hiv_cases.caste_ethnicity = ip_cases.caste_ethnicity
+INNER JOIN
+
+-- New leprosy cases
+(SELECT
+	caste_list.child_concept_name AS caste_ethnicity,
+	SUM(IF(person.gender = 'F', 1, 0)) AS leprosy_female,
+    SUM(IF(person.gender = 'M', 1, 0)) AS leprosy_male
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
+INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
+	AND person_attribute_type.name = 'caste'    
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
+	AND coded_obs_view.concept_full_name IN ('Leprosy, Case Type')
+    AND coded_obs_view.value_concept_full_name IS NOT NULL
+RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Caste Type' ) AS caste_list ON caste_list.child_concept_name = person_attribute.value
+GROUP BY caste_list.child_concept_name) AS leprosy_cases ON leprosy_cases.caste_ethnicity = hiv_cases.caste_ethnicity
+INNER JOIN    
+-- New TB cases
+(SELECT
+	caste_list.child_concept_name AS caste_ethnicity,
+	SUM(IF(person.gender = 'F', 1, 0)) AS tb_female,
+    SUM(IF(person.gender = 'M', 1, 0)) AS tb_male
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
+INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
+	AND person_attribute_type.name = 'caste'    
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
+	AND coded_obs_view.concept_full_name IN ('Tuberculosis, Diagnosis Category')
+    AND coded_obs_view.value_concept_full_name IS NOT NULL
+RIGHT OUTER JOIN (SELECT child_concept_name FROM concept_children_view WHERE parent_concept_name = 'Caste Type' ) AS caste_list ON caste_list.child_concept_name = person_attribute.value
+GROUP BY caste_list.child_concept_name) AS tb_cases ON tb_cases.caste_ethnicity = hiv_cases.caste_ethnicity
+
