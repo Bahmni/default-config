@@ -32,14 +32,12 @@
             "visitPage": {
                 "investigationResultParams": {
                     "title": "Lab Investigations",
-                    "showInvestigationChart": true,
-                    "showInvestigationTable": true,
+                    "showChart": true,
+                    "showTable": true,
                     "showNormalValues": true,
                     "showCommentsExpanded": true,
-                    "showLabManagerNotes": true,
-                    "numberOfVisits": 10,
-                    "visitUuids": null, 
-                    "patientUuid": null
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10
                 }
             },
             "maxConceptSetLevels": 3,
@@ -91,12 +89,12 @@
                     "name": "labOrders",
                     "dashboardParams": {
                         "title": null,
-                        "showInvestigationChart": false,
-                        "showInvestigationTable": true,
+                        "showChart": false,
+                        "showTable": true,
                         "showNormalValues": true,
                         "numberOfVisits": 1,
                         "showCommentsExpanded": true,
-                        "showLabManagerNotes": true
+                        "showAccessionNotes": true
                     },
                     "summaryPageParams": {
                         "numberOfVisits": 3
