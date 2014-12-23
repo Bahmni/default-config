@@ -1,6 +1,4 @@
 uuid,name,description,class,datatype,shortname,synonym.1,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7
-,"Childhood Illness, Referred by",,Misc,Coded,Referred by,,,,,CHW,HF,None,,,,
-,Respiratory Rate,,Misc,Numeric,,,,,,,,,,,,
 ,"PSBI/LBI/NBI, Symptoms",,Misc,Coded,Symptoms,,,,,Convulsion,Severe chest indrawing,Nasal flaring,Bulging fontanelle,Lethargic/ Unconscious ,Unable to feed,
 ,Umbilicus Infection,,Misc,Coded,,,,,,Umbilicus red,Umbilicus with pus,Umbilicus infection to skin,,,,
 ,"PSBI/LBI/NBI, Skin Pustules",,Misc,Coded,Skin pustules,,,,,Less than 10mm,Severe and larger than 10mm,,,,,
