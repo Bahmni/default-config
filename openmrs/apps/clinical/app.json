@@ -29,6 +29,19 @@
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
+            "visitPage": {
+                "investigationResultParams": {
+                    "title": "Lab Investigations",
+                    "showInvestigationChart": true,
+                    "showInvestigationTable": true,
+                    "showNormalValues": true,
+                    "showCommentsExpanded": true,
+                    "showLabManagerNotes": true,
+                    "numberOfVisits": 10,
+                    "visitUuids": null, 
+                    "patientUuid": null
+                }
+            },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Chief Complaint Data": {
@@ -75,7 +88,19 @@
                 },
                 {
                     "title": "Lab Orders",
-                    "name": "labOrders"
+                    "name": "labOrders",
+                    "dashboardParams": {
+                        "title": null,
+                        "showInvestigationChart": false,
+                        "showInvestigationTable": true,
+                        "showNormalValues": true,
+                        "numberOfVisits": 1,
+                        "showCommentsExpanded": true,
+                        "showLabManagerNotes": true
+                    },
+                    "summaryPageParams": {
+                        "numberOfVisits": 3
+                    }
                 },
                 {
                     "title": "Nutritional Values",
