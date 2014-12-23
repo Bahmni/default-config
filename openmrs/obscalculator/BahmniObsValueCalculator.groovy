@@ -173,7 +173,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return null
     }
 
-    static EncounterTransaction.Observation find(def conceptName, List<EncounterTransaction.Observation> observations) {
+    static EncounterTransaction.Observation find(def conceptName, Collection<EncounterTransaction.Observation> observations) {
         for (EncounterTransaction.Observation observation : observations) {
             if (conceptName.equals(observation.getConcept().getName())) {
                 return observation;
