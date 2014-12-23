@@ -193,7 +193,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return null
     }
 
-    static BahmniObservation find(String conceptName, List<BahmniObservation> observations, BahmniObservation parent) {
+    static BahmniObservation find(String conceptName, Collection<BahmniObservation> observations, BahmniObservation parent) {
         for (BahmniObservation observation : observations) {
             if (conceptName.equalsIgnoreCase(observation.getConcept().getName())) {
                 obsParentMap.put(observation, parent);
