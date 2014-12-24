@@ -145,5 +145,28 @@
         },
         "order": 6,
         "requiredPrivilege": "Discharge Summary"
-    }    
+    },
+    {
+        "id": "bahmni.clinical.billing.treatment",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Treatment",
+        "url": "treatment",
+        "icon": "icon-user-md",
+        "order": 7,
+        "requiredPrivilege": "app:clinical:consultationTab"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
+            "display":"My Patients",
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
+        },
+        "label": "Active",
+        "order": 8,
+        "requiredPrivilege": "app:clinical"
+    }
 ]
