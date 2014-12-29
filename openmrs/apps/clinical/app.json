@@ -34,7 +34,7 @@
                     "title": "Lab Investigations",
                     "showChart": true,
                     "showTable": true,
-                    "showNormalValues": true,
+                    "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
                     "numberOfVisits": 10
@@ -91,7 +91,7 @@
                         "title": null,
                         "showChart": false,
                         "showTable": true,
-                        "showNormalValues": true,
+                        "showNormalLabResults": true,
                         "numberOfVisits": 1,
                         "showCommentsExpanded": true,
                         "showAccessionNotes": true
