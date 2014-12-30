@@ -6,7 +6,7 @@ SET @end_date = '2014-12-30';
 
 -- Query
 -- Case Registration(1)
-SELECT tuberculosis_type.value_concept_full_name AS 'Case Registration(1)',
+SELECT tuberculosis_type.value_concept_full_name AS 'Case Registration',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'New Diagnosis' && person.gender = 'F',1,0)) AS 'New-F',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'New Diagnosis' && person.gender = 'M',1,0)) AS 'New-M',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'Relapse' && person.gender = 'F',1,0)) AS 'Relapse-F',
@@ -15,12 +15,12 @@ SELECT tuberculosis_type.value_concept_full_name AS 'Case Registration(1)',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'Treatment after failure' && person.gender = 'M',1,0)) AS 'Treatment after failure-M',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'Treatment after loss to follow-up' && person.gender = 'F',1,0)) AS 'Treatment after loss to follow-up-F',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'Treatment after loss to follow-up' && person.gender = 'M',1,0)) AS 'Treatment after loss to follow-up-M',
-	SUM(IF(diagnosis_category.value_concept_full_name = 'Transfer in' && person.gender = 'F',1,0)) AS 'Transfer in-F',
-	SUM(IF(diagnosis_category.value_concept_full_name = 'Transfer in' && person.gender = 'M',1,0)) AS 'Transfer in-M',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'Other previously treated' && person.gender = 'F',1,0)) AS 'Other previously treated-F',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'Other previously treated' && person.gender = 'M',1,0)) AS 'Other previously treated-M',
 	SUM(IF(diagnosis_category.value_concept_full_name = 'Previous treatment history unknown' && person.gender = 'F',1,0)) AS 'Previous treatment history unknown-F',
-	SUM(IF(diagnosis_category.value_concept_full_name = 'Previous treatment history unknown' && person.gender = 'M',1,0)) AS 'Previous treatment history unknown-M'
+	SUM(IF(diagnosis_category.value_concept_full_name = 'Previous treatment history unknown' && person.gender = 'M',1,0)) AS 'Previous treatment history unknown-M',
+   	SUM(IF(diagnosis_category.value_concept_full_name = 'Transfer in' && person.gender = 'F',1,0)) AS 'Transfer in-F',
+	SUM(IF(diagnosis_category.value_concept_full_name = 'Transfer in' && person.gender = 'M',1,0)) AS 'Transfer in-M'
 
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
@@ -33,7 +33,7 @@ INNER JOIN coded_obs_view AS diagnosis_category ON diagnosis_category.obs_group_
 GROUP BY tuberculosis_type.value_concept_full_name;
 
 -- Registration(BC or CD) [2]
-SELECT diagnosis_category.value_concept_full_name AS 'Registration(BC or CD) [2]',
+SELECT diagnosis_category.value_concept_full_name AS 'Registration(BC or CD)',
 	   SUM(IF(possible_age_group.name = '0 - 4 years' && person.gender = 'F',1,0)) AS '0-4Years, F',
        SUM(IF(possible_age_group.name = '0 - 4 years' && person.gender = 'M',1,0)) AS '0-4Years, M',
        SUM(IF(possible_age_group.name = '5 - 14 years' && person.gender = 'F',1,0)) AS '5-14Years, F',
