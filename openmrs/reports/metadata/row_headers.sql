@@ -57,3 +57,92 @@ INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_or
 INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
 			VALUES('Confirmed Severe', 'Treatment of Malaria - Confirmed Severe', 'Malaria-Treatment of Malaria', 4);     
             
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Pulmonary BC', 'Pulmonary (BC)', 'Tuberculosis-Case Registration', 1);
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Pulmonary CD', 'Pulmonary (CD)', 'Tuberculosis-Case Registration', 2);
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Extra pulmonary', 'Extra Pulmonay (BC or CD)', 'Tuberculosis-Case Registration', 3);
+
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('New Diagnosis', 'All New', 'Tuberculosis-Registration', 1);
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Relapse', 'All Relapse', 'Tuberculosis-Registration', 2);
+            
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Community', 'Referred by Community', 'Tuberculosis-Referral', 1);
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Private Health Facility', 'Referred/Diagnosed by Private HF', 'Tuberculosis-Referral', 2);
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Diagnosed by contact tracing', 'Diagnosed by Contact Tracing', 'Tuberculosis-Referral', 3);
+
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('M', 'Male', 'Tuberculosis-Treatment category', 1);
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('F', 'Female', 'Tuberculosis-Treatment category', 2);
+            
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('New Diagnosis', 'PBC - New', 'Tuberculosis-PBC Treatment outcome', 1);            
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Relapse', 'PBC - Relapse', 'Tuberculosis-PBC Treatment outcome', 2);            
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment after failure', 'PBC - Treatment After Failure', 'Tuberculosis-PBC Treatment outcome', 3);            
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment after loss to follow-up', 'PBC - Treatment After Lost to Follow-up', 'Tuberculosis-PBC Treatment outcome', 4);            
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Other previously treated', 'PBC - Others previously treated', 'Tuberculosis-PBC Treatment outcome', 5);            
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Previous treatment history unknown', 'PBC - Previous Treatment History Unknown ', 'Tuberculosis-PBC Treatment outcome', 6);        
+            
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('New Diagnosis', 'PCD - New', 'Tuberculosis-PCD Treatment outcome', 1);   
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Relapse', 'PCD - Others', 'Tuberculosis-PCD Treatment outcome', 2);
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment after failure', 'PCD - Others', 'Tuberculosis-PCD Treatment outcome', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment after loss to follow-up', 'PCD - Others', 'Tuberculosis-PCD Treatment outcome', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Other previously treated', 'PCD - Others', 'Tuberculosis-PCD Treatment outcome', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Previous treatment history unknown', 'PCD - Others', 'Tuberculosis-PCD Treatment outcome', 2);             
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Transfer in', 'PCD - Others', 'Tuberculosis-PCD Treatment outcome', 2);             
+
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('New Diagnosis', 'EP (BC or CD) - New', 'Tuberculosis-EP Treatment outcome', 1); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Relapse', 'EP (BC or CD) - Others', 'Tuberculosis-EP Treatment outcome', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment after failure', 'EP (BC or CD) - Others', 'Tuberculosis-EP Treatment outcome', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment after loss to follow-up', 'EP (BC or CD) - Others', 'Tuberculosis-EP Treatment outcome', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Other previously treated', 'EP (BC or CD) - Others', 'Tuberculosis-EP Treatment outcome', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Previous treatment history unknown', 'EP (BC or CD) - Others', 'Tuberculosis-EP Treatment outcome', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Transfer in', 'EP (BC or CD) - Others', 'Tuberculosis-EP Treatment outcome', 2); 
+
+
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('New Diagnosis', 'New', 'DRTuberculosis-Case Registration', 1); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Relapse', 'Relapse', 'DRTuberculosis-Case Registration', 2); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment after loss to follow-up', 'Treatment after loss to follow-up', 'DRTuberculosis-Case Registration', 3); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment After Failure Category I', 'Treatment After Failure (Cat I)', 'DRTuberculosis-Case Registration', 4); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Treatment After Failure Category II', 'Treatment After Failure (Cat II)', 'DRTuberculosis-Case Registration', 5); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Transfer In', 'Transfer In', 'DRTuberculosis-Case Registration', 5); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Still Under Treatment', 'Others', 'DRTuberculosis-Case Registration', 6); 
+INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
+			VALUES('Others', 'Others', 'DRTuberculosis-Case Registration', 6); 
+
+            
+            select * from row_header_name_map;
+            delete from row_header_name_map where id IN (56,57,58,59,60,61,62,63);
+            
