@@ -49,7 +49,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     static def setBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        List<EncounterTransaction.Observation> observations = bahmniEncounterTransaction.getObservations()
+        Collection<EncounterTransaction.Observation> observations = bahmniEncounterTransaction.getObservations()
 
         EncounterTransaction.Observation nutritionLevelsObservation = find("Nutritional Values", observations)
         EncounterTransaction.Observation heightObservation = find("HEIGHT", observations)
