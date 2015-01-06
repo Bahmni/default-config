@@ -3,7 +3,6 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"Mental Health, Diagnosis",,Misc,Text,Diagnosis,,,,,,,,,,,,
 ,"Mental Health, Drugs Provided",,Misc,Text,Drug provided,,,,,,,,,,,,
 ,"Mental Health, Psychosocial Counseling",,Misc,Text,Psychosocial counseling,,,,,,,,,,,,
-,"Mental Health, Disposition",,Misc,Coded,Disposition,,,,,Treatment complete,,,,,,,
-,"Mental Health, Referred Date",,Misc,Date,Referred date,,,,,,,,,,,,
+,"Mental Health, Disposition",,Misc,Coded,Disposition,,,,,Treatment complete,Referred out,,,,,,
 ,"Mental Health, Reason for Referral",,Misc,Text,Referred reason,,,,,,,,,,,,
 ,"Mental Health, Remarks",,Misc,Text,Remarks,,,,,,,,,,,,

@@ -1,23 +1,18 @@
 uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
-,"Post Delivery FP Checklist, Contraception Used in Past",,Misc,Coded,Contraception used in past,,,,,,Condom,Implant,Pills,IUD,Depo,None,,
-,"Post Delivery FP Checklist, Reason for Discontinue",,Misc,Coded,Why did you discontinue use,,,,,,Husband Gone,Experienced negative side effects,Wanted to get pregnant,Worried about possible negative side effects,,,,
-,"Post Delivery FP Checklist, Other Reasons for Discontinue",,Misc,Text,Other reasons for discontinue use,,,,,,,,,,,,,
+,"Post Delivery FP Checklist, Contraception Used in Past",,Misc,Coded,Contraception used in past,,,,,,Condoms,Implant,Pills,IUD,Depo,None,,
+,"Post Delivery FP Checklist, Reason for Discontinue",,Misc,Coded,Why did you discontinue use,,,,,,Husband gone,Experienced negative side effects,Wanted to get pregnant,Worried about possible negative side effects,Others,,,
 ,"Post Delivery FP Checklist, Interested in","Birth Spacing - ( 2 or more years between births)<br>
 Birth Limiting – ( You are done with having children)<br>",Misc,Coded,Are you interested in,,,,,,Birth Spacing,Birth Limiting,,,,,,
 ,"Post Delivery FP Checklist, FP Method Patient Went Home With","Condoms (dispense 40): these also protect against STIs<br>
-Depo (Rx 150mg IMx1): Admminister at discharge. <br>
+Depo (Rx 150mg IMx1): Administer at discharge. <br>
 Patient may get irregular or decreased<br>
-COC (combination progesterone and estrogen): Do NOT use while breastfeeding<br>
-Nothing<br>",Misc,Coded,FP method patient home with,,,,,,Condom,Depo,COC,Nothing,,,,
-,"Post Delivery FP Checklist, Patient Interested In","Depo (Rx 150mg IMx1): Admminister at discharge. <br>
+COC (combination progesterone and estrogen): Do NOT use while breastfeeding<br>",Misc,Coded,FP method patient home with,,,,,,Condoms,Depo,Combined Oral Contraceptive Pill,Nothing,,,,
+,"Post Delivery FP Checklist, Patient Interested In","Depo (Rx 150mg IMx1): Administer at discharge. <br>
 Patient may get irregular or decreased menses.<br>
 Refill at HP in 3months.<br>
-COC (combination progesterone and estrogen): Do NOT use while breastfeeding<br>
-Not interested in FP at this time<br>",Misc,Coded,Patient interested in,,,,,,Depo,COC,Not Interested in FP,,,,,
-,"Post Delivery FP Checklist, Referred to Higher Center for FP","Patient referred to higher center for FP: <br>
-Encourage patient to use condoms, COC or Depo while<br>
-they wait to get one of the below procedures done<br>
+COC (combination progesterone and estrogen): Do NOT use while breastfeeding<br>",Misc,Coded,Patient interested in,,,,,,Depo,Combined Oral Contraceptive Pill,Not Interested in FP at this time,,,,,
+,"Post Delivery FP Checklist, Referred to Higher Center for FP","Encourage patient to use condoms, COC or Depo while they wait to get one of the below procedures done<br>
 - IUCD: Works for 12 years and is available at private pharmacy clinic or Mangelsen<br>
 - Implant: Works for 5 years, available at Mangelsen<br>
-- Mini-lap: Permanent for women.<br>
-- Vasectomy: Permanent for men.<br>",Misc,Coded,Patient referred to higher center for FP ,,,,,,IUCD,Implant,Mini-lap,Vasectomy ,,,,
+- Mini-lap: Permanent for women<br>
+- Vasectomy: Permanent for men<br>",Misc,Coded,Patient referred to higher center for FP ,,,,,,IUCD,Implant,Mini-lap,Vasectomy ,,,,
