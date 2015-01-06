@@ -22,7 +22,26 @@
             "activeVisitUuid"
         ],
         "config": {
-            "autoCompleteFields": ["familyName", "caste"]
+            "autoCompleteFields": ["familyName", "caste"],
+            "printOptions": [
+                {
+                    "label": "P<u>r</u>int Sticker",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+                    "shortcutKey": "r"
+                }
+            ],
+            "showMiddleName": true
+        },
+        "conceptSetUI": {
+            "departmentSentTo": {
+                "required": true,
+                "label": "Department sent to"
+            },
+            "referredBy": {
+                "required": true,
+                "label": "Referred by"
+            }
         }
+
     }
 ]

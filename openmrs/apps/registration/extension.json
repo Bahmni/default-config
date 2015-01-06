@@ -38,7 +38,7 @@
         "extensionParams" : {
             "action" : "startVisit",
             "display": "Start Visit",
-            "forwardUrl" : "/search"
+            "forwardUrl" : "/patient/{{patientUuid}}/visit"
         },
         "order": 1,
         "requiredPrivilege": "Add Visits"
@@ -61,9 +61,20 @@
         "extensionParams" : {
             "action" : "startVisit",
             "display": "Start Visit",
-            "forwardUrl" : "/search"
+            "forwardUrl" : "/patient/{{patientUuid}}/visit"
         },
         "order": 1,
         "requiredPrivilege": "Add Visits"
+    },
+    {
+        "id": "bahmni.registration.conceptSetGroup.visitDetails",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Visit Details",
+            "required":true
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
     }
 ]
