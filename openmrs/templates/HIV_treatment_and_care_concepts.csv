@@ -51,7 +51,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"HIVTC, ART current status",,Misc,Coded,Current Status,,,,,On Treatment,Stopped Treatment,Transferred Out,Missing,Lost to Follow-up,Death,Restarted,,,,,,,,,
 ,"HIVTC, ART Treatment Adherence",A --> greater than 95%<br>B --> 80‐95% <br>C --> less than 80%,Misc,Coded,Treatment Adherence,,,,,Adherence Level A,Adherence Level B,Adherence Level C,,,,,,,,,,,,,
 ,"HIVTC, Need Family Planning assessment",,Misc,Boolean,Need FP assessment,,,,,,,,,,,,,,,,,,,,
-,"HIVTV, If not FP why",,Misc,Coded,"If not, why",,,,,Oral Contraceptives,Intra Uterine Contraceptive Device,Permanent,Refer for other FP services,,,,,,,,,,,,
+,"HIVTC, If not FP why",,Misc,Coded,"If not, why",,,,,Oral Contraceptives,Intra Uterine Contraceptive Device,Permanent,Refer for other FP services,,,,,,,,,,,,
 ,"HIVTC, ART cohort",,Misc,Coded,Antiretroviral Cohort (EWI),,,,,Ontime Pill Pickup,Retention on first line,Viral load suppression,Retention on treament,,,,,,,,,,,,
 ,"HIVTC, Date of Death",,Misc,Date,Date of Death,,,,,,,,,,,,,,,,,,,,
 ,"HIVTC, Mortality coding",,Misc,Text,Mortality coding (ICD code),,,,,,,,,,,,,,,,,,,,
