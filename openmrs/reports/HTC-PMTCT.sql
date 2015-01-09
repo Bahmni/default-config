@@ -1,4 +1,5 @@
-ET @end_date = '2015-12-31';
+SET @start_date = '2014-10-01';
+SET @end_date = '2015-12-31';
 select 0 into @serial_number;
 select concept_id into @positive from concept_view where concept_full_name = 'Positive';
 select concept_id into @negative from concept_view where concept_full_name = 'Negative';
@@ -10,13 +11,10 @@ select concept_id into @migrant from concept_view where concept_full_name = 'Mig
 select concept_id into @migrant_spouse from concept_view where concept_full_name = 'Spouse/Partner of Migrant';
 select concept_id into @organ_recipient from concept_view where concept_full_name = 'Blood or Organ Recipient';
 select concept_id into @others from concept_view where concept_full_name = 'Others';
-select concept_id into @stage_I from concept_view where concept_full_name = 'Stage I';
-select concept_id into @stage_II from concept_view where concept_full_name = 'Stage II';
-select concept_id into @stage_III from concept_view where concept_full_name = 'Stage III';
-select concept_id into @stage_IV from concept_view where concept_full_name = 'Stage IV';
 
--- select * from obs_view where obs_datetime > '2014-12-29';
-select t1.identifier as 'Client Code',county_district as 'District Code',gender as 'Sex', floor(DATEDIFF(obs_date,birthdate)/365) as 'Age(in yrs)', 
+
+select @serial_number:=@serial_number+1 as 'S.No',`Client Code`,`District Code`,Sex,`Age(in yrs)`,`Risk Group(s)`,`Initial CD4 Count`,`WHO Stage` from
+(select t1.identifier as 'Client Code',county_district as 'District Code',gender as 'Sex', floor(DATEDIFF(obs_date,birthdate)/365) as 'Age(in yrs)', 
 	group_concat(risk_group separator ',') as 'Risk Group(s)', CD4 as 'Initial CD4 Count', WHO as 'WHO Stage' from
 
 	(select pi.identifier, o.person_id, pa.county_district,p.gender,o.concept_full_name,c.concept_full_name as 'risk_group',
@@ -38,7 +36,7 @@ select t1.identifier as 'Client Code',county_district as 'District Code',gender 
                     
 	inner join
 
-	(select person_id, value_numeric, min(obs_datetime) as 'CD4' from obs_view 
+	(select person_id, value_numeric as 'CD4',min(obs_datetime) from obs_view 
 		where concept_full_name = 'HCT, CD4 Count' group by person_id)as t3 on t1.person_id = t3.person_id
  
 	inner join
@@ -52,4 +50,4 @@ select t1.identifier as 'Client Code',county_district as 'District Code',gender 
 				where o.concept_full_name in ('HCT, WHO Staging', 'PMTCT, WHO clinical staging') and o.value_coded is not null 
 				group by o.person_id,o.concept_full_name having max(o.obs_datetime)) as t1 group by t1.person_id)) as t4 on t1.person_id = t4.person_id
 
-group by t1.identifier;
+group by t1.identifier order by t1.person_id) as final_table;
