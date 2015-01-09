@@ -16,11 +16,12 @@ select concept_id into @OIT from concept_view where concept_full_name = 'Taxopla
 select concept_id into @others from concept_view where concept_full_name = 'Others';
 select concept_id into @Refer_FP from concept_view where concept_full_name = 'Refer for other FP services';
 
-create table if not exists TB_positive as select person_id from obs_view where concept_full_name in ('HIVTC, Smear TB assessment at enrollment','HIVTC, Culture TB assessment at enrollment','HIVTC, Chest X-Ray TB assessment at enrollment','HIVTC, Gene Expert TB assessment at enrollment')
-					and value_coded = @positive and obs_datetime between @start_date and @end_date group by person_id;
+create table if not exists TB_positive as select person_id from obs_view
+	where concept_full_name in ('HIVTC, Smear TB assessment at enrollment','HIVTC, Culture TB assessment at enrollment','HIVTC, Chest X-Ray TB assessment at enrollment','HIVTC, Gene Expert TB assessment at enrollment')
+	and value_coded = @positive and obs_datetime between @start_date and @end_date group by person_id;
 
 select '< 5 years' as 'OI Status : Age Group',
-		ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'F',1,0)),0) as 'Served for OI - Female',
+	ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'F',1,0)),0) as 'Served for OI - Female',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'M',1,0)),0) as 'Served for OI - Male',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender not in ('M','F'),1,0)),0) as 'Served for OI - TG',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and gender = 'F',1,0)),0) as 'Treated OI - Female',
@@ -46,27 +47,26 @@ select '< 5 years' as 'OI Status : Age Group',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and gender not in ('M','F'),1,0)),0) as 'Using any FP method - TG',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender = 'F',1,0)),0) as 'Referred for other FP - Female',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender = 'M',1,0)),0) as 'Referred for other FP - Male',
-        ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender not in ('M','F'),1,0)),0) as 'Referred for other FP - TG'
-from
-(select o.person_id, p.gender, o.concept_full_name, o.value_coded, o.value_text, o.value_datetime, o.obs_datetime, p.birthdate from obs_view o
+        ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender not in ('M','F'),1,0)),0) as 'Referred for other FP - TG' from
+	(select o.person_id, p.gender, o.concept_full_name, o.value_coded, o.value_text, o.value_datetime, o.obs_datetime, p.birthdate from obs_view o
 		inner join person p on o.person_id = p.person_id
-        where ((o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null) or
-        (o.concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and o.value_text is not null) or 
-        (o.concept_full_name = 'HIVTC, TB Screened' and o.value_coded = 1) or
-        (o.concept_full_name = 'HIVTC, HIV care IPT start date' and o.value_datetime between @start_date and @end_date) or 
-        (o.concept_full_name = 'HIVTC, TB Treatment start date' and o.value_datetime between @start_date and @end_date) or 
-        (o.concept_full_name = 'HIVTC, HIV care CPT start date' and o.value_datetime between @start_date and @end_date and o.person_id in (select person_id from TB_positive)) or 
-        (o.concept_full_name = 'HIVTC, Need FP assessment' and o.value_coded = 1) or 
-        (o.concept_full_name = 'HIVTC, If not FP why' and o.value_coded is not null))
-        and (DATEDIFF(o.obs_datetime,p.birthdate)/365 < 5)
-        and o.obs_datetime between @start_date and @end_date group by o.person_id,o.concept_full_name,o.value_coded) as t1
+        	where ((o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null) or
+        	(o.concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and o.value_text is not null) or 
+        	(o.concept_full_name = 'HIVTC, TB Screened' and o.value_coded = 1) or
+        	(o.concept_full_name = 'HIVTC, HIV care IPT start date' and o.value_datetime between @start_date and @end_date) or 
+        	(o.concept_full_name = 'HIVTC, TB Treatment start date' and o.value_datetime between @start_date and @end_date) or 
+        	(o.concept_full_name = 'HIVTC, HIV care CPT start date' and o.value_datetime between @start_date and @end_date and o.person_id in (select person_id from TB_positive)) or 
+        	(o.concept_full_name = 'HIVTC, Need FP assessment' and o.value_coded = 1) or 
+        	(o.concept_full_name = 'HIVTC, If not FP why' and o.value_coded is not null))
+        	and (DATEDIFF(o.obs_datetime,p.birthdate)/365 < 5)
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id,o.concept_full_name,o.value_coded) as t1
         
 
 union all
 
 
 select '5-14 years' as 'OI Status : Age Group',
-		ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'F',1,0)),0) as 'Served for OI - Female',
+	ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'F',1,0)),0) as 'Served for OI - Female',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'M',1,0)),0) as 'Served for OI - Male',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender not in ('M','F'),1,0)),0) as 'Served for OI - TG',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and gender = 'F',1,0)),0) as 'Treated OI - Female',
@@ -92,27 +92,26 @@ select '5-14 years' as 'OI Status : Age Group',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and gender not in ('M','F'),1,0)),0) as 'Using any FP method - TG',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender = 'F',1,0)),0) as 'Referred for other FP - Female',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender = 'M',1,0)),0) as 'Referred for other FP - Male',
-        ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender not in ('M','F'),1,0)),0) as 'Referred for other FP - TG'
-from
-(select o.person_id, p.gender, o.concept_full_name, o.value_coded, o.value_text, o.value_datetime, o.obs_datetime, p.birthdate from obs_view o
+        ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender not in ('M','F'),1,0)),0) as 'Referred for other FP - TG' from
+	(select o.person_id, p.gender, o.concept_full_name, o.value_coded, o.value_text, o.value_datetime, o.obs_datetime, p.birthdate from obs_view o
 		inner join person p on o.person_id = p.person_id
-        where ((o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null) or
-        (o.concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and o.value_text is not null) or 
-        (o.concept_full_name = 'HIVTC, TB Screened' and o.value_coded = 1) or
-        (o.concept_full_name = 'HIVTC, HIV care IPT start date' and o.value_datetime between @start_date and @end_date) or 
-        (o.concept_full_name = 'HIVTC, TB Treatment start date' and o.value_datetime between @start_date and @end_date) or 
-        (o.concept_full_name = 'HIVTC, HIV care CPT start date' and o.value_datetime between @start_date and @end_date and o.person_id in (select person_id from TB_positive)) or 
-        (o.concept_full_name = 'HIVTC, Need FP assessment' and o.value_coded = 1) or 
-        (o.concept_full_name = 'HIVTC, If not FP why' and o.value_coded is not null))
-        and (DATEDIFF(o.obs_datetime,p.birthdate)/365 between 5 and 15)
-        and o.obs_datetime between @start_date and @end_date group by o.person_id,o.concept_full_name,o.value_coded) as t2
+        	where ((o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null) or
+        	(o.concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and o.value_text is not null) or 
+        	(o.concept_full_name = 'HIVTC, TB Screened' and o.value_coded = 1) or
+        	(o.concept_full_name = 'HIVTC, HIV care IPT start date' and o.value_datetime between @start_date and @end_date) or 
+        	(o.concept_full_name = 'HIVTC, TB Treatment start date' and o.value_datetime between @start_date and @end_date) or 
+        	(o.concept_full_name = 'HIVTC, HIV care CPT start date' and o.value_datetime between @start_date and @end_date and o.person_id in (select person_id from TB_positive)) or 
+        	(o.concept_full_name = 'HIVTC, Need FP assessment' and o.value_coded = 1) or 
+        	(o.concept_full_name = 'HIVTC, If not FP why' and o.value_coded is not null))
+        	and (DATEDIFF(o.obs_datetime,p.birthdate)/365 between 5 and 15)
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id,o.concept_full_name,o.value_coded) as t2
         
 
 union all
 
 
 select '>= 15 years' as 'OI Status : Age Group',
-		ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'F',1,0)),0) as 'Served for OI - Female',
+	ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'F',1,0)),0) as 'Served for OI - Female',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender = 'M',1,0)),0) as 'Served for OI - Male',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and gender not in ('M','F'),1,0)),0) as 'Served for OI - TG',
         ifnull(sum(if(concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and gender = 'F',1,0)),0) as 'Treated OI - Female',
@@ -138,19 +137,18 @@ select '>= 15 years' as 'OI Status : Age Group',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and gender not in ('M','F'),1,0)),0) as 'Using any FP method - TG',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender = 'F',1,0)),0) as 'Referred for other FP - Female',
         ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender = 'M',1,0)),0) as 'Referred for other FP - Male',
-        ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender not in ('M','F'),1,0)),0) as 'Referred for other FP - TG'
-from
-(select o.person_id, p.gender, o.concept_full_name, o.value_coded, o.value_text, o.value_datetime, o.obs_datetime, p.birthdate from obs_view o
+        ifnull(sum(if(concept_full_name = 'HIVTC, If not FP why' and value_coded = @Refer_FP and gender not in ('M','F'),1,0)),0) as 'Referred for other FP - TG' from
+	(select o.person_id, p.gender, o.concept_full_name, o.value_coded, o.value_text, o.value_datetime, o.obs_datetime, p.birthdate from obs_view o
 		inner join person p on o.person_id = p.person_id
-        where ((o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null) or
-        (o.concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and o.value_text is not null) or 
-        (o.concept_full_name = 'HIVTC, TB Screened' and o.value_coded = 1) or
-        (o.concept_full_name = 'HIVTC, HIV care IPT start date' and o.value_datetime between @start_date and @end_date) or 
-        (o.concept_full_name = 'HIVTC, TB Treatment start date' and o.value_datetime between @start_date and @end_date) or 
-        (o.concept_full_name = 'HIVTC, HIV care CPT start date' and o.value_datetime between @start_date and @end_date and o.person_id in (select person_id from TB_positive)) or 
-        (o.concept_full_name = 'HIVTC, Need FP assessment' and o.value_coded = 1) or 
-        (o.concept_full_name = 'HIVTC, If not FP why' and o.value_coded is not null))
-        and (DATEDIFF(o.obs_datetime,p.birthdate)/365 >= 15)
-        and o.obs_datetime between @start_date and @end_date group by o.person_id,o.concept_full_name,o.value_coded) as t3;
+        	where ((o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null) or
+        	(o.concept_full_name = 'HIVTC, Opportunistic Infection Treatment' and o.value_text is not null) or 
+        	(o.concept_full_name = 'HIVTC, TB Screened' and o.value_coded = 1) or
+        	(o.concept_full_name = 'HIVTC, HIV care IPT start date' and o.value_datetime between @start_date and @end_date) or 
+        	(o.concept_full_name = 'HIVTC, TB Treatment start date' and o.value_datetime between @start_date and @end_date) or 
+        	(o.concept_full_name = 'HIVTC, HIV care CPT start date' and o.value_datetime between @start_date and @end_date and o.person_id in (select person_id from TB_positive)) or 
+        	(o.concept_full_name = 'HIVTC, Need FP assessment' and o.value_coded = 1) or 
+        	(o.concept_full_name = 'HIVTC, If not FP why' and o.value_coded is not null))
+        	and (DATEDIFF(o.obs_datetime,p.birthdate)/365 >= 15)
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id,o.concept_full_name,o.value_coded) as t3;
         
 drop table TB_positive;

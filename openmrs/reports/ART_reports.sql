@@ -1,4 +1,4 @@
-ET @start_date = '2014-10-01';
+SET @start_date = '2014-10-01';
 SET @end_date = '2015-02-01';
 select concept_id into @positive from concept_view where concept_full_name = 'Positive';
 select concept_id into @negative from concept_view where concept_full_name = 'Negative';

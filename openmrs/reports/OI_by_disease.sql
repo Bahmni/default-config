@@ -17,7 +17,7 @@ create table if not exists OI_treated as select person_id from obs_view where co
 	and obs_datetime between @start_date and @end_date group by person_id;
 
 select 'Diagnosed - Male' as 'Opportunistic Infections',
-		ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
+	ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
         ifnull(sum(if(value_coded=@OITB,1,0)),0) as 'TB',
         ifnull(sum(if(value_coded=@OIC,1,0)),0) as 'Candidiasis',
         ifnull(sum(if(value_coded=@OID,1,0)),0) as 'Diarrhoea',
@@ -27,17 +27,16 @@ select 'Diagnosed - Male' as 'Opportunistic Infections',
         ifnull(sum(if(value_coded=@OIHZ,1,0)),0) as 'Herpes Zoster',
         ifnull(sum(if(value_coded=@OIGH,1,0)),0) as 'Genital Herpes',
         ifnull(sum(if(value_coded=@OIT,1,0)),0) as 'Toxoplasmosis',
-        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others'
-        from
-(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
+        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others' from
+	(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
 		inner join person p on o.person_id=p.person_id
-        where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender = 'M' 
-        and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t1
+        	where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender = 'M' 
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t1
         
 union all 
 
 select 'Diagnosed - Female' as 'Opportunistic Infections',
-		ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
+	ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
         ifnull(sum(if(value_coded=@OITB,1,0)),0) as 'TB',
         ifnull(sum(if(value_coded=@OIC,1,0)),0) as 'Candidiasis',
         ifnull(sum(if(value_coded=@OID,1,0)),0) as 'Diarrhoea',
@@ -47,17 +46,16 @@ select 'Diagnosed - Female' as 'Opportunistic Infections',
         ifnull(sum(if(value_coded=@OIHZ,1,0)),0) as 'Herpes Zoster',
         ifnull(sum(if(value_coded=@OIGH,1,0)),0) as 'Genital Herpes',
         ifnull(sum(if(value_coded=@OIT,1,0)),0) as 'Toxoplasmosis',
-        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others'
-        from 
-(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
+        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others' from
+	(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
 		inner join person p on o.person_id=p.person_id
-        where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender = 'F' 
-        and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t2
+        	where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender = 'F' 
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t2
         
 union all 
 
 select 'Diagnosed - TG' as 'Opportunistic Infections',
-		ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
+	ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
         ifnull(sum(if(value_coded=@OITB,1,0)),0) as 'TB',
         ifnull(sum(if(value_coded=@OIC,1,0)),0) as 'Candidiasis',
         ifnull(sum(if(value_coded=@OID,1,0)),0) as 'Diarrhoea',
@@ -67,17 +65,16 @@ select 'Diagnosed - TG' as 'Opportunistic Infections',
         ifnull(sum(if(value_coded=@OIHZ,1,0)),0) as 'Herpes Zoster',
         ifnull(sum(if(value_coded=@OIGH,1,0)),0) as 'Genital Herpes',
         ifnull(sum(if(value_coded=@OIT,1,0)),0) as 'Toxoplasmosis',
-        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others'
-        from 
-(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
+        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others' from
+	(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
 		inner join person p on o.person_id=p.person_id
-        where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender not in ('F','M') 
-        and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t3
+        	where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender not in ('F','M') 
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t3
         
 union all
 
 select 'Treated - Male' as 'Opportunistic Infections',
-		ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
+	ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
         ifnull(sum(if(value_coded=@OITB,1,0)),0) as 'TB',
         ifnull(sum(if(value_coded=@OIC,1,0)),0) as 'Candidiasis',
         ifnull(sum(if(value_coded=@OID,1,0)),0) as 'Diarrhoea',
@@ -87,18 +84,17 @@ select 'Treated - Male' as 'Opportunistic Infections',
         ifnull(sum(if(value_coded=@OIHZ,1,0)),0) as 'Herpes Zoster',
         ifnull(sum(if(value_coded=@OIGH,1,0)),0) as 'Genital Herpes',
         ifnull(sum(if(value_coded=@OIT,1,0)),0) as 'Toxoplasmosis',
-        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others'
-        from
-(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
+        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others' from
+	(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
 		inner join person p on o.person_id=p.person_id
-        where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender='M'
-        and o.person_id in (select person_id from OI_treated)
-        and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t4
+        	where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender='M'
+        	and o.person_id in (select person_id from OI_treated)
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t4
         
 union all 
 
 select 'Treated - Female' as 'Opportunistic Infections',
-		ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
+	ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
         ifnull(sum(if(value_coded=@OITB,1,0)),0) as 'TB',
         ifnull(sum(if(value_coded=@OIC,1,0)),0) as 'Candidiasis',
         ifnull(sum(if(value_coded=@OID,1,0)),0) as 'Diarrhoea',
@@ -108,18 +104,17 @@ select 'Treated - Female' as 'Opportunistic Infections',
         ifnull(sum(if(value_coded=@OIHZ,1,0)),0) as 'Herpes Zoster',
         ifnull(sum(if(value_coded=@OIGH,1,0)),0) as 'Genital Herpes',
         ifnull(sum(if(value_coded=@OIT,1,0)),0) as 'Toxoplasmosis',
-        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others'
-        from 
-(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
+        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others' from 
+	(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
 		inner join person p on o.person_id=p.person_id
-        where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender='F'
-        and o.person_id in (select person_id from OI_treated)
-        and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t5
+        	where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender='F'
+        	and o.person_id in (select person_id from OI_treated)
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t5
         
 union all 
 
 select 'Treated - TG' as 'Opportunistic Infections',
-		ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
+	ifnull(sum(if(value_coded=@OIBP,1,0)),0) as 'Bacterial Pneumonia',
         ifnull(sum(if(value_coded=@OITB,1,0)),0) as 'TB',
         ifnull(sum(if(value_coded=@OIC,1,0)),0) as 'Candidiasis',
         ifnull(sum(if(value_coded=@OID,1,0)),0) as 'Diarrhoea',
@@ -129,12 +124,11 @@ select 'Treated - TG' as 'Opportunistic Infections',
         ifnull(sum(if(value_coded=@OIHZ,1,0)),0) as 'Herpes Zoster',
         ifnull(sum(if(value_coded=@OIGH,1,0)),0) as 'Genital Herpes',
         ifnull(sum(if(value_coded=@OIT,1,0)),0) as 'Toxoplasmosis',
-        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others'
-        from 
-(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
+        ifnull(sum(if(value_coded=@others,1,0)),0) as 'Others' from
+	(select o.person_id,p.gender,o.concept_full_name,o.value_coded from obs_view o
 		inner join person p on o.person_id=p.person_id
-        where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender not in ('F','M')
-        and o.person_id in (select person_id from OI_treated)
-        and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t6;
+        	where o.concept_full_name = 'HIVTC, Opportunistic Infection Diagnosis' and o.value_coded is not null and p.gender not in ('F','M')
+        	and o.person_id in (select person_id from OI_treated)
+        	and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t6;
 
 drop table OI_treated;
