@@ -1,8 +1,8 @@
 SET @start_date = '2014-10-01';
 SET @end_date = '2015-02-01';
-select concept_id into @adh_a from concept_view where concept_full_name = 'Adherence A';
-select concept_id into @adh_b from concept_view where concept_full_name = 'Adherence B';
-select concept_id into @adh_c from concept_view where concept_full_name = 'Adherence c';
+select concept_id into @adh_a from concept_view where concept_full_name = 'Adherence Level A';
+select concept_id into @adh_b from concept_view where concept_full_name = 'Adherence Level B';
+select concept_id into @adh_c from concept_view where concept_full_name = 'Adherence Level C';
 
 select 'Accessed' as 'Treatment Adherence on ART',
 		count(*) as 'No of Cases' from obs_view where concept_full_name = 'ART, ART adherence to ART' and 

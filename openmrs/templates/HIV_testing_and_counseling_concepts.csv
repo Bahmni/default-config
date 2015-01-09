@@ -14,5 +14,5 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"HTC, Result Recieved",,Misc,Boolean,Result Recieved,,,,,,,,,,,,,,,,,,,,
 ,"HTC, Result",,Misc,Coded,Test Result,,,,,Negative,Positive,,,,,,,,,,,,,,
 ,"HTC, Partner Counseling",,Misc,Boolean,Partner Counseling,,,,,,,,,,,,,,,,,,,,
-,"HTC, WHO Staging",,Misc,Coded,WHO Staging,,,,,Asymptomatic,Mild Symptoms,Severe Symptoms,,,,,,,,,,,,,
+,"HTC, WHO Staging",I → Asymptomatic <br>II → Mild Symptoms<br>III → Severe Symptoms,Misc,Coded,WHO Staging,,,,,Stage I,Stage II,Stage III,,,,,,,,,,,,,
 ,"HTC, Referral",,Misc,Coded,Referred,,,,,Referral In,Referral Out,,,,,,,,,,,,,,

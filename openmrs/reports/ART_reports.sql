@@ -1,8 +1,9 @@
-ET @end_date = '2015-02-01';
+ET @start_date = '2014-10-01';
+SET @end_date = '2015-02-01';
 select concept_id into @positive from concept_view where concept_full_name = 'Positive';
 select concept_id into @negative from concept_view where concept_full_name = 'Negative';
 select concept_id into @sexworker  from concept_view where concept_full_name = 'Sex Worker';
-select concept_id into @MSM_TG from concept_view where concept_full_name = 'MSM & TG';
+select concept_id into @MSM_TG from concept_view where concept_full_name = 'MSM and Transgenders';
 select concept_id into @sexworker_client from concept_view where concept_full_name = 'Client of Sex Worker';
 select concept_id into @PWID from concept_view where concept_full_name = 'People Who Inject Drugs';
 select concept_id into @migrant from concept_view where concept_full_name = 'Migrant';
@@ -12,6 +13,7 @@ select concept_id into @pregnant from concept_view where concept_full_name = 'Pr
 select concept_id into @others from concept_view where concept_full_name = 'Others';
 select concept_id into @LFU from concept_view where concept_full_name = 'Lost to Follow-up';
 select concept_id into @Trans_out from concept_view where concept_full_name = 'Transferred Out';
+select concept_id into @Missing from concept_view where concept_full_name = 'Missing';
 select concept_id into @Death from concept_view where concept_full_name = 'Death';
 
 
@@ -380,7 +382,7 @@ select 	'Total patients missing (MIS)' as 'Anteretroviral Treatment : Status of 
         ifnull(sum(if(person_id in (select person_id from Others_end),1,0)),0) as 'Others'
         from
 (select o.person_id,datediff(o.obs_datetime,p.birthdate)/365 as 'age',p.gender from obs_view o inner join person p on o.person_id = p.person_id
-		where o.concept_full_name='ART, Reason for end of follow-up' and o.value_coded = @LFU and o.obs_datetime < @end_date group by o.person_id) as t15
+		where o.concept_full_name='ART, Reason for end of follow-up' and o.value_coded = @Missing and o.obs_datetime < @end_date group by o.person_id) as t15
         
 union all
 
@@ -446,7 +448,7 @@ select 	'Total MIS/LFU/ST patients restart ART this month' as 'Anteretroviral Tr
         ifnull(sum(if(person_id in (select person_id from Others_during),1,0)),0) as 'Others'
         from
 (select o.person_id,datediff(o.obs_datetime,p.birthdate)/365 as 'age',p.gender from obs_view o inner join person p on o.person_id = p.person_id
-		where((o.concept_full_name='ART, Treatment stop' and o.value_coded = 1) or (o.concept_full_name='ART, Reason for end of follow-up' and o.value_coded = @LFU))
+		where((o.concept_full_name='ART, Treatment stop' and o.value_coded = 1) or (o.concept_full_name='ART, Reason for end of follow-up' and o.value_coded in(@Missing,@LFU)))
         and o.person_id in (select person_id from obs_view where concept_full_name = 'ART, ART treatment restart' and value_coded=1 and obs_datetime between @start_date and @end_date) and 
         o.obs_datetime between @start_date and @end_date group by o.person_id) as t18
 

@@ -67,7 +67,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"ART, Other reason for stopping treatment",,Misc,Text,Others (Specify),,,,,,,,,,,,,,,,,,,,
 ,"ART, ART treatment restart",,Misc,Boolean,Treatment Restart,,,,,,,,,,,,,,,,,,,,
 ,"ART, ART new regimen",,Misc,Text,New regimen,,,,,,,,,,,,,,,,,,,,
-,"ART, Reason for end of follow-up",“Lost to Follow-up” only if its been more than 3months,Misc,Coded,Reason for end of follow-up,,,,,Lost to Follow-up,Transferred out,Death,,,,,,,,,,,,,
+,"ART, Reason for end of follow-up",“Lost to Follow-up” only if its been more than 3months,Misc,Coded,Reason for end of follow-up,,,,,Lost to Follow-up,Transferred out,Missing,Death,,,,,,,,,,,,
 ,"ART, Date of last visit",,Misc,Date,Date of last visit,,,,,,,,,,,,,,,,,,,,
 ,"ART, Date of death",,Misc,Date,Date of death,,,,,,,,,,,,,,,,,,,,
 ,"ART, Name of health facility",,Misc,Text,Name of HF,,,,,,,,,,,,,,,,,,,,
