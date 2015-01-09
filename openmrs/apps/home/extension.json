@@ -48,5 +48,15 @@
         "icon": "icon-camera",
         "order": 6,
         "requiredPrivilege": "app:document-upload"
-    }
+    },
+    {
+        "id": "bahmni.admin",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Admin",
+        "url": "../admin/#/dashboard/home",
+        "icon": "icon-user",
+        "order": 7,
+        "requiredPrivilege": "app:admin"
+    },
 ]
