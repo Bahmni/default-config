@@ -129,6 +129,14 @@
                   "title" : "Patient Information",
                   "name" : "patientInformation",
                   "patientAttributes" : ["Caste"]
+                },
+                {
+                    "title" : "Visits",
+                    "name" : "visits",
+                    "dashboardParams": {
+                        "title": null,
+                        "maximumNoOfVisits": 3
+                    }
                 }
             ]
         }
