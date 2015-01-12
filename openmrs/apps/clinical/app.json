@@ -124,7 +124,7 @@
                     "name" : "visits",
                     "dashboardParams": {
                         "title": null,
-                        "maximumNoOfVisits": 3
+                        "maximumNoOfVisits": 10
                     }
                 }
             ],
