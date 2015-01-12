@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="POSSIBLE-ENCOUTER-TYPE-001" author="tw">
+        <comment>Create encounter type</comment>
+        <sql>
+            set @uuid = 0;
+            set @currdate = 0;
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO encounter_type (name, description, creator, date_created, uuid)
+            VALUES ('Emergency', 'Emergency encounter', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO encounter_type (name, description, creator, date_created, uuid)
+            VALUES ('Surgery', 'Surgery encounter', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO encounter_type (name, description, creator, date_created, uuid)
+            VALUES ('Pharmacy', 'Pharmacy encounter', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-DATA-001" author="tw">
+        <comment>Create login locations</comment>
+        <sql>
+            set @uuid = 0;
+            set @currdate = 0;
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Registration', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('ER', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('General OPD', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Chronic Disease OPD', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Chronic Disease OPD2', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('ANC', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('CMAM', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('ART', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Pediatrics', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Gynae/Obs / Adolescent Health / TB / Leprosy', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('IPD', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Lab', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('X-Ray', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Dental', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('OT', 1, @currdate, @uuid);
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Pharmacy', 1, @currdate, uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-001" author="tw">
+        <comment>Create location and encounter type matching and login locations</comment>
+        <sql>
+            set @uuid = 0;
+            set @currdate = 0;
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Registration'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Registration'),
+            (Select encounter_type_id from encounter_type where name ='REG'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='ER'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='ER'),
+            (Select encounter_type_id from encounter_type where name ='Emergency'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='General OPD'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='General OPD'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Chronic Disease OPD'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Chronic Disease OPD'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Chronic Disease OPD2'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Chronic Disease OPD2'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='ANC'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='ANC'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='CMAM'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='CMAM'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='ART'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='ART'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Pediatrics'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Pediatrics'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Gynae/Obs / Adolescent Health / TB / Leprosy'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Gynae/Obs / Adolescent Health / TB / Leprosy'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='IPD'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='IPD'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Lab'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Lab'),
+            (Select encounter_type_id from encounter_type where name ='Investigation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='X-Ray'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='X-Ray'),
+            (Select encounter_type_id from encounter_type where name ='Radiology'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Dental'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Dental'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='OT'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='OT'),
+            (Select encounter_type_id from encounter_type where name ='Surgery'), 1, @currdate, @uuid);
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Pharmacy'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Pharmacy'),
+            (Select encounter_type_id from encounter_type where name ='Pharmacy'), 1, @currdate, @uuid);
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

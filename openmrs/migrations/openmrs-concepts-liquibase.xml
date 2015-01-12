@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- This Liquibase file is meant to contain CONCEPTS and CONCEPT SETS -->
+    <changeSet id="POSSIBLE-IMPL-OMRS-CONCEPTS-001" author="tw">
+        <comment>Add concept sets and concepts for the registration second page</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Visit Details', 'Visit Details', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Visit', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Details', 1);
+
+            set @visit_details_concept_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Department Sent To', 'Department Sent To', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Department', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Sent', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'To', 1);
+
+            set @department_sent_to_concept_id = @concept_id;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Emergency', 'Emergency', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Emergency', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Gynaecology', 'Gynae', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Gynaecology', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'IMAM', 'IMAM', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'IMAM', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'ART', 'ART', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'ART', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'General OPD', 'Gen OPD', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'General', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'OPD', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chronic OPD', 'Chronic OPD', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chronic', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'OPD', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Dental', 'Dental', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Dental', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Operation Theatre', 'OT', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Operation', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Theatre', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Lab', 'Lab', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Lab', 1);
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+
+            call add_concept_set_members(@visit_details_concept_id, @department_sent_to_concept_id,0);
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Referred By', 'Referred By', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Referred', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'By', 1);
+            call add_concept_set_members(@visit_details_concept_id, @concept_id,0);
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

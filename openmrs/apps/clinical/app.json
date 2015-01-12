@@ -27,7 +27,7 @@
             "obsIgnoreList" : ["Patient file"],
             "otherInvestigationsMap": {
             },
-            "maxConceptSetLevels": 55555,
+            "maxConceptSetLevels": 5,
             "conceptSetUI": {
                 "Chief complaint" : {
                     "durationRequired" : false,
@@ -124,6 +124,11 @@
                 {
                     "title": "Lab Orders",
                     "name": "labOrders"
+                },
+                {
+                  "title" : "Patient Information",
+                  "name" : "patientInformation",
+                  "patientAttributes" : ["Caste"]
                 }
             ]
         }

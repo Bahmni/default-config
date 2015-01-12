@@ -85,5 +85,5 @@
         },
         "order": 1,
         "requiredPrivilege": "app:clinical"
-    }    
+    }
 ]

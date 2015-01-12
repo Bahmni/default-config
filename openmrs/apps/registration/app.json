@@ -30,18 +30,17 @@
                     "shortcutKey": "r"
                 }
             ],
-            "showMiddleName": true
-        },
-        "conceptSetUI": {
-            "departmentSentTo": {
-                "required": true,
-                "label": "Department sent to"
-            },
-            "referredBy": {
-                "required": true,
-                "label": "Referred by"
+            "showMiddleName": true,
+            "conceptSetUI": {
+                "Department Sent To": {
+                    "required": true
+                },
+                "Referred By": {
+                    "required": true,
+                    "autocomplete" : true
+                }
             }
-        }
 
+        }
     }
 ]
