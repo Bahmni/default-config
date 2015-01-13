@@ -11,4 +11,5 @@
         <include file = "openmrs-concepts-liquibase.xml"/>
         <include file = "encounter-type-and-location-mapping-liquibase.xml"/>
         <include file = "openmrs-person-attributes-liquibase.xml"/>
+        <include file = "openmrs-address-hierarchy-level-liquibase.xml"/>
 </databaseChangeLog>
