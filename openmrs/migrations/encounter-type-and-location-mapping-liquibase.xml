@@ -485,7 +485,7 @@
     <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-REGISTRATION" author="tw">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
-                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from locationwhere name ='Registration');
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='Registration');
             </sqlCheck>
         </preConditions>
         <comment>Create location and encounter type mapping for Registration</comment>
@@ -501,7 +501,7 @@
     <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-ER" author="tw">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
-                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from locationwhere name ='ER');
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='ER');
             </sqlCheck>
         </preConditions>
         <comment>Create location and encounter type mapping for ER</comment>
