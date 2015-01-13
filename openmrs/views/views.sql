@@ -1,3 +1,19 @@
+-- Figure out how to dynamic columns and then add person attributes to the view
+create or replace view patient_view as
+select
+patient_identifier.identifier as identifier,
+concat(person_name.given_name, ' ', person_name.family_name) as name,
+person.date_created as registration_date,
+person.birthdate as birthdate,
+person.gender as gender,
+person.dead as dead,
+patient.patient_id as patient_id
+from patient, person, patient_identifier, person_name
+where
+patient.patient_id = person.person_id and
+patient_identifier.patient_id = patient.patient_id and
+person_name.person_id = patient.patient_id;
+
 -- Views
 CREATE OR REPLACE VIEW concept_reference_term_map_view AS
 SELECT 
@@ -18,18 +34,21 @@ concept_full_name.name AS concept_full_name,
 concept_short_name.name AS concept_short_name, 
 concept_class.name AS concept_class_name,
 concept_datatype.name AS concept_datatype_name,
-concept.retired
+concept.retired,
+concept_description.description,
+concept.date_created AS date_created
 FROM concept
 LEFT OUTER JOIN concept_name AS concept_full_name ON concept_full_name.concept_id = concept.concept_id 
 			AND concept_full_name.concept_name_type = 'FULLY_SPECIFIED' 
 			AND concept_full_name.locale = 'en'
 			AND concept_full_name.voided = 0
 LEFT OUTER JOIN concept_name AS concept_short_name ON concept_short_name.concept_id = concept.concept_id 
-		    AND concept_short_name.concept_name_type = 'SHORT'
+		  AND concept_short_name.concept_name_type = 'SHORT'
 			AND concept_short_name.locale = 'en'
 			AND concept_short_name.voided = 0 
 LEFT OUTER JOIN concept_class ON concept_class.concept_class_id = concept.class_id
-LEFT OUTER JOIN concept_datatype ON concept_datatype.concept_datatype_id = concept.datatype_id;
+LEFT OUTER JOIN concept_datatype ON concept_datatype.concept_datatype_id = concept.datatype_id
+LEFT OUTER JOIN concept_description ON concept_description.concept_id = concept.concept_id;
 
 CREATE OR REPLACE VIEW coded_obs_view AS
 SELECT 
