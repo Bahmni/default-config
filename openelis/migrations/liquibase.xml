@@ -6,5 +6,17 @@
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="POSSIBLE-ELIS-1" author="Rohan, Vikash">
+		<preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM organization where name='Possible';
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Possible Organization</comment>
+        <sql>
+            INSERT INTO organization (id, name, city, is_active) VALUES ((select max(id)+1 from organization),'Possible','Achham','Y');
+        </sql>
+    </changeSet>
     
 </databaseChangeLog>
