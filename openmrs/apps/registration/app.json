@@ -31,7 +31,8 @@
                 }
             ],
             "showMiddleName": true,
-            "conceptSetUI": {
+ 	 "defaultVisitType": "General",
+         "conceptSetUI": {
                 "Department Sent To": {
                     "required": true
                 },

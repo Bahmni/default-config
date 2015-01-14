@@ -76,14 +76,26 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.clinical.conceptSetGroup.observations.history",
+        "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "conceptName": "Congestive heart failure - Intake form",
-            "default":true
+            "conceptName": "Vitals",
+                "default":"true",
+                "isOpen": "true"
         },
         "order": 1,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.acuteOPDvisit",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Acute OPD visit",
+                "default":"true"
+        },
+        "order": 2,
         "requiredPrivilege": "app:clinical"
     }
 ]
