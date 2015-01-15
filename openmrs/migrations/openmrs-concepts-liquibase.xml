@@ -385,4 +385,18 @@
             call add_concept_answer(@caste_concept_id, @concept_id, 0);
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-CHANGE-REFERRED-BY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT count(*) from concept_name where name = 'Referred By' and concept_name_type='FULLY_SPECIFIED';
+            </sqlCheck>
+        </preConditions>
+        <comment>Changing concept name Referred By to Hospitals, Referred By</comment>
+        <sql>
+            set @concept_name_short_id = 0;
+            select concept_id into @referred_by_id from concept_name where name = 'Referred By' and concept_name_type='FULLY_SPECIFIED';
+
+            UPDATE concept_name set name = 'Hospitals, Referred By' where concept_id = @referred_by_id and concept_name_type='FULLY_SPECIFIED';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
