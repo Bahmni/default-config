@@ -58,5 +58,5 @@
         "icon": "icon-user",
         "order": 7,
         "requiredPrivilege": "app:admin"
-    },
+    }
 ]
