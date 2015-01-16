@@ -31,8 +31,8 @@
                 }
             ],
             "showMiddleName": true,
- 	 "defaultVisitType": "General",
-         "conceptSetUI": {
+ 	        "defaultVisitType": "General",
+            "conceptSetUI": {
                 "Department Sent To": {
                     "required": true
                 },
@@ -41,7 +41,6 @@
                     "autocomplete" : true
                 }
             }
-
         }
     }
 ]

@@ -12,4 +12,5 @@
         <include file = "encounter-type-and-location-mapping-liquibase.xml"/>
         <include file = "openmrs-person-attributes-liquibase.xml"/>
         <include file = "openmrs-address-hierarchy-level-liquibase.xml"/>
+        <include file = "visit-types-liquibase.xml"/>
 </databaseChangeLog>
