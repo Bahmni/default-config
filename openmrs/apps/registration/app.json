@@ -36,10 +36,20 @@
                 "Department Sent To": {
                     "required": true
                 },
-                "Referred By": {
+                "Hospitals, Referred By, Data": {
+                },
+                "Hospitals, Referred By": {
+
+                    "answersConceptName": "Hospitals, Referred by, Answers",
+                    "required": true,
+                    "autocomplete" : true
+                },
+                "Hospitals, Referred By, Non coded": {
+                    "answersConceptName": "Hospitals, Referred by, Answers",
                     "required": true,
                     "autocomplete" : true
                 }
+
             }
         }
     }

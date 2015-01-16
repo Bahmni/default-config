@@ -44,6 +44,18 @@
         "requiredPrivilege": "Add Visits"
     },
     {
+        "id": "bahmni.patient.edit.action.editVisit",
+        "extensionPointId": "org.bahmni.registration.patient.edit.action",
+        "type": "config",
+        "extensionParams" : {
+            "action" : "enterVisitDetails",
+            "display": "Enter <u>V</u>isit Details",
+            "shortcutKey": "v"
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    },
+    {
         "id": "bahmni.patient.edit.action.print",
         "extensionPointId": "org.bahmni.registration.patient.edit.action",
        "type": "config",

@@ -1,16 +1,15 @@
 uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2
-,"Death Note, Pronounced Death Date and Time",Misc,Datetime,Pronounced Death date,,,,,,,
+,"Death Note, Pronounced Death Date and Time",Misc,Datetime,Pronounced Death date and time,,,,,,,
 ,"Death Note, Provider Name",Misc,Text,Provider name who pronounced death,,,,,,,
 ,"Death Note, Brought dead",Misc,Boolean,Brought dead ?,,,,,,,
 ,"Death Note, Postmortem done",Misc,Boolean,Postmortem done ?,,,,,,,
-,"Death Note, Death post operative",Misc,Boolean,Death post operative ?,,,,,,,
 ,"Death Note, Primary Cause of Death",Misc,Coded,Primary Cause of Death,,,,,,,
 ,"Death Note, Secondary Cause of Death",Misc,Coded,Secondary Cause of Death,,,,,,,
 ,"Death Note, Tertiary Cause of Death",Misc,Coded,Tertiary Cause of Death,,,,,,,
 ,"Death Note, Expected / Unexpected",Misc,Coded,Expected / Unexpected,,,,,,Expected,Unexpected
 ,"Death Note, Other Co-morbidities",Misc,Text,Other co-morbidities,,,,,,,
 ,"Death Note, Hospital Course",Misc,Text,Brief account of hospital course,,,,,,,
-,"Death Note, Surgery While Hospitalized",Misc,Text,Did patient have surgery while hospitalized,,,,,,,
+,"Death Note, Surgery While Hospitalized",Misc,Boolean,Did patient have surgery while hospitalized,,,,,,,
 ,"Death Note, Medico Legal / Police Case",Misc,Coded,Medico Legal / Police case,,,,,,Medico Legal,Police Case
 ,"Death Note, Family Aware of Death",Misc,Boolean,Family / Next-of-kin aware of death,,,,,,,
 ,"Death Note, MDGP Notified at",Misc,Text,MDGP notified at,,,,,,,

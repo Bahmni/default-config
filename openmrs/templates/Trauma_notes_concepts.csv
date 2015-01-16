@@ -28,3 +28,4 @@ Neurologic:<br>",Misc,Text,Physical Examination Details,,,,,,,,,,,,,,,,
 ,"Trauma Notes, Extremity",,Misc,Text,Extremity,,,,,,,,,,,,,,,,
 ,"Trauma Notes, Other",,Misc,Text,Other,,,,,,,,,,,,,,,,
 ,"Trauma Notes, Lab Trends",,Misc,Text,Lab Trends,,,,,,,,,,,,,,,,
+,"Trauma Notes, Free Health Service Code",,Misc,Coded,Free Health Service Code,,,,,,,,,Ultra Poor,Poor,Helpless/Destitute,Disabled,Senior citizen,FCHV,Gender based violence,Others
