@@ -58,6 +58,16 @@
         "icon": "icon-cogs",
         "order": 7,
         "requiredPrivilege": "app:admin"
+    },
+    {
+        "id": "bahmni.dhis",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Dhis",
+        "url": "../dhis/#/dashboard/home",
+        "icon": "icon-book",
+        "order": 9,
+        "requiredPrivilege": "app:dhis"
     }
 
 ]
