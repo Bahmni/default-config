@@ -67,7 +67,13 @@
                 },
         		"Anaemia, Stopped Since When" : {
         			"conciseText" : true
-        		}
+        		},
+                "Examination Notes" :{
+                    "conciseText" : true
+                },
+                "P/A Presenting Part" : {
+                    "multiSelect" : true
+                }
             },
             "patientDashboardSections": [
                 {
@@ -128,6 +134,11 @@
                     }
                 }
             ],
+            "visitPage": {
+                "observationDisplayParams" : {
+                "conceptNames": []
+                }
+            },
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",
@@ -154,6 +165,7 @@
                         "route": "Topical"
                     },
                     "Food Supplement": {
+                        "doseUnits": "Unit(s)",
                         "route": "Oral"
                     },
                     "Gel": {
@@ -189,6 +201,7 @@
                         "route": "Per Vaginal"
                     },
                     "Powder": {
+                        "doseUnits": "mg",
                         "route": "Topical"
                     },
                     "Solution": {
