@@ -38,6 +38,13 @@
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
                     "numberOfVisits": 10
+                },
+                "treatmentParams": {
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton" : true
                 }
             },
             "maxConceptSetLevels": 3,
@@ -83,8 +90,21 @@
                 {
                     "title": "Treatments",
                     "name": "treatment",
-                    "numberOfVisits": 1,
-                    "active": true
+                    "dashboardParams": {
+                        "showFlowSheet": true,
+                        "showListView": true,
+                        "numberOfVisits": 3,
+                        "showOtherActive": true,
+                        "showDetailsButton" : true
+                    },
+                    "summaryPageParams": {
+                        "title": "Treatments",
+                        "showFlowSheet": true,
+                        "showListView": true,
+                        "numberOfVisits": 4,
+                        "showOtherActive": true,
+                        "showDetailsButton" : true
+                    }
                 },
                 {
                     "title": "Radiology",
