@@ -17,22 +17,22 @@ select
 	(select count(*) from (select * from obs_view where concept_full_name = 'ANC, HIV Result Received' and value_coded = 1 and obs_datetime between @start_date and @end_date group by person_id) t3) as 'Pragnancy - HIV Tested',
     (select count(*) from (select * from obs_view where concept_full_name = 'ANC, HIV Test Result' and value_coded = @positive and obs_datetime between @start_date and @end_date group by person_id) t4) as 'Pragnancy - HIV Positive',
     (select count(*) from (select * from obs_view where concept_full_name like 'Delivery Note,%' and (person_id,date(obs_datetime)) in 
-		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HCT, Pre-test Counceling')
+		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HTC, Pre-test Counceling')
         and obs_datetime between @start_date and @end_date group by person_id, date(obs_datetime)) t5) as 'Labour & Delivery - Counseled',
 	(select count(*) from (select * from obs_view where concept_full_name like 'Delivery Note,%' and (person_id,date(obs_datetime)) in 
-		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HCT, Result' and value_coded is not null)
+		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HTC, Result' and value_coded is not null)
         and obs_datetime between @start_date and @end_date group by person_id, date(obs_datetime)) t6) as 'Labour & Delivery - Tested',
 	(select count(*) from (select * from obs_view where concept_full_name like 'Delivery Note,%' and (person_id,date(obs_datetime)) in 
-		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HCT, Result' and value_coded = @positive)
+		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HTC, Result' and value_coded = @positive)
         and obs_datetime between @start_date and @end_date group by person_id, date(obs_datetime)) t7) as 'Labour & Delivery - Positive',
     (select count(*) from (select * from obs_view where concept_full_name like 'PNC,%' and (person_id,date(obs_datetime)) in 
-		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HCT, Pre-test Counceling')
+		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HTC, Pre-test Counceling')
         and obs_datetime between @start_date and @end_date group by person_id, date(obs_datetime)) t8) as 'Puerperium - Counseled',
 	(select count(*) from (select * from obs_view where concept_full_name like 'PNC,%' and (person_id,date(obs_datetime)) in 
-		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HCT, Result' and value_coded is not null)
+		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HTC, Result' and value_coded is not null)
         and obs_datetime between @start_date and @end_date group by person_id, date(obs_datetime)) t9) as 'Puerperium - Tested',
 	(select count(*) from (select * from obs_view where concept_full_name like 'PNC,%' and (person_id,date(obs_datetime)) in 
-		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HCT, Result' and value_coded = @positive)
+		(select person_id,date(obs_datetime) from obs_view where concept_full_name = 'HTC, Result' and value_coded = @positive)
         and obs_datetime between @start_date and @end_date group by person_id, date(obs_datetime)) t10) as 'Puerperium - Positive',
 	(select count(*) from (select * from obs_view where concept_full_name = 'PMTCT, Started ART during' and value_coded = @before_pregnancy and obs_datetime between @start_date and @end_date group by person_id) t11) as 'ART Started - Before Pragnancy',
     (select count(*) from (select * from obs_view where concept_full_name = 'PMTCT, Started ART during' and value_coded = @antenatal and obs_datetime between @start_date and @end_date group by person_id) t12) as 'ART Started - Pragnancy',
