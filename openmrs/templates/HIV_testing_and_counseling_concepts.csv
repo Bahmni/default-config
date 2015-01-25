@@ -6,7 +6,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"HTC, Other reason for test",,Misc,Text,Others (Specify),,,,,,,,,,,,,,,,,,,,
 ,"HTC, Pregnancy Status",,Misc,Coded,Pregnancy Status,,,,,Yes,No,Do Not Know,Not Applicable,,,,,,,,,,,,
 ,"HTC, Risk Group",,Misc,Coded,Risk Group,,,,,Sex Worker,People Who Inject Drugs,MSM and Transgenders,Blood or Organ Recipient,Client of Sex Worker,Migrant,Spouse/Partner of Migrant,Others,,,,,,,,
-,"HTC, Other Risk Group",,Misc,Text,Others(Specify),,,,,,,,,,,,,,,,,,,,
+,"HTC, Other Risk Group",,Misc,Text,Others (Specify),,,,,,,,,,,,,,,,,,,,
 ,"HTC, Informed Consent",,Misc,Boolean,Informed Consent,,,,,,,,,,,,,,,,,,,,
 ,"HTC, Initial",,Misc,Coded,Initial,,,,,Negative,Positive,Not Applicable,,,,,,,,,,,,,
 ,"HTC, Confirmatory",,Misc,Coded,Confirmatory,,,,,Negative,Positive,Not Applicable,,,,,,,,,,,,,
