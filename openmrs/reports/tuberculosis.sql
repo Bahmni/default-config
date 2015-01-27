@@ -110,23 +110,53 @@ INNER JOIN person ON visit.patient_id = person.person_id
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS tuberculosis_treatment ON tuberculosis_treatment.encounter_id = encounter.encounter_id
 	AND tuberculosis_treatment.concept_full_name = 'Tuberculosis, Treatment Type'
-RIGHT OUTER JOIN (SELECT name_key, name_value, sort_order FROM row_header_name_map WHERE report_group_name = 'Tuberculosis-Treatment category') AS treatment_category ON treatment_category.name_key = person.gender
+RIGHT OUTER JOIN (SELECT name_key, name_value, sort_order FROM row_header_name_map WHERE report_group_name = 'Generic') AS treatment_category ON treatment_category.name_key = person.gender
 GROUP BY treatment_category.name_value
 ORDER BY treatment_category.sort_order;
 
 
 -- HIV status at the time of TB Diagnosis
-SELECT person.gender AS 'Sex of Patient',
-	SUM(IF(hiv_status.value_concept_full_name != 'Unknown' ,1,0)) AS 'With Known HIV Status'
+-- Patients tested for HIV
+
+SELECT patients_tested.gender, patients_tested.patient_count,
+
+FROM
+(SELECT person.gender, COUNT(DISTINCT person.person_id) AS patients_count
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND visit.date_started BETWEEN @start_date AND @end_date
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
+	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
+	AND coded_obs_view.value_concept_full_name IN ('Tuberculosis','Multi Drug Resistant Tuberculosis', 'Extremely Drug Resistant Tuberculosis')
+    AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
+INNER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
+	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
+    AND certainty_obs.value_concept_full_name = 'Confirmed'
+INNER JOIN orders ON orders.patient_id = person.person_id
+    AND orders.order_type_id = @lab_test_order_type 
+	AND orders.order_action IN ('NEW', 'REVISED')
+    AND orders.date_created BETWEEN @start_date AND @end_date
+INNER JOIN concept_view ON orders.concept_id = concept_view.concept_id
+	AND concept_view.concept_full_name IN ('HIV (Blood)', 'HIV (Serum)')
+GROUP BY person.gender) AS patients_tested
+INNER JOIN
+-- With known HIV status
+(SELECT person.gender,
+	SUM(IF(hiv_status.value_concept_full_name != 'Unknown' ,1,0)) AS hiv_status_count
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
 	AND visit.date_started BETWEEN @start_date AND @end_date
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS hiv_status ON hiv_status.encounter_id = encounter.encounter_id
 	AND hiv_status.concept_full_name = 'Tuberculosis, HIV Infection'
-GROUP BY person.gender;
--- JOIN the test results here
--- Add male, female text
+GROUP BY person.gender) AS hiv_status ON hiv_status.gender = patients_tested.gender;
+
+-- RIGHT OUTER JOIN (SELECT name_key, name_value, sort_order FROM row_header_name_map WHERE report_group_name = 'Generic') AS row_headers ON row_headers.name_key = person.gender
+-- GROUP BY row_headers.name_value
+-- ORDER BY row_headers.sort_order;
+
+
 
 -- TB HIV activities
 -- Sputum Smear Examination

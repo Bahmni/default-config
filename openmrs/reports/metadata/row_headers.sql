@@ -77,9 +77,9 @@ INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_or
 			VALUES('Diagnosed by contact tracing', 'Diagnosed by Contact Tracing', 'Tuberculosis-Referral', 3);
 
 INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
-			VALUES('M', 'Male', 'Tuberculosis-Treatment category', 1);
+			VALUES('M', 'Male', 'Generic', 1);
 INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
-			VALUES('F', 'Female', 'Tuberculosis-Treatment category', 2);
+			VALUES('F', 'Female', 'Generic', 2);
             
 INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
 			VALUES('New Diagnosis', 'PBC - New', 'Tuberculosis-PBC Treatment outcome', 1);            
@@ -141,8 +141,5 @@ INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_or
 			VALUES('Still Under Treatment', 'Others', 'DRTuberculosis-Case Registration', 6); 
 INSERT INTO row_header_name_map(name_key, name_value, report_group_name, sort_order)
 			VALUES('Others', 'Others', 'DRTuberculosis-Case Registration', 6); 
-
             
-            select * from row_header_name_map;
-            delete from row_header_name_map where id IN (56,57,58,59,60,61,62,63);
-            
+select * from row_header_name_map;

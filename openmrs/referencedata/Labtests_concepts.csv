@@ -84,7 +84,7 @@ uuid,name,description,class,datatype,shortname,synonym.1,reference-term-source,r
 ,Chlamydia ,,LabTest,Coded,,,,,,,,,Positive,Negative,,,,,,
 ,H. Pylori,,LabTest,Coded,,,,,,,,,Positive,Negative,,,,,,
 ,Lipase (Serum),,LabTest,Numeric,,,,,,0.5,1.5,Meq/L,,,,,,,,
-,Urea Clearance Test,,LabTest,Text,,,,,,,,,,,,,,,,
+,Urea Clearance Test,,LabTest,Numeric,,,,,,40,65,ml,,,,,,,,
 ,LDL/HDL,,LabTest,Numeric,,,,,,,,,,,,,,,,
 ,Total Cholesterol/HDL,,LabTest,Numeric,,,,,,,,,,,,,,,,
 ,VLDL,,LabTest,Numeric,,,,,,,,,,,,,,,,

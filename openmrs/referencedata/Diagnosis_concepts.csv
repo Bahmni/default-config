@@ -1,4 +1,4 @@
-uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,synonym.3,answer.1,referenceTermSource,referenceTermCode,referenceTermRelationship
+uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,synonym.3,answer.1,reference-term-source,reference-term-code,reference-term-relationship
 ,Measles,,Diagnosis,N/A,,,,,,ICD-10-WHO,B05,SAME-AS
 ,Diptheria,,Diagnosis,N/A,,,,,,ICD-10-WHO,A36,SAME-AS
 ,Whooping Cough,,Diagnosis,N/A,,,,,,ICD-10-WHO,A37,SAME-AS
