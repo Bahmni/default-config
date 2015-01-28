@@ -1,0 +1,38 @@
+[
+    {
+        "dashboardName": "General",
+        "default": true,
+        "sections": [
+            {
+                "title": "Diagnosis",
+                "name": "diagnosis"
+            },
+            {
+                "title": "Treatments",
+                "name": "treatment",
+                "numberOfVisits": 1
+            },
+            {
+                "title": "Radiology",
+                "name": "radiology"
+            },
+            {
+                "title": "Lab Orders",
+                "name": "labOrders"
+            },
+            {
+                "title" : "Patient Information",
+                "name" : "patientInformation",
+                "patientAttributes" : ["Caste"]
+            },
+            {
+                "title" : "Visits",
+                "name" : "visits",
+                "dashboardParams": {
+                    "title": null,
+                    "maximumNoOfVisits": 3
+                }
+            }
+        ]
+    }
+]
