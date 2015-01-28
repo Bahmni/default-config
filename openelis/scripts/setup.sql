@@ -209,38 +209,28 @@ SELECT insert_result_limit_normal_range('Total Sperm Count',60,150);
 
 SELECT insert_unit_of_measure('mg/dL','Glucose (CSF)'); 
 SELECT insert_result_limit_normal_range('Glucose (CSF)',40,80); 
-
 SELECT insert_unit_of_measure('mg/dL','Protein (CSF)'); 
 SELECT insert_result_limit_normal_range('Protein (CSF)',15,45); 
-
 SELECT insert_unit_of_measure('mg/dL','Glucose (Pleural Fluid)'); 
 SELECT insert_result_limit_normal_range('Glucose (Pleural Fluid)',70,110); 
-
 SELECT insert_unit_of_measure('g/dL','Protein (Pleural Fluid)'); 
 SELECT insert_result_limit_normal_range('Protein (Pleural Fluid)',1,3); 
-
 SELECT insert_unit_of_measure('mg/dL','Glucose (Pericardial Fluid)'); 
 SELECT insert_result_limit_normal_range('Glucose (Pericardial Fluid)',70,110); 
-
 SELECT insert_unit_of_measure('mg/dL','Protein (Pericardial Fluid)'); 
 SELECT insert_result_limit_normal_range('Protein (Pericardial Fluid)',1,3); 
-
 SELECT insert_unit_of_measure('mg/dL','Glucose (Peritoneal Fluid)'); 
 SELECT insert_result_limit_normal_range('Glucose (Peritoneal Fluid)',70,110); 
-
 SELECT insert_unit_of_measure('mg/dL','Protein (Peritoneal Fluid)'); 
 SELECT insert_result_limit_normal_range('Protein (Peritoneal Fluid)',0,3); 
-
 SELECT insert_unit_of_measure('mg/dL','Glucose (Synovial Fluid)'); 
 SELECT insert_result_limit_normal_range('Glucose (Synovial Fluid)',70,110); 
-
 SELECT insert_unit_of_measure('mg/dL','Protein (Synovial Fluid)'); 
 SELECT insert_result_limit_normal_range('Protein (Synovial Fluid)',1,3); 
-
 SELECT insert_unit_of_measure('ml','Urea Clearance Test'); 
 SELECT insert_result_limit_normal_range('Urea Clearance Test',40,65); 
-
 SELECT insert_unit_of_measure('NA','Blood Group'); 
+
 SELECT add_test_result_type('Blood Group','D', 'A positive'); 
 SELECT add_test_result_type('Blood Group','D', 'A negative'); 
 SELECT add_test_result_type('Blood Group','D', 'B positive'); 
@@ -409,154 +399,120 @@ SELECT insert_unit_of_measure('NA','Consistency');
 SELECT add_test_result_type('Consistency','D', 'Loose'); 
 SELECT add_test_result_type('Consistency','D', 'Solid'); 
 SELECT add_test_result_type('Consistency','D', 'Semi-solid'); 
-
 SELECT insert_unit_of_measure('NA','Blood (Stool)'); 
 SELECT add_test_result_type('Blood (Stool)','D', 'Absent');
 SELECT add_test_result_type('Blood (Stool)','D', 'Present');
-
 SELECT insert_unit_of_measure('NA','Occult Blood Test'); 
 SELECT add_test_result_type('Occult Blood Test','D', 'Positive');
 SELECT add_test_result_type('Occult Blood Test','D', 'Negative');
-
 SELECT insert_unit_of_measure('NA','Color (Semen)'); 
 SELECT add_test_result_type('Color (Semen)','D', 'Greyish White');
 SELECT add_test_result_type('Color (Semen)','D', 'Not Greyish White');
-
 SELECT insert_unit_of_measure('NA','pH (Semen)'); 
 SELECT add_test_result_type('pH (Semen)','D', 'Acidic');
 SELECT add_test_result_type('pH (Semen)','D', 'Alkaline');
-
 SELECT insert_unit_of_measure('NA','Appearance (CSF)'); 
 SELECT add_test_result_type('Appearance (CSF)','D', 'Clear');
 SELECT add_test_result_type('Appearance (CSF)','D', 'Cloudy');
-
 SELECT insert_unit_of_measure('NA','Colour (CSF)'); 
 SELECT add_test_result_type('Colour (CSF)','D', 'Colored');
 SELECT add_test_result_type('Colour (CSF)','D', 'Colorless');
-
 SELECT insert_unit_of_measure('NA','Transparency (CSF)'); 
 SELECT add_test_result_type('Transparency (CSF)','D', 'Clear');
 SELECT add_test_result_type('Transparency (CSF)','D', 'Cloudy');
-
 SELECT insert_unit_of_measure('NA','pH (CSF)'); 
 SELECT add_test_result_type('pH (CSF)','D', 'Acidic');
 SELECT add_test_result_type('pH (CSF)','D', 'Alkaline');
-
 SELECT insert_unit_of_measure('NA','Appearance (Pleural Fluid)'); 
 SELECT add_test_result_type('Appearance (Pleural Fluid)','D', 'Clear');
 SELECT add_test_result_type('Appearance (Pleural Fluid)','D', 'Cloudy');
-
-
 SELECT insert_unit_of_measure('NA','Colour (Pleural Fluid)'); 
 SELECT add_test_result_type('Colour (Pleural Fluid)','D', 'Pale');
 SELECT add_test_result_type('Colour (Pleural Fluid)','D', 'Straw Color');
 SELECT add_test_result_type('Colour (Pleural Fluid)','D', 'Milky White');
-
 SELECT insert_unit_of_measure('NA','Transparency (Pleural Fluid)'); 
 SELECT add_test_result_type('Transparency (Pleural Fluid)','D', 'Clear');
 SELECT add_test_result_type('Transparency (Pleural Fluid)','D', 'Cloudy');
-
 SELECT insert_unit_of_measure('NA','pH (Pleural Fluid)'); 
 SELECT add_test_result_type('pH (Pleural Fluid)','D', 'Acidic');
 SELECT add_test_result_type('pH (Pleural Fluid)','D', 'Alkaline');
-
 SELECT insert_unit_of_measure('NA','Appearance (Pericardial Fluid)'); 
 SELECT add_test_result_type('Appearance (Pericardial Fluid)','D', 'Clear');
 SELECT add_test_result_type('Appearance (Pericardial Fluid)','D', 'Turbid');
-
 SELECT insert_unit_of_measure('NA','Colour (Pericardial Fluid)'); 
 SELECT add_test_result_type('Colour (Pericardial Fluid)','D', 'Straw Yellow Color');
 SELECT add_test_result_type('Colour (Pericardial Fluid)','D', 'Not Straw Yellow Color');
-
 SELECT insert_unit_of_measure('NA','Transparency (Pericardial Fluid)'); 
 SELECT add_test_result_type('Transparency (Pericardial Fluid)','D', 'Clear');
 SELECT add_test_result_type('Transparency (Pericardial Fluid)','D', 'Cloudy');
-
 SELECT insert_unit_of_measure('NA','pH (Pericardial Fluid)'); 
 SELECT add_test_result_type('pH (Pericardial Fluid)','D', 'Acidic');
 SELECT add_test_result_type('pH (Pericardial Fluid)','D', 'Alkaline');
-
 SELECT insert_unit_of_measure('NA','Appearance (Peritoneal Fluid)'); 
 SELECT add_test_result_type('Appearance (Peritoneal Fluid)','D', 'Clear');
 SELECT add_test_result_type('Appearance (Peritoneal Fluid)','D', 'Turbid');
-
 SELECT insert_unit_of_measure('NA','Colour (Peritoneal Fluid)'); 
 SELECT add_test_result_type('Colour (Peritoneal Fluid)','D', 'Pale');
 SELECT add_test_result_type('Colour (Peritoneal Fluid)','D', 'Yellow');
-
 SELECT insert_unit_of_measure('NA','Transparency (Peritoneal Fluid)'); 
 SELECT add_test_result_type('Transparency (Peritoneal Fluid)','D', 'Clear');
 SELECT add_test_result_type('Transparency (Peritoneal Fluid)','D', 'Turbid');
-
 SELECT insert_unit_of_measure('NA','pH (Peritoneal Fluid)'); 
 SELECT add_test_result_type('pH (Peritoneal Fluid)','D', 'Acidic');
 SELECT add_test_result_type('pH (Peritoneal Fluid)','D', 'Alkaline');
-
 SELECT insert_unit_of_measure('NA','Appearance (Synovial Fluid)'); 
 SELECT add_test_result_type('Appearance (Synovial Fluid)','D', 'Clear');
 SELECT add_test_result_type('Appearance (Synovial Fluid)','D', 'Turbid');
-
 SELECT insert_unit_of_measure('NA','Colour (Synovial Fluid)'); 
 SELECT add_test_result_type('Colour (Synovial Fluid)','D', 'Straw Yellow Color');
 SELECT add_test_result_type('Colour (Synovial Fluid)','D', 'Not Straw Yellow Color');
-
 SELECT insert_unit_of_measure('NA','Transparency (Synovial Fluid)'); 
 SELECT add_test_result_type('Transparency (Synovial Fluid)','D', 'Clear');
 SELECT add_test_result_type('Transparency (Synovial Fluid)','D', 'Turbid');
-
 SELECT insert_unit_of_measure('NA','pH (Synovial Fluid)'); 
 SELECT add_test_result_type('pH (Synovial Fluid)','D', 'Acidic');
 SELECT add_test_result_type('pH (Synovial Fluid)','D', 'Alkaline');
-
 SELECT insert_unit_of_measure('NA','AFB Stain (Sputum)'); 
 SELECT add_test_result_type('AFB Stain (Sputum)','D', 'Negative');
 SELECT add_test_result_type('AFB Stain (Sputum)','D', '1+');
 SELECT add_test_result_type('AFB Stain (Sputum)','D', '2++');
 SELECT add_test_result_type('AFB Stain (Sputum)','D', '3+++');
-
 SELECT insert_unit_of_measure('NA','M. Tuberculosis (Sputum)'); 
 SELECT add_test_result_type('M. Tuberculosis (Sputum)','D', 'Detected');
 SELECT add_test_result_type('M. Tuberculosis (Sputum)','D', 'Not Detected');
 SELECT add_test_result_type('M. Tuberculosis (Sputum)','D', 'Invalid');
 SELECT add_test_result_type('M. Tuberculosis (Sputum)','D', 'Error');
 SELECT add_test_result_type('M. Tuberculosis (Sputum)','D', 'No results');
-
 SELECT insert_unit_of_measure('NA','Rifampicin resistance (Sputum)'); 
 SELECT add_test_result_type('Rifampicin resistance (Sputum)','D', 'Detected');
 SELECT add_test_result_type('Rifampicin resistance (Sputum)','D', 'Not Detected');
 SELECT add_test_result_type('Rifampicin resistance (Sputum)','D', 'Indeterminate');
-
 SELECT insert_unit_of_measure('NA','AFB Stain (Pus)'); 
 SELECT add_test_result_type('AFB Stain (Pus)','D', 'Negative');
 SELECT add_test_result_type('AFB Stain (Pus)','D', '1+');
 SELECT add_test_result_type('AFB Stain (Pus)','D', '2++');
 SELECT add_test_result_type('AFB Stain (Pus)','D', '3+++');
-
 SELECT insert_unit_of_measure('NA','M. Tuberculosis (Pus)'); 
 SELECT add_test_result_type('M. Tuberculosis (Pus)','D', 'Detected');
 SELECT add_test_result_type('M. Tuberculosis (Pus)','D', 'Not Detected');
 SELECT add_test_result_type('M. Tuberculosis (Pus)','D', 'Invalid');
 SELECT add_test_result_type('M. Tuberculosis (Pus)','D', 'Error');
 SELECT add_test_result_type('M. Tuberculosis (Pus)','D', 'No results');
-
 SELECT insert_unit_of_measure('NA','Rifampicin resistance (Pus)'); 
 SELECT add_test_result_type('Rifampicin resistance (Pus)','D', 'Detected');
 SELECT add_test_result_type('Rifampicin resistance (Pus)','D', 'Not Detected');
 SELECT add_test_result_type('Rifampicin resistance (Pus)','D', 'Indeterminate');
-
 SELECT insert_unit_of_measure('NA','AFB Stain (Slit Skin)'); 
 SELECT add_test_result_type('AFB Stain (Slit Skin)','D', 'Negative');
 SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '1+');
 SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '2++');
 SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '3+++');
-
 SELECT insert_unit_of_measure('NA','M. Tuberculosis (Slit Skin)'); 
 SELECT add_test_result_type('M. Tuberculosis (Slit Skin)','D', 'Detected');
 SELECT add_test_result_type('M. Tuberculosis (Slit Skin)','D', 'Not Detected');
 SELECT add_test_result_type('M. Tuberculosis (Slit Skin)','D', 'Invalid');
 SELECT add_test_result_type('M. Tuberculosis (Slit Skin)','D', 'Error');
 SELECT add_test_result_type('M. Tuberculosis (Slit Skin)','D', 'No results');
-
 SELECT insert_unit_of_measure('NA','Rifampicin resistance (Slit Skin)'); 
 SELECT add_test_result_type('Rifampicin resistance (Slit Skin)','D', 'Detected');
 SELECT add_test_result_type('Rifampicin resistance (Slit Skin)','D', 'Not Detected');
