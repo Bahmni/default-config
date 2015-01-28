@@ -45,12 +45,12 @@
         "requiredPrivilege": "app:adt"
     },
     {
-        "id": "bahmni.adt.discharge.saveAndCloseVisit",
+        "id": "bahmni.adt.discharge.save",
         "extensionPointId": "org.bahmni.adt.discharge.action",
         "type": "config",
         "extensionParams" : {
-            "display": "Discharge And Close Visit",
-            "action":"dischargeAndCloseVisit"
+            "display": "Discharge",
+            "action":"discharge"
         },
         "order": 2,
         "requiredPrivilege": "app:adt"
