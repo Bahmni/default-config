@@ -1,0 +1,13 @@
+Code,Source,Name,Description,Version
+ADMIT,org.openmrs.module.emrapi,Admit Patient,,
+DISCHARGE,org.openmrs.module.emrapi,Discharge Patient,,
+ABSCONDING,org.openmrs.module.emrapi,Absconding,,
+CONSULTATIONCOMPLETEWITHFOLLOWUP,org.openmrs.module.emrapi,Consultation complete with follow up,,
+CONSULTATIONCOMPLETEWITHOUTFOLLOWUP,org.openmrs.module.emrapi,Consultation complete without follow up,,
+LEFTAGAINSTMEDICALADVICE,org.openmrs.module.emrapi,Left Against Medical Advice,,
+REFERRED,org.openmrs.module.emrapi,Referred,,
+REFERREDFORINVESTIGATION,org.openmrs.module.emrapi,Referred for Investigations,,
+REFERREDFORFURTHERCARE,org.openmrs.module.emrapi,Referred for Further Care,,
+REFERREDFORSURGERY,org.openmrs.module.emrapi,Referred for Surgery,,
+OBSERVEFORFEWHOURS,org.openmrs.module.emrapi,Observe for a few hours,,
+Disposition,org.openmrs.module.emrapi,Disposition,,
