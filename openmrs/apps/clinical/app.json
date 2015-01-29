@@ -105,7 +105,178 @@
        				"Operative Procedure" : {
                   			"answersConceptName" : "Procedure Answers",
                   			"freeTextAutocomplete" : true
-                		}
+                		},
+				"HTC, Risk Group" : {
+					"multiSelect" : true
+				},
+                                "PMTCT, Risk Group" : {
+                                        "multiSelect" : true
+                                },
+                                "STI, STI Diagnosis Syndrome" : {
+                                        "multiSelect" : true
+                                },
+                                "STI, Risk Group" : {
+                                        "multiSelect" : true
+                                },
+                                "HIVTC, Risk Group" : {
+                                        "multiSelect" : true
+                                },
+                                "HIVTC, TB Type" : {
+                                        "multiSelect" : true
+                                },
+                                "HIVTC, Opportunistic Infection Diagnosis" : {
+                                        "multiSelect" : true
+                                },
+                                "HIVTC, ART cohort" : {
+                                        "multiSelect" : true
+                                },
+                                "ART, Risk Group" : {
+                                        "multiSelect" : true
+                                },
+                                "ART, If substitution therapy" : {
+                                        "multiSelect" : true
+                                },
+                                "ART, If alcoholism how" : {
+                                        "multiSelect" : true
+                                },
+                                "ART, Place of ART taken" : {
+                                        "multiSelect" : true
+                                },
+				"ART, TB Type" : {
+					"multiSelect" : true
+				},
+				"ART, TB treatment category" : {
+					"multiSelect" : true
+				},
+				"ART, Reason for treatment substitution" : {
+					"multiSelect" : true
+				},
+                                "ART, Reason for treatment switching" : {
+                                        "multiSelect" : true
+                                },
+                                "ART, Reason for stopping treatment" : {
+                                        "multiSelect" : true
+                                },
+                                "ART, ART Family Planning method" : {
+                                        "multiSelect" : true
+                                },
+                                "ART, ART opportunistic infections" : {
+                                        "multiSelect" : true
+                                },
+                                "ART, ART ART side effects" : {
+                                        "multiSelect" : true
+                                },
+				"HTC, Other reason for test" : {
+					"conciseText" : true
+				},
+                                "HTC, Other Risk Group" : {
+                                        "conciseText" : true
+                                },
+                                "PMTCT, Other Risk Group" : {
+                                        "conciseText" : true
+                                },
+                                "PMTCT, Place of transfer out for continuum" : {
+                                        "conciseText" : true
+                                },
+                                "STI, Other STI Diagnosis Syndrome" : {
+                                        "conciseText" : true
+                                },
+                                "STI, Other Risk Group" : {
+                                        "conciseText" : true
+                                },
+                                "HIVTC, Other Risk Group" : {
+                                        "conciseText" : true
+                                },
+                                "HIVTC, Other Entry Point" : {
+                                        "conciseText" : true
+                                },
+                                "HIVTC, Transferred in from" : {
+                                        "conciseText" : true
+                                },
+                                "HIVTC, Transferred out to" : {
+                                        "conciseText" : true
+                                },
+                                "HIVTC, Viral Load" : {
+                                        "conciseText" : true
+                                },
+                                "HIVTC, Other Opportunistic Infection Diagnosis" : {
+                                        "conciseText" : true
+                                },
+                                "HIVTC, Opportunistic Infection Treatment" : {
+                                        "conciseText" : true
+                                },
+                                "HIVTC, Mortality coding" : {
+                                        "conciseText" : true
+                                },
+                                "ART, HIV +ve confirmed place" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Other chronic diseases" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Other chronic disease drugs" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Transferred in from" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Transferred out to" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Other Entry Point" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Other Risk Group" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Name of family member" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Relation with patient" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Family member regd. no." : {
+                                        "conciseText" : true
+                                },
+                                "ART, Viral Load" : {
+                                        "conciseText" : true
+                                },
+                                "ART, TB registration number" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Name of health facility for TB" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Other reason for treatment substitution" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Other reason for stopping treatment" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Name of health facility" : {
+                                        "conciseText" : true
+                                },
+                                "ART, Mortality code" : {
+                                        "conciseText" : true
+                                },
+                                "ART, ART other opportunistic infections" : {
+                                        "conciseText" : true
+                                },
+                                "ART, ART drugs prescribed for prophylaxis" : {
+                                        "conciseText" : true
+                                },
+                                "ART, ART ARV drugs and dose prescribed" : {
+                                        "conciseText" : true
+                                },
+                                "ART, ART Other ART side effects" : {
+                                        "conciseText" : true
+                                },
+                                "ART, ART lab results when available" : {
+                                        "conciseText" : true
+                                },
+                                "ART, ART referred to" : {
+                                        "conciseText" : true
+                                }
 			}
         }
     }
