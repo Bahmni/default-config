@@ -45,7 +45,16 @@
                     "showListView": true,
                     "showOtherActive": true,
                     "showDetailsButton" : true
-                }
+                },
+                 "pivotTable": [
+                    {
+                        "title":"Pivot table",
+                        "groupBy":"encounters",
+                        "obsConcepts": ["Vitals", "Height", "WEIGHT", "M/C Days"],
+                        "drugConcepts": ["Gamma Benzene Hexachloride"],
+                        "labConcepts": ""
+                    }
+                ]
             },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
