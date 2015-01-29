@@ -33,7 +33,7 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"ART, Substitution therapy",,Misc,Boolean,Substitution therapy,,,,,,,,,,,,,,,,,,,,
 ,"ART, If substitution therapy",,Misc,Coded,If yes,,,,,Literate,Employed,Alcoholism,,,,,,,,,,,,,
 ,"ART, If alcoholism how",,Misc,Coded,"If alcoholism, how",,,,,Habitual,Social,,,,,,,,,,,,,,
-,"ART, ART receeved before",,Misc,Boolean,ART received before,,,,,,,,,,,,,,,,,,,,
+,"ART, ART received before",,Misc,Boolean,ART received before,,,,,,,,,,,,,,,,,,,,
 ,"ART, If ART received",,Misc,Coded,If yes,,,,,Prevention of Mother-to-child Transmission,Earlier ART,,,,,,,,,,,,,,
 ,"ART, Place of ART taken",,Misc,Coded,Place of ART taken,,,,,Private,Government,,,,,,,,,,,,,,
 ,"ART, Mothers ARV Regimen",,Misc,Text,Regimen,,,,,,,,,,,,,,,,,,,,
@@ -81,12 +81,12 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"ART, ART WHO staging",,Misc,Coded,WHO Stage,,,,,Stage I,Stage II,Stage III,Stage IV,,,,,,,,,,,,
 ,"ART, ART pregnancy",,Misc,Boolean,Pregnancy,,,,,,,,,,,,,,,,,,,,
 ,"ART, ART Family Planning method",,Misc,Coded,FP method,,,,,Oral Contraceptives,Depo,Intra Uterine Contraceptive Device,Implant,Permanent,Refer for other FP services,,,,,,,,,,
-,"ART, ART opportunistic infections",,Misc,Coded,Opportunistic infections,,,,,Bacterial Pneumonia,Tuberculosis Opportunistic Infection,Candidiasis,Diarrhoea,Crypto Meningitis,Pneumocysitis Pneumonia,Cytomegato Virus,Herpes Zoster,Herpes Genitalis,Taxoplasmosis,Others,,,,,
+,"ART, ART opportunistic infections",,Misc,Coded,Opportunistic infections,,,,,Bacterial Pneumonia Opportunistic Infection,Tuberculosis Opportunistic Infection,Candidiasis Opportunistic Infection,Diarrhoea Opportunistic Infection,Crypto Meningitis Opportunistic Infection,Pneumocysitis Pneumonia Opportunistic Infection,Cytomegato Virus Opportunistic Infection,Herpes Zoster Opportunistic Infection,Herpes Genitalis Opportunistic Infection,Toxicity side effects,Others,,,,,
 ,"ART, ART other opportunistic infections",,Misc,Text,Others (Specify),,,,,,,,,,,,,,,,,,,,
 ,"ART, ART drugs prescribed for prophylaxis",,Misc,Text,Drugs prescribed for prophylaxis,,,,,,,,,,,,,,,,,,,,
 ,"ART, ART ARV drugs and dose prescribed",,Misc,Text,ARV drugs and dose prescribed,,,,,,,,,,,,,,,,,,,,
 ,"ART, ART adherence to ART",A --> greater than 95%<br>B --> 80‐95% <br>C --> less than 80%,Misc,Coded,Adherence to ART,,,,,Adherence Level A,Adherence Level B,Adherence Level C,,,,,,,,,,,,,
-,"ART, ART ART side effects",,Misc,Coded,ART side effects,,,,,Skin rash,Nau-nausea,Vomiting,Diarrhoea,Neuropathy,Jaundice,Anemia,Fatigue,Headache,Fever,Hypersensitivity,Depression,Pancreatitis,Lipodystrophy,Drowsiness,Others
+,"ART, ART ART side effects",,Misc,Coded,ART side effects,,,,,"Side effect, Skin rash","Side effect, Nau-nausea","Side effect, Vomiting","Side effect, Diarrhoea","Side effect, Neuropathy","Side effect, Jaundice","Side effect, Anemia","Side effect, Fatigue","Side effect, Headache","Side effect, Fever","Side effect, Hypersensitivity","Side effect, Depression","Side effect, Pancreatitis","Side effect, Lipodystrophy","Side effect, Drowsiness",Others
 ,"ART, ART Other ART side effects",,Misc,Text,Others (Specify),,,,,,,,,,,,,,,,,,,,
 ,"ART, ART lab results when available",,Misc,Text,Lab results when available,,,,,,,,,,,,,,,,,,,,
 ,"ART, ART condoms given",,Misc,Boolean,Condoms given,,,,,,,,,,,,,,,,,,,,
