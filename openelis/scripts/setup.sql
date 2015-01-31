@@ -2,100 +2,68 @@
 
 SELECT insert_unit_of_measure('gm%','Haemoglobin (Blood)'); 
 SELECT insert_result_limit_normal_range('Haemoglobin (Blood)',11,18); 
-
 SELECT insert_unit_of_measure('cells/mm3','Total Leucocyte Count'); 
 SELECT insert_result_limit_normal_range('Total Leucocyte Count',4000,11000); 
-
 SELECT insert_unit_of_measure('%','Neutrophil'); 
 SELECT insert_result_limit_normal_range('Neutrophil',45,75); 
-
 SELECT insert_unit_of_measure('%','Lymphocyte (Blood)'); 
 SELECT insert_result_limit_normal_range('Lymphocyte (Blood)',20,45); 
-
 SELECT insert_unit_of_measure('%','Eosinophil (Blood)'); 
 SELECT insert_result_limit_normal_range('Eosinophil (Blood)',1,6); 
-
 SELECT insert_unit_of_measure('%','Monocyte (Blood)'); 
 SELECT insert_result_limit_normal_range('Monocyte (Blood)',2,10); 
-
 SELECT insert_unit_of_measure('%','Basophil (Blood)'); 
 SELECT insert_result_limit_normal_range('Basophil (Blood)',0,1); 
-
 SELECT insert_unit_of_measure('lakhs/mm3','Platelets'); 
 SELECT insert_result_limit_normal_range('Platelets',1.5,4.5); 
-
 SELECT insert_unit_of_measure('million/mm3','RBC count'); 
 SELECT insert_result_limit_normal_range('RBC count',3.5,5.5); 
-
 SELECT insert_unit_of_measure('%','Reticulocyte count'); 
 SELECT insert_result_limit_normal_range('Reticulocyte count',2.5,4.5); 
-
 SELECT insert_unit_of_measure('cells/mm3','Absolute Eosinophil Count'); 
 SELECT insert_result_limit_normal_range('Absolute Eosinophil Count',40,440); 
-
 SELECT insert_unit_of_measure('mm 1st hours','ESR (Blood)'); 
 SELECT insert_result_limit_normal_range('ESR (Blood)',0,19); 
-
 SELECT insert_unit_of_measure('fl','MCV'); 
 SELECT insert_result_limit_normal_range('MCV',86,96); 
-
 SELECT insert_unit_of_measure('pg','MCH'); 
 SELECT insert_result_limit_normal_range('MCH',27,32); 
-
 SELECT insert_unit_of_measure('%','MCHC'); 
 SELECT insert_result_limit_normal_range('MCHC',32,36); 
-
 SELECT insert_unit_of_measure('%','PCV (Blood)'); 
 SELECT insert_result_limit_normal_range('PCV (Blood)',36,54); 
-
 SELECT insert_unit_of_measure('minutes','Borderline Tuberculoid'); 
 SELECT insert_result_limit_normal_range('Borderline Tuberculoid',2,6); 
-
 SELECT insert_unit_of_measure('minutes','CT'); 
 SELECT insert_result_limit_normal_range('CT',5,10); 
-
 SELECT insert_unit_of_measure('seconds','PT'); 
 SELECT insert_result_limit_normal_range('PT',10,14); 
-
 SELECT insert_unit_of_measure('','INR'); 
 SELECT insert_result_limit_normal_range('INR',1,1.2); 	
-
 SELECT insert_unit_of_measure('seconds','APTT'); 
 SELECT insert_result_limit_normal_range('APTT',10,14); 
-
 SELECT insert_unit_of_measure('mg/dL','Blood Sugar Fasting'); 
 SELECT insert_result_limit_normal_range('Blood Sugar Fasting',60,110); 
-
 SELECT insert_unit_of_measure('mg/dL','Blood Sugar P.P'); 
 SELECT insert_result_limit_normal_range('Blood Sugar P.P',70,140); 
-
 SELECT insert_unit_of_measure('mg/dL','Blood Sugar Random'); 
 SELECT insert_result_limit_normal_range('Blood Sugar Random',60,140); 
-
 SELECT insert_unit_of_measure('cells/mm3','CD4'); 
 SELECT insert_result_limit_normal_range('CD4',410,1165); 
-
 SELECT insert_unit_of_measure('mg/dL','Glucose(F)'); 
 SELECT insert_result_limit_normal_range('Glucose(F)',70,110); 
-
 SELECT insert_unit_of_measure('mg/dL','Glucose(P.P)'); 
 SELECT insert_result_limit_normal_range('Glucose(P.P)',70,140); 
-
 SELECT insert_unit_of_measure('mg/dL','Glucose(R)'); 
 SELECT insert_result_limit_normal_range('Glucose(R)',60,140); 
-
 SELECT insert_unit_of_measure('mg/dL','Urea'); 
 SELECT insert_result_limit_normal_range('Urea',15,45); 
-
 SELECT insert_unit_of_measure('mg/dL','Creatinine'); 
 SELECT insert_result_limit_normal_range('Creatinine',0.4,1.4); 
-
 SELECT insert_unit_of_measure('mEq/dL','Sodium'); 
 SELECT insert_result_limit_normal_range('Sodium',135,147); 
-
 SELECT insert_unit_of_measure('mEq/dL','Potassium'); 
 SELECT insert_result_limit_normal_range('Potassium',3.5,5); 
-
 SELECT insert_unit_of_measure('mEq/dL','Chloride'); 
 SELECT insert_result_limit_normal_range('Chloride',102,109); 
 
