@@ -36,6 +36,9 @@
                 "Department Sent To": {
                     "required": true
                 },
+                "Hospitals, Referred by Data": {
+
+                },
                 "Hospitals, Referred by": {
                     "answersConceptName": "Hospitals, Referred by, Answers",
                     "autocomplete" : true
