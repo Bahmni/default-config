@@ -32,8 +32,6 @@ SELECT insert_unit_of_measure('%','MCHC');
 SELECT insert_result_limit_normal_range('MCHC',32,36); 
 SELECT insert_unit_of_measure('%','PCV (Blood)'); 
 SELECT insert_result_limit_normal_range('PCV (Blood)',36,54); 
-SELECT insert_unit_of_measure('minutes','Borderline Tuberculoid'); 
-SELECT insert_result_limit_normal_range('Borderline Tuberculoid',2,6); 
 SELECT insert_unit_of_measure('minutes','CT'); 
 SELECT insert_result_limit_normal_range('CT',5,10); 
 SELECT insert_unit_of_measure('seconds','PT'); 
@@ -228,12 +226,6 @@ SELECT insert_unit_of_measure('NA','VDRL(TPHA) (Blood)');
 SELECT add_test_result_type('VDRL(TPHA) (Blood)','D', 'Non-Reactive'); 
 SELECT add_test_result_type('VDRL(TPHA) (Blood)','D', 'Reactive'); 
 
-SELECT insert_unit_of_measure('NA','HbA1c'); 
-SELECT add_test_result_type('HbA1c','D', 'Normal 4.2-6.25%'); 
-SELECT add_test_result_type('HbA1c','D', 'Good Control 5.5-6.8%'); 
-SELECT add_test_result_type('HbA1c','D', 'Fair Control 6.8-7.6%'); 
-SELECT add_test_result_type('HbA1c','D', 'Poor Control >7.6%'); 
-
 SELECT insert_unit_of_measure('NA','Malaria Ags'); 
 SELECT add_test_result_type('Malaria Ags','D', 'Present'); 
 SELECT add_test_result_type('Malaria Ags','D', 'Absent'); 
@@ -285,10 +277,6 @@ SELECT add_test_result_type('K-39','D', 'Negative');
 SELECT insert_unit_of_measure('NA','Dengue'); 
 SELECT add_test_result_type('Dengue','D', 'Positive'); 
 SELECT add_test_result_type('Dengue','D', 'Negative'); 
-
-SELECT insert_unit_of_measure('NA','Chlamydia'); 
-SELECT add_test_result_type('Chlamydia','D', ''); 
-SELECT add_test_result_type('Chlamydia','D', ''); 
 
 SELECT insert_unit_of_measure('NA','H. Pylori'); 
 SELECT add_test_result_type('H. Pylori','D', 'Positive'); 
@@ -638,3 +626,54 @@ SELECT insert_sample_source('TB', 'Tuberculosis');
 SELECT insert_sample_source('Dental', 'Dental');
 SELECT insert_sample_source('OT', 'Operation Theatre');
 SELECT insert_sample_source('Procedure', 'Procedure');
+
+
+
+-----New
+
+-- check if the ID of HbA1c is 23815
+SELECT insert_unit_of_measure('NA','HbA1c'); 
+delete from test_result where test_id = 23815 and tst_rslt_type = 'D';
+
+-- check if the ID of Chlamydia is 23859
+SELECT insert_unit_of_measure('NA','Chlamydia'); 
+delete from test_result where test_id = 23859;
+SELECT add_test_result_type('Chlamydia','D', 'Positive'); 
+SELECT add_test_result_type('Chlamydia','D', 'Negative'); 
+
+-- Malaria Ags
+delete from test_result where test_id = 23816;
+SELECT add_test_result_type('Malaria Ags','D', 'Positive'); 
+SELECT add_test_result_type('Malaria Ags','D', 'Negative'); 
+
+-- Malaria Abs
+delete from test_result where test_id = 23817;
+SELECT add_test_result_type('Malaria Abs','D', 'Positive'); 
+SELECT add_test_result_type('Malaria Abs','D', 'Negative'); 
+
+SELECT insert_unit_of_measure('NA','GenXpert'); 
+SELECT add_test_result_type('GenXpert','D', 'Rifampicin resistant'); 
+SELECT add_test_result_type('GenXpert','D', 'Rifampicin sensitive'); 
+SELECT add_test_result_type('GenXpert','D', 'Error'); 
+SELECT add_test_result_type('GenXpert','D', 'Indeterminate');
+
+SELECT insert_unit_of_measure('minutes','Borderline Tuberculoid'); 
+SELECT insert_result_limit_normal_range('Borderline Tuberculoid',2,6); 
+
+-- Check if the ID of Borderline Tuberculoid is 23798
+UPDATE clinlims.test SET uom_id = null, lastupdated = localtimestamp where id = 23798;
+delete from result_limits where test_id=23798;
+
+SELECT insert_unit_of_measure('NA','Blood Bank Screening Test'); 
+SELECT add_test_result_type('Blood Bank Screening Test','D', 'HIV negative'); 
+SELECT add_test_result_type('Blood Bank Screening Test','D', 'HIV positive'); 
+SELECT add_test_result_type('Blood Bank Screening Test','D', 'HCV negative'); 
+SELECT add_test_result_type('Blood Bank Screening Test','D', 'HCV positive');
+SELECT add_test_result_type('Blood Bank Screening Test','D', 'VDRL negative');
+SELECT add_test_result_type('Blood Bank Screening Test','D', 'VDRL positive');
+
+
+SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '4++++');
+SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '5+++++');
+SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '6++++++');
+
