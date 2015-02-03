@@ -17,35 +17,52 @@ select concept_id into @Missing from concept_view where concept_full_name = 'Mis
 select concept_id into @Death from concept_view where concept_full_name = 'Death';
 
 
-create table if not exists FSW_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+drop table if exists FSW_begin;
+drop table if exists FSW_during;
+drop table if exists FSW_end;
+drop table if exists IDU_begin;
+drop table if exists IDU_during;
+drop table if exists IDU_end;
+drop table if exists MSM_begin;
+drop table if exists MSM_during;
+drop table if exists MSM_end;
+drop table if exists Migrant_begin;
+drop table if exists Migrant_during;
+drop table if exists Migrant_end;
+drop table if exists Others_begin;
+drop table if exists Others_during;
+drop table if exists Others_end;
+
+
+create table FSW_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @sexworker and  p.gender='F' and o.obs_datetime < @start_date group by o.person_id;
-create table if not exists FSW_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table FSW_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @sexworker and  p.gender='F' and o.obs_datetime between @start_date and @end_date group by o.person_id;
-create table if not exists FSW_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table FSW_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @sexworker and  p.gender='F' and o.obs_datetime < @end_date group by o.person_id;    
-create table if not exists IDU_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table IDU_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @PWID and o.obs_datetime < @start_date group by o.person_id;
-create table if not exists IDU_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table IDU_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @PWID and o.obs_datetime between @start_date and @end_date group by o.person_id;
-create table if not exists IDU_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table IDU_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @PWID and o.obs_datetime < @end_date group by o.person_id;
-create table if not exists MSM_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table MSM_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @MSM_TG and o.obs_datetime < @start_date group by o.person_id;
-create table if not exists MSM_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table MSM_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @MSM_TG and o.obs_datetime between @start_date and @end_date group by o.person_id;
-create table if not exists MSM_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table MSM_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @MSM_TG and o.obs_datetime < @end_date group by o.person_id;
-create table if not exists Migrant_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table Migrant_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @migrant and o.obs_datetime < @start_date group by o.person_id;
-create table if not exists Migrant_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table Migrant_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @migrant and o.obs_datetime between @start_date and @end_date group by o.person_id;
-create table if not exists Migrant_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table Migrant_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded = @migrant and o.obs_datetime < @end_date group by o.person_id;
-create table if not exists Others_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table Others_begin as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded is not null and o.value_coded not in (@migrant,@MSM_TG,@sexworker,@PWID) and o.obs_datetime < @start_date group by o.person_id;
-create table if not exists Others_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table Others_during as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded is not null and o.value_coded not in (@migrant,@MSM_TG,@sexworker,@PWID) and  o.obs_datetime between @start_date and @end_date group by o.person_id;
-create table if not exists Others_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table Others_end as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'ART, Risk Group' and o.value_coded is not null and o.value_coded not in (@migrant,@MSM_TG,@sexworker,@PWID) and o.obs_datetime < @end_date group by o.person_id;
 
 
@@ -547,21 +564,3 @@ select 	'Patients switched on to 2nd line regimen' as 'Anteretroviral Treatment 
 		where o.concept_full_name='ART, ART start date' and o.value_datetime < @end_date and o.person_id in 
         (select person_id from obs_view where concept_full_name = 'ART, Treatment switch' and value_coded = 1 and obs_datetime < @end_date) 
         group by o.person_id) as t22;
-
-
-
-drop table FSW_begin;
-drop table FSW_during;
-drop table FSW_end;
-drop table IDU_begin;
-drop table IDU_during;
-drop table IDU_end;
-drop table MSM_begin;
-drop table MSM_during;
-drop table MSM_end;
-drop table Migrant_begin;
-drop table Migrant_during;
-drop table Migrant_end;
-drop table Others_begin;
-drop table Others_during;
-drop table Others_end;

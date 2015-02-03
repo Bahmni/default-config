@@ -13,7 +13,9 @@ select concept_id into @OIGH from concept_view where concept_full_name = 'Herpes
 select concept_id into @OIT from concept_view where concept_full_name = 'Taxoplasmosis';
 select concept_id into @others from concept_view where concept_full_name = 'Others';
 
-create table if not exists OI_treated as select person_id from obs_view where concept_full_name='HIVTC, Opportunistic Infection Treatment' and value_text is not null 
+drop table OI_treated;
+
+create table OI_treated as select person_id from obs_view where concept_full_name='HIVTC, Opportunistic Infection Treatment' and value_text is not null 
 	and obs_datetime between @start_date and @end_date group by person_id;
 
 select 'Diagnosed - Male' as 'Opportunistic Infections',
@@ -131,4 +133,4 @@ select 'Treated - TG' as 'Opportunistic Infections',
         	and o.person_id in (select person_id from OI_treated)
         	and o.obs_datetime between @start_date and @end_date group by o.person_id, o.concept_full_name, o.value_coded) as t6;
 
-drop table OI_treated;
+

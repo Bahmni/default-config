@@ -21,20 +21,31 @@ select concept_id into @cervisitis from concept_view where concept_full_name = '
 select concept_id into @vaginitis from concept_view where concept_full_name = 'Vaginitis';
 select concept_id into @herpes_genitalis from concept_view where concept_full_name = 'Herpes Genitalis';
 
+drop table if exists FemaleSexWorkers; 
+drop table if exists Other_MSM_and_TG; 
+drop table if exists SexWorkers_Client; 
+drop table if exists PWID;
+drop table if exists Migrants; 
+drop table if exists Spouse_of_Migrants;
+drop table if exists Pregnant_women;
+drop table if exists Other_Risk_Group;
+drop table if exists STI_etiology_treated;
+drop table if exists STI_cases;
 
-create table if not exists FemaleSexWorkers as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+
+create table FemaleSexWorkers as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'STI, Risk Group' and o.value_coded = @sexworker and  p.gender = 'F' and o.obs_datetime between @start_date and @end_date group by o.person_id;
-create table if not exists Other_MSM_and_TG as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @MSM_TG and obs_datetime between @start_date and @end_date group by person_id;
-create table if not exists SexWorkers_Client as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @sexworker_client and obs_datetime between @start_date and @end_date group by person_id;
-create table if not exists PWID as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @PWID and obs_datetime between @start_date and @end_date group by person_id;
-create table if not exists Migrants as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table Other_MSM_and_TG as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @MSM_TG and obs_datetime between @start_date and @end_date group by person_id;
+create table SexWorkers_Client as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @sexworker_client and obs_datetime between @start_date and @end_date group by person_id;
+create table PWID as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @PWID and obs_datetime between @start_date and @end_date group by person_id;
+create table Migrants as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'STI, Risk Group' and o.value_coded = @migrant and p.gender='M' and o.obs_datetime between @start_date and @end_date group by o.person_id;
-create table if not exists Spouse_of_Migrants as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @migrant_spouse and obs_datetime between @start_date and @end_date group by person_id;
-create table if not exists Pregnant_women as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
+create table Spouse_of_Migrants as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @migrant_spouse and obs_datetime between @start_date and @end_date group by person_id;
+create table Pregnant_women as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
 	where o.concept_full_name = 'HCT, Reason for test' and o.value_coded = @pregnant and p.gender='F' and o.obs_datetime between @start_date and @end_date group by o.person_id;
-create table if not exists Other_Risk_Group as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @others and obs_datetime between @start_date and @end_date group by person_id;
-create table if not exists STI_etiology_treated as select person_id from obs_view where concept_full_name = 'STI, Etiological Treatment' and value_coded = 1 and obs_datetime between @start_date and @end_date group by person_id;
-create table if not exists STI_cases as select person_id,obs_datetime from obs_view where concept_full_name like 'STI, %' and obs_datetime between @start_date and @end_date group by person_id;
+create table Other_Risk_Group as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @others and obs_datetime between @start_date and @end_date group by person_id;
+create table STI_etiology_treated as select person_id from obs_view where concept_full_name = 'STI, Etiological Treatment' and value_coded = 1 and obs_datetime between @start_date and @end_date group by person_id;
+create table STI_cases as select person_id,obs_datetime from obs_view where concept_full_name like 'STI, %' and obs_datetime between @start_date and @end_date group by person_id;
 
 
 select 'Female Sex Workers (FSWs)' as 'Risk Group / Key Population Group',
@@ -275,16 +286,5 @@ from (select o.person_id,o.concept_full_name,o.value_coded from obs_view o
 	(o.concept_full_name = 'STI, STI Diagnosis Syndrome' and o.value_coded in (@urethral_discharge,@scortal_swelling,@vaginal_discharge,@lower_abdominal_pain,@genital_ulcer_disease,@inguinal_bubo,@cervisitis,@vaginitis,@herpes_genitalis,@others))) and 
 	(obs_datetime between @start_date and @end_date) group by o.person_id,o.concept_full_name,o.value_coded) as t9;
 
-
-drop table FemaleSexWorkers; 
-drop table Other_MSM_and_TG; 
-drop table SexWorkers_Client; 
-drop table PWID;
-drop table Migrants; 
-drop table Spouse_of_Migrants;
-drop table Pregnant_women;
-drop table Other_Risk_Group;
-drop table STI_etiology_treated;
-drop table STI_cases;
 
 

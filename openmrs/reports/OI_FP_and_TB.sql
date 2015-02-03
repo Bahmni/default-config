@@ -16,7 +16,9 @@ select concept_id into @OIT from concept_view where concept_full_name = 'Taxopla
 select concept_id into @others from concept_view where concept_full_name = 'Others';
 select concept_id into @Refer_FP from concept_view where concept_full_name = 'Refer for other FP services';
 
-create table if not exists TB_positive as select person_id from obs_view
+drop table if exists TB_positive;
+
+create table TB_positive as select person_id from obs_view
 	where concept_full_name in ('HIVTC, Smear TB assessment at enrollment','HIVTC, Culture TB assessment at enrollment','HIVTC, Chest X-Ray TB assessment at enrollment','HIVTC, Gene Expert TB assessment at enrollment')
 	and value_coded = @positive and obs_datetime between @start_date and @end_date group by person_id;
 
@@ -151,4 +153,4 @@ select '>= 15 years' as 'OI Status : Age Group',
         	and (DATEDIFF(o.obs_datetime,p.birthdate)/365 >= 15)
         	and o.obs_datetime between @start_date and @end_date group by o.person_id,o.concept_full_name,o.value_coded) as t3;
         
-drop table TB_positive;
+
