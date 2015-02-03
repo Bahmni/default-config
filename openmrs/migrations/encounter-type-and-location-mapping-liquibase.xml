@@ -270,7 +270,7 @@
             select uuid() into @uuid;
             select now() into @currdate;
             INSERT INTO location(name, creator, date_created, uuid)
-            VALUES('Pharmacy', 1, @currdate, uuid);
+            VALUES('Pharmacy', 1, @currdate, @uuid);
         </sql>
     </changeSet>
     <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-REGISTRATION" author="tw">
