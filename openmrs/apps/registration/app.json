@@ -39,9 +39,6 @@
                 },
                 "Hospitals, Referred by, Data": {
                 },
-                "Hospitals, Referred by Data": {
-
-                },
                 "Hospitals, Referred by": {
                     "answersConceptName": "Hospitals, Referred by, Answers",
                     "required": false, 
