@@ -61,17 +61,22 @@
                 "isObservation": true
             },
             {
-                "title": "Patient Information",
-                "name": "patientInformation",
-                "patientAttributes": ["caste", "class", "education", "occupation"]
-            },
-            {
                 "title": "Visits",
                 "name": "visits",
                 "dashboardParams": {
                     "title": null,
                     "maximumNoOfVisits": 10
                 }
+            }
+        ]
+    },
+    {
+        "dashboardName": "General - 2",
+        "sections": [
+            {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "patientAttributes": ["caste", "class", "education", "occupation"]
             }
         ]
     }
