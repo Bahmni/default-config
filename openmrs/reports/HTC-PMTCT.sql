@@ -1,8 +1,5 @@
 SET @start_date = '2014-10-01';
 SET @end_date = '2015-01-31';
-select 0 into @serial_number;
-select concept_id into @positive from concept_view where concept_full_name = 'Positive';
-select concept_id into @negative from concept_view where concept_full_name = 'Negative';
 
 select @serial_number:=@serial_number+1 as 'S.No',`Client Code`,`District Code`,Sex,`Age(in yrs)`,`Risk Group(s)`,`Initial CD4 Count`,`WHO Stage` from
 (select t1.identifier as 'Client Code',county_district as 'District Code',gender as 'Sex', floor(DATEDIFF(obs_date,birthdate)/365) as 'Age(in yrs)', 
@@ -22,7 +19,7 @@ select @serial_number:=@serial_number+1 as 'S.No',`Client Code`,`District Code`,
 
 	(select person_id from obs_view	
 		where ((concept_full_name = 'HTC, Result if tested'
-		and value_coded in (@positive)) or (concept_full_name in ('HIV (Blood)','HIV (Serum)') and value_text in ('Positive')))
+		and value_coded in (select concept_id from concept_view where concept_full_name = 'Positive')) or (concept_full_name in ('HIV (Blood)','HIV (Serum)') and value_text in ('Positive')))
         	and (obs_datetime between @start_date and @end_date) group by person_id) as t2 on t1.person_id = t2.person_id
                     
 	inner join
@@ -40,5 +37,9 @@ select @serial_number:=@serial_number+1 as 'S.No',`Client Code`,`District Code`,
 				inner join concept_view c on o.value_coded = c.concept_id        
 				where o.concept_full_name in ('HTC, WHO Staging', 'PMTCT, WHO clinical staging') and o.value_coded is not null 
 				group by o.person_id,o.concept_full_name having max(o.obs_datetime)) as t1 group by t1.person_id)) as t4 on t1.person_id = t4.person_id
+
+  join
+
+  (SELECT @serial_number := 0) as r
 
 group by t1.identifier order by t1.person_id) as final_table;
