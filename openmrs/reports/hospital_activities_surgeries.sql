@@ -7,8 +7,6 @@ SET @admission_encounter_type = 'ADMISSION';
 SET @general_visit_type = 'General';
 SET @emergency_visit_type = 'Emergency';
 SET @major_surgery_concept = 'Major Surgery TBD';
-SET @true_concept_id = (SELECT concept_id FROM concept_name where name = 'True');
-
 
 -- Query 
  
@@ -22,7 +20,7 @@ SET @true_concept_id = (SELECT concept_id FROM concept_name where name = 'True')
     
    SUM(CASE WHEN (prime_obs.concept_full_name = 'Operative Procedure' OR prime_obs.concept_full_name = @major_surgery_concept) AND person.gender = 'F' THEN 1 ELSE 0 END) AS female,
    SUM(CASE WHEN (prime_obs.concept_full_name = 'Operative Procedure' OR prime_obs.concept_full_name = @major_surgery_concept) AND person.gender = 'M' THEN 1 ELSE 0 END) AS male,
-   SUM(CASE WHEN (assoc_obs.concept_full_name = 'Post-OP Infection' AND assoc_obs.value_coded = @true_concept_id)  THEN 1 ELSE 0 END) AS 'Post OP Infection'
+   SUM(CASE WHEN (assoc_obs.concept_full_name = 'Post-OP Infection' AND assoc_obs.value_coded = (SELECT concept_id FROM concept_name where name = 'True'))  THEN 1 ELSE 0 END) AS 'Post OP Infection'
    FROM obs_view AS prime_obs
    RIGHT OUTER JOIN encounter_view as outer_encounter
    ON prime_obs.encounter_id = outer_encounter.encounter_id
