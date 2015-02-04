@@ -1,0 +1,8 @@
+Registration Number,encounterType,visitType,Patient.Name,Patient.AGE,Patient.Gender,Visit Start Date,Visit End Date,Repeat.1.EncounterDate,"Repeat.1.Obs.ART, ART adherence to ART"
+BAH991,Consultation,General,Sanu,5,M,2014-01-01,2014-01-02,2014-01-01,"Adherence Level A"
+BAH992,Consultation,General,Muskaan,0,M,2014-01-01,2014-01-02,2014-01-01,"Adherence Level B"
+BAH993,Consultation,General,Bharesh,2,M,2014-01-01,2014-01-10,2014-01-02,"Adherence Level C"
+BAH994,Consultation,General,Sapana,3,F,2014-01-03,2014-01-07,2014-01-04,"Adherence Level C"
+BAH995,Consultation,General,Yashib,2,F,2013-01-12,2014-01-15,2013-01-13,"Adherence Level A"
+BAH996,Consultation,General,Dhana,1,M,2014-02-04,2014-02-10,2014-02-04,"Adherence Level B"
+BAH997,Consultation,General,Lal bdr,7,M,2014-01-22,2014-01-22,2014-01-22,
