@@ -1,0 +1,21 @@
+Registration Number,encounterType,visitType,Patient.Name,Patient.AGE,Patient.Gender,Visit Start Date,Visit End Date,Repeat.1.EncounterDate,"Repeat.1.Obs.ART, Risk Group","Repeat.1.Obs.ART, HIV care enrolled date","Repeat.1.Obs.ART, Date of transferred in","Repeat.1.Obs.ART, Date of transferred out","Repeat.1.Obs.ART, Date of death","Repeat.1.Obs.ART, ART eligible date","Repeat.1.Obs.ART, ART start date","Repeat.1.Obs.ART, Reason for end of follow-up","Repeat.1.Obs.ART, Treatment stop","Repeat.1.Obs.ART, ART treatment restart","Repeat.1.Obs.ART, Treatment switch","Repeat.1.Obs.ART, Treatment substitution"
+BAH711,Consultation,General,Hasna,5,F,2015-01-18,2015-01-19,2015-01-18,Blood or Organ Recipient,2015-01-18,,,,2015-01-18,2015-01-18,Lost to Follow-up,1,0,0,0
+BAH712,Consultation,General,Birkha,1,F,2015-01-10,2015-01-15,2015-01-10,Child(Vertical transmission from mother),2015-01-10,2015-01-10,2015-01-15,,2015-01-10,,Transferred out,0,0,0,1
+BAH713,Consultation,General,Khantu,1,M,2015-01-03,2015-01-13,2015-01-03,Child(Vertical transmission from mother),2015-01-03,,,,2015-01-03,,,1,0,0,0
+BAH714,Consultation,General,Sarada,11,M,2014-12-14,2015-01-19,2014-12-14,People Who Inject Drugs,2014-12-14,,,,2016-12-14,,Missing,0,1,0,0
+BAH715,Consultation,General,Bhunta,15,M,2015-01-13,2015-01-21,2015-01-13,Migrant,2015-01-13,2015-01-13,,,2015-01-13,2015-01-21,Missing,0,1,0,0
+BAH716,Consultation,General,Saraswati,15,F,2015-01-20,2015-01-21,2015-01-20,Spouse/Partner of Migrant,2015-01-20,,,,2015-01-20,2015-01-20,,0,0,1,0
+BAH717,Consultation,General,Binita,17,F,2015-01-22,2015-01-22,2015-01-22,Sex Worker,2015-01-22,,2015-01-22,,2015-01-22,,Transferred out,0,0,1,0
+BAH718,Consultation,General,Ratna,11,F,2015-01-16,2015-01-19,2015-01-16,Others,2015-01-16,,2015-01-19,,2015-01-16,2015-01-18,Transferred out,1,0,0,0
+BAH719,Consultation,General,Pabitra,27,F,2014-12-21,2015-01-22,2014-12-21,Sex Worker,2014-12-21,2014-12-21,,,2016-12-21,2014-12-21,,0,1,0,0
+BAH720,Consultation,General,Hirindra,29,F,2015-01-22,2015-01-22,2015-01-22,MSM and Transgenders,2015-01-22,,,,2015-01-22,2015-01-22,Missing,1,0,0,0
+BAH721,Consultation,General,Ravi,43,M,2015-01-05,2015-01-15,2015-01-05,Client of Sex Worker,2015-01-05,2015-01-05,,,2015-01-05,2015-01-05,Lost to Follow-up,0,0,0,1
+BAH722,Consultation,General,Kalpana,31,M,2015-01-22,2015-01-22,2015-01-22,People Who Inject Drugs,2015-01-22,,,,2015-01-22,2015-01-22,,0,0,0,1
+BAH723,Consultation,General,Ganga,55,M,2015-01-12,2015-01-22,2015-01-12,Migrant,2015-01-12,,2015-01-22,,2015-01-12,2015-01-17,Transferred out,1,0,0,0
+BAH724,Consultation,General,Setu,38,M,2014-12-10,2015-01-20,2014-12-10,Spouse/Partner of Migrant,2014-12-10,,2015-01-20,,2010-12-10,2014-12-10,Transferred out,0,1,0,0
+BAH725,Consultation,General,Dilli,46,F,2015-01-14,2015-01-19,2015-01-14,Blood or Organ Recipient,2015-01-14,,,,2015-01-14,,,1,0,0,0
+BAH726,Consultation,General,Dilu,69,F,2015-01-09,2015-01-19,2015-01-09,Others,2015-01-09,,,2015-01-19,2015-01-09,2015-01-09,Death,0,0,1,0
+BAH727,Consultation,General,Dammar,72,F,2015-01-22,2015-01-22,2015-01-22,Sex Worker,2015-01-22,2015-01-22,,2015-01-22,2015-01-22,,Death,0,0,0,1
+BAH728,Consultation,General,Ranising,65,F,2015-01-06,2015-01-06,2015-01-06,Migrant,2015-01-06,,,,2015-01-06,2015-01-06,,0,1,0,0
+BAH729,Consultation,General,Kala,79,F,2014-12-22,2015-01-22,2014-12-22,Blood or Organ Recipient,2014-12-22,2014-12-22,,2015-01-22,2000-12-22,2014-12-22,Death,0,0,1,0
+BAH730,Consultation,General,Setu,82,M,2015-01-03,2015-01-13,2015-01-03,People Who Inject Drugs,2015-01-03,2015-01-03,,2015-01-13,2015-01-03,,Death,1,0,0,0
