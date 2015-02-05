@@ -57,3 +57,13 @@ Results
 Neonates,5,1,3,0,1,0,0,0,0,0,0,1,3,1
 Other,2,1,0,0,1,0,0,0,0,0,0,1,1,0
 
+--------------------------------
+PMTCT_programme.sql
+--------------------------------
+SET @start_date = '2013-01-01';
+SET @end_date = '2015-12-01';
+
+Results
+--------------------------------------------------------
+'Number of ANC Visits','Pragnancy - HIV Counseled','Pragnancy - HIV Tested','Pragnancy - HIV Positive','Labour & Delivery - Counseled','Labour & Delivery - Tested','Labour & Delivery - Positive','Puerperium - Counseled','Puerperium - Tested','Puerperium - Positive','ART Started - Before Pragnancy','ART Started - Pragnancy','ART Started - Labour & Delivery','ART Started - Postnatal','HIV +ve women - Male partner who know their status','HIV +ve women - Delivered','Exposed Baby - Live Births','Exposed Baby - Started ARV Prophylaxis','Breast feeding status - Exclusive','Breast feeding status - Replacement','Breast feeding status - Mixed','HIV +ve postpartum women received FP services'
+20,10,11,0,20,20,9,0,20,9,5,5,6,4,20,0,259,10,7,8,5,11
