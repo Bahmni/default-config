@@ -1,4 +1,4 @@
-Registration Number,encounterType,visitType,Patient.Name,Patient.AGE,Patient.Gender,Visit Start Date,Visit End Date,Repeat.1.EncounterDate,"Repeat.1.Obs.OST, Enrollment Type","Repeat.1.Obs.OST, Date of Transfer Out","Repeat.1.Obs.HCT, Result if tested","Repeat.1.Obs.HIV (Serum)","Repeat.1.Obs.HIV (Blood)"
+Registration Number,encounterType,visitType,Patient.Name,Patient.AGE,Patient.Gender,Visit Start Date,Visit End Date,Repeat.1.EncounterDate,"Repeat.1.Obs.OST, Enrollment Type","Repeat.1.Obs.OST, Date of Transfer Out","Repeat.1.Obs.HTC, Result if tested","Repeat.1.Obs.HIV (Serum)","Repeat.1.Obs.HIV (Blood)"
 BAH881,Consultation,General,Sanu,5,M,2013-01-01,2014-01-02,2013-01-01,"New",2014-01-05,Positive,Negative,Positive
 BAH882,Consultation,General,Muskaan,0,M,2013-01-01,2014-01-02,2013-01-01,"Regular",2014-01-05,Negative,Positive,Negative
 BAH883,Consultation,General,Bharesh,2,M,2013-01-01,2014-01-10,2013-01-02,"Transfer In",2014-01-05,Positive,Positive,Positive

@@ -42,7 +42,7 @@ create table Migrants as select o.person_id from obs_view o inner join person p 
 	where o.concept_full_name = 'STI, Risk Group' and o.value_coded = @migrant and p.gender='M' and o.obs_datetime between @start_date and @end_date group by o.person_id;
 create table Spouse_of_Migrants as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @migrant_spouse and obs_datetime between @start_date and @end_date group by person_id;
 create table Pregnant_women as select o.person_id from obs_view o inner join person p on o.person_id = p.person_id
-	where o.concept_full_name = 'HCT, Reason for test' and o.value_coded = @pregnant and p.gender='F' and o.obs_datetime between @start_date and @end_date group by o.person_id;
+	where o.concept_full_name = 'HTC, Reason for test' and o.value_coded = @pregnant and p.gender='F' and o.obs_datetime between @start_date and @end_date group by o.person_id;
 create table Other_Risk_Group as select person_id from obs_view where concept_full_name = 'STI, Risk Group' and value_coded = @others and obs_datetime between @start_date and @end_date group by person_id;
 create table STI_etiology_treated as select person_id from obs_view where concept_full_name = 'STI, Etiological Treatment' and value_coded = 1 and obs_datetime between @start_date and @end_date group by person_id;
 create table STI_cases as select person_id,obs_datetime from obs_view where concept_full_name like 'STI, %' and obs_datetime between @start_date and @end_date group by person_id;

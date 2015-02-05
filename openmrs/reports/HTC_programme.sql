@@ -12,7 +12,7 @@ select concept_id into @migrant_spouse from concept_view where concept_full_name
 select concept_id into @organ_recipient from concept_view where concept_full_name = 'Blood or Organ Recipient';
 select concept_id into @others from concept_view where concept_full_name = 'Others';
 
--- HIV Testing and Counseling (HCT) Programme 
+-- HIV Testing and Counseling (HTC) Programme
 -- ------------------------------------------
 -- ------------------------------------------
 

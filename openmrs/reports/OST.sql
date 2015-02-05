@@ -46,7 +46,7 @@ select 'Clients +ve Discharge at' as 'OST', 'This' as 'Month',
 		inner join
                 (select p.person_id as 'Person_ID' from obs_view o
 			inner join person p on o.person_id = p.person_id
-			where ((o.concept_full_name = 'HCT, Result if tested' and o.value_coded in (select concept_id from concept_view where concept_full_name = 'Positive')) or
+			where ((o.concept_full_name = 'HTC, Result if tested' and o.value_coded in (select concept_id from concept_view where concept_full_name = 'Positive')) or
 			        (o.concept_full_name='HIV (Serum)' and o.value_text in ('Positive')) or
 			        (o.concept_full_name='HIV (Blood)' and o.value_text in ('Positive')))
                     	and (o.obs_datetime between @start_date and @end_date) group by p.person_id) as t4_2 on t4_1.person_id=t4_2.Person_ID) as t4
