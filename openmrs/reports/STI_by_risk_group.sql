@@ -1,15 +1,5 @@
 SET @start_date = '2013-01-01';
 SET @end_date = '2014-01-20';
-select concept_id into @others from concept_view where concept_full_name = 'Others';
-select concept_id into @urethral_discharge from concept_view where concept_full_name = 'Urethral Discharge Syndrome';
-select concept_id into @scortal_swelling from concept_view where concept_full_name = 'Scortal Swelling Syndrome';
-select concept_id into @vaginal_discharge from concept_view where concept_full_name = 'Vaginal Discharge Syndrome';
-select concept_id into @lower_abdominal_pain from concept_view where concept_full_name = 'Lower Abdominal Pain Syndrome';
-select concept_id into @genital_ulcer_disease from concept_view where concept_full_name = 'Genital Ulcer Disease Syndrome';
-select concept_id into @inguinal_bubo from concept_view where concept_full_name = 'Inguinal Bubo Syndrome';
-select concept_id into @cervisitis from concept_view where concept_full_name = 'Cervisitis';
-select concept_id into @vaginitis from concept_view where concept_full_name = 'Vaginitis';
-select concept_id into @herpes_genitalis from concept_view where concept_full_name = 'Herpes Genitalis';
 
 drop table if exists FemaleSexWorkers; 
 drop table if exists Other_MSM_and_TG; 
