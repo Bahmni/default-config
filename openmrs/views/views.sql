@@ -63,7 +63,7 @@ reference_concept.concept_full_name AS concept_full_name,
 value_concept.concept_full_name AS value_concept_full_name, 
 obs.voided
 FROM obs
-JOIN concept_view AS reference_concept ON reference_concept.concept_id = obs.concept_id AND reference_concept.concept_datatype_name = 'Coded'
+JOIN concept_view AS reference_concept ON reference_concept.concept_id = obs.concept_id AND (reference_concept.concept_datatype_name = 'Coded' or reference_concept.concept_datatype_name = 'Boolean')
 LEFT OUTER JOIN concept_view AS value_concept ON value_concept.concept_id = obs.value_coded;
 
 CREATE OR REPLACE VIEW valid_coded_obs_view AS

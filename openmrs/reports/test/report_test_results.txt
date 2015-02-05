@@ -37,3 +37,23 @@ Results
 --------------------------------------
 "Prophylaxis - Started CPT","Prophylaxis - Started IPT","Within 2 months - Positive","Within 2 months - Negative","2-9 months - Positive","2-9 months - Negative","9-18 months - Positive","9-18 months - Negative","Anybody > 18 months - Positive","Anybody > 18 months - Negative"
 0,0,1,3,2,2,1,2,1,0
+
+
+--------------------------------------
+STI_by_risk_group.sql
+--------------------------------------
+SET @start_date = '2013-01-01';
+SET @end_date = '2014-01-20';
+
+Results
+--------------------------------------
+"Female Sex Workers (FSWs)",2,1,1,0,0,0,0,0,0,0,0,1,1,1
+"People Who Inject Drugs (PWIDs)",1,1,0,0,0,0,0,0,0,0,0,0,1,0
+"MSM and TG",3,0,2,0,0,0,0,0,0,1,0,2,0,0
+"Clients of FSWs",5,2,0,0,1,0,1,0,0,0,0,3,2,0
+"Male migrants",1,0,0,1,0,0,0,0,0,0,0,1,0,0
+"Spouses of migrants",3,2,0,0,1,0,0,0,0,0,0,2,2,0
+"Pregnant women",2,1,0,0,1,0,0,0,0,0,0,2,0,0
+Neonates,5,1,3,0,1,0,0,0,0,0,0,1,3,1
+Other,2,1,0,0,1,0,0,0,0,0,0,1,1,0
+
