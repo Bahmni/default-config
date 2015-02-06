@@ -67,3 +67,53 @@ Results
 --------------------------------------------------------
 'Number of ANC Visits','Pragnancy - HIV Counseled','Pragnancy - HIV Tested','Pragnancy - HIV Positive','Labour & Delivery - Counseled','Labour & Delivery - Tested','Labour & Delivery - Positive','Puerperium - Counseled','Puerperium - Tested','Puerperium - Positive','ART Started - Before Pragnancy','ART Started - Pragnancy','ART Started - Labour & Delivery','ART Started - Postnatal','HIV +ve women - Male partner who know their status','HIV +ve women - Delivered','Exposed Baby - Live Births','Exposed Baby - Started ARV Prophylaxis','Breast feeding status - Exclusive','Breast feeding status - Replacement','Breast feeding status - Mixed','HIV +ve postpartum women received FP services'
 20,10,11,0,20,20,9,0,20,9,5,5,6,4,20,0,259,10,7,8,5,11
+
+--------------------------------------
+HTC_programme.sql
+--------------------------------------
+SET @start_date = '2015-01-05';
+SET @end_date = '2015-01-22';
+
+Results
+--------------------------------------
+"<=14yrs - Tested",1,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"<=14yrs - Positive",0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"15-19yrs - Tested",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"15-19yrs - Positive",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"20-24yrs - Tested",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"20-24yrs - Positive",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"25-49yrs - Tested",1,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+"25-49yrs - Positive",0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+">=50yrs - Tested",0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0
+">=50yrs - Positive",0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0
+
+--------------------------------------
+ART_reports.sql
+--------------------------------------
+SET @start_date = '2014-10-01';
+SET @end_date = '2015-02-01';
+
+Results
+--------------------------------------
+"Cumulative no of Patients ever enrolled in HIV Care",Beginning,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"New patients enrolled in HIV care",During,9,6,0,0,1,1,0,1,2,3,3,1,3,10
+"Number of patients transferred in HIV Care",During,3,3,0,0,0,0,0,1,0,2,1,0,1,3
+"Number of patients transferred out",During,1,2,0,0,0,0,0,1,1,1,0,0,1,3
+"Number of patients death reported",During,3,1,0,0,0,0,0,0,0,1,1,0,0,2
+"Total cumulative no of patients served",End,9,6,0,0,1,1,0,1,2,3,3,1,3,10
+"Patients medically eligible for ART but have not started",End,3,1,0,0,1,0,0,1,0,2,1,0,0,3
+"Patients ever started ART at the end of last month",Beginning,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"New patients started ART",During,6,5,0,0,0,0,0,0,2,1,1,1,3,7
+"Patients on ART transferred in",During,2,2,0,0,0,0,0,0,0,1,0,0,1,2
+"Patients ever started ART at the end of this month",End,6,5,0,0,0,0,0,0,2,1,1,1,3,7
+"Total patients on ART transfer‐out (cumulative)",End,0,2,0,0,0,0,0,0,1,0,0,0,1,2
+"Total deaths reported (cumulative)",End,3,1,0,0,0,0,0,0,0,1,1,0,0,2
+"Cumulative patients transferred out",End,1,2,0,0,0,0,0,1,1,1,0,0,1,3
+"Total patients missing (MIS)",End,1,1,0,0,0,1,0,0,0,0,1,1,1,0
+"Total patients lost to follow‐up (LFU)",End,0,1,0,0,0,0,0,0,1,0,0,0,0,2
+"Total patients stopping (ST) ART",End,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Total MIS/LFU/ST patients restart ART this month",During,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Total number of patients currently on ART",End,6,5,0,0,0,0,0,0,2,1,1,1,3,7
+"Patients in original 1st line regimen",End,6,5,0,0,0,0,0,0,2,1,1,1,3,7
+"Patients in substituted 1st line regimen",End,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Patients switched on to 2nd line regimen",End,0,0,0,0,0,0,0,0,0,0,0,0,0,0
