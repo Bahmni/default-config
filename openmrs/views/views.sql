@@ -218,3 +218,12 @@ where
 file_obs.concept_full_name = 'Document' and
 file_obs.obs_group_id = radiology_obs.obs_id and
 radiology_obs.concept_id = radiology_view.concept_id;
+
+create or replace view person_ids as
+(select o.person_id,
+       o.concept_full_name as concept_full_name,
+       o.value_concept_full_name as value_concept_full_name,
+       p.gender as gender,
+       o.obs_datetime as obs_datetime
+from valid_coded_obs_view o
+inner join person p on o.person_id = p.person_id);
