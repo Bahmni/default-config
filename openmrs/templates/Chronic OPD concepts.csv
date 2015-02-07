@@ -1,0 +1,66 @@
+uuid,name,description,class,shortname,datatype,units,High Normal,Low Normal,synonym.1,synonym.2,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,reference-term-source,reference-term-code,reference-term-relationship,reference-term-source,reference-term-code,reference-term-relationship
+,"Chronic OPD Details, Chief Complaint",,Misc,Chief Complaint,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Location",,Misc,Location,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Quality",,Misc,Quality,Coded,,,,,,Sharp,Burning,Radiating,Crampy,Tingling,Pressure,,,,,,,,,,,,
+,"Chronic OPD Details, Severity",,Misc,Severity,Numeric,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Duration",When did it Start,Misc,Duration,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Timing","Constant / Intermittent, how long dies it last",Misc,Timing,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Context",What were you doing when it started,Misc,Context,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Modifying Factors",Anything make it better or worse,Misc,Modifying Factors,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Associated Signs or Symptoms",,Misc,Associated signs or symptoms,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Constitutional",,Misc,Constitutional,Coded,,,,,,Weight Loss,Night Sweats,Fatigue,Fever,Chills,,,,,,,,,,,,,
+,"Chronic OPD Details, Eyes",,Misc,Eyes,Coded,,,,,,Visual Changes,Eye Pain,Floaters,,,,,,,,,,,,,,,
+,"Chronic OPD Details, ENT",,Misc,ENT,Coded,,,,,,Congestion,Epistaxis,Tinnitus,Sore Throat,,,,,,,,,,,,,,
+,"Chronic OPD Details, CV",,Misc,CV,Coded,,,,,,Chest Pain,Shortness of Breath,Reduced Exercise Tolerance,PND,Orthopnea,Edema,Palpitations,,,,,,,,,,,
+,"Chronic OPD Details, Respair",,Misc,Respair,Coded,,,,,,Cough,Sputum,Wheeze,Hemoptysis,SOB,,,,,,,,,,,,,
+,"Chronic OPD Details, GI",,Misc,GI,Coded,,,,,,Abdominal Pain,Trouble Swallowing,Indigestion,Bloating,Cramping,N/V/D/C,BRBPR,Melena,Tenesmus,,,,,,,,,
+,"Chronic OPD Details, Urinary",,Misc,Urinary,Coded,,,,,,Dysuria,Incontinence,Nocturia,Polyuria,Decreased Stream,,,,,,,,,,,,,
+,"Chronic OPD Details, Genital",,Misc,Genital,Coded,,,,,,Vaginal / Penile Discharge,Ulcers,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Date of LMP",,Misc,Date of LMP,Date,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Frequency",,Misc,Frequency,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Regularity",,Misc,Regularity,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Heavy / Light",,Misc,Heavy / Light,Coded,,,,,,Heavy,Light,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Contraception",,Misc,Contraception,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, MSK",,Misc,MSK,Coded,,,,,,Pain,Stiffness,Joint Swelling,ROM,Functional Deficits,,,,,,,,,,,,,
+,"Chronic OPD Details, Skin / Breast",,Misc,Skin / Breast,Coded,,,,,,Pruritus,General rash,Wound,Nodules,Tumors,Dryness,Lumps,Nipple Discharge,,,,,,,,,,
+,"Chronic OPD Details, Neuro",,Misc,Neuro,Coded,,,,,,Change in Shight,Change in Smell,Change in Hearing,Change in Taste,Seizures,Faints,Parasthesias,Numbness,Weakness,Balance,Change in Speech,,,,,,,
+,"Chronic OPD Details, Psych",,Misc,Psych,Coded,,,,,,Depression,Sleep Changes,Anxiety,Performance,Paranoia,Lack of Energy,Mania,,,,,,,,,,,
+,"Chronic OPD Details, Endocrine",,Misc,Endocrine,Coded,,,,,,Heat / Cold Intolerence,Polyuria,Polydypsia,Darkening of Skin,,,,,,,,,,,,,,
+,"Chronic OPD Details, Heme / Lymph",,Misc,Heme / Lymph,Coded,,,,,,Purpura,Petechial,Excessive Bleeding,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Allergic / Immunologic",,Misc,Allergic / Immunologic,Coded,,,,,,Swelling,Choking,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Current Home Medications",,Misc,Current Home Medications,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Non Compliance",,Misc,Non Compliance,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Non Compliance Reason",,Misc,Non Compliance reason,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Allergies",,Misc,Allergies,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Medical / Surgical History",,Misc,Past medical or surgical history,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Family History",,Misc,Family History,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Lives Where",,Misc,Lives where,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Lives With",,Misc,Lives with,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Work",,Misc,Work,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Cigarette Smoker",Cigarettes/day or Packs/day? Years?,Misc,Cigaratte Smoker,Coded,,,,,,Current Smoker,Non-smoker,Former Smoker,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Other Forms of Tobacco",,Misc,Other Forms of Tobacco,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Alcohol use","Drinks/day, Type of Alcohol",Misc,Alcohol use,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Evidence of Alcohol abuse","CAGE Questionnaire<br>
+Have you ever felt you needed to Cut down on your drinking?<br>
+Have people Annoyed you by criticizing your drinking?<br>
+Have you ever felt Guilty about drinking?<br>
+Have you ever felt you needed a drink first thing in the morning (Eye-opener) to steady your nerves or to get rid of a hangover?",Misc,Evidence of Alcohol abuse,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Illicit drug use",,Misc,Illicit drug use,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Physical Examination Details","General <br>
+HEENT<br>
+CV<br>
+Lungs<br>
+Abdomen<br>
+MSK<br>
+Skin<br>
+Neuro <br>
+Psych<br>",Misc,Physical Examination Details,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Lab Studies",,Misc,Lab Studies,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Radiology",,Misc,Radiology,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, EKG",,Misc,EKG,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Microbiology",,Misc,Microbiology,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"Chronic OPD Details, Problem","Most likely diagnosis and other differential diagnosis (space for 2-3 others)<br>
+Stable, unstable, improved / worse / same<br>
+Patient counseling and education on ____<br>
+Diagnostic plan and orders<br>
+Medication plan and prescription<br>",Misc,Problem,Text,,,,,,,,,,,,,,,,,,,,,,,

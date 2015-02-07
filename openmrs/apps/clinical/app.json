@@ -28,7 +28,12 @@
             "otherInvestigationsMap": {
             },
             "maxConceptSetLevels": 5,
-            "conceptSetUI": {
+            "templateSections":[
+                {
+                        "templateName" : "Vitals templates"
+                }
+            ], 
+	    "conceptSetUI": {
                 "Chief complaint" : {
                     "durationRequired" : false,
 					"conciseText" : true
@@ -102,10 +107,6 @@
 				"Hypertension - Risk factors" : {
 					"multiSelect" : true
 				},
-       				"Operative Procedure" : {
-                  			"answersConceptName" : "Procedure Answers",
-                  			"freeTextAutocomplete" : true
-                		},
 				"HTC, Risk Group" : {
 					"multiSelect" : true
 				},
@@ -276,7 +277,11 @@
                                 },
                                 "ART, ART referred to" : {
                                         "conciseText" : true
+                                },
+                               "Delivery Note, Liveborn infant details": {
+                                      "allowAddMore" : true
                                 }
+
 			}
         }
     }
