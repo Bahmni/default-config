@@ -15,20 +15,14 @@
 
             <div ng-switch on="patient.gender" class="row">
                 <span>
-                    {{patient.age.years}}
+                    ({{patient.age.years}},
                 </span>
                 <span ng-switch-when="M">
-                    Male
+                    Male)
                 </span>
                 <span ng-switch-when="F">
-                    Female
+                    Female)
                 </span>
-            </div>
-
-            <div class="row">
-                <span>{{patient.address.cityVillage}}</span>
-                <span>{{patient.address.address1}}</span>
-                <span>{{patient.address.countyDistrict}}</span>
             </div>
 
             <div class="row">
@@ -38,7 +32,7 @@
             <div class="row">
                 <b>
                     <u>
-                        <span>{{obs['Department Sent To'].name.name}}</span>
+                        <span>{{obs['Department Sent To'].shortName}}</span>
                     </u>
                 </b>
             </div>
