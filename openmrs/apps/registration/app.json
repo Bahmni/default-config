@@ -23,7 +23,7 @@
         ],
         "config": {
             "mandatoryPersonAttributes": ["Caste"],
-            "autoCompleteFields": ["Caste"],
+            "autoCompleteFields": [],
             "printOptions": [
                 {
                     "label": "P<u>r</u>int Sticker",
