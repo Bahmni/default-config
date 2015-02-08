@@ -57,7 +57,8 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display":"Active",
-            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard",
+            "refreshTime": 120
         },
         "label": "Active",
         "order": 1,
