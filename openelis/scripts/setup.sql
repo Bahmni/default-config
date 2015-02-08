@@ -641,6 +641,12 @@ delete from test_result where test_id = 23859;
 SELECT add_test_result_type('Chlamydia','D', 'Positive'); 
 SELECT add_test_result_type('Chlamydia','D', 'Negative'); 
 
+-- Mucus
+delete from test_result where test_id = 23894;
+SELECT add_test_result_type('Mucus','D', 'Present'); 
+SELECT add_test_result_type('Mucus','D', 'Absent'); 
+
+	
 -- Malaria Ags
 delete from test_result where test_id = 23816;
 SELECT add_test_result_type('Malaria Ags','D', 'Positive'); 

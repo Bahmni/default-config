@@ -567,6 +567,9 @@
         "Procedure Notes, Fluid Amount and Unit": {
           "conciseText": true
         },
+        "Procedure Notes, Tourniquet Time": {
+          "conciseText": true
+        },
         "Stroke, LDL": {
           "conciseText": true
         },

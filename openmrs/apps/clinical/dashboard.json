@@ -1,38 +1,88 @@
 [
-    {
-        "dashboardName": "General",
-        "default": true,
-        "sections": [
-            {
-                "title": "Diagnosis",
-                "name": "diagnosis"
-            },
-            {
-                "title": "Treatments",
-                "name": "treatment",
-                "numberOfVisits": 1
-            },
-            {
-                "title": "Radiology",
-                "name": "radiology"
-            },
-            {
-                "title": "Lab Orders",
-                "name": "labOrders"
-            },
-            {
-                "title" : "Patient Information",
-                "name" : "patientInformation",
-                "patientAttributes" : ["Caste"]
-            },
-            {
-                "title" : "Visits",
-                "name" : "visits",
-                "dashboardParams": {
-                    "title": null,
-                    "maximumNoOfVisits": 3
-                }
-            }
+  {
+    "dashboardName": "General",
+    "default": true,
+    "sections": [
+      {
+        "title": "Diagnosis",
+        "name": "diagnosis"
+      },
+      {
+        "title": "Lab Orders",
+        "name": "labOrders"
+      },
+      {
+        "title": "Patient Information",
+        "name": "patientInformation",
+        "patientAttributes": [
+          "Caste"
         ]
-    }
+      },
+      {
+        "title": "Visits",
+        "name": "visits",
+        "dashboardParams": {
+          "title": null,
+          "maximumNoOfVisits": 3
+        }
+      },
+      {
+        "title": "Vitals",
+        "name": "vitals",
+        "conceptNames": [
+          "Vitals"
+        ],
+        "numberOfVisits": 2,
+        "isObservation": true,
+        "pivotTable": {
+          "numberOfVisits": "4",
+          "groupBy": "encounters",
+          "obsConcepts": [
+            "Vitals",
+            "Height",
+            "Weight",
+            "Pathology"
+          ],
+          "drugConcepts": "",
+          "labConcepts": ""
+        }
+      },
+      {
+        "title": "Motherhood Templates",
+        "templateName": "Motherhood templates",
+        "name": "diseaseTemplate",
+        "showOnly": []
+      },
+      {
+        "title": "Diabetes",
+        "templateName": "Diabetes templates",
+        "name": "diseaseTemplate",
+        "showOnly": [],
+        "pivotTable": {
+          "numberOfVisits": "15",
+          "groupBy": "encounters",
+          "obsConcepts": [
+          	"Diabetes, A1C",
+	  	"Diabetes, LDL",
+		"Diabetes, Ulcers on Feet",
+	  	"Diabetes, Distance Vision Check",
+	  	"Diabetes, Near Vision Check"
+          ],
+          "drugConcepts": [
+            "Ipratropium Pressurised",
+            "Garbhpal Rasa"
+          ],
+          "labConcepts": [
+            "RBS",
+            "FBS",
+            "PP2BS",
+            "Hb1AC",
+            "Creatinine",
+            "Albumin",
+            "Polymorph"
+          ]
+        }
+      }
+    ]
+  }
 ]
