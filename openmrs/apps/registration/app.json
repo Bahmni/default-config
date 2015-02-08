@@ -23,7 +23,7 @@
         ],
         "config": {
             "mandatoryPersonAttributes": ["Caste"],
-            "autoCompleteFields": ["familyName", "caste"],
+            "autoCompleteFields": ["Caste"],
             "printOptions": [
                 {
                     "label": "P<u>r</u>int Sticker",
@@ -42,7 +42,7 @@
                 },
                 "Hospitals, Referred by": {
                     "answersConceptName": "Hospitals, Referred by, Answers",
-                    "required": false, 
+                    "required": false,
                     "autocomplete" : true
                 },
                 "Hospitals, Referred by, Non coded": {
