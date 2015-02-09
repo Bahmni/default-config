@@ -1,0 +1,8 @@
+Registration Number,encounterType,visitType,Patient.Name,Patient.AGE,Patient.Gender,Visit Start Date,Visit End Date,Repeat.1.EncounterDate,"Repeat.1.Obs.HIVTC, Opportunistic Infection Diagnosis","Repeat.1.Obs.HIVTC, Opportunistic Infection Treatment"
+BAH931,Consultation,General,Sanu,5,M,2013-01-01,2014-01-02,2013-01-01,Bacterial Pneumonia Opportunistic Infection,"treated"
+BAH932,Consultation,General,Muskaan,0,M,2013-01-01,2014-01-02,2013-01-01,Tuberculosis Opportunistic Infection,"treated"
+BAH933,Consultation,General,Bharesh,2,M,2013-01-01,2014-01-10,2013-01-02,Candidiasis Opportunistic Infection,"treated"
+BAH934,Consultation,General,Sapana,3,F,2014-01-03,2014-01-07,2014-01-04,Diarrhoea Opportunistic Infection,
+BAH935,Consultation,General,Yashib,2,F,2013-01-12,2014-01-15,2014-01-13,Pneumocysitis Pneumonia Opportunistic Infection,"treated"
+BAH936,Consultation,General,Dhana,1,M,2014-02-04,2014-02-10,2014-02-04,Herpes Zoster Opportunistic Infection,"treated"
+BAH937,Consultation,General,Lal bdr,7,M,2014-01-22,2014-01-22,2014-01-22,Toxicity side effects,

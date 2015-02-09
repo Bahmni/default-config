@@ -117,3 +117,19 @@ Results
 "Patients in original 1st line regimen",End,6,5,0,0,0,0,0,0,2,1,1,1,3,7
 "Patients in substituted 1st line regimen",End,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 "Patients switched on to 2nd line regimen",End,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+
+
+--------------------------------------
+OI_by_disease.sql
+--------------------------------------
+SET @start_date = '2013-01-01';
+SET @end_date = '2014-02-01';
+
+Results
+--------------------------------------
+"Diagnosed - Male",1,1,1,0,0,0,0,0,0,0,0
+"Diagnosed - Female",0,0,0,1,0,1,0,0,0,1,0
+"Diagnosed - TG",0,0,0,0,0,0,0,0,0,0,0
+"Treated - Male",1,1,1,0,0,0,0,0,0,0,0
+"Treated - Female",0,0,0,0,0,1,0,0,0,0,0
+"Treated - TG",0,0,0,0,0,0,0,0,0,0,0
