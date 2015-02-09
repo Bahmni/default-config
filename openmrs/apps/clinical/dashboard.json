@@ -13,6 +13,8 @@
                 "dashboardParams": {
                     "showFlowSheet": true,
                     "showListView": true,
+                    "showRoute": false,
+                    "showDrugForm": false,
                     "numberOfVisits": 3,
                     "showOtherActive": true,
                     "showDetailsButton": true
@@ -21,6 +23,8 @@
                     "title": "Treatments",
                     "showFlowSheet": true,
                     "showListView": true,
+                    "showRoute": false,
+                    "showDrugForm": false,
                     "numberOfVisits": 4,
                     "showOtherActive": true,
                     "showDetailsButton": true
