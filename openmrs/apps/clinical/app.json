@@ -29,11 +29,6 @@
       ],
       "otherInvestigationsMap": {},
       "maxConceptSetLevels": 5,
-      "templateSections": [
-        {
-          "templateName": "Vitals templates"
-        }
-      ],
       "conceptSetUI": {
         "Chief complaint": {
           "durationRequired": false,
@@ -567,9 +562,6 @@
         "Procedure Notes, Fluid Amount and Unit": {
           "conciseText": true
         },
-        "Procedure Notes, Tourniquet Time": {
-          "conciseText": true
-        },
         "Stroke, LDL": {
           "conciseText": true
         },
@@ -587,6 +579,96 @@
         "Death Note, Tertiary Cause of Death": {
           "answersConceptName": "Death Note, Cause, Answers",
           "autocomplete": true
+        },
+        "Blood Pressure": {
+          "allowAddMore": true
+        },
+        "Vitals": {
+          "showRecentButton": true
+        },
+        "Acute OPD visit": {
+          "showRecentButton": true
+        },
+        "ANC": {
+          "showRecentButton": true
+        },
+        "Antiretroviral Therapy Progress Template": {
+          "showRecentButton": true
+        },
+        "Asthma, Progress": {
+          "showRecentButton": true
+        },
+        "Childhood Illness( Children aged below 2 months)": {
+          "showRecentButton": true
+        },
+        "Childhood Illness( Children aged 2 months to 5 years)": {
+          "showRecentButton": true
+        },
+        "Chronic Kidney Disease, Progress": {
+          "showRecentButton": true
+        },
+        "Chronic OPD Visit": {
+          "showRecentButton": true
+        },
+        "COPD, Progress": {
+          "showRecentButton": true
+        },
+        "Congestive Heart Failure, Progress": {
+          "showRecentButton": true
+        },
+        "Coronary Artery Disease, Progress": {
+          "showRecentButton": true
+        },
+        "Diabetes, Progress": {
+          "showRecentButton": true
+        },
+        "ER General Notes": {
+          "showRecentButton": true
+        },
+        "HIV Treatment and Care Progress Template": {
+          "showRecentButton": true
+        },
+        "Hypertension, Progress": {
+          "showRecentButton": true
+        },
+        "Kalaazar": {
+          "showRecentButton": true
+        },
+        "Leprosy": {
+          "showRecentButton": true
+        },
+        "Mental Health": {
+          "showRecentButton": true
+        },
+        "Malaria": {
+          "showRecentButton": true
+        },
+        "Nutrition": {
+          "showRecentButton": true
+        },
+        "Operative Notes": {
+          "showRecentButton": true
+        },
+        "PNC": {
+          "showRecentButton": true
+        },
+        "Rheumatoid Arthritis, Progress": {
+          "showRecentButton": true
+        },
+        "Rheumatic Heart Disease, Progress": {
+          "showRecentButton": true
+        },
+        "Seizure Disorder, Progress": {
+          "showRecentButton": true
+        },
+        "Stroke OPD": {
+          "showRecentButton": true
+        },
+        "Trauma Notes": {
+          "showRecentButton": true
+        },
+        "Tuberculosis": {
+          "showRecentButton": true
         }
       }
     }

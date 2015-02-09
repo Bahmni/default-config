@@ -82,57 +82,11 @@
             "Polymorph"
           ]
         }
-      }
-    ]
-  },
-  {
-    "dashboardName": "Diabetes",
-    "default": false,
-    "sections": [
-      {
-        "title": "Diagnosis",
-        "name": "diagnosis"
       },
       {
-        "title": "Lab Orders",
-        "name": "labOrders"
-      },
-      {
-        "title": "Patient Information",
-        "name": "patientInformation",
-        "patientAttributes": [
-          "Caste"
-        ]
-      },
-      {
-        "title": "Diabetes",
-        "templateName": "Diabetes templates",
-        "name": "diseaseTemplate",
-        "showOnly": [],
-        "pivotTable": {
-          "numberOfVisits": "15",
-          "groupBy": "encounters",
-          "obsConcepts": [
-            "Diabetes, A1C",
-            "Diabetes, LDL",
-            "Diabetes, Ulcers on Feet",
-            "Diabetes, Distance Vision Check",
-            "Diabetes, Near Vision Check"
-          ],
-          "drugConcepts": [
-            "Ipratropium Pressurised",
-            "Garbhpal Rasa"
-          ],
-          "labConcepts": [
-            "RBS",
-            "FBS",
-            "PP2BS",
-            "Hb1AC",
-            "Creatinine",
-            "Albumin",
-            "Polymorph"
-          ]
-        }
+        "title": "Disposition",
+        "name": "disposition",
+        "numberOfVisits": 2
       }
     ]
   }
