@@ -19,7 +19,7 @@
                     "showOtherActive": true,
                     "showDetailsButton": true
                 },
-                "summaryPageParams": {
+                "allTreatmentDetails": {
                     "title": "Treatments",
                     "showFlowSheet": true,
                     "showListView": true,
@@ -46,23 +46,38 @@
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true
                 },
-                "summaryPageParams": {
+                "allLabDetails": {
                     "numberOfVisits": 3
                 }
             },
             {
                 "title": "Nutritional Values",
                 "name": "vitals",
-                "conceptNames": ["Nutritional Values"],
-                "scope": "latest",
-                "isObservation": true
+                "isObservation": true,
+                "dashboardParams":{
+                    "conceptNames": ["Nutritional Values"],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails":{
+                    "conceptNames": ["Nutritional Values"],
+                    "numberOfVisits": 2,
+                    "scope": "latest",
+                    "showDetailsButton":true
+                }
             },
             {
                 "title": "Vitals",
                 "name": "vitals",
-                "conceptNames": ["Vitals"],
-                "numberOfVisits": 2,
-                "isObservation": true
+                "isObservation": true,
+                "dashboardParams":{
+                    "conceptNames": ["Vitals"],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails":{
+                    "conceptNames": ["Vitals"],
+                    "numberOfVisits": 2,
+                    "showDetailsButton":true
+                }
             },
             {
                 "title": "Visits",
