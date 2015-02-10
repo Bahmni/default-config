@@ -86,6 +86,30 @@
                     "title": null,
                     "maximumNoOfVisits": 10
                 }
+            },
+            {
+                "title": "Diabetes",
+                "templateName": "Diabetes Template",
+                "name": "diseaseTemplate",
+                "dashboardParams":
+                {
+                    "showOnly": []
+
+                },
+                "allDiseaseDetails":
+                {
+                    "showDetailsButton":true,
+                    "pivotTable": 
+                    {
+                        "numberOfVisits": "15",
+                        "groupBy": "encounters",
+                        "obsConcepts": ["Weight", "Height", "Systolic", "Diastolic", "Diabetes, Foot Exam", "Diabetes, Eye Exam"],
+                        "drugConcepts": ["Ipratropium Pressurised", "Garbhpal Rasa"],
+                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Albumin", "Polymorph"]
+                    }
+
+                }
+                
             }
         ]
     },
