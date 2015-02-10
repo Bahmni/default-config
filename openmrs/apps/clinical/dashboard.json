@@ -29,22 +29,26 @@
       {
         "title": "Vitals",
         "name": "vitals",
-        "conceptNames": [
-          "Vitals"
-        ],
-        "numberOfVisits": 2,
         "isObservation": true,
-        "pivotTable": {
-          "numberOfVisits": "4",
-          "groupBy": "encounters",
-          "obsConcepts": [
-            "Vitals",
-            "Height",
-            "Weight",
-            "Pathology"
-          ],
-          "drugConcepts": "",
-          "labConcepts": ""
+        "dashboardParams":{
+            "conceptNames": ["Vitals"],
+            "numberOfVisits": 2
+        },
+        "allObservationDetails":{
+            "conceptNames": ["Vitals"],
+            "numberOfVisits": 2,
+            "pivotTable": {
+                "numberOfVisits": "4",
+                "groupBy": "encounters",
+                "obsConcepts": [
+                    "Vitals",
+                    "Height",
+                    "Weight",
+                    "Pathology"
+                ],
+                "drugConcepts": "",
+                "labConcepts": ""
+            }
         }
       },
       {
