@@ -29,33 +29,6 @@
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
-            "visitPage": {
-                "investigationResultParams": {
-                    "title": "Lab Investigations",
-                    "showChart": true,
-                    "showTable": true,
-                    "showNormalLabResults": true,
-                    "showCommentsExpanded": true,
-                    "showAccessionNotes": true,
-                    "numberOfVisits": 10
-                },
-                "treatmentParams": {
-                    "title": "Treatments",
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton" : true
-                },
-                 "pivotTable": [
-                    {
-                        "title":"Pivot table",
-                        "groupBy":"encounters",
-                        "obsConcepts": ["Vitals", "Height", "WEIGHT", "M/C Days"],
-                        "drugConcepts": ["Gamma Benzene Hexachloride"],
-                        "labConcepts": ""
-                    }
-                ]
-            },
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Chief Complaint Data": {
@@ -92,7 +65,7 @@
                 }
             },
             "visitPage": {
-                "observationDisplayParams" : {
+                "observationDisplay" : {
                 "conceptNames": []
                 }
             },
