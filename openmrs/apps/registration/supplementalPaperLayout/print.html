@@ -30,11 +30,13 @@
             </div>
 
             <div class="row">
-                <b>
-                    <u>
-                        <span>{{obs['Department Sent To'].shortName}}</span>
-                    </u>
-                </b>
+                <span>{{patient.address.cityVillage}}</span>
+                <span>{{patient.address.address1}}</span>
+                <span>{{patient.address.countyDistrict}}</span>
+            </div>
+
+            <div class="row dept">
+                <span>{{obs['Department Sent To'].shortName}}</span>
             </div>
         </div>
     </div>

@@ -1,3 +1,6 @@
+* {
+    margin: 0;
+}
 .row {
     float: clear;
 }
@@ -14,5 +17,11 @@
 }
 .fontForSticker {
     font-size: 12px;
-    margin-left: 3px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.dept {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 10px;
 }
