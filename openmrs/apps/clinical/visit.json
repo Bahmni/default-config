@@ -1,23 +1,6 @@
 [
     {
         "title":"General - 2",
-        "hideSections" :[ "consultationNotes","treatment","observation"],
-        "investigationResult": {
-            "title": "Lab Investigations",
-            "showChart": true,
-            "showTable": false,
-            "showNormalLabResults": true,
-            "showCommentsExpanded": true,
-            "showAccessionNotes": true,
-            "numberOfVisits": 10
-        },
-        "treatment": {
-            "title": "Treatments",
-            "showFlowSheet": true,
-            "showListView": false,
-            "showOtherActive": true,
-            "showDetailsButton" : true
-        },
         "pivotTable": [
             {
                 "title":"Pivot table",
