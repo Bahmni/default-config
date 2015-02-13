@@ -121,7 +121,8 @@
             {
                 "title": "Patient Information",
                 "name": "patientInformation",
-                "patientAttributes": ["caste", "class", "education", "occupation"]
+                "patientAttributes": ["caste", "class", "education", "occupation"],
+                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
             }
         ]
     }
