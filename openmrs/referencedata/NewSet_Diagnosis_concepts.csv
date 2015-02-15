@@ -1,0 +1,27 @@
+uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,synonym.3,answer.1,reference-term-source,reference-term-code,reference-term-relationship
+,"Encounter for supervision of normal first pregnancy, unspecified trimester",,Diagnosis,N/A,"Encounter for supervision of normal first pregnancy, unspecified trimester",,,,,ICD-10-WHO,Z34.00,SAME-AS
+,"Encounter for supervision of normal first pregnancy, first trimester",,Diagnosis,N/A,"Encounter for supervision of normal first pregnancy, first trimester",,,,,ICD-10-WHO,Z34.01,SAME-AS
+,"Encounter for supervision of normal first pregnancy, second trimester",,Diagnosis,N/A,"Encounter for supervision of normal first pregnancy, second trimester",,,,,ICD-10-WHO,Z34.02,SAME-AS
+,"Encounter for supervision of normal first pregnancy, third trimester",,Diagnosis,N/A,"Encounter for supervision of normal first pregnancy, third trimester",,,,,ICD-10-WHO,Z34.03,SAME-AS
+,Multiple gestation,,Diagnosis,N/A,Multiple gestation,,,,,ICD-10-WHO,O30,SAME-AS
+,Twin pregnancy,,Diagnosis,N/A,Twin pregnancy,,,,,ICD-10-WHO,O30.0,SAME-AS
+,Triplet pregnancy,,Diagnosis,N/A,Triplet pregnancy,,,,,ICD-10-WHO,O30.1,SAME-AS
+,Quadruplet pregnancy,,Diagnosis,N/A,Quadruplet pregnancy,,,,,ICD-10-WHO,O30.2,SAME-AS
+,Other multiple gestation,,Diagnosis,N/A,Other multiple gestation,,,,,ICD-10-WHO,O30.8,SAME-AS
+,"Multiple gestation, unspecified",,Diagnosis,N/A,"Multiple gestation, unspecified",,,,,ICD-10-WHO,O30.9,SAME-AS
+,Single spontaneous delivery,,Diagnosis,N/A,Single spontaneous delivery,,,,,ICD-10-WHO,O80,SAME-AS
+,Spontaneous breech delivery,,Diagnosis,N/A,Spontaneous breech delivery,,,,,ICD-10-WHO,O80.1,SAME-AS
+,Single delivery by forceps and vacuum extractor,,Diagnosis,N/A,Single delivery by forceps and vacuum extractor,Ventouse Delivery,,,,ICD-10-WHO,O81,SAME-AS
+,Vacuum extractor delivery,,Diagnosis,N/A,Vacuum extractor delivery,,,,,ICD-10-WHO,O81.4,SAME-AS
+,Single delivery by caesarean section,,Diagnosis,N/A,Single delivery by caesarean section,,,,,ICD-10-WHO,O82,SAME-AS
+,Other assisted single delivery,,Diagnosis,N/A,Other assisted single delivery,,,,,ICD-10-WHO,O83,SAME-AS
+,Multiple delivery,,Diagnosis,N/A,Multiple delivery,,,,,ICD-10-WHO,O84,SAME-AS
+,Spontaneous abortion,,Diagnosis,N/A,Spontaneous abortion,,,,,ICD-10-WHO,O03,SAME-AS
+,Medical abortion,,Diagnosis,N/A,Medical abortion,,,,,ICD-10-WHO,O04,SAME-AS
+,Other abortion,,Diagnosis,N/A,Other abortion,,,,,ICD-10-WHO,O05,SAME-AS
+,Haemorrhage in early pregnancy,,Diagnosis,N/A,Haemorrhage in early pregnancy,,,,,ICD-10-WHO,O20,SAME-AS
+,Premature rupture of membranes,,Diagnosis,N/A,Premature rupture of membranes,,,,,ICD-10-WHO,O42,SAME-AS
+,"Placental disorder, unspecified",,Diagnosis,N/A,"Placental disorder, unspecified",,,,,ICD-10-WHO,O43.9,SAME-AS
+,Placenta praevia,,Diagnosis,N/A,Placenta praevia,,,,,ICD-10-WHO,O44,SAME-AS
+,Premature separation of placenta (abruptio placentae),,Diagnosis,N/A,Premature separation of placenta (abruptio placentae),,,,,ICD-10-WHO,O45,SAME-AS
+,Complications of anaesthesia during labour and delivery,,Diagnosis,N/A,Complications of anaesthesia during labour and delivery,,,,,ICD-10-WHO,O74,SAME-AS

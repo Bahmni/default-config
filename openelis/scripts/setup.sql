@@ -683,3 +683,9 @@ SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '4++++');
 SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '5+++++');
 SELECT add_test_result_type('AFB Stain (Slit Skin)','D', '6++++++');
 
+
+INSERT INTO person(id, first_name, last_name) VALUES(nextval('clinlims.person_seq'), 'Bijina','Shreshta'); 
+SELECT insert_provider('Bijina','Shreshta');
+
+INSERT INTO person(id, first_name, last_name) VALUES(nextval('clinlims.person_seq'), 'Aaradhana','Jha'); 
+SELECT insert_provider('Aaradhana','Jha');

@@ -11,3 +11,5 @@ uuid,name,description,class,datatype,shortname,reference-term-code,reference-ter
 ,"Tuberculosis, Remarks",,Misc,Text,Remarks,,,,,,,,,,,,
 ,"Tuberculosis, Drug Resistance",,Misc,Coded,Resistance to drugs,,,,,Yes,No,Unknown,,,,,
 ,"Tuberculosis, Tests ordered",,Misc,Coded,Tests ordered,,,,,Sputum Smear,Sputum Culture,Gene Expert,,,,,
+,"Tuberculosis, Second Line Treatment Regimen",,Misc,Boolean,Second Line Treatment Regimen,,,,,,,,,,,,
+,"Tuberculosis, Diagnosed Date",,Misc,Date,Diagnosed Date,,,,,,,,,,,,

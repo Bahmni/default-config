@@ -580,11 +580,8 @@
           "answersConceptName": "Death Note, Cause, Answers",
           "autocomplete": true
         },
-        "Blood Pressure": {
-          "allowAddMore": true
-        },
         "Vitals": {
-          "showRecentButton": true
+          "allowAddMore": true
         },
         "Acute OPD visit": {
           "showRecentButton": true
