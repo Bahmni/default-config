@@ -202,9 +202,6 @@
         "HIVTC, Opportunistic Infection Treatment": {
           "conciseText": true
         },
-        "HIVTC, Mortality coding": {
-          "conciseText": true
-        },
         "ART, HIV +ve confirmed place": {
           "conciseText": true
         },
@@ -666,6 +663,13 @@
         },
         "Tuberculosis": {
           "showRecentButton": true
+        },
+        "HIVTC, FP methods used by the patient" : {
+          "multiSelect": true
+        },
+        "HIVTC, Mortality coding": {
+          "answersConceptName": "Death Note, Cause, Answers",
+          "autocomplete": true
         }
       }
     }
