@@ -64,6 +64,19 @@
         "requiredPrivilege": "app:clinical"
     },
     {
+      "id": "bahmni.clinical.patients.search.allPatients",
+      "extensionPointId": "org.bahmni.patient.search",
+      "type": "config",
+      "extensionParams": {
+        "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
+        "display":"My Patients",
+        "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
+      },
+      "label": "Active",
+      "order": 2,
+      "requiredPrivilege": "app:clinical"
+    },
+    {
         "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -72,7 +85,7 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
         },
         "label": "All",
-        "order": 2,
+        "order": 3,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -155,18 +168,5 @@
         "icon": "icon-user-md",
         "order": 7,
         "requiredPrivilege": "app:clinical:consultationTab"
-    },
-    {
-        "id": "bahmni.clinical.patients.search.allPatients",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
-            "display":"My Patients",
-            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
-        },
-        "label": "Active",
-        "order": 8,
-        "requiredPrivilege": "app:clinical"
     }
 ]
