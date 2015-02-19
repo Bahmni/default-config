@@ -62,6 +62,9 @@
                 },
                 "P/A Presenting Part" : {
                     "multiSelect" : true
+                },
+                "Tuberculosis Intake Template" : {
+                    "computeDrugs" : true
                 }
             },
             "visitPage": {
