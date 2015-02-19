@@ -9,6 +9,11 @@
                 "showCertainty": true,
                 "showOrder": true
             },
+             {
+                "title": "Disposition",
+                "name": "disposition",
+                "numberOfVisits":1
+            },
             {
                 "title": "Treatments",
                 "name": "treatment",

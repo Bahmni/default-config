@@ -28,7 +28,31 @@
             "onAdmissionForwardTo": "#/patient/search",
             "onTransferForwardTo": "#/patient/search",
             "onDischargeForwardTo": "#/patient/search",
-            "defaultVisitType": "IPD"
+            "defaultVisitType": "IPD",
+            "dashboard":{
+                "dashboardName": "General",
+                "sections": [
+                {
+                    "title": "Vitals",
+                    "name": "vitals",
+                    "isObservation": true,
+                    "dashboardParams": {
+                        "conceptNames": ["Vitals"],
+                        "numberOfVisits": 1
+                    },
+                    "allObservationDetails": {
+                        "conceptNames": ["Vitals"],
+                        "numberOfVisits": 1,
+                        "showDetailsButton": true
+                    }
+                },
+                {
+                    "title": "Disposition",
+                    "name": "disposition",
+                    "numberOfVisits": 1
+                }
+            ]
+        }
         }
     }
 ]
