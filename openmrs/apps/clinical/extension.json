@@ -55,6 +55,63 @@
         "requiredPrivilege": "app:clinical"
     },
     {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
+            "display":"My Patients",
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard",
+            "refreshTime": 120
+        },
+        "label": "My Patients",
+        "order": 2,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.todaysPatients",
+            "display":"Today's Patients",
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard",
+            "refreshTime": 120
+        },
+        "label": "Today's Patients",
+        "order": 3,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.genOpdPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.genOpdPatients",
+            "display":"Gen OPD",
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard",
+            "refreshTime": 120
+        },
+        "label": "Gen OPD",
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.chronicPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.chronicPatients",
+            "display":"Chronic",
+            "forwardUrl" : "#/patient/{{patientUuid}}/dashboard",
+            "refreshTime": 120
+        },
+        "label": "Chronic",
+        "order": 5,
+        "requiredPrivilege": "app:clinical"
+    },
+    
+    {
         "id": "bahmni.adt.patients.search.patientsAdmitted",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -65,7 +122,7 @@
             "refreshTime": 120
         },
         "label": "Admitted",
-        "order": 2,
+        "order": 6,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -77,7 +134,7 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/dashboard"
         },
         "label": "All",
-        "order": 3,
+        "order": 7,
         "requiredPrivilege": "app:clinical"
     },
     {
@@ -101,6 +158,17 @@
                 "default":"true"
         },
         "order": 2,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.consultationImages",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Consultation Images",
+            "default":"true"
+        },
+        "order": 3,
         "requiredPrivilege": "app:clinical"
     }
 ]

@@ -59,6 +59,7 @@ obs.value_coded,
 obs.obs_group_id,
 obs.obs_datetime,
 obs.encounter_id,
+obs.creator,
 reference_concept.concept_full_name AS concept_full_name, 
 value_concept.concept_full_name AS value_concept_full_name, 
 obs.voided

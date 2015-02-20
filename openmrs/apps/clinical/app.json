@@ -58,6 +58,9 @@
         "Quit since": {
           "conciseText": true
         },
+        "Image": {
+          "multiple": 3
+        },
         "CAD - Symptoms of Angina today": {
           "multiSelect": true
         },
@@ -464,7 +467,7 @@
           "multiSelect": true
         },
         "Delivery Note, New Born Status": {
-          "multiSelect": true
+          "required": true
         },
         "Diabetes, Comorbidities": {
           "multiSelect": true
@@ -485,7 +488,8 @@
           "multiSelect": true
         },
         "Post Delivery FP Checklist, FP Method Patient Went Home With": {
-          "multiSelect": true
+          "multiSelect": true,
+          "required": true
         },
         "Post Delivery FP Checklist, Patient Interested In": {
           "multiSelect": true
@@ -503,7 +507,8 @@
           "multiSelect": true
         },
         "Accepted Family Planning methods": {
-          "multiSelect": true
+          "multiSelect": true,
+          "required": true
         },
         "Coronary Artery Disease, EKG": {
           "conciseText": true
@@ -566,14 +571,17 @@
           "conciseText": true
         },
         "Death Note, Primary Cause of Death": {
+          "required": true,
           "answersConceptName": "Death Note, Cause, Answers",
           "autocomplete": true
         },
         "Death Note, Secondary Cause of Death": {
+          "required": true,
           "answersConceptName": "Death Note, Cause, Answers",
           "autocomplete": true
         },
         "Death Note, Tertiary Cause of Death": {
+          "required": true,
           "answersConceptName": "Death Note, Cause, Answers",
           "autocomplete": true
         },
@@ -581,95 +589,302 @@
           "allowAddMore": true
         },
         "Acute OPD visit": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "ANC": {
-          "showRecentButton": true
-        },
-        "Antiretroviral Therapy Progress Template": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Asthma, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Childhood Illness( Children aged below 2 months)": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Childhood Illness( Children aged 2 months to 5 years)": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Chronic Kidney Disease, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Chronic OPD Visit": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "COPD, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Congestive Heart Failure, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Coronary Artery Disease, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Diabetes, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "ER General Notes": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "HIV Treatment and Care Progress Template": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
-        "Hypertension, Progress": {
-          "showRecentButton": true
+        "HIV Testing and Counseling Intake Template": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
-        "Kalaazar": {
-          "showRecentButton": true
+        "HIV Treatment and Care Intake Template": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
-        "Leprosy": {
-          "showRecentButton": true
+        "Death Note": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
-        "Mental Health": {
-          "showRecentButton": true
+        "Delivery note": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
-        "Malaria": {
-          "showRecentButton": true
+        "Discharge Note": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
-        "Nutrition": {
-          "showRecentButton": true
+        "DRTuberculosis, Intake": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "ECG Notes": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Operative Notes": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Opioid Substitution Therapy Intake Template": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Opportunistic Infection Template": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Orthopaedic Examination": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Post Delivery Family Planning Checklist": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Prevention of Mother-to-Child Transmission Intake Template": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Procedure Notes": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Safe Abortion": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Sextually Transmitted Infections Intake Template": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Tuberculosis, Intake": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Hypertension, Progress": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Kalaazar": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Leprosy": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Mental Health": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Malaria": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
+        },
+        "Nutrition": {
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "PNC": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Rheumatoid Arthritis, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Rheumatic Heart Disease, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Seizure Disorder, Progress": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Stroke OPD": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
         "Trauma Notes": {
-          "showRecentButton": true
+          "showPreviousButton": true,
+          "numberOfVisits": 1
         },
-        "Tuberculosis": {
-          "showRecentButton": true
-        },
-        "HIVTC, FP methods used by the patient" : {
+        "HIVTC, FP methods used by the patient": {
           "multiSelect": true
         },
-        "HIVTC, Mortality coding": {
+        "HIVTC, Death cause": {
           "answersConceptName": "Death Note, Cause, Answers",
           "autocomplete": true
+        },
+        "Out Patient Details, Free Health Service Code": {
+          "required": true
+        },
+        "ANC, Visit Month": {
+          "required": true
+        },
+        "ANC, Albendazole given": {
+          "required": true
+        },
+        "ANC, Number of IFA Tablets given": {
+          "required": true
+        },
+        "ANC, Blood Transfusion Provided": {
+          "required": true
+        },
+        "ANC, Blood Transfusion Quantity": {
+          "required": true
+        },
+        "Childhood Illness, Acute Respiratory Infection present": {
+          "required": true
+        },
+        "Childhood Illness, Diarrhoea present": {
+          "required": true
+        },
+        "Childhood Illness, Dehydration Status": {
+          "required": true
+        },
+        "Childhood Illness, Albendazole Given": {
+          "required": true
+        },
+        "Childhood Illness, Vitamin A Capsules Provided": {
+          "required": true
+        },
+        "Difficult feeding": {
+          "required": true
+        },
+        "Breastfed": {
+          "required": true
+        },
+        "Weight condition": {
+          "required": true
+        },
+        "Childhood Illness, Referred out": {
+          "required": true
+        },
+        "ER General Notes, Free Health Service Code": {
+          "required": true
+        },
+        "Chronic OPD Details, Free Health Service Code": {
+          "required": true
+        },
+        "Delivery Note, Delivery service done by": {
+          "required": true
+        },
+        "Delivery Note, Method of Delivery": {
+          "required": true
+        },
+        "Delivery Note, Outcome of Delivery": {
+          "required": true
+        },
+        "Delivery Note, Fetal Presentation": {
+          "required": true
+        },
+        "Delivery Note, Blood transfusion provided": {
+          "required": true
+        },
+        "Delivery Note, Blood transfusion quantity": {
+          "required": true
+        },
+        "Delivery Note, Liveborn weight": {
+          "required": true
+        },
+        "Delivery Note, Chlorhexidine applied on cord": {
+          "required": true
+        },
+        "Delivery Note, Stillbirth type": {
+          "required": true
+        },
+        "Discharge note, Inpatient outcome": {
+          "required": true
+        },
+        "Discharge Note, Brief Hospital Course": {
+          "required": true
+        },
+        "Discharge Note, Medications on Discharged": {
+          "required": true
+        },
+        "Discharge Note, Followup Instructions": {
+          "required": true
+        },
+        "FP, Family Planning Method": {
+          "required": true
+        },
+        "FP, Units provided": {
+          "required": true
+        },
+        "FP, Users Type": {
+          "required": true
+        },
+        "Nutrition, Nutritional Status": {
+          "required": true
+        },
+        "Nutrition, Bal Vita Provided by FCHV": {
+          "required": true
+        },
+        "PNC, Visit Time": {
+          "required": true
+        },
+        "PNC, Blood Transfusion Provided": {
+          "required": true
+        },
+        "PNC, Blood Transfusion Quantity": {
+          "required": true
+        },
+        "PNC, IFA Tablets Provided": {
+          "required": true
+        },
+        "PNC, Vitamin A Capsules Provided": {
+          "required": true
+        },
+        "Procedure Notes, Procedure": {
+          "required": true
         }
       }
     }
