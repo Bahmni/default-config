@@ -575,16 +575,6 @@
           "answersConceptName": "Death Note, Cause, Answers",
           "autocomplete": true
         },
-        "Death Note, Secondary Cause of Death": {
-          "required": true,
-          "answersConceptName": "Death Note, Cause, Answers",
-          "autocomplete": true
-        },
-        "Death Note, Tertiary Cause of Death": {
-          "required": true,
-          "answersConceptName": "Death Note, Cause, Answers",
-          "autocomplete": true
-        },
         "Vitals": {
           "allowAddMore": true
         },
