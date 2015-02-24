@@ -1,16 +1,54 @@
 [
     {
-        "title":"General - 2",
-        "pivotTable": [
+        "title": "General - 2",
+        "printing": {
+            "title": "Jan Swasthya Sahyog Community Health Centre",
+            "header": "Visit",
+            "logo": "../images/jss-icon.png"
+        },
+        "sections": [
             {
-                "title":"Pivot table",
-                "groupBy":"encounters",
-                "obsConcepts": ["Vitals", "Height", "WEIGHT", "M/C Days"],
-                "drugConcepts": ["Gamma Benzene Hexachloride"],
-                "labConcepts": ""
+                "type": "observation",
+                "title": "Something",
+                "config": {
+                    "obsIgnoreList": [
+                        "Patient file",
+                        "Radiology",
+                        "Lab Manager Notes",
+                        "Accession Uuid",
+                        "Impression"
+                    ],
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "WEIGHT",
+                        "Chief Complaint Data"
+                    ]
+                }
+            },
+            {
+                "type": "treatment",
+                "config": {
+                    "title": "Treatments"
+                }
+            },
+            {
+                "type": "observation",
+                "config": {
+                    "obsIgnoreList": [
+                        "Patient file",
+                        "Radiology",
+                        "Lab Manager Notes",
+                        "Accession Uuid",
+                        "Impression"
+                    ],
+                    "showDetailsButton": true,
+                    "conceptNames": ["Discharge Summary"]
+                }
+            },
+            {
+                "type": "investigationResult",
+                "config": {}
             }
         ]
-
-
     }
 ]
