@@ -575,6 +575,14 @@
           "answersConceptName": "Death Note, Cause, Answers",
           "autocomplete": true
         },
+        "Death Note, Secondary Cause of Death": {
+          "answersConceptName": "Death Note, Cause, Answers",
+          "autocomplete": true
+        },
+        "Death Note, Tertiary Cause of Death": {
+          "answersConceptName": "Death Note, Cause, Answers",
+          "autocomplete": true
+        },
         "Vitals": {
           "allowAddMore": true
         },
@@ -875,6 +883,15 @@
         },
         "Procedure Notes, Procedure": {
           "required": true
+        },
+        "HIVTC, Problem": {
+          "allowAddMore": true
+        },
+        "IMAM Program": {
+          "allowAddMore": true
+        },
+        "Family Planning Template": {
+          "allowAddMore": true
         }
       }
     }

@@ -47,12 +47,6 @@
         }
       },
       {
-        "title": "Disposition",
-        "name": "disposition",
-        "numberOfVisits": 2,
-        "showDetailsButton": true
-      },
-      {
         "title": "Vitals",
         "name": "vitals",
         "isObservation": true,
@@ -83,6 +77,12 @@
             "labConcepts": ""
           }
         }
+      },
+      {
+        "title": "Disposition",
+        "name": "disposition",
+        "numberOfVisits": 2,
+        "showDetailsButton": true
       },
       {
         "title": "Chronic Diseases",
@@ -285,7 +285,7 @@
     "dashboardName": "HIV",
     "printing": {
       "title": "Bayalpata Hospital",
-      "header": "Discharge Summary",
+      "header": "HIV Summary",
       "logo": "../images/nhn-logo.png"
     },
     "sections": [
@@ -319,7 +319,7 @@
     "dashboardName": "Motherhood",
     "printing": {
       "title": "Bayalpata Hospital",
-      "header": "Discharge Summary",
+      "header": "Motherhood Summary",
       "logo": "../images/nhn-logo.png"
     },
     "sections": [
@@ -353,7 +353,7 @@
     "dashboardName": "Orthopaedic",
     "printing": {
       "title": "Bayalpata Hospital",
-      "header": "Discharge Summary",
+      "header": "Orthopaedic Summary",
       "logo": "../images/nhn-logo.png"
     },
     "sections": [
@@ -369,6 +369,40 @@
       {
         "title": "Orthopaedic",
         "templateName": "Disease template, Orthopaedic",
+        "name": "diseaseTemplate",
+        "showOnly": [],
+        "showDetailsButton": true,
+        "dashboardParams": {
+          "showOnly": [],
+          "showDetailsButton": true
+        },
+        "allDiseaseDetails": {
+          "showOnly": [],
+          "showDetailsButton": true
+        }
+      }
+    ]
+  },
+  {
+    "dashboardName": "IMAM",
+    "printing": {
+      "title": "Bayalpata Hospital",
+      "header": "IMAM Summary",
+      "logo": "../images/nhn-logo.png"
+    },
+    "sections": [
+      {
+        "title": "Patient Information",
+        "name": "patientInformation",
+        "patientAttributes": [],
+        "addressFields": [
+          "cityVillage",
+          "countyDistrict"
+        ]
+      },
+      {
+        "title": "IMAM",
+        "templateName": "Childhood Templates",
         "name": "diseaseTemplate",
         "showOnly": [],
         "showDetailsButton": true,
