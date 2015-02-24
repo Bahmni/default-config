@@ -50,6 +50,12 @@
                     "title": "Disposition",
                     "name": "disposition",
                     "numberOfVisits": 1
+                },
+                {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "patientAttributes": ["caste", "class", "education", "occupation"],
+                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                 }
             ]
         }
