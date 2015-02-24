@@ -8,46 +8,19 @@
         },
         "sections": [
             {
-                "type": "observation",
-                "title": "Something",
+                "type": "pivotTable",
+                "title": "Pivot table",
                 "config": {
-                    "obsIgnoreList": [
-                        "Patient file",
-                        "Radiology",
-                        "Lab Manager Notes",
-                        "Accession Uuid",
-                        "Impression"
-                    ],
-                    "showDetailsButton": true,
-                    "conceptNames": [
+                    "groupBy": "encounters",
+                    "obsConcepts": [
+                        "Vitals",
+                        "Height",
                         "WEIGHT",
-                        "Chief Complaint Data"
-                    ]
-                }
-            },
-            {
-                "type": "treatment",
-                "config": {
-                    "title": "Treatments"
-                }
-            },
-            {
-                "type": "observation",
-                "config": {
-                    "obsIgnoreList": [
-                        "Patient file",
-                        "Radiology",
-                        "Lab Manager Notes",
-                        "Accession Uuid",
-                        "Impression"
+                        "M/C Days"
                     ],
-                    "showDetailsButton": true,
-                    "conceptNames": ["Discharge Summary"]
+                    "drugConcepts": ["Gamma Benzene Hexachloride"],
+                    "labConcepts": ""
                 }
-            },
-            {
-                "type": "investigationResult",
-                "config": {}
             }
         ]
     }
