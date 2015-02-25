@@ -8,64 +8,181 @@
     }
   },
   {
+    "title": "General",
+    "default": true,
+    "printing": {
+      "title": "Bayalpata Hospital",
+      "header": "General",
+      "logo": "../images/nhn-logo.png"
+    },
+    "sections": [
+      {
+        "type": "patientInformation",
+        "config": {
+          "title": "PatientInformation",
+          "patientAttributes": []
+        }
+      },
+      {
+        "type": "diagnosis",
+        "config": {
+          "title": "Diagnoses",
+          "showCertainty": true,
+          "showOrder": true,
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "observation",
+        "config": {
+          "numberOfVisits": 1,
+          "obsIgnoreList": [
+            "Patient file",
+            "Radiology",
+            "Lab Manager Notes",
+            "Accession Uuid",
+            "Impression"
+          ],
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "disposition",
+        "config": {
+          "numberOfVisits": 1,
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "admissionDetails",
+        "config": {
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "investigationResult",
+        "config": {
+          "title": "Lab Investigations",
+          "showChart": true,
+          "showTable": true,
+          "showNormalLabResults": true,
+          "showCommentsExpanded": true,
+          "showAccessionNotes": true,
+          "numberOfVisits": 10
+        }
+      },
+      {
+        "type": "treatment",
+        "config": {
+          "title": "Treatments",
+          "showFlowSheet": true,
+          "showListView": true,
+          "showOtherActive": false,
+          "showDetailsButton": true,
+          "showRoute": true,
+          "showDrugForm": true
+        }
+      }
+    ]
+  },
+  {
     "title": "Discharge Summary",
     "printing": {
       "title": "Bayalpata Hospital",
       "header": "Discharge Summary",
       "logo": "../images/nhn-logo.png"
     },
-    "investigationResult": {
-      "title": "Lab Investigations",
-      "showChart": false,
-      "showTable": true,
-      "showNormalLabResults": true,
-      "showCommentsExpanded": true,
-      "showAccessionNotes": true,
-      "numberOfVisits": 1
-    },
-    "disposition": {
-      "numberOfVisits": 1,
-      "showDetailsButton": true
-    },
-    "patientInformation": {
-      "title": "PatientInformation",
-      "patientAttributes": [],
-      "addressFields": [
-        "cityVillage",
-        "countyDistrict"
-      ]
-    },
-    "observation": {
-      "numberOfVisits": 1,
-      "obsIgnoreList": [
-        "Patient file",
-        "Radiology",
-        "Lab Manager Notes",
-        "Accession Uuid"
-      ],
-      "conceptNames": [
-        "Discharge Note, Brief Hospital Course",
-        "Discharge Note, Medications on Discharged",
-        "Discharge Note, Followup Instructions"
-      ],
-      "showDetailsButton": true
-    },
-    "diagnosis": {
-      "title": "Diagnoses",
-      "showCertainty": true,
-      "showOrder": true,
-      "showDetailsButton": true
-    },
-    "dischargeSummary": {
-      "title": "Discharge Notes",
-      "numberOfVisits": 1,
-      "conceptNames": [
-        "Discharge Note, Brief Hospital Course",
-        "Discharge Note, Medications on Discharged",
-        "Discharge Note, Followup Instructions"
-      ],
-      "showDetailsButton": true
-    }
+    "sections": [
+      {
+        "type": "patientInformation",
+        "config": {
+          "title": "PatientInformation",
+          "patientAttributes": [],
+          "addressFields": [
+            "cityVillage",
+            "countyDistrict"
+          ]
+        }
+      },
+      {
+        "type": "diagnosis",
+        "config": {
+          "title": "Diagnoses",
+          "showCertainty": true,
+          "showOrder": true,
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "observation",
+          "title": "Discharge Notes",
+        "config": {
+          "numberOfVisits": 1,
+          "obsIgnoreList": [
+            "Patient file",
+            "Radiology",
+            "Lab Manager Notes",
+            "Accession Uuid",
+            "Impression"
+          ],
+          "showDetailsButton": true,
+          "conceptNames": [
+            "Discharge Note, Brief Hospital Course",
+            "Discharge Note, Medications on Discharged",
+            "Discharge Note, Followup Instructions"
+          ]
+        }
+      },
+      {
+        "type": "disposition",
+        "config": {
+          "numberOfVisits": 1,
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "admissionDetails",
+        "config": {
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "investigationResult",
+        "config": {
+          "title": "Lab Investigations",
+          "showChart": true,
+          "showTable": true,
+          "showNormalLabResults": true,
+          "showCommentsExpanded": true,
+          "showAccessionNotes": true,
+          "numberOfVisits": 10
+        }
+      },
+      {
+        "type": "treatment",
+        "config": {
+          "title": "Treatments",
+          "showFlowSheet": true,
+          "showListView": true,
+          "showOtherActive": false,
+          "showDetailsButton": true,
+          "showRoute": true,
+          "showDrugForm": true
+        }
+      },
+      {
+        "type": "Discharge Notes",
+        "config": {
+          "numberOfVisits": 1,
+          "showDetailsButton": true,
+          "conceptNames": [
+            "Discharge Note, Brief Hospital Course",
+            "Discharge Note, Medications on Discharged",
+            "Discharge Note, Followup Instructions"
+          ]
+        }
+      }
+    ]
   },
   {
     "title": "OPD Summary",
@@ -74,43 +191,73 @@
       "header": "OPD Summary",
       "logo": "../images/nhn-logo.png"
     },
-    "investigationResult": {
-      "title": "Lab Investigations",
-      "showChart": false,
-      "showTable": true,
-      "showNormalLabResults": true,
-      "showCommentsExpanded": true,
-      "showAccessionNotes": true,
-      "numberOfVisits": 1
-    },
-    "disposition": {
-      "numberOfVisits": 1,
-      "showDetailsButton": true
-    },
-    "patientInformation": {
-      "title": "PatientInformation",
-      "patientAttributes": [],
-      "addressFields": [
-        "cityVillage",
-        "countyDistrict"
-      ]
-    },
-    "observation": {
-      "numberOfVisits": 1,
-      "obsIgnoreList": [
-        "Patient file",
-        "Radiology",
-        "Lab Manager Notes",
-        "Accession Uuid"
-      ],
-      "conceptNames": [],
-      "showDetailsButton": true
-    },
-    "diagnosis": {
-      "title": "Diagnoses",
-      "showCertainty": true,
-      "showOrder": true,
-      "showDetailsButton": true
-    }
+    "sections": [
+      {
+        "type": "patientInformation",
+        "config": {
+          "title": "PatientInformation",
+          "patientAttributes": [],
+          "addressFields": [
+            "cityVillage",
+            "countyDistrict"
+          ]
+        }
+      },
+      {
+        "type": "diagnosis",
+        "config": {
+          "title": "Diagnoses",
+          "showCertainty": true,
+          "showOrder": true,
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "observation",
+        "title": "Observation",
+        "config": {
+        "numberOfVisits": 1,
+          "obsIgnoreList": [
+            "Patient file",
+            "Radiology",
+            "Lab Manager Notes",
+            "Accession Uuid",
+            "Impression"
+          ],
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "disposition",
+        "config": {
+          "numberOfVisits": 1,
+          "showDetailsButton": true
+        }
+      },
+      {
+        "type": "investigationResult",
+        "config": {
+          "title": "Lab Investigations",
+          "showChart": true,
+          "showTable": true,
+          "showNormalLabResults": true,
+          "showCommentsExpanded": true,
+          "showAccessionNotes": true,
+          "numberOfVisits": 10
+        }
+      },
+      {
+        "type": "treatment",
+        "config": {
+          "title": "Treatments",
+          "showFlowSheet": true,
+          "showListView": true,
+          "showOtherActive": false,
+          "showDetailsButton": true,
+          "showRoute": true,
+          "showDrugForm": true
+        }
+      }
+    ]
   }
 ]

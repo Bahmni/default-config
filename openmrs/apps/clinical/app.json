@@ -892,6 +892,12 @@
         },
         "Family Planning Template": {
           "allowAddMore": true
+        },
+        "OP Details, Date of LMP": {
+          "conciseText": true
+        },
+        "ER General Notes, Date of LMP": {
+          "conciseText": true
         }
       }
     }
