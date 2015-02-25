@@ -21,6 +21,13 @@
                     "drugConcepts": ["Gamma Benzene Hexachloride"],
                     "labConcepts": ""
                 }
+            },
+            {
+                    "type": "patientInformation",
+                    "config": {
+                        "title": "PatientInformation",
+                        "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"]
+                    }
             }
         ]
     }

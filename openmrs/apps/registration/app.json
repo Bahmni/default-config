@@ -22,6 +22,14 @@
             "activeVisitUuid"
         ],
         "config" : {
+             "additionalPatientInformation" : [
+                { "name":"debt", "display":true },
+                { "name":"distanceFromCenter", "display":true },
+                { "name":"isUrban", "display":true },
+                { "name":"cluster", "display":true },
+                { "name":"RationCard", "display":true },
+                { "name":"familyIncome", "display":true }
+            ],
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
             "defaultVisitType": "OPD",

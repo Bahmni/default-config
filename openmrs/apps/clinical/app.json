@@ -65,6 +65,15 @@
                 },
                 "Tuberculosis Intake Template" : {
                     "computeDrugs" : true
+                },
+                "Set1" :{
+                    "allowAddMore" :true
+                },
+                "Set2" :{
+                    "allowAddMore" :true
+                },
+                "Coded3" :{
+                    "multiSelect" :true
                 }
             },
             "visitPage": {
