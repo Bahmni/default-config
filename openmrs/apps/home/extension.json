@@ -58,5 +58,14 @@
         "icon": "icon-user",
         "order": 7,
         "requiredPrivilege": "app:admin"
+    },
+    {
+        "id": "bahmni.reports",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Reports",
+        "url": "../reports/#/dashboard",
+        "icon": "icon-user",
+        "order": 8
     }
 ]
