@@ -120,8 +120,7 @@
             },
             {
                     "title": "Admission Details",
-                    "name": "admissionDetails",
-                    "showDetailsButton": true
+                    "name": "admissionDetails"
             }
         ]
     },

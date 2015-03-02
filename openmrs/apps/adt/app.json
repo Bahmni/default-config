@@ -53,11 +53,6 @@
                     "showDetailsButton":true
                 },
                 {
-                        "title": "Admission Details",
-                        "name": "admissionDetails",
-                        "showDetailsButton": true
-                },
-                {
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
