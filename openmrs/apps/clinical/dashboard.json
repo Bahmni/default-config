@@ -117,6 +117,11 @@
 
                 }
                 
+            },
+            {
+                    "title": "Admission Details",
+                    "name": "admissionDetails",
+                    "showDetailsButton": true
             }
         ]
     },

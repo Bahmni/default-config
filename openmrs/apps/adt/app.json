@@ -38,18 +38,24 @@
                     "isObservation": true,
                     "dashboardParams": {
                         "conceptNames": ["Vitals"],
-                        "numberOfVisits": 1
-                    },
-                    "allObservationDetails": {
-                        "conceptNames": ["Vitals"],
-                        "numberOfVisits": 1,
-                        "showDetailsButton": true
+                        "numberOfVisits": 2
                     }
                 },
                 {
                     "title": "Disposition",
                     "name": "disposition",
                     "numberOfVisits": 1
+                },
+                {
+                    "title": "Diagnosis",
+                    "name": "diagnosis",
+                    "numberOfVisits": 1,
+                    "showDetailsButton":true
+                },
+                {
+                        "title": "Admission Details",
+                        "name": "admissionDetails",
+                        "showDetailsButton": true
                 },
                 {
                 "title": "Patient Information",
