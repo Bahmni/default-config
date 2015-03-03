@@ -31,6 +31,7 @@
             "defaultVisitType": "IPD",
             "dashboard":{
                 "dashboardName": "General",
+                "conceptName": "Adt Notes",
                 "sections": [
                 {
                     "title": "Vitals",
