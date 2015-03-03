@@ -3,7 +3,7 @@
 
 #### Deploy
 - under server (apache) www directory
-- alias root (default-config) to bahmni_config
+- alias root (possible-config) to bahmni_config
 
 
 #### Dev commands
