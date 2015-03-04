@@ -1,8 +1,17 @@
 [
-  {
-    "name": "Chief Complaint Report",
-    "ageGroupName": "Inpatient Discharge Reports",
-    "conceptName": "Chief Complaint",
-    "type": "ObsCountByGenderAndAge"
-  }
+    {
+        "name": "Chief Complaint Report",
+        "ageGroupName": "Inpatient Discharge Reports",
+        "conceptName": "Chief Complaint",
+        "type": "ObsCountByGenderAndAge"
+    },
+    {
+        "name": "Inpatient Morbidity",
+        "ageGroupName": "Inpatient Discharge Reports",
+        "type": "DiagnosisForDischargedPatient"
+    },
+    {
+        "name": "Outpatient Morbidity",
+        "type": "DiagnosisForOPDPatient"
+    }
 ]
