@@ -13,5 +13,9 @@
     {
         "name": "Outpatient Morbidity",
         "type": "DiagnosisForOPDPatient"
+    },
+    {
+        "name": "Laboratory Services",
+        "type": "TestCount"
     }
 ]
