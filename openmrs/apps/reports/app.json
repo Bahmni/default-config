@@ -1,7 +1,7 @@
 [
-    {
-        "id": "bahmni.reports",
-        "description": "Bahmni Reports App",
-        "extensionPoints": []
-    }
+  {
+    "id": "bahmni.reports",
+    "description": "Bahmni Reports App",
+    "extensionPoints": []
+  }
 ]
