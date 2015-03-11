@@ -6,6 +6,12 @@
     "type": "CodedObsCount"
   },
   {
+    "name": "Inpatient Outcome Status",
+    "ageGroupName": "Inpatient",
+    "conceptName": "Discharge note, Inpatient outcome",
+    "type": "CodedObsCount"
+  },
+  {
     "name": "Inpatient Morbidity",
     "ageGroupName": "Inpatient Discharge Reports",
     "type": "DiagnosisCount"
