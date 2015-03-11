@@ -42,6 +42,12 @@
     "type": "CodedObsCount"
   },
   {
+    "name": "Family Planning Program - Postpartum FP Acceptors",
+    "ageGroupName": "All Ages",
+    "conceptNames": "'Post Delivery FP Checklist, FP Method Patient Went Home With'",
+    "type": "CodedObsCount"
+  },
+  {
     "name": "Inpatient Morbidity",
     "ageGroupName": "Inpatient Discharge Reports",
     "type": "DiagnosisCount"
