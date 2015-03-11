@@ -1,9 +1,9 @@
 [
   {
-    "name": "Chief Complaint Report",
-    "ageGroupName": "Inpatient Discharge Reports",
-    "conceptName": "Chief Complaint",
-    "type": "ObsCountByGenderAndAge"
+    "name": "Nutritional status of registered children",
+    "ageGroupName": "Nutritional Status For Registered Children",
+    "conceptName": "Nutrition, Nutritional Status",
+    "type": "CodedObsCount"
   },
   {
     "name": "Inpatient Morbidity",
@@ -11,15 +11,7 @@
     "type": "DiagnosisCount"
   },
   {
-    "name": "Chief Complaint Report",
-    "ageGroupName": "Client Service Reports",
-    "conceptName": "Diagnosis Certainty",
-    "type": "ObsCountByGenderAndAge"
-  },
-  {
     "name": "Laboratory Services",
-    "ageGroupName": "Client Service Reports",
-    "conceptName": "Diagnosis Certainty",
     "type": "TestCount"
   }
 ]

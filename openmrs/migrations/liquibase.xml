@@ -13,4 +13,5 @@
         <include file = "openmrs-person-attributes-liquibase.xml"/>
         <include file = "openmrs-address-hierarchy-level-liquibase.xml"/>
         <include file = "visit-types-liquibase.xml"/>
+        <include file = "bahmni-reports-liquibase.xml"/>
 </databaseChangeLog>
