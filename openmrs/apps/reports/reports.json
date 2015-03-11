@@ -48,6 +48,18 @@
     "type": "CodedObsCount"
   },
   {
+    "name": "Malaria Program - Blood Slide Collection",
+    "ageGroupName": "All Ages",
+    "conceptNames": "'Malaria, Source'",
+    "type": "CodedObsCount"
+  },
+  {
+    "name": "Malaria Program - Number of Malaria Cases",
+    "ageGroupName": "Malaria",
+    "conceptNames": "'Malaria, Finding'",
+    "type": "CodedObsCount"
+  },
+  {
     "name": "Inpatient Morbidity",
     "ageGroupName": "Inpatient Discharge Reports",
     "type": "DiagnosisCount"
