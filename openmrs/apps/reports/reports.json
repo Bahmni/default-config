@@ -17,5 +17,15 @@
     {
         "name": "Laboratory Services",
         "type": "TestCount"
+    },
+    {
+        "name": "Generic Laboratory Services",
+        "type": "ElisGeneric",
+        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
+    },
+    {
+        "name": "Generic Outpatient Morbidity",
+        "type": "MRSGeneric",
+        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
     }
 ]
