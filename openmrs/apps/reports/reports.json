@@ -3,7 +3,7 @@
         "name": "Chief Complaint Report",
         "ageGroupName": "Inpatient Discharge Reports",
         "conceptName": "Chief Complaint",
-        "type": "ObsCountByGenderAndAge"
+        "type": "codedObsCount"
     },
     {
         "name": "Inpatient Morbidity",
