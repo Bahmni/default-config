@@ -24,6 +24,12 @@
     "type": "CodedObsCount"
   },
   {
+    "name": "Safe Motherhood Program - Delivery Outcome",
+    "ageGroupName": "All Ages",
+    "conceptNames": "'Delivery Note, Outcome of Delivery'",
+    "type": "CodedObsCount"
+  },
+  {
     "name": "Inpatient Morbidity",
     "ageGroupName": "Inpatient Discharge Reports",
     "type": "DiagnosisCount"
