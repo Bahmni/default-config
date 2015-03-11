@@ -73,4 +73,17 @@
             VALUES('6 - 59 Months', 'IMAM', 0, 186, 5, -1, 2);
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-BAHMNI-REPORTS-SAFE-ABORTION-GROUP" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from reporting_age_group where report_group_name = 'Safe Abortion';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('&lt; 20 Years', 'Safe Abortion', 0, 0, 20, -1, 1);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('≥ 20 Years', 'Safe Abortion', 20, 0, 999, 0, 2);
+        </sql>
+    </changeSet>
 </databaseChangeLog>

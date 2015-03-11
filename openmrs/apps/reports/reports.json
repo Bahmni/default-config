@@ -30,6 +30,18 @@
     "type": "CodedObsCount"
   },
   {
+    "name": "Safe Motherhood Program - No of Still Births",
+    "ageGroupName": "All Ages",
+    "conceptNames": "'Delivery Note, Stillbirth type'",
+    "type": "CodedObsCount"
+  },
+  {
+    "name": "Safe Motherhood Program - Safe Abortion Service",
+    "ageGroupName": "Safe Abortion",
+    "conceptNames": "'Abortion procedure','PAC Cause'",
+    "type": "CodedObsCount"
+  },
+  {
     "name": "Inpatient Morbidity",
     "ageGroupName": "Inpatient Discharge Reports",
     "type": "DiagnosisCount"
