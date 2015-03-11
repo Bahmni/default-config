@@ -12,6 +12,12 @@
     "type": "CodedObsCount"
   },
   {
+    "name": "Integrated Management of Acute Malnutrition (IMAM) Program",
+    "ageGroupName": "IMAM",
+    "conceptNames": "'IMAM, Admission','IMAM, Discharge'",
+    "type": "CodedObsCount"
+  },
+  {
     "name": "Inpatient Morbidity",
     "ageGroupName": "Inpatient Discharge Reports",
     "type": "DiagnosisCount"
