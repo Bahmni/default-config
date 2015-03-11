@@ -2,13 +2,13 @@
   {
     "name": "Nutritional status of registered children",
     "ageGroupName": "Nutritional Status For Registered Children",
-    "conceptName": "Nutrition, Nutritional Status",
+    "conceptNames": "'Nutrition, Nutritional Status'",
     "type": "CodedObsCount"
   },
   {
     "name": "Inpatient Outcome Status",
     "ageGroupName": "Inpatient",
-    "conceptName": "Discharge note, Inpatient outcome",
+    "conceptNames": "'Discharge note, Inpatient outcome'",
     "type": "CodedObsCount"
   },
   {
