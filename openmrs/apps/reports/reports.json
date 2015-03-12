@@ -1,71 +1,92 @@
 [
   {
     "name": "Nutritional status of registered children",
-    "ageGroupName": "Nutritional Status For Registered Children",
-    "conceptNames": "'Nutrition, Nutritional Status'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Nutritional Status For Registered Children",
+      "conceptNames": "'Nutrition, Nutritional Status'"
+    }
   },
   {
     "name": "Inpatient Outcome Status",
-    "ageGroupName": "Inpatient",
-    "conceptNames": "'Discharge note, Inpatient outcome'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Inpatient",
+      "conceptNames": "'Discharge note, Inpatient outcome'"
+    }
   },
   {
     "name": "Integrated Management of Acute Malnutrition (IMAM) Program",
-    "ageGroupName": "IMAM",
-    "conceptNames": "'IMAM, Admission','IMAM, Discharge'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "IMAM",
+      "conceptNames": "'IMAM, Admission','IMAM, Discharge'"
+    }
   },
   {
     "name": "Safe Motherhood Program - Delivery Service",
-    "ageGroupName": "All Ages",
-    "conceptNames": "'Delivery Note, Delivery service done by'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Delivery Note, Delivery service done by'"
+    }
   },
   {
     "name": "Safe Motherhood Program - Delivery Outcome",
-    "ageGroupName": "All Ages",
-    "conceptNames": "'Delivery Note, Outcome of Delivery'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Delivery Note, Outcome of Delivery'"
+    }
   },
   {
     "name": "Safe Motherhood Program - No of Still Births",
-    "ageGroupName": "All Ages",
-    "conceptNames": "'Delivery Note, Stillbirth type'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Delivery Note, Stillbirth type'"
+    }
   },
   {
     "name": "Safe Motherhood Program - Safe Abortion Service",
-    "ageGroupName": "Safe Abortion",
-    "conceptNames": "'Abortion procedure','PAC Cause'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Safe Abortion",
+      "conceptNames": "'Abortion procedure','PAC Cause'"
+    }
   },
   {
     "name": "Family Planning Program - Postpartum FP Acceptors",
-    "ageGroupName": "All Ages",
-    "conceptNames": "'Post Delivery FP Checklist, FP Method Patient Went Home With'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Post Delivery FP Checklist, FP Method Patient Went Home With'"
+    }
   },
   {
     "name": "Malaria Program - Blood Slide Collection",
-    "ageGroupName": "All Ages",
-    "conceptNames": "'Malaria, Source'",
-    "type": "CodedObsCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Malaria, Source'"
+    }
   },
   {
     "name": "Malaria Program - Number of Malaria Cases",
-    "ageGroupName": "Malaria",
-    "conceptNames": "'Malaria, Finding'",
-    "type": "CodedObsCount"
-  },
-  {
-    "name": "Inpatient Morbidity",
-    "ageGroupName": "Inpatient Discharge Reports",
-    "type": "DiagnosisCount"
-  },
-  {
-    "name": "Laboratory Services",
-    "type": "TestCount"
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Malaria",
+      "conceptNames": "'Malaria, Finding'"
+    }
   }
 ]
