@@ -26,6 +26,14 @@
     }
   },
   {
+    "name": "Surgeries - Post Operative Infection",
+    "type": "MRSGeneric",
+    "config": {
+      "type": "sqlReport",
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/surgeries_post_operative_infection.sql"
+    }
+  },  
+  {
     "name": "Integrated Management of Acute Malnutrition (IMAM) Program",
     "type": "CodedObsCount",
     "config": {
