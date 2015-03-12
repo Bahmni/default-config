@@ -124,5 +124,14 @@
       "ageGroupName": "All Ages",
       "conceptNames": "'DRTuberculosis, Diagnosis Category','DRTuberculosis, HIV Infection'"
     }
+  },
+  {
+    "name": "HIV AIDS Program - PMTCT (ART Started, positive HIV Women, Breast Feeding)",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'PMTCT, Started ART during','PMTCT, Who already know their HIV status','PMTCT, Breast feeding options opted by HIV +ve mother'"
+    }
   }
 ]
