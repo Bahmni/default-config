@@ -138,4 +138,21 @@
             VALUES('≥ 15 years', 'Tuberculosis Treatment Category', 15, 0, 999, 0, 2);
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-BAHMNI-REPORTS-ANTERETROVIRAL-GROUP" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from reporting_age_group where report_group_name = 'Anteretroviral';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('&lt; 1 Year', 'Anteretroviral', 0, 0, 1, -1, 1);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('1 - 4 Years', 'Anteretroviral', 1, 0, 5, -1, 2);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('5 - 14 Years', 'Anteretroviral', 5, 0, 15, -1, 3);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('≥ 15 years', 'Anteretroviral', 15, 0, 999, 0, 4);
+        </sql>
+    </changeSet>
 </databaseChangeLog>

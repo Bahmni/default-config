@@ -133,5 +133,59 @@
       "ageGroupName": "All Ages",
       "conceptNames": "'PMTCT, Started ART during','PMTCT, Who already know their HIV status','PMTCT, Breast feeding options opted by HIV +ve mother'"
     }
+  },
+  {
+    "name": "HIV AIDS Program - Anteretroviral Treatment (Death reported, Deduction, Total no. of patients currently on ART)",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Anteretroviral",
+      "conceptNames": "'HIVTC, ART current status'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - Anteretroviral Treatment (Patient in original 1st line, substituted 1st line, switched to 2nd line regimen)",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Anteretroviral",
+      "conceptNames": "'HIVTC, ART Regimen','HIVTC, Transferred Patient Regimen','HIVTC, Name of Switched Regimem','HIVTC, Treatment Substituted'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - ART Adherence (No of Cases)",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'HIVTC, ART Treatment Adherence'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - Currently on ART by Regimen",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'HIVTC, ART Regimen','HIVTC, Name of Switched Regimem'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - Opportunistic Infections Diagnosed",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'OI, Opportunistic infections'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - Opportunistic Infections TB and FP ",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'OI, Opportunistic infections'"
+    }
   }
 ]
