@@ -115,5 +115,14 @@
       "ageGroupName": "All Ages",
       "conceptNames": "'Tuberculosis, HIV Infection'"
     }
+  },
+  {
+    "name": "DR Tuberculosis Program - DR TB Case Registration and HIV positive",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'DRTuberculosis, Diagnosis Category','DRTuberculosis, HIV Infection'"
+    }
   }
 ]
