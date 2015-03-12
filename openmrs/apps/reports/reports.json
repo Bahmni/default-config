@@ -1,14 +1,20 @@
 [
     {
         "name": "Chief Complaint Report",
-        "ageGroupName": "Inpatient Discharge Reports",
-        "conceptNames": "'Chief Complaint'",
-        "type": "CodedObsCount"
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Inpatient Discharge Reports",
+            "conceptNames": "'Chief Complaint'"
+        }
     },
     {
         "name": "Inpatient Morbidity",
-        "ageGroupName": "Inpatient Discharge Reports",
-        "type": "DiagnosisForDischargedPatient"
+        "type": "DiagnosisForDischargedPatient",
+        "config": {
+            "type": "diagnosisReport",
+            "ageGroupName": "Inpatient Discharge Reports"
+        }
     },
     {
         "name": "Outpatient Morbidity",
@@ -21,11 +27,17 @@
     {
         "name": "Generic Laboratory Services",
         "type": "ElisGeneric",
-        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"            
+        }
     },
     {
         "name": "Generic Outpatient Morbidity",
         "type": "MRSGeneric",
-        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
+        }
     }
 ]
