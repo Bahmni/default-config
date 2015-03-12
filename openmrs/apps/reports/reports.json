@@ -18,6 +18,14 @@
     }
   },
   {
+    "name": "Inpatient Outcome (death)",
+    "type": "MRSGeneric",
+    "config": {
+      "type": "sqlReport",
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_outcome_death.sql"
+    }
+  },
+  {
     "name": "Integrated Management of Acute Malnutrition (IMAM) Program",
     "type": "CodedObsCount",
     "config": {
