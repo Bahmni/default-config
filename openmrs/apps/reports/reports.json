@@ -10,15 +10,20 @@
     },
     {
         "name": "Inpatient Morbidity",
-        "type": "DiagnosisForDischargedPatient",
+        "type": "diagnosisCount",
         "config": {
             "type": "diagnosisReport",
-            "ageGroupName": "Inpatient Discharge Reports"
+            "visitTypes": "'Admitted','Discharged'"
         }
     },
     {
         "name": "Outpatient Morbidity",
-        "type": "DiagnosisForOPDPatient"
+        "type": "diagnosisCount",
+        "config": {
+            "type": "diagnosisReport",
+            "ageGroupName": "Inpatient Discharge Reports",
+            "visitTypes": "'OPD'"
+        }
     },
     {
         "name": "Laboratory Services",
