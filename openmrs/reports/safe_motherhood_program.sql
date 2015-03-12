@@ -1,6 +1,6 @@
 -- Parameters
-SET @start_date = '2014-11-01';
-SET @end_date = '2014-11-30';
+SET @start_date = '2015-02-28';
+SET @end_date = '2015-03-15';
 
 -- Query
 
@@ -42,32 +42,32 @@ GROUP BY delivery_presentation.delivery_method;
 
 -- Gestation and Delivery Outcome
 (SELECT 'Number of Mothers' AS name,
- SUM(IF(delivery_outcome_total.delivery_outcome_type = 'Single live birth'||'Single stillbirth',1,0)) AS 'Single',
- SUM(IF(delivery_outcome_total.delivery_outcome_type = 'Twins both liveborn' || 'Twins one liveborn and one stillborn' || 'Twins both stillborn',1,0)) AS 'Twin',
- SUM(IF(delivery_outcome_total.delivery_outcome_type = 'Other multiple births all liveborn' || 'Other multiple births some liveborn' || 'Other multiple births all stillborn',1,0)) AS '>/Triplet'
+ SUM(IF(delivery_outcome_total.delivery_outcome_type = 'Single - livebirth'||'Single - stillbirth',1,0)) AS 'Single',
+ SUM(IF(delivery_outcome_total.delivery_outcome_type = 'Twins - both liveborn' || 'Twins - one liveborn and one stillborn' || 'Twins - both stillborn',1,0)) AS 'Twin',
+ SUM(IF(delivery_outcome_total.delivery_outcome_type = 'Other multiple births - all liveborn' || 'Other multiple births - some liveborn' || 'Other multiple births - all stillborn',1,0)) AS '>/Triplet'
 FROM
 (SELECT obs_delivery_outcome.value_concept_full_name as delivery_outcome_type
 FROM coded_obs_view as obs_delivery_outcome
 INNER JOIN obs_view ON obs_delivery_outcome.obs_group_id = obs_view.obs_group_id 
-	AND	obs_delivery_outcome.concept_full_name = 'Outcome of Delivery'
-    AND obs_view.concept_full_name = 'Delivery date and time'
+	AND	obs_delivery_outcome.concept_full_name = 'Delivery Note, Outcome of Delivery'
+    AND obs_view.concept_full_name = 'Delivery Note, Delivery date and time'
 	AND DATE(obs_view.value_datetime) BETWEEN @start_date AND @end_date)
 AS delivery_outcome_total)
 
 UNION
 
 (SELECT 'Number of live births' AS name,
- SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Single live birth',1,0)) AS 'Single',
- SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Twins both liveborn' || 'Twins one liveborn and one stillborn',1,0)) AS 'Twin',
- SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Other multiple births all liveborn' || 'Other multiple births some liveborn',1,0)) AS '>/Triplet'
+ SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Single - livebirth',1,0)) AS 'Single',
+ SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Twins - both liveborn' || delivery_outcome_liveborn.delivery_outcome_type ='Twins - one liveborn and one stillborn',1,0)) AS 'Twin',
+ SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Other multiple births - all liveborn' || delivery_outcome_liveborn.delivery_outcome_type ='Other multiple births - some liveborn',1,0)) AS '>/Triplet'
 FROM
 (SELECT obs_delivery_outcome.value_concept_full_name AS delivery_outcome_type
 FROM coded_obs_view as obs_delivery_outcome
 INNER JOIN obs_view ON obs_delivery_outcome.obs_group_id = obs_view.obs_group_id
-	AND obs_delivery_outcome.concept_full_name = 'Outcome of Delivery'
-    AND obs_view.concept_full_name = 'Delivery date and time'
-	AND DATE(obs_view.value_datetime) BETWEEN @start_date AND @end_date
-    AND obs_delivery_outcome.value_concept_full_name IN ('Single live birth','Twins both liveborn','Twins one liveborn and one stillborn', 'Other multiple births all liveborn','Other multiple births some liveborn'))
+	AND obs_delivery_outcome.concept_full_name = 'Delivery Note, Outcome of Delivery'
+    AND obs_view.concept_full_name = 'Delivery Note, Delivery date and time'
+ 	 AND DATE(obs_view.value_datetime) BETWEEN @start_date AND @end_date
+    AND obs_delivery_outcome.value_concept_full_name IN ('Single - livebirth','Twins - both liveborn','Twins - one liveborn and one stillborn', 'Other multiple births - all liveborn','Other multiple births - some liveborn'))
 AS delivery_outcome_liveborn)
 
 UNION
@@ -102,22 +102,25 @@ GROUP BY delivery_outcome_stillborn.stillbirth_type
 
 -- Birth Weight
 SELECT birth_weight.name as 'Birth Weight',
-	count(*) AS 'Number',
+	count(*) AS 'Total Number',
     IF(birth_weight.asphyxia IS NULL, 0, 1) AS 'Asphyxia',
     IF(birth_weight.defect IS NULL, 0, 1) AS 'Defect'
 FROM 
-(SELECT obs_weight.value_numeric as weight, obs_defect.value_coded as defect, obs_asphyxia.value_coded as asphyxia, possible_weight_group.name, possible_weight_group.sort_order as sort_order
+(SELECT obs_weight.value_numeric as weight,
+ obs_defect.value_coded as defect,
+ obs_asphyxia.value_concept_full_name as asphyxia,
+ possible_weight_group.name, possible_weight_group.sort_order as sort_order
 FROM obs_view as obs_delivery_time
 INNER JOIN obs_view AS obs_weight ON obs_weight.encounter_id = obs_delivery_time.encounter_id
-	AND obs_delivery_time.concept_full_name = 'Delivery date and time'
+	AND obs_delivery_time.concept_full_name = 'Delivery Note, Delivery date and time'
     AND DATE(obs_delivery_time.value_datetime) BETWEEN @start_date AND @end_date
-    AND obs_weight.concept_full_name = 'Liveborn, weight'
+    AND obs_weight.concept_full_name = 'Delivery Note, Liveborn weight'
 LEFT OUTER JOIN obs_view AS obs_defect ON obs_weight.obs_group_id = obs_defect.obs_group_id
-		AND obs_defect.concept_full_name = 'Liveborn, defects present'
+		AND obs_defect.concept_full_name = 'Delivery Note, Liveborn defects present'
         AND obs_defect.value_coded = 1
-LEFT OUTER JOIN obs_view AS obs_asphyxia ON obs_weight.obs_group_id = obs_asphyxia.obs_group_id
-	AND obs_asphyxia.concept_full_name = 'Liveborn, asphyxia'
-    AND obs_asphyxia.value_coded = 1
+LEFT OUTER JOIN coded_obs_view AS obs_asphyxia ON obs_weight.obs_group_id = obs_asphyxia.obs_group_id
+	AND obs_asphyxia.concept_full_name = 'Delivery Note, New Born Status'
+	AND obs_asphyxia.value_concept_full_name = 'Asphyxiated'
 RIGHT OUTER JOIN possible_weight_group ON
 	obs_weight.value_numeric >= possible_weight_group.min_weight AND obs_weight.value_numeric < possible_weight_group.max_weight
 WHERE possible_weight_group.report_group_name = 'Birth Weight Report') AS birth_weight

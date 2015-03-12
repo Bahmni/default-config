@@ -8,8 +8,9 @@ sort_order INT NOT NULL DEFAULT 0
 );
 
 INSERT INTO possible_weight_group(name, report_group_name, min_weight, max_weight, sort_order)
-			VALUES('Very low (< 2)', 'Birth Weight Report', 0, 2, 3); 
+			VALUES('Very low (< 2)', 'Birth Weight Report', 0, 2000, 3); 
 INSERT INTO possible_weight_group(name, report_group_name, min_weight, max_weight, sort_order)
-			VALUES('Low (2 to </ 2.5)', 'Birth Weight Report', 2, 2.5, 2); 
+			VALUES('Low (2 to </ 2.5)', 'Birth Weight Report', 2000, 2499, 2); 
 INSERT INTO possible_weight_group(name, report_group_name, min_weight, max_weight, sort_order)
-			VALUES('Normal (>/2.5)', 'Birth Weight Report', 2.5, 999, 1	); 
+			VALUES('Normal (>/2.5)', 'Birth Weight Report', 2500, 99999, 1	); 
+		

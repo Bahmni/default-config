@@ -1,6 +1,6 @@
 -- Parameters
-SET @start_date = '2014-11-01';
-SET @end_date = '2014-11-30';
+SET @start_date = '2015-02-25';
+SET @end_date = '2015-03-15';
 
 -- Query
 -- Children aged less than 2 months 
@@ -11,15 +11,15 @@ SELECT total.name AS 'Less than 2 months Children',
        diagnoses.LBI AS 'LBI',
        diagnoses.Jaundice AS 'Jaundice',
        diagnoses.LWDF AS 'Low weight/ Feeding Prob.',
-       treatment.cotrim AS 'Treatment - Cotrim Paediatrics',
-       treatment.gentamycin AS 'Treatment - Gentamycin',
+--        treatment.cotrim AS 'Treatment - Cotrim Paediatrics',
+--       treatment.gentamycin AS 'Treatment - Gentamycin',
        total.refer AS 'Refer',
        total.follow_up AS 'Follow-up'
 FROM
 -- Total cases, Refer, Follow -up
 (SELECT possible_age_group.name,
        SUM(IF(reference_concept.concept_full_name IS NULL, 0, IF(reference_concept.concept_full_name = 'Childhood Illness( Children aged below 2 months)',1,0))) AS total_cases,
-       SUM(IF(reference_concept.concept_full_name IS NULL, 0, IF(reference_concept.concept_full_name = 'Childhood Illness, Referred to',1,0))) AS refer,
+       SUM(IF(reference_concept.concept_full_name IS NULL, 0, IF(reference_concept.concept_full_name = 'Childhood Illness, Referred out',1,0))) AS refer,
        SUM(IF(reference_concept.concept_full_name IS NULL, 0, IF(reference_concept.concept_full_name = 'Childhood Illness, Follow up result',1,0))) AS follow_up
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
@@ -27,7 +27,7 @@ INNER JOIN person ON visit.patient_id = person.person_id
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 LEFT OUTER JOIN obs ON encounter.encounter_id = obs.encounter_id
 INNER JOIN concept_view AS reference_concept ON obs.concept_id = reference_concept.concept_id
-	AND reference_concept.concept_full_name IN ('Childhood Illness( Children aged below 2 months)','Childhood Illness, Referred to', 'Childhood Illness, Follow up result')    
+	AND reference_concept.concept_full_name IN ('Childhood Illness( Children aged below 2 months)','Childhood Illness, Referred out', 'Childhood Illness, Follow up result')    
 RIGHT OUTER JOIN possible_age_group ON visit.date_started BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.min_years YEAR), INTERVAL possible_age_group.min_days DAY)) 
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.max_years YEAR), INTERVAL possible_age_group.max_days DAY))
 WHERE possible_age_group.report_group_name = 'Childhood Illness 2months'
@@ -91,7 +91,8 @@ SELECT total.name AS '2-59 months Children',
        ari.ari_pneumonia AS 'ARI - Pneumonia',
        ari.ari_severe_pneumonia AS 'ARI - Severe Pneumonia',
        diarrhoea.diarrhoea_no_dehydration AS 'Diarrhoea - No Dehydration',
-       diarrhoea.diarrhoea_dehydration AS 'Diarrhoea - Severe Dehydration',
+       diarrhoea.diarrhoea_some_dehydration AS 'Diarrhoea - Some Dehydration',
+       diarrhoea.diarrhoea_severe_dehydration AS 'Diarrhoea - Severe Dehydration',
        diarrhoea.diarrhoea_dysentery AS 'Diarrhoea - Dysentery',
        malaria.malaria_falciparum AS 'Malaria - Falciparum',
        malaria.malaria_non_falciparum AS 'Malaria - Non-Falciparum',
@@ -102,13 +103,13 @@ SELECT total.name AS '2-59 months Children',
        diseases.severe_malnutrition AS 'Severe malnutrition',
        diseases.anaemia AS 'Anaemia',
        diseases.others AS 'Other',
-	   treatment.cotrim AS 'Treatment - Cotrim Paediatrics',
-	   'Treatment - Other antibiotics',
-       'Treatment - IV fluid',
-       treatment_ors_zinc.count AS 'Treatment - ORS and Zinc',
-       treatment.ors AS 'Treatment - ORS Only',
-       treatment.anti_helminthes AS 'Treatment - Anti-helminthes',
-       treatment.vitamin_a AS 'Treatment - Vitamin A',
+	  -- treatment.cotrim AS 'Treatment - Cotrim Paediatrics',
+	  -- 'Treatment - Other antibiotics',
+      -- 'Treatment - IV fluid',
+      -- treatment_ors_zinc.count AS 'Treatment - ORS and Zinc',
+      -- treatment.ors AS 'Treatment - ORS Only',
+      -- treatment.anti_helminthes AS 'Treatment - Anti-helminthes',
+      -- treatment.vitamin_a AS 'Treatment - Vitamin A',
        refer.refer_ari AS 'Refer - ARI',
        refer.refer_diarrhoea AS 'Refer - Diarrhoea',
        refer.refer_others AS 'Refer - Others',
@@ -149,7 +150,7 @@ INNER JOIN person ON visit.patient_id = person.person_id
 	AND visit.date_started BETWEEN @start_date AND @end_date
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
-	AND obs_view.concept_full_name = 'Childhood Illness, Referred to'
+	AND obs_view.concept_full_name = 'Childhood Illness, Referred out'
 RIGHT OUTER JOIN possible_age_group ON visit.date_started BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.min_years YEAR), INTERVAL possible_age_group.min_days DAY)) 
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.max_years YEAR), INTERVAL possible_age_group.max_days DAY))
 WHERE possible_age_group.report_group_name = 'Childhood Illness 59months') AS reference_obs
@@ -189,9 +190,10 @@ INNER JOIN
 -- Classification - Diarrhoea
 (SELECT 
 	possible_age_group.name,
-    SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Diarrhoea present' && coded_obs_view.concept_full_name IS NULL, 1, 0)) AS diarrhoea_no_dehydration,
-    SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Diarrhoea present' && coded_obs_view.value_concept_full_name = 'Volume Depletion', 1, 0)) AS diarrhoea_dehydration,
-	SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Diarrhoea present' && (coded_obs_view.value_concept_full_name = 'Ameobic Dysentery' || coded_obs_view.value_concept_full_name = 'Bacillary Dysentery'), 1, 0)) AS diarrhoea_dysentery
+    SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Diarrhoea present' && dehydration_type.value_concept_full_name = 'No Dehydration', 1, 0)) AS diarrhoea_no_dehydration,
+    SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Diarrhoea present' && dehydration_type.value_concept_full_name = 'Some Dehydration', 1, 0)) AS diarrhoea_some_dehydration,
+    SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Diarrhoea present' && dehydration_type.value_concept_full_name = 'Severe Dehydration', 1, 0)) AS diarrhoea_severe_dehydration,
+	SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Diarrhoea present' && (coded_obs_view.value_concept_full_name = 'Amoebic Dysentery' || coded_obs_view.value_concept_full_name = 'Bacillary Dysentery'), 1, 0)) AS diarrhoea_dysentery
     
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
@@ -199,9 +201,11 @@ INNER JOIN person ON visit.patient_id = person.person_id
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 	AND obs_view.concept_full_name IN ('Childhood Illness, Diarrhoea present') AND obs_view.value_coded = 1
+LEFT OUTER JOIN coded_obs_view dehydration_type ON dehydration_type.obs_group_id = obs_view.obs_group_id
+	AND dehydration_type.concept_full_name = 'Childhood Illness, Dehydration Status'
 LEFT OUTER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
-	AND coded_obs_view.value_concept_full_name IN ('Volume Depletion', 'Ameobic Dysentery', 'Bacillary Dysentery')
+	AND coded_obs_view.value_concept_full_name IN ('Amoebic Dysentery', 'Bacillary Dysentery')
     AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
 LEFT OUTER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
@@ -214,43 +218,41 @@ INNER JOIN
 
 -- Malaria
 (SELECT 
-	possible_age_group.name,
-    SUM(IF(coded_obs_view.value_concept_full_name = 'Plasmodium Falciparum', 1, 0)) AS malaria_falciparum,
-    SUM(IF(coded_obs_view.value_concept_full_name = 'Plasmodium Vivax' || coded_obs_view.value_concept_full_name = 'Clinical Malaria', 1, 0)) AS malaria_non_falciparum
+ 	 possible_age_group.name,
+     SUM(IF(coded_obs_view.value_concept_full_name = 'Plasmodium Falciparum', 1, 0)) AS malaria_falciparum,
+     SUM(IF(coded_obs_view.value_concept_full_name = 'Plasmodium Vivax' || coded_obs_view.value_concept_full_name = 'Clinical Malaria', 1, 0)) AS malaria_non_falciparum
 FROM person 
 INNER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
-	AND coded_obs_view.value_concept_full_name IN ('Clinical Malaria', 'Plasmodium Falciparum', 'Plasmodium Vivax')
+ 	AND coded_obs_view.value_concept_full_name IN ('Clinical Malaria', 'Plasmodium Falciparum', 'Plasmodium Vivax')
     AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
-INNER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
+LEFT OUTER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'
 RIGHT OUTER JOIN possible_age_group ON DATE(coded_obs_view.obs_datetime) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.min_years YEAR), INTERVAL possible_age_group.min_days DAY)) 
-						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.max_years YEAR), INTERVAL possible_age_group.max_days DAY))
+ 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.max_years YEAR), INTERVAL possible_age_group.max_days DAY))
 WHERE possible_age_group.report_group_name = 'Childhood Illness 59months') AS malaria
 ON diarrhoea.name = malaria.name
 INNER JOIN
 -- Very severe febrile disease, ear infection ,other fever, severe malnutrition
 (SELECT 
 	possible_age_group.name,
-    SUM(IF( coded_obs_view.value_concept_full_name = 'Clinical Malaria' ||
-			coded_obs_view.value_concept_full_name = 'Plasmodium Falciparum' ||
+    SUM(IF( coded_obs_view.value_concept_full_name = 'Clinical Malaria' ||
+			coded_obs_view.value_concept_full_name = 'Plasmodium Falciparum' ||
             coded_obs_view.value_concept_full_name = 'Typhoid' ||
-            coded_obs_view.value_concept_full_name = 'Severe pneumonia' ||
+            coded_obs_view.value_concept_full_name = 'Severe Pneumonia' ||
             coded_obs_view.value_concept_full_name = 'Meningitis' ||
-            coded_obs_view.value_concept_full_name = 'Lower respiratory tract infection', 1, 0)) AS febrile_disease,
-	SUM(IF( coded_obs_view.value_concept_full_name = 'Acute Suppurative Otitis Media' ||
-	        coded_obs_view.value_concept_full_name = 'Chronic Suppurative Otitis Media', 1, 0)) AS ear_infection,
-    SUM(IF( coded_obs_view.value_concept_full_name = 'Pyrexia of Unknown Origin', 1, 0)) AS other_fever,
-    SUM(IF( coded_obs_view.value_concept_full_name = 'Anaemia', 1, 0)) AS anaemia,
+            coded_obs_view.value_concept_full_name = 'Lower Respiratory Tract Infection', 1, 0)) AS febrile_disease,
+	SUM(IF( coded_obs_view.value_concept_full_name = 'Acute Suppurative Otitis Media' ||
+	        coded_obs_view.value_concept_full_name = 'Chronic Suppurative Otitis Media', 1, 0)) AS ear_infection,
+    SUM(IF( coded_obs_view.value_concept_full_name = 'Pyrexia Of Unknown Origin', 1, 0)) AS other_fever,
+    SUM(IF( coded_obs_view.value_concept_full_name = 'Anaemia / Polyneuropathy', 1, 0)) AS anaemia,
     SUM(IF( coded_obs_view.value_concept_full_name = 'Malnutrition', 1, 0)) AS severe_malnutrition,
     SUM(IF( coded_obs_view.value_concept_full_name = 'Measles', 1, 0)) AS measles,
-    SUM(IF( coded_obs_view.value_concept_full_name NOT IN ( 'Clinical Malaria', 'Plasmodium Falciparum', 'Typhoid', 'Severe pneumonia', 'Meningitis', 'Lower respiratory tract infection', 'Acute Suppurative Otitis Media', 'Chronic Suppurative Otitis Media', 'Pyrexia of Unknown Origin', 'Anaemia', 'Malnutrition', 'Measles'), 1, 0)) AS others
+    SUM(IF( coded_obs_view.value_concept_full_name NOT IN ( 'Clinical Malaria', 'Plasmodium Falciparum', 'Typhoid', 'Severe Pneumonia', 'Meningitis', 'Lower Respiratory Tract Infection', 'Acute Suppurative Otitis Media', 'Chronic Suppurative Otitis Media', 'Pyrexia Of Unknown Origin', 'Anaemia', 'Malnutrition', 'Measles'), 1, 0)) AS others
     FROM person 
 INNER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
-	-- AND coded_obs_view.value_concept_full_name IN ('Clinical Malaria', 'Plasmodium Falciparum', 'Typhoid', 'Severe pneumonia', 'Meningitis', 'Lower respiratory tract infection',
-    -- 'Acute Suppurative Otitis Media', 'Chronic Suppurative Otitis Media', 'Pyrexia of Unknown Origin', 'Anaemia', 'Malnutrition', 'Measles')
     AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
 INNER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
@@ -258,8 +260,8 @@ INNER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = cert
 RIGHT OUTER JOIN possible_age_group ON DATE(coded_obs_view.obs_datetime) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.min_years YEAR), INTERVAL possible_age_group.min_days DAY)) 
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL possible_age_group.max_years YEAR), INTERVAL possible_age_group.max_days DAY))
 WHERE possible_age_group.report_group_name = 'Childhood Illness 59months') AS diseases
-ON malaria.name = diseases.name
-INNER JOIN
+ON malaria.name = diseases.name;
+/*INNER JOIN
 
 -- Treatment
 (SELECT possible_age_group.name,
@@ -306,5 +308,4 @@ RIGHT OUTER JOIN possible_age_group ON first_order.date_activated BETWEEN (DATE_
 WHERE possible_age_group.report_group_name = 'Childhood Illness 59months'
 GROUP BY possible_age_group.name
 ORDER BY possible_age_group.sort_order) AS treatment_ors_zinc
-ON treatment.name = treatment_ors_zinc.name;
-
+ON treatment.name = treatment_ors_zinc.name;*/
