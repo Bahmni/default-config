@@ -191,7 +191,7 @@
     "type": "CodedObsCount",
     "config": {
       "type": "codedObsCountReport",
-      "ageGroupName": "All Ages",
+      "ageGroupName": "Opportunistic Infections",
       "conceptNames": "'OI, Opportunistic infections'"
     }
   },
