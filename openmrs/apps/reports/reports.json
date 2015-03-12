@@ -39,5 +39,14 @@
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
         }
+    },
+    {
+        "name": "Blood Pressure",
+        "type": "nonCodedObsCount",
+        "config":{
+            "type": "codedObsCountReport",
+            "ageGroupName": "Inpatient Discharge Reports",
+            "conceptNames": "'Systolic','Diastolic'"            
+        }
     }
 ]
