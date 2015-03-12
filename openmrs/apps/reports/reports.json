@@ -88,5 +88,32 @@
       "ageGroupName": "Malaria",
       "conceptNames": "'Malaria, Finding'"
     }
+  },
+  {
+    "name": "Tuberculosis Program - Registration (BC or CD)",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Tuberculosis",
+      "conceptNames": "'Tuberculosis, Diagnosis Category'"
+    }
+  },
+  {
+    "name": "Tuberculosis Program - Registration By Treatment Category",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Tuberculosis Treatment Category",
+      "conceptNames": "'Tuberculosis, Treatment Type'"
+    }
+  },
+  {
+    "name": "Tuberculosis Program - At The Time Of TB Diagnosis (With Known HIV Status)",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Tuberculosis, HIV Infection'"
+    }
   }
 ]

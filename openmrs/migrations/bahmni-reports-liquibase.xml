@@ -99,4 +99,43 @@
             VALUES('≥ 5 Years', 'Malaria', 5, 0, 999, 0, 2);
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-BAHMNI-REPORTS-TUBERCULOSIS-GROUP" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from reporting_age_group where report_group_name = 'Tuberculosis';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('0 ‐ 4 Years', 'Tuberculosis', 0, 0, 5, -1, 1);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('5 ‐ 14 years', 'Tuberculosis', 5, 0, 15, -1, 2);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('15 ‐ 24 Years', 'Tuberculosis', 15, 0, 25, -1, 3);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('25 ‐ 34 Years', 'Tuberculosis', 25, 0, 35, -1, 4);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('35 ‐ 44 Years', 'Tuberculosis', 35, 0, 45, -1, 5);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('45 ‐ 54 Years', 'Tuberculosis', 45, 0, 55, -1, 6);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('55 ‐ 64 Years', 'Tuberculosis', 55, 0, 65, -1, 7);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('≥ 65 Years', 'Tuberculosis', 65, 0, 999, 0, 8);
+
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-BAHMNI-REPORTS-TUBERCULOSIS-TREATMENT-CATEGORY-GROUP" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from reporting_age_group where report_group_name = 'Tuberculosis Treatment Category';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('0 ‐ 14 Years', 'Tuberculosis Treatment Category', 0, 0, 15, -1, 1);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('≥ 15 years', 'Tuberculosis Treatment Category', 15, 0, 999, 0, 2);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
