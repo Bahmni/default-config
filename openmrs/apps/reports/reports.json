@@ -195,5 +195,14 @@
       "ageGroupName": "All Ages",
       "conceptNames": "'OI, Opportunistic infections'"
     }
+  },
+  {
+    "name": "Hospital Activities - Referrals (Referred Out) ",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Disposition'"
+    }
   }
 ]
