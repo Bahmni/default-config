@@ -47,7 +47,7 @@
     },
     {
         "name": "Blood Pressure",
-        "type": "nonCodedObsCount",
+        "type": "obsCount",
         "config":{
             "type": "codedObsCountReport",
             "ageGroupName": "Inpatient Discharge Reports",
