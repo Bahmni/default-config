@@ -212,5 +212,43 @@
       "ageGroupName": "All Ages",
       "conceptNames": "'Disposition'"
     }
+  },
+  {
+    "name": "Summary Of Indoor Services - Death Information (Maternal)",
+    "type": "obsCount",
+    "config":{
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Death Note, Maternal Death'"
+    }
+  },
+  {
+    "name": "Summary Of Indoor Services - Death Information (Early Neonatal, Late Neonatal, Others)",
+    "type": "obsCount",
+    "config":{
+      "type": "codedObsCountReport",
+      "ageGroupName": "Death Information",
+      "conceptNames": "'Death Note'"
+    }
+  },
+  {
+    "name": "Summary Of Indoor Services - Surgeries (Major, Minor)",
+    "type": "obsCount",
+    "config":{
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Operative Notes, Procedure','Procedure Notes, Procedure'",
+      "visitTypes": "'General','Admitted','Discharged','Emergency'"
+    }
+  },
+  {
+    "name": "Summary Of Indoor Services - Surgeries (Plaster)",
+    "type": "CodedObsCount",
+    "config":{
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Procedure Notes, Procedure'",
+      "visitTypes": "'General','Admitted','Discharged','Emergency'"
+    }
   }
 ]
