@@ -5,7 +5,8 @@
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "Inpatient Discharge Reports",
-            "conceptNames": "'Chief Complaint'"
+            "conceptNames": "'Chief Complaint'",
+            "visitTypes": "'Admitted','Discharged','OPD', 'Emergency'"
         }
     },
     {
