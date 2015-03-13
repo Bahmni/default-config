@@ -79,6 +79,15 @@
     }
   },
   {
+    "name": "Safe Motherhood Program - Maternal Death",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Death Note, Maternal Death'"
+    }
+  },
+  {
     "name": "Family Planning Program - Postpartum FP Acceptors",
     "type": "CodedObsCount",
     "config": {
