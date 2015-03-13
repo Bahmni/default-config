@@ -151,12 +151,21 @@
     }
   },
   {
-    "name": "DR Tuberculosis Program - Under Current Treatment",
+    "name": "DR Tuberculosis Program - Drug Resistant TB Case Registration (Under Current Treatment)",
     "type": "obsCount",
     "config": {
       "type": "codedObsCountReport",
       "ageGroupName": "All Ages",
       "conceptNames": "'DRTuberculosis, Intake'"
+    }
+  },
+  {
+    "name": "DR Tuberculosis Program - New Registered DR TB Cases",
+    "type": "CodedObsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "DR Tuberculosis",
+      "conceptNames": "'DRTuberculosis, Diagnosis Category'"
     }
   },
   {
