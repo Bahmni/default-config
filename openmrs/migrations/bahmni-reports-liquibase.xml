@@ -225,5 +225,18 @@
                 INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
                 VALUES('2 - 59 months', 'Childhood Illness 59months', 0, 60, 5, -1, 1);
         </sql>
-    </changeSet>        
+    </changeSet>
+    <changeSet id="POSSIBLE-BAHMNI-REPORTS-NUTRITION-PROGRAM-VITAMIN-A-GROUP" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from reporting_age_group where report_group_name = 'Nutrition Program Vitamin A';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('6 - 11 months', 'Nutrition Program Vitamin A', 0, 180, 1, -1, 1);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('12 - 59 months', 'Nutrition Program Vitamin A', 1, 0, 5, -1, 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>

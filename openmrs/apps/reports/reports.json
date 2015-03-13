@@ -259,5 +259,14 @@
       "ageGroupName": "Childhood Illness 59months",
       "conceptNames": "'Childhood Illness( Children aged 2 months to 5 years)'"
     }
+  },
+  {
+    "name": "Nutrition Program - <5 years children receiving (Vitamin A)",
+    "type": "obsCount",
+    "config":{
+      "type": "codedObsCountReport",
+      "ageGroupName": "Nutrition Program Vitamin A",
+      "conceptNames": "'Childhood Illness, Vitamin A Capsules Provided'"
+    }
   }
 ]
