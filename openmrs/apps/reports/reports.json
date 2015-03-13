@@ -196,6 +196,24 @@
     }
   },
   {
+    "name": "HIV AIDS Program - Anteretroviral Treatment (No of Patient transferred in and Transferred out)",
+    "type": "obsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Anteretroviral",
+      "conceptNames": "'HIVTC, Date of transferred in','HIVTC, Date of transferred out'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - Anteretroviral Treatment (New Patient and Transferred in Patients, on ART)",
+    "type": "obsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Anteretroviral",
+      "conceptNames": "'HIVTC, ART Regimen','HIVTC, Transferred Patient Regimen'"
+    }
+  },
+  {
     "name": "HIV AIDS Program - ART Adherence (No of Cases)",
     "type": "CodedObsCount",
     "config": {
