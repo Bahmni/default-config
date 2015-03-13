@@ -210,9 +210,9 @@
         </preConditions>
         <sql>
                 INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-                VALUES('</ 28 days', 'Childhood Illness 2months', 0, 0, 0, 28, 1);     
+                VALUES('&lt; 28 days', 'Childhood Illness 2months', 0, 0, 0, 27, 1);
                 INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-                VALUES('29 - 59 days', 'Childhood Illness 2months', 0, 29, 0, 59, 2);
+                VALUES('29 - 59 days', 'Childhood Illness 2months', 0, 28, 0, 59, 2);
         </sql>
     </changeSet> 
     <changeSet id="POSSIBLE-BAHMNI-REPORTS-CHILDHOOD-ILLNESS-59MONTHS-GROUP" author="tw">
@@ -223,7 +223,7 @@
         </preConditions>
         <sql>
                 INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-                VALUES('2 - 59 months', 'Childhood Illness 59months', 0, 60, 5, -1, 3);
+                VALUES('2 - 59 months', 'Childhood Illness 59months', 0, 60, 5, -1, 1);
         </sql>
     </changeSet>        
 </databaseChangeLog>

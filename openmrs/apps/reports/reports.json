@@ -250,5 +250,14 @@
       "conceptNames": "'Procedure Notes, Procedure'",
       "visitTypes": "'General','Admitted','Discharged','Emergency'"
     }
+  },
+  {
+    "name": "CBIMCI - Greater Than 2 Months (Total)",
+    "type": "obsCount",
+    "config":{
+      "type": "codedObsCountReport",
+      "ageGroupName": "Childhood Illness 59months",
+      "conceptNames": "'Childhood Illness( Children aged 2 months to 5 years)'"
+    }
   }
 ]
