@@ -250,6 +250,15 @@
     }
   },
   {
+    "name": "HIV AIDS Program - Opportunistic Infections TB and FP (Total no of PLHIV, PLHIV using any FP method)",
+    "type": "obsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Opportunistic Infections",
+      "conceptNames": "'Opportunistic Infection Template','HIVTC, FP methods used by the patient'"
+    }
+  },
+  {
     "name": "Hospital Activities - Referrals (Referred Out) ",
     "type": "CodedObsCount",
     "config": {
