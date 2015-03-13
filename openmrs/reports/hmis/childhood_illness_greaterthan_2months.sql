@@ -83,7 +83,7 @@ INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 LEFT OUTER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
 	AND coded_obs_view.value_concept_full_name IN ('Pneumonia','Severe pneumonia')
-    AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
+    AND coded_obs_view.obs_datetime BETWEEN #startDate# AND #endDate#
 LEFT OUTER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'
@@ -103,7 +103,7 @@ INNER JOIN
     
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN @start_date AND @end_date
+	AND visit.date_started BETWEEN #startDate# AND #endDate#
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 	AND obs_view.concept_full_name IN ('Childhood Illness, Diarrhoea present') AND obs_view.value_coded = 1
@@ -112,7 +112,7 @@ LEFT OUTER JOIN coded_obs_view dehydration_type ON dehydration_type.obs_group_id
 LEFT OUTER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
 	AND coded_obs_view.value_concept_full_name IN ('Amoebic Dysentery', 'Bacillary Dysentery')
-    AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
+    AND coded_obs_view.obs_datetime BETWEEN #startDate# AND #endDate#
 LEFT OUTER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'
