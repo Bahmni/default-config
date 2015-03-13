@@ -11,7 +11,7 @@ from visit v
   INNER JOIN concept_name cn on cn.concept_id = obs.concept_id
   INNER JOIN person p on p.person_id = obs.person_id
   INNER JOIN visit_attribute va on va.visit_id = v.visit_id
-  INNER JOIN reporting_age_group rag ON rag.report_group_name = 'Inpatient Discharge Reports' AND
+  INNER JOIN reporting_age_group rag ON rag.report_group_name = 'All Ages' AND
                                         obs.obs_datetime BETWEEN (DATE_ADD(DATE_ADD(p.birthdate, INTERVAL rag.min_years YEAR), INTERVAL rag.min_days DAY))
                                         AND (DATE_ADD(DATE_ADD(p.birthdate, INTERVAL rag.max_years YEAR), INTERVAL rag.max_days DAY))
 where cn.name in ('Operative Notes, Procedure','Procedure Notes, Procedure') 
