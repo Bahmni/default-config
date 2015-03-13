@@ -277,5 +277,14 @@
       "ageGroupName": "Nutrition Program Vitamin A",
       "conceptNames": "'Childhood Illness, Vitamin A Capsules Provided'"
     }
+  },
+  {
+    "name": "Leprosy Control Program - (No of Patient treated in this month)",
+    "type": "CodedObsCount",
+    "config":{
+      "type": "codedObsCountReport",
+      "ageGroupName": "Leprosy Control",
+      "conceptNames": "'Leprosy, Leprosy Type'"
+    }
   }
 ]
