@@ -348,5 +348,14 @@
       "type": "sqlReport",
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/neonate_form.sql"
     }
+  },
+  {
+    "name": "Hospital Services - Diagnostic Services (USG, ECG)",
+    "type": "obsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'USG Notes','ECG Notes'"
+    }
   }
 ]
