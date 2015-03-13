@@ -259,6 +259,15 @@
     }
   },
   {
+    "name": "HIV AIDS Program - STI cases by Sex And Age Group (Diagnosed)",
+    "type": "obsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "STI Cases",
+      "conceptNames": "'STI, STI Diagnosis Syndrome'"
+    }
+  },
+  {
     "name": "Hospital Activities - Referrals (Referred Out) ",
     "type": "CodedObsCount",
     "config": {

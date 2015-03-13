@@ -277,4 +277,23 @@
             VALUES('≥ 65 Years', 'DR Tuberculosis', 65, 0, 999, 0, 8);
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-BAHMNI-REPORTS-STI-CASES-GROUP" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from reporting_age_group where report_group_name = 'STI Cases';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('≤ 14 Years', 'STI Cases', 0, 0, 15, -1, 1);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('15 ‐ 19 Years', 'STI Cases', 15, 0, 20, -1, 2);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('20 ‐ 24 Years', 'STI Cases', 20, 0, 25, -1, 3);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('25 ‐ 49 Years', 'STI Cases', 25, 0, 50, -1, 4);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('≥ 50 Years', 'STI Cases', 50, 0, 999, 0, 5);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
