@@ -286,5 +286,13 @@
       "ageGroupName": "Leprosy Control",
       "conceptNames": "'Leprosy, Leprosy Type'"
     }
+  },
+  {
+    "name": "Neonate Form",
+    "type": "MRSGeneric",
+    "config": {
+      "type": "sqlReport",
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/neonate_form.sql"
+    }
   }
 ]
