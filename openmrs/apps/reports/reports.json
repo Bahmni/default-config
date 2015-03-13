@@ -151,6 +151,15 @@
     }
   },
   {
+    "name": "DR Tuberculosis Program - Under Current Treatment",
+    "type": "obsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'DRTuberculosis, Intake'"
+    }
+  },
+  {
     "name": "HIV AIDS Program - PMTCT (ART Started, positive HIV Women, Breast Feeding)",
     "type": "CodedObsCount",
     "config": {
