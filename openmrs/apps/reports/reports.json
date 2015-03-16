@@ -374,5 +374,13 @@
       "ageGroupName": "All Ages",
       "conceptNames": "'USG Notes','ECG Notes'"
     }
+  },
+  {
+    "name": "Abortion Services",
+    "type": "MRSGeneric",
+    "config": {
+      "type": "sqlReport",
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
+    }
   }
 ]
