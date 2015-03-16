@@ -110,6 +110,17 @@
     }
   },
   {
+    "name": "Safe Motherhood program - Safe Abortion Service (Post abortion FP methods)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "All Ages",
+      "conceptPair": ["Abortion procedure", "Accepted Family Planning methods"],
+      "rowsGroupBy": ["Accepted Family Planning methods"],
+      "columnsGroupBy": ["Abortion procedure"]
+    }
+  },
+  {
     "name": "Family Planning Program - Postpartum FP Acceptors",
     "type": "CodedObsCount",
     "config": {
@@ -568,6 +579,94 @@
     "config": {
       "type": "sqlReport",
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/newLeprosyPatients.sql"
+    }
+  },
+  {
+    "name": "Family planning program - Temporary FP methods (new users, current users)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "Abortion Services Report",
+      "conceptPair": ["FP, Family Planning Method", "FP, Users Type"],
+      "rowsGroupBy": ["FP, Family Planning Method"],
+      "columnsGroupBy": ["FP, Users Type", "age_group"]
+    }
+  },
+  {
+    "name": "Leprosy control program - (Total Additions)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "All Ages",
+      "conceptPair": ["Leprosy, Case Type", "Leprosy, Leprosy Type"],
+      "rowsGroupBy": ["Leprosy, Case Type"],
+      "columnsGroupBy": ["Leprosy, Leprosy Type", "gender"]
+    }
+  },
+  {
+    "name": "Leprosy control program - (Total Deductions)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "All Ages",
+      "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Leprosy Type"],
+      "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
+      "columnsGroupBy": ["Leprosy, Leprosy Type", "gender"]
+    }
+  },
+  {
+    "name": "Leprosy control program - Deformity Status (New cases)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "Leprosy Control Deformity",
+      "conceptPair": ["Leprosy, Case Type", "Leprosy, Disability Grade"],
+      "rowsGroupBy": ["Leprosy, Case Type", "age_group"],
+      "columnsGroupBy": ["Leprosy, Disability Grade", "gender"]
+    }
+  },
+  {
+    "name": "Leprosy control program - Deformity Status (Released from treatment)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "All Ages",
+      "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Disability Grade"],
+      "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
+      "columnsGroupBy": ["Leprosy, Disability Grade", "gender"]
+    }
+  },
+  {
+    "name": "Malaria control program - Type of Malaria (type vs classification)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "Malaria",
+      "conceptPair": ["Malaria, Malaria Type", "Malaria, Classification"],
+      "rowsGroupBy": ["Malaria, Classification"],
+      "columnsGroupBy": ["Malaria, Malaria Type","age_group","gender"]
+    }
+  },
+  {
+    "name": "Tuberculosis control program - Case Registration",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "All Ages",
+      "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category"],
+      "rowsGroupBy": ["Tuberculosis, Type"],
+      "columnsGroupBy": ["Tuberculosis, Diagnosis Category","gender"]
+    }
+  },
+  {
+    "name": "Tuberculosis control program - Private Sector and Community Involvement in Referral and Diagnosis",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "All Ages",
+      "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Referred by"],
+      "rowsGroupBy": ["Tuberculosis, Referred by"],
+      "columnsGroupBy": ["Tuberculosis, Type","gender"]
     }
   }
 ]
