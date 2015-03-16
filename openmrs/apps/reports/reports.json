@@ -101,7 +101,10 @@
     "config": {
       "type": "codedObsByCodedObsReport",
       "ageGroupName": "All Ages",
-      "conceptPair": ["Delivery Note, Method of Delivery", "Delivery Note, Fetal Presentation"],
+      "conceptPair": [
+        "Delivery Note, Method of Delivery",
+        "Delivery Note, Fetal Presentation"
+      ],
       "rowsGroupBy": ["Delivery Note, Method of Delivery"],
       "columnsGroupBy": ["Delivery Note, Fetal Presentation"]
     }
@@ -343,7 +346,7 @@
   {
     "name": "Summary Of Indoor Services - Death Information (Maternal)",
     "type": "obsCount",
-    "config":{
+    "config": {
       "type": "codedObsCountReport",
       "ageGroupName": "All Ages",
       "conceptNames": "'Death Note, Maternal Death'"
@@ -352,7 +355,7 @@
   {
     "name": "Summary Of Indoor Services - Death Information (Early Neonatal, Late Neonatal, Others)",
     "type": "obsCount",
-    "config":{
+    "config": {
       "type": "codedObsCountReport",
       "ageGroupName": "Death Information",
       "conceptNames": "'Death Note'"
@@ -361,7 +364,7 @@
   {
     "name": "Summary Of Indoor Services - Surgeries (Major, Minor)",
     "type": "obsCount",
-    "config":{
+    "config": {
       "type": "codedObsCountReport",
       "ageGroupName": "All Ages",
       "conceptNames": "'Operative Notes, Procedure','Procedure Notes, Procedure'",
@@ -371,7 +374,7 @@
   {
     "name": "Summary Of Indoor Services - Surgeries (Plaster)",
     "type": "CodedObsCount",
-    "config":{
+    "config": {
       "type": "codedObsCountReport",
       "ageGroupName": "All Ages",
       "conceptNames": "'Procedure Notes, Procedure'",
@@ -390,7 +393,7 @@
   {
     "name": "CBIMCI - Greater Than 2 Months (Total)",
     "type": "obsCount",
-    "config":{
+    "config": {
       "type": "codedObsCountReport",
       "ageGroupName": "Childhood Illness 59months",
       "conceptNames": "'Childhood Illness( Children aged 2 months to 5 years)'"
@@ -399,7 +402,7 @@
   {
     "name": "Nutrition Program - <5 years children receiving (Vitamin A)",
     "type": "obsCount",
-    "config":{
+    "config": {
       "type": "codedObsCountReport",
       "ageGroupName": "Nutrition Program Vitamin A",
       "conceptNames": "'Childhood Illness, Vitamin A Capsules Provided'"
@@ -417,7 +420,7 @@
   {
     "name": "Leprosy Control Program - (No of Patient treated in this month)",
     "type": "CodedObsCount",
-    "config":{
+    "config": {
       "type": "codedObsCountReport",
       "ageGroupName": "Leprosy Control",
       "conceptNames": "'Leprosy, Leprosy Type'"
@@ -498,9 +501,15 @@
     "config": {
       "type": "codedObsByCodedObsReport",
       "ageGroupName": "Childhood Illness 59months",
-      "conceptPair": ["Childhood Illness, Referred out", "Childhood Illness, Diarrhoea present"],
+      "conceptPair": [
+        "Childhood Illness, Referred out",
+        "Childhood Illness, Diarrhoea present"
+      ],
       "rowsGroupBy": ["Childhood Illness, Referred out"],
-      "columnsGroupBy": ["Childhood Illness, Diarrhoea present", "age_group"]
+      "columnsGroupBy": [
+        "Childhood Illness, Diarrhoea present",
+        "age_group"
+      ]
     }
   },
   {
@@ -509,9 +518,15 @@
     "config": {
       "type": "codedObsByCodedObsReport",
       "ageGroupName": "Childhood Illness 59months",
-      "conceptPair": ["Childhood Illness, Referred out", "Childhood Illness, Acute Respiratory Infection present"],
+      "conceptPair": [
+        "Childhood Illness, Referred out",
+        "Childhood Illness, Acute Respiratory Infection present"
+      ],
       "rowsGroupBy": ["Childhood Illness, Referred out"],
-      "columnsGroupBy": ["Childhood Illness, Acute Respiratory Infection present", "age_group"]
+      "columnsGroupBy": [
+        "Childhood Illness, Acute Respiratory Infection present",
+        "age_group"
+      ]
     }
   },
   {
@@ -523,7 +538,7 @@
       "conceptNames": "'Childhood Illness, Referred out'"
     }
   },
-    {
+  {
     "name": "Risk Group Syphilis",
     "type": "MRSGeneric",
     "config": {
@@ -531,12 +546,20 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/risk_groups_syphilis.sql"
     }
   },
-    {
-        "name": "Malaria Control Programme - Died",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_control_programme_died.sql"
-        }
+  {
+    "name": "Malaria Control Programme - Died",
+    "type": "MRSGeneric",
+    "config": {
+      "type": "sqlReport",
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_control_programme_died.sql"
     }
+  },
+  {
+    "name": "Leprosy - New Patients",
+    "type": "MRSGeneric",
+    "config": {
+      "type": "sqlReport",
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/newLeprosyPatients.sql"
+    }
+  }
 ]
