@@ -341,6 +341,15 @@
     }
   },
   {
+    "name": "Nutrition Program - <5 yrs Children receiving (Deworming)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Childhood Illness, Albendazole Given'"
+    }
+  },
+  {
     "name": "Leprosy Control Program - (No of Patient treated in this month)",
     "type": "CodedObsCount",
     "config":{
