@@ -432,6 +432,14 @@
     }
   },
   {
+    "name": "Nutrition Program - Pregnancy",
+    "type": "MRSGeneric",
+    "config": {
+      "type": "sqlReport",
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/nutrition_program_pregnancy.sql"
+    }
+  },
+  {
     "name": "Hospital Services - Diagnostic Services (USG, ECG)",
     "type": "obsCount",
     "config": {
