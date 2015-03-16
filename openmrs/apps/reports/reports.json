@@ -96,6 +96,17 @@
     }
   },
   {
+    "name": "Safe Motherhood program - Type of delivery",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "All Ages",
+      "conceptPair": ["Delivery Note, Method of Delivery", "Delivery Note, Fetal Presentation"],
+      "rowsGroupBy": ["Delivery Note, Method of Delivery"],
+      "columnsGroupBy": ["Delivery Note, Fetal Presentation"]
+    }
+  },
+  {
     "name": "Family Planning Program - Postpartum FP Acceptors",
     "type": "CodedObsCount",
     "config": {
@@ -471,6 +482,37 @@
       "type": "codedObsCountReport",
       "ageGroupName": "All Ages",
       "conceptNames": "'Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT'"
+    }
+  },
+  {
+    "name": "CBIMCI - 2-59 months children (Refer Diarrhoea)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "Childhood Illness 59months",
+      "conceptPair": ["Childhood Illness, Referred out", "Childhood Illness, Diarrhoea present"],
+      "rowsGroupBy": ["Childhood Illness, Referred out"],
+      "columnsGroupBy": ["Childhood Illness, Diarrhoea present", "age_group"]
+    }
+  },
+  {
+    "name": "CBIMCI - 2-59 months children (Refer ARI)",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "type": "codedObsByCodedObsReport",
+      "ageGroupName": "Childhood Illness 59months",
+      "conceptPair": ["Childhood Illness, Referred out", "Childhood Illness, Acute Respiratory Infection present"],
+      "rowsGroupBy": ["Childhood Illness, Referred out"],
+      "columnsGroupBy": ["Childhood Illness, Acute Respiratory Infection present", "age_group"]
+    }
+  },
+  {
+    "name": "CBIMCI - 2-59 months children (Refer Total) [Refers Others = CBIMCI(Refer Total) - CBIMCI(Refer Diarrhoea) - CBIMCI(Refer ARI)]",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Childhood Illness, Referred out'"
     }
   }
 ]
