@@ -16,7 +16,7 @@
             VALUES('0 - 11 Months', 'Nutritional Status For Registered Children', 0, 0, 0, 340, 1);
 
             INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,sort_order)
-            VALUES('11 - 23 Months', 'Nutritional Status For Registered Children', 0, 341, 0, 713, 2);
+            VALUES('12 - 23 Months', 'Nutritional Status For Registered Children', 0, 341, 0, 713, 2);
         </sql>
     </changeSet>
     <changeSet id="POSSIBLE-BAHMNI-REPORTS-ALL-AGE-GROUP" author="tw">

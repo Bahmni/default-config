@@ -14,7 +14,7 @@ FROM
        SUM(IF(reference_concept.concept_full_name IS NULL, 0, IF(reference_concept.concept_full_name = 'Childhood Illness, Follow up result',1,0))) AS follow_up
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN @start_date AND @end_date
+	AND visit.date_started BETWEEN #startDate# AND #endDate#
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 LEFT OUTER JOIN obs ON encounter.encounter_id = obs.encounter_id
 INNER JOIN concept_view AS reference_concept ON obs.concept_id = reference_concept.concept_id
@@ -40,7 +40,7 @@ FROM
    SUM(IF((value_concept.concept_full_name = 'Low weight' || value_concept.concept_full_name = 'Very low weight') || (reference_concept.concept_full_name = 'Difficult feeding' && value_concept.concept_full_name = 'True'), 1,0 )) AS LWDF_count
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN @start_date AND @end_date
+	AND visit.date_started BETWEEN #startDate# AND #endDate#
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 LEFT OUTER JOIN obs ON encounter.encounter_id = obs.encounter_id
 INNER JOIN concept_view AS reference_concept ON obs.concept_id = reference_concept.concept_id

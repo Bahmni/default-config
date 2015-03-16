@@ -8,6 +8,6 @@ FROM coded_obs_view as obs_delivery_outcome
 INNER JOIN obs_view ON obs_delivery_outcome.obs_group_id = obs_view.obs_group_id
 	AND obs_delivery_outcome.concept_full_name = 'Delivery Note, Outcome of Delivery'
     AND obs_view.concept_full_name = 'Delivery Note, Delivery date and time'
- 	 AND DATE(obs_view.value_datetime) BETWEEN @start_date AND @end_date
+ 	 AND DATE(obs_view.value_datetime) BETWEEN #startDate# AND #endDate#
     AND obs_delivery_outcome.value_concept_full_name IN ('Single - livebirth','Twins - both liveborn','Twins - one liveborn and one stillborn', 'Other multiple births - all liveborn','Other multiple births - some liveborn'))
 AS delivery_outcome_liveborn

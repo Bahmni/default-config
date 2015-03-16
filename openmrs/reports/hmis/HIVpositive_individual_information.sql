@@ -1,6 +1,3 @@
-SET @start_date = '2015-02-01';
-SET @end_date = '2015-03-20';
-
 select @serial_number:=@serial_number+1 as 'S.No',`Client Code`,`District Code`,Sex,`Age(in yrs)`,`Risk Group(s)`,`Initial CD4 Count`,`WHO Stage` from
 (select t1.identifier as 'Client Code',county_district as 'District Code',gender as 'Sex', floor(DATEDIFF(obs_date,birthdate)/365) as 'Age(in yrs)', 
 	group_concat(risk_group separator ',') as 'Risk Group(s)', CD4 as 'Initial CD4 Count', WHO as 'WHO Stage' from
@@ -25,7 +22,7 @@ select @serial_number:=@serial_number+1 as 'S.No',`Client Code`,`District Code`,
 	inner join
 
 	(select person_id, value_numeric as 'CD4',min(obs_datetime) from obs_view 
-		where concept_full_name = 'HTC, CD4 Count' group by person_id)as t3 on t1.person_id = t3.person_id
+		where concept_full_name = 'HTC, CD4 Count' group by person_id)as t3 on t1.person_id = t3.person_i
  
 	inner join
 
