@@ -309,4 +309,19 @@
             sort_order) VALUES(' > 20 Years', 'Abortion Services Report', 20, 1, 999, 0, 2);
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-BAHMNI-REPORTS-MATERNAL-AGE-GROUP" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from reporting_age_group where report_group_name = 'Maternal Age';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('< 20 Years', 'Maternal Age', 0, 0, 20, -1, 1);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('20 - 34 Years', 'Maternal Age', 20, 0, 35, -1, 2);
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            VALUES('≥ 35 Years', 'Maternal Age', 35, 0, 999, 0, 3);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
