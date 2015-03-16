@@ -276,6 +276,51 @@
     }
   },
   {
+    "name": "HIV AIDS Program - PMTCT (Exposed Baby Started ARV Prophylaxis)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'PMTCT, Started ARV Prophylaxis for Baby'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - PMTCT (HIV positive Postpartum women received FP services)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'PMTCT, Family Planning services provided postpartum'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - OI TB AND FP (Assessed for TB this month, HIV Patients initiated IPT, TB HIV Patients recieved CPT, PLHIV screened for FP need)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "Opportunistic Infections",
+      "conceptNames": "'OI, Screening for TB','HIVTC, HIV care IPT started','Tuberculosis, Is patient on CPT','HIVTC, Need Family Planning assessment'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - STI cases by sex and age group (Counselling)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "STI Cases",
+      "conceptNames": "'STI, STI Counseling'"
+    }
+  },
+  {
+    "name": "HIV AIDS Program - STI cases by sex and age group (Treated Syndomic, Treated Etiological, Presumptive treatment to SWs, Asymptomatic Partners treated)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "STI Cases",
+      "conceptNames": "'STI, Sydromic Treatment','STI, Etiological Treatment','STI, Presumptive Treatment for Sex Workers','STI, Asymptomatic Partners Treated'"
+    }
+  },
+  {
     "name": "Hospital Activities - Referrals (Referred Out) ",
     "type": "CodedObsCount",
     "config": {
@@ -320,6 +365,15 @@
       "ageGroupName": "All Ages",
       "conceptNames": "'Procedure Notes, Procedure'",
       "visitTypes": "'General','Admitted','Discharged','Emergency'"
+    }
+  },
+  {
+    "name": "Summary Of Indoor services - Death Information (Postoperative, Brought Dead, Postmartem Done)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Death Note, Death occured post operative','Death Note, Brought dead','Death Note, Postmortem done'"
     }
   },
   {
@@ -381,6 +435,42 @@
     "config": {
       "type": "sqlReport",
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
+    }
+  },
+  {
+    "name": "FCHV Program - Safe Motherhood Program (Chlorhexidine applied in cord)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Chlorhexidin applied on cord'"
+    }
+  },
+  {
+    "name": "Malaria Control Program - Treatment (Pregnant)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Malaria, Pregnant'"
+    }
+  },
+  {
+    "name": "Malaria Control Program - Treatment (Total)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Malaria, Drug regimen'"
+    }
+  },
+  {
+    "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB Patients on ART, CPT)",
+    "type": "booleanConceptsCount",
+    "config": {
+      "type": "codedObsCountReport",
+      "ageGroupName": "All Ages",
+      "conceptNames": "'Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT'"
     }
   }
 ]
