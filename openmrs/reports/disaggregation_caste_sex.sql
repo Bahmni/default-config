@@ -54,7 +54,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
 	AND coded_obs_view.concept_full_name IN ('Weight condition')
     AND coded_obs_view.value_concept_full_name IN ('Low weight', 'Very low weight')
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS underweight ON underweight.caste_ethnicity = cbimci.caste_ethnicity
 INNER JOIN
 -- Institiutional Delivery
@@ -71,7 +71,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 	AND obs_view.concept_full_name = 'Delivery Note, Delivery date and time'
     AND DATE(obs_view.value_datetime) BETWEEN @start_date AND @end_date
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS delivery ON delivery.caste_ethnicity = underweight.caste_ethnicity
 INNER JOIN
 -- Abortion cases
@@ -88,7 +88,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
 	AND coded_obs_view.concept_full_name = 'Abortion procedure'
     AND coded_obs_view.value_concept_full_name IS NOT NULL
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS abortion ON abortion.caste_ethnicity = delivery.caste_ethnicity
 INNER JOIN
 -- Out patient cases
@@ -105,7 +105,7 @@ INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = 
 AND NOT EXISTS(SELECT * 
 					FROM encounter_view 
 					WHERE encounter_view.visit_id = visit.visit_id AND encounter_view.encounter_type_name = 'ADMISSION' )
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS op_cases ON abortion.caste_ethnicity = op_cases.caste_ethnicity
 INNER JOIN
 
@@ -124,7 +124,7 @@ INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = 
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN encounter_type ON encounter.encounter_type = encounter_type.encounter_type_id
 	AND encounter_type.name = 'ADMISSION'
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS ip_cases ON op_cases.caste_ethnicity = ip_cases.caste_ethnicity;
 
 
@@ -155,7 +155,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
 	AND coded_obs_view.concept_full_name = 'HIVTC, Entry Point'
     AND coded_obs_view.value_concept_full_name IS NOT NULL
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS hiv_cases
 INNER JOIN
 
@@ -174,7 +174,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
 	AND coded_obs_view.concept_full_name IN ('Leprosy, Case Type')
     AND coded_obs_view.value_concept_full_name IS NOT NULL
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS leprosy_cases ON leprosy_cases.caste_ethnicity = hiv_cases.caste_ethnicity
 INNER JOIN    
 -- New TB cases
@@ -192,7 +192,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
 	AND coded_obs_view.concept_full_name IN ('Tuberculosis, Diagnosis Category')
     AND coded_obs_view.value_concept_full_name IS NOT NULL
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS tb_cases ON tb_cases.caste_ethnicity = hiv_cases.caste_ethnicity
 INNER JOIN
 
@@ -211,6 +211,6 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
 	AND coded_obs_view.concept_full_name IN ('Gender based violence')
     AND coded_obs_view.value_coded = 1 
-RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste Type' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
+RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS gender_violence ON gender_violence.caste_ethnicity = tb_cases.caste_ethnicity;
 

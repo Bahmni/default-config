@@ -24,35 +24,35 @@ SELECT 'New patients enrolled in HIV care' AS 'Anteretroviral Treatment : Status
                         WHERE concept_full_name = 'ART, Risk Group'
                           AND value_concept_full_name = 'Sex Worker'
                           AND gender='F'
-                          AND obs_datetime BETWEEN @start_date AND @end_date
+                          AND obs_datetime BETWEEN #startDate# AND #endDate#
                         GROUP BY person_id),1,0)),0) AS 'FSW',
        ifnull(sum(if(person_id IN
                        (SELECT person_id
                         FROM person_ids
                         WHERE concept_full_name = 'ART, Risk Group'
                           AND value_concept_full_name = 'People Who Inject Drugs'
-                          AND obs_datetime BETWEEN @start_date AND @end_date
+                          AND obs_datetime BETWEEN #startDate# AND #endDate#
                         GROUP BY person_id),1,0)),0) AS 'IDU',
        ifnull(sum(if(person_id IN
                        (SELECT person_id
                         FROM person_ids
                         WHERE concept_full_name = 'ART, Risk Group'
                           AND value_concept_full_name = 'MSM and Transgenders'
-                          AND obs_datetime BETWEEN @start_date AND @end_date
+                          AND obs_datetime BETWEEN #startDate# AND #endDate#
                         GROUP BY person_id),1,0)),0) AS 'MSM',
        ifnull(sum(if(person_id IN
                        (SELECT person_id
                         FROM person_ids
                         WHERE concept_full_name = 'ART, Risk Group'
                           AND value_concept_full_name = 'Migrant'
-                          AND obs_datetime BETWEEN @start_date AND @end_date
+                          AND obs_datetime BETWEEN #startDate# AND #endDate#
                         GROUP BY person_id),1,0)),0) AS 'Migrant',
        ifnull(sum(if(person_id IN
                        (SELECT person_id
                         FROM person_ids
                         WHERE concept_full_name = 'ART, Risk Group'
                           AND value_concept_full_name NOT IN ('Migrant', 'MSM and Transgenders', 'Sex Worker', 'People Who Inject Drugs')
-                          AND obs_datetime BETWEEN @start_date AND @end_date
+                          AND obs_datetime BETWEEN #startDate# AND #endDate#
                         GROUP BY person_id),1,0)),0) AS 'Others'
 FROM
   (SELECT o.person_id,
@@ -61,5 +61,5 @@ FROM
    FROM obs_view o
    INNER JOIN person p ON o.person_id = p.person_id
    WHERE o.concept_full_name='HIVTC, HIV care enrolled date'
-     AND o.value_datetime BETWEEN @start_date AND @end_date
+     AND o.value_datetime BETWEEN #startDate# AND #endDate#
    GROUP BY o.person_id) AS t2

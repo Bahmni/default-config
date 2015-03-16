@@ -26,7 +26,7 @@ FROM
        SUM(IF(obs_view.concept_full_name IS NULL, 0, IF(obs_view.concept_full_name = 'Childhood Illness, Follow up result',1,0))) AS follow_up
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN @start_date AND @end_date
+	AND visit.date_started BETWEEN #startDate# AND #endDate#
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 	AND obs_view.concept_full_name IN( 'Childhood Illness( Children aged 2 months to 5 years)', 'Childhood Illness, Follow up result')  
@@ -53,7 +53,7 @@ FROM
 (SELECT obs_view.concept_full_name, encounter.encounter_id, reporting_age_group.name
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN @start_date AND @end_date
+	AND visit.date_started BETWEEN #startDate# AND #endDate#
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 	AND obs_view.concept_full_name = 'Childhood Illness, Referred out'
@@ -76,7 +76,7 @@ INNER JOIN
     SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Acute Respiratory Infection present' && coded_obs_view.value_concept_full_name = 'Severe pneumonia', 1, 0)) AS ARI_severe_pneumonia
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN @start_date AND @end_date
+	AND visit.date_started BETWEEN #startDate# AND #endDate#
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 	AND obs_view.concept_full_name IN ('Childhood Illness, Acute Respiratory Infection present') AND obs_view.value_coded = 1
@@ -131,7 +131,7 @@ FROM person
 INNER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
  	AND coded_obs_view.value_concept_full_name IN ('Clinical Malaria', 'Plasmodium Falciparum', 'Plasmodium Vivax')
-    AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
+    AND coded_obs_view.obs_datetime BETWEEN #startDate# AND #endDate#
 LEFT OUTER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'
@@ -159,7 +159,7 @@ INNER JOIN
     FROM person 
 INNER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
-    AND coded_obs_view.obs_datetime BETWEEN @start_date AND @end_date
+    AND coded_obs_view.obs_datetime BETWEEN #startDate# AND #endDate#
 INNER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'

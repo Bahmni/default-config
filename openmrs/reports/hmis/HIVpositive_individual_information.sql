@@ -10,14 +10,14 @@ select @serial_number:=@serial_number+1 as 'S.No',`Client Code`,`District Code`,
         	inner join patient_identifier pi on p.person_id = pi.patient_id
         	left outer join concept_view c on o.value_coded = c.concept_id
 		where (o.concept_full_name in ('HTC, Risk Group','PMTCT, Risk Group') and o.value_coded is not null)
-        	and (o.obs_datetime between @start_date and @end_date) group by o.person_id, o.concept_full_name, c.concept_full_name) as t1
+        	and (o.obs_datetime between #startDate# and #endDate#) group by o.person_id, o.concept_full_name, c.concept_full_name) as t1
                     
 	inner join 
 
 	(select person_id from obs_view	
 		where ((concept_full_name = 'HTC, Result if tested'
 		and value_coded in (select concept_id from concept_view where concept_full_name = 'Positive')) or (concept_full_name in ('HIV (Blood)','HIV (Serum)') and value_text in ('Positive')))
-        	and (obs_datetime between @start_date and @end_date) group by person_id) as t2 on t1.person_id = t2.person_id
+        	and (obs_datetime between #startDate# and #endDate#) group by person_id) as t2 on t1.person_id = t2.person_id
                     
 	inner join
 
