@@ -113,15 +113,6 @@
         }
     },
     {
-        "name": "FCHV Program - Safe Motherhood Program (Chlorhexidine applied in cord)",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Chlorhexidin applied on cord'"
-        }
-    },
-    {
         "name": "Safe Motherhood Program - Delivery Service",
         "type": "CodedObsCount",
         "config": {
@@ -157,6 +148,15 @@
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": "'Delivery Note, Stillbirth type'"
+        }
+    },
+    {
+        "name": "Safe Motherhood Program - Chlorhexidine applied in cord",
+        "type": "booleanConceptsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Chlorhexidin applied on cord'"
         }
     },
     {
