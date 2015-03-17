@@ -140,6 +140,67 @@
         }
     },
     {
+        "name": "Leprosy control program - (Total Additions)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "conceptPair": ["Leprosy, Case Type", "Leprosy, Leprosy Type"],
+            "rowsGroupBy": ["Leprosy, Case Type"],
+            "columnsGroupBy": ["Leprosy, Leprosy Type", "gender"]
+        }
+    },
+    {
+        "name": "Leprosy Control Program - (No of Patient treated in this month)",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Leprosy Control",
+            "conceptNames": "'Leprosy, Leprosy Type'"
+        }
+    },
+    {
+        "name": "Leprosy control program - (Total Deductions)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Leprosy Type"],
+            "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
+            "columnsGroupBy": ["Leprosy, Leprosy Type", "gender"]
+        }
+    },
+    {
+        "name": "Leprosy control program - New Patients",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/newLeprosyPatients.sql"
+        }
+    },
+    {
+        "name": "Leprosy control program - Deformity Status (New cases)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "Leprosy Control Deformity",
+            "conceptPair": ["Leprosy, Case Type", "Leprosy, Disability Grade"],
+            "rowsGroupBy": ["Leprosy, Case Type", "age_group"],
+            "columnsGroupBy": ["Leprosy, Disability Grade", "gender"]
+        }
+    },
+    {
+        "name": "Leprosy control program - Deformity Status (Released from treatment)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Disability Grade"],
+            "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
+            "columnsGroupBy": ["Leprosy, Disability Grade", "gender"]
+        }
+    },
+    {
         "name": "Inpatient Outcome Status",
         "type": "CodedObsCount",
         "config": {
@@ -454,15 +515,6 @@
         }
     },
     {
-        "name": "Leprosy Control Program - (No of Patient treated in this month)",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "Leprosy Control",
-            "conceptNames": "'Leprosy, Leprosy Type'"
-        }
-    },
-    {
         "name": "Neonate Form",
         "type": "MRSGeneric",
         "config": {
@@ -579,58 +631,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_control_programme_died.sql"
-        }
-    },
-    {
-        "name": "Leprosy - New Patients",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/newLeprosyPatients.sql"
-        }
-    },
-    {
-        "name": "Leprosy control program - (Total Additions)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "All Ages",
-            "conceptPair": ["Leprosy, Case Type", "Leprosy, Leprosy Type"],
-            "rowsGroupBy": ["Leprosy, Case Type"],
-            "columnsGroupBy": ["Leprosy, Leprosy Type", "gender"]
-        }
-    },
-    {
-        "name": "Leprosy control program - (Total Deductions)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "All Ages",
-            "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Leprosy Type"],
-            "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
-            "columnsGroupBy": ["Leprosy, Leprosy Type", "gender"]
-        }
-    },
-    {
-        "name": "Leprosy control program - Deformity Status (New cases)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "Leprosy Control Deformity",
-            "conceptPair": ["Leprosy, Case Type", "Leprosy, Disability Grade"],
-            "rowsGroupBy": ["Leprosy, Case Type", "age_group"],
-            "columnsGroupBy": ["Leprosy, Disability Grade", "gender"]
-        }
-    },
-    {
-        "name": "Leprosy control program - Deformity Status (Released from treatment)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "All Ages",
-            "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Disability Grade"],
-            "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
-            "columnsGroupBy": ["Leprosy, Disability Grade", "gender"]
         }
     },
     {
