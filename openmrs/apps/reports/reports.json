@@ -263,7 +263,7 @@
         }
     },
     {
-        "name": "Family planning program - Temporary FP methods (new users, current users)",
+        "name": "Family Planning Program - Temporary FP methods (new users, current users)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -271,6 +271,17 @@
             "conceptPair": ["FP, Family Planning Method", "FP, Users Type"],
             "rowsGroupBy": ["FP, Family Planning Method"],
             "columnsGroupBy": ["FP, Users Type", "age_group"]
+        }
+    },
+    {
+        "name": "Family Planning Program - Temporary FP methods (Discontinued/Removed) [Take count if row=column]",
+        "type": "CodedObsByCodedObs",
+        "config": {
+          "type": "codedObsByCodedObsReport",
+          "ageGroupName": "All Ages",
+          "conceptPair": ["FP, Family Planning Method", "FP, Discontinued/Removed"],
+          "rowsGroupBy": ["FP, Family Planning Method"],
+          "columnsGroupBy": ["FP, Discontinued/Removed"]
         }
     },
     {
