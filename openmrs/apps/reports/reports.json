@@ -806,5 +806,13 @@
             "visitTypes": "'Admitted','Discharged'",
             "type": "diagnosisReport"
         }
+    },
+    {
+        "name": "HIV - Early Infant Diagnosis",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_early_infant_diagnosis.sql"
+        }
     }
 ]
