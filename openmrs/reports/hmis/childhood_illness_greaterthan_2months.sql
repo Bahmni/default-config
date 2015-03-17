@@ -1,5 +1,4 @@
 SELECT total.name AS '2-59 months Children',
-	   total.total AS 'Total',
        ari.ari_no_pneumonia AS 'ARI - No pneumonia',
        ari.ari_pneumonia AS 'ARI - Pneumonia',
        ari.ari_severe_pneumonia AS 'ARI - Severe Pneumonia',

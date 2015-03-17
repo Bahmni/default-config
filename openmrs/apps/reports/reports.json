@@ -26,7 +26,7 @@
         }
     },
     {
-        "name": "CBIMCI - Less Than 2 Months (Total Cases, Classification except Hypothermia, Refer, Follow-up)",
+        "name": "CBIMCI - Less Than 2 Months (Total Cases, Classification, Refer, Follow-up)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -49,6 +49,14 @@
             "type": "codedObsCountReport",
             "ageGroupName": "Childhood Illness 59months",
             "conceptNames": "'Childhood Illness( Children aged 2 months to 5 years)'"
+        }
+    },
+    {
+        "name": "CBIMCI - Greater Than 2 Months (ARI, Diarrhoea, Malaria, Very severe febrile diseases, Measles, Ear infection, Anaemia, Malnutrition, Other fever)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/childhood_illness_greaterthan_2months.sql"
         }
     },
     {
