@@ -744,5 +744,21 @@
         "type": "sqlReport",
         "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/kalaazar_control_program_method_of_diagnosis.sql"
       }
-    },    
+    },
+    {
+        "name": "Risk Group Syphilis",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/risk_groups_syphilis.sql"
+        }
+    },
+    {
+        "name": "Inpatient morbidity (Total Deaths)",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_morbidity.sql"
+        }
+    }
 ]
