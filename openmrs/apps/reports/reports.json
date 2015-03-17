@@ -1,5 +1,14 @@
 [
     {
+        "name": "Hospital Activities - Total Clients Referred",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Client Service Reports",
+            "conceptNames": "'Disposition'"
+        }
+    },
+    {
         "name": "Nutrition Program - Nutritional status of registered children",
         "type": "CodedObsCount",
         "config": {
@@ -515,15 +524,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
-        }
-    },
-    {
-        "name": "Hospital Activities - Referrals (Referred Out) ",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Disposition'"
         }
     },
     {
