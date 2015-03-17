@@ -304,9 +304,9 @@
         </preConditions>
         <sql>
             INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
-            sort_order) VALUES('≤ 20 Years', 'Abortion Services Report', 0, 0, 20, 0, 1);
+            sort_order) VALUES('&lt; 20 Years', 'Abortion Services Report', 0, 0, 20, -1, 1);
             INSERT INTO reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
-            sort_order) VALUES(' > 20 Years', 'Abortion Services Report', 20, 1, 999, 0, 2);
+            sort_order) VALUES('≥ 20 Years', 'Abortion Services Report', 20, 0, 999, 0, 2);
         </sql>
     </changeSet>
     <changeSet id="POSSIBLE-BAHMNI-REPORTS-MATERNAL-AGE-GROUP" author="tw">
