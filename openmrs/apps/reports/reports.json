@@ -152,6 +152,14 @@
         }
     },
     {
+        "name": "Safe Motherhood Program - PNC Visit",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
+        }
+    },
+    {
         "name": "Safe Motherhood Program - Safe Abortion Service",
         "type": "CodedObsCount",
         "config": {
@@ -568,14 +576,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/surgeries_post_operative_infection.sql"
-        }
-    },
-    {
-        "name": "PNC Visit",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
         }
     },
     {
