@@ -120,6 +120,26 @@
         }
     },
     {
+        "name": "Family planning program - Temporary FP methods (new users, current users)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "Abortion Services Report",
+            "conceptPair": ["FP, Family Planning Method", "FP, Users Type"],
+            "rowsGroupBy": ["FP, Family Planning Method"],
+            "columnsGroupBy": ["FP, Users Type", "age_group"]
+        }
+    },
+    {
+        "name": "Family Planning Program - Postpartum FP Acceptors",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Post Delivery FP Checklist, FP Method Patient Went Home With'"
+        }
+    },
+    {
         "name": "Inpatient Outcome Status",
         "type": "CodedObsCount",
         "config": {
@@ -150,15 +170,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
-        }
-    },
-    {
-        "name": "Family Planning Program - Postpartum FP Acceptors",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Post Delivery FP Checklist, FP Method Patient Went Home With'"
         }
     },
     {
@@ -576,17 +587,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/newLeprosyPatients.sql"
-        }
-    },
-    {
-        "name": "Family planning program - Temporary FP methods (new users, current users)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "Abortion Services Report",
-            "conceptPair": ["FP, Family Planning Method", "FP, Users Type"],
-            "rowsGroupBy": ["FP, Family Planning Method"],
-            "columnsGroupBy": ["FP, Users Type", "age_group"]
         }
     },
     {
