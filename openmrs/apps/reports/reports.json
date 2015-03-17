@@ -256,6 +256,64 @@
         }
     },
     {
+        "name": "Tuberculosis control program - Case Registration",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category"],
+            "rowsGroupBy": ["Tuberculosis, Type"],
+            "columnsGroupBy": ["Tuberculosis, Diagnosis Category", "gender"]
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - Registration (BC or CD)",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Tuberculosis",
+            "conceptNames": "'Tuberculosis, Diagnosis Category'"
+        }
+    },
+    {
+        "name": "Tuberculosis control program - Private Sector and Community Involvement in Referral and Diagnosis",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Referred by"],
+            "rowsGroupBy": ["Tuberculosis, Referred by"],
+            "columnsGroupBy": ["Tuberculosis, Type", "gender"]
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - Registration By Treatment Category",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Tuberculosis Treatment Category",
+            "conceptNames": "'Tuberculosis, Treatment Type'"
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - At The Time Of TB Diagnosis (With Known HIV Status)",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Tuberculosis, HIV Infection'"
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB Patients on ART, CPT)",
+        "type": "booleanConceptsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT'"
+        }
+    },
+    {
         "name": "Inpatient Outcome Status",
         "type": "CodedObsCount",
         "config": {
@@ -286,33 +344,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
-        }
-    },
-    {
-        "name": "Tuberculosis Program - Registration (BC or CD)",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "Tuberculosis",
-            "conceptNames": "'Tuberculosis, Diagnosis Category'"
-        }
-    },
-    {
-        "name": "Tuberculosis Program - Registration By Treatment Category",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "Tuberculosis Treatment Category",
-            "conceptNames": "'Tuberculosis, Treatment Type'"
-        }
-    },
-    {
-        "name": "Tuberculosis Program - At The Time Of TB Diagnosis (With Known HIV Status)",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Tuberculosis, HIV Infection'"
         }
     },
     {
@@ -585,15 +616,6 @@
         }
     },
     {
-        "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB Patients on ART, CPT)",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT'"
-        }
-    },
-    {
         "name": "CBIMCI - 2-59 months children (Refer Diarrhoea)",
         "type": "CodedObsByCodedObs",
         "config": {
@@ -644,26 +666,4 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/risk_groups_syphilis.sql"
         }
     },
-    {
-        "name": "Tuberculosis control program - Case Registration",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "All Ages",
-            "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category"],
-            "rowsGroupBy": ["Tuberculosis, Type"],
-            "columnsGroupBy": ["Tuberculosis, Diagnosis Category", "gender"]
-        }
-    },
-    {
-        "name": "Tuberculosis control program - Private Sector and Community Involvement in Referral and Diagnosis",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "All Ages",
-            "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Referred by"],
-            "rowsGroupBy": ["Tuberculosis, Referred by"],
-            "columnsGroupBy": ["Tuberculosis, Type", "gender"]
-        }
-    }
 ]
