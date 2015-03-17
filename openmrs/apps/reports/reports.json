@@ -1,6 +1,14 @@
 [
     {
-        "name": "Hospital Activities - Total Clients Referred",
+        "name": "Hospital Activities - Number of Clients Served (New and Total)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/number_of_clients.sql"
+        }
+    },
+    {
+        "name": "Hospital Activities - Number of Clients Served (Referred)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
