@@ -8,12 +8,29 @@
         }
     },
     {
-        "name": "Hospital Activities - Number of Clients Served (Referred)",
+        "name": "Hospital Activities - Number of Clients Served (Referred) [Check for only 'Referred' grid]",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "Client Service Reports",
             "conceptNames": "'Disposition'"
+        }
+    },
+    {
+        "name": "CBIMCI - Less Than 2 Months (Total Cases, Classification except Hypothermia, Refer, Follow-up)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/childhood_illness_lessthan_2months.sql"
+        }
+    },
+    {
+        "name": "CBIMCI - Less Than 2 Months (Death)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "Childhood Illness 2months",
+          "conceptNames": "'Death Note, Primary Cause of Death'"
         }
     },
     {
