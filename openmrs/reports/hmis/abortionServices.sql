@@ -37,7 +37,7 @@ FROM
                                     FROM concept_name
                                     WHERE
                                       name = 'Abortion Procedure' AND concept_name_type = 'FULLY_SPECIFIED')) AS obs1
-       ON obs1.obs_datetime BETWEEN cast('%s' AS DATE) AND cast('%s' AS DATE)
+       ON obs1.obs_datetime BETWEEN cast('#startDate#' AS DATE) AND cast('#endDate#' AS DATE)
      LEFT JOIN (SELECT
                   encounter_id,
                   obs_group_id,
