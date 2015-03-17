@@ -460,6 +460,15 @@
         }
     },
     {
+        "name": "HIV AIDS Program - HIV exposed baby (Prophylaxis - CPT/IPT)",
+        "type": "booleanConceptsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'HIVTC, HIV care CPT started', 'HIVTC, HIV care IPT started'"
+        }
+    },
+    {
         "name": "HIV AIDS Program - PMTCT (ART Started, positive HIV Women, Breast Feeding)",
         "type": "CodedObsCount",
         "config": {
