@@ -294,18 +294,18 @@
         }
     },
     {
-        "name": "Leprosy control program - (Total Additions)",
+        "name": "Leprosy control program - (Total Additions, No of ≤ 14 years patients among new cases)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
-            "ageGroupName": "All Ages",
+            "ageGroupName": "Leprosy Control",
             "conceptPair": ["Leprosy, Case Type", "Leprosy, Leprosy Type"],
-            "rowsGroupBy": ["Leprosy, Case Type"],
+            "rowsGroupBy": ["Leprosy, Case Type", "age_group"],
             "columnsGroupBy": ["Leprosy, Leprosy Type", "gender"]
         }
     },
     {
-        "name": "Leprosy Control Program - (No of Patient treated in this month)",
+        "name": "Leprosy Control Program - (No of Patient treated in this month, Patient at the end of this month, Patient < 14 years at the end of this month) [Patient at the end of this month= Total(Additions) - Total(Deducted)]",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -314,7 +314,7 @@
         }
     },
     {
-        "name": "Leprosy control program - (Total Deductions)",
+        "name": "Leprosy Control Program - (Total Deducted)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -325,7 +325,11 @@
         }
     },
     {
-        "name": "Leprosy control program - Deformity Status (New cases)",
+      "name": "Leprosy Control Program - (No. of smear examined) [check for 'M. Leprae (Slit Skin)']",
+      "type": "TestCount"
+    },
+    {
+        "name": "Leprosy Control Program - Deformity Status (New cases)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -336,7 +340,7 @@
         }
     },
     {
-        "name": "Leprosy control program - Deformity Status (Released from treatment)",
+        "name": "Leprosy Control Program - Deformity Status (Released from treatment)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -347,7 +351,15 @@
         }
     },
     {
-        "name": "Leprosy control program - New Patients",
+        "name": "Leprosy Control Program - Cohort of new registered patients",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/cohort_of_new_registered_leprosy_patients.sql"
+        }
+    },
+    {
+        "name": "Leprosy Control Program - Name of New Cases",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
