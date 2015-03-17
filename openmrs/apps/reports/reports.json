@@ -325,14 +325,6 @@
         }
     },
     {
-        "name": "Malaria Control Programme - Died",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_control_programme_died.sql"
-        }
-    },
-    {
         "name": "Tuberculosis control program - Case Registration",
         "type": "CodedObsByCodedObs",
         "config": {
