@@ -314,6 +314,33 @@
         }
     },
     {
+        "name": "DR Tuberculosis Program - DR TB Case Registration and HIV positive",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'DRTuberculosis, Diagnosis Category','DRTuberculosis, HIV Infection'"
+        }
+    },
+    {
+        "name": "DR Tuberculosis Program - New Registered DR TB Cases",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "DR Tuberculosis",
+            "conceptNames": "'DRTuberculosis, Diagnosis Category'"
+        }
+    },
+    {
+        "name": "DR Tuberculosis Program - Drug Resistant TB Case Registration (Under Current Treatment)",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'DRTuberculosis, Intake'"
+        }
+    },
+    {
         "name": "Inpatient Outcome Status",
         "type": "CodedObsCount",
         "config": {
@@ -344,33 +371,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
-        }
-    },
-    {
-        "name": "DR Tuberculosis Program - DR TB Case Registration and HIV positive",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'DRTuberculosis, Diagnosis Category','DRTuberculosis, HIV Infection'"
-        }
-    },
-    {
-        "name": "DR Tuberculosis Program - Drug Resistant TB Case Registration (Under Current Treatment)",
-        "type": "obsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'DRTuberculosis, Intake'"
-        }
-    },
-    {
-        "name": "DR Tuberculosis Program - New Registered DR TB Cases",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "DR Tuberculosis",
-            "conceptNames": "'DRTuberculosis, Diagnosis Category'"
         }
     },
     {
