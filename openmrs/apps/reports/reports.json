@@ -719,5 +719,13 @@
             "rowsGroupBy": ["Disposition"],
             "columnsGroupBy": [ "Out Patient Details, Free Health Service Code" ]
         }
-    }
+    },
+    {
+      "name": "Kala-azar Control Programme - Method Of Diagnosis",
+      "type": "MRSGeneric",
+      "config": {
+        "type": "sqlReport",
+        "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/kalaazar_control_program_method_of_diagnosis.sql"
+      }
+    },    
 ]
