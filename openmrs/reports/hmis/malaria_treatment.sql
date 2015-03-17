@@ -7,7 +7,7 @@ SELECT
 
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	 AND DATE(visit.date_started) BETWEEN #startDate# AND #endDate#
+	 AND DATE(visit.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS malaria_type ON encounter.encounter_id = malaria_type.encounter_id
 	AND malaria_type.concept_full_name = 'Malaria, Finding'

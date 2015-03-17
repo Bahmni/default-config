@@ -376,6 +376,19 @@
         }
     },
     {
+        "name": "Malaria Control Programme - Diagnosis and result [check for Microscopy= 'PBS for Malaria, Filaria parasite', RDT= SUM('Malaria Ags', 'Malaria Abs')]",
+        "type": "TestCount"
+    },
+    {
+        "name": "Malaria Control Programme - Treatment (Total)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Malaria, Drug regimen'"
+        }
+    },
+    {
         "name": "Malaria Control Programme - Treatment (Pregnant)",
         "type": "booleanConceptsCount",
         "config": {
@@ -385,32 +398,31 @@
         }
     },
     {
-        "name": "Malaria Control Programme - Treatment (Total)",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Malaria, Drug regimen'"
-        }
-    },
-    {
-        "name": "Malaria Control Programme - Type of Malaria (type vs classification)",
+        "name": "Malaria Control Programme - Type of Malaria (Type vs Classification)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
             "ageGroupName": "Malaria",
             "conceptPair": ["Malaria, Malaria Type", "Malaria, Classification"],
-            "rowsGroupBy": ["Malaria, Classification"],
-            "columnsGroupBy": ["Malaria, Malaria Type", "age_group", "gender"]
+            "rowsGroupBy": ["Malaria, Malaria Type"],
+            "columnsGroupBy": ["Malaria, Classification", "age_group", "gender"]
         }
     },
     {
-        "name": "Malaria Control Programme - Number of Malaria Cases",
+        "name": "Malaria Control Programme - Number of malaria cases",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "Malaria",
             "conceptNames": "'Malaria, Finding'"
+        }
+    },
+    {
+        "name": "Malaria Control Programme - Treatment of malaria",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_treatment.sql"
         }
     },
     {
