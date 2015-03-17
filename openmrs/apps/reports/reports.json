@@ -437,7 +437,7 @@
         }
     },
     {
-        "name": "Tuberculosis Control Program - Registration (BC or CD)",
+        "name": "Tuberculosis Control Program - Registration (BC or CD) [Check for 'New Diagnoses', 'Relapse']",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -446,7 +446,50 @@
         }
     },
     {
-        "name": "Tuberculosis control program - Private Sector and Community Involvement in Referral and Diagnosis",
+        "name": "Tuberculosis Control Program - Registration By Treatment Category",
+        "type": "CodedObsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "Tuberculosis Treatment Category",
+          "conceptNames": "'Tuberculosis, Treatment Type'"
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - At The Time Of TB Diagnosis (Patients Tested for HIV)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/TBpatients_tested_for_hiv.sql"
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - At The Time Of TB Diagnosis (With Known HIV Status)",
+        "type": "CodedObsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Tuberculosis, HIV Infection'"
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB patients)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/TBpatients_tested_for_hiv.sql"
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB Patients on ART, CPT)",
+        "type": "booleanConceptsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT'"
+        }
+    },
+    {
+        "name": "Tuberculosis control program - Private Sector and Community Involvement in Referral and Diagnosis (PCD, EP)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -454,33 +497,6 @@
             "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Referred by"],
             "rowsGroupBy": ["Tuberculosis, Referred by"],
             "columnsGroupBy": ["Tuberculosis, Type", "gender"]
-        }
-    },
-    {
-        "name": "Tuberculosis Control Program - Registration By Treatment Category",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "Tuberculosis Treatment Category",
-            "conceptNames": "'Tuberculosis, Treatment Type'"
-        }
-    },
-    {
-        "name": "Tuberculosis Control Program - At The Time Of TB Diagnosis (With Known HIV Status)",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Tuberculosis, HIV Infection'"
-        }
-    },
-    {
-        "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB Patients on ART, CPT)",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT'"
         }
     },
     {
