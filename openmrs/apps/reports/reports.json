@@ -9,6 +9,58 @@
         }
     },
     {
+        "name": "CBIMCI - Greater Than 2 Months (Total)",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Childhood Illness 59months",
+            "conceptNames": "'Childhood Illness( Children aged 2 months to 5 years)'"
+        }
+    },
+    {
+        "name": "CBIMCI - 2-59 months children (Refer Diarrhoea)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "Childhood Illness 59months",
+            "conceptPair": [
+                "Childhood Illness, Referred out",
+                "Childhood Illness, Diarrhoea present"
+            ],
+            "rowsGroupBy": ["Childhood Illness, Referred out"],
+            "columnsGroupBy": [
+                "Childhood Illness, Diarrhoea present",
+                "age_group"
+            ]
+        }
+    },
+    {
+        "name": "CBIMCI - 2-59 months children (Refer ARI)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "Childhood Illness 59months",
+            "conceptPair": [
+                "Childhood Illness, Referred out",
+                "Childhood Illness, Acute Respiratory Infection present"
+            ],
+            "rowsGroupBy": ["Childhood Illness, Referred out"],
+            "columnsGroupBy": [
+                "Childhood Illness, Acute Respiratory Infection present",
+                "age_group"
+            ]
+        }
+    },
+    {
+        "name": "CBIMCI - 2-59 months children (Refer Total) [Refers Others = CBIMCI(Refer Total) - CBIMCI(Refer Diarrhoea) - CBIMCI(Refer ARI)]",
+        "type": "booleanConceptsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Childhood Illness, Referred out'"
+        }
+    },
+    {
         "name": "Nutrition Program - Nutritional status of registered children",
         "type": "CodedObsCount",
         "config": {
@@ -574,15 +626,6 @@
         }
     },
     {
-        "name": "CBIMCI - Greater Than 2 Months (Total)",
-        "type": "obsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "Childhood Illness 59months",
-            "conceptNames": "'Childhood Illness( Children aged 2 months to 5 years)'"
-        }
-    },
-    {
         "name": "Neonate Form",
         "type": "MRSGeneric",
         "config": {
@@ -613,49 +656,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
-        }
-    },
-    {
-        "name": "CBIMCI - 2-59 months children (Refer Diarrhoea)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "Childhood Illness 59months",
-            "conceptPair": [
-                "Childhood Illness, Referred out",
-                "Childhood Illness, Diarrhoea present"
-            ],
-            "rowsGroupBy": ["Childhood Illness, Referred out"],
-            "columnsGroupBy": [
-                "Childhood Illness, Diarrhoea present",
-                "age_group"
-            ]
-        }
-    },
-    {
-        "name": "CBIMCI - 2-59 months children (Refer ARI)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "Childhood Illness 59months",
-            "conceptPair": [
-                "Childhood Illness, Referred out",
-                "Childhood Illness, Acute Respiratory Infection present"
-            ],
-            "rowsGroupBy": ["Childhood Illness, Referred out"],
-            "columnsGroupBy": [
-                "Childhood Illness, Acute Respiratory Infection present",
-                "age_group"
-            ]
-        }
-    },
-    {
-        "name": "CBIMCI - 2-59 months children (Refer Total) [Refers Others = CBIMCI(Refer Total) - CBIMCI(Refer Diarrhoea) - CBIMCI(Refer ARI)]",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Childhood Illness, Referred out'"
         }
     },
     {
