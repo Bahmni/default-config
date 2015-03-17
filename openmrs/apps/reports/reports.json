@@ -52,7 +52,7 @@
         }
     },
     {
-        "name": "CBIMCI - Greater Than 2 Months (ARI, Diarrhoea, Malaria, Very severe febrile diseases, Measles, Ear infection, Anaemia, Malnutrition, Other fever)",
+        "name": "CBIMCI - Greater Than 2 Months (Classification, Follow-up)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -60,7 +60,7 @@
         }
     },
     {
-        "name": "CBIMCI - 2-59 months children (Refer Diarrhoea)",
+        "name": "CBIMCI - Greater Than 2 Months (Refer Diarrhoea)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -77,7 +77,7 @@
         }
     },
     {
-        "name": "CBIMCI - 2-59 months children (Refer ARI)",
+        "name": "CBIMCI - Greater Than 2 Months (Refer ARI)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -94,7 +94,7 @@
         }
     },
     {
-        "name": "CBIMCI - 2-59 months children (Refer Total) [Refers Others = CBIMCI(Refer Total) - CBIMCI(Refer Diarrhoea) - CBIMCI(Refer ARI)]",
+        "name": "CBIMCI - Greater Than 2 Months (Refer Total) [Refers Others = CBIMCI(Refer Total) - CBIMCI(Refer Diarrhoea) - CBIMCI(Refer ARI)]",
         "type": "booleanConceptsCount",
         "config": {
             "type": "codedObsCountReport",

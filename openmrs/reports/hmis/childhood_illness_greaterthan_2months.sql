@@ -15,9 +15,6 @@ SELECT total.name AS '2-59 months Children',
        diseases.severe_malnutrition AS 'Severe malnutrition',
        diseases.anaemia AS 'Anaemia',
        diseases.others AS 'Other',
-       refer.refer_ari AS 'Refer - ARI',
-       refer.refer_diarrhoea AS 'Refer - Diarrhoea',
-       refer.refer_others AS 'Refer - Others',
        total.follow_up AS 'Follow-up'
 FROM 
 (SELECT reporting_age_group.name,
