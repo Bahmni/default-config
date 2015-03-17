@@ -121,6 +121,14 @@
         }
     },
     {
+        "name": "Blood Transfusions",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/blood_transfusions.sql"
+        }
+    },
+    {
         "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program",
         "type": "CodedObsCount",
         "config": {
