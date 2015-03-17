@@ -341,39 +341,6 @@
         }
     },
     {
-        "name": "Inpatient Outcome Status",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "Inpatient",
-            "conceptNames": "'Discharge note, Inpatient outcome'"
-        }
-    },
-    {
-        "name": "Inpatient Outcome (death)",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_outcome_death.sql"
-        }
-    },
-    {
-        "name": "Surgeries - Post Operative Infection",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/surgeries_post_operative_infection.sql"
-        }
-    },
-    {
-        "name": "PNC Visit",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
-        }
-    },
-    {
         "name": "HIV AIDS Program - PMTCT (ART Started, positive HIV Women, Breast Feeding)",
         "type": "CodedObsCount",
         "config": {
@@ -515,6 +482,39 @@
             "type": "codedObsCountReport",
             "ageGroupName": "STI Cases",
             "conceptNames": "'STI, Sydromic Treatment','STI, Etiological Treatment','STI, Presumptive Treatment for Sex Workers','STI, Asymptomatic Partners Treated'"
+        }
+    },
+    {
+        "name": "Inpatient Outcome Status",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Inpatient",
+            "conceptNames": "'Discharge note, Inpatient outcome'"
+        }
+    },
+    {
+        "name": "Inpatient Outcome (death)",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_outcome_death.sql"
+        }
+    },
+    {
+        "name": "Surgeries - Post Operative Infection",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/surgeries_post_operative_infection.sql"
+        }
+    },
+    {
+        "name": "PNC Visit",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
         }
     },
     {
