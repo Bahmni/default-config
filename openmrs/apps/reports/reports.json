@@ -112,6 +112,14 @@
         }
     },
     {
+        "name": "Nutrition Program - Pregnancy",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/nutrition_program_pregnancy.sql"
+        }
+    },
+    {
         "name": "Nutrition Program - <5 years children receiving (Vitamin A)",
         "type": "obsCount",
         "config": {
@@ -127,14 +135,6 @@
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": "'Childhood Illness, Albendazole Given'"
-        }
-    },
-    {
-        "name": "Nutrition Program - Pregnancy",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/nutrition_program_pregnancy.sql"
         }
     },
     {
