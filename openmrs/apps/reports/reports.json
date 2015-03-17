@@ -527,6 +527,17 @@
         }
     },
     {
+      "name": "HIV AIDS Program - PMTCT (HIV positive women Delivered)",
+      "type": "CodedObsByCodedObs",
+      "config": {
+        "type": "codedObsByCodedObsReport",
+        "ageGroupName": "All Ages",
+        "conceptPair": ["HTC, Result", "Delivery Note, Delivery location"],
+        "rowsGroupBy": ["HTC, Result"],
+        "columnsGroupBy": ["Delivery Note, Delivery location"]
+      }
+    },
+    {
         "name": "HIV AIDS Program - OI TB AND FP (Assessed for TB this month, HIV Patients initiated IPT, TB HIV Patients recieved CPT, PLHIV screened for FP need)",
         "type": "booleanConceptsCount",
         "config": {
@@ -534,6 +545,36 @@
             "ageGroupName": "Opportunistic Infections",
             "conceptNames": "'OI, Screening for TB','HIVTC, HIV care IPT started','Tuberculosis, Is patient on CPT','HIVTC, Need Family Planning assessment'"
         }
+    },
+    {
+      "name": "HIV AIDS Program - OI TB AND FP (New Clients on TB Treatment) [Just check the grid for 'New Diagnoses' and 'Yes']",
+      "type": "CodedObsByCodedObs",
+      "config": {
+        "type": "codedObsByCodedObsReport",
+        "ageGroupName": "Opportunistic Infections",
+        "conceptPair": ["Tuberculosis, Diagnosis Category", "Tuberculosis, HIV Infection"],
+        "rowsGroupBy": ["Tuberculosis, Diagnosis Category", "age_group"],
+        "columnsGroupBy": ["Tuberculosis, HIV Infection", "gender"]
+      }
+    },
+    {
+      "name": "HIV AIDS - Risk Groups and Key Population Group",
+      "type": "CodedObsByCodedObs",
+      "config": {
+        "type": "codedObsByCodedObsReport",
+        "ageGroupName": "All Ages",
+        "conceptPair": ["STI, Risk Group", "STI, STI Diagnosis Syndrome"],
+        "rowsGroupBy": ["STI, Risk Group"],
+        "columnsGroupBy": ["STI, STI Diagnosis Syndrome"]
+      }
+    },
+    {
+      "name": "HIV AIDS - Risk Groups and Key Population Group (Risk Group Syphilis)",
+      "type": "MRSGeneric",
+      "config": {
+        "type": "sqlReport",
+        "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/risk_groups_syphilis.sql"
+      }
     },
     {
         "name": "HIV AIDS Program - STI cases by sex and age group (Counselling)",
@@ -656,14 +697,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
-        }
-    },
-    {
-        "name": "Risk Group Syphilis",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/risk_groups_syphilis.sql"
         }
     }
 ]
