@@ -1,5 +1,14 @@
 [
     {
+        "name": "Referrals",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Hospitals, Referred by, Data'"
+        }
+    },
+    {
         "name": "Hospital Activities - Number of Clients Served (New and Total)",
         "type": "MRSGeneric",
         "config": {
@@ -620,6 +629,18 @@
         }
     },
     {
+        "name": "Outpatient Morbidity",
+        "type": "diagnosisCount",
+        "config": {
+            "visitTypes": "'General'",
+            "type": "diagnosisReport"
+        }
+    },
+    {
+        "name": "Laboratory Services",
+        "type": "TestCount"
+    },
+    {
         "name": "Inpatient Outcome Status",
         "type": "CodedObsCount",
         "config": {
@@ -767,6 +788,15 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_morbidity.sql"
+        }
+    },
+    {
+        "name": "Inpatient Morbidity (No. of Patients Discharged)",
+        "type": "diagnosisCount",
+        "config": {
+            "ageGroupName": "Inpatient",
+            "visitTypes": "'Admitted','Discharged'",
+            "type": "diagnosisReport"
         }
     }
 ]
