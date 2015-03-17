@@ -706,5 +706,26 @@
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
         }
+    },
+    {
+        "name": "Free Health Services and Social Security Programme (OPD/IPD/Emergency)",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Out Patient Details, Free Health Service Code'",
+            "visitTypes": "'General','Admitted','Discharged','Emergency'"
+        }
+    },
+    {
+        "name": "Free Health Services and Social Security Programme (Refer Out) [Please pick only 'Referred' row]",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "conceptPair": ["Out Patient Details, Free Health Service Code", "Disposition"],
+            "rowsGroupBy": ["Disposition"],
+            "columnsGroupBy": [ "Out Patient Details, Free Health Service Code" ]
+        }
     }
 ]
