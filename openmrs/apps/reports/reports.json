@@ -201,6 +201,61 @@
         }
     },
     {
+        "name": "Malaria Control Programme - Blood Slide Collection",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Malaria, Source'"
+        }
+    },
+    {
+        "name": "Malaria Control Programme - Treatment (Pregnant)",
+        "type": "booleanConceptsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Malaria, Pregnant'"
+        }
+    },
+    {
+        "name": "Malaria Control Programme - Treatment (Total)",
+        "type": "booleanConceptsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Malaria, Drug regimen'"
+        }
+    },
+    {
+        "name": "Malaria Control Programme - Type of Malaria (type vs classification)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "Malaria",
+            "conceptPair": ["Malaria, Malaria Type", "Malaria, Classification"],
+            "rowsGroupBy": ["Malaria, Classification"],
+            "columnsGroupBy": ["Malaria, Malaria Type", "age_group", "gender"]
+        }
+    },
+    {
+        "name": "Malaria Control Programme - Number of Malaria Cases",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Malaria",
+            "conceptNames": "'Malaria, Finding'"
+        }
+    },
+    {
+        "name": "Malaria Control Programme - Died",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_control_programme_died.sql"
+        }
+    },
+    {
         "name": "Inpatient Outcome Status",
         "type": "CodedObsCount",
         "config": {
@@ -231,24 +286,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
-        }
-    },
-    {
-        "name": "Malaria Program - Blood Slide Collection",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Malaria, Source'"
-        }
-    },
-    {
-        "name": "Malaria Program - Number of Malaria Cases",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "Malaria",
-            "conceptNames": "'Malaria, Finding'"
         }
     },
     {
@@ -548,24 +585,6 @@
         }
     },
     {
-        "name": "Malaria Control Program - Treatment (Pregnant)",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Malaria, Pregnant'"
-        }
-    },
-    {
-        "name": "Malaria Control Program - Treatment (Total)",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Malaria, Drug regimen'"
-        }
-    },
-    {
         "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB Patients on ART, CPT)",
         "type": "booleanConceptsCount",
         "config": {
@@ -623,25 +642,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/risk_groups_syphilis.sql"
-        }
-    },
-    {
-        "name": "Malaria Control Programme - Died",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_control_programme_died.sql"
-        }
-    },
-    {
-        "name": "Malaria control program - Type of Malaria (type vs classification)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "Malaria",
-            "conceptPair": ["Malaria, Malaria Type", "Malaria, Classification"],
-            "rowsGroupBy": ["Malaria, Classification"],
-            "columnsGroupBy": ["Malaria, Malaria Type", "age_group", "gender"]
         }
     },
     {
