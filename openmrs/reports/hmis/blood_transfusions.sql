@@ -8,4 +8,4 @@ FROM
 		con2.name IN ('ANC, Blood Transfusion Quantity','Delivery Note, Blood transfusion quantity','PNC, Blood Transfusion Quantity') and con2.concept_name_type = 'FULLY_SPECIFIED'
 	INNER JOIN concept_name con1 on obs1.concept_id = con1.concept_id and 
 		con1.name IN ('ANC, Blood Transfusion Provided','Delivery Note, Blood transfusion provided','PNC, Blood Transfusion Provided') and con1.concept_name_type = 'FULLY_SPECIFIED'
-    WHERE (obs1.obs_datetime BETWEEN "#startDate#" AND "#endDate#") AND (obs2.obs_datetime BETWEEN "#startDate#" AND "#endDate#")) AS result_view;
+    WHERE (cast(obs1.obs_datetime as date) BETWEEN "#startDate#" AND "#endDate#") AND (cast(obs2.obs_datetime as date) BETWEEN "#startDate#" AND "#endDate#")) AS result_view;

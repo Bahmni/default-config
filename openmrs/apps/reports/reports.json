@@ -167,12 +167,28 @@
         }
     },
     {
-        "name": "Safe Motherhood Program - Delivery Outcome",
+        "name": "Safe Motherhood Program - Delivery Outcome (No of mothers)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": "'Delivery Note, Outcome of Delivery'"
+        }
+    },
+    {
+        "name": "Safe Motherhood Program - Delivery Outcome (No of livebirths)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/deliveryoutcome_no_of_livebirths.sql"
+        }
+    },
+    {
+        "name": "Safe Motherhood Program - Birth Weight",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/birth_weight.sql"
         }
     },
     {
@@ -210,7 +226,7 @@
         }
     },
     {
-        "name": "Safe Motherhood Program - Safe Abortion Service",
+        "name": "Safe Motherhood Program - Safe Abortion Service (No of women, PAC)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -219,7 +235,7 @@
         }
     },
     {
-        "name": "Safe Motherhood program - Safe Abortion Service (Post abortion FP methods)",
+        "name": "Safe Motherhood Program - Safe Abortion Service (Post abortion FP methods)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -227,6 +243,14 @@
             "conceptPair": ["Abortion procedure", "Accepted Family Planning methods"],
             "rowsGroupBy": ["Accepted Family Planning methods"],
             "columnsGroupBy": ["Abortion procedure"]
+        }
+    },
+    {
+        "name": "Safe Motherhood Program - Obstetric Complications",
+        "type": "diagnosisCount",
+        "config": {
+          "visitTypes": "'General'",
+          "type": "diagnosisReport"
         }
     },
     {
