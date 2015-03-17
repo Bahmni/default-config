@@ -265,14 +265,6 @@
         }
     },
     {
-        "name": "Leprosy control program - New Patients",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/newLeprosyPatients.sql"
-        }
-    },
-    {
         "name": "Leprosy control program - Deformity Status (New cases)",
         "type": "CodedObsByCodedObs",
         "config": {
@@ -292,6 +284,14 @@
             "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Disability Grade"],
             "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
             "columnsGroupBy": ["Leprosy, Disability Grade", "gender"]
+        }
+    },
+    {
+        "name": "Leprosy control program - New Patients",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/newLeprosyPatients.sql"
         }
     },
     {
