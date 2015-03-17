@@ -138,14 +138,6 @@
         }
     },
     {
-        "name": "Blood Transfusions",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/blood_transfusions.sql"
-        }
-    },
-    {
         "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program",
         "type": "CodedObsCount",
         "config": {
@@ -193,12 +185,20 @@
         }
     },
     {
-        "name": "Safe Motherhood Program - Chlorhexidine applied in cord",
+        "name": "Safe Motherhood Program - CHX applied in cord",
         "type": "booleanConceptsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": "'Chlorhexidin applied on cord'"
+        }
+    },
+    {
+        "name": "Safe Motherhood Program - Blood Transfusions",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/blood_transfusions.sql"
         }
     },
     {
