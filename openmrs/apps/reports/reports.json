@@ -138,7 +138,7 @@
         }
     },
     {
-        "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program",
+        "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program [Children at the end of this month = Children at the end of last month + Total(Admission) - Total(Discharge)]",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
