@@ -44,6 +44,15 @@
         }
     },
     {
+        "name": "FCHV Program - Safe Motherhood Program (Chlorhexidine applied in cord)",
+        "type": "booleanConceptsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Chlorhexidin applied on cord'"
+        }
+    },
+    {
         "name": "Safe Motherhood Program - Delivery Service",
         "type": "CodedObsCount",
         "config": {
@@ -473,15 +482,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
-        }
-    },
-    {
-        "name": "FCHV Program - Safe Motherhood Program (Chlorhexidine applied in cord)",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Chlorhexidin applied on cord'"
         }
     },
     {
