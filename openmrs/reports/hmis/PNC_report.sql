@@ -5,7 +5,7 @@ count(person.person_id) as no_of_patient
 	from person
 	join obs first_visit_obs
 		on first_visit_obs.person_id=person.person_id
-		and first_visit_obs.obs_datetime between cast('%s' AS DATE) AND cast('%s' AS DATE)
+		and first_visit_obs.obs_datetime between cast(#startDate# AS DATE) AND cast(#endDate# AS DATE)
 		and first_visit_obs.value_coded = (select concept_id from concept_name where name = 'PNC, First Visit' and concept_name_type='FULLY_SPECIFIED')
 	join obs delivery_date_obs
 		on delivery_date_obs.person_id = person.person_id
@@ -23,7 +23,7 @@ count(person.person_id) as no_of_patient
 	from person
 	left join obs third_visit_obs
 		on third_visit_obs.person_id=person.person_id
-		and third_visit_obs.obs_datetime between cast('%s' AS DATE) AND cast('%s' AS DATE)
+		and third_visit_obs.obs_datetime between cast(#startDate# AS DATE) AND cast(#endDate# AS DATE)
 		and third_visit_obs.value_coded = (select concept_id from concept_name where name = 'PNC, Third Visit' and concept_name_type='FULLY_SPECIFIED')
 
 	left join obs second_visit_obs
