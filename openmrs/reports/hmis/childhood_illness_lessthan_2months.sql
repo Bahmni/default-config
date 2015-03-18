@@ -1,8 +1,10 @@
+
 SELECT total.name AS 'Less than 2 months Children',
 	   total.total_cases AS 'Total Cases',
        diagnoses.PSBI AS 'PSBI',
        diagnoses.LBI AS 'LBI',
        diagnoses.Jaundice AS 'Jaundice',
+       hyp_count.hypothermia AS 'Hypothermia',
        diagnoses.LWDF AS 'Low weight/ Feeding Prob.',
        total.refer AS 'Refer',
        total.follow_up AS 'Follow-up'
@@ -14,12 +16,12 @@ FROM
        SUM(IF(reference_concept.concept_full_name IS NULL, 0, IF(reference_concept.concept_full_name = 'Childhood Illness, Follow up result',1,0))) AS follow_up
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN #startDate# AND #endDate#
+	AND DATE(visit.date_started) BETWEEN '#startDate' AND '#endDate#'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 LEFT OUTER JOIN obs ON encounter.encounter_id = obs.encounter_id
 INNER JOIN concept_view AS reference_concept ON obs.concept_id = reference_concept.concept_id
 	AND reference_concept.concept_full_name IN ('Childhood Illness( Children aged below 2 months)','Childhood Illness, Referred out', 'Childhood Illness, Follow up result')    
-RIGHT OUTER JOIN reporting_age_group ON visit.date_started BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+RIGHT OUTER JOIN reporting_age_group ON DATE(visit.date_started) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
 WHERE reporting_age_group.report_group_name = 'Childhood Illness 2months'
 GROUP BY reporting_age_group.name
@@ -40,16 +42,36 @@ FROM
    SUM(IF((value_concept.concept_full_name = 'Low weight' || value_concept.concept_full_name = 'Very low weight') || (reference_concept.concept_full_name = 'Difficult feeding' && value_concept.concept_full_name = 'True'), 1,0 )) AS LWDF_count
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN #startDate# AND #endDate#
+	AND DATE(visit.date_started) BETWEEN '#startDate' AND '#endDate#'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 LEFT OUTER JOIN obs ON encounter.encounter_id = obs.encounter_id
 INNER JOIN concept_view AS reference_concept ON obs.concept_id = reference_concept.concept_id
 	AND reference_concept.concept_full_name IN ('Umbilicus Infection','PSBI/LBI/NBI, Skin Pustules', 'PSBI/LBI/NBI, Jaundice', 'Weight condition', 'Difficult feeding', 'Temperature')    
 LEFT OUTER JOIN concept_view AS value_concept ON obs.value_coded = value_concept.concept_id
 GROUP BY visit.visit_id) AS table1
-RIGHT OUTER JOIN reporting_age_group ON table1.date_started BETWEEN (DATE_ADD(DATE_ADD(table1.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+RIGHT OUTER JOIN reporting_age_group ON DATE(table1.date_started) BETWEEN (DATE_ADD(DATE_ADD(table1.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
 						AND (DATE_ADD(DATE_ADD(table1.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
 WHERE reporting_age_group.report_group_name = 'Childhood Illness 2months'
 GROUP BY reporting_age_group.name
 ORDER BY reporting_age_group.sort_order) AS diagnoses
 ON total.name = diagnoses.name
+
+INNER JOIN 
+(SELECT reporting_age_group.name, 
+COUNT(distinct person.person_id) AS hypothermia
+FROM visit
+INNER JOIN person ON visit.patient_id = person.person_id
+	AND DATE(visit.date_started) BETWEEN '#startDate' AND '#endDate#'
+INNER JOIN coded_obs_view AS diagnosis_obs ON diagnosis_obs.person_id = person.person_id
+	AND diagnosis_obs.concept_full_name = 'Coded Diagnosis'
+	AND diagnosis_obs.value_concept_full_name IN ('Hypothermia')
+    AND DATE(diagnosis_obs.obs_datetime) BETWEEN '#startDate' AND '#endDate#'
+INNER JOIN coded_obs_view AS certainty_obs ON diagnosis_obs.obs_group_id = certainty_obs.obs_group_id
+	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
+    AND certainty_obs.value_concept_full_name = 'Confirmed'
+RIGHT OUTER JOIN reporting_age_group ON DATE(visit.date_started) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
+WHERE reporting_age_group.report_group_name = 'Childhood Illness 2months'
+GROUP BY reporting_age_group.name
+ORDER BY reporting_age_group.sort_order) AS hyp_count
+ON diagnoses.name = hyp_count.name
