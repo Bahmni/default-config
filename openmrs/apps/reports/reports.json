@@ -812,11 +812,13 @@
     },
     {
         "name": "HIV/AIDS Program - Opportunistic Infections (Treated)",
-        "type": "booleanConceptsCount",
+        "type": "CodedObsByCodedObs",
         "config": {
-          "type": "codedObsCountReport",
+          "type": "codedObsByCodedObsReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'OI, Provided CPT'"
+          "conceptPair": ["OI, Provided CPT", "OI, Opportunistic infections"],
+          "rowsGroupBy": ["OI, Provided CPT", "gender"],
+          "columnsGroupBy": ["OI, Opportunistic infections"]
         }
     },
     {
