@@ -1,7 +1,3 @@
-
-SET #startDate# = '2015-02-25';
-SET #endDate# = '2015-03-18';
-
 SELECT 'Number of live births' AS name,
  SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Single - livebirth' && delivery_outcome_liveborn.gender = 'Male',1,0)) AS 'Single - Male',
  SUM(IF(delivery_outcome_liveborn.delivery_outcome_type = 'Single - livebirth' && delivery_outcome_liveborn.gender = 'Female',1,0)) AS 'Single - Female',
