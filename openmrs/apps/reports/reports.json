@@ -625,7 +625,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - STI Cases by Sex & Age Group",
+        "name": "HIV/AIDS Program - STI Cases by Sex and Age Group",
         "type": "booleanConceptsCount",
         "config": {
           "type": "codedObsCountReport",
@@ -634,7 +634,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - STI Cases by Sex & Age Group (Diagnosed)",
+        "name": "HIV/AIDS Program - STI Cases by Sex and Age Group (Diagnosed)",
         "type": "obsCount",
         "config": {
           "type": "codedObsCountReport",
@@ -731,7 +731,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Opportunistic Infections TB and FP (Total no of PLHIV served, PLHA diagnosed & treated for OI, PLHIV using any FP method)",
+        "name": "HIV/AIDS Program - Opportunistic Infections TB and FP (Total no of PLHIV served, PLHA diagnosed and treated for OI, PLHIV using any FP method)",
         "type": "obsCount",
         "config": {
             "type": "codedObsCountReport",
