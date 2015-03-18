@@ -543,6 +543,15 @@
         }
     },
     {
+        "name": "HIV/AIDS Program - PMTCT (Number of ANC Visits)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'ANC'"
+        }
+    },
+    {
         "name": "HIV/AIDS Program - PMTCT (ART Started, HIV+ve Women - Male Partner, Breast Feeding status)",
         "type": "CodedObsCount",
         "config": {
