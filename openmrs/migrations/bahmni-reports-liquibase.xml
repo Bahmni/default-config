@@ -354,4 +354,19 @@
             VALUES('≥ 60 Years', 'Emergency Service Reports', 60, 0, 999, 0, 4);
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-BAHMNI-REPORTS-LIVE-INFANT-BIRTH-WEIGHT-GROUP" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from reporting_age_group where report_group_name = 'Birth Weight Report';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, max_years, sort_order)
+            VALUES('Very low (< 2)', 'Birth Weight Report', 0, 2000, 3); 
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, max_years, sort_order)
+            VALUES('Low (2 to </ 2.5)', 'Birth Weight Report', 2000, 2499, 2); 
+            INSERT INTO reporting_age_group(name, report_group_name, min_years, max_years, sort_order)
+            VALUES('Normal (>/2.5)', 'Birth Weight Report', 2500, 99999, 1  ); 
+        </sql>
+    </changeSet>
 </databaseChangeLog>
