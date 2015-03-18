@@ -913,5 +913,21 @@
             "visitTypes": "'Admitted','Discharged'",
             "type": "diagnosisReport"
         }
+    },
+    {
+        "name": "Emergency Services",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/emergencyServices.sql"
+        }
+    },
+    {
+        "name": "Total Patients Admitted",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/totalAdmittedPatients.sql"
+        }
     }
 ]
