@@ -507,6 +507,22 @@
         }
     },
     {
+        "name": "Kala-azar Control Programme - Total",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/kalazar_patient_types.sql"
+        }
+    },
+    {
+        "name": "Kala-azar Control Programme - Deaths",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/kalaazar_deaths.sql"
+        }
+    },
+    {
         "name": "DR Tuberculosis Program - DR TB Case Registration and HIV positive",
         "type": "CodedObsCount",
         "config": {
@@ -614,7 +630,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Risk Groups / Key Population Group (by Syndromes)",
+        "name": "HIV/AIDS Program - Risk Groups / Key Population Group (Total cases, Syndromes, etilogy cervisitis, etiology vaginitis, etiology herpes genitalis) [Total Cases accessed = Sum(of all the other columns in that row)]",
         "type": "CodedObsByCodedObs",
         "config": {
           "type": "codedObsByCodedObsReport",
@@ -633,7 +649,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - STI Cases by Sex and Age Group",
+        "name": "HIV/AIDS Program - STI Cases by Sex and Age Group [Treated = STI, Etiological Treatment + STI, Sydromic Treatment]",
         "type": "booleanConceptsCount",
         "config": {
           "type": "codedObsCountReport",
