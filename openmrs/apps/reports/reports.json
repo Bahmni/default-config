@@ -489,14 +489,13 @@
         }
     },
     {
-        "name": "Tuberculosis control program - Private Sector and Community Involvement in Referral and Diagnosis (PCD, EP)",
-        "type": "CodedObsByCodedObs",
+        "name": "Tuberculosis Control Program - Private Sector and Community Involvement in Referral/Diagnoses (PBC) [Look at 'Pulmonary BC' column only. Look for 'New Diagnosis' and add for all other columns to get 'Excl New' counts]",
+        "type": "MultipleCodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
+            "type": "multipleCodedObsByCodedObsReport",
             "ageGroupName": "All Ages",
-            "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Referred by"],
             "rowsGroupBy": ["Tuberculosis, Referred by"],
-            "columnsGroupBy": ["Tuberculosis, Type", "gender"]
+            "columnsGroupBy": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category"]
         }
     },
     {
