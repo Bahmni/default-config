@@ -523,6 +523,26 @@
         }
     },
     {
+        "name": "Tuberculosis Control Program - Treatment Outcome (PBC) ['Pulmonary BC' as is. For PCD and EP, sum for 'Others' diagnosis category]",
+        "type": "MultipleCodedObsByCodedObs",
+        "config": {
+            "type": "multipleCodedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "rowsGroupBy": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category"],
+            "columnsGroupBy": ["Tuberculosis, Treatment Outcome"]
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - Treatment Outcome 2 (PBC) [Look at PCD and EP rows only]",
+        "type": "MultipleCodedObsByCodedObs",
+        "config": {
+            "type": "multipleCodedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "rowsGroupBy": ["Tuberculosis, Type", "Tuberculosis, HIV Infection"],
+            "columnsGroupBy": ["Tuberculosis, Treatment Outcome"]
+        }
+    },
+    {
         "name": "Kala-azar Control Programme - Method Of Diagnosis",
         "type": "MRSGeneric",
         "config": {
@@ -579,6 +599,27 @@
             "type": "codedObsCountReport",
             "ageGroupName": "DR Tuberculosis",
             "conceptNames": "'DRTuberculosis, Diagnosis Category'"
+        }
+    },
+    {
+        "name": "DR Tuberculosis Control Program - Treatment Outcome [4]",
+        "type": "MultipleCodedObsByCodedObs",
+        "config": {
+            "type": "multipleCodedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "rowsGroupBy": ["DRTuberculosis, Reasons for entering in second-line TB treatment register", "MDRTuberculosis, Category of Diagnosis"],
+            "columnsGroupBy": ["DRTuberculosis, Treatment outcome", "gender"]
+        }
+    },
+    {
+        "name": "DR Tuberculosis Control Program - Treatment Outcome [4] (HIV positive RR/MDR TB)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+            "type": "codedObsByCodedObsReport",
+            "ageGroupName": "All Ages",
+            "conceptPair": ["DRTuberculosis, HIV Infection", "DRTuberculosis, Treatment outcome", "gender"],
+            "rowsGroupBy": ["DRTuberculosis, HIV Infection"],
+            "columnsGroupBy": ["DRTuberculosis, Treatment outcome", "gender"]
         }
     },
     {
