@@ -673,7 +673,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - STI Cases by Sex and Age Group [Treated = STI, Etiological Treatment + STI, Sydromic Treatment]",
+        "name": "HIV/AIDS Program - STI Cases by Sex and Age Group [Treated = STI, Etiological Treatment AND STI, Sydromic Treatment]",
         "type": "booleanConceptsCount",
         "config": {
           "type": "codedObsCountReport",
