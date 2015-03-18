@@ -103,6 +103,14 @@
         }
     },
     {
+        "name": "CBIMCI Death - Greater Than 2 months",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/childhood_illness_death.sql"
+        }
+    },
+    {
         "name": "Nutrition Program - Nutritional status of registered children",
         "type": "CodedObsCount",
         "config": {
@@ -423,6 +431,14 @@
         "config": {
           "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_treatment.sql"
+        }
+    },
+    {
+        "name": "Malaria Control Programme - Died",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_control_program_death.sql"
         }
     },
     {
@@ -952,14 +968,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/totalAdmittedPatients.sql"
-        }
-    },
-    {
-        "name": "Childhood Illness Death - (Age 2 to 59 Months)",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/childhood_illness_death.sql"
         }
     },
     {
