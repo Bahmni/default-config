@@ -5,7 +5,8 @@ join concept_answer as ca on ca.concept_id = cv.concept_id and concept_full_name
 join concept_view  cv2 on ca.answer_concept = cv2.concept_id
 left join obs as method_obs on method_obs.value_coded = cv2.concept_id and method_obs.concept_id = cv.concept_id
 	and cast(method_obs.obs_datetime as date) between '#startDate#' and '#endDate#'
-left join obs as unit_obs on unit_obs.obs_group_id = method_obs.obs_group_id
+	and method_obs.voided is false
+left join obs as unit_obs on unit_obs.obs_group_id = method_obs.obs_group_id and unit_obs.voided is false
 left join concept_view as unit_view on unit_obs.concept_id = unit_view.concept_id and unit_view.concept_full_name = 'FP, Units provided'
 group by cv2.concept_full_name
 order by cv2.concept_full_name;
