@@ -17,7 +17,7 @@ FROM
      SUM(IF(person.gender = 'M', 1, 0)) AS hiv_male
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_started) BETWEEN #startDate# AND #endDate#
+	AND DATE(visit.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
 	AND person_attribute_type.name = 'Caste'
@@ -25,7 +25,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS diagnosis_obs ON diagnosis_obs.person_id = person.person_id
 	AND diagnosis_obs.concept_full_name = 'Coded Diagnosis'
 	AND diagnosis_obs.value_concept_full_name IN ('HIV Infection')
-    AND DATE(diagnosis_obs.obs_datetime) BETWEEN #startDate# AND #endDate#
+    AND DATE(diagnosis_obs.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN coded_obs_view AS certainty_obs ON diagnosis_obs.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'
@@ -40,7 +40,7 @@ INNER JOIN
     SUM(IF(person.gender = 'M', 1, 0)) AS leprosy_male
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_started) BETWEEN #startDate# AND #endDate#
+	AND DATE(visit.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
 	AND person_attribute_type.name = 'Caste'    
@@ -48,7 +48,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS diagnosis_obs ON diagnosis_obs.person_id = person.person_id
 	AND diagnosis_obs.concept_full_name = 'Coded Diagnosis'
 	AND diagnosis_obs.value_concept_full_name IN ('Leprosy')
-    AND DATE(diagnosis_obs.obs_datetime) BETWEEN #startDate# AND #endDate#
+    AND DATE(diagnosis_obs.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN coded_obs_view AS certainty_obs ON diagnosis_obs.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'
@@ -62,7 +62,7 @@ INNER JOIN
     SUM(IF(person.gender = 'M', 1, 0)) AS tb_male
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_started) BETWEEN #startDate# AND #endDate#
+	AND DATE(visit.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
 	AND person_attribute_type.name = 'Caste'    
@@ -70,7 +70,7 @@ INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS diagnosis_obs ON diagnosis_obs.person_id = person.person_id
 	AND diagnosis_obs.concept_full_name = 'Coded Diagnosis'
 	AND diagnosis_obs.value_concept_full_name IN ('Tuberculosis', 'Multi Drug Resistant Tuberculosis', 'Extremely Drug Resistant Tuberculosis')
-    AND DATE(diagnosis_obs.obs_datetime) BETWEEN #startDate# AND #endDate#
+    AND DATE(diagnosis_obs.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN coded_obs_view AS certainty_obs ON diagnosis_obs.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'
@@ -85,7 +85,7 @@ INNER JOIN
     SUM(IF(person.gender = 'M', 1, 0)) AS gender_violence_male
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_started) BETWEEN #startDate# AND #endDate#
+	AND DATE(visit.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
 	AND person_attribute_type.name = 'Caste'

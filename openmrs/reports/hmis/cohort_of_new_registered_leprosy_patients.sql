@@ -24,7 +24,7 @@ FROM
     SUM(IF(person.gender = 'M' && (leprosy_deduction_type.value_concept_full_name = 'Other Deduction - OD'||leprosy_deduction_type.value_concept_full_name = 'Transfer Out - TO'), 1, 0)) AS other_male 
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_started) BETWEEN DATE_SUB(#startDate#, INTERVAL 18 MONTH) AND DATE_SUB(#endDate#, INTERVAL 18 MONTH)
+	AND DATE(visit.date_started) BETWEEN DATE_SUB('#startDate#', INTERVAL 18 MONTH) AND DATE_SUB('#endDate#', INTERVAL 18 MONTH)
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS leprosy_case_type ON encounter.encounter_id = leprosy_case_type.encounter_id
 	AND leprosy_case_type.concept_full_name = 'Leprosy, Case Type'
@@ -32,7 +32,7 @@ INNER JOIN coded_obs_view AS leprosy_type ON leprosy_case_type.obs_group_id = le
 	AND leprosy_type.concept_full_name = 'Leprosy, Leprosy Type'
     AND leprosy_type.value_concept_full_name = 'Multi Bacillary'
 LEFT OUTER JOIN visit AS visit_final ON visit_final.patient_id = person.person_id
-	AND DATE(visit_final.date_started) BETWEEN #startDate# AND #endDate#
+	AND DATE(visit_final.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter AS encounter_final ON visit_final.visit_id = encounter_final.visit_id
 INNER JOIN coded_obs_view AS leprosy_deduction_type ON encounter_final.encounter_id = leprosy_deduction_type.encounter_id
 	AND leprosy_deduction_type.concept_full_name = 'Leprosy, Patient Deduction Type'
@@ -46,7 +46,7 @@ JOIN
   SUM(IF((leprosy_regimen.value_text IS NOT NULL || leprosy_supervision.value_coded IS NOT NULL) && person.gender = 'M', 1, 0)) AS current_male
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_started) BETWEEN DATE_SUB(#startDate#, INTERVAL 18 MONTH) AND DATE_SUB(#endDate#, INTERVAL 18 MONTH)
+	AND DATE(visit.date_started) BETWEEN DATE_SUB('#startDate#', INTERVAL 18 MONTH) AND DATE_SUB('#endDate#', INTERVAL 18 MONTH)
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS leprosy_case_type ON encounter.encounter_id = leprosy_case_type.encounter_id
 	AND leprosy_case_type.concept_full_name = 'Leprosy, Case Type'
@@ -54,7 +54,7 @@ INNER JOIN coded_obs_view AS leprosy_type ON leprosy_case_type.obs_group_id = le
 	AND leprosy_type.concept_full_name = 'Leprosy, Leprosy Type'
     AND leprosy_type.value_concept_full_name = 'Multi Bacillary'
 INNER JOIN visit AS visit_final ON visit_final.patient_id = person.person_id
-	AND DATE(visit_final.date_started) BETWEEN #startDate# AND #endDate#
+	AND DATE(visit_final.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter AS encounter_final ON visit_final.visit_id = encounter_final.visit_id
 LEFT OUTER JOIN obs_view AS leprosy_regimen ON leprosy_regimen.obs_group_id = leprosy_type.obs_group_id
 	AND leprosy_regimen.concept_full_name = 'Leprosy, Drug Regimen'
@@ -91,7 +91,7 @@ FROM
     SUM(IF(person.gender = 'M' && (leprosy_deduction_type.value_concept_full_name = 'Other Deduction - OD'||leprosy_deduction_type.value_concept_full_name = 'Transfer Out - TO'), 1, 0)) AS other_male 
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_started) BETWEEN DATE_SUB(#startDate#, INTERVAL 9 MONTH) AND DATE_SUB(#endDate#, INTERVAL 9 MONTH)
+	AND DATE(visit.date_started) BETWEEN DATE_SUB('#startDate#', INTERVAL 9 MONTH) AND DATE_SUB('#endDate#', INTERVAL 9 MONTH)
     INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS leprosy_case_type ON encounter.encounter_id = leprosy_case_type.encounter_id
 	AND leprosy_case_type.concept_full_name = 'Leprosy, Case Type'
@@ -99,7 +99,7 @@ INNER JOIN coded_obs_view AS leprosy_type ON leprosy_case_type.obs_group_id = le
 	AND leprosy_type.concept_full_name = 'Leprosy, Leprosy Type'
     AND leprosy_type.value_concept_full_name = 'Pauci Bacillary'
 LEFT OUTER JOIN visit AS visit_final ON visit_final.patient_id = person.person_id
-	AND DATE(visit_final.date_started) BETWEEN #startDate# AND #endDate#
+	AND DATE(visit_final.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter AS encounter_final ON visit_final.visit_id = encounter_final.visit_id
 INNER JOIN coded_obs_view AS leprosy_deduction_type ON encounter_final.encounter_id = leprosy_deduction_type.encounter_id
 	AND leprosy_deduction_type.concept_full_name = 'Leprosy, Patient Deduction Type'
@@ -114,7 +114,7 @@ JOIN
   SUM(IF((leprosy_regimen.value_text IS NOT NULL || leprosy_supervision.value_coded IS NOT NULL) && person.gender = 'M', 1, 0)) AS current_male
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
- 	AND DATE(visit.date_started) BETWEEN DATE_SUB(#startDate#, INTERVAL 9 MONTH) AND DATE_SUB(#endDate#, INTERVAL 9 MONTH)
+ 	AND DATE(visit.date_started) BETWEEN DATE_SUB('#startDate#', INTERVAL 9 MONTH) AND DATE_SUB('#endDate#', INTERVAL 9 MONTH)
 	INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view AS leprosy_case_type ON encounter.encounter_id = leprosy_case_type.encounter_id
 	AND leprosy_case_type.concept_full_name = 'Leprosy, Case Type'
@@ -122,7 +122,7 @@ INNER JOIN coded_obs_view AS leprosy_type ON leprosy_case_type.obs_group_id = le
 	AND leprosy_type.concept_full_name = 'Leprosy, Leprosy Type'
     AND leprosy_type.value_concept_full_name = 'Pauci Bacillary'
 INNER JOIN visit AS visit_final ON visit_final.patient_id = person.person_id
-	AND DATE(visit_final.date_started) BETWEEN #startDate# AND #endDate#
+	AND DATE(visit_final.date_started) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter AS encounter_final ON visit_final.visit_id = encounter_final.visit_id
 LEFT OUTER JOIN obs_view AS leprosy_regimen ON leprosy_regimen.obs_group_id = leprosy_type.obs_group_id
 	AND leprosy_regimen.concept_full_name = 'Leprosy, Drug Regimen'
