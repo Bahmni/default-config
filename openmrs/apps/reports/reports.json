@@ -495,7 +495,7 @@
             "type": "multipleCodedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "rowsGroupBy": ["Tuberculosis, Referred by"],
-            "columnsGroupBy": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category"]
+            "columnsGroupBy": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category", "gender"]
         }
     },
     {
