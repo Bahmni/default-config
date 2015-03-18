@@ -734,7 +734,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (Patients on ART)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment (Patients on ART except Total no. of patients currently on ART)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -752,7 +752,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Currently on ART by Regimen",
+        "name": "HIV/AIDS Program - Currently on ART by Regimen [Accessed is out of scope]",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
