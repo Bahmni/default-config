@@ -937,5 +937,13 @@
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/childhood_illness_death.sql"
         }
+    },
+    {
+        "name": "Family Planning Program - Distribution",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/familyPlanningDistribution.sql"
+        }
     }
 ]
