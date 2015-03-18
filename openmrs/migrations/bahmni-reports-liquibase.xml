@@ -362,11 +362,11 @@
         </preConditions>
         <sql>
             INSERT INTO reporting_age_group(name, report_group_name, min_years, max_years, sort_order)
-            VALUES('Very low (< 2)', 'Birth Weight Report', 0, 2000, 3); 
+            VALUES('Very low (&lt; 2)', 'Birth Weight Report', 0, 2000, 3);
             INSERT INTO reporting_age_group(name, report_group_name, min_years, max_years, sort_order)
-            VALUES('Low (2 to </ 2.5)', 'Birth Weight Report', 2000, 2499, 2); 
+            VALUES('Low (2 to ≤ 2.5)', 'Birth Weight Report', 2000, 2499, 2);
             INSERT INTO reporting_age_group(name, report_group_name, min_years, max_years, sort_order)
-            VALUES('Normal (>/2.5)', 'Birth Weight Report', 2500, 99999, 1  ); 
+            VALUES('Normal (> 2.5)', 'Birth Weight Report', 2500, 99999, 1  );
         </sql>
     </changeSet>
 </databaseChangeLog>
