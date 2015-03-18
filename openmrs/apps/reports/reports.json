@@ -617,7 +617,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Risk Groups / Key Population Group (Syphilis)",
+        "name": "HIV/AIDS Program - Risk Groups / Key Population Group (Syphilis) [Treated Count = Diagnosed Count]",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
