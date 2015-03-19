@@ -26,7 +26,7 @@
         "extensionPointId": "org.bahmni.adt.transfer.action",
         "type": "config",
         "extensionParams" : {
-            "display": "Save",
+            "display": "Transfer",
             "action":"transfer"
         },
         "order": 1,
