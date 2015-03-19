@@ -623,6 +623,14 @@
         }
     },
     {
+      "name": "HIV/AIDS Program - PMTCT of HIV - Counselling and Testing",
+      "type": "MRSGeneric",
+      "config": {
+        "type": "sqlReport",
+        "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/pmct_HIV_counselling_testing.sql"
+      }
+    },
+    {
         "name": "HIV/AIDS Program - PMTCT (ART Started, HIV+ve Women - Male Partner, Breast Feeding status)",
         "type": "CodedObsCount",
         "config": {
@@ -903,7 +911,7 @@
         }
     },
     {
-        "name": "Inpatient Outcome Status",
+        "name": "Summary of Indoor Services - Inpatient Outcome Status (except death)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -912,7 +920,7 @@
         }
     },
     {
-        "name": "Inpatient Outcome (death)",
+        "name": "Summary of Indoor Services - Inpatient Outcome (death)",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
@@ -920,7 +928,77 @@
         }
     },
     {
-        "name": "Surgeries - Post Operative Infection",
+        "name": "Summary of Indoor Services - Neonate Form",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/neonate_form.sql"
+        }
+    },
+    {
+        "name": "Summary of Indoor Services - Maternal Age",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/maternal_age.sql"
+        }
+    },
+    {
+        "name": "Summary Of Indoor Services - Death Information (Maternal)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Death Note, Maternal Death'"
+        }
+    },
+    {
+        "name": "Summary Of Indoor services - Death Information (Postoperative, Brought Dead, Postmartem Done)",
+        "type": "booleanConceptsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Death Note, Death occured post operative','Death Note, Brought dead','Death Note, Postmortem done'"
+        }
+    },
+    {
+        "name": "Summary Of Indoor Services - Death Information (Early Neonatal [0 - 3 Days], Late Neonatal [4 - 28 Days], Others [≥ 29 Days])",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "Death Information",
+          "conceptNames": "'Death Note'"
+        }
+    },
+    {
+      "name": "Summary Of Indoor Services - Abortion Services",
+      "type": "MRSGeneric",
+      "config": {
+        "type": "sqlReport",
+        "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
+      }
+    },
+    {
+        "name": "Summary Of Indoor Services - Surgeries (Major, Minor)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Operative Notes, Procedure','Procedure Notes, Procedure'",
+          "visitTypes": "'General','Admitted','Discharged','Emergency'"
+        }
+    },
+    {
+        "name": "Summary Of Indoor Services - Surgeries (Plaster)",
+        "type": "CodedObsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Procedure Notes, Procedure'"
+        }
+    },
+    {
+        "name": "Summary Of Indoor Services - Surgeries (Post Operative Infection)",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
@@ -928,78 +1006,7 @@
         }
     },
     {
-        "name": "Summary Of Indoor Services - Death Information (Maternal)",
-        "type": "obsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Death Note, Maternal Death'"
-        }
-    },
-    {
-        "name": "Summary Of Indoor Services - Death Information (Early Neonatal, Late Neonatal, Others)",
-        "type": "obsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "Death Information",
-            "conceptNames": "'Death Note'"
-        }
-    },
-    {
-        "name": "Summary Of Indoor Services - Surgeries (Major, Minor)",
-        "type": "obsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Operative Notes, Procedure','Procedure Notes, Procedure'",
-            "visitTypes": "'General','Admitted','Discharged','Emergency'"
-        }
-    },
-    {
-        "name": "Summary Of Indoor Services - Surgeries (Plaster)",
-        "type": "CodedObsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Procedure Notes, Procedure'",
-            "visitTypes": "'General','Admitted','Discharged','Emergency'"
-        }
-    },
-    {
-        "name": "Summary Of Indoor services - Death Information (Postoperative, Brought Dead, Postmartem Done)",
-        "type": "booleanConceptsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Death Note, Death occured post operative','Death Note, Brought dead','Death Note, Postmortem done'"
-        }
-    },
-    {
-        "name": "Neonate Form",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/neonate_form.sql"
-        }
-    },
-    {
-        "name": "Maternal Age",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/maternal_age.sql"
-        }
-    },
-    {
-        "name": "Abortion Services",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
-        }
-    },
-    {
-        "name": "Free Health Services and Social Security Programme (OPD/IPD/Emergency)",
+        "name": "Summary Of Indoor Services - Free Health Services and Social Security Programme (OPD/IPD/Emergency)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -1009,7 +1016,7 @@
         }
     },
     {
-        "name": "Free Health Services and Social Security Programme (Refer In)",
+        "name": "Summary Of Indoor Services - Free Health Services and Social Security Programme (Refer In)",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
@@ -1017,7 +1024,7 @@
         }
     },
     {
-        "name": "Free Health Services and Social Security Programme (Refer Out) [Please pick only 'Referred' row]",
+        "name": "Summary Of Indoor Services - Free Health Services and Social Security Programme (Refer Out) [Please pick only 'Referred' row]",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -1028,28 +1035,20 @@
         }
     },
     {
-        "name": "Inpatient morbidity (Total Deaths)",
+        "name": "Summary Of Indoor Services - Inpatient Morbidity (No. of Patients Discharged)",
+        "type": "diagnosisCount",
+        "config": {
+          "ageGroupName": "Inpatient",
+          "visitTypes": "'Admitted','Discharged'",
+          "type": "diagnosisReport"
+        }
+    },
+    {
+        "name": "Summary Of Indoor Services - Inpatient morbidity (Total Deaths)",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_morbidity.sql"
-        }
-    },
-    {
-        "name": "Inpatient Morbidity (No. of Patients Discharged)",
-        "type": "diagnosisCount",
-        "config": {
-            "ageGroupName": "Inpatient",
-            "visitTypes": "'Admitted','Discharged'",
-            "type": "diagnosisReport"
-        }
-    },
-    {
-        "name": "PMTCT of HIV - Counselling and Testing",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/pmct_HIV_counselling_testing.sql"
         }
     }
 ]
