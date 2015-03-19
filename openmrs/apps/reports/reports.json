@@ -1,14 +1,5 @@
 [
     {
-        "name": "Referrals",
-        "type": "obsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'Hospitals, Referred by, Data'"
-        }
-    },
-    {
         "name": "Hospital Activities - Number of Clients Served (New and Total)",
         "type": "MRSGeneric",
         "config": {
@@ -868,6 +859,50 @@
         "type": "TestCount"
     },
     {
+        "name": "Hospital Services - Emergency Services",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/emergencyServices.sql"
+        }
+    },
+    {
+        "name": "Hospital Services - Total Patients Admitted",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/totalAdmittedPatients.sql"
+        }
+    },
+    {
+        "name": "Hospital Services - Diagnostic Services (USG, ECG)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'USG Notes','ECG Notes'"
+        }
+    },
+    {
+        "name": "Hospital Services - Referrals (Referred In)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Hospitals, Referred by, Data'"
+        }
+    },
+    {
+        "name": "Hospital Services - Referrals (Referred Out) [Check for Referred grid]",
+        "type": "CodedObsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'Disposition'",
+          "visitTypes": "'General','Admitted','Discharged','Emergency'"
+        }
+    },
+    {
         "name": "Inpatient Outcome Status",
         "type": "CodedObsCount",
         "config": {
@@ -953,31 +988,6 @@
         "config": {
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/maternal_age.sql"
-        }
-    },
-    {
-        "name": "Hospital Services - Diagnostic Services (USG, ECG)",
-        "type": "obsCount",
-        "config": {
-            "type": "codedObsCountReport",
-            "ageGroupName": "All Ages",
-            "conceptNames": "'USG Notes','ECG Notes'"
-        }
-    },
-    {
-        "name": "Emergency Services",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/emergencyServices.sql"
-        }
-    },
-    {
-        "name": "Total Patients Admitted",
-        "type": "MRSGeneric",
-        "config": {
-            "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/totalAdmittedPatients.sql"
         }
     },
     {
