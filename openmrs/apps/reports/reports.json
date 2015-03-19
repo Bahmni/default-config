@@ -593,7 +593,7 @@
         }
     },
     {
-        "name": "DR Tuberculosis Control Program - Treatment Outcome [4]",
+        "name": "DR Tuberculosis Control Program - Treatment Outcome",
         "type": "MultipleCodedObsByCodedObs",
         "config": {
             "type": "multipleCodedObsByCodedObsReport",
@@ -603,7 +603,7 @@
         }
     },
     {
-        "name": "DR Tuberculosis Control Program - Treatment Outcome [4] (HIV positive RR/MDR TB)",
+        "name": "DR Tuberculosis Control Program - Treatment Outcome (HIV positive RR/MDR TB)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -611,6 +611,14 @@
             "conceptPair": ["DRTuberculosis, HIV Infection", "DRTuberculosis, Treatment outcome", "gender"],
             "rowsGroupBy": ["DRTuberculosis, HIV Infection"],
             "columnsGroupBy": ["DRTuberculosis, Treatment outcome", "gender"]
+        }
+    },
+    {
+        "name": "DR Tubercluosis Control Program - Treatment Outcome (Confirmed XDR-TB)",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/treatment_outcome_xdr_tb.sql"
         }
     },
     {
