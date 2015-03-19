@@ -94,7 +94,7 @@
         }
     },
     {
-        "name": "CBIMCI Death - Greater Than 2 months",
+        "name": "CBIMCI - Greater Than 2 months (Death)",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
