@@ -14,14 +14,14 @@ SELECT
   grade.grade_type                                                           AS DG
 
 FROM (SELECT @a := 0) initvars, person_name
-  JOIN person ON person.person_id = person_name.person_id
+  JOIN person ON person.person_id = person_name.person_id AND person.voided = 0
   JOIN person_address AS paddr ON paddr.person_id = person.person_id
   JOIN person_attribute AS pa ON pa.person_id = person.person_id
   JOIN concept_view cv1 ON pa.value = cv1.concept_id
 
   JOIN obs AS newPatientObs ON person.person_id = newPatientObs.person_id AND newPatientObs.voided IS FALSE
   JOIN concept_view cv2 ON newPatientObs.value_coded = cv2.concept_id AND cv2.concept_full_name = 'New Patients'
-                           AND cast(newPatientObs.obs_datetime AS DATE) BETWEEN '#startDate#' AND '#endDate#'
+                           AND DATE(newPatientObs.obs_datetime) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#endDate#' AS DATE)
   LEFT JOIN
   (SELECT
      person_id,
