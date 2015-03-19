@@ -332,8 +332,12 @@
         }
     },
     {
-      "name": "Leprosy Control Program - (No. of smear examined) [check for 'M. Leprae (Slit Skin)']",
-      "type": "TestCount"
+      "name": "Leprosy Control Program - (No. of smear examined)",
+      "type": "MRSGeneric",
+      "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/no_of_smear_examined_leprosy.sql"
+      }
     },
     {
         "name": "Leprosy Control Program - Deformity Status (New cases, New < 14 years children)",
