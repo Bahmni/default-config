@@ -111,7 +111,7 @@
         }
     },
     {
-        "name": "Nutrition Program - Pregnancy",
+        "name": "Nutrition Program - Pregnant women receiving, PP mother receiving",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -137,7 +137,7 @@
         }
     },
     {
-        "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program [Children at the end of this month = Children at the end of last month + Total(Admission) - Total(Discharge)]",
+        "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -273,7 +273,7 @@
         }
     },
     {
-        "name": "Family Planning Program - Temporary FP methods (Discontinued/Removed) [Take count if row=column]",
+        "name": "Family Planning Program - Temporary FP methods (Discontinued/Removal) [Take count if row=column]",
         "type": "CodedObsByCodedObs",
         "config": {
           "type": "codedObsByCodedObsReport",
@@ -336,7 +336,7 @@
       "type": "TestCount"
     },
     {
-        "name": "Leprosy Control Program - Deformity Status (New cases)",
+        "name": "Leprosy Control Program - Deformity Status (New cases, New < 14 years children)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -383,7 +383,7 @@
         }
     },
     {
-        "name": "Malaria Control Programme - Diagnosis and result [check for Microscopy= 'PBS for Malaria, Filaria parasite', RDT= SUM('Malaria Ags', 'Malaria Abs')]",
+        "name": "Malaria Control Programme - Diagnosis and Result [check for Microscopy= 'PBS for Malaria, Filaria parasite', RDT= SUM('Malaria Ags', 'Malaria Abs')]",
         "type": "TestCount"
     },
     {
@@ -405,7 +405,7 @@
         }
     },
     {
-        "name": "Malaria Control Programme - Type of Malaria (Type vs Classification)",
+        "name": "Malaria Control Programme - Type of Malaria (PV, PF, P-MIX)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -416,7 +416,7 @@
         }
     },
     {
-        "name": "Malaria Control Programme - Number of malaria cases",
+        "name": "Malaria Control Programme - Type of Malaria (Number of malaria cases)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -425,7 +425,7 @@
         }
     },
     {
-        "name": "Malaria Control Programme - Treatment of malaria",
+        "name": "Malaria Control Programme - Type of Malaria (Treatment of malaria)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -433,7 +433,7 @@
         }
     },
     {
-        "name": "Malaria Control Programme - Died",
+        "name": "Malaria Control Programme - Type of Malaria (Died)",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
@@ -504,7 +504,18 @@
         }
     },
     {
-        "name": "Tuberculosis Control Program - Private Sector and Community Involvement in Referral/Diagnoses (PBC) [Look at 'Pulmonary BC' column only. Look for 'New Diagnosis' and add for all other columns to get 'Excl New' counts]",
+        "name": "Tuberculosis control program - Private Sector and Community Involvement in Referral and Diagnosis (PCD, EP)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+          "type": "codedObsByCodedObsReport",
+          "ageGroupName": "All Ages",
+          "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Referred by"],
+          "rowsGroupBy": ["Tuberculosis, Referred by"],
+          "columnsGroupBy": ["Tuberculosis, Type","gender"]
+        }
+    },
+    {
+        "name": "Tuberculosis Control Program - Private Sector and Community Involvement in Referral and Diagnoses (PBC) [Look at 'Pulmonary BC' column only. Look for 'New Diagnosis' and add for all other columns to get 'Excl New' counts]",
         "type": "MultipleCodedObsByCodedObs",
         "config": {
             "type": "multipleCodedObsByCodedObsReport",
@@ -524,7 +535,7 @@
         }
     },
     {
-        "name": "Tuberculosis Control Program - Treatment Outcome 2 (PBC) [Look at PCD and EP rows only]",
+        "name": "Tuberculosis Control Program - Treatment Outcome (HIV Positive, All Types) [Look at PCD and EP only]",
         "type": "MultipleCodedObsByCodedObs",
         "config": {
             "type": "multipleCodedObsByCodedObsReport",
@@ -534,7 +545,7 @@
         }
     },
     {
-        "name": "Kala-azar Control Programme - Method Of Diagnosis",
+        "name": "Kala-azar Control Programme - Patient Type (Method of Diagnosis RK-39)",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
@@ -542,7 +553,7 @@
         }
     },
     {
-        "name": "Kala-azar Control Programme - Total",
+        "name": "Kala-azar Control Programme - Patient Type (Total)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -550,7 +561,7 @@
         }
     },
     {
-        "name": "Kala-azar Control Programme - Deaths",
+        "name": "Kala-azar Control Programme - Patient Type (No of Deaths)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -558,7 +569,7 @@
         }
     },
     {
-        "name": "DR Tuberculosis Program - DR TB Case Registration and HIV positive",
+        "name": "DR Tuberculosis Program - DR TB Case Registration, HIV positive RR-TB and DR-TB cases",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -575,7 +586,7 @@
         }
     },
     {
-        "name": "DR Tuberculosis Program - Drug Resistant TB Case Registration (Under Current Treatment)",
+        "name": "DR Tuberculosis Program - DR TB Case Registration (DR TB Patients Under Current Treatment)",
         "type": "obsCount",
         "config": {
           "type": "codedObsCountReport",
@@ -593,7 +604,7 @@
         }
     },
     {
-        "name": "DR Tuberculosis Control Program - Treatment Outcome",
+        "name": "DR Tuberculosis Control Program - Treatment Outcome (All confirmed RR and MDR-TB)",
         "type": "MultipleCodedObsByCodedObs",
         "config": {
             "type": "multipleCodedObsByCodedObsReport",
@@ -603,7 +614,7 @@
         }
     },
     {
-        "name": "DR Tuberculosis Control Program - Treatment Outcome (HIV positive RR/MDR TB)",
+        "name": "DR Tuberculosis Control Program - Treatment Outcome (HIV positive RR and MDR-TB)",
         "type": "CodedObsByCodedObs",
         "config": {
             "type": "codedObsByCodedObsReport",
@@ -614,7 +625,7 @@
         }
     },
     {
-        "name": "DR Tubercluosis Control Program - Treatment Outcome (Confirmed XDR-TB)",
+        "name": "DR Tubercluosis Control Program - Treatment Outcome (All Confirmed XDR-TB)",
         "type": "MRSGeneric",
         "config": {
             "type": "sqlReport",
@@ -639,7 +650,7 @@
       }
     },
     {
-        "name": "HIV/AIDS Program - PMTCT (ART Started, HIV+ve Women - Male Partner, Breast Feeding status)",
+        "name": "HIV/AIDS Program - PMTCT (ART Started, HIV Positive Women - Male Partner, Breast Feeding status)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -648,7 +659,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - PMTCT (HIV+ve Women - Delivered)",
+        "name": "HIV/AIDS Program - PMTCT (HIV Positive Women - Delivered)",
         "type": "CodedObsByCodedObs",
         "config": {
           "type": "codedObsByCodedObsReport",
@@ -668,7 +679,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - PMTCT (Exposed baby (Started ARV Prophylaxis), HIV+ve postpartum women received FP services)",
+        "name": "HIV/AIDS Program - PMTCT (Exposed baby (Started ARV Prophylaxis), HIV positive postpartum women received FP services)",
         "type": "booleanConceptsCount",
         "config": {
           "type": "codedObsCountReport",
