@@ -109,7 +109,8 @@
             obs.obs_group_id as obs_group_id,
             obs.person_id as person_id,
             obs.encounter_id as encounter_id,
-            obs.obs_datetime as obs_datetime
+            obs.obs_datetime as obs_datetime,
+            obs.voided as voided
             from obs, concept_view
             where
             obs.concept_id = concept_view.concept_id;
