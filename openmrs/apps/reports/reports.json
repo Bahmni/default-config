@@ -784,7 +784,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Treatment Adherence on ART (No of Cases)",
+        "name": "HIV/AIDS Program - Treatment Adherence on ART (No of Cases) [Accessed is out of scope]",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -793,7 +793,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Currently on ART by Regimen [Accessed is out of scope]",
+        "name": "HIV/AIDS Program - Currently on ART by Regimen",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
@@ -808,17 +808,6 @@
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": "'OI, Opportunistic infections'"
-        }
-    },
-    {
-        "name": "HIV/AIDS Program - Opportunistic Infections (Treated)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-          "type": "codedObsByCodedObsReport",
-          "ageGroupName": "All Ages",
-          "conceptPair": ["OI, Provided CPT", "OI, Opportunistic infections"],
-          "rowsGroupBy": ["OI, Provided CPT", "gender"],
-          "columnsGroupBy": ["OI, Opportunistic infections"]
         }
     },
     {
@@ -849,6 +838,22 @@
         "rowsGroupBy": ["Tuberculosis, Diagnosis Category", "age_group"],
         "columnsGroupBy": ["Tuberculosis, HIV Infection", "gender"]
       }
+    },
+    {
+        "name": "Disaggregation by Sex and Caste/Ethnicity Part 1 (Except Fully Immunized Children)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/disaggregation_caste_part1.sql"
+        }
+    },
+    {
+        "name": "Disaggregation by Sex and Caste/Ethnicity Part 2 (Except Fully Immunized Children)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/disaggregation_caste_part2.sql"
+        }
     },
     {
         "name": "Outpatient Morbidity",
