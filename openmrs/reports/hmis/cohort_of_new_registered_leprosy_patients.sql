@@ -1,15 +1,15 @@
 SELECT
 	table1.row_name AS 'Cohort of new registered patients',
-    table1.total_female AS 'Total Registered, Female',
-    table1.total_male AS 'Total Registered, Male',
-    table1.rft_female AS 'RFT, Female',
-    table1.rft_male AS 'RFT. Male',
-    table1.defaulter_female AS 'Defaulter, Female',
-    table1.defaulter_male AS 'Defaulter. Male',
-    table1.other_female AS 'Other deducted, Female',
-    table1.other_male AS 'Other deducted. Male',
-    table2.current_female AS 'Currently in Treatment, Female',
-    table2.current_male AS 'Currently in Treatment, Male'
+    IFNULL(table1.total_female, 0) AS 'Total Registered, Female',
+    IFNULL(table1.total_male, 0) AS 'Total Registered, Male',
+    IFNULL(table1.rft_female, 0) AS 'RFT, Female',
+    IFNULL(table1.rft_male, 0) AS 'RFT. Male',
+    IFNULL(table1.defaulter_female, 0) AS 'Defaulter, Female',
+    IFNULL(table1.defaulter_male, 0) AS 'Defaulter. Male',
+    IFNULL(table1.other_female, 0) AS 'Other deducted, Female',
+    IFNULL(table1.other_male, 0) AS 'Other deducted. Male',
+    IFNULL(table2.current_female, 0) AS 'Currently in Treatment, Female',
+    IFNULL(table2.current_male, 0) AS 'Currently in Treatment, Male'
     
 FROM
 (SELECT
@@ -67,16 +67,16 @@ UNION
 
 SELECT
 	table1.row_name AS 'Cohort of new registered patients',
-    table1.total_female AS 'Total Registered, Female',
-    table1.total_male AS 'Total Registered, Male',
-    table1.rft_female AS 'RFT, Female',
-    table1.rft_male AS 'RFT. Male',
-    table1.defaulter_female AS 'Defaulter, Female',
-    table1.defaulter_male AS 'Defaulter. Male',
-    table1.other_female AS 'Other deducted, Female',
-    table1.other_male AS 'Other deducted. Male',
-    table2.current_female AS 'Currently in Treatment, Female',
-    table2.current_male AS 'Currently in Treatment, Male'
+    IFNULL(table1.total_female, 0) AS 'Total Registered, Female',
+    IFNULL(table1.total_male, 0) AS 'Total Registered, Male',
+    IFNULL(table1.rft_female, 0) AS 'RFT, Female',
+    IFNULL(table1.rft_male, 0) AS 'RFT. Male',
+    IFNULL(table1.defaulter_female, 0) AS 'Defaulter, Female',
+    IFNULL(table1.defaulter_male, 0) AS 'Defaulter. Male',
+    IFNULL(table1.other_female, 0) AS 'Other deducted, Female',
+    IFNULL(table1.other_male, 0) AS 'Other deducted. Male',
+    IFNULL(table2.current_female, 0) AS 'Currently in Treatment, Female',
+    IFNULL(table2.current_male, 0) AS 'Currently in Treatment, Male'
     
 FROM
 (SELECT
