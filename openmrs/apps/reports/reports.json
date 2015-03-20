@@ -779,11 +779,19 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (New patients enrolled in HIV care)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment (New patients enrolled in HIV care by age group)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
-          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_new_patients.sql"
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_new_patients_age_group_in_years.sql"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment (New patients enrolled in HIV care by target population)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_new_patients_by_target_population.sql"
         }
     },
     {
