@@ -582,12 +582,21 @@
         }
     },
     {
-        "name": "DR Tuberculosis Program - DR TB Case Registration, HIV positive RR-TB/DR-TB cases",
+        "name": "DR Tuberculosis Program - DR TB Case Registration",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'DRTuberculosis, Diagnosis Category','DRTuberculosis, HIV Infection'"
+            "conceptNames": "'DRTuberculosis, Diagnosis Category'"
+        }
+    },
+    {
+        "name": "DR Tuberculosis Program - DR TB Case Registration (HIV positive RR-TB/DR-TB cases)",
+        "type": "CodedObsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "All Ages",
+          "conceptNames": "'DRTuberculosis, HIV Infection'"
         }
     },
     {
