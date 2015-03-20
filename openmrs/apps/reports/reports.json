@@ -646,11 +646,19 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - HTC Programme",
+        "name": "HIV/AIDS Program - HTC Programme (Tested)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
-          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HTC_programme.sql"
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HTC_program_tested.sql"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - HTC Programme (Positive)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HTC_programme_positive.sql"
         }
     },
     {
