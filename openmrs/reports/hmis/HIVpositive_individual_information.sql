@@ -1,42 +1,95 @@
-select @serial_number:=@serial_number+1 as 'S.No','Client Code','District Code',Sex,'Age(in yrs)','Risk Group(s)','Initial CD4 Count','WHO Stage' from
-(select t1.identifier as 'Client Code',county_district as 'District Code',gender as 'Sex', floor(DATEDIFF(obs_date,birthdate)/365) as 'Age(in yrs)', 
-	group_concat(risk_group separator ',') as 'Risk Group(s)', CD4 as 'Initial CD4 Count', WHO as 'WHO Stage' from
+SELECT
+  @serial_number := @serial_number + 1 AS 'S.No',
+  client_code                          AS 'Client Code',
+  district_code                        AS 'District Code',
+  sex                                  AS 'Sex',
+  age_in_years                         AS 'Age(in yrs)',
+  risk_groups                          AS 'Risk Group(s)',
+  initial_cd4_count                    AS 'Initial CD4 Count',
+  who_stage                            AS 'WHO Stage'
+FROM
+  (SELECT
+     t1.identifier                                   AS client_code,
+     county_district                                 AS district_code,
+     gender                                          AS sex,
+     floor(DATEDIFF(obs_date, birthdate) / 365)      AS age_in_years,
+     group_concat(DISTINCT risk_group SEPARATOR ',') AS risk_groups,
+     CD4                                             AS initial_cd4_count,
+     WHO                                             AS who_stage
+   FROM
 
-	(select pi.identifier, o.person_id, pa.county_district,p.gender,o.concept_full_name,c.concept_full_name as 'risk_group',
-		o.value_coded, o.value_text,DATE(o.obs_datetime) as 'obs_date',p.birthdate
-		from obs_view o
-		inner join person p on o.person_id = p.person_id
-        	inner join person_address pa on p.person_id = pa.person_id
-        	inner join patient_identifier pi on p.person_id = pi.patient_id
-        	left outer join concept_view c on o.value_coded = c.concept_id
-		where (o.concept_full_name in ('HTC, Risk Group','PMTCT, Risk Group') and o.value_coded is not null)
-        	and (o.obs_datetime between '#startDate#' and '#endDate#') group by o.person_id, o.concept_full_name, c.concept_full_name) as t1
-                    
-	inner join 
+     (SELECT
+        pi.identifier,
+        o.person_id,
+        pa.county_district,
+        p.gender,
+        o.concept_full_name,
+        c.concept_full_name  AS 'risk_group',
+        o.value_coded,
+        o.value_text,
+        DATE(o.obs_datetime) AS 'obs_date',
+        p.birthdate
+      FROM obs_view o
+        INNER JOIN person p ON o.person_id = p.person_id
+        INNER JOIN person_address pa ON p.person_id = pa.person_id
+        INNER JOIN patient_identifier pi ON p.person_id = pi.patient_id
+        LEFT OUTER JOIN concept_view c ON o.value_coded = c.concept_id
+      WHERE
+        (o.voided = 0 AND o.concept_full_name IN ('HTC, Risk Group', 'PMTCT, Risk Group') AND o.value_coded IS NOT NULL)
+        AND (DATE(o.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
+      GROUP BY o.person_id, o.concept_full_name, c.concept_full_name) AS t1
 
-	(select person_id from obs_view	
-		where ((concept_full_name = 'HTC, Result if tested'
-		and value_coded in (select concept_id from concept_view where concept_full_name = 'Positive')) or (concept_full_name in ('HIV (Blood)','HIV (Serum)') and value_text in ('Positive')))
-        	and (obs_datetime between '#startDate#' and '#endDate#') group by person_id) as t2 on t1.person_id = t2.person_id
-                    
-	inner join
+     INNER JOIN
 
-	(select person_id, value_numeric as 'CD4',min(obs_datetime) from obs_view 
-		where concept_full_name = 'HTC, CD4 Count' group by person_id)as t3 on t1.person_id = t3.person_id
- 
-	inner join
+     (SELECT person_id
+      FROM obs_view
+      WHERE voided = 0 AND ((concept_full_name = 'HTC, Result if tested'
+                             AND value_coded IN (SELECT concept_id
+                                                 FROM concept_view
+                                                 WHERE concept_full_name = 'Positive')) OR
+                            (concept_full_name IN ('HIV (Blood)', 'HIV (Serum)') AND value_text IN ('Positive')))
+            AND (DATE(obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
+      GROUP BY person_id) AS t2 ON t1.person_id = t2.person_id
 
-	(select o.person_id,c.concept_full_name as 'WHO' from obs_view o
-		inner join concept_view c on o.value_coded = c.concept_id
-		where o.concept_full_name in ('HTC, WHO Staging', 'PMTCT, WHO clinical staging') and o.value_coded is not null and (o.person_id,o.obs_datetime) in
-		(select person_id, max(obs_datetime) as 'obs_datetime' from
-			(select o.person_id,o.concept_full_name,o.obs_datetime,o.value_coded, c.concept_full_name as 'WHO_Stage' from obs_view o
-				inner join concept_view c on o.value_coded = c.concept_id        
-				where o.concept_full_name in ('HTC, WHO Staging', 'PMTCT, WHO clinical staging') and o.value_coded is not null 
-				group by o.person_id,o.concept_full_name having max(o.obs_datetime)) as t1 group by t1.person_id)) as t4 on t1.person_id = t4.person_id
+     INNER JOIN
 
-  join
+     (SELECT
+        person_id,
+        value_numeric AS 'CD4',
+        min(obs_datetime)
+      FROM obs_view
+      WHERE voided = 0 AND concept_full_name = 'HTC, CD4 Count'
+      GROUP BY person_id) AS t3 ON t1.person_id = t3.person_id
 
-  (SELECT @serial_number := 0) as r
+     INNER JOIN
 
-group by t1.identifier order by t1.person_id) as final_table;
+     (SELECT
+        o.person_id,
+        c.concept_full_name AS 'WHO'
+      FROM obs_view o
+        INNER JOIN concept_view c ON o.value_coded = c.concept_id
+      WHERE o.voided = 0 AND o.concept_full_name IN ('HTC, WHO Staging', 'PMTCT, WHO clinical staging') AND
+            o.value_coded IS NOT NULL AND (o.person_id, o.obs_datetime) IN
+                                          (SELECT
+                                             person_id,
+                                             max(obs_datetime) AS 'obs_datetime'
+                                           FROM
+                                             (SELECT
+                                                o.person_id,
+                                                o.concept_full_name,
+                                                o.obs_datetime,
+                                                o.value_coded,
+                                                c.concept_full_name AS 'WHO_Stage'
+                                              FROM obs_view o
+                                                INNER JOIN concept_view c ON o.value_coded = c.concept_id
+                                              WHERE o.voided = 0 AND o.concept_full_name IN
+                                                                     ('HTC, WHO Staging', 'PMTCT, WHO clinical staging')
+                                                    AND o.value_coded IS NOT NULL
+                                              GROUP BY o.person_id, o.concept_full_name
+                                              HAVING max(o.obs_datetime)) AS t1
+                                           GROUP BY t1.person_id)) AS t4 ON t1.person_id = t4.person_id
+
+   GROUP BY t1.identifier
+   ORDER BY t1.person_id) AS final_table
+  JOIN
+  (SELECT @serial_number := 0) AS r;
