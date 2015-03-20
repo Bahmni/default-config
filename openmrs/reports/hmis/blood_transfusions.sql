@@ -12,4 +12,5 @@ FROM
    WHERE (DATE(obs1.obs_datetime) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#endDate#' AS DATE))
    AND (DATE(obs2.obs_datetime) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#endDate#' AS DATE ))
    AND obs1.voided = 0
+   AND obs1.value_coded=1
    ) AS result_view;
