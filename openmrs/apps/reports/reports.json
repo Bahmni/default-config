@@ -909,6 +909,14 @@
         "type": "TestCount"
     },
     {
+        "name": "Hospital Services - Outpatient Services",
+        "type": "MRSGeneric",
+        "config": {
+            "type": "sqlReport",
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/outpatientServices.sql"
+        }
+    },
+    {
         "name": "Hospital Services - Emergency Services",
         "type": "MRSGeneric",
         "config": {
