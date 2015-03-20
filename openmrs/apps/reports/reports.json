@@ -225,12 +225,21 @@
         }
     },
     {
-        "name": "Safe Motherhood Program - Safe Abortion Service (No of women, PAC)",
+        "name": "Safe Motherhood Program - Safe Abortion Service (No of women)",
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "Safe Abortion",
-            "conceptNames": "'Abortion procedure','PAC Cause'"
+            "conceptNames": "'Abortion procedure'"
+        }
+    },
+    {
+        "name": "Safe Motherhood Program - Safe Abortion Service (PAC)",
+        "type": "CodedObsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "Safe Abortion",
+          "conceptNames": "'PAC Cause'"
         }
     },
     {
