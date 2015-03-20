@@ -11,6 +11,9 @@ LEFT OUTER JOIN
 FROM obs obs
   INNER JOIN concept_name cn ON obs.concept_id = cn.concept_id
   INNER JOIN person_address pa ON obs.person_id = pa.person_id
+  INNER JOIN encounter e on obs.encounter_id = e.encounter_id
+  INNER JOIN visit v ON v.visit_id = e.visit_id
 WHERE cn.name = 'K-39' AND concept_name_type = 'FULLY_SPECIFIED' AND obs.value_text = 'Positive' 
-AND DATE(obs_datetime) between '#startDate#' AND '#endDate#'
+AND obs.voided IS FALSE
+AND DATE(v.date_stopped) between '#startDate#' AND '#endDate#'
 GROUP BY result) actual on base.result = actual.result;
