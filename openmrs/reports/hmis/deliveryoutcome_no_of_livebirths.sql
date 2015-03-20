@@ -25,7 +25,7 @@ FROM
                             AND obs_delivery_outcome.concept_full_name = 'Delivery Note, Outcome of Delivery'
                             AND obs_view.concept_full_name = 'Delivery Note, Delivery date and time'
                             AND DATE(obs_view.value_datetime) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#endDate#' AS DATE)
-                            AND obs_delivery_outcome.voided = 0 AND obs_view.retired = 0
+                            AND obs_delivery_outcome.voided = 0 AND obs_view.voided = 0
                             AND obs_delivery_outcome.value_concept_full_name IN
                                 ('Single - livebirth', 'Twins - both liveborn', 'Twins - one liveborn and one stillborn', 'Other multiple births - all liveborn', 'Other multiple births - some liveborn')
      LEFT OUTER JOIN coded_obs_view AS infant_gender ON obs_delivery_outcome.person_id = infant_gender.person_id
