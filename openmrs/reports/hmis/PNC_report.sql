@@ -16,6 +16,8 @@ select * from
           and delivery_date_concept.concept_name_type='FULLY_SPECIFIED'
           and DATE(first_visit_obs.obs_datetime) between DATE(delivery_date_obs.value_datetime)
      AND DATE_ADD(DATE(delivery_date_obs.value_datetime), INTERVAL 24 HOUR)
+     join encounter encounter on encounter.encounter_id in (delivery_date_obs.encounter_id, first_visit_obs.encounter_id)
+     join visit visit on visit.visit_id = encounter.visit_id and visit.date_stopped is not null
   ) as within_24hour
 union
 (select
@@ -45,4 +47,7 @@ union
 
         and DATE(first_visit_obs.obs_datetime) between DATE(delivery_date_obs.value_datetime) AND DATE_ADD(DATE(delivery_date_obs.value_datetime), INTERVAL 24 HOUR)
         and DATE(second_visit_obs.obs_datetime) between DATE_ADD(DATE(delivery_date_obs.value_datetime), INTERVAL 24 HOUR) AND DATE_ADD(DATE(delivery_date_obs.value_datetime), INTERVAL 3 DAY)
-        and DATE(third_visit_obs.obs_datetime) between DATE_ADD(DATE(delivery_date_obs.value_datetime), INTERVAL 3 DAY) AND DATE_ADD(DATE(delivery_date_obs.value_datetime), INTERVAL 7 DAY));
+        and DATE(third_visit_obs.obs_datetime) between DATE_ADD(DATE(delivery_date_obs.value_datetime), INTERVAL 3 DAY) AND DATE_ADD(DATE(delivery_date_obs.value_datetime), INTERVAL 7 DAY)
+   join encounter encounter on encounter.encounter_id in (first_visit_obs.encounter_id, second_visit_obs.encounter_id, third_visit_obs.encounter_id, delivery_date_obs.encounter_id)
+   join visit visit on visit.visit_id = encounter.visit_id and visit.date_stopped is not null
+);
