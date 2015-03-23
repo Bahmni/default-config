@@ -8,8 +8,8 @@ join concept_answer answer on question.concept_id = answer.concept_id and questi
 join concept_view as cv on cv.concept_id = answer.answer_concept
 join diagnosis_concept_view as dcv on dcv.concept_id = answer.answer_concept
 left join concept_view as death_view on death_view.concept_full_name = 'Death Note, Primary Cause of Death'
-left join obs on obs.value_coded = answer.answer_concept and death_view.concept_id = obs.concept_id 
-and cast(obs.obs_datetime as date) between '#startDate#' and '#endDate#'
+left join obs on obs.voided=0 and obs.value_coded = answer.answer_concept and death_view.concept_id = obs.concept_id
+and DATE(obs.obs_datetime) between '#startDate#' and '#endDate#'
 left join person p on p.person_id = obs.person_id
 left JOIN encounter e
 ON e.encounter_id = obs.encounter_id
