@@ -822,11 +822,19 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (Patients medically eligible for ART but have not started)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment (Patients medically eligible for ART but have not started by age group in yeard)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
-          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_ART_medically_eligible.sql"
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_ART_medically_eligible_age_group_in_years.sql"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment (Patients medically eligible for ART but have not started by target population)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_ART_medically_eligible_by_target_population.sql"
         }
     },
     {
