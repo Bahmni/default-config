@@ -22,11 +22,12 @@ FROM
        SUM(IF(obs_view.concept_full_name IS NULL, 0, IF(obs_view.concept_full_name = 'Childhood Illness, Follow up result',1,0))) AS follow_up
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN '#startDate#' AND '#endDate#'
+	AND date(visit.date_stopped) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
-	AND obs_view.concept_full_name IN( 'Childhood Illness( Children aged 2 months to 5 years)', 'Childhood Illness, Follow up result')  
-RIGHT OUTER JOIN reporting_age_group ON visit.date_started BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+	AND obs_view.concept_full_name IN( 'Childhood Illness( Children aged 2 months to 5 years)', 'Childhood Illness, Follow up result')
+  AND obs_view.voided is FALSE
+RIGHT OUTER JOIN reporting_age_group ON visit.date_stopped BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
 WHERE reporting_age_group.report_group_name = 'Childhood Illness 59months'
 GROUP BY reporting_age_group.name
@@ -49,16 +50,18 @@ FROM
 (SELECT obs_view.concept_full_name, encounter.encounter_id, reporting_age_group.name
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN '#startDate#' AND '#endDate#'
+	AND date(visit.date_stopped) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 	AND obs_view.concept_full_name = 'Childhood Illness, Referred out'
-RIGHT OUTER JOIN reporting_age_group ON visit.date_started BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+  AND obs_view.voided is FALSE
+RIGHT OUTER JOIN reporting_age_group ON visit.date_stopped BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
 WHERE reporting_age_group.report_group_name = 'Childhood Illness 59months') AS reference_obs
 LEFT OUTER JOIN
 obs_view AS reason_obs ON reason_obs.encounter_id = reference_obs.encounter_id
 AND reason_obs.concept_full_name IN ('Childhood Illness, Acute Respiratory Infection present', 'Childhood Illness, Diarrhoea present')
+  AND reason_obs.voided is FALSE
 GROUP BY reference_obs.encounter_id) AS referral_reason
 GROUP BY name) AS refer
 ON total.name = refer.name
@@ -72,18 +75,21 @@ INNER JOIN
     SUM(IF(obs_view.concept_full_name = 'Childhood Illness, Acute Respiratory Infection present' && coded_obs_view.value_concept_full_name = 'Severe pneumonia', 1, 0)) AS ARI_severe_pneumonia
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN '#startDate#' AND '#endDate#'
+	AND date(visit.date_stopped) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
-	AND obs_view.concept_full_name IN ('Childhood Illness, Acute Respiratory Infection present') AND obs_view.value_coded = 1
+	AND obs_view.concept_full_name IN ('Childhood Illness, Acute Respiratory Infection present')
+  AND obs_view.value_coded = 1
+  AND obs_view.voided is FALSE
 LEFT OUTER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
 	AND coded_obs_view.value_concept_full_name IN ('Pneumonia','Severe pneumonia')
-    AND coded_obs_view.obs_datetime BETWEEN '#startDate#' AND '#endDate#'
+  AND coded_obs_view.obs_datetime BETWEEN '#startDate#' AND '#endDate#'
+  AND coded_obs_view.voided is FALSE
 LEFT OUTER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
     AND certainty_obs.value_concept_full_name = 'Confirmed'
-RIGHT OUTER JOIN reporting_age_group ON visit.date_started BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+RIGHT OUTER JOIN reporting_age_group ON visit.date_stopped BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
 WHERE reporting_age_group.report_group_name = 'Childhood Illness 59months') AS ari
 ON refer.name = ari.name
@@ -99,20 +105,23 @@ INNER JOIN
     
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND visit.date_started BETWEEN '#startDate#' AND '#endDate#'
+	AND date(visit.date_stopped) BETWEEN '#startDate#' AND '#endDate#'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
 	AND obs_view.concept_full_name IN ('Childhood Illness, Diarrhoea present') AND obs_view.value_coded = 1
+  AND obs_view.voided is FALSE
 LEFT OUTER JOIN coded_obs_view dehydration_type ON dehydration_type.obs_group_id = obs_view.obs_group_id
 	AND dehydration_type.concept_full_name = 'Childhood Illness, Dehydration Status'
 LEFT OUTER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
 	AND coded_obs_view.value_concept_full_name IN ('Amoebic Dysentery', 'Bacillary Dysentery')
-    AND coded_obs_view.obs_datetime BETWEEN '#startDate#' AND '#endDate#'
+  AND coded_obs_view.obs_datetime BETWEEN '#startDate#' AND '#endDate#'
+  AND coded_obs_view.voided is FALSE
 LEFT OUTER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
-    AND certainty_obs.value_concept_full_name = 'Confirmed'
-RIGHT OUTER JOIN reporting_age_group ON visit.date_started BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+  AND certainty_obs.value_concept_full_name = 'Confirmed'
+  AND certainty_obs.voided is FALSE
+RIGHT OUTER JOIN reporting_age_group ON visit.date_stopped BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
 WHERE reporting_age_group.report_group_name = 'Childhood Illness 59months') AS diarrhoea
 ON ari.name = diarrhoea.name
@@ -127,11 +136,13 @@ FROM person
 INNER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
  	AND coded_obs_view.value_concept_full_name IN ('Clinical Malaria', 'Plasmodium Falciparum', 'Plasmodium Vivax')
-    AND coded_obs_view.obs_datetime BETWEEN '#startDate#' AND '#endDate#'
+  AND date(coded_obs_view.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
+  AND coded_obs_view.voided is FALSE
 LEFT OUTER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
-    AND certainty_obs.value_concept_full_name = 'Confirmed'
-RIGHT OUTER JOIN reporting_age_group ON DATE(coded_obs_view.obs_datetime) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+  AND certainty_obs.value_concept_full_name = 'Confirmed'
+  AND certainty_obs.voided is FALSE
+RIGHT OUTER JOIN reporting_age_group ON DATE(coded_obs_view.obs_datetime) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
  						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
 WHERE reporting_age_group.report_group_name = 'Childhood Illness 59months') AS malaria
 ON diarrhoea.name = malaria.name
@@ -155,11 +166,13 @@ INNER JOIN
     FROM person 
 INNER JOIN coded_obs_view ON coded_obs_view.person_id = person.person_id
 	AND coded_obs_view.concept_full_name = 'Coded Diagnosis'
-    AND coded_obs_view.obs_datetime BETWEEN '#startDate#' AND '#endDate#'
+  AND date(coded_obs_view.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
+  AND coded_obs_view.voided is FALSE
 INNER JOIN coded_obs_view AS certainty_obs ON coded_obs_view.obs_group_id = certainty_obs.obs_group_id
 	AND certainty_obs.concept_full_name = 'Diagnosis Certainty'
-    AND certainty_obs.value_concept_full_name = 'Confirmed'
-RIGHT OUTER JOIN reporting_age_group ON DATE(coded_obs_view.obs_datetime) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY)) 
+  AND certainty_obs.value_concept_full_name = 'Confirmed'
+  AND certainty_obs.voided is FALSE
+RIGHT OUTER JOIN reporting_age_group ON DATE(coded_obs_view.obs_datetime) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
 						AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
 WHERE reporting_age_group.report_group_name = 'Childhood Illness 59months') AS diseases
 ON malaria.name = diseases.name;
