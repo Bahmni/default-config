@@ -788,7 +788,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (New patients enrolled in HIV care by age group)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment  by Age Group (New patients enrolled in HIV care)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -796,7 +796,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (New patients enrolled in HIV care by target population)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment by Target Population (New patients enrolled in HIV care)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -813,7 +813,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (No of patients death reported, Deduction, Total patients restart, Total no. of patients currently on ART)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (No of patients death reported, Deduction, Total patients restart, Total no. of patients currently on ART)",
         "type": "CodedObsCount",
         "config": {
           "type": "codedObsCountReport",
@@ -822,7 +822,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (Patients medically eligible for ART but have not started by age group in yeard)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (Patients medically eligible for ART but have not started)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -830,7 +830,7 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (Patients medically eligible for ART but have not started by target population)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Patients medically eligible for ART but have not started)",
         "type": "MRSGeneric",
         "config": {
           "type": "sqlReport",
@@ -838,12 +838,48 @@
         }
     },
     {
-        "name": "HIV AIDS Program - Anteretroviral Treatment (Enrollment on ART)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (No of patients death reported, Deduction, Total patients restart, Total no. of patients currently on ART)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+          "type": "codedObsByCodedObsReport",
+          "ageGroupName": "Anteretroviral",
+          "conceptPair": ["HIVTC, ART current status", "HIVTC, Risk Group"],
+          "rowsGroupBy": ["HIVTC, ART current status"],
+          "columnsGroupBy": ["HIVTC, Risk Group"]
+        }
+    },
+    {
+        "name": "HIV AIDS Program - Anteretroviral Treatment By Age Group (Enrollment on ART - New patients started ART)",
         "type": "obsCount",
         "config": {
           "type": "codedObsCountReport",
           "ageGroupName": "Anteretroviral",
-          "conceptNames": "'HIVTC, ART Regimen','HIVTC, Transferred Patient Regimen'"
+          "conceptNames": "'HIVTC, ART Regimen'"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Enrollment on ART - New patients started ART)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/new_patients_started_art.sql"
+        }
+    },
+    {
+        "name": "HIV AIDS Program - Anteretroviral Treatment By Age Group (Enrollment on ART - Patients on ART transferred in)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "Anteretroviral",
+          "conceptNames": "'HIVTC, Transferred Patient Regimen'"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Enrollment on ART - Patients on ART transferred in)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/patients_on_art_transferred_in.sql"
         }
     },
     {
