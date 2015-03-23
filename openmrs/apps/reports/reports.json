@@ -804,12 +804,37 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (No of patients transferred in and transferred out)",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (No of patients transferred in)",
         "type": "obsCount",
         "config": {
           "type": "codedObsCountReport",
           "ageGroupName": "Anteretroviral",
-          "conceptNames": "'HIVTC, Transferred in','HIVTC, Transferred out'"
+          "conceptNames": "'HIVTC, Transferred in'"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment by Target Population (No of patients transferred in)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/no_of_patients_transferred_in.sql"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (No of patients transferred out)",
+        "type": "obsCount",
+        "config": {
+          "type": "codedObsCountReport",
+          "ageGroupName": "Anteretroviral",
+          "conceptNames": "'HIVTC, Transferred out'"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment by Target Population (No of patients transferred out)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/no_of_patients_transferred_out.sql"
         }
     },
     {
