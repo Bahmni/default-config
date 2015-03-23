@@ -847,6 +847,17 @@
         }
     },
     {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (No of patients death reported, Deduction, Total patients restart, Total no. of patients currently on ART)",
+        "type": "CodedObsByCodedObs",
+        "config": {
+          "type": "codedObsByCodedObsReport",
+          "ageGroupName": "Anteretroviral",
+          "conceptPair": ["HIVTC, ART current status", "HIVTC, Risk Group"],
+          "rowsGroupBy": ["HIVTC, ART current status"],
+          "columnsGroupBy": ["HIVTC, Risk Group"]
+        }
+    },
+    {
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (Patients medically eligible for ART but have not started)",
         "type": "MRSGeneric",
         "config": {
@@ -860,17 +871,6 @@
         "config": {
           "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_ART_medically_eligible_by_target_population.sql"
-        }
-    },
-    {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (No of patients death reported, Deduction, Total patients restart, Total no. of patients currently on ART)",
-        "type": "CodedObsByCodedObs",
-        "config": {
-          "type": "codedObsByCodedObsReport",
-          "ageGroupName": "Anteretroviral",
-          "conceptPair": ["HIVTC, ART current status", "HIVTC, Risk Group"],
-          "rowsGroupBy": ["HIVTC, ART current status"],
-          "columnsGroupBy": ["HIVTC, Risk Group"]
         }
     },
     {
