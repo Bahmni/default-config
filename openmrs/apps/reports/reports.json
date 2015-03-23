@@ -908,12 +908,36 @@
         }
     },
     {
-        "name": "HIV/AIDS Program - Anteretroviral Treatment (Patients on ART except Total no. of patients currently on ART)",
-        "type": "CodedObsCount",
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group By Age Group (Patients on ART except Total no. of patients currently on ART) [Original 1st line regimen = SUM(ART Regimen, Patient Regimen), Substituted 1st Line Regimen = New Regimen, Switched to 2nd Line Regimen = Name of switched regimen]",
+        "type": "obsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "Anteretroviral",
-            "conceptNames": "'HIVTC, ART Regimen','HIVTC, Transferred Patient Regimen','HIVTC, Name of Switched Regimem','HIVTC, Treatment Substituted'"
+            "conceptNames": "'HIVTC, ART Regimen','HIVTC, Transferred Patient Regimen','HIVTC, New Regimen','HIVTC, Name of Switched Regimem'"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Original 1st Line Regimen)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/original_1st_line_regimen.sql"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Substituted 1st line regimen)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/substituted_1st_line_regimen.sql"
+        }
+    },
+    {
+        "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Switched on to 2nd Line Regimen)",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/switched_2nd_line_regimen.sql"
         }
     },
     {
