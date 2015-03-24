@@ -161,15 +161,16 @@
         "requiredPrivilege": "app:pharmacy"
     },
     {
-        "id": "bahmni.billing.patients.search.allPatients",
+        "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
-            "display":"My Patients",
-            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+            "searchHandler": "emrapi.sqlSearch.todaysPatients",
+            "display":"Today's Patients",
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment",
+            "refreshTime": 120
         },
-        "label": "Active",
+        "label": "Today's Patients",
         "order": 9,
         "requiredPrivilege": "app:pharmacy"
     },
