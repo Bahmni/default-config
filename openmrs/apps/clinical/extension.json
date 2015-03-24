@@ -38,7 +38,7 @@
         "url": "treatment",
         "icon": "icon-user-md",
         "order": 4,
-        "requiredPrivilege": "app:clinical:treatment"
+        "requiredPrivilege": "app:pharmacy"
     },
     {
         "id": "bahmni.clinical.orders.pending",
@@ -146,6 +146,31 @@
         "label": "All",
         "order": 7,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.billing.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatients",
+            "display":"Active",
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+        },
+        "label": "Active",
+        "order": 8,
+        "requiredPrivilege": "app:pharmacy"
+    },
+    {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "display":"All",
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+        },
+        "label": "All",
+        "order": 9,
+        "requiredPrivilege": "app:pharmacy"
     },
     {
         "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
