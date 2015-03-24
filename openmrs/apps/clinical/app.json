@@ -975,6 +975,12 @@
         "Procedure Notes, Procedure": {
           "required": true
         },
+        "ANC, ANC Visit": {
+          "required": true
+        },
+        "ANC, Completed 4 ANC visits": {
+          "required": true
+        },
         "HIVTC, Problem": {
           "allowAddMore": true
         },
