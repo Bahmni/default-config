@@ -942,15 +942,6 @@
         "Discharge note, Inpatient outcome": {
           "required": true
         },
-        "Discharge Note, Brief Hospital Course": {
-          "required": true
-        },
-        "Discharge Note, Medications on Discharged": {
-          "required": true
-        },
-        "Discharge Note, Followup Instructions": {
-          "required": true
-        },
         "FP, Family Planning Method": {
           "required": true
         },
