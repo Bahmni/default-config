@@ -47,5 +47,15 @@
         "url": "../reports/#/dashboard/home",
         "icon": "icon-user",
         "order": 8
+    },
+    {
+        "id": "bahmni.billing",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Prescription",
+        "url": "../clinical/",
+        "icon": "icon-stethoscope",
+        "order": 8,
+        "requiredPrivilege": "app:pharmacy"
     }
 ]

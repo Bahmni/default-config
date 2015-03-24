@@ -161,6 +161,19 @@
         "requiredPrivilege": "app:pharmacy"
     },
     {
+        "id": "bahmni.billing.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
+            "display":"My Patients",
+            "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
+        },
+        "label": "Active",
+        "order": 9,
+        "requiredPrivilege": "app:pharmacy"
+    },
+    {
         "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -169,7 +182,7 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/treatment"
         },
         "label": "All",
-        "order": 9,
+        "order": 10,
         "requiredPrivilege": "app:pharmacy"
     },
     {
