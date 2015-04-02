@@ -29,6 +29,20 @@
                         "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
                         "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                     }
+            },
+            {
+                "type": "investigationResult",
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": true,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10,
+                    "initialAccessionCount": 2,
+                    "latestAccessionCount": 2
+                }
             }
         ]
     }
