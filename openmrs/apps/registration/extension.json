@@ -68,6 +68,18 @@
         "requiredPrivilege": "Edit Patients"
     },
     {
+        "id": "bahmni.patient.edit.action.editVisit",
+        "extensionPointId": "org.bahmni.registration.patient.edit.action",
+        "type": "config",
+        "extensionParams" : {
+            "action" : "enterConsultation",
+            "display": "Enter <u>C</u>onsultation",
+            "shortcutKey": "c"
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    },
+    {
         "id": "bahmni.patient.create.action.startVisit",
         "extensionPointId": "org.bahmni.registration.patient.create.action",
         "type": "config",
