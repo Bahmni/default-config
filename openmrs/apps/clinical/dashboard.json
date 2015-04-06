@@ -2,6 +2,8 @@
     {
         "dashboardName": "General",
         "default": true,
+        "maxRecentlyViewedPatients": 10,
+
         "sections": [
             {
                 "title": "Diagnosis",
@@ -126,6 +128,7 @@
     },
     {
         "dashboardName": "General - 2",
+        "maxRecentlyViewedPatients": 10,
         "sections": [
             {
                 "title": "Patient Information",
