@@ -1084,7 +1084,7 @@
           "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
           "conceptNames": "'Disposition'",
-          "visitTypes": "'General','Admitted','Discharged','Emergency'"
+          "visitTypes": "'OPD','IPD','Emergency'"
         }
     },
     {
@@ -1189,7 +1189,7 @@
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": "'Out Patient Details, Free Health Service Code'",
-            "visitTypes": "'General','Admitted','Discharged','Emergency'"
+            "visitTypes": "'OPD','IPD','Emergency'"
         }
     },
     {
