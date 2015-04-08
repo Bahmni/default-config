@@ -14,7 +14,7 @@
         "type": "diagnosisCount",
         "config": {
             "type": "diagnosisReport",
-            "visitTypes": "'Admitted','Discharged'"
+            "visitTypes": "'IPD'"
         }
     },
     {
