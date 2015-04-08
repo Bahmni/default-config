@@ -30,20 +30,36 @@
                         "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                     }
             },
-            {
-                "type": "investigationResult",
-                "config": {
-                    "title": "Lab Investigations",
-                    "showChart": true,
-                    "showTable": true,
-                    "showNormalLabResults": true,
-                    "showCommentsExpanded": true,
-                    "showAccessionNotes": true,
-                    "numberOfVisits": 10,
-                    "initialAccessionCount": 2,
-                    "latestAccessionCount": 2
-                }
+          {
+            "type": "investigationResult",
+            "config": {
+              "title": "Lab Investigations",
+              "showChart": true,
+              "showTable": true,
+              "showNormalLabResults": true,
+              "showCommentsExpanded": true,
+              "showAccessionNotes": true,
+              "numberOfVisits": 10,
+              "initialAccessionCount": 2,
+              "latestAccessionCount": 2
             }
+          },
+          {
+            "type": "observationGraph",
+            "title": "Temperature",
+            "config": {
+              "yAxisConcepts": ["Temperature"],
+              "numberOfVisits": 3
+            }
+          },
+          {
+            "type": "observationGraph",
+            "title": "Blood Pressure",
+            "config": {
+              "yAxisConcepts": ["Systolic", "Diastolic"],
+              "numberOfVisits": 3
+            }
+          }
         ]
     }
 ]
