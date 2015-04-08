@@ -257,7 +257,7 @@
         "name": "Safe Motherhood Program - Obstetric Complications",
         "type": "diagnosisCount",
         "config": {
-          "visitTypes": "'General'",
+          "visitTypes": "'OPD'",
           "type": "diagnosisReport"
         }
     },
@@ -603,7 +603,7 @@
         "name": "DR Tuberculosis Program - DR TB Case Registration (All confirmed XDR-TB cases) [pick 'Extremely Drug Resistant Tuberculosis']",
         "type": "diagnosisCount",
         "config": {
-          "visitTypes": "'General'",
+          "visitTypes": "'OPD'",
           "type": "diagnosisReport"
         }
     },
@@ -1027,7 +1027,7 @@
         "name": "Outpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
-            "visitTypes": "'General'",
+            "visitTypes": "'OPD'",
             "type": "diagnosisReport"
         }
     },
@@ -1216,7 +1216,7 @@
         "type": "diagnosisCount",
         "config": {
           "ageGroupName": "Inpatient",
-          "visitTypes": "'Admitted','Discharged'",
+          "visitTypes": "'IPD'",
           "type": "diagnosisReport"
         }
     },
