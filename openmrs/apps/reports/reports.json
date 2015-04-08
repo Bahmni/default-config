@@ -1162,7 +1162,7 @@
           "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
           "conceptNames": "'Operative Notes, Procedure','Procedure Notes, Procedure'",
-          "visitTypes": "'General','Admitted','Discharged','Emergency'"
+          "visitTypes": "'OPD','IPD','Emergency'"
         }
     },
     {
