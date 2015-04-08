@@ -53,7 +53,7 @@
             "type": "codedObsCountReport",
             "ageGroupName": "Inpatient Discharge Reports",
             "conceptNames": "'Systolic','Diastolic'" ,
-            "visitTypes": "'General','Admitted','Discharged','Emergency'"
+            "visitTypes": "'OPD','IPD','Emergency'"
         }
     },
     {
