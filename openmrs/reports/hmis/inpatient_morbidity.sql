@@ -13,5 +13,6 @@ and DATE(obs.obs_datetime) between '#startDate#' and '#endDate#'
 left join person p on p.person_id = obs.person_id
 left JOIN encounter e
 ON e.encounter_id = obs.encounter_id
-left JOIN visit_attribute va on va.visit_id = e.visit_id and va.value_reference in ('Admitted', 'Discharged')
+left JOIN visit_attribute va on va.visit_id = e.visit_id and va.value_reference in ('IPD')
+LEFT JOIN visit_attribute_type vat on vat.visit_attribute_type_id = va.attribute_type_id AND vat.name = 'Visit Status'
 group by cv.concept_full_name;

@@ -13,7 +13,8 @@ FROM
    FROM visit
      INNER JOIN patient ON visit.patient_id = patient.patient_id AND DATE(visit.date_stopped) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#endDate#' AS DATE) AND patient.voided = 0 AND visit.voided = 0
      INNER JOIN person ON person.person_id = patient.patient_id AND person.voided = 0
-     INNER JOIN visit_attribute va on visit.visit_id = va.visit_id and va.value_reference = 'General'
+     INNER JOIN visit_attribute va on visit.visit_id = va.visit_id and va.value_reference = 'OPD'
+     INNER JOIN visit_attribute_type vat on vat.visit_attribute_type_id = va.attribute_type_id AND vat.name = 'Visit Status'
      RIGHT OUTER JOIN reporting_age_group AS observed_age_group ON
                                                                   DATE(visit.date_stopped) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL observed_age_group.min_years YEAR), INTERVAL observed_age_group.min_days DAY))
                                                                   AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL observed_age_group.max_years YEAR), INTERVAL observed_age_group.max_days DAY))
