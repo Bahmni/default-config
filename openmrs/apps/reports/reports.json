@@ -6,7 +6,7 @@
             "type": "codedObsCountReport",
             "ageGroupName": "Inpatient Discharge Reports",
             "conceptNames": "'Chief Complaint'",
-            "visitTypes": "'Admitted','Discharged','OPD', 'Emergency'"
+            "visitTypes": "'IPD','OPD', 'Emergency'"
         }
     },
     {
