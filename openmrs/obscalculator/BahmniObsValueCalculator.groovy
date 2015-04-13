@@ -91,12 +91,10 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             def bmi = bmi(height, weight)
             bmiObservation = bmiObservation ?: createObs("BMI", parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
             bmiObservation.setValue(bmi);
-            bmiObservation.setComment([height: height, weight: weight, bmi: bmi].toString())
 
             def bmiStatus = bmiStatus(bmi, patientAgeInMonthsAsOfEncounter, patient.getGender());
             bmiStatusObservation = bmiStatusObservation ?: createObs("BMI Status", parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
             bmiStatusObservation.setValue(bmiStatus);
-            bmiStatusObservation.setComment([height: height, weight: weight, bmi: bmi, bmiStatus: bmiStatus].toString())
         }
     }
 
