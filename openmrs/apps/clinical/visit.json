@@ -10,8 +10,7 @@
         "defaultSections": true
     },
     {
-        "title": "Trends",
-        "displayByDefault": true,
+        "title": "General - 2",
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Visit",
