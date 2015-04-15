@@ -142,7 +142,30 @@
                 "title": "Temperature",
                 "config": {
                     "yAxisConcepts": ["Temperature"],
+                    "xAxisConcept": "observationDateTime",
                     "numberOfVisits": 3
+                }
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "BMI Index",
+                "config": {
+                    "yAxisConcepts": ["HEIGHT"],
+                    "xAxisConcept": "WEIGHT",
+                    "numberOfVisits": 3
+                }
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Height vs Age",
+                "config": {
+                    "yAxisConcepts": ["HEIGHT"],
+                    "xAxisConcept": "age",
+                    "numberOfVisits": 3,
+                    "minXAxisRange": 0,
+                    "maxXAxisRange": 100
                 }
             }
         ]
