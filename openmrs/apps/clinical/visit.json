@@ -1,6 +1,17 @@
 [
     {
-        "title": "General - 2",
+        "title": "General",
+        "default": true,
+        "printing": {
+          "title": "Jan Swasthya Sahyog Community Health Centre",
+          "header": "Visit",
+          "logo": "../images/jss-icon.png"
+        },
+        "defaultSections": true
+    },
+    {
+        "title": "Trends",
+        "displayByDefault": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Visit",

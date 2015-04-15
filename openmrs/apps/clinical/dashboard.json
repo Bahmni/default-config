@@ -127,7 +127,8 @@
         ]
     },
     {
-        "dashboardName": "General - 2",
+        "dashboardName": "Trends",
+        "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": [
             {
