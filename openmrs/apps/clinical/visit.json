@@ -1,7 +1,7 @@
 [
   {
     "title": "General",
-    "default": true,
+    "displayByDefault": true,
     "defaultSections": true,
     "printing": {
       "title": "Bayalpata Hospital",

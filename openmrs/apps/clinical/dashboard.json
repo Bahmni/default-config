@@ -1,7 +1,7 @@
 [
     {
         "dashboardName": "General",
-        "default": true,
+        "displayByDefault": true,
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "Discharge Summary",
