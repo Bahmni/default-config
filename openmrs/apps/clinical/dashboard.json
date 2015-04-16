@@ -144,8 +144,6 @@
                     "yAxisConcepts": ["Temperature"],
                     "xAxisConcept": "observationDateTime",
                     "numberOfVisits": 3,
-                    "minXAxisRange": "14 Apr 15 00:00 pm",
-                    "maxXAxisRange": "16 Apr 15 00:00 pm",
                     "minYAxisRange": 94,
                     "maxYAxisRange": 106
                 }
