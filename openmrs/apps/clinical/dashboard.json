@@ -1,7 +1,7 @@
 [
     {
         "dashboardName": "General",
-        "default": true,
+        "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
 
         "sections": [
