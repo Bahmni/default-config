@@ -7,31 +7,34 @@
           "header": "Visit",
           "logo": "../images/jss-icon.png"
         },
-        "defaultSections": true
+        "defaultSections": true,
+        "sections": [
+          {
+            "type": "pivotTable",
+            "title": "Pivot table",
+            "config": {
+              "groupBy": "encounters",
+              "obsConcepts": [
+                "Vitals",
+                "Height",
+                "WEIGHT",
+                "M/C Days"
+              ],
+              "drugConcepts": ["Gamma Benzene Hexachloride"],
+              "labConcepts": ""
+            }
+          }
+        ]
     },
     {
         "title": "General - 2",
+        "displayByDefault": true,
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Visit",
             "logo": "../images/jss-icon.png"
         },
         "sections": [
-            {
-                "type": "pivotTable",
-                "title": "Pivot table",
-                "config": {
-                    "groupBy": "encounters",
-                    "obsConcepts": [
-                        "Vitals",
-                        "Height",
-                        "WEIGHT",
-                        "M/C Days"
-                    ],
-                    "drugConcepts": ["Gamma Benzene Hexachloride"],
-                    "labConcepts": ""
-                }
-            },
             {
                     "type": "patientInformation",
                     "config": {
