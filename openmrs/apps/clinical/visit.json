@@ -57,6 +57,21 @@
             }
           },
           {
+            "type": "pivotTable",
+            "title": "Pivot table",
+            "config": {
+              "groupBy": "encounters",
+              "obsConcepts": [
+                "Vitals",
+                "Height",
+                "WEIGHT",
+                "M/C Days"
+              ],
+              "drugConcepts": ["Gamma Benzene Hexachloride"],
+              "labConcepts": ""
+            }
+          },
+          {
             "type": "observationGraph",
             "title": "Temperature",
             "config": {
