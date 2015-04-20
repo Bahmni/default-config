@@ -11,7 +11,7 @@ FROM
 FROM obs_view as obs_delivery_time
 INNER JOIN obs_view AS obs_weight ON obs_weight.encounter_id = obs_delivery_time.encounter_id
 	AND obs_delivery_time.concept_full_name = 'Delivery Note, Delivery date and time'
-    AND DATE(obs_delivery_time.value_datetime) BETWEEN '#startDate' AND '#endDate#'
+    AND DATE(obs_delivery_time.value_datetime) BETWEEN '#startDate#' AND '#endDate#'
     AND obs_weight.concept_full_name = 'Delivery Note, Liveborn weight'
     AND obs_weight.voided = 0
     AND obs_delivery_time.voided = 0
