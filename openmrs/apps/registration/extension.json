@@ -38,7 +38,7 @@
         "extensionParams" : {
             "action" : "startVisit",
             "display": "Start Visit",
-            "forwardUrl" : "/patient/{{patientUuid}}/visit"
+            "forwardUrl" : "../registration/#/patient/{{patientUuid}}/visit"
         },
         "order": 1,
         "requiredPrivilege": "Add Visits"
@@ -86,7 +86,7 @@
         "extensionParams" : {
             "action" : "startVisit",
             "display": "Start Visit",
-            "forwardUrl" : "/patient/{{patientUuid}}/visit"
+            "forwardUrl" : "../registration/#/patient/{{patientUuid}}/visit"
         },
         "order": 1,
         "requiredPrivilege": "Add Visits"
