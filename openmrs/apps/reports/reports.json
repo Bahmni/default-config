@@ -123,7 +123,7 @@
         "type": "obsCount",
         "config": {
             "type": "codedObsCountReport",
-            "ageGroupName": "Nutrition Program Vitamin A",
+            "ageGroupName": "All Ages",
             "conceptNames": "'Childhood Illness, Vitamin A Capsules Provided'"
         }
     },
@@ -257,7 +257,7 @@
         "name": "Safe Motherhood Program - Obstetric Complications",
         "type": "diagnosisCount",
         "config": {
-          "visitTypes": "'OPD'",
+          "visitTypes": "'General'",
           "type": "diagnosisReport"
         }
     },
@@ -603,7 +603,7 @@
         "name": "DR Tuberculosis Program - DR TB Case Registration (All confirmed XDR-TB cases) [pick 'Extremely Drug Resistant Tuberculosis']",
         "type": "diagnosisCount",
         "config": {
-          "visitTypes": "'OPD'",
+          "visitTypes": "'General'",
           "type": "diagnosisReport"
         }
     },
@@ -1027,7 +1027,7 @@
         "name": "Outpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
-            "visitTypes": "'OPD'",
+            "visitTypes": "'General'",
             "type": "diagnosisReport"
         }
     },
@@ -1163,6 +1163,7 @@
           "ageGroupName": "All Ages",
           "conceptNames": "'Operative Notes, Procedure','Procedure Notes, Procedure'",
           "visitTypes": "'OPD','IPD'"
+
         }
     },
     {
@@ -1216,7 +1217,7 @@
         "type": "diagnosisCount",
         "config": {
           "ageGroupName": "Inpatient",
-          "visitTypes": "'IPD'",
+          "visitTypes": "'Admitted','Discharged'",
           "type": "diagnosisReport"
         }
     },
@@ -1227,5 +1228,137 @@
             "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_morbidity.sql"
         }
+    },
+    {
+        "name": "Number of Deliveries",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Delivery Note'"
+        }
+    },
+    {
+        "name": "Number of CAC",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Abortion procedure'"
+        }
+    },
+     {
+        "name": "Number of PAC",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Safe Abortion, Post Abortion Care'"
+        }
+    },
+    {
+        "name": "Number of ECG",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'ECG Notes'"
+        }
+    },
+    {
+        "name": "Number of USG",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'USG Notes'"
+        }
+    },
+    {
+        "name": "Number of ANC Visits",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'ANC'"
+        }
+    },
+    {
+        "name": "Number of Children screened for Malnutrition",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "IMAM",
+            "conceptNames": "'Nutrition, Nutritional Status'"
+        }
+    },
+    {
+        "name": "Number of Family Planning Visits",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Family Planning Template'"
+        }
+    },
+    {
+        "name": "Number of TB cases receiving treatment",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Tuberculosis, Intake'"
+        }
+    },
+    {
+        "name": "Number of Caesarean Section",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Operative Notes, Procedure'"
+        }
+    },
+    {
+        "name": "Number of Children Treated",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/number_of_children_treated.sql"
+        }
+    },
+    {
+        "name": "OPD Patients with Address",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/OPDpatients_with_address.sql"
+        }
+    },
+    {
+        "name": "Number of Labtests",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/number_of_labtests.sql"
+        }
+    },
+    {
+        "name": "Adult IPD Patients with Duration of Stay",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Adult_IPDPatients_with_duration.sql"
+        }
+    },
+    {
+        "name": "Child IPD Patients with Duration of Stay",
+        "type": "MRSGeneric",
+        "config": {
+          "type": "sqlReport",
+          "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/child_IPDPatients_with_duration.sql"
+        }
     }
+    
+    
 ]
