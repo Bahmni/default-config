@@ -32,51 +32,16 @@
         "requiredPrivilege": "Edit Patients"
     },
     {
-        "id": "bahmni.patient.edit.action.startVisit",
-        "extensionPointId": "org.bahmni.registration.patient.edit.action",
+        "id": "bahmni.patient.registration.next",
+        "extensionPointId": "org.bahmni.registration.patient.next",
         "type": "config",
         "extensionParams" : {
-            "action" : "startVisit",
-            "display": "Start Visit",
-            "forwardUrl" : "../registration/#/patient/{{patientUuid}}/visit"
+            "display": "Enter <u>C</u>onsultation",
+            "shortcutKey": "c",
+            "forwardUrl": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
         },
         "order": 1,
-        "requiredPrivilege": "Add Visits"
-    },
-    {
-        "id": "bahmni.patient.edit.action.editVisit",
-        "extensionPointId": "org.bahmni.registration.patient.edit.action",
-        "type": "config",
-        "extensionParams" : {
-            "action" : "enterVisitDetails",
-            "display": "Enter <u>V</u>isit Details",
-            "shortcutKey": "v"
-        },
-        "order": 1,
-        "requiredPrivilege": "Edit Visits"
-    },
-    {
-        "id": "bahmni.patient.edit.action.print",
-        "extensionPointId": "org.bahmni.registration.patient.edit.action",
-       "type": "config",
-        "extensionParams" : {
-            "action" : "save",
-            "display": "Save"
-        },
-        "order": 2,
-        "requiredPrivilege": "Edit Patients"
-    },
-    {
-        "id": "bahmni.patient.create.action.startVisit",
-        "extensionPointId": "org.bahmni.registration.patient.create.action",
-        "type": "config",
-        "extensionParams" : {
-            "action" : "startVisit",
-            "display": "Start Visit",
-            "forwardUrl" : "../registration/#/patient/{{patientUuid}}/visit"
-        },
-        "order": 1,
-        "requiredPrivilege": "Add Visits"
+        "requiredPrivilege": ""
     },
     {
         "id": "bahmni.registration.conceptSetGroup.visitDetails",
