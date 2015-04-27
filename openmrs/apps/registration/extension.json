@@ -41,7 +41,7 @@
             "forwardUrl": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
         },
         "order": 1,
-        "requiredPrivilege": ""
+        "requiredPrivilege": "RegisterAndConsult"
     },
     {
         "id": "bahmni.registration.conceptSetGroup.visitDetails",
