@@ -75,5 +75,22 @@
             "rowsGroupBy": ["Leprosy, Case Type"],
             "columnsGroupBy": ["Leprosy, Leprosy Type", "age_group"]
     }
-  }
+  }  ,
+    {
+        "name": "Vitals Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Vitals"
+        }
+    },
+        {
+        "name": "Tuberculosis Intake Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Tuberculosis Intake Template"
+        }
+    }
+
 ]
