@@ -23,7 +23,7 @@
         "id": "bahmni.adt",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
-        "label": "Admission & Discharge",
+        "label": "InPatient",
         "url": "../adt/",
         "icon": "icon-file",
         "order": 3,
