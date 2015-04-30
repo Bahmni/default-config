@@ -1084,7 +1084,7 @@
           "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
           "conceptNames": "'Disposition'",
-          "visitTypes": "'OPD','IPD','Emergency'"
+          "visitTypes": "'OPD','IPD'"
         }
     },
     {
@@ -1162,7 +1162,7 @@
           "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
           "conceptNames": "'Operative Notes, Procedure','Procedure Notes, Procedure'",
-          "visitTypes": "'OPD','IPD','Emergency'"
+          "visitTypes": "'OPD','IPD'"
         }
     },
     {
@@ -1189,7 +1189,7 @@
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": "'Out Patient Details, Free Health Service Code'",
-            "visitTypes": "'OPD','IPD','Emergency'"
+            "visitTypes": "'OPD','IPD'"
         }
     },
     {
