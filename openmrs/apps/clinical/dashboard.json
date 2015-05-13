@@ -137,12 +137,6 @@
                 "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
             },
             {
-                "title": "Patient Information",
-                "name": "patientInformation",
-                "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
-            },
-            {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Temperature",
