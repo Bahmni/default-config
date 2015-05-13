@@ -5,7 +5,7 @@
         "type": "link",
         "label": "Registration",
         "url": "../registration/",
-        "icon": "icon-user",
+        "icon": "fa-user",
         "order": 1,
         "requiredPrivilege": "app:registration"
     },
@@ -15,7 +15,7 @@
         "type": "link",
         "label": "Clinical",
         "url": "../clinical/",
-        "icon": "icon-stethoscope",
+        "icon": "fa-stethoscope",
         "order": 2,
         "requiredPrivilege": "app:clinical"
     },
@@ -25,7 +25,7 @@
         "type": "link",
         "label": "InPatient",
         "url": "../adt/",
-        "icon": "icon-file",
+        "icon": "fa-file-o",
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
@@ -35,7 +35,7 @@
         "type": "link",
         "label": "Admin",
         "url": "../admin/#/dashboard/home",
-        "icon": "icon-cogs",
+        "icon": "fa-cogs",
         "order": 7,
         "requiredPrivilege": "app:admin"
     },
@@ -45,7 +45,7 @@
         "type": "link",
         "label": "Reports",
         "url": "../reports/#/dashboard/home",
-        "icon": "icon-user",
+        "icon": "fa-user",
         "order": 8
     },
     {
@@ -54,7 +54,7 @@
         "type": "link",
         "label": "Prescription",
         "url": "../clinical/",
-        "icon": "icon-stethoscope",
+        "icon": "fa-stethoscope",
         "order": 8,
         "requiredPrivilege": "app:pharmacy"
     }

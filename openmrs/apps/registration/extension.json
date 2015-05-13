@@ -6,7 +6,7 @@
         "label": "Se<u>a</u>rch",
         "url": "/search",
         "shortcutKey": "a",
-        "icon": "icon-search",
+        "icon": "fa-search",
         "order": 1,
         "requiredPrivilege": "View Patients"
     },
@@ -16,7 +16,7 @@
         "type": "link",
         "label": "Create <u>N</u>ew",
         "url": "/patient/new",
-        "icon": "icon-plus",
+        "icon": "fa-plus",
         "shortcutKey": "n",
         "order": 2,
         "requiredPrivilege": "Add Patients"
@@ -27,7 +27,7 @@
         "type": "link",
         "label": "View",
         "url": "/patient/{{patientUuid}}",
-        "icon": "icon-patient-edit",
+        "icon": "fa-patient-edit",
         "order": 1,
         "requiredPrivilege": "Edit Patients"
     },
