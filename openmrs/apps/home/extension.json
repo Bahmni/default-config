@@ -5,7 +5,7 @@
         "type": "link",
         "label": "Registration",
         "url": "../registration/",
-        "icon": "icon-user",
+        "icon": "fa-user",
         "order": 1,
         "requiredPrivilege": "app:registration"
     },
@@ -15,7 +15,7 @@
         "type": "link",
         "label": "Clinical",
         "url": "../clinical/",
-        "icon": "icon-stethoscope",
+        "icon": "fa-stethoscope",
         "order": 3,
         "requiredPrivilege": "app:clinical"
     },
@@ -25,7 +25,7 @@
         "type": "link",
         "label": "InPatient",
         "url": "../adt/",
-        "icon": "icon-file",
+        "icon": "fa-file-o",
         "order": 4,
         "requiredPrivilege": "app:adt"
     },
@@ -35,7 +35,7 @@
         "type": "link",
         "label": "Radiology Upload",
         "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
-        "icon": "icon-camera",
+        "icon": "fa-camera",
         "order": 5,
         "requiredPrivilege": "app:document-upload"
     },
@@ -45,7 +45,7 @@
         "type": "link",
         "label": "Patient Documents",
         "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
-        "icon": "icon-camera",
+        "icon": "fa-camera",
         "order": 6,
         "requiredPrivilege": "app:document-upload"
     },
@@ -55,7 +55,7 @@
         "type": "link",
         "label": "Admin",
         "url": "../admin/#/dashboard/home",
-        "icon": "icon-user",
+        "icon": "fa-user",
         "order": 7,
         "requiredPrivilege": "app:admin"
     },
@@ -65,7 +65,7 @@
         "type": "link",
         "label": "Reports",
         "url": "../reports/#/dashboard",
-        "icon": "icon-user",
+        "icon": "fa-user",
         "order": 8
     }
 ]

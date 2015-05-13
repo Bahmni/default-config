@@ -7,7 +7,7 @@
         },
         "label": "CSV Upload",
         "url": "#/csv",
-        "icon": "icon-user",
+        "icon": "fa-upload",
         "order": 1,
         "requiredPrivilege": "app:registration"
     },
@@ -19,7 +19,7 @@
         },
         "label": "CSV Export",
         "url": "#/csvExport",
-        "icon": "icon-user",
+        "icon": "fa-download",
         "order": 1,
         "requiredPrivilege": "app:registration"
     }
