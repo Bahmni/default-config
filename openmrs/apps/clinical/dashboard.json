@@ -137,6 +137,12 @@
                 "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
             },
             {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+            },
+            {
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Temperature",
@@ -151,23 +157,22 @@
             {
                 "type": "observationGraph",
                 "name": "observationGraph",
-                "title": "BMI Index",
+                "title": "Growth Chart",
                 "config": {
-                    "yAxisConcepts": ["HEIGHT"],
-                    "xAxisConcept": "WEIGHT",
-                    "numberOfVisits": 3
+                    "growthChart": {
+                        "referenceData": "growthChartReference"
+                    },
+                    "numberOfVisits": 20
                 }
             },
             {
                 "type": "observationGraph",
                 "name": "observationGraph",
-                "title": "Height vs Age",
+                "title": "BMI Index",
                 "config": {
                     "yAxisConcepts": ["HEIGHT"],
-                    "xAxisConcept": "age",
-                    "numberOfVisits": 3,
-                    "minXAxisRange": 0,
-                    "maxXAxisRange": 100
+                    "xAxisConcept": "WEIGHT",
+                    "numberOfVisits": 3
                 }
             }
         ]
