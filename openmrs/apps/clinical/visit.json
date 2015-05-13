@@ -42,6 +42,14 @@
                         "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                     }
             },
+            {
+                "type": "observation",
+                "title": "Weight",
+                "config": {
+                    "conceptNames": ["Weight"],
+                    "scope": "initiallatest"
+                }
+            },
           {
             "type": "investigationResult",
             "config": {
