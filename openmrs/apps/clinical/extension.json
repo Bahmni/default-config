@@ -115,7 +115,6 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "default":true,
             "conceptName": "Second Vitals",
             "showIf": [ "var visitTypes = [];",
                 "if(visitTypes.length === 0) return true;",
@@ -131,7 +130,6 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "default":true,
             "conceptName": "Obstetrics"
         },
         "order": 4,
@@ -142,7 +140,6 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "default":true,
             "conceptName": "Gynaecology"
         },
         "order": 5,
@@ -153,7 +150,6 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "default":true,
             "conceptName": "Discharge Summary"
         },
         "order": 6,

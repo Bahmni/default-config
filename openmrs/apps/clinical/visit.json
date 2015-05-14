@@ -3,9 +3,9 @@
         "title": "General",
         "displayByDefault": true,
         "printing": {
-          "title": "Jan Swasthya Sahyog Community Health Centre",
+          "title": "Bahmni",
           "header": "Visit",
-          "logo": "../images/jss-icon.png"
+          "logo": "../images/bahmniLogo.png"
         },
         "defaultSections": true,
         "sections": [
@@ -27,11 +27,95 @@
         ]
     },
     {
+      "title": "Discharge Summary",
+      "printing": {
+        "title": "Bahmni",
+        "header": "Discharge Summary",
+        "logo": "../images/bahmniLogo.png"
+      },
+      "sections": [
+        {
+          "type": "patientInformation",
+          "config": {
+            "addressFields": ["cityVillage","address2","address3","countyDistrict"],
+            "title": "PatientInformation",
+            "patientAttributes": []
+          }
+        },
+        {
+          "type": "admissionDetails",
+          "config": {
+            "showDetailsButton": true
+          }
+        },
+        {
+          "type": "observation",
+          "title": "Weight",
+          "config": {
+            "conceptNames": ["WEIGHT"],
+            "scope": "latest"
+          }
+        },
+        {
+          "type": "diagnosis",
+          "config": {
+            "title": "Diagnoses",
+            "showCertainty": false,
+            "showOrder": false,
+            "showDetailsButton": true
+          }
+        },
+        {
+          "type": "observation",
+          "title": "Clinical Notes",
+          "config": {
+            "conceptNames": ["History and Examination Notes","Discharge Summary","Lab Investigation Notes","Radiology Notes","Other Notes"],
+            "scope":"latest",
+            "numberOfVisits": "1"
+          }
+        },
+        {
+          "type": "investigationResult",
+          "config": {
+            "title": "Lab Investigations",
+            "showChart": true,
+            "showTable": false,
+            "showNormalLabResults": true,
+            "showCommentsExpanded": true,
+            "showAccessionNotes": true,
+            "numberOfVisits": 10,
+            "initialAccessionCount": 1,
+            "latestAccessionCount": 1
+          }
+        },
+        {
+          "type": "treatment",
+          "config": {
+            "title": "Treatments",
+            "showFlowSheet": false,
+            "showListView": true,
+            "showOtherActive": true,
+            "showDetailsButton": true,
+            "showRoute": true,
+            "showDrugForm": true
+          }
+        },
+        {
+          "type": "observation",
+          "title": "Advice on Discharge",
+          "config": {
+            "conceptNames": ["Additional Advice on Discharge","Follow up Date","Discharge Summary, Plan for follow up"],
+            "scope": "latest"
+          }
+        }
+      ]
+    },
+    {
         "title": "General - 2",
         "printing": {
-            "title": "Jan Swasthya Sahyog Community Health Centre",
+            "title": "Bahmni",
             "header": "Visit",
-            "logo": "../images/jss-icon.png"
+            "logo": "../images/bahmniLogo.png"
         },
         "sections": [
             {
