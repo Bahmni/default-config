@@ -143,9 +143,7 @@
                 "config": {
                     "yAxisConcepts": ["Temperature"],
                     "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 3,
-                    "minYAxisRange": 94,
-                    "maxYAxisRange": 106
+                    "numberOfVisits": 3
                 }
             },
             {
