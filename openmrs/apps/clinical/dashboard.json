@@ -152,8 +152,7 @@
                 "title": "Growth Chart",
                 "config": {
                     "growthChart": {
-                        "referenceData": "growthChartReference",
-                        "maxNumberOfMonths": 24
+                        "referenceData": "growthChartReference.csv"
                     },
                     "numberOfVisits": 20
                 }
