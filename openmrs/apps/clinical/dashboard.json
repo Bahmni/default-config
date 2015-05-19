@@ -168,5 +168,91 @@
                 }
             }
         ]
+    },
+    {
+        "dashboardName": "Trends",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 10,
+        "sections": [
+            {
+                "title" : "Patient Information",
+                "name" : "patientInformation",
+                "patientAttributes" : [],
+                "addressFields": []
+
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "BP",
+                "config": {
+                    "yAxisConcepts": ["Systolic","Diastolic"],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+
+
+                }
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Weight/BMI",
+                "config": {
+                    "yAxisConcepts": ["Weight","BMI"],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+
+
+                }
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Diabetes/Blood Sugar",
+                "config": {
+                    "yAxisConcepts": ["Blood Sugar Fasting","Blood Sugar P.P"],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+
+
+                }
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "Pulse",
+                "config": {
+                    "yAxisConcepts": ["Pulse"],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+
+
+                }
+            },
+            {
+                "title": "Diabetes",
+                "templateName": "Diabetes, Progress",
+                "name": "diseaseTemplate",
+                "dashboardParams":
+                {
+                    "showOnly": []
+
+                },
+                "allDiseaseDetails":
+                {
+                    "showDetailsButton":true,
+                    "pivotTable":
+                    {
+                        "numberOfVisits": "10",
+                        "groupBy": "visits",
+                        "obsConcepts": ["Diabetes, Blood Pressure", "Diabetes, A1C", "Diabetes, LDL", "Diabetes, Ulcers on Feet", "Blood Sugar Fasting", "Blood Sugar PP"],
+                        "labConcepts": ["RBS", "FBS", "PP2BS", "Hb1AC", "Creatinine", "Cholesterol"]
+                    }
+
+                }
+            }
+
+
+        ]
     }
 ]

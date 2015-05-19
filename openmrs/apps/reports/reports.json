@@ -22,7 +22,6 @@
         "type": "diagnosisCount",
         "config": {
             "type": "diagnosisReport",
-            "ageGroupName": "Inpatient Discharge Reports",
             "visitTypes": "'OPD'"
         }
     },
@@ -53,7 +52,7 @@
             "type": "codedObsCountReport",
             "ageGroupName": "Inpatient Discharge Reports",
             "conceptNames": "'Systolic','Diastolic'" ,
-            "visitTypes": "'OPD','IPD','Emergency'"
+            "visitTypes": "'OPD','IPD'"
         }
     },
     {
