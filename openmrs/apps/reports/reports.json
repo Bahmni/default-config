@@ -4,9 +4,9 @@
         "type": "CodedObsCount",
         "config": {
             "type": "codedObsCountReport",
-            "ageGroupName": "Inpatient Discharge Reports",
+            "ageGroupName": "All Ages",
             "conceptNames": "'Chief Complaint'",
-            "visitTypes": "'IPD','OPD', 'Emergency'"
+            "visitTypes": "'IPD','OPD'"
         }
     },
     {
@@ -34,7 +34,7 @@
         "type": "ElisGeneric",
         "config": {
             "type": "sqlReport",
-            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"            
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
         }
     },
     {
@@ -48,33 +48,22 @@
     {
         "name": "Blood Pressure",
         "type": "obsCount",
-        "config":{
+        "config": {
             "type": "codedObsCountReport",
-            "ageGroupName": "Inpatient Discharge Reports",
-            "conceptNames": "'Systolic','Diastolic'" ,
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Systolic','Diastolic'",
             "visitTypes": "'OPD','IPD'"
         }
     },
     {
-        "name": "Boolean Concept Report",
+        "name": "Smoking History Report",
         "type": "booleanConceptsCount",
-        "config":{
+        "config": {
             "type": "codedObsCountReport",
-            "ageGroupName": "Inpatient Discharge Reports",
-            "conceptNames": "'Delivery Note, Blood transfusion provided','Delivery Note, Meconium Stained Liquor','ANC, Blood Transfusion Provided','Delivery Note, Chlorhexidine applied on cord','Delivery Note, Liveborn defects present'"            
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Smoking History'"
         }
     },
-    {
-        "name": "Leprosy report",
-        "type": "CodedObsByCodedObs",
-        "config": {
-            "type": "codedObsByCodedObsReport",
-            "ageGroupName": "Client Service Reports",
-            "conceptPair": ["Leprosy, Case Type", "Leprosy, Leprosy Type"],
-            "rowsGroupBy": ["Leprosy, Case Type"],
-            "columnsGroupBy": ["Leprosy, Leprosy Type", "age_group"]
-    }
-  }  ,
     {
         "name": "Vitals Template Report",
         "type": "obsTemplate",
@@ -83,13 +72,22 @@
             "templateName": "Vitals"
         }
     },
-        {
+    {
         "name": "Tuberculosis Intake Template Report",
         "type": "obsTemplate",
         "config": {
             "type": "obsTemplateReport",
             "templateName": "Tuberculosis Intake Template"
         }
+    },
+    {
+        "name": "Diabetes",
+        "type": "obsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Diabetes, Intake'",
+            "visitTypes": "'OPD','IPD'"
+        }
     }
-
 ]
