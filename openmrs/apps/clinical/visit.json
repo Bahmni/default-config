@@ -3,190 +3,126 @@
         "title": "General",
         "displayByDefault": true,
         "printing": {
-          "title": "Bahmni",
-          "header": "Visit",
-          "logo": "../images/bahmniLogo.png"
-        },
-        "defaultSections": true,
-        "sections": [
-          {
-            "type": "pivotTable",
-            "title": "Pivot table",
-            "config": {
-              "groupBy": "encounters",
-              "obsConcepts": [
-                "Vitals",
-                "Height",
-                "WEIGHT",
-                "M/C Days"
-              ],
-              "drugConcepts": ["Gamma Benzene Hexachloride"],
-              "labConcepts": ""
-            }
-          }
-        ]
-    },
-    {
-      "title": "Discharge Summary",
-      "printing": {
-        "title": "Bahmni",
-        "header": "Discharge Summary",
-        "logo": "../images/bahmniLogo.png"
-      },
-      "sections": [
-        {
-          "type": "patientInformation",
-          "config": {
-            "addressFields": ["cityVillage","address2","address3","countyDistrict"],
-            "title": "PatientInformation",
-            "patientAttributes": []
-          }
-        },
-        {
-          "type": "admissionDetails",
-          "config": {
-            "showDetailsButton": true
-          }
-        },
-        {
-          "type": "observation",
-          "title": "Weight",
-          "config": {
-            "conceptNames": ["WEIGHT"],
-            "scope": "latest"
-          }
-        },
-        {
-          "type": "diagnosis",
-          "config": {
-            "title": "Diagnoses",
-            "showCertainty": false,
-            "showOrder": false,
-            "showDetailsButton": true
-          }
-        },
-        {
-          "type": "observation",
-          "title": "Clinical Notes",
-          "config": {
-            "conceptNames": ["History and Examination Notes","Discharge Summary","Lab Investigation Notes","Radiology Notes","Other Notes"],
-            "scope":"latest",
-            "numberOfVisits": "1"
-          }
-        },
-        {
-          "type": "investigationResult",
-          "config": {
-            "title": "Lab Investigations",
-            "showChart": true,
-            "showTable": false,
-            "showNormalLabResults": true,
-            "showCommentsExpanded": true,
-            "showAccessionNotes": true,
-            "numberOfVisits": 10,
-            "initialAccessionCount": 1,
-            "latestAccessionCount": 1
-          }
-        },
-        {
-          "type": "treatment",
-          "config": {
-            "title": "Treatments",
-            "showFlowSheet": false,
-            "showListView": true,
-            "showOtherActive": true,
-            "showDetailsButton": true,
-            "showRoute": true,
-            "showDrugForm": true
-          }
-        },
-        {
-          "type": "observation",
-          "title": "Advice on Discharge",
-          "config": {
-            "conceptNames": ["Additional Advice on Discharge","Follow up Date","Discharge Summary, Plan for follow up"],
-            "scope": "latest"
-          }
-        }
-      ]
-    },
-    {
-        "title": "General - 2",
-        "printing": {
             "title": "Bahmni",
             "header": "Visit",
             "logo": "../images/bahmniLogo.png"
         },
+        "defaultSections": true,
         "sections": [
             {
-                    "type": "patientInformation",
-                    "config": {
-                        "title": "PatientInformation",
-                        "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                        "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
-                    }
+                "type": "pivotTable",
+                "title": "Pivot table",
+                "config": {
+                    "groupBy": "encounters",
+                    "obsConcepts": [
+                        "Vitals",
+                        "Height",
+                        "WEIGHT",
+                        "M/C Days"
+                    ],
+                    "drugConcepts": ["Gamma Benzene Hexachloride"],
+                    "labConcepts": ""
+                }
+            }
+        ]
+    },
+    {
+        "title": "Discharge Summary",
+        "printing": {
+            "title": "Bahmni",
+            "header": "Discharge Summary",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "sections": [
+            {
+                "type": "patientInformation",
+                "config": {
+                    "addressFields": [
+                        "cityVillage",
+                        "address2",
+                        "address3",
+                        "countyDistrict"
+                    ],
+                    "title": "PatientInformation",
+                    "patientAttributes": []
+                }
             },
             {
-              "type": "observation",
-              "title": "At Admission",
-              "config": {
-                "conceptNames": ["Weight", "Height", "BMI"],
-                "scope": "initial"
-              }
+                "type": "admissionDetails",
+                "config": {
+                    "showDetailsButton": true
+                }
             },
             {
-              "type": "observation",
-              "title": "At Discharge",
-              "config": {
-                "conceptNames": ["Weight"],
-                "scope": "latest"
-              }
+                "type": "observation",
+                "title": "Weight",
+                "config": {
+                    "conceptNames": ["WEIGHT"],
+                    "scope": "latest"
+                }
             },
-          {
-            "type": "investigationResult",
-            "config": {
-              "title": "Lab Investigations",
-              "showChart": true,
-              "showTable": true,
-              "showNormalLabResults": true,
-              "showCommentsExpanded": true,
-              "showAccessionNotes": true,
-              "numberOfVisits": 10,
-              "initialAccessionCount": 2,
-              "latestAccessionCount": 2
+            {
+                "type": "diagnosis",
+                "config": {
+                    "title": "Diagnoses",
+                    "showCertainty": false,
+                    "showOrder": false,
+                    "showDetailsButton": true
+                }
+            },
+            {
+                "type": "observation",
+                "title": "Clinical Notes",
+                "config": {
+                    "conceptNames": [
+                        "History and Examination Notes",
+                        "Discharge Summary",
+                        "Lab Investigation Notes",
+                        "Radiology Notes",
+                        "Other Notes"
+                    ],
+                    "scope": "latest",
+                    "numberOfVisits": "1"
+                }
+            },
+            {
+                "type": "investigationResult",
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": false,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10,
+                    "initialAccessionCount": 1,
+                    "latestAccessionCount": 1
+                }
+            },
+            {
+                "type": "treatment",
+                "config": {
+                    "title": "Treatments",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
+            },
+            {
+                "type": "observation",
+                "title": "Advice on Discharge",
+                "config": {
+                    "conceptNames": [
+                        "Additional Advice on Discharge",
+                        "Follow up Date",
+                        "Discharge Summary, Plan for follow up"
+                    ],
+                    "scope": "latest"
+                }
             }
-          },
-          {
-            "type": "pivotTable",
-            "title": "Pivot table",
-            "config": {
-              "groupBy": "encounters",
-              "obsConcepts": [
-                "Vitals",
-                "Height",
-                "WEIGHT",
-                "M/C Days"
-              ],
-              "drugConcepts": ["Gamma Benzene Hexachloride"],
-              "labConcepts": ""
-            }
-          },
-          {
-            "type": "observationGraph",
-            "title": "Temperature",
-            "config": {
-              "yAxisConcepts": ["Temperature"],
-              "numberOfVisits": 3
-            }
-          },
-          {
-            "type": "observationGraph",
-            "title": "Blood Pressure",
-            "config": {
-              "yAxisConcepts": ["Systolic", "Diastolic"],
-              "numberOfVisits": 3
-            }
-          }
         ]
     }
 ]
