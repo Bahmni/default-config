@@ -149,14 +149,13 @@
     },
     {
         "dashboardName": "Trends",
-        "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": [
             {
                 "title": "Patient Information",
                 "name": "patientInformation",
-                "patientAttributes": [],
-                "addressFields": []
+                "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
             },
             {
                 "type": "observationGraph",
