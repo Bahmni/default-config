@@ -160,6 +160,17 @@
             {
                 "type": "observationGraph",
                 "name": "observationGraph",
+                "title": "Growth Chart",
+                "config": {
+                    "growthChart": {
+                        "referenceData": "growthChartReference.csv"
+                    },
+                    "numberOfVisits": 20
+                }
+            },
+            {
+                "type": "observationGraph",
+                "name": "observationGraph",
                 "title": "BP",
                 "config": {
                     "yAxisConcepts": [
