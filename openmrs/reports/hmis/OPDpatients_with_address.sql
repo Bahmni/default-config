@@ -19,6 +19,6 @@ FROM visit
     ON pi.patient_id = person.person_id
   INNER JOIN visit_attribute va
     ON visit.visit_id = va.visit_id
-	AND va.value_reference = 'General'
+	AND va.value_reference = 'OPD'
   LEFT JOIN visit_attribute_type vat ON vat.visit_attribute_type_id = va.attribute_type_id 
   	AND vat.name = 'VisitStatus';
