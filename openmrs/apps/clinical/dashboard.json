@@ -6,6 +6,12 @@
 
         "sections": [
             {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+            },
+            {
                 "title": "Diagnosis",
                 "name": "diagnosis",
                 "showCertainty": true,
@@ -127,7 +133,7 @@
         ]
     },
     {
-        "dashboardName": "General - 2",
+        "dashboardName": "Trends",
         "maxRecentlyViewedPatients": 10,
         "sections": [
             {
@@ -161,7 +167,7 @@
             {
                 "type": "observationGraph",
                 "name": "observationGraph",
-                "title": "Height vs Age",
+                "title": "Growth Chart",
                 "config": {
                     "yAxisConcepts": ["HEIGHT"],
                     "xAxisConcept": "age",

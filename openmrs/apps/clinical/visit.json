@@ -3,31 +3,31 @@
         "title": "General",
         "displayByDefault": true,
         "printing": {
-          "title": "Jan Swasthya Sahyog Community Health Centre",
-          "header": "Visit",
-          "logo": "../images/jss-icon.png"
+            "title": "Jan Swasthya Sahyog Community Health Centre",
+            "header": "Visit",
+            "logo": "../images/jss-icon.png"
         },
         "defaultSections": true,
         "sections": [
-          {
-            "type": "pivotTable",
-            "title": "Pivot table",
-            "config": {
-              "groupBy": "encounters",
-              "obsConcepts": [
-                "Vitals",
-                "Height",
-                "WEIGHT",
-                "M/C Days"
-              ],
-              "drugConcepts": ["Gamma Benzene Hexachloride"],
-              "labConcepts": ""
+            {
+                "type": "pivotTable",
+                "title": "Pivot table",
+                "config": {
+                    "groupBy": "encounters",
+                    "obsConcepts": [
+                        "Vitals",
+                        "Height",
+                        "WEIGHT",
+                        "M/C Days"
+                    ],
+                    "drugConcepts": ["Gamma Benzene Hexachloride"],
+                    "labConcepts": ""
+                }
             }
-          }
         ]
     },
     {
-        "title": "General - 2",
+        "title": "Discharge Summary",
         "printing": {
             "title": "Jan Swasthya Sahyog Community Health Centre",
             "header": "Visit",
@@ -35,58 +35,77 @@
         },
         "sections": [
             {
-                    "type": "patientInformation",
-                    "config": {
-                        "title": "PatientInformation",
-                        "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                        "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
-                    }
+                "type": "patientInformation",
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": [
+                        "caste",
+                        "class",
+                        "education",
+                        "occupation",
+                        "debt",
+                        "distanceFromCenter",
+                        "isUrban",
+                        "cluster",
+                        "RationCard",
+                        "familyIncome"
+                    ],
+                    "addressFields": [
+                        "address1",
+                        "address2",
+                        "cityVillage",
+                        "countryDistrict"
+                    ]
+                }
             },
-          {
-            "type": "investigationResult",
-            "config": {
-              "title": "Lab Investigations",
-              "showChart": true,
-              "showTable": true,
-              "showNormalLabResults": true,
-              "showCommentsExpanded": true,
-              "showAccessionNotes": true,
-              "numberOfVisits": 10,
-              "initialAccessionCount": 2,
-              "latestAccessionCount": 2
+            {
+                "type": "investigationResult",
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": false,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10,
+                    "initialAccessionCount": 2,
+                    "latestAccessionCount": 2
+                }
+            },
+            {
+                "type": "pivotTable",
+                "title": "Pivot table",
+                "config": {
+                    "groupBy": "encounters",
+                    "obsConcepts": [
+                        "Vitals",
+                        "Height",
+                        "WEIGHT",
+                        "M/C Days"
+                    ],
+                    "drugConcepts": ["Gamma Benzene Hexachloride"],
+                    "labConcepts": ""
+                }
+            },
+            {
+                "type": "observationGraph",
+                "title": "Temperature",
+                "config": {
+                    "yAxisConcepts": ["Temperature"],
+                    "numberOfVisits": 3
+                }
+            },
+            {
+                "type": "observationGraph",
+                "title": "Blood Pressure",
+                "config": {
+                    "yAxisConcepts": [
+                        "Systolic",
+                        "Diastolic"
+                    ],
+                    "numberOfVisits": 3
+                }
             }
-          },
-          {
-            "type": "pivotTable",
-            "title": "Pivot table",
-            "config": {
-              "groupBy": "encounters",
-              "obsConcepts": [
-                "Vitals",
-                "Height",
-                "WEIGHT",
-                "M/C Days"
-              ],
-              "drugConcepts": ["Gamma Benzene Hexachloride"],
-              "labConcepts": ""
-            }
-          },
-          {
-            "type": "observationGraph",
-            "title": "Temperature",
-            "config": {
-              "yAxisConcepts": ["Temperature"],
-              "numberOfVisits": 3
-            }
-          },
-          {
-            "type": "observationGraph",
-            "title": "Blood Pressure",
-            "config": {
-              "yAxisConcepts": ["Systolic", "Diastolic"],
-              "numberOfVisits": 3
-            }
-          }
         ]
     }
 ]
