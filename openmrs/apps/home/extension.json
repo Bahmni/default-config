@@ -64,6 +64,7 @@
         "type": "link",
         "label": "Incident Reporting",
         "url": "https://docs.google.com/forms/d/1k55evW5y6v8_Tg1rN8IyNXGVbv1UbtKHEoPpinjdYgk/viewform?c=0&w=1",
+	"target": "_blank",
         "icon": "fa-pencil-square-o",
         "order": 9
     }
