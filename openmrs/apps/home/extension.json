@@ -25,7 +25,7 @@
         "type": "link",
         "label": "InPatient",
         "url": "../adt/",
-        "icon": "fa-file-o",
+        "icon": "fa-bed",
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
@@ -57,5 +57,14 @@
         "icon": "fa-stethoscope",
         "order": 8,
         "requiredPrivilege": "app:pharmacy"
+    },
+    {
+        "id": "bahmni.incidentReporting",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Incident Reporting",
+        "url": "https://docs.google.com/forms/d/1k55evW5y6v8_Tg1rN8IyNXGVbv1UbtKHEoPpinjdYgk/viewform?c=0&w=1",
+        "icon": "fa-pencil-square-o",
+        "order": 9
     }
 ]
