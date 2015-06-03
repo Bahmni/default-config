@@ -80,7 +80,53 @@
                 "observationDisplay" : {
                 "conceptNames": []
                 }
-            },
+            },"orders": [
+                {
+                    "name":"Lab Orders",
+                    "conceptSet":"Lab Samples",
+                    "class":"testOrder",
+                    "tests":[
+                        {
+                            "type": "LabSet",
+                            "title":"Panel"
+                        },
+                        {
+                            "type": "LabTest",
+                            "title":"Tests"
+                        }
+                    ]
+                },
+                {
+                    "name":"Endoscopy Orders",
+                    "conceptSet":"Endoscopy",
+                    "tests":[
+                        {
+                            "type": "Test",
+                            "title":"Tests"
+                        }
+                    ]
+                },
+                {
+                    "name":"Procedure Orders",
+                    "conceptSet":"Advanced Procedure",
+                    "tests":[
+                        {
+                            "type": "Procedure",
+                            "title":"Procedures"
+                        }
+                    ]
+                },
+                {
+                    "name":"Radiology Orders",
+                    "conceptSet":"Radiology",
+                    "tests":[
+                        {
+                            "type": "Test",
+                            "title":"Radiology"
+                        }
+                    ]
+                }                
+            ],
             "drugOrder": {
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",

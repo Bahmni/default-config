@@ -43,19 +43,25 @@
                 "name": "radiology"
             },
             {
-                "title": "Lab Orders",
+                "title": "Lab Orders Display Control",
+                "name": "ordersControl",
+                "orderType": "Lab Order",
+                "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"]
+            },
+            {
+                "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
-                    "title": null,
+                "title": null,
+                    "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
-                    "showNormalLabResults": true,
-                    "numberOfVisits": 1,
-                    "showCommentsExpanded": true,
-                    "showAccessionNotes": true
+                    "showDetailsButton": false,
+                    "initialAccessionCount": 0,
+                    "latestAccessionCount": 1
                 },
                 "allLabDetails": {
-                    "numberOfVisits": 3
+                    "numberOfVisits": 10
                 }
             },
             {
