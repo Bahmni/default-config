@@ -162,9 +162,7 @@
                 "name": "observationGraph",
                 "title": "Growth Chart",
                 "config": {
-                    "growthChart": {
-                        "referenceData": "growthChartReference.csv"
-                    },
+                    "referenceData": "growthChartReference.csv",
                     "numberOfVisits": 20
                 }
             },
