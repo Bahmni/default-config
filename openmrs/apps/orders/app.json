@@ -15,13 +15,20 @@
                     "durationRequired" : false
                 }
             },
-            "sections":{
-                "title": "Lab Order FulFillment Form",
-                "name": "Lab Order FulFillment Form",
-                "isObservation": true,
-                "conceptNames": ["Temperature"],
-                "numberOfVisits": 2,
-                "scope":"latest"
+            "fulfillment":{
+                "Lab Order":{
+                    "isObservation": true,
+                    "conceptNames": ["Blood Group (Relative)"],
+                    "numberOfVisits": 2,
+                    "scope":"latest"
+                },
+                "Radiology Order":{
+                    "isObservation": true,
+                    "conceptNames": ["Blood Pressure","Set","LAB_NOTES"],
+                    "numberOfVisits": 2,
+                    "scope":"latest"
+                }
+
             }
         }
     }
