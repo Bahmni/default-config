@@ -1,0 +1,35 @@
+[
+    {
+        "id": "bahmni.orders",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.orders.search",
+                "description": "Orders Dashboard"
+            }
+        ],
+        "config" : {
+            "maxConceptSetLevels": 3,
+            "conceptSetUI": {
+                "Chief Complaint" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                }
+            },
+            "fulfillment":{
+                "Lab Order":{
+                    "isObservation": true,
+                    "conceptNames": ["Blood Group (Relative)"],
+                    "numberOfVisits": 2,
+                    "scope":"latest"
+                },
+                "Radiology Order":{
+                    "isObservation": true,
+                    "conceptNames": ["Blood Pressure","Set","LAB_NOTES"],
+                    "numberOfVisits": 2,
+                    "scope":"latest"
+                }
+
+            }
+        }
+    }
+]
