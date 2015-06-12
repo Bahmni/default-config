@@ -23,7 +23,7 @@
                     "showListView": true,
                     "showRoute": true,
                     "showDrugForm": true,
-                    "numberOfVisits": 3,
+                    "numberOfVisits": 5,
                     "showOtherActive": true,
                     "showDetailsButton": true
                 },
