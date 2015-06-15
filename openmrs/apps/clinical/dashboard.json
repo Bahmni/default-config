@@ -40,7 +40,10 @@
             },
             {
                 "title": "Radiology",
-                "name": "radiology"
+                "name": "ordersControl",
+                "orderType": "Radiology Order",
+                "conceptNames": ["Systolic", "Diastolic", "Posture", "Temperature"],
+                "numberOfVisits": 4
             },
             {
                 "title": "Lab Orders Display Control",
