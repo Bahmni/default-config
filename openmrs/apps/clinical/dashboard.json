@@ -40,6 +40,11 @@
             },
             {
                 "title": "Radiology",
+                "name": "radiology"
+            },
+            {
+                "type": "order",
+                "title": "Radiology Fulfillment",
                 "name": "ordersControl",
                 "orderType": "Radiology Order",
                 "conceptNames": ["Systolic", "Diastolic", "Posture", "Temperature"],
