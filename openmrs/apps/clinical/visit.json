@@ -23,6 +23,16 @@
                     "drugConcepts": ["Gamma Benzene Hexachloride"],
                     "labConcepts": ""
                 }
+            },
+            {
+                "type": "order",
+                "title": "Radiology Order Display Control",
+                "config": {
+                    "title": "Radiology Order Display Control",
+                    "name": "ordersControl",
+                    "orderType": "Radiology Order",
+                    "conceptNames":["Systolic", "Diastolic", "Posture", "Temperature"]
+                }
             }
         ]
     },
