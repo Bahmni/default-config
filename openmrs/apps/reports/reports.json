@@ -89,5 +89,53 @@
             "conceptNames": "'Diabetes, Intake'",
             "visitTypes": "'OPD','IPD'"
         }
+    },
+    {
+	"name": "OPD/IPD Visit Count",
+    	"type": "IpdOpdVisitCount"
+    },
+    {
+	"name": "Haemoglobin Range Based Report",
+    	"type": "NumericConceptValuesCount",
+        "config": {
+            "type": "numericConceptValuesReport",
+            "rangeGroupName": "Haemoglobin",
+            "ageGroupName": "Haemoglobin",
+            "conceptNames": "'Haemoglobin'"
+        }
+    },
+    {
+	"name": "Radiology(X-Ray) Count",
+    	"type": "ObsCountByConceptClass",
+        "config": {
+            "type": "obsCountByConceptClassReport",
+            "conceptClassNames": "'Radiology'"
+        }
+    },
+    {
+	"name": "Obs Values Counts for Albumin, MCH, Operation Date and Posture(blood pressure)",
+    	"type": "ObsValueCount",
+        "config": {
+            "type": "obsValueCountReport",
+            "conceptNames": "'Albumin','MCH','Date of Operation','Posture'"
+        }
+    },
+    {
+	"name": "Tuberculosis Treatment Completion dates",
+        "type": "DateConceptValuesPatientsList",
+        "config": {
+            "type": "dateConceptValuesReport",
+            "conceptNames": "'Tuberculosis, Treatment Completion Date'",
+            "templateName": "Tuberculosis Outcome Template"
+        }
+    },
+    {
+	"name": "Patients list with Albumin, MCH and HIV ELISA (Blood) tests results",
+	"type": "PatientsWithLabtestResults",
+	"config": {
+	    "type": "patientsWithLabtestResultsReport",
+	    "conceptNames": "'HIV ELISA (Blood)','Albumin','MCH'",
+	    "testOutcome": "'abnormal','normal'"
+	}
     }
 ]
