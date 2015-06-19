@@ -60,6 +60,17 @@
         "requiredPrivilege": "app:admin"
     },
     {
+        "id": "bahmni.orders",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Orders",
+        "url": "../orders/#/search",
+        "icon": "fa-book",
+        "order": 10,
+        "requiredPrivilege": "app:orders"
+    },
+    
+    {
         "id": "bahmni.reports",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",

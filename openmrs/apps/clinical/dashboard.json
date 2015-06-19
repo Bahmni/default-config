@@ -23,7 +23,7 @@
                     "showListView": true,
                     "showRoute": true,
                     "showDrugForm": true,
-                    "numberOfVisits": 3,
+                    "numberOfVisits": 5,
                     "showOtherActive": true,
                     "showDetailsButton": true
                 },
@@ -43,19 +43,33 @@
                 "name": "radiology"
             },
             {
-                "title": "Lab Orders",
+                "type": "order",
+                "title": "Radiology Fulfillment",
+                "name": "ordersControl",
+                "orderType": "Radiology Order",
+                "conceptNames": ["Systolic", "Diastolic", "Posture", "Temperature"],
+                "numberOfVisits": 4
+            },
+            {
+                "title": "Lab Orders Display Control",
+                "name": "ordersControl",
+                "orderType": "Lab Order",
+                "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"]
+            },
+            {
+                "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
-                    "title": null,
+                "title": null,
+                    "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
-                    "showNormalLabResults": true,
-                    "numberOfVisits": 1,
-                    "showCommentsExpanded": true,
-                    "showAccessionNotes": true
+                    "showDetailsButton": false,
+                    "initialAccessionCount": 0,
+                    "latestAccessionCount": 1
                 },
                 "allLabDetails": {
-                    "numberOfVisits": 3
+                    "numberOfVisits": 10
                 }
             },
             {
@@ -162,9 +176,7 @@
                 "name": "observationGraph",
                 "title": "Growth Chart",
                 "config": {
-                    "growthChart": {
-                        "referenceData": "growthChartReference.csv"
-                    },
+                    "referenceData": "growthChartReference.csv",
                     "numberOfVisits": 20
                 }
             },

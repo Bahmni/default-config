@@ -164,5 +164,15 @@
         "icon": "fa-user-md",
         "order": 7,
         "requiredPrivilege": "app:clinical:consultationTab"
+    },
+    {
+        "id": "bahmni.clinical.consultation.orders",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Orders",
+        "url": "orders",
+        "icon": "icon-user-md",
+        "order": 6,
+        "requiredPrivilege": "app:clinical:diagnosisTab"
     }
 ]
