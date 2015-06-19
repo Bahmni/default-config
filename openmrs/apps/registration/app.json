@@ -26,6 +26,10 @@
                 { "name":"RationCard", "display":true },
                 { "name":"familyIncome", "display":true }
             ],
+            "addressHierarchy": {
+                "showAddressFieldsTopDown": false,
+                "freeTextAddressFields": ["address2", "address1"]
+            },
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
             "defaultVisitType": "OPD",
