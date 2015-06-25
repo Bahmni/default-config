@@ -54,6 +54,7 @@
                 "title": "Lab Orders Display Control",
                 "name": "ordersControl",
                 "orderType": "Lab Order",
+                "showDetailsButton" : true,
                 "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"]
             },
             {
@@ -94,7 +95,8 @@
                     ],
                     "numberOfVisits": 2,
                     "scope": "latest",
-                    "showDetailsButton": true
+                    "showDetailsButton": true,
+                    "pivotTable":{}
                 }
             },
             {
@@ -108,7 +110,74 @@
                 "allObservationDetails": {
                     "conceptNames": ["Vitals"],
                     "numberOfVisits": 2,
-                    "showDetailsButton": true
+                    "showDetailsButton": true,
+                    "pivotTable":{
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": ["Weight", "Vitals"],
+                        "drugConcepts": [],
+                        "labConcepts": []
+                    }
+                }
+            },
+            {
+                "title": "Second Vitals",
+                "name": "secon vitals",
+                "isObservation": true,
+                "dashboardParams": {
+                    "conceptNames": ["Second Vitals"],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails": {
+                    "conceptNames": ["Second Vitals"],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable":{}
+                }
+            },
+            {
+                "title": "History and Examinations",
+                "name": "vitals",
+                "isObservation": true,
+                "dashboardParams": {
+                    "conceptNames": ["History and Examination"],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails": {
+                    "conceptNames": ["History and Examination"],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable":{}
+                }
+            },
+             {
+                "title": "Gynaecology",
+                "name": "gynaecology",
+                "isObservation": true,
+                "dashboardParams": {
+                    "conceptNames": ["Gynaecology"],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails": {
+                    "conceptNames": ["Gynaecology"],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable":{}
+                }
+            },
+             {
+                "title": "Obstetrics",
+                "name": "obstetrics",
+                "isObservation": true,
+                "dashboardParams": {
+                    "conceptNames": ["Obstetrics"],
+                    "numberOfVisits": 2
+                },
+                "allObservationDetails": {
+                    "conceptNames": ["Obstetrics"],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable":{}
                 }
             },
             {
