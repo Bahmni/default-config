@@ -43,12 +43,11 @@
                 "name": "radiology"
             },
             {
-                "type": "order",
-                "title": "Radiology Fulfillment",
-                "name": "ordersControl",
                 "orderType": "Radiology Order",
-                "conceptNames": ["Systolic", "Diastolic", "Posture", "Temperature"],
-                "numberOfVisits": 4
+                "name": "ordersControl",
+                "title": "Radiology Orders",
+                "conceptNames":[ "Summary"],
+                "numberOfVisits":4
             },
             {
                 "title": "Lab Orders Display Control",

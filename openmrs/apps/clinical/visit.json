@@ -127,6 +127,16 @@
                     ],
                     "scope": "latest"
                 }
+            },
+            {
+                "type": "order",
+                "title": "Radiology Orders",
+                "config": {
+                    "title": "Radiology Orders",
+                    "name": "ordersControl",
+                    "orderType": "Radiology Order",
+                    "conceptNames":["Summary"]
+                }
             }
         ]
     }
