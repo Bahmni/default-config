@@ -6,14 +6,16 @@
                 "id": "org.bahmni.orders.search",
                 "description": "Orders Dashboard"
             }
-        ],
-        "config" : {
+        ],        
+    "config" : {
             "maxConceptSetLevels": 3,
-            "conceptSetUI": {
-                "Chief Complaint" : {
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
-                }
+            "conceptSetUI": {              
+                "Grid1" : {
+                "grid": true
+                  },
+                  "Coded3" : {
+                "multiSelect": true
+                  }
             }
         }
     }
