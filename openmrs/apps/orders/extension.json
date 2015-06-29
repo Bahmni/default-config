@@ -7,7 +7,7 @@
 	 "extensionParams": {
 	  "searchHandler": "emrapi.sqlSearch.activePatients",
 	  "display":"Radiology Orders",
-	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Radiology Order",
+	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Radiology order",
 	  "forwardButtonTitle" : "View",
 	  "view":"tabular"
 	 },
