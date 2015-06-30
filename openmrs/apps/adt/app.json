@@ -29,6 +29,7 @@
             "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
             "onDischargeForwardTo": "#/patient/search",
             "defaultVisitType": "IPD",
+            "maxPatientsPerBed" : 2,
             "dashboard":{
                 "dashboardName": "General",
                 "conceptName": "Adt Notes",
@@ -63,8 +64,8 @@
                 "title": "Admission Details",
                 "name":"admissionDetails"
                 }
-            ]
-        }
+            ]}
+
         }
     }
 ]
