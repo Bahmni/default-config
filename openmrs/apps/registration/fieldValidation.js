@@ -1,6 +1,6 @@
 validate_age_days = {
     'method': function (name, value) {
-        if (value > 0) {
+        if (value >= 0) {
             return true;
         }
         return false;
