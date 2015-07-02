@@ -219,5 +219,15 @@
         },
         "order": 3,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.consultation.orders",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Orders",
+        "url": "orders",
+        "icon": "icon-user-md",
+        "order": 6,
+        "requiredPrivilege": "app:clinical:diagnosisTab"
     }
 ]
