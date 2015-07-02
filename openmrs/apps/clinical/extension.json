@@ -11,13 +11,23 @@
         "requiredPrivilege": "app:clinical:observationTab"
     },
     {
+        "id": "bahmni.clinical.consultation.orders",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Orders",
+        "url": "orders",
+        "icon": "icon-user-md",
+        "order": 2,
+        "requiredPrivilege": "app:clinical:diagnosisTab"
+    },
+    {
         "id": "bahmni.clinical.consultation.diagnosis",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
         "label": "Diagnosis",
         "url": "diagnosis",
         "icon": "fa-user-md",
-        "order": 2,
+        "order": 3,
         "requiredPrivilege": "app:clinical:diagnosisTab"
     },
     {
@@ -27,7 +37,7 @@
         "label": "Disposition",
         "url": "disposition",
         "icon": "fa-user-md",
-        "order": 3,
+        "order": 4,
         "requiredPrivilege": "app:clinical:dispositionTab"
     },
     {
@@ -37,7 +47,7 @@
         "label": "Treatment",
         "url": "treatment",
         "icon": "fa-user-md",
-        "order": 4,
+        "order": 5,
         "requiredPrivilege": "app:pharmacy"
     },
     {
@@ -219,15 +229,5 @@
         },
         "order": 3,
         "requiredPrivilege": "app:clinical"
-    },
-    {
-        "id": "bahmni.clinical.consultation.orders",
-        "extensionPointId": "org.bahmni.clinical.consultation.board",
-        "type": "link",
-        "label": "Orders",
-        "url": "orders",
-        "icon": "icon-user-md",
-        "order": 6,
-        "requiredPrivilege": "app:clinical:diagnosisTab"
     }
 ]
