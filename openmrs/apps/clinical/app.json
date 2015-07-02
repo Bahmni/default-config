@@ -996,33 +996,36 @@
         "ER General Notes, Date of LMP": {
           "conciseText": true
         },
-			"CHPCDC, Hypertension": {
-				"multiSelect": true
-			},
-			"CHPCDC, Diabetes Mellitus type II": {
-				"multiSelect": true
-			},
-			"CHPCDC, Coronary Artery Disease": {
-				"multiSelect": true
-			},
-			"CHPCDC, Congestive Heart Failure": {
-				"multiSelect": true
-			},
-			"CHPCDC, COPD": {
-				"multiSelect": true
-			},
-			"CHPCDC, Bronchial Asthma": {
-				"multiSelect": true
-			},
-			"CHPCDC, Chronic Kidney Disease": {
-				"multiSelect": true
-			},
-			"CHPCDC, Epilepsy or Seizure disorder": {
-				"multiSelect": true
-			},
-			"CHPCDC, Tuberculosis": {
-				"multiSelect": true
-			}
+		"CHPCDC, Hypertension": {
+			"multiSelect": true
+		},
+		"CHPCDC, Diabetes Mellitus type II": {
+			"multiSelect": true
+		},
+		"CHPCDC, Coronary Artery Disease": {
+			"multiSelect": true
+		},
+		"CHPCDC, Congestive Heart Failure": {
+			"multiSelect": true
+		},
+		"CHPCDC, COPD": {
+			"multiSelect": true
+		},
+		"CHPCDC, Bronchial Asthma": {
+			"multiSelect": true
+		},
+		"CHPCDC, Chronic Kidney Disease": {
+			"multiSelect": true
+		},
+		"CHPCDC, Epilepsy or Seizure disorder": {
+			"multiSelect": true
+		},
+		"CHPCDC, Tuberculosis": {
+			"multiSelect": true
+		},
+        "ART, Self visit": {
+         	"multiSelect": true
+        }
       }
     }
   }
