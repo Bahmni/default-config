@@ -36,7 +36,7 @@
         "label": "Admin",
         "url": "../admin/#/dashboard/home",
         "icon": "fa-cogs",
-        "order": 7,
+        "order": 6,
         "requiredPrivilege": "app:admin"
     },
     {
@@ -46,7 +46,7 @@
         "label": "Reports",
         "url": "../reports/#/dashboard/home",
         "icon": "fa-user",
-        "order": 8
+        "order": 5
     },
     {
         "id": "bahmni.billing",
@@ -55,8 +55,18 @@
         "label": "Prescription",
         "url": "../clinical/",
         "icon": "fa-stethoscope",
-        "order": 8,
+        "order": 9,
         "requiredPrivilege": "app:pharmacy"
+    },
+    {
+        "id": "bahmni.orders",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Orders",
+        "url": "../orders/#/search",
+        "icon": "fa-book",
+        "order": 4,
+        "requiredPrivilege": "app:orders"
     },
     {
         "id": "bahmni.incidentReporting",
@@ -64,8 +74,8 @@
         "type": "link",
         "label": "Incident Reporting",
         "url": "https://docs.google.com/forms/d/1k55evW5y6v8_Tg1rN8IyNXGVbv1UbtKHEoPpinjdYgk/viewform?c=0&w=1",
-	"target": "_blank",
+        "target": "_blank",
         "icon": "fa-pencil-square-o",
-        "order": 9
+        "order": 10
     }
 ]
