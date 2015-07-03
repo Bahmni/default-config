@@ -1023,6 +1023,9 @@
 		"CHPCDC, Tuberculosis": {
 			"multiSelect": true
 		},
+        "CHPCDC, Other Chronic Disease": {
+          "multiSelect": true
+        },
         "ART, Self visit": {
          	"multiSelect": true
         }
