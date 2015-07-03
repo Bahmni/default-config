@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="BAHMNI-PACS-CONCEPT-SOURCE-DATA-001" author="tw">
+        <comment>Create concept source for PACS integration</comment>
+        <sql>
+            INSERT INTO concept_reference_source(name, description, hl7_code, creator, date_created, uuid)
+            VALUES ('PACS Procedure Code', 'LOINC equivalent for procedure codes', 'LOINC', 1, now(), 'f0217041-1175-42fd-a40e-244d01f34d17');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

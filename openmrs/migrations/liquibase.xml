@@ -17,4 +17,5 @@
     <include file = "openmrs-misc-config-liquibase.xml"/>
     <include file = "atomfeed-config-liquibase.xml"/>
     <include file = "location-test-data-liquibase.xml"/>
+    <include file = "pacs-concept-sources-liquibase.xml"/>
 </databaseChangeLog>
