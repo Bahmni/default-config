@@ -1358,6 +1358,14 @@
           "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/child_IPDPatients_with_duration.sql"
         }
+    },
+    {
+        "name": "Procedure Notes",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Procedure Notes"
+        }
     }
     
     
