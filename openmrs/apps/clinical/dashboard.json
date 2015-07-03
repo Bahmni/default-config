@@ -45,7 +45,13 @@
                 "allLabDetails": {
                     "numberOfVisits": 3
                 }
-            },
+            },,
+            {
+                "title": "Radiology Orders",
+                "name": "ordersControl",
+                "orderType": "Radiology Order",
+                "conceptNames":[ "Chest", "Neck"]
+            }
             {
                 "title": "Treatments",
                 "name": "treatment",
