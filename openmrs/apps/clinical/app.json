@@ -29,6 +29,7 @@
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
+            "visitTypeForRetrospectiveEntries": "Special OPD",
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Chief Complaint Data": {
