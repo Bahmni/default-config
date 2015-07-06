@@ -46,15 +46,22 @@
                 "orderType": "Radiology Order",
                 "name": "ordersControl",
                 "title": "Radiology Orders",
-                "conceptNames":[ "Summary"],
-                "numberOfVisits":4
+                "dashboardParams":{
+                    "conceptNames":[ "Summary"],
+                    "numberOfVisits":4
+                }
             },
             {
                 "title": "Lab Orders Display Control",
                 "name": "ordersControl",
                 "orderType": "Lab Order",
                 "showDetailsButton" : true,
-                "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"]
+                "dashboardParams":{
+                    "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"]
+                },
+                "allOrdersDetails":{
+                    "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"] 
+                }
             },
             {
                 "title": "Lab Results",
