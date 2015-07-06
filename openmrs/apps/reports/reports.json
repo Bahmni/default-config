@@ -136,6 +136,17 @@
 	    "type": "patientsWithLabtestResultsReport",
 	    "conceptNames": "'HIV ELISA (Blood)','Albumin','MCH'",
 	    "testOutcome": "'abnormal','normal'"
-	}
+	    }
+    },
+    {
+        "name": "IPD Patients Report",
+        "type": "ipdPatients",
+        "config": {
+            "type": "ipdPatientsReport",
+            "addressAttributes": ["address1", "city_village"],
+            "patientAttributes": ["caste", "education"],
+            "conceptNames": ["Height", "Weight"],
+            "filterBy": "Date of Discharge"
+        }
     }
 ]
