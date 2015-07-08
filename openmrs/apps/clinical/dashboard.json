@@ -251,6 +251,7 @@
                 "name": "observationGraph",
                 "title": "Growth Chart",
                 "config": {
+                    "yAxisConcepts":["Weight"],
                     "referenceData": "growthChartReference.csv",
                     "numberOfVisits": 20
                 }
