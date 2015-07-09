@@ -51,10 +51,6 @@
                         "url": "../home/#/dashboard"
                     },
                     {
-                        "title": "Patient Consultation Page",
-                        "url": "../clinical/#/patient/:patientUuid/concept-set-group/observations"
-                    },
-                    {
                         "title": "Patient Visit Page",
                         "url": "../clinical/#/patient/:patientUuid/dashboard/visit/:visitUuid"
                     },
