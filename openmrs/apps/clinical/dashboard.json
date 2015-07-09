@@ -43,6 +43,30 @@
                 "name": "radiology"
             },
             {
+                "title": "Navigation Links Control",
+                "name": "navigationLinksControl",
+                "links": [
+                    {
+                        "title": "Home Dashboard",
+                        "url": "../home/#/dashboard"
+                    },
+                    {
+                        "title": "Patient Consultation Page",
+                        "url": "../clinical/#/patient/:patientUuid/concept-set-group/observations"
+                    },
+                    {
+                        "title": "Patient Visit Page",
+                        "url": "../clinical/#/patient/:patientUuid/dashboard/visit/:visitUuid"
+                    },
+                    {
+                        "title": "Patient ADT Page",
+                        "url": "../adt/#/patient/:patientUuid/visit/:visitUuid/"
+                    }
+
+                ]
+            },
+
+            {
                 "orderType": "Radiology Order",
                 "name": "ordersControl",
                 "title": "Radiology Orders",
