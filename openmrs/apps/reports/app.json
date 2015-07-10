@@ -2,6 +2,9 @@
     {
         "id": "bahmni.reports",
         "description": "Bahmni Reports App",
-        "extensionPoints": []
+        "extensionPoints": [],
+        "config": {
+            "paperSize": "A3"
+        }
     }
 ]

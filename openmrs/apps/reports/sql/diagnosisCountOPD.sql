@@ -1,4 +1,4 @@
-SELECT '' as something, diagnosis_concept_view.concept_full_name as disease, diagnosis_concept_view.icd10_code, parent.concept_full_name AS group_name,
+SELECT diagnosis_concept_view.concept_full_name as disease, diagnosis_concept_view.icd10_code, parent.concept_full_name AS group_name,
 SUM(IF(person.gender = 'F', 1, 0)) AS female,
 SUM(IF(person.gender = 'M', 1, 0)) AS male
 FROM diagnosis_concept_view
