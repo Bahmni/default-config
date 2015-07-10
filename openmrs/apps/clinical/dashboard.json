@@ -43,6 +43,10 @@
                 "name": "radiology"
             },
             {
+                "title": "Programs",
+                "name": "programs"
+            },
+            {
                 "title": "Navigation Links Control",
                 "name": "navigationLinksControl",
                 "links": [
