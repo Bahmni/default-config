@@ -1028,6 +1028,18 @@
         },
         "ART, Self visit": {
          	"multiSelect": true
+        },
+        "PSBI/LBI/NBI, Symptoms": {
+          "multiSelect": true
+        },
+        "Umbilicus Infection": {
+          "multiSelect": true
+        },
+        "Diarrhoea, Symptoms": {
+          "multiSelect": true
+        },
+        "Childhood Illness, 2 months, Counseling purpose": {
+          "multiSelect": true
         }
       }
     }
