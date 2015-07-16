@@ -101,7 +101,8 @@
             "type": "numericConceptValuesReport",
             "rangeGroupName": "Haemoglobin",
             "ageGroupName": "Haemoglobin",
-            "conceptNames": "'Haemoglobin'"
+            "conceptNames": "'Haemoglobin'",
+            "countOncePerPatient": false
         }
     },
     {
