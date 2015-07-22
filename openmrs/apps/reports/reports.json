@@ -1,12 +1,13 @@
 [
     {
         "name": "Chief Complaint Report",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Chief Complaint'",
-            "visitTypes": "'IPD','OPD'"
+            "conceptNames": ["Chief Complaint"],
+            "countOnlyClosedVisits":"false",
+            "visitTypes": ["IPD","OPD"]
         }
     },
     {
@@ -14,7 +15,7 @@
         "type": "diagnosisCount",
         "config": {
             "type": "diagnosisReport",
-            "visitTypes": "'IPD'"
+            "visitTypes": ["IPD"]
         }
     },
     {
@@ -22,7 +23,7 @@
         "type": "diagnosisCount",
         "config": {
             "type": "diagnosisReport",
-            "visitTypes": "'OPD'"
+            "visitTypes": ["OPD"]
         }
     },
     {
@@ -51,17 +52,18 @@
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Systolic','Diastolic'",
-            "visitTypes": "'OPD','IPD'"
+            "conceptNames": ["Systolic","Diastolic"],
+            "countOnlyClosedVisits":"false",
+            "visitTypes": ["OPD","IPD"]
         }
     },
     {
         "name": "Smoking History Report",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Smoking History'"
+            "conceptNames": ["Smoking History"]
         }
     },
     {
@@ -86,58 +88,58 @@
         "config": {
             "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Diabetes, Intake'",
-            "visitTypes": "'OPD','IPD'"
+            "conceptNames": ["Diabetes, Intake"],
+            "visitTypes": ["OPD","IPD"]
         }
     },
     {
-	"name": "OPD/IPD Visit Count",
+	    "name": "OPD/IPD Visit Count",
     	"type": "IpdOpdVisitCount"
     },
     {
-	"name": "Haemoglobin Range Based Report",
+	    "name": "Haemoglobin Range Based Report",
     	"type": "NumericConceptValuesCount",
         "config": {
             "type": "numericConceptValuesReport",
             "rangeGroupName": "Haemoglobin",
             "ageGroupName": "Haemoglobin",
-            "conceptNames": "'Haemoglobin'",
-            "countOncePerPatient": false
+            "conceptNames": ["Haemoglobin"],
+            "countOncePerPatient":false
         }
     },
     {
-	"name": "Radiology(X-Ray) Count",
+	    "name": "Radiology(X-Ray) Count",
     	"type": "ObsCountByConceptClass",
         "config": {
             "type": "obsCountByConceptClassReport",
-            "conceptClassNames": "'Radiology'"
+            "conceptClassNames": ["Radiology"]
         }
     },
     {
-	"name": "Obs Values Counts for Albumin, MCH, Operation Date and Posture(blood pressure)",
+	    "name": "Obs Values Counts for Albumin, MCH, Operation Date and Posture(blood pressure)",
     	"type": "ObsValueCount",
         "config": {
             "type": "obsValueCountReport",
-            "conceptNames": "'Albumin','MCH','Date of Operation','Posture'"
+            "conceptNames": ["Albumin","MCH","Date of Operation","Posture"]
         }
     },
     {
-	"name": "Tuberculosis Treatment Completion dates",
+	    "name": "Tuberculosis Treatment Completion dates",
         "type": "DateConceptValuesPatientsList",
         "config": {
             "type": "dateConceptValuesReport",
-            "conceptNames": "'Tuberculosis, Treatment Completion Date'",
+            "conceptNames": ["Tuberculosis, Treatment Completion Date"],
             "templateName": "Tuberculosis Outcome Template"
         }
     },
     {
-	"name": "Patients list with Albumin, MCH and HIV ELISA (Blood) tests results",
-	"type": "PatientsWithLabtestResults",
-	"config": {
-	    "type": "patientsWithLabtestResultsReport",
-	    "conceptNames": "'HIV ELISA (Blood)','Albumin','MCH'",
-	    "testOutcome": "'abnormal','normal'"
-	    }
+        "name": "Patients list with Albumin, MCH and HIV ELISA (Blood) tests results",
+        "type": "PatientsWithLabtestResults",
+        "config": {
+            "type": "patientsWithLabtestResultsReport",
+            "conceptNames": ["HIV ELISA (Blood)","Albumin","MCH"],
+            "testOutcome": ["abnormal", "normal"]
+            }
     },
     {
         "name": "IPD Patients Report",
@@ -149,5 +151,5 @@
             "conceptNames": ["Height", "Weight"],
             "filterBy": "Date of Discharge"
         }
-    }
+	}
 ]

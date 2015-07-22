@@ -8,7 +8,7 @@ LEFT OUTER JOIN	confirmed_patient_diagnosis_view AS patient_diagnosis ON patient
 AND NOT EXISTS (SELECT * 
 FROM encounter_view 
 WHERE encounter_view.visit_id = patient_diagnosis.visit_id AND encounter_view.encounter_type_name = 'ADMISSION')
-AND (patient_diagnosis.obs_datetime BETWEEN '%s' AND '%s')
+AND (patient_diagnosis.obs_datetime BETWEEN '#startDate#' and '#endDate#')
 LEFT OUTER JOIN person ON patient_diagnosis.person_id = person.person_id
 GROUP BY diagnosis_concept_view.concept_id, diagnosis_concept_view.concept_full_name, diagnosis_concept_view.icd10_code, parent.concept_full_name
 ORDER BY group_name, disease;
