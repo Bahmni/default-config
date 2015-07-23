@@ -75,6 +75,9 @@
                 },
                 "Coded3" :{
                     "multiSelect" :true
+                },
+                "Image" :{
+                    "allowAddMore" :true
                 }
             },
             "visitPage": {
