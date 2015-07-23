@@ -3,24 +3,21 @@
         "name": "Hospital Activities - Number of Clients Served (New and Total)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/number_of_clients.sql"
         }
     },
     {
         "name": "Hospital Activities - Number of Clients Served (Referred) [Check for only 'Referred' grid]",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Client Service Reports",
-            "conceptNames": "'Disposition'"
+            "conceptNames": ["Disposition"]
         }
     },
     {
         "name": "CBIMCI - Less Than 2 Months (Total Cases, Classification, Refer, Follow-up)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/childhood_illness_lessthan_2months.sql"
         }
     },
@@ -28,25 +25,22 @@
         "name": "CBIMCI - Less Than 2 Months (Death)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Childhood Illness 2months",
-          "conceptNames": "'Death Note, Primary Cause of Death'"
+          "conceptNames": ["Death Note, Primary Cause of Death"]
         }
     },
     {
         "name": "CBIMCI - Greater Than 2 Months (Total)",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Childhood Illness 59months",
-            "conceptNames": "'Childhood Illness( Children aged 2 months to 5 years)'"
+            "conceptNames": ["Childhood Illness( Children aged 2 months to 5 years)"]
         }
     },
     {
         "name": "CBIMCI - Greater Than 2 Months (Classification, Follow-up)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/childhood_illness_greaterthan_2months.sql"
         }
     },
@@ -54,7 +48,6 @@
         "name": "CBIMCI - Greater Than 2 Months (Refer Diarrhoea)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "Childhood Illness 59months",
             "conceptPair": [
                 "Childhood Illness, Referred out",
@@ -71,7 +64,6 @@
         "name": "CBIMCI - Greater Than 2 Months (Refer ARI)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "Childhood Illness 59months",
             "conceptPair": [
                 "Childhood Illness, Referred out",
@@ -86,35 +78,31 @@
     },
     {
         "name": "CBIMCI - Greater Than 2 Months (Refer Total) [Refers Others = CBIMCI(Refer Total) - CBIMCI(Refer Diarrhoea) - CBIMCI(Refer ARI)]",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Childhood Illness, Referred out'"
+            "conceptNames": ["Childhood Illness, Referred out"]
         }
     },
     {
         "name": "CBIMCI - Greater Than 2 months (Death)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/childhood_illness_death.sql"
         }
     },
     {
         "name": "Nutrition Program - Nutritional status of registered children",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Nutritional Status For Registered Children",
-            "conceptNames": "'Nutrition, Nutritional Status'"
+            "conceptNames": ["Nutrition, Nutritional Status"]
         }
     },
     {
         "name": "Nutrition Program - Pregnant women receiving, PP mother receiving",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/nutrition_program_pregnancy.sql"
         }
     },
@@ -122,43 +110,38 @@
         "name": "Nutrition Program - <5 years children receiving (Vitamin A)",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Nutrition Program Vitamin A",
-            "conceptNames": "'Childhood Illness, Vitamin A Capsules Provided'"
+            "conceptNames": ["Childhood Illness, Vitamin A Capsules Provided"]
         }
     },
     {
         "name": "Nutrition Program - <5 yrs Children receiving (Deworming)",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Childhood Illness, Albendazole Given'"
+            "conceptNames": ["Childhood Illness, Albendazole Given"]
         }
     },
     {
         "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "IMAM",
-            "conceptNames": "'IMAM, Admission','IMAM, Discharge'"
+            "conceptNames": ["IMAM, Admission","IMAM, Discharge"]
         }
     },
     {
         "name": "Safe Motherhood Program - Delivery Service",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Delivery Note, Delivery service done by'"
+            "conceptNames": ["Delivery Note, Delivery service done by"]
         }
     },
     {
         "name": "Safe Motherhood program - Type of delivery",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "conceptPair": ["Delivery Note, Method of Delivery", "Delivery Note, Fetal Presentation"],
             "rowsGroupBy": ["Delivery Note, Method of Delivery"],
@@ -167,18 +150,16 @@
     },
     {
         "name": "Safe Motherhood Program - Delivery Outcome (No of mothers)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Delivery Note, Outcome of Delivery'"
+            "conceptNames": ["Delivery Note, Outcome of Delivery"]
         }
     },
     {
         "name": "Safe Motherhood Program - Delivery Outcome (No of livebirths)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/deliveryoutcome_no_of_livebirths.sql"
         }
     },
@@ -186,33 +167,29 @@
         "name": "Safe Motherhood Program - Birth Weight",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/birth_weight.sql"
         }
     },
     {
         "name": "Safe Motherhood Program - No of Still Births",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Delivery Note, Stillbirth type'"
+            "conceptNames": ["Delivery Note, Stillbirth type"]
         }
     },
     {
         "name": "Safe Motherhood Program - CHX applied in cord",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Chlorhexidin applied on cord'"
+            "conceptNames": ["Chlorhexidin applied on cord"]
         }
     },
     {
         "name": "Safe Motherhood Program - Blood Transfusions",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/blood_transfusions.sql"
         }
     },
@@ -220,33 +197,29 @@
         "name": "Safe Motherhood Program - PNC Visit",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/PNC_report.sql"
         }
     },
     {
         "name": "Safe Motherhood Program - Safe Abortion Service (No of women)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Safe Abortion",
-            "conceptNames": "'Abortion procedure'"
+            "conceptNames": ["Abortion procedure"]
         }
     },
     {
         "name": "Safe Motherhood Program - Safe Abortion Service (PAC)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Safe Abortion",
-          "conceptNames": "'PAC Cause'"
+          "conceptNames": ["PAC Cause"]
         }
     },
     {
         "name": "Safe Motherhood Program - Safe Abortion Service (Post abortion FP methods)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "conceptPair": ["Abortion procedure", "Accepted Family Planning methods"],
             "rowsGroupBy": ["Accepted Family Planning methods"],
@@ -257,24 +230,21 @@
         "name": "Safe Motherhood Program - Obstetric Complications",
         "type": "diagnosisCount",
         "config": {
-          "visitTypes": "'OPD'",
-          "type": "diagnosisReport"
+          "visitTypes": ["OPD"]
         }
     },
     {
         "name": "Safe Motherhood Program - Maternal Death",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Death Note, Maternal Death'"
+            "conceptNames": ["Death Note, Maternal Death"]
         }
     },
     {
         "name": "Family Planning Program - Temporary FP methods (new users, current users)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "Abortion Services Report",
             "conceptPair": ["FP, Family Planning Method", "FP, Users Type"],
             "rowsGroupBy": ["FP, Family Planning Method"],
@@ -285,7 +255,6 @@
         "name": "Family Planning Program - Temporary FP methods (Discontinued/Removal) [Take count if row=column]",
         "type": "CodedObsByCodedObs",
         "config": {
-          "type": "codedObsByCodedObsReport",
           "ageGroupName": "All Ages",
           "conceptPair": ["FP, Family Planning Method", "FP, Discontinued/Removed"],
           "rowsGroupBy": ["FP, Family Planning Method"],
@@ -296,24 +265,21 @@
         "name": "Family Planning Program - Temporary FP method (Distribution)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/familyPlanningDistribution.sql"
         }
     },
     {
         "name": "Family Planning Program - Postpartum FP Acceptors",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Post Delivery FP Checklist, FP Method Patient Went Home With'"
+            "conceptNames": ["Post Delivery FP Checklist, FP Method Patient Went Home With"]
         }
     },
     {
         "name": "Leprosy control program - (Total Additions, No of ≤ 14 years patients among new cases)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "Leprosy Control",
             "conceptPair": ["Leprosy, Case Type", "Leprosy, Leprosy Type"],
             "rowsGroupBy": ["Leprosy, Case Type", "age_group"],
@@ -322,18 +288,16 @@
     },
     {
         "name": "Leprosy Control Program - (No of Patient treated in this month, Patient at the end of this month, Patient < 14 years at the end of this month) [Patient at the end of this month= Total(Additions) - Total(Deducted)]",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Leprosy Control",
-            "conceptNames": "'Leprosy, Leprosy Type'"
+            "conceptNames": ["Leprosy, Leprosy Type"]
         }
     },
     {
         "name": "Leprosy Control Program - (Total Deducted)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Leprosy Type"],
             "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
@@ -344,7 +308,6 @@
       "name": "Leprosy Control Program - (No. of smear examined)",
       "type": "MRSGeneric",
       "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/no_of_smear_examined_leprosy.sql"
       }
     },
@@ -352,7 +315,6 @@
         "name": "Leprosy Control Program - Deformity Status (New cases, New < 14 years children)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "Leprosy Control Deformity",
             "conceptPair": ["Leprosy, Case Type", "Leprosy, Disability Grade"],
             "rowsGroupBy": ["Leprosy, Case Type", "age_group"],
@@ -363,7 +325,6 @@
         "name": "Leprosy Control Program - Deformity Status (Released from treatment)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "conceptPair": ["Leprosy, Patient Deduction Type", "Leprosy, Disability Grade"],
             "rowsGroupBy": ["Leprosy, Patient Deduction Type"],
@@ -374,7 +335,6 @@
         "name": "Leprosy Control Program - Cohort of new registered patients",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/cohort_of_new_registered_leprosy_patients.sql"
         }
     },
@@ -382,17 +342,15 @@
         "name": "Leprosy Control Program - Name of New Cases",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/newLeprosyPatients.sql"
         }
     },
     {
         "name": "Malaria Control Programme - Blood Slide Collection",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Malaria, Source'"
+            "conceptNames": ["Malaria, Source"]
         }
     },
     {
@@ -403,25 +361,22 @@
         "name": "Malaria Control Programme - Treatment (Total)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Malaria, Drug regimen'"
+          "conceptNames": ["Malaria, Drug regimen"]
         }
     },
     {
         "name": "Malaria Control Programme - Treatment (Pregnant)",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Malaria, Pregnant'"
+            "conceptNames": ["Malaria, Pregnant"]
         }
     },
     {
         "name": "Malaria Control Programme - Type of Malaria (PV, PF, P-MIX)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "Malaria",
             "conceptPair": ["Malaria, Malaria Type", "Malaria, Classification"],
             "rowsGroupBy": ["Malaria, Malaria Type"],
@@ -430,18 +385,16 @@
     },
     {
         "name": "Malaria Control Programme - Type of Malaria (Number of malaria cases)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Malaria",
-            "conceptNames": "'Malaria, Finding'"
+            "conceptNames": ["Malaria, Finding"]
         }
     },
     {
         "name": "Malaria Control Programme - Type of Malaria (Treatment of malaria)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_treatment.sql"
         }
     },
@@ -449,7 +402,6 @@
         "name": "Malaria Control Programme - Type of Malaria (Died)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/malaria_control_program_death.sql"
         }
     },
@@ -457,7 +409,6 @@
         "name": "Tuberculosis control program - Case Registration",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category"],
             "rowsGroupBy": ["Tuberculosis, Type"],
@@ -466,61 +417,54 @@
     },
     {
         "name": "Tuberculosis Control Program - Registration (BC or CD) [Check for 'New Diagnoses', 'Relapse']",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Tuberculosis",
-            "conceptNames": "'Tuberculosis, Diagnosis Category'"
+            "conceptNames": ["Tuberculosis, Diagnosis Category"]
         }
     },
     {
         "name": "Tuberculosis Control Program - Registration By Treatment Category",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Tuberculosis Treatment Category",
-          "conceptNames": "'Tuberculosis, Treatment Type'"
+          "conceptNames": ["Tuberculosis, Treatment Type"]
         }
     },
     {
         "name": "Tuberculosis Control Program - At The Time Of TB Diagnosis (Patients Tested for HIV)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/TBpatients_tested_for_hiv.sql"
         }
     },
     {
         "name": "Tuberculosis Control Program - At The Time Of TB Diagnosis (With Known HIV Status)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Tuberculosis, HIV Infection'"
+          "conceptNames": ["Tuberculosis, HIV Infection"]
         }
     },
     {
         "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB patients)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/TBpatients_tested_for_hiv.sql"
         }
     },
     {
         "name": "Tuberculosis Control Program - TB-HIV Activities All TB cases (HIV positive TB Patients on ART, CPT)",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT'"
+          "conceptNames": ["Tuberculosis, Is patient on ART","Tuberculosis, Is patient on CPT"]
         }
     },
     {
         "name": "Tuberculosis control program - Private Sector and Community Involvement in Referral and Diagnosis (PCD, EP)",
         "type": "CodedObsByCodedObs",
         "config": {
-          "type": "codedObsByCodedObsReport",
           "ageGroupName": "All Ages",
           "conceptPair": ["Tuberculosis, Type", "Tuberculosis, Referred by"],
           "rowsGroupBy": ["Tuberculosis, Referred by"],
@@ -531,7 +475,6 @@
         "name": "Tuberculosis Control Program - Private Sector and Community Involvement in Referral and Diagnoses (PBC) [Look at 'Pulmonary BC' column only. Look for 'New Diagnosis' and add for all other columns to get 'Excl New' counts]",
         "type": "MultipleCodedObsByCodedObs",
         "config": {
-            "type": "multipleCodedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "rowsGroupBy": ["Tuberculosis, Referred by"],
             "columnsGroupBy": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category", "gender"]
@@ -541,7 +484,6 @@
         "name": "Tuberculosis Control Program - Treatment Outcome (PBC) ['Pulmonary BC' as is. For PCD and EP, sum for 'Others' diagnosis category]",
         "type": "MultipleCodedObsByCodedObs",
         "config": {
-            "type": "multipleCodedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "rowsGroupBy": ["Tuberculosis, Type", "Tuberculosis, Diagnosis Category"],
             "columnsGroupBy": ["Tuberculosis, Treatment Outcome"]
@@ -551,7 +493,6 @@
         "name": "Tuberculosis Control Program - Treatment Outcome (HIV Positive, All Types) [Look at PCD and EP only]",
         "type": "MultipleCodedObsByCodedObs",
         "config": {
-            "type": "multipleCodedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "rowsGroupBy": ["Tuberculosis, Type", "Tuberculosis, HIV Infection"],
             "columnsGroupBy": ["Tuberculosis, Treatment Outcome"]
@@ -561,7 +502,6 @@
         "name": "Kala-azar Control Programme - Patient Type (Method of Diagnosis RK-39)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/kalaazar_control_program_method_of_diagnosis.sql"
         }
     },
@@ -569,7 +509,6 @@
         "name": "Kala-azar Control Programme - Patient Type (Total)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/kalazar_patient_types.sql"
         }
     },
@@ -577,59 +516,52 @@
         "name": "Kala-azar Control Programme - Patient Type (No of Deaths)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/kalaazar_deaths.sql"
         }
     },
     {
         "name": "DR Tuberculosis Program - DR TB Case Registration",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'DRTuberculosis, Diagnosis Category'"
+            "conceptNames": ["DRTuberculosis, Diagnosis Category"]
         }
     },
     {
         "name": "DR Tuberculosis Program - DR TB Case Registration (HIV positive RR-TB/DR-TB cases)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'DRTuberculosis, HIV Infection'"
+          "conceptNames": ["DRTuberculosis, HIV Infection"]
         }
     },
     {
         "name": "DR Tuberculosis Program - DR TB Case Registration (All confirmed XDR-TB cases) [pick 'Extremely Drug Resistant Tuberculosis']",
         "type": "diagnosisCount",
         "config": {
-          "visitTypes": "'OPD'",
-          "type": "diagnosisReport"
+          "visitTypes": ["OPD"]
         }
     },
     {
         "name": "DR Tuberculosis Program - DR TB Case Registration (DR TB Patients Under Current Treatment)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'DRTuberculosis, Intake'"
+          "conceptNames": ["DRTuberculosis, Intake"]
         }
     },
     {
         "name": "DR Tuberculosis Program - New Registered DR TB Cases",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "DR Tuberculosis",
-            "conceptNames": "'DRTuberculosis, Diagnosis Category'"
+            "conceptNames": ["DRTuberculosis, Diagnosis Category"]
         }
     },
     {
         "name": "DR Tuberculosis Control Program - Treatment Outcome (All confirmed RR/MDR-TB)",
         "type": "MultipleCodedObsByCodedObs",
         "config": {
-            "type": "multipleCodedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "rowsGroupBy": ["DRTuberculosis, Reasons for entering in second-line TB treatment register", "MDRTuberculosis, Category of Diagnosis"],
             "columnsGroupBy": ["DRTuberculosis, Treatment outcome", "gender"]
@@ -639,7 +571,6 @@
         "name": "DR Tuberculosis Control Program - Treatment Outcome (HIV positive RR/MDR-TB)",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "conceptPair": ["DRTuberculosis, HIV Infection", "DRTuberculosis, Treatment outcome", "gender"],
             "rowsGroupBy": ["DRTuberculosis, HIV Infection"],
@@ -650,7 +581,6 @@
         "name": "DR Tubercluosis Control Program - Treatment Outcome (All Confirmed XDR-TB)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/treatment_outcome_xdr_tb.sql"
         }
     },
@@ -658,7 +588,6 @@
         "name": "HIV/AIDS Program - HTC Programme (Tested)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HTC_program_tested.sql"
         }
     },
@@ -666,7 +595,6 @@
         "name": "HIV/AIDS Program - HTC Programme (Positive)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HTC_programme_positive.sql"
         }
     },
@@ -674,33 +602,29 @@
         "name": "HIV/AIDS Program - PMTCT of HIV (Number of ANC Visits)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'ANC'"
+          "conceptNames": ["ANC"]
         }
     },
     {
       "name": "HIV/AIDS Program - PMTCT of HIV (Counselling and Testing)",
       "type": "MRSGeneric",
       "config": {
-        "type": "sqlReport",
         "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/pmct_HIV_counselling_testing.sql"
       }
     },
     {
         "name": "HIV/AIDS Program - PMTCT of HIV (ART Started, HIV Positive Women - Male Partner, Breast Feeding status)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'PMTCT, Started ART during','PMTCT, Who already know their HIV status','PMTCT, Breast feeding options opted by HIV +ve mother'"
+            "conceptNames": ["PMTCT, Started ART during","PMTCT, Who already know their HIV status","PMTCT, Breast feeding options opted by HIV +ve mother"]
         }
     },
     {
         "name": "HIV/AIDS Program - PMTCT of HIV (HIV Positive Women - Delivered)",
         "type": "CodedObsByCodedObs",
         "config": {
-          "type": "codedObsByCodedObsReport",
           "ageGroupName": "All Ages",
           "conceptPair": ["HTC, Result", "Delivery Note, Delivery location"],
           "rowsGroupBy": ["HTC, Result"],
@@ -711,42 +635,37 @@
         "name": "HIV/AIDS Program - PMTCT of HIV (Exposed baby - Live births)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'PMTCT, HIV Positive Born Babies'"
+          "conceptNames": ["PMTCT, HIV Positive Born Babies"]
         }
     },
     {
         "name": "HIV/AIDS Program - PMTCT of HIV (Exposed baby - Started ARV Prophylaxis, HIV positive postpartum women received FP services)",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'PMTCT, Started ARV Prophylaxis for Baby', 'PMTCT, Family Planning services provided postpartum'"
+          "conceptNames": ["PMTCT, Started ARV Prophylaxis for Baby", "PMTCT, Family Planning services provided postpartum"]
         }
     },
     {
         "name": "HIV/AIDS Program - HIV Positive Individual Information",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIVpositive_individual_information.sql"
         }
     },
     {
         "name": "HIV/AIDS Program - HIV exposed baby (Prophylaxis)",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'HIVTC, HIV care CPT started', 'HIVTC, HIV care IPT started'"
+          "conceptNames": ["HIVTC, HIV care CPT started", "HIVTC, HIV care IPT started"]
         }
     },
     {
         "name": "HIV/AIDS Program - HIV exposed baby (Early Infant Diagnosis)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_early_infant_diagnosis.sql"
         }
     },
@@ -754,7 +673,6 @@
         "name": "HIV/AIDS Program - Risk Groups / Key Population Group (Total Cases Assessed, Syndromes, Etiology except GNID and Syphilis) [Total Cases Assessed = Sum(of all the other columns in that row)]",
         "type": "CodedObsByCodedObs",
         "config": {
-          "type": "codedObsByCodedObsReport",
           "ageGroupName": "All Ages",
           "conceptPair": ["STI, Risk Group", "STI, STI Diagnosis Syndrome"],
           "rowsGroupBy": ["STI, Risk Group"],
@@ -765,33 +683,29 @@
         "name": "HIV/AIDS Program - Risk Groups / Key Population Group (Etiology - Syphilis) [Treated Count = Diagnosed Count]",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/risk_groups_syphilis.sql"
         }
     },
     {
         "name": "HIV/AIDS Program - STI Cases by Sex and Age Group (All except Diagnosed) [Treated = Etiological Treatment AND Sydromic Treatment]",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "STI Cases",
-          "conceptNames": "'STI, STI Counseling','STI, Sydromic Treatment','STI, Etiological Treatment','STI, Presumptive Treatment for Sex Workers','STI, Asymptomatic Partners Treated'"
+          "conceptNames": ["STI, STI Counseling","STI, Sydromic Treatment","STI, Etiological Treatment","STI, Presumptive Treatment for Sex Workers","STI, Asymptomatic Partners Treated"]
         }
     },
     {
         "name": "HIV/AIDS Program - STI Cases by Sex and Age Group (Diagnosed)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "STI Cases",
-          "conceptNames": "'STI, STI Diagnosis Syndrome'"
+          "conceptNames": ["STI, STI Diagnosis Syndrome"]
         }
     },
     {
         "name": "HIV/AIDS Program - Anteretroviral Treatment  by Age Group (New patients enrolled in HIV care)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_new_patients_age_group_in_years.sql"
         }
     },
@@ -799,7 +713,6 @@
         "name": "HIV/AIDS Program - Anteretroviral Treatment by Target Population (New patients enrolled in HIV care)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_new_patients_by_target_population.sql"
         }
     },
@@ -807,16 +720,14 @@
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (No of patients transferred in)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Anteretroviral",
-          "conceptNames": "'HIVTC, Transferred in'"
+          "conceptNames": ["HIVTC, Transferred in"]
         }
     },
     {
         "name": "HIV/AIDS Program - Anteretroviral Treatment by Target Population (No of patients transferred in)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/no_of_patients_transferred_in.sql"
         }
     },
@@ -824,33 +735,29 @@
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (No of patients transferred out)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Anteretroviral",
-          "conceptNames": "'HIVTC, Transferred out'"
+          "conceptNames": ["HIVTC, Transferred out"]
         }
     },
     {
         "name": "HIV/AIDS Program - Anteretroviral Treatment by Target Population (No of patients transferred out)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/no_of_patients_transferred_out.sql"
         }
     },
     {
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (No of patients death reported, Deduction, Total patients restart, Total no. of patients currently on ART)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Anteretroviral",
-          "conceptNames": "'HIVTC, ART current status'"
+          "conceptNames": ["HIVTC, ART current status"]
         }
     },
     {
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (No of patients death reported, Deduction, Total patients restart, Total no. of patients currently on ART)",
         "type": "CodedObsByCodedObs",
         "config": {
-          "type": "codedObsByCodedObsReport",
           "ageGroupName": "Anteretroviral",
           "conceptPair": ["HIVTC, ART current status", "HIVTC, Risk Group"],
           "rowsGroupBy": ["HIVTC, ART current status"],
@@ -861,7 +768,6 @@
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group (Patients medically eligible for ART but have not started)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_ART_medically_eligible_age_group_in_years.sql"
         }
     },
@@ -869,7 +775,6 @@
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Patients medically eligible for ART but have not started)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/HIV_ART_medically_eligible_by_target_population.sql"
         }
     },
@@ -877,16 +782,14 @@
         "name": "HIV AIDS Program - Anteretroviral Treatment By Age Group (Enrollment on ART - New patients started ART)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Anteretroviral",
-          "conceptNames": "'HIVTC, ART Regimen'"
+          "conceptNames": ["HIVTC, ART Regimen"]
         }
     },
     {
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Enrollment on ART - New patients started ART)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/new_patients_started_art.sql"
         }
     },
@@ -894,9 +797,8 @@
         "name": "HIV AIDS Program - Anteretroviral Treatment By Age Group (Enrollment on ART - Patients on ART transferred in)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Anteretroviral",
-          "conceptNames": "'HIVTC, Transferred Patient Regimen'"
+          "conceptNames": ["HIVTC, Transferred Patient Regimen"]
         }
     },
     {
@@ -911,16 +813,14 @@
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Age Group By Age Group (Patients on ART except Total no. of patients currently on ART) [Original 1st line regimen = SUM(ART Regimen, Patient Regimen), Substituted 1st Line Regimen = New Regimen, Switched to 2nd Line Regimen = Name of switched regimen]",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Anteretroviral",
-            "conceptNames": "'HIVTC, ART Regimen','HIVTC, Transferred Patient Regimen','HIVTC, New Regimen','HIVTC, Name of Switched Regimem'"
+            "conceptNames": ["HIVTC, ART Regimen","HIVTC, Transferred Patient Regimen","HIVTC, New Regimen","HIVTC, Name of Switched Regimem"]
         }
     },
     {
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Original 1st Line Regimen)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/original_1st_line_regimen.sql"
         }
     },
@@ -928,7 +828,6 @@
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Substituted 1st line regimen)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/substituted_1st_line_regimen.sql"
         }
     },
@@ -936,42 +835,37 @@
         "name": "HIV/AIDS Program - Anteretroviral Treatment By Target Population (Switched on to 2nd Line Regimen)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/switched_2nd_line_regimen.sql"
         }
     },
     {
         "name": "HIV/AIDS Program - Treatment Adherence on ART (No of Cases) except Accessed",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'HIVTC, ART Treatment Adherence'"
+            "conceptNames": ["HIVTC, ART Treatment Adherence"]
         }
     },
     {
         "name": "HIV/AIDS Program - Currently on ART by Regimen",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'HIVTC, ART Regimen','HIVTC, Name of Switched Regimem'"
+            "conceptNames": ["HIVTC, ART Regimen","HIVTC, Name of Switched Regimem"]
         }
     },
     {
         "name": "HIV/AIDS Program - Opportunistic Infections (Diagnosed)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'OI, Opportunistic infections'"
+            "conceptNames": ["OI, Opportunistic infections"]
         }
     },
     {
         "name": "HIV/AIDS Program - Opportunistic Infections (Treated)",
         "type": "CodedObsByCodedObs",
         "config": {
-          "type": "codedObsByCodedObsReport",
           "ageGroupName": "All Ages",
           "conceptPair": ["OI, Provided CPT", "OI, Opportunistic infections"],
           "rowsGroupBy": ["OI, Provided CPT", "gender"],
@@ -982,25 +876,22 @@
         "name": "HIV/AIDS Program - Opportunistic Infections TB and FP (Total no of PLHIV served, PLHA diagnosed and treated for OI, PLHIV using any FP method)",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Opportunistic Infections",
-            "conceptNames": "'Opportunistic Infection Template','OI, Opportunistic infections','HIVTC, FP methods used by the patient'"
+            "conceptNames": ["Opportunistic Infection Template","OI, Opportunistic infections","HIVTC, FP methods used by the patient"]
         }
     },
     {
         "name": "HIV/AIDS Program - Opportunistic Infections TB AND FP (Assessed for TB, HIV Patients initiated IPT, TB HIV Patients received CPT, PLHIV screened for FP need)",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Opportunistic Infections",
-            "conceptNames": "'OI, Screening for TB','HIVTC, HIV care IPT started','Tuberculosis, Is patient on CPT','HIVTC, Need Family Planning assessment'"
+            "conceptNames": ["OI, Screening for TB","HIVTC, HIV care IPT started","Tuberculosis, Is patient on CPT","HIVTC, Need Family Planning assessment"]
         }
     },
     {
       "name": "HIV/AIDS Program - Opportunistic Infections TB AND FP (New Clients on TB Treatment) [check the grid for 'New Diagnoses' and 'Yes']",
       "type": "CodedObsByCodedObs",
       "config": {
-        "type": "codedObsByCodedObsReport",
         "ageGroupName": "Opportunistic Infections",
         "conceptPair": ["Tuberculosis, Diagnosis Category", "Tuberculosis, HIV Infection"],
         "rowsGroupBy": ["Tuberculosis, Diagnosis Category", "age_group"],
@@ -1011,7 +902,6 @@
         "name": "Disaggregation by Sex and Caste/Ethnicity Part 1 (Except Fully Immunized Children)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/disaggregation_caste_part1.sql"
         }
     },
@@ -1019,7 +909,6 @@
         "name": "Disaggregation by Sex and Caste/Ethnicity Part 2 (Except Fully Immunized Children)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/disaggregation_caste_part2.sql"
         }
     },
@@ -1027,8 +916,7 @@
         "name": "Outpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
-            "visitTypes": "'OPD'",
-            "type": "diagnosisReport"
+            "visitTypes": ["OPD"]
         }
     },
     {
@@ -1039,7 +927,6 @@
         "name": "Hospital Services - Outpatient Services",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/outpatientServices.sql"
         }
     },
@@ -1047,7 +934,6 @@
         "name": "Hospital Services - Emergency Services",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/emergencyServices.sql"
         }
     },
@@ -1055,7 +941,6 @@
         "name": "Hospital Services - Total Patients Admitted",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/totalAdmittedPatients.sql"
         }
     },
@@ -1063,44 +948,39 @@
         "name": "Hospital Services - Diagnostic Services (USG, ECG)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'USG Notes','ECG Notes'"
+          "conceptNames": ["USG Notes","ECG Notes"]
         }
     },
     {
         "name": "Hospital Services - Referrals (Referral In)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Hospitals, Referred by, Data'"
+          "conceptNames": ["Hospitals, Referred by, Data"]
         }
     },
     {
         "name": "Hospital Services - Referrals (Referred Out) [Check for Referred grid]",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Disposition'",
-          "visitTypes": "'OPD','IPD'"
+          "conceptNames": ["Disposition"],
+          "visitTypes": ["OPD","IPD"]
         }
     },
     {
         "name": "Summary of Indoor Services - Inpatient Outcome (except Death)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "Inpatient",
-            "conceptNames": "'Discharge note, Inpatient outcome'"
+            "conceptNames": ["Discharge note, Inpatient outcome"]
         }
     },
     {
         "name": "Summary of Indoor Services - Inpatient Outcome (Death)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_outcome_death.sql"
         }
     },
@@ -1108,7 +988,6 @@
         "name": "Summary of Indoor Services - Neonate Form (except Maternal Age)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/neonate_form.sql"
         }
     },
@@ -1116,7 +995,6 @@
         "name": "Summary of Indoor Services - Neonate Form (Maternal Age)",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/maternal_age.sql"
         }
     },
@@ -1124,34 +1002,30 @@
         "name": "Summary Of Indoor Services - Death Information (Maternal)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Death Note, Maternal Death'"
+          "conceptNames": ["Death Note, Maternal Death"]
         }
     },
     {
         "name": "Summary Of Indoor services - Death Information (Post-operative, Brought Dead, Postmartem Done)",
-        "type": "booleanConceptsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Death Note, Death occured post operative','Death Note, Brought dead','Death Note, Postmortem done'"
+          "conceptNames": ["Death Note, Death occured post operative","Death Note, Brought dead","Death Note, Postmortem done"]
         }
     },
     {
         "name": "Summary Of Indoor Services - Death Information (Early Neonatal [0 - 3 Days], Late Neonatal [4 - 28 Days], Other [Count(≥ 29 Days) - Count(Maternal) - Count(Post-operative)])",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "Death Information",
-          "conceptNames": "'Death Note'"
+          "conceptNames": ["Death Note"]
         }
     },
     {
       "name": "Summary Of Indoor Services - Abortion Services",
       "type": "MRSGeneric",
       "config": {
-        "type": "sqlReport",
         "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/abortionServices.sql"
       }
     },
@@ -1159,45 +1033,40 @@
         "name": "Summary Of Indoor Services - Surgeries (Major, Minor)",
         "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Operative Notes, Procedure','Procedure Notes, Procedure'",
-          "visitTypes": "'OPD','IPD'"
+          "conceptNames": ["Operative Notes, Procedure","Procedure Notes, Procedure"],
+          "visitTypes": ["OPD","IPD"]
 
         }
     },
     {
         "name": "Summary Of Indoor Services - Surgeries (Plaster)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-          "type": "codedObsCountReport",
           "ageGroupName": "All Ages",
-          "conceptNames": "'Procedure Notes, Procedure'"
+          "conceptNames": ["Procedure Notes, Procedure"]
         }
     },
     {
         "name": "Summary Of Indoor Services - Surgeries (Post Operative Infection)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/surgeries_post_operative_infection.sql"
         }
     },
     {
         "name": "Summary Of Indoor Services - Free Health Services and Social Security Programme (Outpatients/Inpatients/Emergency)",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Out Patient Details, Free Health Service Code'",
-            "visitTypes": "'OPD','IPD'"
+            "conceptNames": ["Out Patient Details, Free Health Service Code"],
+            "visitTypes": ["OPD","IPD"]
         }
     },
     {
         "name": "Summary Of Indoor Services - Free Health Services and Social Security Programme (Referral In)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/freeServiceReferredPatients.sql"
         }
     },
@@ -1205,7 +1074,6 @@
         "name": "Summary Of Indoor Services - Free Health Services and Social Security Programme (Referred Out) [Please pick only 'Referred' row]",
         "type": "CodedObsByCodedObs",
         "config": {
-            "type": "codedObsByCodedObsReport",
             "ageGroupName": "All Ages",
             "conceptPair": ["Out Patient Details, Free Health Service Code", "Disposition"],
             "rowsGroupBy": ["Disposition"],
@@ -1217,15 +1085,13 @@
         "type": "diagnosisCount",
         "config": {
           "ageGroupName": "Inpatient",
-          "visitTypes": "'IPD'",
-          "type": "diagnosisReport"
+          "visitTypes": ["IPD"]
         }
     },
     {
         "name": "Summary Of Indoor Services - Inpatient morbidity (Total Deaths)",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/inpatient_morbidity.sql"
         }
     },
@@ -1233,97 +1099,86 @@
         "name": "Number of Deliveries",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Delivery Note'"
+            "conceptNames": ["Delivery Note"]
         }
     },
     {
         "name": "Number of CAC",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Abortion procedure'"
+            "conceptNames": ["Abortion procedure"]
         }
     },
      {
         "name": "Number of PAC",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Safe Abortion, Post Abortion Care'"
+            "conceptNames": ["Safe Abortion, Post Abortion Care"]
         }
     },
     {
         "name": "Number of ECG",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'ECG Notes'"
+            "conceptNames": ["ECG Notes"]
         }
     },
     {
         "name": "Number of USG",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'USG Notes'"
+            "conceptNames": ["USG Notes"]
         }
     },
     {
         "name": "Number of ANC Visits",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'ANC'"
+            "conceptNames": ["ANC"]
         }
     },
     {
         "name": "Number of Children screened for Malnutrition",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "IMAM",
-            "conceptNames": "'Nutrition, Nutritional Status'"
+            "conceptNames": ["Nutrition, Nutritional Status"]
         }
     },
     {
         "name": "Number of Family Planning Visits",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Family Planning Template'"
+            "conceptNames": ["Family Planning Template"]
         }
     },
     {
         "name": "Number of TB cases receiving treatment",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Tuberculosis, Intake'"
+            "conceptNames": ["Tuberculosis, Intake"]
         }
     },
     {
         "name": "Number of Caesarean Section",
-        "type": "CodedObsCount",
+        "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
-            "conceptNames": "'Operative Notes, Procedure'"
+            "conceptNames": ["Operative Notes, Procedure"]
         }
     },
     {
         "name": "Number of Children Treated",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/number_of_children_treated.sql"
         }
     },
@@ -1331,7 +1186,6 @@
         "name": "OPD Patients with Address",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/OPDpatients_with_address.sql"
         }
     },
@@ -1339,7 +1193,6 @@
         "name": "Number of Labtests",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/number_of_labtests.sql"
         }
     },
@@ -1347,7 +1200,6 @@
         "name": "Adult IPD Patients with Duration of Stay",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Adult_IPDPatients_with_duration.sql"
         }
     },
@@ -1355,7 +1207,6 @@
         "name": "Child IPD Patients with Duration of Stay",
         "type": "MRSGeneric",
         "config": {
-          "type": "sqlReport",
           "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/child_IPDPatients_with_duration.sql"
         }
     },
@@ -1363,7 +1214,6 @@
         "name": "Procedure Notes",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Procedure Notes"
         }
     }
