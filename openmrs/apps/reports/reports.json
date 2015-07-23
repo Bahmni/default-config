@@ -3,7 +3,6 @@
         "name": "Chief Complaint Report",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": ["Chief Complaint"],
             "countOnlyClosedVisits":"false",
@@ -14,7 +13,6 @@
         "name": "Inpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
-            "type": "diagnosisReport",
             "visitTypes": ["IPD"]
         }
     },
@@ -22,7 +20,6 @@
         "name": "Outpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
-            "type": "diagnosisReport",
             "visitTypes": ["OPD"]
         }
     },
@@ -34,7 +31,6 @@
         "name": "Generic Laboratory Services",
         "type": "ElisGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
         }
     },
@@ -42,7 +38,6 @@
         "name": "Generic Outpatient Morbidity",
         "type": "MRSGeneric",
         "config": {
-            "type": "sqlReport",
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
         }
     },
@@ -50,7 +45,6 @@
         "name": "Blood Pressure",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": ["Systolic","Diastolic"],
             "countOnlyClosedVisits":"false",
@@ -61,7 +55,6 @@
         "name": "Smoking History Report",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": ["Smoking History"]
         }
@@ -70,7 +63,6 @@
         "name": "Vitals Template Report",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Vitals"
         }
     },
@@ -78,7 +70,6 @@
         "name": "Tuberculosis Intake Template Report",
         "type": "obsTemplate",
         "config": {
-            "type": "obsTemplateReport",
             "templateName": "Tuberculosis Intake Template"
         }
     },
@@ -86,7 +77,6 @@
         "name": "Diabetes",
         "type": "obsCount",
         "config": {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": ["Diabetes, Intake"],
             "visitTypes": ["OPD","IPD"]
@@ -100,7 +90,6 @@
 	    "name": "Haemoglobin Range Based Report",
     	"type": "NumericConceptValuesCount",
         "config": {
-            "type": "numericConceptValuesReport",
             "rangeGroupName": "Haemoglobin",
             "ageGroupName": "Haemoglobin",
             "conceptNames": ["Haemoglobin"],
@@ -111,7 +100,6 @@
 	    "name": "Radiology(X-Ray) Count",
     	"type": "ObsCountByConceptClass",
         "config": {
-            "type": "obsCountByConceptClassReport",
             "conceptClassNames": ["Radiology"]
         }
     },
@@ -119,7 +107,6 @@
 	    "name": "Obs Values Counts for Albumin, MCH, Operation Date and Posture(blood pressure)",
     	"type": "ObsValueCount",
         "config": {
-            "type": "obsValueCountReport",
             "conceptNames": ["Albumin","MCH","Date of Operation","Posture"]
         }
     },
@@ -127,7 +114,6 @@
 	    "name": "Tuberculosis Treatment Completion dates",
         "type": "DateConceptValuesPatientsList",
         "config": {
-            "type": "dateConceptValuesReport",
             "conceptNames": ["Tuberculosis, Treatment Completion Date"],
             "templateName": "Tuberculosis Outcome Template"
         }
@@ -136,7 +122,6 @@
         "name": "Patients list with Albumin, MCH and HIV ELISA (Blood) tests results",
         "type": "PatientsWithLabtestResults",
         "config": {
-            "type": "patientsWithLabtestResultsReport",
             "conceptNames": ["HIV ELISA (Blood)","Albumin","MCH"],
             "testOutcome": ["abnormal", "normal"]
             }
@@ -145,7 +130,6 @@
         "name": "IPD Patients Report",
         "type": "ipdPatients",
         "config": {
-            "type": "ipdPatientsReport",
             "addressAttributes": ["address1", "city_village"],
             "patientAttributes": ["caste", "education"],
             "conceptNames": ["Height", "Weight"],
