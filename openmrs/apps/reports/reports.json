@@ -135,5 +135,13 @@
             "conceptNames": ["Height", "Weight"],
             "filterBy": "Date of Discharge"
         }
-	}
+    },
+    {
+        "name": "Visit Aggregate Count Report",
+        "type": "VisitAggregateCount",
+        "config": {
+            "type": "VisitAggregateCountReport",
+            "visitTypes": "'IPD','OPD','EMERGENCY'"
+        }
+    }
 ]
