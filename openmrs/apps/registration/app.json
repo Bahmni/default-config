@@ -30,6 +30,11 @@
                 "showAddressFieldsTopDown": false,
                 "freeTextAddressFields": ["address2", "address1"]
             },
+            "relationshipTypeMap": {
+                "Doctor":"provider",
+                "Parent":"patient"
+            },
+
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
             "defaultVisitType": "OPD",
