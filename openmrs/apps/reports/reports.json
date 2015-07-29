@@ -143,5 +143,18 @@
             "type": "VisitAggregateCountReport",
             "visitTypes": "'IPD','OPD','EMERGENCY'"
         }
+    },
+    {
+      "name": "Diagnosis Summary Report",
+      "type": "diagnosisCount",
+      "config": {
+        "dateRangeRequired": false,
+        "applyDateRangeFor": "diagnosisDate",
+        "visitsToConsider": "all",
+        "ageGroupName": "All Ages",
+        "concept": "Diagnosis Set of Sets",
+        "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
+        "columnsGroupBy": ["agegroup_name", "gender"]
+     }
     }
 ]
