@@ -66,5 +66,11 @@
         },
         "order": 2,
         "requiredPrivilege": "Edit Visits"
+    },
+    {
+        "id": "bahmni.patient.registration.birthTime",
+        "extensionPointId": "org.bahmni.patient.registration.birthTime",
+        "type": "config",
+        "showBirthTime": false
     }
 ]
