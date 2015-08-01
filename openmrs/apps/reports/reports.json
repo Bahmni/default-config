@@ -156,5 +156,13 @@
         "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
         "columnsGroupBy": ["agegroup_name", "gender"]
      }
+	},
+    {
+        "name": "Order Fulfillment Report",
+        "type": "OrderFulfillmentReport",
+        "config": {
+            "type": "OrderFulfillmentReport",
+            "orderTypes": ["Order","Drug Order"]
+        }
     }
 ]
