@@ -48,6 +48,7 @@
             "ageGroupName": "All Ages",
             "conceptNames": ["Systolic","Diastolic"],
             "countOnlyClosedVisits":"false",
+            "countOncePerPatient":"false",
             "visitTypes": ["OPD","IPD"]
         }
     },
@@ -56,7 +57,9 @@
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Smoking History"]
+            "conceptNames": ["Smoking History123"],
+            "countOnlyClosedVisits":"false",
+            "countOncePerPatient":"true"
         }
     },
     {
@@ -83,6 +86,15 @@
         }
     },
     {
+        "name": "Coded Value Range Based Report",
+        "type": "obsCount",
+        "config": {
+            "ageGroupName": "All Ages",
+            "conceptNames": ["Diabetes, Cormorbidities"],
+            "countOncePerPatient": "true"
+        }
+    },
+    {
 	    "name": "OPD/IPD Visit Count",
     	"type": "IpdOpdVisitCount"
     },
@@ -93,7 +105,7 @@
             "rangeGroupName": "Haemoglobin",
             "ageGroupName": "Haemoglobin",
             "conceptNames": ["Haemoglobin"],
-            "countOncePerPatient":false
+            "countOncePerPatient":"false"
         }
     },
     {
@@ -135,13 +147,15 @@
             "conceptNames": ["Height", "Weight"],
             "filterBy": "Date of Discharge"
         }
-    },
+	},
     {
-        "name": "Visit Aggregate Count Report",
-        "type": "VisitAggregateCount",
+        "name": "Nutrition Program - Nutritional status of registered children",
+        "type": "obsCount",
         "config": {
-            "type": "VisitAggregateCountReport",
-            "visitTypes": "'IPD','OPD','EMERGENCY'"
+            "ageGroupName": "All Ages",
+            "conceptNames": ["Nutrition, Nutritional Status"],
+            "countOncePerPatient":"true",
+            "countOnlyClosedVisits":"false"
         }
     },
     {
