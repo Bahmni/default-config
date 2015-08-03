@@ -23,6 +23,13 @@
                     "drugConcepts": ["Gamma Benzene Hexachloride"],
                     "labConcepts": ""
                 }
+            },
+            {
+                "type":"pacsOrders",
+                "title": "Pacs Orders Visit Page",
+                "config":{
+                    "orderType": "Radiology Order"
+                }
             }
         ]
     },

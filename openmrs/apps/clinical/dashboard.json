@@ -91,6 +91,15 @@
                 }
             },
             {
+                "orderType": "Radiology Order",
+                "name": "pacsOrders",
+                "title": "Pacs",
+                "dashboardParams":{
+                    "pacsImageUrl":"http://10.0.0.30:8080/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
+                    "numberOfVisits":4
+                }
+            },
+            {
                 "title": "Lab Orders Display Control",
                 "name": "ordersControl",
                 "orderType": "Lab Order",
