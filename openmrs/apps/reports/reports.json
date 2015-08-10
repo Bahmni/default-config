@@ -160,9 +160,16 @@
     },
     {
         "name": "Patients Program State Count Report",
-        "type": "patientsStateCount",
+        "type": "programStateCount",
         "config": {
-            "programName": "Patient Overall Status"
+            "programName": "Malaria Program"
+        }
+    },
+    {
+        "name": "Program Patient State Report",
+        "type": "PatientProgramReport",
+        "config": {
+            "programName": "Malaria Program"
         }
     }
 ]
