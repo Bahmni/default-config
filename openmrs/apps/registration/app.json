@@ -17,10 +17,6 @@
             "patientUuid",
             "activeVisitUuid"
         ],
-        "relationshipTypeMap": {
-            "Doctor":"provider",
-            "Parent":"patient"
-        },
         "config" : {
              "additionalPatientInformation" : [
                 { "name":"debt", "display":true },
