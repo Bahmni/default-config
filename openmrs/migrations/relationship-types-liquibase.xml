@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- This changeset is meant to contain patient relationship types -->
+    <changeSet id="BAHMNI-IMPL-OMRS-RELATIONSHIPS-001" author="tw">
+        <comment>Add Relationship types</comment>
+        <sql>
+            INSERT INTO relationship_type (relationship_type_id, a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
+            VALUES (1, 'Doctor', 'Patient', 0, 0, 'Relationship from a primary care provider to the patient', 1, '8d919b58-c2cc-11de-8d13-0010c6dffd0f', NOW());
+
+            INSERT INTO relationship_type (relationship_type_id, a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
+            VALUES (2, 'Sibling', 'Sibling', 0, 0, 'Relationship between brother/sister, brother/brother, and sister/sister', 1, '8d91a01c-c2cc-11de-8d13-0010c6dffd0f', NOW());
+
+            INSERT INTO relationship_type (relationship_type_id, a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
+            VALUES (3, 'Parent', 'Child', 0, 0, 'Relationship from a mother/father to the child', 1, '8d91a210-c2cc-11de-8d13-0010c6dffd0f', NOW());
+        </sql>
+    </changeSet>
+    <!-- This changeset is meant to contain patient relationship types -->
+    <changeSet id="BAHMNI-IMPL-OMRS-RELATIONSHIPS-002" author="tw">
+        <comment>Add global property for relationshipTypeMap</comment>
+        <sql>
+            INSERT INTO global_property (property, property_value, description, uuid) VALUES ('bahmni.relationshipTypeMap','{"provider":["Doctor"],"patient":["Parent","Sibling"]}', 'Relationships type maps for providers', UUID());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

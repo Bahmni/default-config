@@ -18,4 +18,5 @@
     <include file = "atomfeed-config-liquibase.xml"/>
     <include file = "location-test-data-liquibase.xml"/>
     <include file = "pacs-concept-sources-liquibase.xml"/>
+    <include file = "relationship-types-liquibase.xml"/>
 </databaseChangeLog>
