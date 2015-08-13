@@ -171,5 +171,13 @@
         "config": {
             "programName": "Malaria Program"
         }
+    },
+    {
+        "name":"Program State Transition Report",
+        "type":"programStateTransitionReport",
+        "config":{
+            "programName":"Malaria Program"
+        }
+
     }
 ]
