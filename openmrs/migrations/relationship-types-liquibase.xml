@@ -8,17 +8,17 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!-- This changeset is meant to contain patient relationship types -->
-    <changeSet id="BAHMNI-IMPL-OMRS-RELATIONSHIPS-001" author="tw">
+    <changeSet id="BAHMNI-IMPL-OMRS-RELATIONSHIPS-001" author="tw" runOnChange="true">
         <comment>Add Relationship types</comment>
         <sql>
-            INSERT INTO relationship_type (relationship_type_id, a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
-            VALUES (1, 'Doctor', 'Patient', 0, 0, 'Relationship from a primary care provider to the patient', 1, '8d919b58-c2cc-11de-8d13-0010c6dffd0f', NOW());
+            INSERT INTO relationship_type (a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
+            VALUES ('Doctor', 'Patient', 0, 0, 'Relationship from a primary care provider to the patient', 1, uuid(), NOW());
 
-            INSERT INTO relationship_type (relationship_type_id, a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
-            VALUES (2, 'Sibling', 'Sibling', 0, 0, 'Relationship between brother/sister, brother/brother, and sister/sister', 1, '8d91a01c-c2cc-11de-8d13-0010c6dffd0f', NOW());
+            INSERT INTO relationship_type (a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
+            VALUES ('Sibling', 'Sibling', 0, 0, 'Relationship between brother/sister, brother/brother, and sister/sister', 1, uuid(), NOW());
 
-            INSERT INTO relationship_type (relationship_type_id, a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
-            VALUES (3, 'Parent', 'Child', 0, 0, 'Relationship from a mother/father to the child', 1, '8d91a210-c2cc-11de-8d13-0010c6dffd0f', NOW());
+            INSERT INTO relationship_type (a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
+            VALUES ('Parent', 'Child', 0, 0, 'Relationship from a mother/father to the child', 1, uuid(), NOW());
         </sql>
     </changeSet>
     <!-- This changeset is meant to contain patient relationship types -->
