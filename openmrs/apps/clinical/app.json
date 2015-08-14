@@ -29,6 +29,8 @@
                 "Radiology": "Radiology Order",
                 "Endoscopy": "Endoscopy Order"
             },
+            "allowConsultationWhenNoOpenVisit": false,
+            "defaultVisitType": "OPD",
             "visitTypeForRetrospectiveEntries": "Special OPD",
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
