@@ -1,6 +1,5 @@
-[
-
-	{
+{
+	"bahmniClinicalPatientsSearchRadiologyOrderAllPatients":{
 	 "id": "bahmni.clinical.patients.search.RadiologyOrderAllPatients",
 	 "extensionPointId": "org.bahmni.patient.search",
 	 "type": "config",
@@ -15,4 +14,4 @@
 	 "order": 1,
 	 "requiredPrivilege": "app:orders"
 	 }
-]
+}

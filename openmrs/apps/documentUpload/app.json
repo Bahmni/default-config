@@ -1,5 +1,4 @@
-[
-    {
+{
         "id": "bahmni.adt.admission",
         "extensionPoints": [
             {
@@ -8,5 +7,4 @@
             }
         ],
         "contextModel": []
-    }
-]
+}

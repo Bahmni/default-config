@@ -1,5 +1,4 @@
-[
-    {
+{
         "id": "bahmni.clinical",
         "extensionPoints": [
             {
@@ -171,5 +170,4 @@
                 }
             }
         }
-    }
-]
+}

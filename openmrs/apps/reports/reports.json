@@ -1,5 +1,5 @@
-[
-    {
+{
+    "chiefComplaintReport":{
         "name": "Chief Complaint Report",
         "type": "obsCount",
         "config": {
@@ -9,39 +9,39 @@
             "visitTypes": ["IPD","OPD"]
         }
     },
-    {
+    "inpatientMorbidity":{
         "name": "Inpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
             "visitTypes": ["IPD"]
         }
     },
-    {
+    "outpatientMorbidity":{
         "name": "Outpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
             "visitTypes": ["OPD"]
         }
     },
-    {
+    "laboratoryServices":{
         "name": "Laboratory Services",
         "type": "TestCount"
     },
-    {
+    "genericLaboratoryServices":{
         "name": "Generic Laboratory Services",
         "type": "ElisGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
         }
     },
-    {
+    "genericOutpatientMorbidity":{
         "name": "Generic Outpatient Morbidity",
         "type": "MRSGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
         }
     },
-    {
+    "bloodPressure":{
         "name": "Blood Pressure",
         "type": "obsCount",
         "config": {
@@ -52,7 +52,7 @@
             "visitTypes": ["OPD","IPD"]
         }
     },
-    {
+    "smokingHistoryReport":{
         "name": "Smoking History Report",
         "type": "obsCount",
         "config": {
@@ -62,21 +62,21 @@
             "countOncePerPatient":"true"
         }
     },
-    {
+    "vitalsTemplateReport":{
         "name": "Vitals Template Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "Vitals"
         }
     },
-    {
+    "tuberculosisIntakeTemplateReport":{
         "name": "Tuberculosis Intake Template Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "Tuberculosis Intake Template"
         }
     },
-    {
+    "diabetes":{
         "name": "Diabetes",
         "type": "obsCount",
         "config": {
@@ -85,7 +85,7 @@
             "visitTypes": ["OPD","IPD"]
         }
     },
-    {
+    "codedValueRangeBasedReport":{
         "name": "Coded Value Range Based Report",
         "type": "obsCount",
         "config": {
@@ -94,11 +94,11 @@
             "countOncePerPatient": "true"
         }
     },
-    {
+    "OPD/IPDVisitCount":{
 	    "name": "OPD/IPD Visit Count",
     	"type": "IpdOpdVisitCount"
     },
-    {
+    "haemoglobinRangeBasedReport":{
 	    "name": "Haemoglobin Range Based Report",
     	"type": "NumericConceptValuesCount",
         "config": {
@@ -108,21 +108,21 @@
             "countOncePerPatient":"false"
         }
     },
-    {
+    "radiology(X-Ray)Count":{
 	    "name": "Radiology(X-Ray) Count",
     	"type": "ObsCountByConceptClass",
         "config": {
             "conceptClassNames": ["Radiology"]
         }
     },
-    {
+    "obsValuesCountsForAlbuminMCHOperationDateAndPosture(bloodPressure)":{
 	    "name": "Obs Values Counts for Albumin, MCH, Operation Date and Posture(blood pressure)",
     	"type": "ObsValueCount",
         "config": {
             "conceptNames": ["Albumin","MCH","Date of Operation","Posture"]
         }
     },
-    {
+    "tuberculosisTreatmentCompletionDates":{
 	    "name": "Tuberculosis Treatment Completion dates",
         "type": "DateConceptValuesPatientsList",
         "config": {
@@ -130,7 +130,7 @@
             "templateName": "Tuberculosis Outcome Template"
         }
     },
-    {
+    "patientsListWithAlbuminMCHAndHIVELISA(Blood)TestsResults":{
         "name": "Patients list with Albumin, MCH and HIV ELISA (Blood) tests results",
         "type": "PatientsWithLabtestResults",
         "config": {
@@ -138,7 +138,7 @@
             "testOutcome": ["abnormal", "normal"]
             }
     },
-    {
+    "IPDPatientsReport":{
         "name": "IPD Patients Report",
         "type": "ipdPatients",
         "config": {
@@ -148,7 +148,7 @@
             "filterBy": "Date of Discharge"
         }
 	},
-    {
+    "nutritionProgramNutritionalStatusOfRegisteredChildren":{
         "name": "Nutrition Program - Nutritional status of registered children",
         "type": "obsCount",
         "config": {
@@ -158,21 +158,21 @@
             "countOnlyClosedVisits":"false"
         }
     },
-    {
+    "patientsProgramStateCountReport":{
         "name": "Patients Program State Count Report",
         "type": "programStateCount",
         "config": {
             "programName": "Malaria Program"
         }
     },
-    {
+    "programPatientStateReport":{
         "name": "Program Patient State Report",
         "type": "PatientProgramReport",
         "config": {
             "programName": "Malaria Program"
         }
     },
-    {
+    "programStateTransitionReport":{
         "name":"Program State Transition Report",
         "type":"programStateTransitionReport",
         "config":{
@@ -180,4 +180,4 @@
         }
 
     }
-]
+}

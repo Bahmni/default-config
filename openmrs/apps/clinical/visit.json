@@ -1,5 +1,5 @@
-[
-    {
+{
+    "general":{
         "title": "General",
         "displayByDefault": true,
         "printing": {
@@ -8,8 +8,8 @@
             "logo": "../images/bahmniLogo.png"
         },
         "defaultSections": true,
-        "sections": [
-            {
+        "sections": {
+            "pivotTable":{
                 "type": "pivotTable",
                 "title": "Pivot table",
                 "config": {
@@ -24,24 +24,24 @@
                     "labConcepts": ""
                 }
             },
-            {
+            "pacsOrders":{
                 "type":"pacsOrders",
                 "title": "Pacs Orders Visit Page",
                 "config":{
                     "orderType": "Radiology Order"
                 }
             }
-        ]
+        }
     },
-    {
+    "dischargeSummary":{
         "title": "Discharge Summary",
         "printing": {
             "title": "Bahmni",
             "header": "Discharge Summary",
             "logo": "../images/bahmniLogo.png"
         },
-        "sections": [
-            {
+        "sections": {
+            "PatientInformation":{
                 "type": "patientInformation",
                 "config": {
                     "title": "PatientInformation",
@@ -49,13 +49,13 @@
                     "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                 }
             },
-            {
+            "admissionDetails":{
                 "type": "admissionDetails",
                 "config": {
                     "showDetailsButton": true
                 }
             },
-            {
+            "weight":{
                 "type": "observation",
                 "title": "Weight",
                 "config": {
@@ -63,7 +63,7 @@
                     "scope": "latest"
                 }
             },
-            {
+            "diagnoses":{
                 "type": "diagnosis",
                 "config": {
                     "title": "Diagnoses",
@@ -72,7 +72,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "clinicalNotes":{
                 "type": "observation",
                 "title": "Clinical Notes",
                 "config": {
@@ -87,7 +87,7 @@
                     "numberOfVisits": "1"
                 }
             },
-            {
+            "labInvestigations":{
                 "type": "investigationResult",
                 "config": {
                     "title": "Lab Investigations",
@@ -101,7 +101,7 @@
                     "latestAccessionCount": 1
                 }
             },
-            {
+            "treatments":{
                 "type": "treatment",
                 "config": {
                     "title": "Treatments",
@@ -113,7 +113,7 @@
                     "showDrugForm": true
                 }
             },
-            {
+            "adviceOnDischarge":{
                 "type": "observation",
                 "title": "Advice on Discharge",
                 "config": {
@@ -125,12 +125,12 @@
                     "scope": "latest"
                 }
             }
-        ]
+        }
     },
-    {
+    "orders":{
       "title": "Orders",
-      "sections": [
-        {
+      "sections": {
+             "Radiology Orders": {
             "type": "order",
             "title": "Radiology Orders",
             "config": {
@@ -140,7 +140,7 @@
                 "conceptNames":["Summary"]
             }
         }
-      ]
+      }
 
     }
-]
+}

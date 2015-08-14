@@ -1,5 +1,4 @@
-[
-    {
+{
         "id": "bahmni.adt.admission",
         "extensionPoints": [
             {
@@ -33,8 +32,8 @@
             "dashboard":{
                 "dashboardName": "General",
                 "conceptName": "Adt Notes",
-                "sections": [
-                {
+                "sections": {
+                "vitals":{
                     "title": "Vitals",
                     "name": "vitals",
                     "isObservation": true,
@@ -43,28 +42,28 @@
                         "numberOfVisits": 2
                     }
                 },
-                {
+                "disposition":{
                     "title": "Disposition",
                     "name": "disposition",
                     "numberOfVisits": 1
                 },
-                {
+                "diagnosis":{
                     "title": "Diagnosis",
                     "name": "diagnosis",
                     "numberOfVisits": 1,
                     "showDetailsButton":true
                 },
-                {
-                "title": "Patient Information",
-                "name": "patientInformation",
-                "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+                "patientInformation":{
+                    "title": "Patient Information",
+                    "name": "patientInformation",
+                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                    "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                 },
-                {
-                "title": "Admission Details",
-                "name":"admissionDetails"
+                "admissionDetails":{
+                    "title": "Admission Details",
+                    "name":"admissionDetails"
                 },
-                {
+                "navigationLinksControl":{
                     "title": "Navigation Links Control",
                     "name": "navigationLinksControl",
                     "links": [
@@ -99,8 +98,7 @@
                     ]
                 }
 
-            ]}
+            }}
 
         }
-    }
-]
+}

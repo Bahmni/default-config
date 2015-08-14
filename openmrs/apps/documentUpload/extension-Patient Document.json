@@ -1,5 +1,5 @@
-[
-	    {
+{
+	    "bahmniDocUploadPatientsSearchActivePatients":{
         "id": "bahmni.docUpload.patients.search.activePatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -12,7 +12,7 @@
         "order": 1,
         "requiredPrivilege": "app:document-upload"
     },
-    {
+    "bahmniDocUploadPatientsSearchAllPatients":{
         "id": "bahmni.docUpload.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -24,4 +24,4 @@
         "order": 2,
         "requiredPrivilege": "app:document-upload"
     }
-]
+}

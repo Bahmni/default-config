@@ -1,5 +1,4 @@
-[
-    {
+{
         "id": "bahmni.orders",
         "extensionPoints": [
             {
@@ -18,5 +17,4 @@
                   }
             }
         }
-    }
-]
+}

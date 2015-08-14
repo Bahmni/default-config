@@ -1,21 +1,21 @@
-[
-    {
+{
+    "general":{
         "dashboardName": "General",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
-        "sections": [
-            {
+        "sections": {
+            "diagnosis": {
                 "title": "Diagnosis",
                 "name": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true
             },
-            {
+            "disposition":{
                 "title": "Disposition",
                 "name": "disposition",
                 "numberOfVisits": 1
             },
-            {
+            "treatments":{
                 "title": "Treatments",
                 "name": "treatment",
                 "dashboardParams": {
@@ -38,15 +38,15 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "radiology":{
                 "title": "Radiology",
                 "name": "radiology"
             },
-            {
+            "programs":{
                 "title": "Programs",
                 "name": "programs"
             },
-            {
+            "navigationLinksControl":{
                 "title": "Navigation Links Control",
                 "name": "navigationLinksControl",
                 "links": [
@@ -81,7 +81,7 @@
                 ]
             },
 
-            {
+            "radiologyOrders":{
                 "orderType": "Radiology Order",
                 "name": "ordersControl",
                 "title": "Radiology Orders",
@@ -90,7 +90,7 @@
                     "numberOfVisits":4
                 }
             },
-            {
+            "pacs":{
                 "orderType": "Radiology Order",
                 "name": "pacsOrders",
                 "title": "Pacs",
@@ -99,7 +99,7 @@
                     "numberOfVisits":4
                 }
             },
-            {
+            "labOrdersDisplayControl":{
                 "title": "Lab Orders Display Control",
                 "name": "ordersControl",
                 "orderType": "Lab Order",
@@ -111,7 +111,7 @@
                     "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"] 
                 }
             },
-            {
+            "labResults":{
                 "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
@@ -127,7 +127,7 @@
                     "numberOfVisits": 10
                 }
             },
-            {
+            "nutritionalValues":{
                 "title": "Nutritional Values",
                 "name": "vitals",
                 "isObservation": true,
@@ -153,7 +153,7 @@
                     "pivotTable":{}
                 }
             },
-            {
+            "vitals":{
                 "title": "Vitals",
                 "name": "vitals",
                 "isObservation": true,
@@ -174,9 +174,9 @@
                     }
                 }
             },
-            {
+            "secondVitals":{
                 "title": "Second Vitals",
-                "name": "secon vitals",
+                "name": "second vitals",
                 "isObservation": true,
                 "dashboardParams": {
                     "conceptNames": ["Second Vitals"],
@@ -189,7 +189,7 @@
                     "pivotTable":{}
                 }
             },
-            {
+            "historyAndExaminations":{
                 "title": "History and Examinations",
                 "name": "vitals",
                 "isObservation": true,
@@ -204,7 +204,7 @@
                     "pivotTable":{}
                 }
             },
-             {
+             "gynaecology":{
                 "title": "Gynaecology",
                 "name": "gynaecology",
                 "isObservation": true,
@@ -219,7 +219,7 @@
                     "pivotTable":{}
                 }
             },
-             {
+             "obstetrics":{
                 "title": "Obstetrics",
                 "name": "obstetrics",
                 "isObservation": true,
@@ -234,7 +234,7 @@
                     "pivotTable":{}
                 }
             },
-            {
+            "visits": {
                 "title": "Visits",
                 "name": "visits",
                 "dashboardParams": {
@@ -242,7 +242,7 @@
                     "maximumNoOfVisits": 10
                 }
             },
-            {
+            "diabetes":{
                 "title": "Diabetes",
                 "templateName": "Diabetes Template",
                 "name": "diseaseTemplate",
@@ -278,23 +278,23 @@
                     }
                 }
             },
-            {
+            "admissionDetails":{
                 "title": "Admission Details",
                 "name": "admissionDetails"
             }
-        ]
+        }
     },
-    {
+    "trends":{
         "dashboardName": "Trends",
         "maxRecentlyViewedPatients": 10,
-        "sections": [
-            {
+        "sections": {
+            "patientInformation":{
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
                 "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
             },
-            {
+            "growthChart":{
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Growth Chart",
@@ -304,7 +304,7 @@
                     "numberOfVisits": 20
                 }
             },
-            {
+            "BP":{
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "BP",
@@ -317,7 +317,7 @@
                     "numberOfVisits": 10
                 }
             },
-            {
+            "weight/BMI":{
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Weight/BMI",
@@ -330,7 +330,7 @@
                     "numberOfVisits": 10
                 }
             },
-            {
+            "diabetes/BloodSugar":{
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Diabetes/Blood Sugar",
@@ -343,7 +343,7 @@
                     "numberOfVisits": 10
                 }
             },
-            {
+            "observationGraph":{
                 "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Pulse",
@@ -353,7 +353,7 @@
                     "numberOfVisits": 10
                 }
             },
-            {
+            "diabetes":{
                 "title": "Diabetes",
                 "templateName": "Diabetes, Progress",
                 "name": "diseaseTemplate",
@@ -384,6 +384,6 @@
                     }
                 }
             }
-        ]
+        }
     }
-]
+}
