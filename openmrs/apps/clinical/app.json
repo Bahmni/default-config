@@ -32,6 +32,7 @@
             "defaultVisitType": "OPD",
             "visitTypeForRetrospectiveEntries": "Special OPD",
             "maxConceptSetLevels": 3,
+            "allowOnlyCodedDiagnosis": false,
             "conceptSetUI": {
                 "Chief Complaint Data": {
                     "multiple": 3
