@@ -5,7 +5,7 @@ validate_age_days = {
         }
         return false;
     },
-    'errorMessage': "Age should be a possitive value"
+    'errorMessage': "Age should be a positive value"
 };
 
 validate_caste = {

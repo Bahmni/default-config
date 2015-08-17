@@ -42,6 +42,11 @@
             "showCasteSameAsLastNameCheckbox": true,
             "printOptions": [
                 {
+                    "label": "Print Reg. Card (<u>L</u>ocal)",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
+                    "shortcutKey": "l"
+                },
+                {
                     "label": "<u>P</u>rint Registration Card",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
                     "shortcutKey": "p"

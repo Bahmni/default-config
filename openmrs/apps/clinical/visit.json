@@ -11,11 +11,17 @@
         "sections": {
             "pivotTable":{
                 "type": "pivotTable",
-                "title": "Pivot table",
+                "title": "Vitals Flowsheet",
                 "config": {
                     "groupBy": "encounters",
                     "obsConcepts": [
                         "Vitals",
+                        "Pulse",
+                        "Diastolic",
+                        "Systolic",
+                        "Temperature",
+                        "RR",
+                        "SPO2",
                         "Height",
                         "WEIGHT",
                         "M/C Days"
@@ -55,9 +61,17 @@
                     "showDetailsButton": true
                 }
             },
-            "weight":{
+            "weightInitial":{
                 "type": "observation",
-                "title": "Weight",
+                "title": "At Admission",
+                "config": {
+                    "conceptNames": ["WEIGHT"],
+                    "scope": "initial"
+                }
+            },
+            "weightLatest": {
+                "type": "observation",
+                "title": "At Discharge",
                 "config": {
                     "conceptNames": ["WEIGHT"],
                     "scope": "latest"

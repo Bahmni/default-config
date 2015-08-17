@@ -35,11 +35,12 @@
             "allowOnlyCodedDiagnosis": false,
             "conceptSetUI": {
                 "Chief Complaint Data": {
-                    "multiple": 3
+                    "allowAddMore" : true
                 },
                 "Chief Complaint" : {
                     "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                    "durationRequired" : false,
+                    "allowAddMore" : true
                 },
                 "Posture" : {
                     "buttonSelect" : true
@@ -57,9 +58,9 @@
                 "P/S (Per Speculum) - Cervix" : {
                     "grid" : true
                 },
-        		"Anaemia, Stopped Since When" : {
-        			"conciseText" : true
-        		},
+                "Anaemia, Stopped Since When" : {
+                    "conciseText" : true
+                },
                 "Examination Notes" :{
                     "conciseText" : true
                 },
@@ -84,7 +85,7 @@
             },
             "visitPage": {
                 "observationDisplay" : {
-                "conceptNames": []
+                    "conceptNames": []
                 }
             },
             "drugOrder": {
@@ -166,7 +167,7 @@
                     },
                     "Tablet": {
                         "doseUnits": "Tablet(s)",
-                        "route": "Oral" 
+                        "route": "Oral"
                     }
                 }
             }

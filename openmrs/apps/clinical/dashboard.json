@@ -4,6 +4,17 @@
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
+            "patientInformation": {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "patientAttributes": [],
+                "addressFields": [
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countryDistrict"
+                ]
+            },
             "diagnosis": {
                 "title": "Diagnosis",
                 "name": "diagnosis",
@@ -108,14 +119,14 @@
                     "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"]
                 },
                 "allOrdersDetails":{
-                    "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"] 
+                    "conceptNames":[ "Systolic", "Diastolic", "Posture", "Temperature"]
                 }
             },
             "labResults":{
                 "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
-                "title": null,
+                    "title": null,
                     "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
