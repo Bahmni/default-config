@@ -67,7 +67,8 @@
         "type": "obsTemplate",
         "config": {
             "templateName": "Vitals",
-            "patientAttributes": ["caste", "education"]
+            "patientAttributes": ["caste", "education"],
+            "applyDateRangeFor": "encounterCreateDate"
         }
     },
     "tuberculosisIntakeTemplateReport":{
