@@ -1,5 +1,5 @@
-[
-    {
+{
+    "bahmni_registration": {
         "id": "bahmni.registration",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -9,7 +9,7 @@
         "order": 1,
         "requiredPrivilege": "app:registration"
     },
-    {
+    "bahmni_clinical": {
         "id": "bahmni.clinical",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -19,7 +19,7 @@
         "order": 2,
         "requiredPrivilege": "app:clinical"
     },
-    {
+    "bahmni_adt": {
         "id": "bahmni.adt",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -29,7 +29,7 @@
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_admin": {
         "id": "bahmni.admin",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -39,7 +39,7 @@
         "order": 6,
         "requiredPrivilege": "app:admin"
     },
-    {
+    "bahmni_reports": {
         "id": "bahmni.reports",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -48,7 +48,7 @@
         "icon": "fa-user",
         "order": 5
     },
-    {
+    "bahmni_billing": {
         "id": "bahmni.billing",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -58,7 +58,7 @@
         "order": 9,
         "requiredPrivilege": "app:pharmacy"
     },
-    {
+    "bahmni_orders": {
         "id": "bahmni.orders",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -68,7 +68,7 @@
         "order": 4,
         "requiredPrivilege": "app:orders"
     },
-    {
+    "bahmni_incidentreporting": {
         "id": "bahmni.incidentReporting",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -78,4 +78,4 @@
         "icon": "fa-pencil-square-o",
         "order": 10
     }
-]
+}

@@ -1,144 +1,144 @@
-[
-    {
+{
+    "bahmni_adt_admit_continue_visit": {
         "id": "bahmni.adt.admit.continue.visit",
         "extensionPointId": "org.bahmni.adt.admit.action",
         "type": "config",
-        "extensionParams" : {
+        "extensionParams": {
             "displayFunction": "getDisplayForContinuingVisit",
-            "action":"admit"
+            "action": "admit"
         },
         "order": 2,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_admit_cancel": {
         "id": "bahmni.adt.admit.cancel",
         "extensionPointId": "org.bahmni.adt.admit.action",
         "type": "config",
-        "extensionParams" : {
+        "extensionParams": {
             "display": "Cancel",
-            "action":"cancel"
+            "action": "cancel"
         },
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_transfer_save": {
         "id": "bahmni.adt.transfer.save",
         "extensionPointId": "org.bahmni.adt.transfer.action",
         "type": "config",
-        "extensionParams" : {
+        "extensionParams": {
             "display": "Transfer",
-            "action":"transfer"
+            "action": "transfer"
         },
         "order": 1,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_undo_discharge": {
         "id": "bahmni.adt.undo.discharge",
         "extensionPointId": "org.bahmni.adt.undo.discharge.action",
         "type": "config",
-        "extensionParams" : {
+        "extensionParams": {
             "display": "Undo Discharge",
-            "action":"undoDischarge"
+            "action": "undoDischarge"
         },
         "order": 1,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_undo_discharge_cancel": {
         "id": "bahmni.adt.undo.discharge.cancel",
         "extensionPointId": "org.bahmni.adt.undo.discharge.action",
         "type": "config",
-        "extensionParams" : {
+        "extensionParams": {
             "display": "Cancel",
-            "action":"cancel"
+            "action": "cancel"
         },
         "order": 2,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_transfer_cancel": {
         "id": "bahmni.adt.transfer.cancel",
         "extensionPointId": "org.bahmni.adt.transfer.action",
         "type": "config",
-        "extensionParams" : {
+        "extensionParams": {
             "display": "Cancel",
-            "action":"cancel"
+            "action": "cancel"
         },
         "order": 2,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_discharge_save": {
         "id": "bahmni.adt.discharge.save",
         "extensionPointId": "org.bahmni.adt.discharge.action",
         "type": "config",
-        "extensionParams" : {
+        "extensionParams": {
             "display": "Discharge",
-            "action":"discharge"
+            "action": "discharge"
         },
         "order": 2,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_discharge_cancel": {
         "id": "bahmni.adt.discharge.cancel",
         "extensionPointId": "org.bahmni.adt.discharge.action",
         "type": "config",
-        "extensionParams" : {
+        "extensionParams": {
             "display": "Cancel",
-            "action":"cancel"
+            "action": "cancel"
         },
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_patients_search_patientstoadmit": {
         "id": "bahmni.adt.patients.search.patientsToAdmit",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
-            "display":"To Admit",
-            "forwardUrl":"#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit",
+            "display": "To Admit",
+            "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit",
             "refreshTime": 120
         },
         "label": "To Admit",
         "order": 1,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_patients_search_patientsadmitted": {
         "id": "bahmni.adt.patients.search.patientsAdmitted",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
-            "display":"Admitted",
-            "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/transfer",
+            "display": "Admitted",
+            "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/transfer",
             "refreshTime": 120
         },
         "label": "Admitted",
         "order": 2,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_patients_search_patientstodischarge": {
         "id": "bahmni.adt.patients.search.patientsToDischarge",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
-            "display":"To Discharge",
-            "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge",
+            "display": "To Discharge",
+            "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge",
             "refreshTime": 120
         },
         "label": "To Discharge",
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmni_adt_patients_search_allpatients": {
         "id": "bahmni.adt.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "display":"All",
-            "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
+            "display": "All",
+            "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
         },
         "label": "All",
         "order": 5,
         "requiredPrivilege": "app:adt"
     }
-]
+}

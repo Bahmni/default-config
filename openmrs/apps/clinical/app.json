@@ -1,1047 +1,1045 @@
-[
-  {
+{
     "id": "bahmni.clinical",
     "extensionPoints": [
-      {
-        "id": "org.bahmni.clinical.consultation.board",
-        "description": "Bahmni Clinical Consultation Page"
-      },
-      {
-        "id": "org.bahmni.clinical.conceptSetGroup.*",
-        "description": "Define conceptsets part of a conceptset group"
-      },
-      {
-        "id": "org.bahmni.clinical.orders",
-        "description": "Bahmni Orders Page"
-      },
-      {
-        "id": "org.bahmni.patient.search",
-        "description": "Bahmni Patient search, lookups Page"
-      }
+        {
+            "id": "org.bahmni.clinical.consultation.board",
+            "description": "Bahmni Clinical Consultation Page"
+        },
+        {
+            "id": "org.bahmni.clinical.conceptSetGroup.*",
+            "description": "Define conceptsets part of a conceptset group"
+        },
+        {
+            "id": "org.bahmni.clinical.orders",
+            "description": "Bahmni Orders Page"
+        },
+        {
+            "id": "org.bahmni.patient.search",
+            "description": "Bahmni Patient search, lookups Page"
+        }
     ],
     "contextModel": [
-      "patientUuid",
-      "visitUuid"
+        "patientUuid",
+        "visitUuid"
     ],
     "config": {
-            "drugOrder": {
-                "defaultDurationUnit": "Day(s)",
-                "defaultInstructions": "As directed",
-                "frequencyDefaultDurationUnitsMap": [
-                    {
-                        "minFrequency": "1/7",
-                        "maxFrequency": 5,
-                        "defaultDurationUnit": "Day(s)"
-                    },
-                    {
-                        "minFrequency": "1/30",
-                        "maxFrequency": "1/7",
-                        "defaultDurationUnit": "Week(s)"
-                    },
-                    {
-                        "minFrequency": null,
-                        "maxFrequency": "1/30",
-                        "defaultDurationUnit": "Month(s)"
-                    }
-                ],
-                "drugFormDefaults": {
-                    "Suspension": {
-                        "doseUnits": "ml",
-                        "route": "Oral"
-                    },
-                    "Oral Rinse": {
-                        "doseUnits": "ml",
-                        "route": "Oral"
-                    },
-                    "Mouth Paint": {
-                        "route": "Topical"
-                    },
-                    "Rotacap": {
-                        "route": "Inhalation"
-                    },
-                    "Nasal Solution": {
-                        "doseUnits": "Drop",
-                        "route": "Topical"
-                    },
-                    "Oral Solution": {
-                        "doseUnits": "ml",
-                        "route": "Oral"
-                    },
-                    "Capsule": {
-                        "doseUnits": "Capsule(s)",
-                        "route": "Oral"
-                    },
-                    "Cream": {
-                        "route": "Topical"
-                    },
-                    "Drops": {
-                        "doseUnits": "Drop",
-                        "route": "Topical"
-                    },
-                    "Gel": {
-                        "route": "Topical"
-                    },
-                    "Inhaler": {
-                        "doseUnits": "Puff(s)",
-                        "route": "Inhalation"
-                    },
-                    "Injection": {
-                        "doseUnits": "mg",
-                        "route": "Intravenous"
-                    },
-                    "Liquid": {
-                        "doseUnits": "ml",
-                        "route": "Oral"
-                    },
-                    "Lotion": {
-                        "route": "Topical"
-                    },
-                    "Ointment": {
-                        "route": "Topical"
-                    },
-                    "Pessary": {
-                        "doseUnits": "Unit(s)",
-                        "route": "Per Vaginal"
-                    },
-                    "Powder": {
-                        "route": "Topical"
-                    },
-                    "Solution": {
-                        "doseUnits": "ml",
-                        "route": "Topical"
-                    },
-                    "Spray": {
-                        "doseUnits": "Puff(s)",
-                        "route": "Nasal"
-                    },
-                    "Syrup": {
-                        "doseUnits": "ml",
-                        "route": "Oral"
-                    },
-                    "Tablet": {
-                        "doseUnits": "Tablet(s)",
-                        "route": "Oral"
-                    }
+        "drugOrder": {
+            "defaultDurationUnit": "Day(s)",
+            "defaultInstructions": "As directed",
+            "frequencyDefaultDurationUnitsMap": [
+                {
+                    "minFrequency": "1/7",
+                    "maxFrequency": 5,
+                    "defaultDurationUnit": "Day(s)"
+                },
+                {
+                    "minFrequency": "1/30",
+                    "maxFrequency": "1/7",
+                    "defaultDurationUnit": "Week(s)"
+                },
+                {
+                    "minFrequency": null,
+                    "maxFrequency": "1/30",
+                    "defaultDurationUnit": "Month(s)"
                 }
+            ],
+            "drugFormDefaults": {
+                "Suspension": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Oral Rinse": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Mouth Paint": {
+                    "route": "Topical"
+                },
+                "Rotacap": {
+                    "route": "Inhalation"
+                },
+                "Nasal Solution": {
+                    "doseUnits": "Drop",
+                    "route": "Topical"
+                },
+                "Oral Solution": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Capsule": {
+                    "doseUnits": "Capsule(s)",
+                    "route": "Oral"
+                },
+                "Cream": {
+                    "route": "Topical"
+                },
+                "Drops": {
+                    "doseUnits": "Drop",
+                    "route": "Topical"
+                },
+                "Gel": {
+                    "route": "Topical"
+                },
+                "Inhaler": {
+                    "doseUnits": "Puff(s)",
+                    "route": "Inhalation"
+                },
+                "Injection": {
+                    "doseUnits": "mg",
+                    "route": "Intravenous"
+                },
+                "Liquid": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Lotion": {
+                    "route": "Topical"
+                },
+                "Ointment": {
+                    "route": "Topical"
+                },
+                "Pessary": {
+                    "doseUnits": "Unit(s)",
+                    "route": "Per Vaginal"
+                },
+                "Powder": {
+                    "route": "Topical"
+                },
+                "Solution": {
+                    "doseUnits": "ml",
+                    "route": "Topical"
+                },
+                "Spray": {
+                    "doseUnits": "Puff(s)",
+                    "route": "Nasal"
+                },
+                "Syrup": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Tablet": {
+                    "doseUnits": "Tablet(s)",
+                    "route": "Oral"
+                }
+            }
+        },
+        "obsIgnoreList": [
+            "Patient file"
+        ],
+        "otherInvestigationsMap": {},
+        "maxConceptSetLevels": 5,
+        "conceptSetUI": {
+            "Chief complaint": {
+                "durationRequired": false,
+                "conciseText": true
             },
-      "obsIgnoreList": [
-        "Patient file"
-      ],
-      "otherInvestigationsMap": {},
-      "maxConceptSetLevels": 5,
-      "conceptSetUI": {
-        "Chief complaint": {
-          "durationRequired": false,
-          "conciseText": true
-        },
-        "Followed previously at": {
-          "conciseText": true
-        },
-        "Diagnosis location": {
-          "conciseText": true
-        },
-        "Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Current Medicines - Details": {
-          "conciseText": true
-        },
-        "Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Current Medicines - Reason": {
-          "conciseText": true
-        },
-        "Congestive Heart Failure - Examination / Follow Up - Onset - Chief Complaint Data - Chief Complaint": {
-          "conciseText": true
-        },
-        "Details": {
-          "conciseText": true
-        },
-        "Reason": {
-          "conciseText": true
-        },
-        "Quit since": {
-          "conciseText": true
-        },
-        "Image": {
-          "multiple": 3
-        },
-        "CAD - Symptoms of Angina today": {
-          "multiSelect": true
-        },
-        "Congestive Heart Failure - Intake - Major comorbidities": {
-          "multiSelect": true
-        },
-        "Congestive Heart Failure - Examination / Follow Up - Reason for Decompensation / Etiology - Reason for decompensation / Likely Etiology": {
-          "multiSelect": true
-        },
-        "Meets all 5 criteria": {
-          "multiSelect": true
-        },
-        "Meets all 3 criteria": {
-          "multiSelect": true
-        },
-        "Congestive Heart Failure - Examination / Follow Up - Assessment / Follow up - Assessment": {
-          "multiSelect": true
-        },
-        "CAD - Diagnosis": {
-          "multiSelect": true
-        },
-        "CAD - Risk factors": {
-          "multiSelect": true
-        },
-        "CAD - Soft risk factors": {
-          "multiSelect": true
-        },
-        "Exercise": {
-          "multiSelect": true
-        },
-        "CAD - Assessment": {
-          "multiSelect": true
-        },
-        "Diagnostic clues - COPD": {
-          "multiSelect": true
-        },
-        "Considered top differential diagnosis": {
-          "multiSelect": true
-        },
-        "Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Symptoms of Heart Failure": {
-          "multiSelect": true
-        },
-        "Hypertension - Risk factors": {
-          "multiSelect": true
-        },
-        "HTC, Risk Group": {
-          "multiSelect": true
-        },
-        "PMTCT, Risk Group": {
-          "multiSelect": true
-        },
-        "STI, STI Diagnosis Syndrome": {
-          "multiSelect": true
-        },
-        "STI, Risk Group": {
-          "multiSelect": true
-        },
-        "HIVTC, Risk Group": {
-          "multiSelect": true
-        },
-        "HIVTC, TB Type": {
-          "multiSelect": true
-        },
-        "HIVTC, Opportunistic Infection Diagnosis": {
-          "multiSelect": true
-        },
-        "HIVTC, ART cohort": {
-          "multiSelect": true
-        },
-        "ART, Risk Group": {
-          "multiSelect": true
-        },
-        "ART, If substitution therapy": {
-          "multiSelect": true
-        },
-        "ART, If alcoholism how": {
-          "multiSelect": true
-        },
-        "ART, Place of ART taken": {
-          "multiSelect": true
-        },
-        "ART, TB Type": {
-          "multiSelect": true
-        },
-        "ART, TB treatment category": {
-          "multiSelect": true
-        },
-        "ART, Reason for treatment substitution": {
-          "multiSelect": true
-        },
-        "ART, Reason for treatment switching": {
-          "multiSelect": true
-        },
-        "ART, Reason for stopping treatment": {
-          "multiSelect": true
-        },
-        "ART, ART Family Planning method": {
-          "multiSelect": true
-        },
-        "ART, ART opportunistic infections": {
-          "multiSelect": true
-        },
-        "ART, ART ART side effects": {
-          "multiSelect": true
-        },
-        "HTC, Other reason for test": {
-          "conciseText": true
-        },
-        "HTC, Other Risk Group": {
-          "conciseText": true
-        },
-        "PMTCT, Other Risk Group": {
-          "conciseText": true
-        },
-        "PMTCT, Place of transfer out for continuum": {
-          "conciseText": true
-        },
-        "STI, Other STI Diagnosis Syndrome": {
-          "conciseText": true
-        },
-        "STI, Other Risk Group": {
-          "conciseText": true
-        },
-        "HIVTC, Other Risk Group": {
-          "conciseText": true
-        },
-        "HIVTC, Other Entry Point": {
-          "conciseText": true
-        },
-        "HIVTC, Transferred in from": {
-          "conciseText": true
-        },
-        "HIVTC, Transferred out to": {
-          "conciseText": true
-        },
-        "HIVTC, Viral Load": {
-          "conciseText": true
-        },
-        "HIVTC, Other Opportunistic Infection Diagnosis": {
-          "conciseText": true
-        },
-        "HIVTC, Opportunistic Infection Treatment": {
-          "conciseText": true
-        },
-        "ART, HIV +ve confirmed place": {
-          "conciseText": true
-        },
-        "ART, Other chronic diseases": {
-          "conciseText": true
-        },
-        "ART, Other chronic disease drugs": {
-          "conciseText": true
-        },
-        "ART, Transferred in from": {
-          "conciseText": true
-        },
-        "ART, Transferred out to": {
-          "conciseText": true
-        },
-        "ART, Other Entry Point": {
-          "conciseText": true
-        },
-        "ART, Other Risk Group": {
-          "conciseText": true
-        },
-        "ART, Name of family member": {
-          "conciseText": true
-        },
-        "ART, Relation with patient": {
-          "conciseText": true
-        },
-        "ART, Family member regd. no.": {
-          "conciseText": true
-        },
-        "ART, Viral Load": {
-          "conciseText": true
-        },
-        "ART, TB registration number": {
-          "conciseText": true
-        },
-        "ART, Name of health facility for TB": {
-          "conciseText": true
-        },
-        "ART, Other reason for treatment substitution": {
-          "conciseText": true
-        },
-        "ART, Other reason for stopping treatment": {
-          "conciseText": true
-        },
-        "ART, Name of health facility": {
-          "conciseText": true
-        },
-        "ART, Mortality code": {
-          "conciseText": true
-        },
-        "ART, ART other opportunistic infections": {
-          "conciseText": true
-        },
-        "ART, ART drugs prescribed for prophylaxis": {
-          "conciseText": true
-        },
-        "ART, ART ARV drugs and dose prescribed": {
-          "conciseText": true
-        },
-        "ART, ART Other ART side effects": {
-          "conciseText": true
-        },
-        "ART, ART lab results when available": {
-          "conciseText": true
-        },
-        "ART, ART referred to": {
-          "conciseText": true
-        },
-        "Delivery Note, Liveborn infant details": {
-          "allowAddMore": true
-        },
-        "Out Patient Details, Duration": {
-          "conciseText": true
-        },
-        "Out Patient Details, Timing": {
-          "conciseText": true
-        },
-        "Out Patient Details, Constitutional": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Eyes": {
-          "multiSelect": true
-        },
-        "Out Patient Details, ENT": {
-          "multiSelect": true
-        },
-        "Out Patient Details, CV": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Respair": {
-          "multiSelect": true
-        },
-        "Out Patient Details, GI": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Urinary": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Genital": {
-          "multiSelect": true
-        },
-        "Out Patient Details, MSK": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Skin / Breast": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Neuro": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Psych": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Endocrine": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Heme / Lymph": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Allergic / Immunologic": {
-          "multiSelect": true
-        },
-        "Out Patient Details, Lives Where": {
-          "conciseText": true
-        },
-        "Out Patient Details, Lives With": {
-          "conciseText": true
-        },
-        "Out Patient Details, Problem": {
-          "allowAddMore": true
-        },
-        "Chronic OPD Details, Duration": {
-          "conciseText": true
-        },
-        "Chronic OPD Details, Timing": {
-          "conciseText": true
-        },
-        "Chronic OPD Details, Constitutional": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Eyes": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, ENT": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, CV": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Respair": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, GI": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Urinary": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Genital": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, MSK": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Skin / Breast": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Neuro": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Psych": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Endocrine": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Heme / Lymph": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Allergic / Immunologic": {
-          "multiSelect": true
-        },
-        "Chronic OPD Details, Lives Where": {
-          "conciseText": true
-        },
-        "Chronic OPD Details, Lives With": {
-          "conciseText": true
-        },
-        "Chronic OPD Details, Problem": {
-          "allowAddMore": true
-        },
-        "ER General Notes, Duration": {
-          "conciseText": true
-        },
-        "ER General Notes, Timing": {
-          "conciseText": true
-        },
-        "ER General Notes, Constitutional": {
-          "multiSelect": true
-        },
-        "ER General Notes, Eyes": {
-          "multiSelect": true
-        },
-        "ER General Notes, ENT": {
-          "multiSelect": true
-        },
-        "ER General Notes, CV": {
-          "multiSelect": true
-        },
-        "ER General Notes, Respair": {
-          "multiSelect": true
-        },
-        "ER General Notes, GI": {
-          "multiSelect": true
-        },
-        "ER General Notes, Urinary": {
-          "multiSelect": true
-        },
-        "ER General Notes, Genital": {
-          "multiSelect": true
-        },
-        "ER General Notes, MSK": {
-          "multiSelect": true
-        },
-        "ER General Notes, Skin / Breast": {
-          "multiSelect": true
-        },
-        "ER General Notes, Neuro": {
-          "multiSelect": true
-        },
-        "ER General Notes, Psych": {
-          "multiSelect": true
-        },
-        "ER General Notes, Endocrine": {
-          "multiSelect": true
-        },
-        "ER General Notes, Heme / Lymph": {
-          "multiSelect": true
-        },
-        "ER General Notes, Allergic / Immunologic": {
-          "multiSelect": true
-        },
-        "ER General Notes, Lives Where": {
-          "conciseText": true
-        },
-        "ER General Notes, Lives With": {
-          "conciseText": true
-        },
-        "ER General Notes, Problem": {
-          "allowAddMore": true
-        },
-        "Chronic Kidney Disease, Comorbidities": {
-          "multiSelect": true
-        },
-        "Congestive Heart Failure, Major comorbidities": {
-          "multiSelect": true
-        },
-        "Coronary Artery Disease, Risk factors": {
-          "multiSelect": true
-        },
-        "Delivery Note, New Born Status": {
-          "required": true
-        },
-        "Diabetes, Comorbidities": {
-          "multiSelect": true
-        },
-        "Diabetes, Complications": {
-          "multiSelect": true
-        },
-        "Hypertension, Secondary Hypertension": {
-          "multiSelect": true
-        },
-        "Post Delivery FP Checklist, Contraception Used in Past": {
-          "multiSelect": true
-        },
-        "Post Delivery FP Checklist, Reason for Discontinue": {
-          "multiSelect": true
-        },
-        "Post Delivery FP Checklist, Interested in": {
-          "multiSelect": true
-        },
-        "Post Delivery FP Checklist, FP Method Patient Went Home With": {
-          "multiSelect": true,
-          "required": true
-        },
-        "Post Delivery FP Checklist, Patient Interested In": {
-          "multiSelect": true
-        },
-        "Post Delivery FP Checklist, Referred to Higher Center for FP": {
-          "multiSelect": true
-        },
-        "Surgical Abortion, Immediate complications": {
-          "multiSelect": true
-        },
-        "Surgical Abortion, Late complications": {
-          "multiSelect": true
-        },
-        "Medical Abortion complications": {
-          "multiSelect": true
-        },
-        "Accepted Family Planning methods": {
-          "multiSelect": true,
-          "required": true
-        },
-        "Coronary Artery Disease, EKG": {
-          "conciseText": true
-        },
-        "Death Note, Provider Name": {
-          "conciseText": true
-        },
-        "Death Note, MDGP Notified at": {
-          "conciseText": true
-        },
-        "Delivery Note, Main Attendant Name": {
-          "conciseText": true
-        },
-        "Delivery Note, Suturing": {
-          "conciseText": true
-        },
-        "Diabetes, A1C": {
-          "conciseText": true
-        },
-        "Diabetes, LDL": {
-          "conciseText": true
-        },
-        "Diabetes, Near Vision Check": {
-          "conciseText": true
-        },
-        "Diabetes, Distance Vision Check": {
-          "conciseText": true
-        },
-        "Discharge Note, Name of Doctor to contact for more information": {
-          "conciseText": true
-        },
-        "Hypertension, Last Cr": {
-          "conciseText": true
-        },
-        "Hypertension, Last LDL": {
-          "conciseText": true
-        },
-        "Kalaazar, Parents Name": {
-          "conciseText": true
-        },
-        "Leprosy, Parents Name": {
-          "conciseText": true
-        },
-        "Malaria, Parents Name": {
-          "conciseText": true
-        },
-        "Operative Notes, Fluid Amount and Unit": {
-          "conciseText": true
-        },
-        "Operative Notes, Tourniquet Time": {
-          "conciseText": true
-        },
-        "Procedure Notes, Fluid Amount and Unit": {
-          "conciseText": true
-        },
-        "Stroke, LDL": {
-          "conciseText": true
-        },
-        "Stroke, A1c": {
-          "conciseText": true
-        },
-        "Death Note, Primary Cause of Death": {
-          "required": true,
-          "answersConceptName": "Death Note, Cause, Answers",
-          "autocomplete": true
-        },
-        "Death Note, Secondary Cause of Death": {
-          "answersConceptName": "Death Note, Cause, Answers",
-          "autocomplete": true
-        },
-        "Death Note, Tertiary Cause of Death": {
-          "answersConceptName": "Death Note, Cause, Answers",
-          "autocomplete": true
-        },
-        "Vitals": {
-          "allowAddMore": true
-        },
-        "Acute OPD visit": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "ANC": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Asthma, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Childhood Illness( Children aged below 2 months)": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Childhood Illness( Children aged 2 months to 5 years)": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Chronic Kidney Disease, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Chronic OPD Visit": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "COPD, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Congestive Heart Failure, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Coronary Artery Disease, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Diabetes, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "ER General Notes": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "HIV Treatment and Care Progress Template": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "HIV Testing and Counseling Intake Template": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "HIV Treatment and Care Intake Template": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Death Note": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Delivery note": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Discharge Note": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "DRTuberculosis, Intake": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "ECG Notes": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Operative Notes": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Opioid Substitution Therapy Intake Template": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Opportunistic Infection Template": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Orthopaedic Examination": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Post Delivery Family Planning Checklist": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Prevention of Mother-to-Child Transmission Intake Template": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Procedure Notes": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Safe Abortion": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Sextually Transmitted Infections Intake Template": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Tuberculosis, Intake": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Hypertension, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Kalaazar": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Leprosy": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Mental Health": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Malaria": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Nutrition": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "PNC": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Rheumatoid Arthritis, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Rheumatic Heart Disease, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Seizure Disorder, Progress": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Stroke OPD": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "Trauma Notes": {
-          "showPreviousButton": true,
-          "numberOfVisits": 1
-        },
-        "HIVTC, FP methods used by the patient": {
-          "multiSelect": true
-        },
-        "HIVTC, Death cause": {
-          "answersConceptName": "Death Note, Cause, Answers",
-          "autocomplete": true
-        },
-        "Out Patient Details, Free Health Service Code": {
-          "required": true
-        },
-        "ANC, Visit Month": {
-          "required": true
-        },
-        "ANC, Albendazole given": {
-          "required": true
-        },
-        "ANC, Number of IFA Tablets given": {
-          "required": true
-        },
-        "ANC, Blood Transfusion Provided": {
-          "required": true
-        },
-        "ANC, Blood Transfusion Quantity": {
-          "required": true
-        },
-        "Childhood Illness, Acute Respiratory Infection present": {
-          "required": true
-        },
-        "Childhood Illness, Diarrhoea present": {
-          "required": true
-        },
-        "Childhood Illness, Dehydration Status": {
-          "required": true
-        },
-        "Childhood Illness, Albendazole Given": {
-          "required": true
-        },
-        "Childhood Illness, Vitamin A Capsules Provided": {
-          "required": true
-        },
-        "Difficult feeding": {
-          "required": true
-        },
-        "Breastfed": {
-          "required": true
-        },
-        "Weight condition": {
-          "required": true
-        },
-        "Childhood Illness, Referred out": {
-          "required": true
-        },
-        "ER General Notes, Free Health Service Code": {
-          "required": true
-        },
-        "Chronic OPD Details, Free Health Service Code": {
-          "required": true
-        },
-        "Delivery Note, Delivery service done by": {
-          "required": true
-        },
-        "Delivery Note, Method of Delivery": {
-          "required": true
-        },
-        "Delivery Note, Outcome of Delivery": {
-          "required": true
-        },
-        "Delivery Note, Fetal Presentation": {
-          "required": true
-        },
-        "Delivery Note, Blood transfusion provided": {
-          "required": true
-        },
-        "Delivery Note, Blood transfusion quantity": {
-          "required": true
-        },
-        "Delivery Note, Liveborn weight": {
-          "required": true
-        },
-        "Delivery Note, Chlorhexidine applied on cord": {
-          "required": true
-        },
-        "Delivery Note, Stillbirth type": {
-          "required": true
-        },
-        "Discharge note, Inpatient outcome": {
-          "required": true
-        },
-        "FP, Family Planning Method": {
-          "required": true
-        },
-        "FP, Units provided": {
-          "required": true
-        },
-        "FP, Users Type": {
-          "required": true
-        },
-        "Nutrition, Nutritional Status": {
-          "required": true
-        },
-        "Nutrition, Bal Vita Provided by FCHV": {
-          "required": true
-        },
-        "PNC, Visit Time": {
-          "required": true
-        },
-        "PNC, Blood Transfusion Provided": {
-          "required": true
-        },
-        "PNC, Blood Transfusion Quantity": {
-          "required": true
-        },
-        "PNC, IFA Tablets Provided": {
-          "required": true
-        },
-        "PNC, Vitamin A Capsules Provided": {
-          "required": true
-        },
-        "Procedure Notes, Procedure": {
-          "required": true
-        },
-        "ANC, ANC Visit": {
-          "required": true
-        },
-        "ANC, Completed 4 ANC visits": {
-          "required": true
-        },
-        "HIVTC, Problem": {
-          "allowAddMore": true
-        },
-        "IMAM Program": {
-          "allowAddMore": true
-        },
-        "Family Planning Template": {
-          "allowAddMore": true
-        },
-        "OP Details, Date of LMP": {
-          "conciseText": true
-        },
-        "ER General Notes, Date of LMP": {
-          "conciseText": true
-        },
-		"CHPCDC, Hypertension": {
-			"multiSelect": true
-		},
-		"CHPCDC, Diabetes Mellitus type II": {
-			"multiSelect": true
-		},
-		"CHPCDC, Coronary Artery Disease": {
-			"multiSelect": true
-		},
-		"CHPCDC, Congestive Heart Failure": {
-			"multiSelect": true
-		},
-		"CHPCDC, COPD": {
-			"multiSelect": true
-		},
-		"CHPCDC, Bronchial Asthma": {
-			"multiSelect": true
-		},
-		"CHPCDC, Chronic Kidney Disease": {
-			"multiSelect": true
-		},
-		"CHPCDC, Epilepsy or Seizure disorder": {
-			"multiSelect": true
-		},
-		"CHPCDC, Tuberculosis": {
-			"multiSelect": true
-		},
-        "CHPCDC, Other Chronic Disease": {
-          "multiSelect": true
-        },
-        "ART, Self visit": {
-         	"multiSelect": true
-        },
-        "PSBI/LBI/NBI, Symptoms": {
-          "multiSelect": true
-        },
-        "Umbilicus Infection": {
-          "multiSelect": true
-        },
-        "Diarrhoea, Symptoms": {
-          "multiSelect": true
-        },
-        "Childhood Illness, 2 months, Counseling purpose": {
-          "multiSelect": true
+            "Followed previously at": {
+                "conciseText": true
+            },
+            "Diagnosis location": {
+                "conciseText": true
+            },
+            "Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Current Medicines - Details": {
+                "conciseText": true
+            },
+            "Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Current Medicines - Reason": {
+                "conciseText": true
+            },
+            "Congestive Heart Failure - Examination / Follow Up - Onset - Chief Complaint Data - Chief Complaint": {
+                "conciseText": true
+            },
+            "Details": {
+                "conciseText": true
+            },
+            "Reason": {
+                "conciseText": true
+            },
+            "Quit since": {
+                "conciseText": true
+            },
+            "Image": {
+                "multiple": 3
+            },
+            "CAD - Symptoms of Angina today": {
+                "multiSelect": true
+            },
+            "Congestive Heart Failure - Intake - Major comorbidities": {
+                "multiSelect": true
+            },
+            "Congestive Heart Failure - Examination / Follow Up - Reason for Decompensation / Etiology - Reason for decompensation / Likely Etiology": {
+                "multiSelect": true
+            },
+            "Meets all 5 criteria": {
+                "multiSelect": true
+            },
+            "Meets all 3 criteria": {
+                "multiSelect": true
+            },
+            "Congestive Heart Failure - Examination / Follow Up - Assessment / Follow up - Assessment": {
+                "multiSelect": true
+            },
+            "CAD - Diagnosis": {
+                "multiSelect": true
+            },
+            "CAD - Risk factors": {
+                "multiSelect": true
+            },
+            "CAD - Soft risk factors": {
+                "multiSelect": true
+            },
+            "Exercise": {
+                "multiSelect": true
+            },
+            "CAD - Assessment": {
+                "multiSelect": true
+            },
+            "Diagnostic clues - COPD": {
+                "multiSelect": true
+            },
+            "Considered top differential diagnosis": {
+                "multiSelect": true
+            },
+            "Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Symptoms of Heart Failure": {
+                "multiSelect": true
+            },
+            "Hypertension - Risk factors": {
+                "multiSelect": true
+            },
+            "HTC, Risk Group": {
+                "multiSelect": true
+            },
+            "PMTCT, Risk Group": {
+                "multiSelect": true
+            },
+            "STI, STI Diagnosis Syndrome": {
+                "multiSelect": true
+            },
+            "STI, Risk Group": {
+                "multiSelect": true
+            },
+            "HIVTC, Risk Group": {
+                "multiSelect": true
+            },
+            "HIVTC, TB Type": {
+                "multiSelect": true
+            },
+            "HIVTC, Opportunistic Infection Diagnosis": {
+                "multiSelect": true
+            },
+            "HIVTC, ART cohort": {
+                "multiSelect": true
+            },
+            "ART, Risk Group": {
+                "multiSelect": true
+            },
+            "ART, If substitution therapy": {
+                "multiSelect": true
+            },
+            "ART, If alcoholism how": {
+                "multiSelect": true
+            },
+            "ART, Place of ART taken": {
+                "multiSelect": true
+            },
+            "ART, TB Type": {
+                "multiSelect": true
+            },
+            "ART, TB treatment category": {
+                "multiSelect": true
+            },
+            "ART, Reason for treatment substitution": {
+                "multiSelect": true
+            },
+            "ART, Reason for treatment switching": {
+                "multiSelect": true
+            },
+            "ART, Reason for stopping treatment": {
+                "multiSelect": true
+            },
+            "ART, ART Family Planning method": {
+                "multiSelect": true
+            },
+            "ART, ART opportunistic infections": {
+                "multiSelect": true
+            },
+            "ART, ART ART side effects": {
+                "multiSelect": true
+            },
+            "HTC, Other reason for test": {
+                "conciseText": true
+            },
+            "HTC, Other Risk Group": {
+                "conciseText": true
+            },
+            "PMTCT, Other Risk Group": {
+                "conciseText": true
+            },
+            "PMTCT, Place of transfer out for continuum": {
+                "conciseText": true
+            },
+            "STI, Other STI Diagnosis Syndrome": {
+                "conciseText": true
+            },
+            "STI, Other Risk Group": {
+                "conciseText": true
+            },
+            "HIVTC, Other Risk Group": {
+                "conciseText": true
+            },
+            "HIVTC, Other Entry Point": {
+                "conciseText": true
+            },
+            "HIVTC, Transferred in from": {
+                "conciseText": true
+            },
+            "HIVTC, Transferred out to": {
+                "conciseText": true
+            },
+            "HIVTC, Viral Load": {
+                "conciseText": true
+            },
+            "HIVTC, Other Opportunistic Infection Diagnosis": {
+                "conciseText": true
+            },
+            "HIVTC, Opportunistic Infection Treatment": {
+                "conciseText": true
+            },
+            "ART, HIV +ve confirmed place": {
+                "conciseText": true
+            },
+            "ART, Other chronic diseases": {
+                "conciseText": true
+            },
+            "ART, Other chronic disease drugs": {
+                "conciseText": true
+            },
+            "ART, Transferred in from": {
+                "conciseText": true
+            },
+            "ART, Transferred out to": {
+                "conciseText": true
+            },
+            "ART, Other Entry Point": {
+                "conciseText": true
+            },
+            "ART, Other Risk Group": {
+                "conciseText": true
+            },
+            "ART, Name of family member": {
+                "conciseText": true
+            },
+            "ART, Relation with patient": {
+                "conciseText": true
+            },
+            "ART, Family member regd. no.": {
+                "conciseText": true
+            },
+            "ART, Viral Load": {
+                "conciseText": true
+            },
+            "ART, TB registration number": {
+                "conciseText": true
+            },
+            "ART, Name of health facility for TB": {
+                "conciseText": true
+            },
+            "ART, Other reason for treatment substitution": {
+                "conciseText": true
+            },
+            "ART, Other reason for stopping treatment": {
+                "conciseText": true
+            },
+            "ART, Name of health facility": {
+                "conciseText": true
+            },
+            "ART, Mortality code": {
+                "conciseText": true
+            },
+            "ART, ART other opportunistic infections": {
+                "conciseText": true
+            },
+            "ART, ART drugs prescribed for prophylaxis": {
+                "conciseText": true
+            },
+            "ART, ART ARV drugs and dose prescribed": {
+                "conciseText": true
+            },
+            "ART, ART Other ART side effects": {
+                "conciseText": true
+            },
+            "ART, ART lab results when available": {
+                "conciseText": true
+            },
+            "ART, ART referred to": {
+                "conciseText": true
+            },
+            "Delivery Note, Liveborn infant details": {
+                "allowAddMore": true
+            },
+            "Out Patient Details, Duration": {
+                "conciseText": true
+            },
+            "Out Patient Details, Timing": {
+                "conciseText": true
+            },
+            "Out Patient Details, Constitutional": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Eyes": {
+                "multiSelect": true
+            },
+            "Out Patient Details, ENT": {
+                "multiSelect": true
+            },
+            "Out Patient Details, CV": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Respair": {
+                "multiSelect": true
+            },
+            "Out Patient Details, GI": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Urinary": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Genital": {
+                "multiSelect": true
+            },
+            "Out Patient Details, MSK": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Skin / Breast": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Neuro": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Psych": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Endocrine": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Heme / Lymph": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Allergic / Immunologic": {
+                "multiSelect": true
+            },
+            "Out Patient Details, Lives Where": {
+                "conciseText": true
+            },
+            "Out Patient Details, Lives With": {
+                "conciseText": true
+            },
+            "Out Patient Details, Problem": {
+                "allowAddMore": true
+            },
+            "Chronic OPD Details, Duration": {
+                "conciseText": true
+            },
+            "Chronic OPD Details, Timing": {
+                "conciseText": true
+            },
+            "Chronic OPD Details, Constitutional": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Eyes": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, ENT": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, CV": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Respair": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, GI": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Urinary": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Genital": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, MSK": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Skin / Breast": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Neuro": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Psych": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Endocrine": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Heme / Lymph": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Allergic / Immunologic": {
+                "multiSelect": true
+            },
+            "Chronic OPD Details, Lives Where": {
+                "conciseText": true
+            },
+            "Chronic OPD Details, Lives With": {
+                "conciseText": true
+            },
+            "Chronic OPD Details, Problem": {
+                "allowAddMore": true
+            },
+            "ER General Notes, Duration": {
+                "conciseText": true
+            },
+            "ER General Notes, Timing": {
+                "conciseText": true
+            },
+            "ER General Notes, Constitutional": {
+                "multiSelect": true
+            },
+            "ER General Notes, Eyes": {
+                "multiSelect": true
+            },
+            "ER General Notes, ENT": {
+                "multiSelect": true
+            },
+            "ER General Notes, CV": {
+                "multiSelect": true
+            },
+            "ER General Notes, Respair": {
+                "multiSelect": true
+            },
+            "ER General Notes, GI": {
+                "multiSelect": true
+            },
+            "ER General Notes, Urinary": {
+                "multiSelect": true
+            },
+            "ER General Notes, Genital": {
+                "multiSelect": true
+            },
+            "ER General Notes, MSK": {
+                "multiSelect": true
+            },
+            "ER General Notes, Skin / Breast": {
+                "multiSelect": true
+            },
+            "ER General Notes, Neuro": {
+                "multiSelect": true
+            },
+            "ER General Notes, Psych": {
+                "multiSelect": true
+            },
+            "ER General Notes, Endocrine": {
+                "multiSelect": true
+            },
+            "ER General Notes, Heme / Lymph": {
+                "multiSelect": true
+            },
+            "ER General Notes, Allergic / Immunologic": {
+                "multiSelect": true
+            },
+            "ER General Notes, Lives Where": {
+                "conciseText": true
+            },
+            "ER General Notes, Lives With": {
+                "conciseText": true
+            },
+            "ER General Notes, Problem": {
+                "allowAddMore": true
+            },
+            "Chronic Kidney Disease, Comorbidities": {
+                "multiSelect": true
+            },
+            "Congestive Heart Failure, Major comorbidities": {
+                "multiSelect": true
+            },
+            "Coronary Artery Disease, Risk factors": {
+                "multiSelect": true
+            },
+            "Delivery Note, New Born Status": {
+                "required": true
+            },
+            "Diabetes, Comorbidities": {
+                "multiSelect": true
+            },
+            "Diabetes, Complications": {
+                "multiSelect": true
+            },
+            "Hypertension, Secondary Hypertension": {
+                "multiSelect": true
+            },
+            "Post Delivery FP Checklist, Contraception Used in Past": {
+                "multiSelect": true
+            },
+            "Post Delivery FP Checklist, Reason for Discontinue": {
+                "multiSelect": true
+            },
+            "Post Delivery FP Checklist, Interested in": {
+                "multiSelect": true
+            },
+            "Post Delivery FP Checklist, FP Method Patient Went Home With": {
+                "multiSelect": true,
+                "required": true
+            },
+            "Post Delivery FP Checklist, Patient Interested In": {
+                "multiSelect": true
+            },
+            "Post Delivery FP Checklist, Referred to Higher Center for FP": {
+                "multiSelect": true
+            },
+            "Surgical Abortion, Immediate complications": {
+                "multiSelect": true
+            },
+            "Surgical Abortion, Late complications": {
+                "multiSelect": true
+            },
+            "Medical Abortion complications": {
+                "multiSelect": true
+            },
+            "Accepted Family Planning methods": {
+                "multiSelect": true,
+                "required": true
+            },
+            "Coronary Artery Disease, EKG": {
+                "conciseText": true
+            },
+            "Death Note, Provider Name": {
+                "conciseText": true
+            },
+            "Death Note, MDGP Notified at": {
+                "conciseText": true
+            },
+            "Delivery Note, Main Attendant Name": {
+                "conciseText": true
+            },
+            "Delivery Note, Suturing": {
+                "conciseText": true
+            },
+            "Diabetes, A1C": {
+                "conciseText": true
+            },
+            "Diabetes, LDL": {
+                "conciseText": true
+            },
+            "Diabetes, Near Vision Check": {
+                "conciseText": true
+            },
+            "Diabetes, Distance Vision Check": {
+                "conciseText": true
+            },
+            "Discharge Note, Name of Doctor to contact for more information": {
+                "conciseText": true
+            },
+            "Hypertension, Last Cr": {
+                "conciseText": true
+            },
+            "Hypertension, Last LDL": {
+                "conciseText": true
+            },
+            "Kalaazar, Parents Name": {
+                "conciseText": true
+            },
+            "Leprosy, Parents Name": {
+                "conciseText": true
+            },
+            "Malaria, Parents Name": {
+                "conciseText": true
+            },
+            "Operative Notes, Fluid Amount and Unit": {
+                "conciseText": true
+            },
+            "Operative Notes, Tourniquet Time": {
+                "conciseText": true
+            },
+            "Procedure Notes, Fluid Amount and Unit": {
+                "conciseText": true
+            },
+            "Stroke, LDL": {
+                "conciseText": true
+            },
+            "Stroke, A1c": {
+                "conciseText": true
+            },
+            "Death Note, Primary Cause of Death": {
+                "required": true,
+                "answersConceptName": "Death Note, Cause, Answers",
+                "autocomplete": true
+            },
+            "Death Note, Secondary Cause of Death": {
+                "answersConceptName": "Death Note, Cause, Answers",
+                "autocomplete": true
+            },
+            "Death Note, Tertiary Cause of Death": {
+                "answersConceptName": "Death Note, Cause, Answers",
+                "autocomplete": true
+            },
+            "Vitals": {
+                "allowAddMore": true
+            },
+            "Acute OPD visit": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "ANC": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Asthma, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Childhood Illness( Children aged below 2 months)": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Childhood Illness( Children aged 2 months to 5 years)": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Chronic Kidney Disease, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Chronic OPD Visit": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "COPD, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Congestive Heart Failure, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Coronary Artery Disease, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Diabetes, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "ER General Notes": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "HIV Treatment and Care Progress Template": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "HIV Testing and Counseling Intake Template": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "HIV Treatment and Care Intake Template": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Death Note": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Delivery note": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Discharge Note": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "DRTuberculosis, Intake": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "ECG Notes": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Operative Notes": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Opioid Substitution Therapy Intake Template": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Opportunistic Infection Template": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Orthopaedic Examination": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Post Delivery Family Planning Checklist": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Prevention of Mother-to-Child Transmission Intake Template": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Procedure Notes": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Safe Abortion": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Sextually Transmitted Infections Intake Template": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Tuberculosis, Intake": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Hypertension, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Kalaazar": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Leprosy": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Mental Health": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Malaria": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Nutrition": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "PNC": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Rheumatoid Arthritis, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Rheumatic Heart Disease, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Seizure Disorder, Progress": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Stroke OPD": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "Trauma Notes": {
+                "showPreviousButton": true,
+                "numberOfVisits": 1
+            },
+            "HIVTC, FP methods used by the patient": {
+                "multiSelect": true
+            },
+            "HIVTC, Death cause": {
+                "answersConceptName": "Death Note, Cause, Answers",
+                "autocomplete": true
+            },
+            "Out Patient Details, Free Health Service Code": {
+                "required": true
+            },
+            "ANC, Visit Month": {
+                "required": true
+            },
+            "ANC, Albendazole given": {
+                "required": true
+            },
+            "ANC, Number of IFA Tablets given": {
+                "required": true
+            },
+            "ANC, Blood Transfusion Provided": {
+                "required": true
+            },
+            "ANC, Blood Transfusion Quantity": {
+                "required": true
+            },
+            "Childhood Illness, Acute Respiratory Infection present": {
+                "required": true
+            },
+            "Childhood Illness, Diarrhoea present": {
+                "required": true
+            },
+            "Childhood Illness, Dehydration Status": {
+                "required": true
+            },
+            "Childhood Illness, Albendazole Given": {
+                "required": true
+            },
+            "Childhood Illness, Vitamin A Capsules Provided": {
+                "required": true
+            },
+            "Difficult feeding": {
+                "required": true
+            },
+            "Breastfed": {
+                "required": true
+            },
+            "Weight condition": {
+                "required": true
+            },
+            "Childhood Illness, Referred out": {
+                "required": true
+            },
+            "ER General Notes, Free Health Service Code": {
+                "required": true
+            },
+            "Chronic OPD Details, Free Health Service Code": {
+                "required": true
+            },
+            "Delivery Note, Delivery service done by": {
+                "required": true
+            },
+            "Delivery Note, Method of Delivery": {
+                "required": true
+            },
+            "Delivery Note, Outcome of Delivery": {
+                "required": true
+            },
+            "Delivery Note, Fetal Presentation": {
+                "required": true
+            },
+            "Delivery Note, Blood transfusion provided": {
+                "required": true
+            },
+            "Delivery Note, Blood transfusion quantity": {
+                "required": true
+            },
+            "Delivery Note, Liveborn weight": {
+                "required": true
+            },
+            "Delivery Note, Chlorhexidine applied on cord": {
+                "required": true
+            },
+            "Delivery Note, Stillbirth type": {
+                "required": true
+            },
+            "Discharge note, Inpatient outcome": {
+                "required": true
+            },
+            "FP, Family Planning Method": {
+                "required": true
+            },
+            "FP, Units provided": {
+                "required": true
+            },
+            "FP, Users Type": {
+                "required": true
+            },
+            "Nutrition, Nutritional Status": {
+                "required": true
+            },
+            "Nutrition, Bal Vita Provided by FCHV": {
+                "required": true
+            },
+            "PNC, Visit Time": {
+                "required": true
+            },
+            "PNC, Blood Transfusion Provided": {
+                "required": true
+            },
+            "PNC, Blood Transfusion Quantity": {
+                "required": true
+            },
+            "PNC, IFA Tablets Provided": {
+                "required": true
+            },
+            "PNC, Vitamin A Capsules Provided": {
+                "required": true
+            },
+            "Procedure Notes, Procedure": {
+                "required": true
+            },
+            "ANC, ANC Visit": {
+                "required": true
+            },
+            "ANC, Completed 4 ANC visits": {
+                "required": true
+            },
+            "HIVTC, Problem": {
+                "allowAddMore": true
+            },
+            "IMAM Program": {
+                "allowAddMore": true
+            },
+            "Family Planning Template": {
+                "allowAddMore": true
+            },
+            "OP Details, Date of LMP": {
+                "conciseText": true
+            },
+            "ER General Notes, Date of LMP": {
+                "conciseText": true
+            },
+            "CHPCDC, Hypertension": {
+                "multiSelect": true
+            },
+            "CHPCDC, Diabetes Mellitus type II": {
+                "multiSelect": true
+            },
+            "CHPCDC, Coronary Artery Disease": {
+                "multiSelect": true
+            },
+            "CHPCDC, Congestive Heart Failure": {
+                "multiSelect": true
+            },
+            "CHPCDC, COPD": {
+                "multiSelect": true
+            },
+            "CHPCDC, Bronchial Asthma": {
+                "multiSelect": true
+            },
+            "CHPCDC, Chronic Kidney Disease": {
+                "multiSelect": true
+            },
+            "CHPCDC, Epilepsy or Seizure disorder": {
+                "multiSelect": true
+            },
+            "CHPCDC, Tuberculosis": {
+                "multiSelect": true
+            },
+            "CHPCDC, Other Chronic Disease": {
+                "multiSelect": true
+            },
+            "ART, Self visit": {
+                "multiSelect": true
+            },
+            "PSBI/LBI/NBI, Symptoms": {
+                "multiSelect": true
+            },
+            "Umbilicus Infection": {
+                "multiSelect": true
+            },
+            "Diarrhoea, Symptoms": {
+                "multiSelect": true
+            },
+            "Childhood Illness, 2 months, Counseling purpose": {
+                "multiSelect": true
+            }
         }
-      }
     }
-  }
-]
+}

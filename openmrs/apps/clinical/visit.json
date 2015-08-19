@@ -1,187 +1,167 @@
-[
-  {
-    "title": "General",
-    "displayByDefault": true,
-    "defaultSections": true,
-    "printing": {
-      "title": "Bayalpata Hospital",
-      "header": "Visit",
-      "logo": "../images/nhn-logo.png"
+{
+    "general": {
+        "title": "General",
+        "displayByDefault": true,
+        "defaultSections": true,
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "Visit",
+            "logo": "../images/nhn-logo.png"
+        }
+    },
+    "discharge_summary": {
+        "title": "Discharge Summary",
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "Discharge Summary",
+            "logo": "../images/nhn-logo.png"
+        },
+        "sections": {
+            "patientinformation": {
+                "type": "patientInformation",
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": [],
+                    "addressFields": [
+                        "cityVillage",
+                        "countyDistrict"
+                    ]
+                }
+            },
+            "diagnosis": {
+                "type": "diagnosis",
+                "config": {
+                    "title": "Diagnoses",
+                    "showCertainty": true,
+                    "showOrder": true,
+                    "showDetailsButton": true
+                }
+            },
+            "discharge_notes": {
+                "type": "Discharge Notes",
+                "config": {
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "Discharge Note, Brief Hospital Course",
+                        "Discharge Note, Medications on Discharged",
+                        "Discharge Note, Followup Instructions"
+                    ]
+                }
+            },
+            "disposition": {
+                "type": "disposition",
+                "config": {
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true
+                }
+            },
+            "admissiondetails": {
+                "type": "admissionDetails",
+                "config": {
+                    "showDetailsButton": true
+                }
+            },
+            "investigationresult": {
+                "type": "investigationResult",
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": true,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10
+                }
+            },
+            "treatment": {
+                "type": "treatment",
+                "config": {
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": false,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
+            }
+        }
+    },
+    "opd_summary": {
+        "title": "OPD Summary",
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "OPD Summary",
+            "logo": "../images/nhn-logo.png"
+        },
+        "sections": {
+            "patientinformation": {
+                "type": "patientInformation",
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": [],
+                    "addressFields": [
+                        "cityVillage",
+                        "countyDistrict"
+                    ]
+                }
+            },
+            "diagnosis": {
+                "type": "diagnosis",
+                "config": {
+                    "title": "Diagnoses",
+                    "showCertainty": true,
+                    "showOrder": true,
+                    "showDetailsButton": true
+                }
+            },
+            "observation": {
+                "type": "observation",
+                "title": "Observation",
+                "config": {
+                    "numberOfVisits": 1,
+                    "obsIgnoreList": [
+                        "Patient file",
+                        "Radiology",
+                        "Lab Manager Notes",
+                        "Accession Uuid",
+                        "Impression"
+                    ],
+                    "showDetailsButton": true
+                }
+            },
+            "disposition": {
+                "type": "disposition",
+                "config": {
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true
+                }
+            },
+            "investigationresult": {
+                "type": "investigationResult",
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": true,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10
+                }
+            },
+            "treatment": {
+                "type": "treatment",
+                "config": {
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": false,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
+            }
+        }
     }
-  },
-  {
-    "title": "Discharge Summary",
-    "printing": {
-      "title": "Bayalpata Hospital",
-      "header": "Discharge Summary",
-      "logo": "../images/nhn-logo.png"
-    },
-    "sections": [
-      {
-        "type": "patientInformation",
-        "config": {
-          "title": "PatientInformation",
-          "patientAttributes": [],
-          "addressFields": [
-            "cityVillage",
-            "countyDistrict"
-          ]
-        }
-      },
-      {
-        "type": "diagnosis",
-        "config": {
-          "title": "Diagnoses",
-          "showCertainty": true,
-          "showOrder": true,
-          "showDetailsButton": true
-        }
-      },
-      {
-        "type": "observation",
-          "title": "Discharge Notes",
-        "config": {
-          "numberOfVisits": 1,
-          "obsIgnoreList": [
-            "Patient file",
-            "Radiology",
-            "Lab Manager Notes",
-            "Accession Uuid",
-            "Impression"
-          ],
-          "showDetailsButton": true,
-          "conceptNames": [
-            "Discharge Note, Brief Hospital Course",
-            "Discharge Note, Medications on Discharged",
-            "Discharge Note, Followup Instructions"
-          ]
-        }
-      },
-      {
-        "type": "disposition",
-        "config": {
-          "numberOfVisits": 1,
-          "showDetailsButton": true
-        }
-      },
-      {
-        "type": "admissionDetails",
-        "config": {
-          "showDetailsButton": true
-        }
-      },
-      {
-        "type": "investigationResult",
-        "config": {
-          "title": "Lab Investigations",
-          "showChart": true,
-          "showTable": true,
-          "showNormalLabResults": true,
-          "showCommentsExpanded": true,
-          "showAccessionNotes": true,
-          "numberOfVisits": 10
-        }
-      },
-      {
-        "type": "treatment",
-        "config": {
-          "title": "Treatments",
-          "showFlowSheet": true,
-          "showListView": true,
-          "showOtherActive": false,
-          "showDetailsButton": true,
-          "showRoute": true,
-          "showDrugForm": true
-        }
-      },
-      {
-        "type": "Discharge Notes",
-        "config": {
-          "numberOfVisits": 1,
-          "showDetailsButton": true,
-          "conceptNames": [
-            "Discharge Note, Brief Hospital Course",
-            "Discharge Note, Medications on Discharged",
-            "Discharge Note, Followup Instructions"
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "title": "OPD Summary",
-    "printing": {
-      "title": "Bayalpata Hospital",
-      "header": "OPD Summary",
-      "logo": "../images/nhn-logo.png"
-    },
-    "sections": [
-      {
-        "type": "patientInformation",
-        "config": {
-          "title": "PatientInformation",
-          "patientAttributes": [],
-          "addressFields": [
-            "cityVillage",
-            "countyDistrict"
-          ]
-        }
-      },
-      {
-        "type": "diagnosis",
-        "config": {
-          "title": "Diagnoses",
-          "showCertainty": true,
-          "showOrder": true,
-          "showDetailsButton": true
-        }
-      },
-      {
-        "type": "observation",
-        "title": "Observation",
-        "config": {
-        "numberOfVisits": 1,
-          "obsIgnoreList": [
-            "Patient file",
-            "Radiology",
-            "Lab Manager Notes",
-            "Accession Uuid",
-            "Impression"
-          ],
-          "showDetailsButton": true
-        }
-      },
-      {
-        "type": "disposition",
-        "config": {
-          "numberOfVisits": 1,
-          "showDetailsButton": true
-        }
-      },
-      {
-        "type": "investigationResult",
-        "config": {
-          "title": "Lab Investigations",
-          "showChart": true,
-          "showTable": true,
-          "showNormalLabResults": true,
-          "showCommentsExpanded": true,
-          "showAccessionNotes": true,
-          "numberOfVisits": 10
-        }
-      },
-      {
-        "type": "treatment",
-        "config": {
-          "title": "Treatments",
-          "showFlowSheet": true,
-          "showListView": true,
-          "showOtherActive": false,
-          "showDetailsButton": true,
-          "showRoute": true,
-          "showDrugForm": true
-        }
-      }
-    ]
-  }
-]
+}

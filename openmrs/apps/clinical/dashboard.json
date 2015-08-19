@@ -1,5 +1,5 @@
-[
-    {
+{
+    "general": {
         "dashboardName": "General",
         "displayByDefault": true,
         "printing": {
@@ -7,8 +7,8 @@
             "header": "Discharge Summary",
             "logo": "../images/nhn-logo.png"
         },
-        "sections": [
-            {
+        "sections": {
+            "patient_information": {
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
@@ -17,7 +17,7 @@
                     "countyDistrict"
                 ]
             },
-            {
+            "visits": {
                 "title": "Visits",
                 "name": "visits",
                 "dashboardParams": {
@@ -25,14 +25,14 @@
                     "maximumNoOfVisits": 4
                 }
             },
-            {
+            "diagnosis": {
                 "title": "Diagnosis",
                 "name": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
                 "showDetailsButton": true
             },
-            {
+            "lab_results": {
                 "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
@@ -46,13 +46,16 @@
                     "numberOfVisits": 3
                 }
             },
-            {
+            "radiology_orders": {
                 "title": "Radiology Orders",
                 "name": "ordersControl",
                 "orderType": "Radiology Order",
-                "conceptNames":[ "Chest", "Neck"]
+                "conceptNames": [
+                    "Chest",
+                    "Neck"
+                ]
             },
-            {
+            "treatments": {
                 "title": "Treatments",
                 "name": "treatment",
                 "dashboardParams": {
@@ -75,7 +78,7 @@
                     "showDetailsButton": false
                 }
             },
-            {
+            "vitals": {
                 "title": "Vitals",
                 "name": "vitals",
                 "isObservation": true,
@@ -107,13 +110,13 @@
                     }
                 }
             },
-            {
+            "disposition": {
                 "title": "Disposition",
                 "name": "disposition",
                 "numberOfVisits": 2,
                 "showDetailsButton": true
             },
-            {
+            "chronic_diseases": {
                 "title": "Chronic Diseases",
                 "templateName": "Chronic Diseases",
                 "name": "diseaseTemplate",
@@ -128,7 +131,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "general_consultation": {
                 "title": "General Consultation",
                 "templateName": "General Consultation",
                 "name": "diseaseTemplate",
@@ -143,7 +146,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "childhood_templates": {
                 "title": "Childhood Templates",
                 "templateName": "Childhood Templates",
                 "name": "diseaseTemplate",
@@ -158,7 +161,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "motherhood": {
                 "title": "Motherhood",
                 "templateName": "Motherhood templates",
                 "name": "diseaseTemplate",
@@ -173,7 +176,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "hiv": {
                 "title": "HIV",
                 "templateName": "HIV Profile",
                 "name": "diseaseTemplate",
@@ -188,7 +191,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "orthopaedic": {
                 "title": "Orthopaedic",
                 "templateName": "Disease template, Orthopaedic",
                 "name": "diseaseTemplate",
@@ -203,7 +206,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "death_note": {
                 "title": "Death Note",
                 "templateName": "Death Note Template",
                 "name": "diseaseTemplate",
@@ -218,7 +221,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "discharge_note": {
                 "title": "Discharge Note",
                 "templateName": "Discharge Note Template",
                 "name": "diseaseTemplate",
@@ -233,7 +236,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "tuberculosis": {
                 "title": "Tuberculosis",
                 "templateName": "Tuberculosis Disease Template",
                 "name": "diseaseTemplate",
@@ -248,7 +251,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "kalaazar": {
                 "title": "Kalaazar",
                 "templateName": "Kalaazar Disease Template",
                 "name": "diseaseTemplate",
@@ -263,7 +266,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "malaria": {
                 "title": "Malaria",
                 "templateName": "Malaria Disease Template",
                 "name": "diseaseTemplate",
@@ -278,7 +281,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "leprosy": {
                 "title": "Leprosy",
                 "templateName": "Leprosy Disease Template",
                 "name": "diseaseTemplate",
@@ -293,7 +296,7 @@
                     "showDetailsButton": true
                 }
             },
-            {
+            "mental_health": {
                 "title": "Mental Health",
                 "templateName": "Mental Health Disease Template",
                 "name": "diseaseTemplate",
@@ -308,17 +311,17 @@
                     "showDetailsButton": true
                 }
             }
-        ]
+        }
     },
-    {
+    "hiv": {
         "dashboardName": "HIV",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "HIV Summary",
             "logo": "../images/nhn-logo.png"
         },
-        "sections": [
-            {
+        "sections": {
+            "patient_information": {
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
@@ -327,7 +330,7 @@
                     "countyDistrict"
                 ]
             },
-            {
+            "hiv": {
                 "title": "HIV",
                 "templateName": "HIV Profile",
                 "name": "diseaseTemplate",
@@ -342,17 +345,17 @@
                     "showDetailsButton": true
                 }
             }
-        ]
+        }
     },
-    {
+    "motherhood": {
         "dashboardName": "Motherhood",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "Motherhood Summary",
             "logo": "../images/nhn-logo.png"
         },
-        "sections": [
-            {
+        "sections": {
+            "patient_information": {
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
@@ -361,7 +364,7 @@
                     "countyDistrict"
                 ]
             },
-            {
+            "motherhood": {
                 "title": "Motherhood",
                 "templateName": "Motherhood templates",
                 "name": "diseaseTemplate",
@@ -376,17 +379,17 @@
                     "showDetailsButton": true
                 }
             }
-        ]
+        }
     },
-    {
+    "orthopaedic": {
         "dashboardName": "Orthopaedic",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "Orthopaedic Summary",
             "logo": "../images/nhn-logo.png"
         },
-        "sections": [
-            {
+        "sections": {
+            "patient_information": {
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
@@ -395,7 +398,7 @@
                     "countyDistrict"
                 ]
             },
-            {
+            "orthopaedic": {
                 "title": "Orthopaedic",
                 "templateName": "Disease template, Orthopaedic",
                 "name": "diseaseTemplate",
@@ -410,17 +413,17 @@
                     "showDetailsButton": true
                 }
             }
-        ]
+        }
     },
-    {
+    "imam": {
         "dashboardName": "IMAM",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "IMAM Summary",
             "logo": "../images/nhn-logo.png"
         },
-        "sections": [
-            {
+        "sections": {
+            "patient_information": {
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
@@ -429,7 +432,7 @@
                     "countyDistrict"
                 ]
             },
-            {
+            "imam": {
                 "title": "IMAM",
                 "templateName": "Childhood Templates",
                 "name": "diseaseTemplate",
@@ -444,6 +447,6 @@
                     "showDetailsButton": true
                 }
             }
-        ]
+        }
     }
-]
+}

@@ -1,52 +1,53 @@
-[
-    {
-        "id": "bahmni.registration",
-        "instanceOf": "bahmni.template.registration",
-        "description": "Bahmni Patient Registration App",
-        "extensionPoints": [
+{
+    "id": "bahmni.registration",
+    "instanceOf": "bahmni.template.registration",
+    "description": "Bahmni Patient Registration App",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.registration.patient.search.result.action",
+            "description": "Bahmni Patient Search Result Action"
+        },
+        {
+            "id": "org.bahmni.registration.patient.next",
+            "description": "After Bahmni Patient Registration, forward url configuration"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "activeVisitUuid"
+    ],
+    "config": {
+        "mandatoryPersonAttributes": [
+            "Caste"
+        ],
+        "autoCompleteFields": [
+            "familyName"
+        ],
+        "printOptions": [
             {
-                "id": "org.bahmni.registration.patient.search.result.action",
-                "description": "Bahmni Patient Search Result Action"
-            },
-            {
-                "id": "org.bahmni.registration.patient.next",
-                "description": "After Bahmni Patient Registration, forward url configuration"
+                "label": "P<u>r</u>int Sticker",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+                "shortcutKey": "r"
             }
         ],
-        "contextModel": [
-            "patientUuid",
-            "activeVisitUuid"
-        ],
-        "config": {
-            "mandatoryPersonAttributes": ["Caste"],
-            "autoCompleteFields": ["familyName"],
-            "printOptions": [
-                {
-                    "label": "P<u>r</u>int Sticker",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                }
-            ],
-            "showMiddleName": true,
- 	        "defaultVisitType": "General",
-            "conceptSetUI": {
-                "Department Sent To": {
-                    "required": false,
-                    "autocomplete" : true
-                },
-                "Hospitals, Referred by, Data": {
-                },
-                "Hospitals, Referred by": {
-                    "answersConceptName": "Hospitals, Referred by, Answers",
-                    "required": false,
-                    "autocomplete" : true
-                },
-                "Hospitals, Referred by, Non coded": {
-                    "answersConceptName": "Hospitals, Referred by, Answers",
-                    "required": false,
-                    "autocomplete" : true
-                }
-	    }
+        "showMiddleName": true,
+        "defaultVisitType": "General",
+        "conceptSetUI": {
+            "Department Sent To": {
+                "required": false,
+                "autocomplete": true
+            },
+            "Hospitals, Referred by, Data": {},
+            "Hospitals, Referred by": {
+                "answersConceptName": "Hospitals, Referred by, Answers",
+                "required": false,
+                "autocomplete": true
+            },
+            "Hospitals, Referred by, Non coded": {
+                "answersConceptName": "Hospitals, Referred by, Answers",
+                "required": false,
+                "autocomplete": true
+            }
         }
     }
-]
+}
