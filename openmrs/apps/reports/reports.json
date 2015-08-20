@@ -181,5 +181,14 @@
             "programName":"Malaria Program"
         }
 
+    },
+    "OrderFulfillmentReport":{
+        "name": "Order Fulfillment Report",
+        "type": "OrderFulfillmentReport",
+        "config": {
+            "type": "OrderFulfillmentReport",
+            "orderTypes": ["Order", "Drug Order"]
+        }
     }
+
 }
