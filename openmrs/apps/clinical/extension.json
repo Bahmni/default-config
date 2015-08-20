@@ -89,18 +89,6 @@
     "order": 2,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalPatientsSearchAllPatients": {
-    "id": "bahmni.clinical.patients.search.allPatients",
-    "extensionPointId": "org.bahmni.patient.search",
-    "type": "config",
-    "extensionParams": {
-      "display": "All",
-      "forwardUrl": "#/patient/{{patientUuid}}/dashboard"
-    },
-    "label": "All",
-    "order": 3,
-    "requiredPrivilege": "app:clinical"
-  },
   "bahmniClinicalPatientsSearchOPDActivePatientsByProvider": {
     "id": "bahmni.clinical.patients.search.OPDActivePatientsByProvider",
     "extensionPointId": "org.bahmni.patient.search",
@@ -111,6 +99,18 @@
       "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
     },
     "label": "OPD-1",
+    "order": 3,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchAllPatients": {
+    "id": "bahmni.clinical.patients.search.allPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "display": "All",
+      "forwardUrl": "#/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "All",
     "order": 4,
     "requiredPrivilege": "app:clinical"
   },

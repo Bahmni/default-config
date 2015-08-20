@@ -39,7 +39,7 @@
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
-            "showCasteSameAsLastNameCheckbox": true,
+            "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
                     "label": "Print Reg. Card (<u>L</u>ocal)",
