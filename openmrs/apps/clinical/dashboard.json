@@ -21,14 +21,6 @@
                 "showCertainty": true,
                 "showOrder": true
             },
-            "visits": {
-                "title": "Visits",
-                "name": "visits",
-                "dashboardParams": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                }
-            },
             "disposition":{
                 "title": "Disposition",
                 "name": "disposition",
@@ -99,6 +91,7 @@
                     }
                 ]
             },
+
             "radiologyOrders":{
                 "orderType": "Radiology Order",
                 "name": "ordersControl",
@@ -250,6 +243,14 @@
                     "numberOfVisits": 2,
                     "showDetailsButton": true,
                     "pivotTable":{}
+                }
+            },
+            "visits": {
+                "title": "Visits",
+                "name": "visits",
+                "dashboardParams": {
+                    "title": null,
+                    "maximumNoOfVisits": 10
                 }
             },
             "diabetes":{
