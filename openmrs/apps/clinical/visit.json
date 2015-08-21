@@ -11,6 +11,7 @@
         "sections": {
             "pivotTable":{
                 "type": "pivotTable",
+                "displayOrder": 0,
                 "title": "Vitals Flowsheet",
                 "config": {
                     "groupBy": "encounters",
@@ -31,6 +32,7 @@
             },
             "pacsOrders":{
                 "type":"pacsOrders",
+                "displayOrder": 1,
                 "title": "Pacs Orders Visit Page",
                 "config":{
                     "orderType": "Radiology Order"
@@ -48,6 +50,7 @@
         "sections": {
             "PatientInformation":{
                 "type": "patientInformation",
+                "displayOrder": 0,
                 "config": {
                     "title": "PatientInformation",
                     "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
@@ -56,12 +59,14 @@
             },
             "admissionDetails":{
                 "type": "admissionDetails",
+                "displayOrder": 1,
                 "config": {
                     "showDetailsButton": true
                 }
             },
             "weightInitial":{
                 "type": "observation",
+                "displayOrder": 2,
                 "title": "At Admission",
                 "config": {
                     "conceptNames": ["WEIGHT"],
@@ -70,6 +75,7 @@
             },
             "weightLatest": {
                 "type": "observation",
+                "displayOrder": 3,
                 "title": "At Discharge",
                 "config": {
                     "conceptNames": ["WEIGHT"],
@@ -78,6 +84,7 @@
             },
             "diagnoses":{
                 "type": "diagnosis",
+                "displayOrder": 4,
                 "config": {
                     "title": "Diagnoses",
                     "showCertainty": false,
@@ -87,6 +94,7 @@
             },
             "clinicalNotes":{
                 "type": "observation",
+                "displayOrder": 5,
                 "title": "Clinical Notes",
                 "config": {
                     "conceptNames": [
@@ -102,6 +110,7 @@
             },
             "labInvestigations":{
                 "type": "investigationResult",
+                "displayOrder": 6,
                 "config": {
                     "title": "Lab Investigations",
                     "showChart": true,
@@ -116,6 +125,7 @@
             },
             "treatments":{
                 "type": "treatment",
+                "displayOrder": 7,
                 "config": {
                     "title": "Treatments",
                     "showFlowSheet": false,
@@ -128,6 +138,7 @@
             },
             "adviceOnDischarge":{
                 "type": "observation",
+                "displayOrder": 8,
                 "title": "Advice on Discharge",
                 "config": {
                     "conceptNames": [
@@ -143,16 +154,19 @@
     "orders":{
       "title": "Orders",
       "sections": {
-             "Radiology Orders": {
-            "type": "order",
-            "title": "Radiology Orders",
-            "config": {
-                "title": "Radiology Orders",
-                "name": "ordersControl",
-                "orderType": "Radiology Order",
-                "conceptNames":["Summary"]
-            }
-        }
+          "Radiology Orders": {
+              "type": "order",
+              "displayOrder": 0,
+              "title": "Radiology Orders",
+              "config": {
+                  "title": "Radiology Orders",
+                  "name": "ordersControl",
+                  "orderType": "Radiology Order",
+                  "conceptNames": [
+                      "Summary"
+                  ]
+              }
+          }
       }
 
     }

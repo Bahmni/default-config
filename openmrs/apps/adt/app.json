@@ -36,6 +36,7 @@
                 "vitals":{
                     "title": "Vitals",
                     "name": "vitals",
+                    "displayOrder": 0,
                     "isObservation": true,
                     "dashboardParams": {
                         "conceptNames": ["Vitals"],
@@ -45,27 +46,32 @@
                 "disposition":{
                     "title": "Disposition",
                     "name": "disposition",
-                    "numberOfVisits": 1
+                    "numberOfVisits": 1,
+                    "displayOrder": 1
                 },
                 "diagnosis":{
                     "title": "Diagnosis",
                     "name": "diagnosis",
                     "numberOfVisits": 1,
-                    "showDetailsButton":true
+                    "showDetailsButton":true,
+                    "displayOrder": 2
                 },
                 "patientInformation":{
                     "title": "Patient Information",
                     "name": "patientInformation",
+                    "displayOrder": 3,
                     "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
                     "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                 },
                 "admissionDetails":{
                     "title": "Admission Details",
-                    "name":"admissionDetails"
+                    "name":"admissionDetails",
+                    "displayOrder": 4
                 },
                 "navigationLinksControl":{
                     "title": "Navigation Links Control",
                     "name": "navigationLinksControl",
+                    "displayOrder": 5,
                     "links": [
                         {
                             "title": "Home Dashboard",
