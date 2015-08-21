@@ -6,3 +6,4 @@ V5__convert_home_config_arrays_to_map.js
 V6__convert_orders_config_arrays_to_maps.js
 V7__convert_registration_config_arrays_to_maps.js
 V8__convert_report_config_arrays_to_maps.js
+V9__convert_report_config_reports_arrays_to_map.js
