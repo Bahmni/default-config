@@ -19,7 +19,7 @@ customValidator = {
     },
     "education" : {
         method: function (name, value, personAttributeDetails) {
-            return value.match(/^\w+$/);
+            return true;
         },
         errorMessage: "Education Details should contain only alphanumeric characters"
     }
