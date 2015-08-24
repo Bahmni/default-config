@@ -16,11 +16,5 @@ customValidator = {
             return value.match(/^\w+$/);
         },
         errorMessage: "Caste should contain only alphanumeric characters"
-    },
-    "education" : {
-        method: function (name, value, personAttributeDetails) {
-            return true;
-        },
-        errorMessage: "Education Details should contain only alphanumeric characters"
     }
 };
