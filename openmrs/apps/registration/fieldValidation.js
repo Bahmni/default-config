@@ -1,23 +1,26 @@
-validate_age_days = {
-    'method': function (name, value) {
-        if (value >= 0) {
-            return true;
-        }
-        return false;
+customValidator = {
+    "age.days": {
+        method: function (name, value) {
+            return value >= 0;
+        },
+        errorMessage: "Age should be a possitive value"
     },
-    'errorMessage': "Age should be a positive value"
-};
-
-validate_caste = {
-    'method': function (name, value, config) {
-        return true;
+    "Telephone Number": {
+        method: function (name, value, personAttributeDetails) {
+            return value && value.length> 6;
+        },
+        errorMessage: "Telephone Number should have minimum 6 digits"
     },
-    'errorMessage': "No Caste"
-};
-
-validate_education = {
-    'method': function (name, value, config) {
-        return true;
+    "caste": {
+        method: function (name, value, personAttributeDetails) {
+            return value.match(/^\w+$/);
+        },
+        errorMessage: "Caste should contain only alphanumeric characters"
     },
-    'errorMessage': "No Education details given"
+    "education" : {
+        method: function (name, value, personAttributeDetails) {
+            return value.match(/^\w+$/);
+        },
+        errorMessage: "Education Details should contain only alphanumeric characters"
+    }
 };
