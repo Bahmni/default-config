@@ -15,7 +15,8 @@
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
-                ]
+                ],
+                "displayOrder": 0
             },
             "visits": {
                 "title": "Visits",
@@ -23,14 +24,16 @@
                 "dashboardParams": {
                     "title": null,
                     "maximumNoOfVisits": 4
-                }
+                },
+                "displayOrder": 1
             },
             "diagnosis": {
                 "title": "Diagnosis",
                 "name": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
-                "showDetailsButton": true
+                "showDetailsButton": true,
+                "displayOrder": 2
             },
             "lab_results": {
                 "title": "Lab Results",
@@ -44,7 +47,8 @@
                 },
                 "allLabDetails": {
                     "numberOfVisits": 3
-                }
+                },
+                "displayOrder": 3
             },
             "radiology_orders": {
                 "title": "Radiology Orders",
@@ -53,7 +57,8 @@
                 "conceptNames": [
                     "Chest",
                     "Neck"
-                ]
+                ],
+                "displayOrder": 4
             },
             "treatments": {
                 "title": "Treatments",
@@ -76,7 +81,8 @@
                     "numberOfVisits": 10,
                     "showOtherActive": true,
                     "showDetailsButton": false
-                }
+                },
+                "displayOrder": 5
             },
             "vitals": {
                 "title": "Vitals",
@@ -108,13 +114,15 @@
                         "drugConcepts": "",
                         "labConcepts": ""
                     }
-                }
+                },
+                "displayOrder": 6
             },
             "disposition": {
                 "title": "Disposition",
                 "name": "disposition",
                 "numberOfVisits": 2,
-                "showDetailsButton": true
+                "showDetailsButton": true,
+                "displayOrder": 7
             },
             "chronic_diseases": {
                 "title": "Chronic Diseases",
@@ -129,7 +137,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 8
             },
             "general_consultation": {
                 "title": "General Consultation",
@@ -144,7 +153,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 9
             },
             "childhood_templates": {
                 "title": "Childhood Templates",
@@ -159,7 +169,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 10
             },
             "motherhood": {
                 "title": "Motherhood",
@@ -174,7 +185,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 11
             },
             "hiv": {
                 "title": "HIV",
@@ -189,7 +201,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 12
             },
             "orthopaedic": {
                 "title": "Orthopaedic",
@@ -204,7 +217,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 13
             },
             "death_note": {
                 "title": "Death Note",
@@ -219,7 +233,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 14
             },
             "discharge_note": {
                 "title": "Discharge Note",
@@ -234,7 +249,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 15
             },
             "tuberculosis": {
                 "title": "Tuberculosis",
@@ -249,7 +265,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 16
             },
             "kalaazar": {
                 "title": "Kalaazar",
@@ -264,7 +281,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 17
             },
             "malaria": {
                 "title": "Malaria",
@@ -279,7 +297,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 18
             },
             "leprosy": {
                 "title": "Leprosy",
@@ -294,7 +313,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 19
             },
             "mental_health": {
                 "title": "Mental Health",
@@ -309,7 +329,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 20
             }
         }
     },
@@ -328,7 +349,8 @@
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
-                ]
+                ],
+                "displayOrder": 0
             },
             "hiv": {
                 "title": "HIV",
@@ -343,7 +365,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 1
             }
         }
     },
@@ -362,7 +385,8 @@
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
-                ]
+                ],
+                "displayOrder": 0
             },
             "motherhood": {
                 "title": "Motherhood",
@@ -377,7 +401,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 1
             }
         }
     },
@@ -396,7 +421,8 @@
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
-                ]
+                ],
+                "displayOrder": 0
             },
             "orthopaedic": {
                 "title": "Orthopaedic",
@@ -411,7 +437,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 1
             }
         }
     },
@@ -430,7 +457,8 @@
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
-                ]
+                ],
+                "displayOrder": 0
             },
             "imam": {
                 "title": "IMAM",
@@ -445,7 +473,8 @@
                 "allDiseaseDetails": {
                     "showOnly": [],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 1
             }
         }
     }

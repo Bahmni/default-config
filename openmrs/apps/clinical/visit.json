@@ -26,7 +26,8 @@
                         "cityVillage",
                         "countyDistrict"
                     ]
-                }
+                },
+                "displayOrder": 0
             },
             "diagnosis": {
                 "type": "diagnosis",
@@ -35,7 +36,8 @@
                     "showCertainty": true,
                     "showOrder": true,
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 1
             },
             "discharge_notes": {
                 "type": "Discharge Notes",
@@ -47,20 +49,23 @@
                         "Discharge Note, Medications on Discharged",
                         "Discharge Note, Followup Instructions"
                     ]
-                }
+                },
+                "displayOrder": 2
             },
             "disposition": {
                 "type": "disposition",
                 "config": {
                     "numberOfVisits": 1,
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 3
             },
             "admissiondetails": {
                 "type": "admissionDetails",
                 "config": {
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 4
             },
             "investigationresult": {
                 "type": "investigationResult",
@@ -72,7 +77,8 @@
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
                     "numberOfVisits": 10
-                }
+                },
+                "displayOrder": 5
             },
             "treatment": {
                 "type": "treatment",
@@ -84,7 +90,8 @@
                     "showDetailsButton": true,
                     "showRoute": true,
                     "showDrugForm": true
-                }
+                },
+                "displayOrder": 6
             }
         }
     },
@@ -105,7 +112,8 @@
                         "cityVillage",
                         "countyDistrict"
                     ]
-                }
+                },
+                "displayOrder": 0
             },
             "diagnosis": {
                 "type": "diagnosis",
@@ -114,7 +122,8 @@
                     "showCertainty": true,
                     "showOrder": true,
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 1
             },
             "observation": {
                 "type": "observation",
@@ -129,14 +138,16 @@
                         "Impression"
                     ],
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 2
             },
             "disposition": {
                 "type": "disposition",
                 "config": {
                     "numberOfVisits": 1,
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 3
             },
             "investigationresult": {
                 "type": "investigationResult",
@@ -148,7 +159,8 @@
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
                     "numberOfVisits": 10
-                }
+                },
+                "displayOrder": 4
             },
             "treatment": {
                 "type": "treatment",
@@ -160,7 +172,8 @@
                     "showDetailsButton": true,
                     "showRoute": true,
                     "showDrugForm": true
-                }
+                },
+                "displayOrder": 5
             }
         }
     }
