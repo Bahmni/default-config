@@ -1,4 +1,4 @@
-customValidator = {
+Bahmni.Registration.customValidator = {
     "age.days": {
         method: function (name, value) {
             return value >= 0;
