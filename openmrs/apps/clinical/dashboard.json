@@ -117,7 +117,7 @@
                 "title": "Pacs",
                 "displayOrder": 8,
                 "dashboardParams": {
-                    "pacsImageUrl": "http://10.0.0.30:8080/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
+                    "pacsImageUrl": "http://10.0.0.30:8001/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
                     "numberOfVisits": 4
                 }
             },
