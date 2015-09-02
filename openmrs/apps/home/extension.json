@@ -9,12 +9,22 @@
     "order": 1,
     "requiredPrivilege": "app:registration"
   },
+  "programs": {
+    "id": "bahmni.programs",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "label": "Programs",
+    "url": "../clinical/#/PROGRAMS/patient/search",
+    "icon": "fa-tasks",
+    "order": 2,
+    "requiredPrivilege": "app:clinical"
+  },
   "clinical": {
     "id": "bahmni.clinical",
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "label": "Clinical",
-    "url": "../clinical/",
+    "url": "../clinical/#DEFAULT/patient/search",
     "icon": "fa-stethoscope",
     "order": 3,
     "requiredPrivilege": "app:clinical"
