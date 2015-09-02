@@ -32,5 +32,14 @@
             <column name="allow_patient_creation" type="boolean" valueBoolean="true"/>
         </insert>
     </changeSet>
-    
+    <changeSet id="POSSIBLE-ELIS-4" author="Preethi,Hanisha">
+        <sqlCheck expectedResult="0">
+            select count(*) from site_information where name='defaultOrganizationName';
+        </sqlCheck>
+        <comment>Add default organization name for openelis</comment>
+        <sql>
+            INSERT INTO site_information(id, name, lastupdated, description, value, encrypted, value_type)  VALUES ( nextVal( 'site_information_seq' ) , 'defaultOrganizationName', now(), 'Default organization name for department to be synced from openmrs',  'Possible', 'f', 'text' );
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
