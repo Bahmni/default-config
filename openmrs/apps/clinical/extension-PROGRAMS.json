@@ -1,0 +1,27 @@
+{
+  "bahmniClinicalPatientsSearchActivePatientsForPrograms": {
+    "id": "bahmni.clinical.patients.search.activePatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.activePatients",
+      "display": "Programs",
+      "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
+    },
+    "label": "Active",
+    "order": 1,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalPatientsSearchAllPatients": {
+    "id": "bahmni.clinical.patients.search.allPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "display": "All",
+      "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
+    },
+    "label": "All",
+    "order": 2,
+    "requiredPrivilege": "app:clinical"
+  }
+}
