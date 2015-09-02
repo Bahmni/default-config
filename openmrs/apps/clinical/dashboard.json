@@ -308,7 +308,7 @@
             },
             "diabetes": {
                 "title": "Diabetes",
-                "templateName": "Diabetes Template",
+                "templateName": "Diabetes Templates",
                 "name": "diseaseTemplate",
                 "displayOrder": 18,
                 "dashboardParams": {
