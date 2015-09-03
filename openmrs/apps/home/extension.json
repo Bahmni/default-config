@@ -14,7 +14,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Clinical",
-        "url": "../clinical/",
+        "url": "../clinical/#DEFAULT/patient/search",
         "icon": "fa-stethoscope",
         "order": 2,
         "requiredPrivilege": "app:clinical"
