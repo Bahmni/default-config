@@ -54,11 +54,15 @@
                 "title": "Radiology Orders",
                 "name": "ordersControl",
                 "orderType": "Radiology Order",
-                "conceptNames": [
-                    "Chest",
-                    "Neck"
-                ],
-                "displayOrder": 4
+                "displayOrder": 4,
+                "dashboardParams": {
+                    "title": null,
+                    "conceptNames": [
+                        "Chest",
+                        "Neck"
+                    ],
+                    "numberOfVisits": 1
+                }
             },
             "treatments": {
                 "title": "Treatments",
