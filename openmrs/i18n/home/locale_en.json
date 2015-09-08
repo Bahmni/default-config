@@ -1,0 +1,10 @@
+{
+    "MODULE_LABEL_REGISTRATION_KEY": "Registration",
+    "MODULE_LABEL_CLINICAL_KEY": "Clinical",
+    "MODULE_LABEL_INPATIENT_KEY": "InPatient",
+    "MODULE_LABEL_ADMIN_KEY": "Admin",
+    "MODULE_LABEL_REPORTS_KEY": "Reports",
+    "MODULE_LABEL_PRESCRIPTION_KEY": "Prescription",
+    "MODULE_LABEL_ORDERS_KEY": "Orders",
+    "MODULE_LABEL_INCIDENT_REPORTING_KEY": "Incident Reporting"
+}
