@@ -3,18 +3,18 @@ Bahmni.Registration.customValidator = {
         method: function (name, value) {
             return value >= 0;
         },
-        errorMessage: "Age should be a possitive value"
+        errorMessage: "REGISTRATION_AGE_ERROR_KEY"
     },
     "Telephone Number": {
         method: function (name, value, personAttributeDetails) {
             return value && value.length> 6;
         },
-        errorMessage: "Telephone Number should have minimum 6 digits"
+        errorMessage: "REGISTRATION_TELEPHONE_NUMBER_ERROR_KEY"
     },
     "caste": {
         method: function (name, value, personAttributeDetails) {
             return value.match(/^\w+$/);
         },
-        errorMessage: "Caste should contain only alphanumeric characters"
+        errorMessage: "REGISTRATION_CASTE_TEXT_ERROR_KEY"
     }
 };

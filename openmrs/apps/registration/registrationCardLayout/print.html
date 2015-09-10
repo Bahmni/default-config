@@ -10,25 +10,25 @@
                         <h3 class="print-table-header">Notice</h3>
                         <ul class="print-table-left-body">
                             <li>
-                                It is quite important to bring the card to the hospital.
+                                {{ "REGISTRATION_BRING_CARD_TEXT_KEY" | translate }}
                             </li>
                             <li>
-                                Take medicines according to instructions of the doctor.
+                                {{ "REGISTRATION_TAKE_MEDICINES_TEXT_KEY" | translate}}
                             </li>
                             <li>
-                                Registration Timings are from 8:30 am to 12:00 pm.
+                                {{ "REGISTRATION_TIMINGS_TEXT_KEY" | translate }}
                             </li>
                             <li>
-                                OPD days are on Monday, Wednesday, Friday.
+                               {{ "REGISTRATION_OPD_DAYS_TEXT_KEY" | translate }}
                             </li>
                             <li>
-                                Sundays are holidays.
+                                {{ "REGISTRATION_SUNDAYS_HOLIDAY_TEXT_KEY" | translate }}
                             </li>
                         </ul>
                         <div class="caution">
                             <h3 class="print-table-header">Caution</h3>
                             <p>
-                                Smoking, Tobacco chewing can cause cancer, heart diseases and asthama.
+                                {{ "REGISTRATION_SMOKING_INJURIOUS_TEXT_KEY" | translate }}
                             </p>
                         </div>
                     </td>
@@ -45,9 +45,9 @@
                     </td>
                     <td class="print-table-right-header">
                         <h3>
-                            Jan Swasthya Sahyog
+                        {{ "REGISTRATION_INSTITUTE_NAME_TEXT_KEY" | translate }}
                         </h3>
-                        <h3 class="print-center">(Registered)</h3>
+                        <h3 class="print-center">{{ "REGISTRATION_INSTITUTE_REGISTERED_TEXT_KEY" |  translate }}</h3>
                     </td>
                     <td class="registrationCard-photo">
                         <img ng-src="{{patient.image}}" style="width: 20mm; height: 20mm; "
@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <td colspan="3" class="print-center registrationCard-location">
-                        Ganiyari, District - Bilaspur
+                    {{ "REGISTRATION_INSTITUTE_ADDRESS" | translate }}
                     </td>
                 </tr>
             </table>
