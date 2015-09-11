@@ -48,31 +48,38 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        setBMI(bahmniEncounterTransaction);
+        calculateAndAdd(bahmniEncounterTransaction);
     }
 
-    static def setBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
+    static def calculateAndAdd(BahmniEncounterTransaction bahmniEncounterTransaction) {
         Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
         def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
 
         BahmniObservation heightObservation = find("Height", observations, null)
         BahmniObservation weightObservation = find("Weight", observations, null)
-        BahmniObservation bmiObservation = find("BMI", observations, null)
-        BahmniObservation bmiStatusObservation = find("BMI Status", observations, null)
         BahmniObservation parent = null;
 
-        if(heightObservation) {
-            parent = obsParentMap.get(heightObservation)
-        } else if(weightObservation) {
-            parent = obsParentMap.get(weightObservation)
-        }
-
-        Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid());
-        def patientAgeInMonthsAsOfEncounter = Months.monthsBetween(new LocalDate(patient.getBirthdate()), new LocalDate(nowAsOfEncounter)).getMonths();
-
         if (hasValue(heightObservation) || hasValue(weightObservation)) {
+            BahmniObservation bmiDataObservation = find("BMI Data", observations, null)
+            BahmniObservation bmiObservation = find("BMI", bmiDataObservation ? [bmiDataObservation] : [], null)
+            BahmniObservation bmiAbnormalObservation = find("BMI Abnormal", bmiDataObservation ? [bmiDataObservation]: [], null)
+
+            BahmniObservation bmiStatusDataObservation = find("BMI Status Data", observations, null)
+            BahmniObservation bmiStatusObservation = find("BMI Status", bmiStatusDataObservation ? [bmiStatusDataObservation] : [], null)
+            BahmniObservation bmiStatusAbnormalObservation = find("BMI Status Abnormal", bmiStatusDataObservation ? [bmiStatusDataObservation]: [], null)
+
+            Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid())
+            def patientAgeInMonthsAsOfEncounter = Months.monthsBetween(new LocalDate(patient.getBirthdate()), new LocalDate(nowAsOfEncounter)).getMonths()
+
+            parent = obsParent(heightObservation, parent)
+            parent = obsParent(weightObservation, parent)
+
             if ((heightObservation && heightObservation.voided) && (weightObservation && weightObservation.voided)) {
-                voidBmiObs(bmiObservation, bmiStatusObservation)
+                voidObs(bmiDataObservation);
+                voidObs(bmiObservation);
+                voidObs(bmiStatusDataObservation);
+                voidObs(bmiStatusObservation);
+                voidObs(bmiAbnormalObservation);
                 return
             }
 
@@ -84,17 +91,79 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             Date obsDatetime = getDate(weightObservation) != null ? getDate(weightObservation) : getDate(heightObservation)
 
             if (height == null || weight == null) {
-                voidBmiObs(bmiObservation, bmiStatusObservation)
+                voidObs(bmiDataObservation)
+                voidObs(bmiObservation)
+                voidObs(bmiStatusDataObservation)
+                voidObs(bmiStatusObservation)
+                voidObs(bmiAbnormalObservation)
                 return
             }
 
+            bmiDataObservation = bmiDataObservation ?: createObs("BMI Data", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+            bmiStatusDataObservation = bmiStatusDataObservation ?: createObs("BMI Status Data", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+
             def bmi = bmi(height, weight)
-            bmiObservation = bmiObservation ?: createObs("BMI", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+            bmiObservation = bmiObservation ?: createObs("BMI", bmiDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
             bmiObservation.setValue(bmi);
 
             def bmiStatus = bmiStatus(bmi, patientAgeInMonthsAsOfEncounter, patient.getGender());
-            bmiStatusObservation = bmiStatusObservation ?: createObs("BMI Status", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+            bmiStatusObservation = bmiStatusObservation ?: createObs("BMI Status", bmiStatusDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
             bmiStatusObservation.setValue(bmiStatus);
+
+            def bmiAbnormal = bmiAbnormal(bmiStatus);
+            bmiAbnormalObservation =  bmiAbnormalObservation ?: createObs("BMI Abnormal", bmiDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+            bmiAbnormalObservation.setValue(bmiAbnormal);
+
+            bmiStatusAbnormalObservation =  bmiStatusAbnormalObservation ?: createObs("BMI Status Abnormal", bmiStatusDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+            bmiStatusAbnormalObservation.setValue(bmiAbnormal);
+
+            return
+        }
+
+        BahmniObservation waistCircumferenceObservation = find("Waist Circumference", observations, null)
+        BahmniObservation hipCircumferenceObservation = find("Hip Circumference", observations, null)
+        if (hasValue(waistCircumferenceObservation) && hasValue(hipCircumferenceObservation)) {
+            def calculatedConceptName = "Waist/Hip Ratio"
+            BahmniObservation calculatedObs = find(calculatedConceptName, observations, null)
+            parent = obsParent(waistCircumferenceObservation, null)
+
+            Date obsDatetime = getDate(waistCircumferenceObservation)
+            def waistCircumference = waistCircumferenceObservation.getValue() as Double
+            def hipCircumference = hipCircumferenceObservation.getValue() as Double
+            def waistByHipRatio = waistCircumference/hipCircumference
+            if (calculatedObs == null)
+                calculatedObs = createObs(calculatedConceptName, parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+
+            calculatedObs.setValue(waistByHipRatio)
+            return
+        }
+
+        BahmniObservation lmpObservation = find("Obstetrics, Last Menstrual Period", observations, null)
+        def calculatedConceptName = "Estimated Date of Delivery"
+        if (hasValue(lmpObservation)) {
+            parent = obsParent(lmpObservation, null)
+            def calculatedObs = find(calculatedConceptName, observations, null)
+
+            Date obsDatetime = getDate(lmpObservation)
+
+            LocalDate edd = new LocalDate(lmpObservation.getValue()).plusMonths(9).plusWeeks(1)
+            if (calculatedObs == null)
+                calculatedObs = createObs(calculatedConceptName, parent, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+            calculatedObs.setValue(edd)
+            return
+        } else {
+            def calculatedObs = find(calculatedConceptName, observations, null)
+            if (hasValue(calculatedObs)) {
+                voidObs(calculatedObs)
+            }
+        }
+    }
+
+    private static BahmniObservation obsParent(BahmniObservation child, BahmniObservation parent) {
+        if (parent != null) return parent;
+
+        if(child != null) {
+            return obsParentMap.get(child)
         }
     }
 
@@ -106,12 +175,9 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return observation != null && observation.getValue() != null && !StringUtils.isEmpty(observation.getValue().toString());
     }
 
-    private static void voidBmiObs(BahmniObservation bmiObservation, BahmniObservation bmiStatusObservation) {
+    private static void voidObs(BahmniObservation bmiObservation) {
         if (hasValue(bmiObservation)) {
             bmiObservation.voided = true
-        }
-        if (hasValue(bmiStatusObservation)) {
-            bmiStatusObservation.voided = true
         }
     }
 
@@ -162,6 +228,10 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             return BmiStatus.VERY_SEVERELY_OBESE;
         }
         return null
+    }
+
+    static def bmiAbnormal(BmiStatus status) {
+        return status != BmiStatus.NORMAL;
     };
 
     static Double fetchLatestValue(String conceptName, String patientUuid, BahmniObservation excludeObs, Date tillDate) {
@@ -234,7 +304,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             this.ninetySeventh = ninetySeventh.toDouble();
         }
 
-        public String getStatus(Double bmi) {
+        public BmiStatus getStatus(Double bmi) {
             if(bmi < third) {
                 return BmiStatus.SEVERELY_UNDERWEIGHT
             } else if(bmi < fifteenth) {
