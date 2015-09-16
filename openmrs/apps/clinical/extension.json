@@ -57,7 +57,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
       "display": "Active",
-      "forwardUrl": "#/patient/{{patientUuid}}/dashboard"
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
     },
     "label": "Active",
     "order": 1,
@@ -70,7 +70,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
       "display": "Programs",
-      "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
+      "forwardUrl": "#/default/patient/{{patientUuid}}/consultationContext"
     },
     "label": "Active",
     "order": 1,
@@ -83,7 +83,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
       "display": "My Patients",
-      "forwardUrl": "#/patient/{{patientUuid}}/dashboard"
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
     },
     "label": "Active",
     "order": 2,
@@ -96,7 +96,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
       "display": "OPD-1",
-      "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
+      "forwardUrl": "#/default/patient/{{patientUuid}}/consultationContext"
     },
     "label": "OPD-1",
     "order": 3,
@@ -108,7 +108,7 @@
     "type": "config",
     "extensionParams": {
       "display": "All",
-      "forwardUrl": "#/patient/{{patientUuid}}/dashboard"
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
     },
     "label": "All",
     "order": 4,
