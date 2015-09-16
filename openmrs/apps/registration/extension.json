@@ -38,7 +38,7 @@
         "extensionParams": {
             "display": "Enter <u>C</u>onsultation",
             "shortcutKey": "c",
-            "forwardUrl": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
+            "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
         },
         "order": 1,
         "requiredPrivilege": "RegisterAndConsult"
