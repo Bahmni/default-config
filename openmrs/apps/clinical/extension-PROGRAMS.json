@@ -5,7 +5,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
-      "display": "Programs",
+      "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
       "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
     },
     "label": "Active",
@@ -17,7 +17,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "display": "All",
+      "translationKey": "MODULE_LABEL_ALL_KEY",
       "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
     },
     "label": "All",

@@ -1,6 +1,6 @@
 {
     "general": {
-        "dashboardName": "General",
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
@@ -18,7 +18,7 @@
                 ]
             },
             "diagnosis": {
-                "title": "Diagnosis",
+                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
                 "name": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
@@ -26,13 +26,13 @@
             },
 
             "disposition": {
-                "title": "Disposition",
+                "translationKey" : "DASHBOARD_TITLE_DISPOSITION_KEY",
                 "name": "disposition",
                 "numberOfVisits": 1,
                 "displayOrder": 2
             },
             "treatments": {
-                "title": "Treatments",
+                "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                 "name": "treatment",
                 "displayOrder": 3,
                 "dashboardParams": {
@@ -45,7 +45,7 @@
                     "showDetailsButton": true
                 },
                 "allTreatmentDetails": {
-                    "title": "Treatments",
+                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                     "showFlowSheet": true,
                     "showListView": true,
                     "showRoute": true,
@@ -56,17 +56,17 @@
                 }
             },
             "radiology": {
-                "title": "Radiology",
+                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "name": "radiology",
                 "displayOrder": 4
             },
             "programs": {
-                "title": "Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
                 "name": "programs",
                 "displayOrder": 5
             },
             "navigationLinksControl": {
-                "title": "Navigation Links Control",
+                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "name": "navigationLinksControl",
                 "displayOrder": 6,
                 "links": [
@@ -103,7 +103,7 @@
             "radiologyOrders": {
                 "orderType": "Radiology Order",
                 "name": "ordersControl",
-                "title": "Radiology Orders",
+                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
                 "displayOrder": 7,
                 "dashboardParams": {
                     "conceptNames": [
@@ -115,7 +115,7 @@
             "pacs": {
                 "orderType": "Radiology Order",
                 "name": "pacsOrders",
-                "title": "Pacs",
+                "translationKey" : "DASHBOARD_TITLE_PACS_KEY",
                 "displayOrder": 8,
                 "dashboardParams": {
                     "pacsImageUrl": "http://10.0.0.30:8001/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
@@ -123,7 +123,7 @@
                 }
             },
             "labOrdersDisplayControl": {
-                "title": "Lab Orders Display Control",
+                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "name": "ordersControl",
                 "orderType": "Lab Order",
                 "showDetailsButton": true,
@@ -146,7 +146,7 @@
                 }
             },
             "labResults": {
-                "title": "Lab Results",
+                "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "name": "labOrders",
                 "displayOrder": 10,
                 "dashboardParams": {
@@ -163,7 +163,7 @@
                 }
             },
             "nutritionalValues": {
-                "title": "Nutritional Values",
+                "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "name": "vitals",
                 "isObservation": true,
                 "displayOrder": 11,
@@ -190,7 +190,7 @@
                 }
             },
             "vitals": {
-                "title": "Vitals",
+                "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
                 "name": "vitals",
                 "isObservation": true,
                 "displayOrder": 12,
@@ -219,7 +219,7 @@
                 }
             },
             "secondVitals": {
-                "title": "Second Vitals",
+                "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
                 "name": "second vitals",
                 "isObservation": true,
                 "displayOrder": 13,
@@ -239,7 +239,7 @@
                 }
             },
             "historyAndExaminations": {
-                "title": "History and Examinations",
+                "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "name": "vitals",
                 "isObservation": true,
                 "displayOrder": 14,
@@ -259,7 +259,7 @@
                 }
             },
             "gynaecology": {
-                "title": "Gynaecology",
+                "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
                 "name": "gynaecology",
                 "isObservation": true,
                 "displayOrder": 15,
@@ -279,7 +279,7 @@
                 }
             },
             "obstetrics": {
-                "title": "Obstetrics",
+                "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
                 "name": "obstetrics",
                 "isObservation": true,
                 "displayOrder": 16,
@@ -299,7 +299,7 @@
                 }
             },
             "visits": {
-                "title": "Visits",
+                "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "name": "visits",
                 "displayOrder": 17,
                 "dashboardParams": {
@@ -346,13 +346,14 @@
             },
             "admissionDetails": {
                 "title": "Admission Details",
+                "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "name": "admissionDetails",
                 "displayOrder": 19
             }
         }
     },
     "trends": {
-        "dashboardName": "Trends",
+        "translationKey": "DASHBOARD_TAB_TRENDS_KEY",
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {

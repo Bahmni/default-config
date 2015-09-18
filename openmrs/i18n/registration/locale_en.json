@@ -7,7 +7,7 @@
   "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY" : "Print Reg. Card (<u>L</u>ocal)",
   "REGISTRATION_PRINT_REG_CARD_KEY":"<u>P</u>rint Registration Card",
   "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER":"P<u>r</u>int Supplemental Paper",
-  "REGISTRATION_AGE_ERROR_KEY":"Age should be a possitive value",
+  "REGISTRATION_AGE_ERROR_KEY":"Age should be a positive value",
   "REGISTRATION_TELEPHONE_NUMBER_ERROR_KEY":"Telephone Number should have minimum 6 digits",
   "REGISTRATION_CASTE_TEXT_ERROR_KEY":"Caste should contain only alphanumeric characters",
   "REGISTRATION_BRING_CARD_TEXT_KEY":"It is quite important to bring the card to the hospital.",

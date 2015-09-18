@@ -56,7 +56,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
-      "display": "Active",
+      "translationKey": "MODULE_LABEL_ACTIVE_KEY",
       "forwardUrl": "#/patient/{{patientUuid}}/dashboard?encounterUuid=active"
     },
     "label": "Active",
@@ -69,7 +69,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
-      "display": "Programs",
+      "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
       "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
     },
     "label": "Active",
@@ -82,7 +82,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
-      "display": "My Patients",
+      "translationKey": "MODULE_LABEL_MY_PATIENTS_KEY",
       "forwardUrl": "#/patient/{{patientUuid}}/dashboard?encounterUuid=active"
     },
     "label": "Active",
@@ -95,7 +95,7 @@
     "type": "config",
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
-      "display": "OPD-1",
+      "translationKey": "MODULE_LABEL_OPD_1_KEY",
       "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
     },
     "label": "OPD-1",
@@ -107,7 +107,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "display": "All",
+      "translationKey": "MODULE_LABEL_ALL_KEY",
       "forwardUrl": "#/patient/{{patientUuid}}/dashboard?encounterUuid=active"
     },
     "label": "All",
