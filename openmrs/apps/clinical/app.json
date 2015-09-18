@@ -23,6 +23,11 @@
             "visitUuid"
         ],
         "config" : {
+            "program": {
+                "patientInformation": {
+                    "ageLimit":100
+                }
+            },
             "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
             "otherInvestigationsMap": {
                 "Radiology": "Radiology Order",

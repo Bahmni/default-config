@@ -8,6 +8,7 @@
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "displayOrder": 0,
+                "ageLimit":100,
                 "patientAttributes": [],
                 "addressFields": [
                     "address1",
