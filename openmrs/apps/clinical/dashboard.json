@@ -18,6 +18,7 @@
                 ]
             },
             "diagnosis": {
+                "title": "Diagnosis",
                 "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
                 "name": "diagnosis",
                 "showCertainty": true,
@@ -26,12 +27,14 @@
             },
 
             "disposition": {
+                "title": "Disposition",
                 "translationKey" : "DASHBOARD_TITLE_DISPOSITION_KEY",
                 "name": "disposition",
                 "numberOfVisits": 1,
                 "displayOrder": 2
             },
             "treatments": {
+                "title":"Treatments",
                 "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                 "name": "treatment",
                 "displayOrder": 3,
@@ -56,16 +59,19 @@
                 }
             },
             "radiology": {
+                "title": "Radiology",
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "name": "radiology",
                 "displayOrder": 4
             },
             "programs": {
+                "title":"Programs",
                 "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
                 "name": "programs",
                 "displayOrder": 5
             },
             "navigationLinksControl": {
+                "title":"Navigation Links Control",
                 "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "name": "navigationLinksControl",
                 "displayOrder": 6,
@@ -102,6 +108,7 @@
             },
             "radiologyOrders": {
                 "orderType": "Radiology Order",
+                "title":"Radiology Orders",
                 "name": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
                 "displayOrder": 7,
@@ -113,6 +120,7 @@
                 }
             },
             "pacs": {
+                "title":"Pacs",
                 "orderType": "Radiology Order",
                 "name": "pacsOrders",
                 "translationKey" : "DASHBOARD_TITLE_PACS_KEY",
@@ -123,6 +131,7 @@
                 }
             },
             "labOrdersDisplayControl": {
+                "title":"Lab Orders Display Control",
                 "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "name": "ordersControl",
                 "orderType": "Lab Order",
@@ -146,6 +155,7 @@
                 }
             },
             "labResults": {
+                "title":"Lab Results",
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "name": "labOrders",
                 "displayOrder": 10,
@@ -163,6 +173,7 @@
                 }
             },
             "nutritionalValues": {
+                "title":"Nutritional Values",
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "name": "vitals",
                 "isObservation": true,
@@ -190,6 +201,7 @@
                 }
             },
             "vitals": {
+                "title":"Vitals",
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
                 "name": "vitals",
                 "isObservation": true,
@@ -219,6 +231,7 @@
                 }
             },
             "secondVitals": {
+                "title":"Second Vitals",
                 "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
                 "name": "second vitals",
                 "isObservation": true,
@@ -239,6 +252,7 @@
                 }
             },
             "historyAndExaminations": {
+                "title":"History and Examinations",
                 "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "name": "vitals",
                 "isObservation": true,
@@ -259,6 +273,7 @@
                 }
             },
             "gynaecology": {
+                 "title":"Gynaecology",
                 "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
                 "name": "gynaecology",
                 "isObservation": true,
@@ -279,6 +294,7 @@
                 }
             },
             "obstetrics": {
+                 "title":"Obstretrics",
                 "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
                 "name": "obstetrics",
                 "isObservation": true,
@@ -299,6 +315,7 @@
                 }
             },
             "visits": {
+                 "title":"Visits",
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "name": "visits",
                 "displayOrder": 17,
