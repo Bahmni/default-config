@@ -27,5 +27,9 @@
   "DASHBOARD_TAB_GENERAL_KEY": "General",
   "DASHBOARD_TAB_TRENDS_KEY": "Trends",
 
-  "LAB_INVESTIGATIONS_KEY":"Lab Investigations"
+  "LAB_INVESTIGATIONS_KEY":"Lab Investigations",
+  "PACS_ORDERS_VISIT_PAGE_KEY": "Pacs Orders Visit Page",
+
+  "DISCHARGE_SUMMARY_DIAGNOSIS_KEY" :"Diagnosis",
+  "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY": "Admission Details"
 }

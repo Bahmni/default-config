@@ -33,7 +33,7 @@
             "pacsOrders":{
                 "type":"pacsOrders",
                 "displayOrder": 1,
-                "title": "Pacs Orders Visit Page",
+                "translationKey": "PACS_ORDERS_VISIT_PAGE_KEY",
                 "config":{
                     "orderType": "Radiology Order"
                 }
@@ -61,7 +61,9 @@
                 "type": "admissionDetails",
                 "displayOrder": 1,
                 "config": {
-                    "showDetailsButton": true
+                    "showDetailsButton": true,
+                    "translationKey": "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY"
+
                 }
             },
             "weightInitial":{
@@ -86,7 +88,7 @@
                 "type": "diagnosis",
                 "displayOrder": 4,
                 "config": {
-                    "title": "Diagnoses",
+                    "translationKey" : "DISCHARGE_SUMMARY_DIAGNOSIS_KEY",
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
@@ -128,6 +130,7 @@
                 "displayOrder": 7,
                 "config": {
                     "title": "Treatments",
+                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
@@ -157,9 +160,9 @@
           "Radiology Orders": {
               "type": "order",
               "displayOrder": 0,
-              "title": "Radiology Orders",
+              "translationKey": "Radiology Orders",
               "config": {
-                  "title": "Radiology Orders",
+                  "translationKey": "Radiology Orders",
                   "name": "ordersControl",
                   "orderType": "Radiology Order",
                   "conceptNames": [
