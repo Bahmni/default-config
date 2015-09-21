@@ -294,7 +294,7 @@
                 }
             },
             "obstetrics": {
-                 "title":"Obstretrics",
+                 "title":"Obstetrics",
                 "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
                 "name": "obstetrics",
                 "isObservation": true,
