@@ -25,7 +25,7 @@
         ],
         "printOptions": [
             {
-                "label": "P<u>r</u>int Sticker",
+                "label": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
                 "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
                 "shortcutKey": "r"
             }
