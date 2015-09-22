@@ -14,7 +14,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
-    "url": "../clinical/#/PROGRAMS/patient/search",
+    "url": "../clinical/#/programs/patient/search",
     "icon": "fa-tasks",
     "order": 2,
     "requiredPrivilege": "app:clinical"
@@ -24,7 +24,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_CLINICAL_KEY",
-    "url": "../clinical/#DEFAULT/patient/search",
+    "url": "../clinical/#/default/patient/search",
     "icon": "fa-stethoscope",
     "order": 3,
     "requiredPrivilege": "app:clinical"

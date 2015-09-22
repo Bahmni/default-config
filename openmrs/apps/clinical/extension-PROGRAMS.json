@@ -6,7 +6,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
       "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
-      "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
+      "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
     },
     "label": "Active",
     "order": 1,
@@ -18,10 +18,52 @@
     "type": "config",
     "extensionParams": {
       "translationKey": "MODULE_LABEL_ALL_KEY",
-      "forwardUrl": "#/patient/{{patientUuid}}/consultationContext"
+      "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
     },
     "label": "All",
     "order": 2,
     "requiredPrivilege": "app:clinical"
-  }
+    },
+    "observations": {
+        "id": "bahmni.clinical.consultation.observations",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Observations",
+        "url": "concept-set-group/observations",
+        "default": true,
+        "icon": "fa-user-md",
+        "order": 1,
+        "requiredPrivilege": "app:clinical:observationTab"
+    },
+    "diagnosis": {
+        "id": "bahmni.clinical.consultation.diagnosis",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Diagnosis",
+        "url": "diagnosis",
+        "icon": "fa-user-md",
+        "order": 2,
+        "requiredPrivilege": "app:clinical:diagnosisTab"
+    },
+    "disposition": {
+        "id": "bahmni.clinical.consultation.disposition",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Disposition",
+        "url": "disposition",
+        "icon": "fa-user-md",
+        "order": 3,
+        "requiredPrivilege": "app:clinical:dispositionTab"
+    },
+    "consultationSummary": {
+        "id": "bahmni.clinical.consultation.summary",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Consultation",
+        "url": "consultation",
+        "icon": "fa-user-md",
+        "order": 5,
+        "requiredPrivilege": "app:clinical:consultationTab"
+    }
+
 }
