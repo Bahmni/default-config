@@ -197,5 +197,9 @@
             "personAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
             "visitAttributes": ["Visit Status"]
         }
-	  }
+	  },
+    "patientReport":  {
+      "name": "Patient Information",
+      "type": "PatientReport"
+}
 }
