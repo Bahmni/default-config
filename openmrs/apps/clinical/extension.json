@@ -186,7 +186,7 @@
     "id": "bahmni.clinical.billing.treatment",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "label": "Treatment",
+    "label": "Medications",
     "url": "treatment",
     "icon": "fa-user-md",
     "order": 7,
