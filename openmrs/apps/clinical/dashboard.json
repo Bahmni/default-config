@@ -83,7 +83,7 @@
                     },
                     {
                         "title": "Patient Visit Page",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active"
+                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
                         "translationKey":"PATIENT_VISIT_PAGE_KEY"
                     },
                     {
