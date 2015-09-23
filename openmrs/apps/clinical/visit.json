@@ -69,7 +69,7 @@
             "weightInitial":{
                 "type": "observation",
                 "displayOrder": 2,
-                "title": "At Admission",
+                "translationKey":"DISCHARGE_SUMMARY_AT_ADMISSION_KEY",
                 "config": {
                     "conceptNames": ["WEIGHT"],
                     "scope": "initial"
@@ -78,7 +78,7 @@
             "weightLatest": {
                 "type": "observation",
                 "displayOrder": 3,
-                "title": "At Discharge",
+                "translationKey":"DISCHARGE_SUMMARY_AT_DISCHARGE_KEY",
                 "config": {
                     "conceptNames": ["WEIGHT"],
                     "scope": "latest"
@@ -97,7 +97,7 @@
             "clinicalNotes":{
                 "type": "observation",
                 "displayOrder": 5,
-                "title": "Clinical Notes",
+                "translationKey": "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY",
                 "config": {
                     "conceptNames": [
                         "History and Examination Notes",
@@ -129,8 +129,7 @@
                 "type": "treatment",
                 "displayOrder": 7,
                 "config": {
-                    "title": "Treatments",
-                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                    "translationKey": "DISCHARGE_SUMMARY_TREATMENTS_KEY",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
@@ -142,7 +141,7 @@
             "adviceOnDischarge":{
                 "type": "observation",
                 "displayOrder": 8,
-                "title": "Advice on Discharge",
+                "translationKey":"DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY",
                 "config": {
                     "conceptNames": [
                         "Additional Advice on Discharge",
