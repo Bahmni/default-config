@@ -78,14 +78,17 @@
                 "links": [
                     {
                         "title": "Home Dashboard",
+                        "translationKey":"HOME_DASHBOARD_KEY",
                         "url": "../home/#/dashboard"
                     },
                     {
                         "title": "Patient Visit Page",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active"
+                        "translationKey":"PATIENT_VISIT_PAGE_KEY"
                     },
                     {
                         "title": "Patient ADT Page",
+                        "translationKey":"PATIENT_ADT_PAGE_KEY",
                         "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
                     },
                     {
@@ -94,15 +97,18 @@
                     },
                     {
                         "title": "Discharge Summary Page",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
+                        "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
+                        "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                     },
                     {
                         "title": "Program Management Page",
-                        "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
+                        "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
+                        "url": "../clinical/#/patient/{{patientUuid}}/consultationContext"
                     },
                     {
                         "title": "Consultation",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
+                        "translationKey":"CONSULTATION_PAGE_KEY",
+                        "url": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
                     }
                 ]
             },
