@@ -98,17 +98,17 @@
                     {
                         "title": "Discharge Summary Page",
                         "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
-                        "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
+                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                     },
                     {
                         "title": "Program Management Page",
                         "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
-                        "url": "../clinical/#/patient/{{patientUuid}}/consultationContext"
+                        "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
                     },
                     {
                         "title": "Consultation",
                         "translationKey":"CONSULTATION_PAGE_KEY",
-                        "url": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
+                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
                     }
                 ]
             },
