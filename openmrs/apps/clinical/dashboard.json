@@ -77,36 +77,30 @@
                 "displayOrder": 6,
                 "links": [
                     {
-                        "title": "Home Dashboard",
                         "translationKey":"HOME_DASHBOARD_KEY",
                         "url": "../home/#/dashboard"
                     },
                     {
-                        "title": "Patient Visit Page",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
                         "translationKey":"PATIENT_VISIT_PAGE_KEY"
                     },
                     {
-                        "title": "Patient ADT Page",
                         "translationKey":"PATIENT_ADT_PAGE_KEY",
                         "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
                     },
                     {
-                        "title": "Patient Dashboard",
+                        "translationKey":"PATIENT_DASHBOARD_KEY",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
                     },
                     {
-                        "title": "Discharge Summary Page",
                         "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                     },
                     {
-                        "title": "Program Management Page",
                         "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
                         "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
                     },
                     {
-                        "title": "Consultation",
                         "translationKey":"CONSULTATION_PAGE_KEY",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
                     }
@@ -381,6 +375,8 @@
         "sections": {
             "patientInformation": {
                 "title": "Patient Information",
+               "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+
                 "name": "patientInformation",
                 "patientAttributes": [
                     "caste",

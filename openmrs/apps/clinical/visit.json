@@ -1,6 +1,6 @@
 {
     "general":{
-        "title": "General",
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "printing": {
             "title": "Bahmni",
@@ -41,7 +41,7 @@
         }
     },
     "dischargeSummary":{
-        "title": "Discharge Summary",
+        "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "printing": {
             "title": "Bahmni",
             "header": "Discharge Summary",
@@ -115,6 +115,7 @@
                 "displayOrder": 6,
                 "config": {
                     "title": "Lab Investigations",
+                    "translationKey":"LAB_INVESTIGATION",
                     "showChart": true,
                     "showTable": false,
                     "showNormalLabResults": true,
@@ -154,7 +155,7 @@
         }
     },
     "orders":{
-      "title": "Orders",
+      "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
       "sections": {
           "Radiology Orders": {
               "type": "order",

@@ -34,7 +34,7 @@
                 "conceptName": "Adt Notes",
                 "sections": {
                 "vitals":{
-                    "title": "Vitals",
+                    "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                     "name": "vitals",
                     "displayOrder": 0,
                     "isObservation": true,
@@ -44,13 +44,13 @@
                     }
                 },
                 "disposition":{
-                    "title": "Disposition",
+                    "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
                     "name": "disposition",
                     "numberOfVisits": 1,
                     "displayOrder": 1
                 },
                 "diagnosis":{
-                    "title": "Diagnosis",
+                    "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
                     "name": "diagnosis",
                     "numberOfVisits": 1,
                     "showDetailsButton":true,
@@ -58,47 +58,48 @@
                 },
                 "patientInformation":{
                     "title": "Patient Information",
+                    "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                     "name": "patientInformation",
                     "displayOrder": 3,
                     "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
                     "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                 },
                 "admissionDetails":{
-                    "title": "Admission Details",
+                    "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                     "name":"admissionDetails",
                     "displayOrder": 4
                 },
                 "navigationLinksControl":{
-                    "title": "Navigation Links Control",
+                    "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                     "name": "navigationLinksControl",
                     "displayOrder": 5,
                     "links": [
                         {
-                            "title": "Home Dashboard",
+                            "translationKey":"HOME_DASHBOARD_KEY",
                             "url": "../home/#/dashboard"
                         },
                         {
-                            "title": "Patient Visit Page",
+                            "translationKey":"PATIENT_VISIT_PAGE_KEY",
                             "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                         },
                         {
-                            "title": "Patient ADT Page",
+                            "translationKey":"PATIENT_ADT_PAGE_KEY",
                             "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
                         },
                         {
-                            "title": "Patient Dashboard",
+                            "translationKey":"PATIENT_DASHBOARD_KEY",
                             "url": "../clinical/#/patient/{{patientUuid}}/dashboard"
                         },
                         {
-                            "title": "Discharge Summary Page",
+                            "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
                             "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                         },
                         {
-                            "title": "Program Management Page",
+                            "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
                             "url": "../clinical/#/patient/{{patientUuid}}/consultationContext"
                         },
                         {
-                            "title": "Consultation",
+                            "translationKey":"CONSULTATION_PAGE_KEY",
                             "url": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
                         }
                     ]

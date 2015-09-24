@@ -23,9 +23,13 @@
   "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY": "Navigation Links Control",
   "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY": "Radiology Orders",
   "DASHBOARD_TITLE_VITALS_KEY": "Vitals",
+  "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY": "Patient Information",
+
 
   "DASHBOARD_TAB_GENERAL_KEY": "General",
   "DASHBOARD_TAB_TRENDS_KEY": "Trends",
+  "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY": "Discharge Summary",
+  "DASHBOARD_TAB_ORDERS_KEY": "Orders",
 
   "LAB_INVESTIGATIONS_KEY":"Lab Investigations",
   "PACS_ORDERS_VISIT_PAGE_KEY": "Pacs Orders Visit Page",
@@ -46,6 +50,7 @@
   "CONSULTATION_BOARD_LABEL_KEY":"Consultation",
   "DISPOSITION_BOARD_LABEL_KEY":"Disposition",
   "DIAGNOSIS_BOARD_LABEL_KEY":"Diagnosis",
+
   "CONSULTATION_PAGE_KEY" :"Consultation",
   "PROGRAM_MANAGEMENT_PAGE_KEY":"Program Management Page",
   "DISCHARGE_SUMMARY_PAGE_KEY":"Discharge Summary Page",
