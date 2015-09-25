@@ -5,10 +5,10 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
-            "display": "Radiology Orders",
             "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Radiology Order",
             "forwardButtonTitle": "View",
-            "view": "tabular"
+            "view": "tabular",
+            "translationKey": "Radiology Orders"
         },
         "label": "Radiology Order",
         "order": 1,

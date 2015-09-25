@@ -5,8 +5,8 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
-            "display": "Active Patients",
-            "forwardUrl": "#/patient/{{patientUuid}}/document"
+            "forwardUrl": "#/patient/{{patientUuid}}/document",
+            "translationKey": "Active Patients"
         },
         "label": "Active Patients",
         "order": 1,
@@ -17,8 +17,8 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "display": "All patients",
-            "forwardUrl": "#/patient/{{patientUuid}}/document"
+            "forwardUrl": "#/patient/{{patientUuid}}/document",
+            "translationKey": "All patients"
         },
         "label": "All patients",
         "order": 1,

@@ -93,9 +93,9 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
-            "display": "To Admit",
             "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit",
-            "refreshTime": 120
+            "refreshTime": 120,
+            "translationKey": "To Admit"
         },
         "label": "To Admit",
         "order": 1,
@@ -107,9 +107,9 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
-            "display": "Admitted",
             "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/transfer",
-            "refreshTime": 120
+            "refreshTime": 120,
+            "translationKey": "Admitted"
         },
         "label": "Admitted",
         "order": 2,
@@ -121,9 +121,9 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
-            "display": "To Discharge",
             "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge",
-            "refreshTime": 120
+            "refreshTime": 120,
+            "translationKey": "To Discharge"
         },
         "label": "To Discharge",
         "order": 3,
@@ -134,8 +134,8 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "display": "All",
-            "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
+            "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit",
+            "translationKey": "All"
         },
         "label": "All",
         "order": 5,
