@@ -102,6 +102,7 @@
                     },
                     {
                         "translationKey":"CONSULTATION_PAGE_KEY",
+
                         "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
                     }
                 ]
