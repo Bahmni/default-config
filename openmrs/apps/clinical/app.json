@@ -277,6 +277,12 @@
             "CHP Registration, Family Member Number": {
                 "required":true
             },
+            "CHP ANC, Diagnosis, If other, specify": {
+                "conciseText":true
+            },
+            "ANC, Diagnosis, If other, specify": {
+                "conciseText":true
+            },
             "CHP ANC, Visit date": {
                 "required":true
             },
