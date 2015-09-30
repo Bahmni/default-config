@@ -67,7 +67,6 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "refreshTime": 120,
             "translationKey": "Active"
         },
         "label": "Active",
@@ -81,7 +80,6 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
             "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "refreshTime": 120,
             "translationKey": "My Patients"
         },
         "label": "My Patients",
@@ -95,7 +93,6 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatients",
             "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "refreshTime": 120,
             "translationKey": "Today's Patients"
         },
         "label": "Today's Patients",
@@ -109,7 +106,6 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.genOpdPatients",
             "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "refreshTime": 120,
             "translationKey": "Gen OPD"
         },
         "label": "Gen OPD",
@@ -123,7 +119,6 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.chronicPatients",
             "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "refreshTime": 120,
             "translationKey": "Chronic"
         },
         "label": "Chronic",
@@ -137,7 +132,6 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
             "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "refreshTime": 120,
             "translationKey": "Admitted"
         },
         "label": "Admitted",
@@ -176,7 +170,6 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatients",
             "forwardUrl": "#/default/patient/{{patientUuid}}/treatment",
-            "refreshTime": 120,
             "translationKey": "Today's Patients"
         },
         "label": "Today's Patients",
