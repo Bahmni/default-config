@@ -265,6 +265,43 @@
             "ART, ART ART side effects": {
                 "multiSelect": true
             },
+            "CHP Registration, VDC Number": {
+                "required":true
+            },
+            "CHP Registration, Ward Number": {
+                "required":true
+            },
+            "CHP Registration, House Number": {
+                "required":true
+            },
+            "CHP Registration, Family Member Number": {
+                "required":true
+            },
+            "CHP ANC, Visit date": {
+                "required":true
+            },
+            "CHP ANC, Visit type": {
+                "required":true
+            },
+            "CHP ANC, Follow up": {
+                "required":true
+            },
+            "CHP ANC, Diagnosis, High Risk Low Touch": {
+                "multiSelect": true,
+                "required":true
+            },
+            "CHP ANC, Diagnosis, High Risk High Touch": {
+                "multiSelect": true,
+                "required":true
+            },
+            "ANC, Diagnosis, CHP High Risk Low Touch": {
+                "multiSelect": true,
+                "required":true
+            },
+            "ANC, Diagnosis, CHP High Risk High Touch": {
+                "multiSelect": true,
+                "required":true
+            },
             "HTC, Other reason for test": {
                 "conciseText": true
             },
