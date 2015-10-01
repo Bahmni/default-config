@@ -1,5 +1,6 @@
 {
     "general": {
+        "dashboardName": "General",
         "displayByDefault": true,
         "printing": {
             "title": "Bayalpata Hospital",
@@ -8,33 +9,34 @@
         },
         "sections": {
             "patient_information": {
+                "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
                 ],
-                "displayOrder": 0,
-                "translationKey": "Patient Information"
+                "displayOrder": 0
             },
             "visits": {
+                "title": "Visits",
                 "name": "visits",
                 "dashboardParams": {
                     "title": null,
                     "maximumNoOfVisits": 4
                 },
-                "displayOrder": 1,
-                "translationKey": "Visits"
+                "displayOrder": 1
             },
             "diagnosis": {
+                "title": "Diagnosis",
                 "name": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
                 "showDetailsButton": true,
-                "displayOrder": 2,
-                "translationKey": "Diagnosis"
+                "displayOrder": 2
             },
             "lab_results": {
+                "title": "Lab Results",
                 "name": "labOrders",
                 "dashboardParams": {
                     "title": null,
@@ -46,10 +48,10 @@
                 "allLabDetails": {
                     "numberOfVisits": 3
                 },
-                "displayOrder": 3,
-                "translationKey": "Lab Results"
+                "displayOrder": 3
             },
             "radiology_orders": {
+                "title": "Radiology Orders",
                 "name": "ordersControl",
                 "orderType": "Radiology Order",
                 "displayOrder": 4,
@@ -60,10 +62,10 @@
                         "Neck"
                     ],
                     "numberOfVisits": 1
-                },
-                "translationKey": "Radiology Orders"
+                }
             },
             "treatments": {
+                "title": "Treatments",
                 "name": "treatment",
                 "dashboardParams": {
                     "showFlowSheet": false,
@@ -84,10 +86,10 @@
                     "showOtherActive": true,
                     "showDetailsButton": false
                 },
-                "displayOrder": 5,
-                "translationKey": "Treatments"
+                "displayOrder": 5
             },
             "vitals": {
+                "title": "Vitals",
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
@@ -117,17 +119,17 @@
                         "labConcepts": ""
                     }
                 },
-                "displayOrder": 6,
-                "translationKey": "Vitals"
+                "displayOrder": 6
             },
             "disposition": {
+                "title": "Disposition",
                 "name": "disposition",
                 "numberOfVisits": 2,
                 "showDetailsButton": true,
-                "displayOrder": 7,
-                "translationKey": "Disposition"
+                "displayOrder": 7
             },
             "chronic_diseases": {
+                "title": "Chronic Diseases",
                 "templateName": "Chronic Diseases",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -140,10 +142,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 8,
-                "translationKey": "Chronic Diseases"
+                "displayOrder": 8
             },
             "general_consultation": {
+                "title": "General Consultation",
                 "templateName": "General Consultation",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -156,10 +158,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 9,
-                "translationKey": "General Consultation"
+                "displayOrder": 9
             },
             "childhood_templates": {
+                "title": "Childhood Templates",
                 "templateName": "Childhood Templates",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -172,10 +174,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 10,
-                "translationKey": "Childhood Templates"
+                "displayOrder": 10
             },
             "motherhood": {
+                "title": "Motherhood",
                 "templateName": "Motherhood templates",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -188,10 +190,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 11,
-                "translationKey": "Motherhood"
+                "displayOrder": 11
             },
             "hiv": {
+                "title": "HIV",
                 "templateName": "HIV Profile",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -204,10 +206,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 12,
-                "translationKey": "HIV"
+                "displayOrder": 12
             },
             "orthopaedic": {
+                "title": "Orthopaedic",
                 "templateName": "Disease template, Orthopaedic",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -220,10 +222,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 13,
-                "translationKey": "Orthopaedic"
+                "displayOrder": 13
             },
             "death_note": {
+                "title": "Death Note",
                 "templateName": "Death Note Template",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -236,10 +238,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 14,
-                "translationKey": "Death Note"
+                "displayOrder": 14
             },
             "discharge_note": {
+                "title": "Discharge Note",
                 "templateName": "Discharge Note Template",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -252,10 +254,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 15,
-                "translationKey": "Discharge Note"
+                "displayOrder": 15
             },
             "tuberculosis": {
+                "title": "Tuberculosis",
                 "templateName": "Tuberculosis Disease Template",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -268,10 +270,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 16,
-                "translationKey": "Tuberculosis"
+                "displayOrder": 16
             },
             "kalaazar": {
+                "title": "Kalaazar",
                 "templateName": "Kalaazar Disease Template",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -284,10 +286,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 17,
-                "translationKey": "Kalaazar"
+                "displayOrder": 17
             },
             "malaria": {
+                "title": "Malaria",
                 "templateName": "Malaria Disease Template",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -300,10 +302,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 18,
-                "translationKey": "Malaria"
+                "displayOrder": 18
             },
             "leprosy": {
+                "title": "Leprosy",
                 "templateName": "Leprosy Disease Template",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -316,10 +318,10 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 19,
-                "translationKey": "Leprosy"
+                "displayOrder": 19
             },
             "mental_health": {
+                "title": "Mental Health",
                 "templateName": "Mental Health Disease Template",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -332,13 +334,12 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 20,
-                "translationKey": "Mental Health"
+                "displayOrder": 20
             }
-        },
-        "translationKey": "General"
+        }
     },
     "hiv": {
+        "dashboardName": "HIV",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "HIV Summary",
@@ -346,16 +347,17 @@
         },
         "sections": {
             "patient_information": {
+                "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
                 ],
-                "displayOrder": 0,
-                "translationKey": "Patient Information"
+                "displayOrder": 0
             },
             "hiv": {
+                "title": "HIV",
                 "templateName": "HIV Profile",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -368,13 +370,12 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 1,
-                "translationKey": "HIV"
+                "displayOrder": 1
             }
-        },
-        "translationKey": "HIV"
+        }
     },
     "motherhood": {
+        "dashboardName": "Motherhood",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "Motherhood Summary",
@@ -382,16 +383,17 @@
         },
         "sections": {
             "patient_information": {
+                "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
                 ],
-                "displayOrder": 0,
-                "translationKey": "Patient Information"
+                "displayOrder": 0
             },
             "motherhood": {
+                "title": "Motherhood",
                 "templateName": "Motherhood templates",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -404,13 +406,12 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 1,
-                "translationKey": "Motherhood"
+                "displayOrder": 1
             }
-        },
-        "translationKey": "Motherhood"
+        }
     },
     "orthopaedic": {
+        "dashboardName": "Orthopaedic",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "Orthopaedic Summary",
@@ -418,16 +419,17 @@
         },
         "sections": {
             "patient_information": {
+                "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
                 ],
-                "displayOrder": 0,
-                "translationKey": "Patient Information"
+                "displayOrder": 0
             },
             "orthopaedic": {
+                "title": "Orthopaedic",
                 "templateName": "Disease template, Orthopaedic",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -440,13 +442,12 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 1,
-                "translationKey": "Orthopaedic"
+                "displayOrder": 1
             }
-        },
-        "translationKey": "Orthopaedic"
+        }
     },
     "imam": {
+        "dashboardName": "IMAM",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "IMAM Summary",
@@ -454,16 +455,17 @@
         },
         "sections": {
             "patient_information": {
+                "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
                     "countyDistrict"
                 ],
-                "displayOrder": 0,
-                "translationKey": "Patient Information"
+                "displayOrder": 0
             },
             "imam": {
+                "title": "IMAM",
                 "templateName": "Childhood Templates",
                 "name": "diseaseTemplate",
                 "showOnly": [],
@@ -476,10 +478,8 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 1,
-                "translationKey": "IMAM"
+                "displayOrder": 1
             }
-        },
-        "translationKey": "IMAM"
+        }
     }
 }
