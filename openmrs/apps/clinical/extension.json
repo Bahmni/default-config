@@ -50,6 +50,16 @@
         "order": 5,
         "requiredPrivilege": "app:pharmacy"
     },
+    "bahmni_clinical_consultation_treatment_treatment_app_clinical": {
+        "id": "bahmni.clinical.consultation.treatment",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Treatment",
+        "url": "treatment",
+        "icon": "fa-user-md",
+        "order": 5,
+        "requiredPrivilege": "app:clinical"
+    },
     "bahmni_clinical_orders_pending_pending_orders_app_radiologyorders": {
         "id": "bahmni.clinical.orders.pending",
         "extensionPointId": "org.bahmni.clinical.orders",
@@ -67,7 +77,8 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display": "Active",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
+	    "refreshTime": 1200
         },
         "label": "Active",
         "order": 1,
@@ -80,62 +91,11 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
             "display": "My Patients",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
+            "refreshTime": 1200
         },
         "label": "My Patients",
         "order": 2,
-        "requiredPrivilege": "app:clinical"
-    },
-    "bahmni_clinical_patients_search_allpatients_today's_patients_app_clinical": {
-        "id": "bahmni.clinical.patients.search.allPatients",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.todaysPatients",
-            "display": "Today's Patients",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
-        },
-        "label": "Today's Patients",
-        "order": 3,
-        "requiredPrivilege": "app:clinical"
-    },
-    "bahmni_clinical_patients_search_genopdpatients_gen_opd_app_clinical": {
-        "id": "bahmni.clinical.patients.search.genOpdPatients",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.genOpdPatients",
-            "display": "Gen OPD",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
-        },
-        "label": "Gen OPD",
-        "order": 4,
-        "requiredPrivilege": "app:clinical"
-    },
-    "bahmni_clinical_patients_search_chronicpatients_chronic_app_clinical": {
-        "id": "bahmni.clinical.patients.search.chronicPatients",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.chronicPatients",
-            "display": "Chronic",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
-        },
-        "label": "Chronic",
-        "order": 5,
-        "requiredPrivilege": "app:clinical"
-    },
-    "bahmni_adt_patients_search_patientsadmitted_admitted_app_clinical": {
-        "id": "bahmni.adt.patients.search.patientsAdmitted",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.admittedPatients",
-            "display": "Admitted",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
-        },
-        "label": "Admitted",
-        "order": 6,
         "requiredPrivilege": "app:clinical"
     },
     "bahmni_clinical_patients_search_allpatients_all_app_clinical": {
@@ -144,7 +104,8 @@
         "type": "config",
         "extensionParams": {
             "display": "All",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
+            "refreshTime": 1200
         },
         "label": "All",
         "order": 7,
@@ -157,7 +118,8 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display": "Active",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment",
+            "refreshTime": 1200
         },
         "label": "Active",
         "order": 8,
@@ -170,7 +132,8 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatients",
             "display": "Today's Patients",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment",
+            "refreshTime": 1200
         },
         "label": "Today's Patients",
         "order": 9,
@@ -182,7 +145,8 @@
         "type": "config",
         "extensionParams": {
             "display": "All",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment",
+            "refreshTime": 1200
         },
         "label": "All",
         "order": 10,
