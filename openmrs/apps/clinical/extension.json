@@ -98,6 +98,20 @@
         "order": 2,
         "requiredPrivilege": "app:clinical"
     },
+    "bahmni_adt_patients_search_patientsadmitted_admitted_app_clinical": {
+        "id": "bahmni.adt.patients.search.patientsAdmitted",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.admittedPatients",
+            "display": "Admitted",
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
+	    "refreshTime": 1200
+        },
+        "label": "Admitted",
+        "order": 6,
+        "requiredPrivilege": "app:clinical"
+    },
     "bahmni_clinical_patients_search_allpatients_all_app_clinical": {
         "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
