@@ -94,7 +94,7 @@
                 }
             },
             "drugOrder": {
-                "calculateTotalUnits": ["Teaspoons"],
+                "calculateTotalUnits": ["Teaspoon"],
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",
                 "frequencyDefaultDurationUnitsMap": [
