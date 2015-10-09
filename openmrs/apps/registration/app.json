@@ -17,14 +17,19 @@
             "activeVisitUuid"
         ],
         "config" : {
-             "additionalPatientInformation" : [
-                { "name":"debt", "display":true },
-                { "name":"distanceFromCenter", "display":true },
-                { "name":"isUrban", "display":true },
-                { "name":"cluster", "display":true },
-                { "name":"RationCard", "display":true },
-                { "name":"familyIncome", "display":true }
-            ],
+            "patientInformation": {
+                "additionalPatientInformation": {
+                    "title": "Additional Patient Information",
+                    "attributes": [
+                        "debt",
+                        "distanceFromCenter",
+                        "isUrban",
+                        "cluster",
+                        "RationCard",
+                        "familyIncome"
+                    ]
+                }
+            },
             "addressHierarchy": {
                 "showAddressFieldsTopDown": false,
                 "freeTextAddressFields": ["address2", "address1"]
