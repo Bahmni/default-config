@@ -15,4 +15,15 @@
             INSERT INTO site_information(id, name, lastupdated, description, value, encrypted, value_type)  VALUES ( nextVal( 'site_information_seq' ) , 'defaultOrganizationName', now(), 'Default organization name for department to be synced from openmrs',  'Bahmni', 'f', 'text' );
         </sql>
     </changeSet>
+    <changeSet id="201510121504" author="Preethi,Sourav">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from organization where name='Bahmni';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Bahmni organization</comment>
+        <sql>
+            INSERT INTO organization(id, name)  VALUES ( nextVal( 'organization_seq' ) , 'Bahmni' );
+        </sql>
+    </changeSet>
 </databaseChangeLog>
