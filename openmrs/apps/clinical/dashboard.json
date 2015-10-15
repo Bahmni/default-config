@@ -155,18 +155,6 @@
                     ]
                 }
             },
-            "bacteriologyResults":{
-                "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "name": "bacteriologyResultsControl",
-                "scope": "All",
-                "orderType": "",
-                "dashboardParams": {
-                    "conceptNames": [
-                        "BACTERIOLOGY CONCEPT SET"
-                    ]
-
-                }
-            },
             "labResults": {
                 "title":"Lab Results",
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
