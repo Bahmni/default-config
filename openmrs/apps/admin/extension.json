@@ -22,5 +22,17 @@
         "icon": "fa-download",
         "order": 1,
         "requiredPrivilege": "app:registration"
+    },
+    "orderSet":{
+        "id": "bahmni.admin.orderSet",
+        "extensionPointId": "org.bahmni.admin.dashboard",
+        "type": "link",
+        "extensionParams": {
+        },
+        "label": "Order Set",
+        "url": "#/ordersetdashboard",
+        "icon": "fa-upload",
+        "order": 1,
+        "requiredPrivilege": "app:registration"
     }
 }
