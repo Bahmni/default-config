@@ -24,6 +24,7 @@
             "visitUuid"
         ],
         "config" : {
+            "diagnosisStatus": "Inactive",
             "onAdmissionForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
             "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
             "onDischargeForwardTo": "#/patient/search",
