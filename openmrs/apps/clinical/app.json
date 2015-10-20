@@ -23,6 +23,7 @@
             "visitUuid"
         ],
         "config" : {
+            "diagnosisStatus": "Inactive",
             "program": {
                 "patientInformation": {
                     "ageLimit":100
@@ -94,7 +95,6 @@
                 }
             },
             "drugOrder": {
-                "calculateTotalUnits": ["Teaspoon"],
                 "defaultDurationUnit": "Day(s)",
                 "defaultInstructions": "As directed",
                 "frequencyDefaultDurationUnitsMap": [
