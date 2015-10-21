@@ -23,17 +23,16 @@
                     "attributes": [
                         "distanceFromCenter",
                         "isUrban",
+                        "cluster",
+                        "RationCard",
+                        "familyIncome",
+                        "debt",
                         "cluster"
                     ]
                 },
-                "patientFinancialInformation": {
-                    "translationKey": "REGISTRATION_FINANCIAL_INFO_KEY",
-                    "shortcutKey": "REGISTRATION_FINANCIAL_ACCESS_KEY",
-                    "attributes": ["familyIncome", "debt"]
-                },
                 "hidden": {
                     "attributes": [
-                        "RationCard","cluster"
+                        "primaryContact"
                     ]
                 },
                 "defaults":  {
