@@ -21,15 +21,22 @@
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
-                        "debt",
                         "distanceFromCenter",
                         "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome"
+                        "cluster"
                     ]
                 },
-                "defaults": {
+                "patientFinancialInformation": {
+                    "translationKey": "REGISTRATION_FINANCIAL_INFO_KEY",
+                    "shortcutKey": "REGISTRATION_FINANCIAL_ACCESS_KEY",
+                    "attributes": ["familyIncome", "debt"]
+                },
+                "hidden": {
+                    "attributes": [
+                        "RationCard","cluster"
+                    ]
+                },
+                "defaults":  {
                     "class": "General",
                     "landHolding": 2
                 }
