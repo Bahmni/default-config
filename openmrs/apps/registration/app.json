@@ -28,6 +28,10 @@
                         "RationCard",
                         "familyIncome"
                     ]
+                },
+                "defaults": {
+                    "class": "General",
+                    "landHolding": 2
                 }
             },
             "addressHierarchy": {
