@@ -501,5 +501,28 @@
                 "displayOrder": 6
             }
         }
+    },
+    "patientSummary": {
+        "translationKey": "DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
+        "maxRecentlyViewedPatients": 10,
+        "sections": {
+            "Bacteriology Concept Set": {
+                "displayType": "Full-Page",
+                "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
+                "name": "obsToObsFlowSheet",
+                "dashboardParams": {
+                    "numberOfVisits": 1,
+                    "templateName": "BACTERIOLOGY CONCEPT SET",
+                    "groupByConcept": "Specimen Collection Date",
+                    "conceptNames": [
+                        "Specimen Id"
+                    ]
+                },
+                "allDetailsParams": {
+                    "templateName": "BACTERIOLOGY CONCEPT SET",
+                    "groupByConcept": "Specimen Collection Date"
+                }
+            }
+        }
     }
 }
