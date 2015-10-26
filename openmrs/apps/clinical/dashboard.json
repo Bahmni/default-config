@@ -322,7 +322,8 @@
                 "displayOrder": 17,
                 "dashboardParams": {
                     "title": null,
-                    "maximumNoOfVisits": 10
+                    "maximumNoOfVisits": 8,
+                    "groupByVisits": true
                 }
             },
             "diabetes": {
