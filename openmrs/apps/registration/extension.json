@@ -29,7 +29,7 @@
         "url": "/patient/{{patientUuid}}",
         "icon": "fa-patient-edit",
         "order": 1,
-        "requiredPrivilege": "Edit Patients"
+        "requiredPrivilege": "View Patients"
     },
     "bahmni_patient_registration_next": {
         "id": "bahmni.patient.registration.next",
