@@ -77,8 +77,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display": "Active",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-	    "refreshTime": 1200
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
         },
         "label": "Active",
         "order": 1,
@@ -91,8 +90,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatientsByProvider",
             "display": "My Patients",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "refreshTime": 1200
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
         },
         "label": "My Patients",
         "order": 2,
@@ -105,8 +103,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
             "display": "Admitted",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-	    "refreshTime": 1200
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
         },
         "label": "Admitted",
         "order": 6,
@@ -118,8 +115,7 @@
         "type": "config",
         "extensionParams": {
             "display": "All",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
-            "refreshTime": 1200
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
         },
         "label": "All",
         "order": 7,
@@ -132,8 +128,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display": "Active",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment",
-            "refreshTime": 1200
+            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
         },
         "label": "Active",
         "order": 8,
@@ -146,8 +141,7 @@
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.todaysPatients",
             "display": "Today's Patients",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment",
-            "refreshTime": 1200
+            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
         },
         "label": "Today's Patients",
         "order": 9,
@@ -159,8 +153,7 @@
         "type": "config",
         "extensionParams": {
             "display": "All",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment",
-            "refreshTime": 1200
+            "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
         },
         "label": "All",
         "order": 10,
