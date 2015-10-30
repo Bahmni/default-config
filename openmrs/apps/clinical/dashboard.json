@@ -1,7 +1,6 @@
 {
     "general": {
         "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
-        "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {
@@ -504,6 +503,7 @@
     },
     "patientSummary": {
         "translationKey": "DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
+        "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "Bacteriology Concept Set": {
@@ -521,6 +521,16 @@
                 "allDetailsParams": {
                     "templateName": "BACTERIOLOGY CONCEPT SET",
                     "groupByConcept": "Specimen Collection Date"
+                }
+            },
+            "Drug-O-Gram": {
+                "displayType": "Full-Page",
+                "title": "Drug-O-Gram",
+                "translationKey": "DASHBOARD_TITLE_DRUG_O_GRAM_KEY",
+                "name": "drugOGram",
+                "dashboardParams": {
+                },
+                "allDetailsParams": {
                 }
             }
         }
