@@ -88,12 +88,13 @@
                 "Image" :{
                     "allowAddMore" :true
                 },
+                "Accepted Family Planning methods":{
+                    "multiSelect": true
+                },
                 "defaults" : {
-                    "History Notes" : "asdasjdnasdas",
-                    "Smoking History" : true,
-                    "P/A Presenting Part" : ["Cephalic", "Breech"],
-                    "FHS" : "Present",
-                    "LMP" : "2015-10-11"
+                    "Number of living children" : 1,
+                    "Accepted Family Planning methods": ["Condoms", "Pills"],
+                    "Pain management given": true
                 }
             },
             "visitPage": {
