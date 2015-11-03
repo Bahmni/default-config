@@ -76,6 +76,12 @@
                 "REGISTRATION FEES": {
                     "required": true,
                     "label": "Fee"
+                },
+                "FHS": {
+                    "buttonSelect": true
+                },
+                "defaults":{
+                    "FHS": "Present"
                 }
             },
             "fieldValidation" : {
