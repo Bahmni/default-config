@@ -88,6 +88,9 @@
                 "Image" :{
                     "allowAddMore" :true
                 },
+                "Gynaecology, Gravida" :{
+                    "stepper" :true
+                },
                 "Accepted Family Planning methods":{
                     "multiSelect": true
                 },
