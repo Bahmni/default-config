@@ -534,6 +534,17 @@
                     "templateName": "BACTERIOLOGY CONCEPT SET",
                     "groupByConcept": "Specimen Collection Date"
                 }
+            },
+            "Chronic Treatment Chart": {
+                "displayType": "Full-Page",
+                "title": "Chronic Treatment Chart",
+                "name": "chronicTreatmentChart",
+                "dashboardParams": {
+                    "drugs": []
+                 },
+                 "allDetailsParams": {
+                    "drugs": []
+                 }
             }
         }
     }
