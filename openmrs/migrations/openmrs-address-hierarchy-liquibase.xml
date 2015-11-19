@@ -12,6 +12,7 @@
     and location information only. 
     -->
     <changeSet id="BAHMNI-IMPL-ADDRESS-HIERARCHY-001" author="tw">
+        <validCheckSum>3:9be957134699940fa2165b77e759c802</validCheckSum>
         <comment>Set up Address Hierarchy</comment>
         <sql>
 			INSERT INTO `address_hierarchy_level` (`address_hierarchy_level_id`,`name`,`parent_level_id`,`address_field`,`uuid`,`required`) VALUES (3,'State',NULL,'STATE_PROVINCE','9426afa9-49da-41df-9910-5e929b8a997b',0);
@@ -23,6 +24,7 @@
         </sql>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-ADDRESS-HIERARCHY-002" author="tw">
+        <validCheckSum>3:e46b02efd1cadad66f062bcf1bf0faa5</validCheckSum>
         <comment>Address hierarchy entry data</comment>
         <sqlFile path="address-hierarchy-entry-data.sql"/>
     </changeSet>

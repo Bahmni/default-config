@@ -8,6 +8,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <changeSet id="BAHMNI-LOCATION-TEST-DATA-001" author="tw">
+        <validCheckSum>3:446417270b87127d4378ad7139d6d632</validCheckSum>
         <comment>Create login locations for Reg and OPD</comment>
         <sql>
             INSERT INTO location(name, creator, date_created, uuid)

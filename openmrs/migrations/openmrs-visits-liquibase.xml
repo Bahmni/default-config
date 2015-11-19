@@ -9,6 +9,7 @@
 
     <!-- This Liquibase file is meant to contain changesets for Visit Related Information Only -->
     <changeSet id="BAHMNI-IMPL-OMRS-V-001" author="tw">
+        <validCheckSum>3:462867b18e440da02f2276a05a7bd8c3</validCheckSum>
         <comment>Create new visit type for IPD</comment>
         <insert tableName="visit_type">
             <column name="name" value="IPD" />
@@ -31,6 +32,7 @@
     </changeSet>
 
     <changeSet id="BAHMNI-IMPL-OMRS-V-003" author="tw">
+        <validCheckSum>3:b30c0ce56e5aaf53d97ce2e9c7ee0e10</validCheckSum>
         <comment>Add global property to configure visit auto expire hours</comment>
         <sql>
             INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
@@ -40,6 +42,7 @@
     </changeSet>
 
     <changeSet id="BAHMNI-IMPL-OMRS-V-005" author="tw">
+        <validCheckSum>3:7ded9d07d02192949465ff5650cbd2ba</validCheckSum>
         <comment>Delete OpenMRS property autoCloseVisitType since we don't use that scheduler (to avoid confusion)</comment>
         <sql>
             DELETE FROM global_property WHERE property like '%visits.autoCloseVisitType%';
@@ -47,6 +50,7 @@
     </changeSet>
 
     <changeSet id="BAHMNI-IMPL-OMRS-V-006" author="tw">
+        <validCheckSum>3:5b14b08257cf58c1fc63f8f4c2b6c965</validCheckSum>
         <comment>Delete OpenMRS property visits.autoCloseMinimumNumberOfDays since we don't use that scheduler (to avoid confusion)</comment>
         <sql>
             DELETE FROM global_property WHERE property like '%visits.autoCloseMinimumNumberOfDays%';
@@ -54,6 +58,7 @@
     </changeSet>
 
     <changeSet id="BAHMNI-IMPL-OMRS-V-007" author="tw">
+        <validCheckSum>3:b840475f22d63bfe1ab8de22a3dc688a</validCheckSum>
         <comment>Delete OpenMRS scheduler AutoCloseVisitsTask since we don't use that scheduler (to avoid confusion)</comment>
         <delete tableName="scheduler_task_config">
             <where>schedulable_class = 'org.openmrs.scheduler.tasks.AutoCloseVisitsTask'</where>
@@ -61,6 +66,7 @@
     </changeSet>
 
     <changeSet id="BAHMNI-IMPL-OMRS-V-008" author="tw">
+        <validCheckSum>3:d128eee8daafeaaadc62ae5c3c7ba060</validCheckSum>
         <comment>Add Bahmni preferred EMR API scheduler which closes stale visits</comment>
         <insert tableName="scheduler_task_config">
             <column name="name" value="Close Stale Visits Task" />
@@ -76,6 +82,7 @@
         </insert>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-V-009" author="tw">
+        <validCheckSum>3:4097d97b0a77163ea2cdfa4fc695f2d5</validCheckSum>
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
                 SELECT COUNT(*) FROM visit_type where name = 'Special OPD';
@@ -91,6 +98,7 @@
         </insert>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-V-010" author="tw">
+        <validCheckSum>3:486a755dcf6b7c8b43cdfd111a36da45</validCheckSum>
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
                 SELECT COUNT(*) FROM visit_type where name = 'EMERGENCY';
