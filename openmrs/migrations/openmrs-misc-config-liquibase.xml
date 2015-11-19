@@ -9,6 +9,7 @@
 
     <!-- This Liquibase file is meant to contain changesets for miscellaneous configuration Only -->
     <changeSet id="BAHMNI-IMPL-OMRS-MISC-001" author="tw">
+        <validCheckSum>3:9dcb62e489e3041fde33aabf3862aaa0</validCheckSum>
         <comment>Location on Server where the patient uploaded images will be stored</comment>
         <sql>
             INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
@@ -16,6 +17,7 @@
         </sql>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-MISC-002" author="tw">
+        <validCheckSum>3:af19f9d14eb007d334c68443afd40cdb</validCheckSum>
         <comment>Add concept set patient document and patient file concept as member</comment>
         <sql>
             set @concept_id = 0;
@@ -23,13 +25,9 @@
             set @concept_name_full_id = 0;
 
             call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Patient Document', 'Patient Document', 'N/A', 'ConvSet', true);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'PATIENT', 1);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'DOCUMENT', 1);
             set @patient_document_concept_id = @concept_id;
 
             call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Patient file', 'Patient file', 'N/A', 'Misc', false);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'PATIENT,', 1);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'FILE', 1);
             set @patient_file_concept_id = @concept_id;
             call add_concept_set_members(@patient_document_concept_id,@patient_file_concept_id,1);
         </sql>

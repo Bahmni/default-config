@@ -9,6 +9,7 @@
 
     <!-- This Liquibase file is meant to contain changesets for Patient Attributes Only -->
     <changeSet id="BAHMNI-IMPL-OMRS-PA-001" author="tw">
+        <validCheckSum>3:7f8b62076e979794b602e7143e734f89</validCheckSum>
         <comment>Add patient attributes</comment>
         <sql>
             INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
@@ -38,119 +39,65 @@
             set @concept_name_full_id = 0;
 
             call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Class', 'class', 'Coded', 'Misc', false);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'CLASS', '1');
-            call add_concept_word(@concept_id, @concept_name_full_id, 'CLASS', '1');
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'OBC', 'obc', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'OBC', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'OBC', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 1);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'General', 'general', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'GENERAL', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'general', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 2);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'SC', 'sc', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'SC', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'sc', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 3);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'ST', 'st', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'ST', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'st', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 4);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Other caste', 'other', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'OTHER', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'OTHER', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'CASTE', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 5);
 
             UPDATE person_attribute_type SET format = 'org.openmrs.Concept', foreign_key = @concept_id  WHERE name = 'class';
 
             call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Education Details', 'education', 'Coded', 'Misc', false);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'EDUCATION', '1');
-            call add_concept_word(@concept_id, @concept_name_full_id, 'EDUCATION', '1');
-            call add_concept_word(@concept_id, @concept_name_full_id, 'DETAILS', '1');
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uneducated', 'uneducated', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'UNEDUCATED', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'UNEDUCATED', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 1);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '5th Pass and Below', 'below-5th', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, '5TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'BELOW', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, '5TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'AND', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'BELOW', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 2);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '6th to 9th', '6th-9th', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, '6TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, '9TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, '6TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'TO', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, '9TH', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 3);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '10th pass', '10th-pass', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, '10TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'PASS', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, '10TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'PASS', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 4);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '12th pass', '12th-pass', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, '12TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'PASS', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, '12TH', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'PASS', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 5);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Graduate and Above', 'graduate', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'GRADUATE', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'GRADUATE', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'AND', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'ABOVE', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 6);
 
             UPDATE person_attribute_type SET format = 'org.openmrs.Concept', foreign_key = @concept_id  WHERE name = 'education';
 
 
             call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Occupation', 'occupation', 'Coded', 'Misc', false);
-            call add_concept_word(@concept_id, @concept_name_short_id, 'OCCUPATION', '1');
-            call add_concept_word(@concept_id, @concept_name_full_id, 'OCCUPATION', '1');
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Unemployed', 'unemployed', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'UNEMPLOYED', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'UNEMPLOYED', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 1);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Student', 'student', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'STUDENT', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'STUDENT', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 2);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Government', 'government', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'GOVERNMENT', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'GOVERNMENT', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 3);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Business', 'business', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'BUSINESS', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'BUSINESS', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 4);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Housewife', 'housewife', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'HOUSEWIFE', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'HOUSEWIFE', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 5);
 
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Labour', 'labour', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'LABOUR', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'LABOUR', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 6);
 
             UPDATE person_attribute_type SET format = 'org.openmrs.Concept', foreign_key = @concept_id  WHERE name = 'occupation';

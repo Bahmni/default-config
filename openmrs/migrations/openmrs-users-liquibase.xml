@@ -11,6 +11,7 @@
         This Liquibase file is meant to contain changesets for USERS and roles required by the system OpenMRS/Bahmni.
     -->
     <changeSet id="BAHMNI-IMPL-OMRS-USERS-001" author="tw">
+        <validCheckSum>3:44fd14aa28d326a88d7ae1b11d4b6365</validCheckSum>
         <comment>Adding superman user</comment>
         <sql>
             SET @puuid = uuid();
@@ -26,6 +27,7 @@
         </sql>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-USERS-002" author="tw">
+        <validCheckSum>3:2108d280e2ef67f215d1d9af8ec59a55</validCheckSum>
         <comment>Add roles to superman user</comment>
         <sql>
             SELECT user_id INTO @user_id FROM users where username = 'superman';

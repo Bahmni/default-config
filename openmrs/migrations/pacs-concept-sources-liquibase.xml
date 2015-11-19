@@ -8,6 +8,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <changeSet id="BAHMNI-PACS-CONCEPT-SOURCE-DATA-001" author="tw">
+        <validCheckSum>3:3df27d43bb384e58911d0020397602c6</validCheckSum>
         <comment>Create concept source for PACS integration</comment>
         <sql>
             INSERT INTO concept_reference_source(name, description, hl7_code, creator, date_created, uuid)

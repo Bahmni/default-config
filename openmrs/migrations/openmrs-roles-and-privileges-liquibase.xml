@@ -13,6 +13,7 @@
         what actions.
     -->
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-001" author="tw">
+        <validCheckSum>3:729de8736c4d43ea3b30d362196c1c2a</validCheckSum>
         <comment>Create RegistrationClerk ROLE and Privileges</comment>
         <sql>
             insert into role (role, description) values ('RegistrationClerk', 'RegistrationClerk');
@@ -54,6 +55,7 @@
         </sql>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-002" author="tw">
+        <validCheckSum>3:1adebc0daaf8828c15b8b91867586253</validCheckSum>
         <comment>Create Document-Uploader ROLE and Privileges</comment>
         <sql>
             
@@ -87,6 +89,7 @@
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-003" author="tw">
         <validCheckSum>3:2d94316c41ea4ad5f8194e4ab7cf569b</validCheckSum>
         <validCheckSum>3:f7acfab952a62d8e46dc30ce0055cd3a</validCheckSum>
+        <validCheckSum>3:2d94316c41ea4ad5f8194e4ab7cf569b</validCheckSum>
         <comment>Add clinical roles and privileges</comment>
         <insert tableName="role">
             <column name="role" value="Doctor" />
@@ -105,6 +108,7 @@
         </insert>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-004" author="tw">
+        <validCheckSum>3:2ce7bbb14bf322e39fe10731825deb11</validCheckSum>
         <comment>Adding privileges for doctor, nurse roles</comment>
         <sql>
             insert into role_privilege (role, privilege) values ('Doctor', 'Add Encounters');

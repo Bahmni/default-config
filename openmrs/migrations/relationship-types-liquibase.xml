@@ -9,6 +9,7 @@
 
     <!-- This changeset is meant to contain patient relationship types -->
     <changeSet id="BAHMNI-IMPL-OMRS-RELATIONSHIPS-001" author="tw" runOnChange="true">
+        <validCheckSum>3:933d7fb849c695ed77766db28068457a</validCheckSum>
         <comment>Add Relationship types</comment>
         <sql>
             INSERT INTO relationship_type (a_is_to_b, b_is_to_a, preferred, weight, description, creator, uuid, date_created)
@@ -23,6 +24,7 @@
     </changeSet>
     <!-- This changeset is meant to contain patient relationship types -->
     <changeSet id="BAHMNI-IMPL-OMRS-RELATIONSHIPS-002" author="tw">
+        <validCheckSum>3:ed1d486e28ab2192a6ff58d31657bd68</validCheckSum>
         <comment>Add global property for relationshipTypeMap</comment>
         <sql>
             INSERT INTO global_property (property, property_value, description, uuid) VALUES ('bahmni.relationshipTypeMap','{"provider":["Doctor"],"patient":["Parent","Sibling"]}', 'Relationships type maps for providers', UUID());
