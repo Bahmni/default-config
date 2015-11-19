@@ -23,6 +23,7 @@
         "visitUuid"
     ],
     "config": {
+        "visitTypeForRetrospectiveEntries": "General",
         "drugOrder": {
             "defaultDurationUnit": "Day(s)",
             "defaultInstructions": "As directed",
@@ -417,6 +418,12 @@
                 "conciseText": true
             },
             "Delivery Note, Liveborn infant details": {
+                "allowAddMore": true
+            },
+            "Dental Note, Tooth number": {
+                "multiSelect": true
+            },
+            "Dental Note, Treatment": {
                 "allowAddMore": true
             },
             "Out Patient Details, Duration": {

@@ -37,7 +37,7 @@
         "label": "Disposition",
         "url": "disposition",
         "icon": "fa-user-md",
-        "order": 4,
+        "order": 5,
         "requiredPrivilege": "app:clinical:dispositionTab"
     },
     "bahmni_clinical_consultation_treatment_treatment_app_pharmacy": {
@@ -57,7 +57,7 @@
         "label": "Treatment",
         "url": "treatment",
         "icon": "fa-user-md",
-        "order": 5,
+        "order": 4,
         "requiredPrivilege": "app:clinical"
     },
     "bahmni_clinical_orders_pending_pending_orders_app_radiologyorders": {
@@ -144,8 +144,8 @@
             "forwardUrl": "#/default/patient/{{patientUuid}}/treatment"
         },
         "label": "Today's Patients",
-        "order": 9,
-        "requiredPrivilege": "app:pharmacy"
+        "order": 3,
+        "requiredPrivilege": "app:clinical"
     },
     "bahmni_clinical_patients_search_allpatients_all_app_pharmacy": {
         "id": "bahmni.clinical.patients.search.allPatients",
