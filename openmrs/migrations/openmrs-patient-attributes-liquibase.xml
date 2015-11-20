@@ -31,6 +31,7 @@
         </sql>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-PA-002" author="tw">
+        <validCheckSum>3:38be0f2656638d261c2efb09adb4bd00</validCheckSum>
         <comment>Add class, occupation, education concepts and associate to patient attributes</comment>
         <sql>
             set @concept_id = 0;
