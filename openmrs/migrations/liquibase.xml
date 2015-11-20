@@ -6,17 +6,5 @@
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-    
-    <include file = "openmrs-roles-and-privileges-liquibase.xml"/>
-    <include file = "openmrs-users-liquibase.xml"/>
-    <include file = "openmrs-id-gen-liquibase.xml"/>
-    <include file = "openmrs-patient-attributes-liquibase.xml"/>
-    <include file = "openmrs-visits-liquibase.xml"/>
-    <include file = "openmrs-address-hierarchy-liquibase.xml"/>
-    <include file = "openmrs-medical-concepts-liquibase.xml"/>
-    <include file = "openmrs-misc-config-liquibase.xml"/>
-    <include file = "atomfeed-config-liquibase.xml"/>
-    <include file = "location-test-data-liquibase.xml"/>
-    <include file = "pacs-concept-sources-liquibase.xml"/>
-    <include file = "relationship-types-liquibase.xml"/>
+
 </databaseChangeLog>
