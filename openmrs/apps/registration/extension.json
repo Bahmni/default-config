@@ -31,18 +31,6 @@
         "order": 1,
         "requiredPrivilege": "View Patients"
     },
-    "enterConsultation":{
-        "id": "bahmni.patient.registration.next",
-        "extensionPointId": "org.bahmni.registration.patient.next",
-        "type": "config",
-        "extensionParams" : {
-            "display": "Enter <u>C</u>onsultation",
-            "shortcutKey": "c",
-            "forwardUrl": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
-        },
-        "order": 1,
-        "requiredPrivilege": "RegisterAndConsult"
-    },
     "nutritionalValues":{
         "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
         "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
