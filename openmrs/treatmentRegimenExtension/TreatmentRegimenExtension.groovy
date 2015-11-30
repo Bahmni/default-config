@@ -1,14 +1,21 @@
 import org.joda.time.DateTime;
 import org.joda.time.Days;
-import java.util.Date;
-import org.openmrs.module.bahmniemrapi.drugogram.contract.TreatmentRegimenExtension;
 import org.openmrs.module.bahmniemrapi.drugogram.contract.RegimenRow;
 import org.openmrs.module.bahmniemrapi.drugogram.contract.TreatmentRegimen;
+import org.openmrs.module.bahmniemrapi.drugogram.contract.BaseTableExtension;
 
-public class MonthCalculationExtension implements TreatmentRegimenExtension {
+import java.util.Date;
+
+public class MonthCalculationExtension extends BaseTableExtension<TreatmentRegimen> {
 	@Override
 	public void update(TreatmentRegimen treatmentRegimen) {
-		Date treatmentStartDate = treatmentRegimen.getRows().first().getDate();
+		Date treatmentStartDate = null;
+		try {
+			treatmentStartDate = treatmentRegimen.getRows().first().getDate()
+		} catch (Exception e) {
+			System.out.println("Exception: "+ e.getMessage())
+			return;
+		}
 		for (RegimenRow regimenRow : treatmentRegimen.getRows()) {
 			DateTime currentTreatmentDate = new DateTime(regimenRow.getDate());
 			Days days = Days.daysBetween(new DateTime(treatmentStartDate), currentTreatmentDate);
