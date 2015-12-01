@@ -413,7 +413,6 @@
                 "displayOrder": 0
             },
             "growthChart": {
-                "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Growth Chart",
                 "config": {
@@ -426,7 +425,6 @@
                 "displayOrder": 1
             },
             "BP": {
-                "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "BP",
                 "config": {
@@ -440,7 +438,6 @@
                 "displayOrder": 2
             },
             "weight/BMI": {
-                "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Weight/BMI",
                 "config": {
@@ -454,7 +451,6 @@
                 "displayOrder": 3
             },
             "diabetes/BloodSugar": {
-                "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Diabetes/Blood Sugar",
                 "config": {
@@ -468,7 +464,6 @@
                 "displayOrder": 4
             },
             "observationGraph": {
-                "type": "observationGraph",
                 "name": "observationGraph",
                 "title": "Pulse",
                 "config": {
