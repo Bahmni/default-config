@@ -34,5 +34,16 @@
         "icon": "fa-upload",
         "order": 1,
         "requiredPrivilege": "app:registration"
+    },
+    "formBuilder":{
+        "id": "bahmni.admin.formBuilder",
+        "extensionPointId": "org.bahmni.admin.dashboard",
+        "type": "link",
+        "extensionParams": {},
+        "label": "Form Builder",
+        "url": "#/formBuilder/new",
+        "icon": "fa-cogs",
+        "order": 1,
+        "requiredPrivilege": "app:registration"
     }
 }
