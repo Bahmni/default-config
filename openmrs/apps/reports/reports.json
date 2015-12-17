@@ -201,5 +201,18 @@
     "patientReport":  {
       "name": "Patient Information",
       "type": "PatientReport"
-}
+    },
+    "obsCannedReport":  {
+        "name": "Obs Canned Report",
+        "type": "obsCannedReport",
+        "config": {
+            "patientAttributes": ["caste", "education"],
+            "applyDateRangeFor":  "ObsRecording",
+            "addressAttributes": ["postal_code", "city_village"],
+            "conceptNames": ["Pulse", "WEIGHT","Vitals, Systolic","Temperature"],
+            "visitIndependentConcept": ["HEIGHT","Temperature"],
+            "enrolledProgram" :"HIV Program" ,
+            "showObsOnlyForProgramDuration": false
+        }
+    }
 }
