@@ -35,7 +35,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_INPATIENT_KEY",
     "url": "../adt/",
-    "icon": "fa-file-o",
+    "icon": "fa-bed",
     "order": 4,
     "requiredPrivilege": "app:adt"
   },
@@ -55,7 +55,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_PATIENT_DOCUMENTS_KEY",
     "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
-    "icon": "fa-camera",
+    "icon": "fa-paperclip",
     "order": 6,
     "requiredPrivilege": "app:document-upload"
   },
@@ -65,7 +65,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_ADMIN_KEY",
     "url": "../admin/#/dashboard/home",
-    "icon": "fa-user",
+    "icon": "fa-gear",
     "order": 7,
     "requiredPrivilege": "app:admin"
   },
@@ -75,7 +75,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_ORDERS_KEY",
     "url": "../orders/#/search",
-    "icon": "fa-book",
+    "icon": "fa-folder-open",
     "order": 10,
     "requiredPrivilege": "app:orders"
   },
@@ -85,7 +85,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_REPORTS_KEY",
     "url": "../reports/#/dashboard",
-    "icon": "fa-user",
+    "icon": "fa-bar-chart-o",
     "order": 8
   },
   "appointments": {
@@ -94,7 +94,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_APOOINTMENTS_KEY",
     "url": "../../openmrs/appointmentschedulingui/home.page",
-    "icon": "fa-user",
+    "icon": "fa-calendar",
     "order": 11,
     "requiredPrivilege": "App: appointmentschedulingui.home"
   }
