@@ -126,17 +126,19 @@
                     "latestAccessionCount": 1
                 }
             },
-            "treatments":{
+            "Treatments": {
                 "type": "treatment",
-                "displayOrder": 7,
+                "title": "Treatments",
+                "displayOrder": 6,
                 "config": {
-                    "translationKey": "DISCHARGE_SUMMARY_TREATMENTS_KEY",
-                    "showFlowSheet": false,
+                    "translationKey": "VISIT_TITLE_TREATMENTS_KEY",
+                    "showFlowSheet": true,
                     "showListView": true,
-                    "showOtherActive": true,
+                    "showOtherActive": false,
                     "showDetailsButton": true,
                     "showRoute": true,
-                    "showDrugForm": true
+                    "showDrugForm": true,
+                    "showProvider":false
                 }
             },
             "adviceOnDischarge":{
