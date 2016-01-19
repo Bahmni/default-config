@@ -214,5 +214,9 @@
             "enrolledProgram" :"HIV Program" ,
             "showObsOnlyForProgramDuration": false
         }
+    },
+    "drugOrderReport":{
+        "name": "Drug Order report",
+        "type":"DrugOrder"
     }
 }
