@@ -61,6 +61,6 @@
   "PATIENT_ADT_PAGE_KEY":"Patient ADT Page",
   "PATIENT_DASHBOARD_KEY":"Patient Dashboard",
   "PATIENT_VISIT_PAGE_KEY":"Patient Visit Page",
-  "HOME_DASHBOARD_KEY":"Home Dashboard"
-
+  "HOME_DASHBOARD_KEY":"Home Dashboard",
+  "MEDICATION_CHANGE_DURATION_BUTTON": "Change Duration"
 }
