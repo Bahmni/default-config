@@ -5,7 +5,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_REGISTRATION_KEY",
     "url": "../registration/",
-    "icon": "fa-user",
+    "icon": "icon-bahmni-registration",
     "order": 1,
     "requiredPrivilege": "app:registration"
   },
@@ -15,7 +15,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
     "url": "../clinical/#/programs/patient/search",
-    "icon": "fa-tasks",
+    "icon": "icon-bahmni-program",
     "order": 2,
     "requiredPrivilege": "app:clinical"
   },
@@ -35,7 +35,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_INPATIENT_KEY",
     "url": "../adt/",
-    "icon": "fa-bed",
+    "icon": "icon-bahmni-inpatient",
     "order": 4,
     "requiredPrivilege": "app:adt"
   },
@@ -45,7 +45,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_RADIOLOGY_UPLOAD_KEY",
     "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
-    "icon": "fa-camera",
+    "icon": "icon-bahmni-radiology",
     "order": 5,
     "requiredPrivilege": "app:document-upload"
   },
@@ -55,7 +55,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_PATIENT_DOCUMENTS_KEY",
     "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
-    "icon": "fa-paperclip",
+    "icon": "icon-bahmni-documents",
     "order": 6,
     "requiredPrivilege": "app:document-upload"
   },
@@ -65,7 +65,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_ADMIN_KEY",
     "url": "../admin/#/dashboard/home",
-    "icon": "fa-gear",
+    "icon": "icon-bahmni-admin",
     "order": 7,
     "requiredPrivilege": "app:admin"
   },
@@ -75,7 +75,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_ORDERS_KEY",
     "url": "../orders/#/search",
-    "icon": "fa-folder-open",
+    "icon": "icon-bahmni-orders",
     "order": 10,
     "requiredPrivilege": "app:orders"
   },
@@ -85,7 +85,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_REPORTS_KEY",
     "url": "../reports/#/dashboard",
-    "icon": "fa-bar-chart-o",
+    "icon": "icon-bahmni-reports",
     "order": 8
   },
   "appointments": {
@@ -94,7 +94,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_APOOINTMENTS_KEY",
     "url": "../../openmrs/appointmentschedulingui/home.page",
-    "icon": "fa-calendar",
+    "icon": "fa fa-calendar",
     "order": 11,
     "requiredPrivilege": "App: appointmentschedulingui.home"
   }
