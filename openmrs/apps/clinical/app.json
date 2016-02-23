@@ -40,9 +40,6 @@
             "maxConceptSetLevels": 3,
             "allowOnlyCodedDiagnosis": false,
             "conceptSetUI": {
-                "Chief Complaint Data": {
-                    "allowAddMore" : true
-                },
                 "Chief Complaint" : {
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false,
@@ -53,10 +50,11 @@
                 },
                 "Non-Coded Chief Complaint" : {
                     "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                    "durationRequired" : false,
+                    "allowAddMore" : true
                 },
                 "P/A Presenting Part" : {
-                    "buttonSelect" : true
+                    "multiSelect" : true
                 },
                 "FHS" : {
                     "buttonSelect" : true
@@ -69,9 +67,6 @@
                 },
                 "Examination Notes" :{
                     "conciseText" : true
-                },
-                "P/A Presenting Part" : {
-                    "multiSelect" : true
                 },
                 "Tuberculosis Intake Template" : {
                     "computeDrugs" : true
