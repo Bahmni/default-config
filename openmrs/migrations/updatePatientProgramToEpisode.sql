@@ -2,6 +2,8 @@ DELETE from episode_patient_program;
 DELETE from episode_encounter;
 DELETE FROM episode;
 DROP PROCEDURE IF EXISTS createEpisodeAndMap;
+
+DELIMITER //
 CREATE PROCEDURE createEpisodeAndMap(IN iPatientProgramId INT)
   BEGIN
     DECLARE vCreator INT;
@@ -35,8 +37,11 @@ CREATE PROCEDURE createEpisodeAndMap(IN iPatientProgramId INT)
     SELECT episode_id INTO vEpisodeId FROM episode WHERE uuid = vUuid;
     INSERT INTO episode_patient_program VALUES (vEpisodeId, iPatientProgramId);
   END;
+//
 
+DELIMITER ;
 DROP PROCEDURE IF EXISTS mapPatientProgramToEpisode;
+DELIMITER //
 CREATE PROCEDURE mapPatientProgramToEpisode()
   BEGIN
     DECLARE done INT DEFAULT FALSE;
@@ -73,7 +78,8 @@ CREATE PROCEDURE mapPatientProgramToEpisode()
     );
 
   END;
-
+//
+DELIMITER ;
 CALL mapPatientProgramToEpisode();
 
 DROP PROCEDURE IF EXISTS mapPatientProgramToEpisode;
