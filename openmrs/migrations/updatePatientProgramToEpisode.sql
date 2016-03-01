@@ -1,6 +1,6 @@
-DELETE FROM episode;
-DELETE from episode_encounter;
 DELETE from episode_patient_program;
+DELETE from episode_encounter;
+DELETE FROM episode;
 DROP PROCEDURE IF EXISTS createEpisodeAndMap;
 CREATE PROCEDURE createEpisodeAndMap(IN iPatientProgramId INT)
   BEGIN
