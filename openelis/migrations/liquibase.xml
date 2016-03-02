@@ -26,4 +26,11 @@
             INSERT INTO organization(id, name)  VALUES ( nextVal( 'organization_seq' ) , 'Bahmni' );
         </sql>
     </changeSet>
+
+    <changeSet id="201603021148" author="Preethi,Vikash">
+        <comment>Update Active Flag for Bahmni Organization</comment>
+        <sql>
+            update organization set is_active='Y' where name='Bahmni';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
