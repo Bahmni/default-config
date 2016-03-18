@@ -58,7 +58,6 @@
                     "displayOrder": 2
                 },
                 "patientInformation":{
-                    "title": "Patient Information",
                     "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                     "name": "patientInformation",
                     "displayOrder": 3,

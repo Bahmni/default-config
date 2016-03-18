@@ -5,8 +5,8 @@
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {
-                "title": "Patient Information",
-                "name": "patientInformation",
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
                 "displayOrder": 0,
                 "ageLimit":100,
                 "patientAttributes": [],
@@ -18,25 +18,22 @@
                 ]
             },
             "diagnosis": {
-                "title": "Diagnosis",
                 "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "name": "diagnosis",
+                "type": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
                 "displayOrder": 1
             },
 
             "disposition": {
-                "title": "Disposition",
                 "translationKey" : "DASHBOARD_TITLE_DISPOSITION_KEY",
-                "name": "disposition",
+                "type": "disposition",
                 "numberOfVisits": 1,
                 "displayOrder": 2
             },
             "treatments": {
-                "title":"Treatments",
                 "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
-                "name": "treatment",
+                "type": "treatment",
                 "displayOrder": 3,
                 "dashboardParams": {
                     "showFlowSheet": true,
@@ -59,21 +56,18 @@
                 }
             },
             "radiology": {
-                "title": "Radiology",
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
-                "name": "radiology",
+                "type": "radiology",
                 "displayOrder": 4
             },
             "programs": {
-                "title":"Programs",
                 "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "name": "programs",
+                "type": "programs",
                 "displayOrder": 5
             },
             "navigationLinksControl": {
-                "title":"Navigation Links Control",
                 "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                "name": "navigationLinksControl",
+                "type": "navigationLinksControl",
                 "displayOrder": 6,
                 "links": [
                     {
@@ -110,7 +104,7 @@
             "radiologyOrders": {
                 "orderType": "Radiology Order",
                 "title":"Radiology Orders",
-                "name": "ordersControl",
+                "type": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
                 "displayOrder": 7,
                 "dashboardParams": {
@@ -121,9 +115,8 @@
                 }
             },
             "pacs": {
-                "title":"Pacs",
                 "orderType": "Radiology Order",
-                "name": "pacsOrders",
+                "type": "pacsOrders",
                 "translationKey" : "DASHBOARD_TITLE_PACS_KEY",
                 "displayOrder": 8,
                 "dashboardParams": {
@@ -132,9 +125,8 @@
                 }
             },
             "labOrdersDisplayControl": {
-                "title":"Lab Orders Display Control",
                 "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "name": "ordersControl",
+                "type": "ordersControl",
                 "orderType": "Lab Order",
                 "showDetailsButton": true,
                 "displayOrder": 9,
@@ -157,7 +149,7 @@
             },
             "bacteriologyResults":{
                 "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "name": "bacteriologyResultsControl",
+                "type": "bacteriologyResultsControl",
                 "scope": "All",
                 "orderType": "",
                 "dashboardParams": {
@@ -168,9 +160,8 @@
                 }
             },
             "labResults": {
-                "title":"Lab Results",
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
-                "name": "labOrders",
+                "type": "labOrders",
                 "displayOrder": 10,
                 "dashboardParams": {
                     "title": null,
@@ -186,9 +177,8 @@
                 }
             },
             "nutritionalValues": {
-                "title":"Nutritional Values",
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
-                "name": "vitals",
+                "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 11,
                 "dashboardParams": {
@@ -214,9 +204,8 @@
                 }
             },
             "vitals": {
-                "title":"Vitals",
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
-                "name": "vitals",
+                "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 12,
                 "dashboardParams": {
@@ -244,9 +233,8 @@
                 }
             },
             "secondVitals": {
-                "title":"Second Vitals",
                 "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
-                "name": "second vitals",
+                "type": "second vitals",
                 "isObservation": true,
                 "displayOrder": 13,
                 "dashboardParams": {
@@ -265,9 +253,8 @@
                 }
             },
             "historyAndExaminations": {
-                "title":"History and Examinations",
                 "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-                "name": "vitals",
+                "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 14,
                 "dashboardParams": {
@@ -286,9 +273,8 @@
                 }
             },
             "gynaecology": {
-                 "title":"Gynaecology",
                 "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
-                "name": "gynaecology",
+                "type": "gynaecology",
                 "isObservation": true,
                 "displayOrder": 15,
                 "dashboardParams": {
@@ -307,9 +293,8 @@
                 }
             },
             "obstetrics": {
-                 "title":"Obstetrics",
                 "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
-                "name": "obstetrics",
+                "type": "obstetrics",
                 "isObservation": true,
                 "displayOrder": 16,
                 "dashboardParams": {
@@ -328,9 +313,8 @@
                 }
             },
             "visits": {
-                 "title":"Visits",
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
-                "name": "visits",
+                "type": "visits",
                 "displayOrder": 17,
                 "dashboardParams": {
                     "title": null,
@@ -341,7 +325,7 @@
             "diabetes": {
                 "title": "Diabetes",
                 "templateName": "Diabetes Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "displayOrder": 18,
                 "dashboardParams": {
                     "showOnly": []
@@ -376,9 +360,8 @@
                 }
             },
             "admissionDetails": {
-                "title": "Admission Details",
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
-                "name": "admissionDetails",
+                "type": "admissionDetails",
                 "displayOrder": 19
             }
         }
@@ -388,10 +371,9 @@
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {
-                "title": "Patient Information",
                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
 
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [
                     "caste",
                     "class",
@@ -414,7 +396,7 @@
             },
             "growthChart": {
                 "type": "observationGraph",
-                "name": "observationGraph",
+                "type": "observationGraph",
                 "title": "Growth Chart",
                 "config": {
                     "yAxisConcepts": [
@@ -427,7 +409,7 @@
             },
             "BP": {
                 "type": "observationGraph",
-                "name": "observationGraph",
+                "type": "observationGraph",
                 "title": "BP",
                 "config": {
                     "yAxisConcepts": [
@@ -441,7 +423,7 @@
             },
             "weight/BMI": {
                 "type": "observationGraph",
-                "name": "observationGraph",
+                "type": "observationGraph",
                 "title": "Weight/BMI",
                 "config": {
                     "yAxisConcepts": [
@@ -455,7 +437,7 @@
             },
             "diabetes/BloodSugar": {
                 "type": "observationGraph",
-                "name": "observationGraph",
+                "type": "observationGraph",
                 "title": "Diabetes/Blood Sugar",
                 "config": {
                     "yAxisConcepts": [
@@ -469,7 +451,7 @@
             },
             "observationGraph": {
                 "type": "observationGraph",
-                "name": "observationGraph",
+                "type": "observationGraph",
                 "title": "Pulse",
                 "config": {
                     "yAxisConcepts": [
@@ -483,7 +465,7 @@
             "diabetes": {
                 "title": "Diabetes",
                 "templateName": "Diabetes, Progress",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "dashboardParams": {
                     "showOnly": []
                 },
@@ -521,7 +503,7 @@
             "Bacteriology Concept Set": {
                 "displayType": "Full-Page",
                 "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "name": "obsToObsFlowSheet",
+                "type": "obsToObsFlowSheet",
                 "dashboardParams": {
                     "numberOfVisits": 1,
                     "templateName": "BACTERIOLOGY CONCEPT SET",
@@ -538,7 +520,7 @@
             "Chronic Treatment Chart": {
                 "displayType": "Full-Page",
                 "title": "Chronic Treatment Chart",
-                "name": "chronicTreatmentChart",
+                "type": "chronicTreatmentChart",
                 "dashboardParams": {
                     "drugs": []
                  },

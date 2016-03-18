@@ -114,7 +114,6 @@
                 "type": "investigationResult",
                 "displayOrder": 6,
                 "config": {
-                    "title": "Lab Investigations",
                     "translationKey":"LAB_INVESTIGATION",
                     "showChart": true,
                     "showTable": false,
@@ -128,7 +127,6 @@
             },
             "Treatments": {
                 "type": "treatment",
-                "title": "Treatments",
                 "displayOrder": 6,
                 "config": {
                     "translationKey": "VISIT_TITLE_TREATMENTS_KEY",
