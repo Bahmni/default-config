@@ -103,7 +103,6 @@
             },
             "radiologyOrders": {
                 "orderType": "Radiology Order",
-                "title":"Radiology Orders",
                 "type": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
                 "displayOrder": 7,
