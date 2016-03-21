@@ -36,7 +36,7 @@
                 "sections": {
                 "vitals":{
                     "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
-                    "name": "vitals",
+                    "type": "vitals",
                     "displayOrder": 0,
                     "isObservation": true,
                     "dashboardParams": {
@@ -46,32 +46,32 @@
                 },
                 "disposition":{
                     "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
-                    "name": "disposition",
+                    "type": "disposition",
                     "numberOfVisits": 1,
                     "displayOrder": 1
                 },
                 "diagnosis":{
                     "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                    "name": "diagnosis",
+                    "type": "diagnosis",
                     "numberOfVisits": 1,
                     "showDetailsButton":true,
                     "displayOrder": 2
                 },
                 "patientInformation":{
                     "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                    "name": "patientInformation",
+                    "type": "patientInformation",
                     "displayOrder": 3,
                     "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
                     "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
                 },
                 "admissionDetails":{
                     "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
-                    "name":"admissionDetails",
+                    "type":"admissionDetails",
                     "displayOrder": 4
                 },
                 "navigationLinksControl":{
                     "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                    "name": "navigationLinksControl",
+                    "type": "navigationLinksControl",
                     "displayOrder": 5,
                     "links": [
                         {
