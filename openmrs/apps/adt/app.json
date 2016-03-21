@@ -39,7 +39,7 @@
                     "type": "vitals",
                     "displayOrder": 0,
                     "isObservation": true,
-                    "dashboardParams": {
+                    "dashboardConfig": {
                         "conceptNames": ["Vitals"],
                         "numberOfVisits": 2
                     }

@@ -35,7 +35,7 @@
                 "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type": "treatment",
                 "displayOrder": 3,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showFlowSheet": true,
                     "showListView": true,
                     "showRoute": true,
@@ -44,7 +44,7 @@
                     "showOtherActive": true,
                     "showDetailsButton": true
                 },
-                "allTreatmentDetails": {
+                "expandedViewConfig": {
                     "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                     "showFlowSheet": true,
                     "showListView": true,
@@ -106,7 +106,7 @@
                 "type": "ordersControl",
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
                 "displayOrder": 7,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Summary"
                     ],
@@ -118,7 +118,7 @@
                 "type": "pacsOrders",
                 "translationKey" : "DASHBOARD_TITLE_PACS_KEY",
                 "displayOrder": 8,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "pacsImageUrl": "/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
                     "numberOfVisits": 4
                 }
@@ -129,7 +129,7 @@
                 "orderType": "Lab Order",
                 "showDetailsButton": true,
                 "displayOrder": 9,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Systolic",
                         "Diastolic",
@@ -137,7 +137,7 @@
                         "Temperature"
                     ]
                 },
-                "allOrdersDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "Systolic",
                         "Diastolic",
@@ -151,7 +151,7 @@
                 "type": "bacteriologyResultsControl",
                 "scope": "All",
                 "orderType": "",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "BACTERIOLOGY CONCEPT SET"
                     ]
@@ -162,7 +162,7 @@
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type": "labOrders",
                 "displayOrder": 10,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "title": null,
                     "numberOfVisits": 1,
                     "showChart": false,
@@ -171,7 +171,7 @@
                     "initialAccessionCount": 0,
                     "latestAccessionCount": 1
                 },
-                "allLabDetails": {
+                "expandedViewConfig": {
                     "numberOfVisits": 10
                 }
             },
@@ -180,7 +180,7 @@
                 "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 11,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "HEIGHT",
                         "Weight",
@@ -189,7 +189,7 @@
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "HEIGHT",
                         "Weight",
@@ -207,13 +207,13 @@
                 "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 12,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Vitals"
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "Vitals"
                     ],
@@ -236,13 +236,13 @@
                 "type": "second vitals",
                 "isObservation": true,
                 "displayOrder": 13,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Second Vitals"
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "Second Vitals"
                     ],
@@ -256,13 +256,13 @@
                 "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 14,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "History and Examination"
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "History and Examination"
                     ],
@@ -276,13 +276,13 @@
                 "type": "gynaecology",
                 "isObservation": true,
                 "displayOrder": 15,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Gynaecology"
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "Gynaecology"
                     ],
@@ -296,13 +296,13 @@
                 "type": "obstetrics",
                 "isObservation": true,
                 "displayOrder": 16,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Obstetrics"
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "Obstetrics"
                     ],
@@ -315,7 +315,7 @@
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "type": "visits",
                 "displayOrder": 17,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 8,
                     "groupByVisits": true
@@ -326,10 +326,10 @@
                 "templateName": "Diabetes Templates",
                 "type": "diseaseTemplate",
                 "displayOrder": 18,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "15",
@@ -465,10 +465,10 @@
                 "title": "Diabetes",
                 "templateName": "Diabetes, Progress",
                 "type": "diseaseTemplate",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": []
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showDetailsButton": true,
                     "pivotTable": {
                         "numberOfVisits": "10",
@@ -503,7 +503,7 @@
                 "displayType": "Full-Page",
                 "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
                 "type": "obsToObsFlowSheet",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "numberOfVisits": 1,
                     "templateName": "BACTERIOLOGY CONCEPT SET",
                     "groupByConcept": "Specimen Collection Date",
@@ -511,7 +511,7 @@
                         "Specimen Id"
                     ]
                 },
-                "allDetailsParams": {
+                "expandedViewConfig": {
                     "templateName": "BACTERIOLOGY CONCEPT SET",
                     "groupByConcept": "Specimen Collection Date"
                 }
@@ -520,10 +520,10 @@
                 "displayType": "Full-Page",
                 "title": "Chronic Treatment Chart",
                 "type": "chronicTreatmentChart",
-                "dashboardParams": {
+                "dashboardConfig": {
                     "drugs": []
                  },
-                 "allDetailsParams": {
+                 "expandedViewConfig": {
                     "drugs": []
                  }
             }
