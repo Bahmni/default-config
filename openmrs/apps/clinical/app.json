@@ -1,106 +1,113 @@
 {
-        "id": "bahmni.clinical",
-        "extensionPoints": [
-            {
-                "id": "org.bahmni.clinical.consultation.board",
-                "description": "Bahmni Clinical Consultation Page"
-            },
-            {
-                "id": "org.bahmni.clinical.conceptSetGroup.*",
-                "description": "Define conceptsets part of a conceptset group"
-            },
-            {
-                "id": "org.bahmni.clinical.orders",
-                "description": "Bahmni Orders Page"
-            },
-            {
-                "id":"org.bahmni.patient.search",
-                "description": "Bahmni Patient search, lookups Page"
+    "id": "bahmni.clinical",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.clinical.consultation.board",
+            "description": "Bahmni Clinical Consultation Page"
+        },
+        {
+            "id": "org.bahmni.clinical.conceptSetGroup.*",
+            "description": "Define conceptsets part of a conceptset group"
+        },
+        {
+            "id": "org.bahmni.clinical.orders",
+            "description": "Bahmni Orders Page"
+        },
+        {
+            "id": "org.bahmni.patient.search",
+            "description": "Bahmni Patient search, lookups Page"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "visitUuid"
+    ],
+    "config": {
+        "diagnosisStatus": "Inactive",
+        "program": {
+            "patientInformation": {
+                "ageLimit": 100
             }
+        },
+        "obsIgnoreList": [
+            "REGISTRATION FEES",
+            "COMMENTS",
+            "Patient file"
         ],
-        "contextModel": [
-            "patientUuid",
-            "visitUuid"
-        ],
-        "config" : {
-            "diagnosisStatus": "Inactive",
-            "program": {
-                "patientInformation": {
-                    "ageLimit":100
-                }
+        "otherInvestigationsMap": {
+            "Radiology": "Radiology Order",
+            "Endoscopy": "Endoscopy Order"
+        },
+        "allowConsultationWhenNoOpenVisit": false,
+        "defaultVisitType": "OPD",
+        "visitTypeForRetrospectiveEntries": "Special OPD",
+        "maxConceptSetLevels": 3,
+        "allowOnlyCodedDiagnosis": false,
+        "conceptSetUI": {
+            "Chief Complaint": {
+                "freeTextAutocomplete": true,
+                "durationRequired": false,
+                "allowAddMore": true
             },
-            "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
-            "otherInvestigationsMap": {
-                "Radiology": "Radiology Order",
-                "Endoscopy": "Endoscopy Order"
+            "Non-Coded Chief Complaint": {
+                "freeTextAutocomplete": true,
+                "durationRequired": false,
+                "allowAddMore": true
             },
-            "allowConsultationWhenNoOpenVisit": false,
-            "defaultVisitType": "OPD",
-            "visitTypeForRetrospectiveEntries": "Special OPD",
-            "maxConceptSetLevels": 3,
-            "allowOnlyCodedDiagnosis": false,
-            "conceptSetUI": {
-                "Chief Complaint" : {
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false,
-                    "allowAddMore" : true
-                },
-                "Posture" : {
-                    "buttonSelect" : true
-                },
-                "Non-Coded Chief Complaint" : {
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false,
-                    "allowAddMore" : true
-                },
-                "P/A Presenting Part" : {
-                    "multiSelect" : true
-                },
-                "FHS" : {
-                    "buttonSelect" : true
-                },
-                "P/S (Per Speculum) - Cervix" : {
-                    "grid" : true
-                },
-                "Anaemia, Stopped Since When" : {
-                    "conciseText" : true
-                },
-                "Examination Notes" :{
-                    "conciseText" : true
-                },
-                "Tuberculosis Intake Template" : {
-                    "computeDrugs" : true
-                },
-                "Set1" :{
-                    "allowAddMore" :true
-                },
-                "Set2" :{
-                    "allowAddMore" :true
-                },
-                "Coded3" :{
-                    "multiSelect" :true
-                },
-                "Image" :{
-                    "allowAddMore" :true
-                },
-                "Gynaecology, Gravida" :{
-                    "stepper" :true
-                },
-                "Accepted Family Planning methods":{
-                    "multiSelect": true
-                },
-                "defaults" : {
-                    "Number of living children" : 1,
-                    "Accepted Family Planning methods": ["Condoms", "Pills"],
-                    "Pain management given": true,
-                    "Safe Abortion, Remarks": "Remarks",
-                    "Malaria, Death Date": "2015-12-01"
-                }
+            "Posture": {
+                "buttonSelect": true
             },
-            "visitPage": {
-                "observationDisplay" : {
-                    "conceptNames": []
-                }
+            "P/A Presenting Part": {
+                "multiSelect": true
+            },
+            "FHS": {
+                "buttonSelect": true
+            },
+            "P/S (Per Speculum) - Cervix": {
+                "grid": true
+            },
+            "Anaemia, Stopped Since When": {
+                "conciseText": true
+            },
+            "Examination Notes": {
+                "conciseText": true
+            },
+            "Tuberculosis Intake Template": {
+                "computeDrugs": true
+            },
+            "Set1": {
+                "allowAddMore": true
+            },
+            "Set2": {
+                "allowAddMore": true
+            },
+            "Coded3": {
+                "multiSelect": true
+            },
+            "Image": {
+                "allowAddMore": true
+            },
+            "Gynaecology, Gravida": {
+                "stepper": true
+            },
+            "Accepted Family Planning methods": {
+                "multiSelect": true
+            },
+            "defaults": {
+                "Number of living children": 1,
+                "Accepted Family Planning methods": [
+                    "Condoms",
+                    "Pills"
+                ],
+                "Pain management given": true,
+                "Safe Abortion, Remarks": "Remarks",
+                "Malaria, Death Date": "2015-12-01"
+            }
+        },
+        "visitPage": {
+            "observationDisplay": {
+                "conceptNames": []
             }
         }
+    }
 }
