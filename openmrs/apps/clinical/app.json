@@ -45,13 +45,13 @@
         "allowOnlyCodedDiagnosis": false,
         "conceptSetUI": {
             "Chief Complaint": {
-                "freeTextAutocomplete": true,
-                "durationRequired": false,
-                "allowAddMore": true
+                "dropdown": true
             },
-            "Non-Coded Chief Complaint": {
-                "freeTextAutocomplete": true,
+            "Chief Complaint Data": {
+                "autocomplete": true,
                 "durationRequired": false,
+                "codedConceptName": "Chief Complaint",
+                "nonCodedConceptName": "Non-Coded Chief Complaint",
                 "allowAddMore": true
             },
             "Posture": {
