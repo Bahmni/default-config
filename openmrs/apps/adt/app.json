@@ -33,21 +33,21 @@
             "sections": {
                 "patient_information": {
                     "title": "Patient Information",
-                    "name": "patientInformation",
+                    "type": "patientInformation",
                     "patientAttributes": [],
                     "displayOrder": 0
                 },
                 "vitals": {
                     "title": "Vitals",
-                    "name": "vitals",
+                    "type": "vitals",
                     "isObservation": true,
-                    "dashboardParams": {
+                    "dashboardConfig": {
                         "conceptNames": [
                             "Vitals"
                         ],
                         "numberOfVisits": 2
                     },
-                    "allObservationDetails": {
+                    "expandedViewConfig": {
                         "conceptNames": [
                             "Nutritional Values"
                         ],
@@ -58,14 +58,14 @@
                 },
                 "admission_details": {
                     "title": "Admission Details",
-                    "name": "admissionDetails",
+                    "type": "admissionDetails",
                     "numberOfVisits": 1,
                     "showDetailsButton": true,
                     "displayOrder": 2
                 },
                 "disposition": {
                     "title": "Disposition",
-                    "name": "disposition",
+                    "type": "disposition",
                     "numberOfVisits": 2,
                     "displayOrder": 3
                 }

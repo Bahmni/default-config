@@ -10,7 +10,7 @@
         "sections": {
             "patient_information": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
@@ -20,8 +20,8 @@
             },
             "visits": {
                 "title": "Visits",
-                "name": "visits",
-                "dashboardParams": {
+                "type": "visits",
+                "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 4
                 },
@@ -29,7 +29,7 @@
             },
             "diagnosis": {
                 "title": "Diagnosis",
-                "name": "diagnosis",
+                "type": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
                 "showDetailsButton": true,
@@ -37,25 +37,25 @@
             },
             "lab_results": {
                 "title": "Lab Results",
-                "name": "labOrders",
-                "dashboardParams": {
+                "type": "labOrders",
+                "dashboardConfig": {
                     "title": null,
                     "numberOfVisits": 1,
                     "showChart": false,
                     "showTable": true,
                     "showDetailsButton": false
                 },
-                "allLabDetails": {
+                "expandedViewConfig": {
                     "numberOfVisits": 3
                 },
                 "displayOrder": 3
             },
             "radiology_orders": {
                 "title": "Radiology Orders",
-                "name": "ordersControl",
+                "type": "ordersControl",
                 "orderType": "Radiology Order",
                 "displayOrder": 4,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "title": null,
                     "conceptNames": [
                         "Chest",
@@ -66,8 +66,8 @@
             },
             "treatments": {
                 "title": "Treatments",
-                "name": "treatment",
-                "dashboardParams": {
+                "type": "treatment",
+                "dashboardConfig": {
                     "showFlowSheet": false,
                     "showListView": true,
                     "showRoute": false,
@@ -76,7 +76,7 @@
                     "showOtherActive": true,
                     "showDetailsButton": false
                 },
-                "allTreatmentDetails": {
+                "expandedViewConfig": {
                     "title": "Treatments",
                     "showFlowSheet": false,
                     "showListView": true,
@@ -90,15 +90,15 @@
             },
             "vitals": {
                 "title": "Vitals",
-                "name": "vitals",
+                "type": "vitals",
                 "isObservation": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "conceptNames": [
                         "Vitals"
                     ],
                     "numberOfVisits": 2
                 },
-                "allObservationDetails": {
+                "expandedViewConfig": {
                     "conceptNames": [
                         "Vitals"
                     ],
@@ -123,7 +123,7 @@
             },
             "disposition": {
                 "title": "Disposition",
-                "name": "disposition",
+                "type": "disposition",
                 "numberOfVisits": 2,
                 "showDetailsButton": true,
                 "displayOrder": 7
@@ -131,14 +131,14 @@
             "chronic_diseases": {
                 "title": "Chronic Diseases",
                 "templateName": "Chronic Diseases",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -147,14 +147,14 @@
             "general_consultation": {
                 "title": "General Consultation",
                 "templateName": "General Consultation",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -163,14 +163,14 @@
             "childhood_templates": {
                 "title": "Childhood Templates",
                 "templateName": "Childhood Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -179,14 +179,14 @@
             "motherhood": {
                 "title": "Motherhood",
                 "templateName": "Motherhood templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -195,14 +195,14 @@
             "Community Health": {
                 "title": "Community Health",
                 "templateName": "Community Health Program Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 }
@@ -210,14 +210,14 @@
             "hiv": {
                 "title": "HIV",
                 "templateName": "HIV Profile",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -226,14 +226,14 @@
             "orthopaedic": {
                 "title": "Orthopaedic",
                 "templateName": "Disease template, Orthopaedic",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -242,14 +242,14 @@
             "death_note": {
                 "title": "Death Note",
                 "templateName": "Death Note Template",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -258,14 +258,14 @@
             "discharge_note": {
                 "title": "Discharge Note",
                 "templateName": "Discharge Note Template",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -274,14 +274,14 @@
             "tuberculosis": {
                 "title": "Tuberculosis",
                 "templateName": "Tuberculosis Disease Template",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -290,14 +290,14 @@
             "kalaazar": {
                 "title": "Kalaazar",
                 "templateName": "Kalaazar Disease Template",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -306,14 +306,14 @@
             "malaria": {
                 "title": "Malaria",
                 "templateName": "Malaria Disease Template",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -322,14 +322,14 @@
             "leprosy": {
                 "title": "Leprosy",
                 "templateName": "Leprosy Disease Template",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -338,14 +338,14 @@
             "mental_health": {
                 "title": "Mental Health",
                 "templateName": "Mental Health Disease Template",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -363,7 +363,7 @@
         "sections": {
             "patient_information": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
@@ -374,14 +374,14 @@
             "hiv": {
                 "title": "HIV",
                 "templateName": "HIV Profile",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -399,7 +399,7 @@
         "sections": {
             "patient_information": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
@@ -410,14 +410,14 @@
             "motherhood": {
                 "title": "Motherhood",
                 "templateName": "Motherhood templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -435,7 +435,7 @@
         "sections": {
             "patient_information": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
@@ -446,14 +446,14 @@
             "orthopaedic": {
                 "title": "Orthopaedic",
                 "templateName": "Disease template, Orthopaedic",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -471,7 +471,7 @@
         "sections": {
             "patient_information": {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
@@ -482,14 +482,14 @@
             "imam": {
                 "title": "IMAM",
                 "templateName": "Childhood Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams": {
+                "dashboardConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails": {
+                "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
                 },
@@ -507,7 +507,7 @@
         "sections": {
             "Patient Information" : {
                 "title": "Patient Information",
-                "name": "patientInformation",
+                "type": "patientInformation",
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
@@ -517,14 +517,14 @@
             "Community Health" : {
                 "title": "Community Health",
                 "templateName": "Community Health Program Templates",
-                "name": "diseaseTemplate",
+                "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
-                "dashboardParams":{
+                "dashboardConfig":{
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "allDiseaseDetails":{
+                "expandedViewConfig":{
                     "showOnly": [],
                     "showDetailsButton": true
                 }
