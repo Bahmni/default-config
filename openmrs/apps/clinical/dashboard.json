@@ -395,7 +395,6 @@
             },
             "growthChart": {
                 "type": "observationGraph",
-                "type": "observationGraph",
                 "title": "Growth Chart",
                 "config": {
                     "yAxisConcepts": [
@@ -407,7 +406,6 @@
                 "displayOrder": 1
             },
             "BP": {
-                "type": "observationGraph",
                 "type": "observationGraph",
                 "title": "BP",
                 "config": {
@@ -422,7 +420,6 @@
             },
             "weight/BMI": {
                 "type": "observationGraph",
-                "type": "observationGraph",
                 "title": "Weight/BMI",
                 "config": {
                     "yAxisConcepts": [
@@ -436,7 +433,6 @@
             },
             "diabetes/BloodSugar": {
                 "type": "observationGraph",
-                "type": "observationGraph",
                 "title": "Diabetes/Blood Sugar",
                 "config": {
                     "yAxisConcepts": [
@@ -449,7 +445,6 @@
                 "displayOrder": 4
             },
             "observationGraph": {
-                "type": "observationGraph",
                 "type": "observationGraph",
                 "title": "Pulse",
                 "config": {
