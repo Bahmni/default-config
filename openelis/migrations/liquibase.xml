@@ -26,29 +26,4 @@
             INSERT INTO organization(id, name)  VALUES ( nextVal( 'organization_seq' ) , 'Bahmni' );
         </sql>
     </changeSet>
-
-    <changeSet id="201603021148" author="Preethi,Vikash">
-        <comment>Update Active Flag for Bahmni Organization</comment>
-        <sql>
-            update organization set is_active='Y' where name='Bahmni';
-        </sql>
-    </changeSet>
-
-    <changeSet id="bahmni-atomfeed-offset-marker" author="tw" context="rel3">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                SELECT COUNT(*) FROM scheduler_task_config where schedulable_class = 'org.openmrs.module.atomfeed.scheduler.tasks.EventRecordsNumberOffsetMarkerTask'
-            </sqlCheck>
-        </preConditions>
-        <comment>rel3</comment>
-        <sql>
-            INSERT INTO  scheduler_task_config  (name, description, schedulable_class,
-            start_time, start_time_pattern, repeat_interval, start_on_startup, started,
-            created_by, date_created, changed_by, date_changed, last_execution_time, uuid )
-            VALUES ('OpenMRS event offset marker task', NULL, 'org.openmrs.module.atomfeed.scheduler.tasks.EventRecordsNumberOffsetMarkerTask',
-            '2014-01-14 00:00:00','MM/dd/yyyy HH:mm:ss',86400, 1, 1,
-            1, now(), NULL, NULL, NULL, uuid());
-        </sql>
-    </changeSet>
-
 </databaseChangeLog>
