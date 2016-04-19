@@ -7,4 +7,3 @@ USER=bahmni
 run_in_vagrant -c "sudo rm -rf /var/www/bahmni_config"
 run_in_vagrant -c "sudo ln -s /bahmni/default-config /var/www/bahmni_config"
 run_in_vagrant -c "sudo chown -h ${USER}:${USER} /var/www/bahmni_config"
-run_in_vagrant -c "sudo semodule -i mypol.pp"
