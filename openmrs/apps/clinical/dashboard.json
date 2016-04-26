@@ -8,7 +8,7 @@
                 "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type": "patientInformation",
                 "displayOrder": 0,
-                "ageLimit":100,
+                "ageLimit": 100,
                 "patientAttributes": [],
                 "addressFields": [
                     "address1",
@@ -22,11 +22,12 @@
                 "type": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
+                "showDetailsButton": true,
                 "displayOrder": 1
             },
-
             "disposition": {
-                "translationKey" : "DASHBOARD_TITLE_DISPOSITION_KEY",
+                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
+                "showDetailsButton": true,
                 "type": "disposition",
                 "numberOfVisits": 1,
                 "displayOrder": 2
@@ -58,6 +59,7 @@
             "radiology": {
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "type": "radiology",
+                "showDetailsButton": true,
                 "displayOrder": 4
             },
             "programs": {
@@ -71,32 +73,31 @@
                 "displayOrder": 6,
                 "links": [
                     {
-                        "translationKey":"HOME_DASHBOARD_KEY",
+                        "translationKey": "HOME_DASHBOARD_KEY",
                         "url": "../home/#/dashboard"
                     },
                     {
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
-                        "translationKey":"PATIENT_VISIT_PAGE_KEY"
+                        "translationKey": "PATIENT_VISIT_PAGE_KEY"
                     },
                     {
-                        "translationKey":"PATIENT_ADT_PAGE_KEY",
+                        "translationKey": "PATIENT_ADT_PAGE_KEY",
                         "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
                     },
                     {
-                        "translationKey":"PATIENT_DASHBOARD_KEY",
+                        "translationKey": "PATIENT_DASHBOARD_KEY",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
                     },
                     {
-                        "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
+                        "translationKey": "DISCHARGE_SUMMARY_PAGE_KEY",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                     },
                     {
-                        "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
+                        "translationKey": "PROGRAM_MANAGEMENT_PAGE_KEY",
                         "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
                     },
                     {
-                        "translationKey":"CONSULTATION_PAGE_KEY",
-
+                        "translationKey": "CONSULTATION_PAGE_KEY",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
                     }
                 ]
@@ -116,7 +117,7 @@
             "pacs": {
                 "orderType": "Radiology Order",
                 "type": "pacsOrders",
-                "translationKey" : "DASHBOARD_TITLE_PACS_KEY",
+                "translationKey": "DASHBOARD_TITLE_PACS_KEY",
                 "displayOrder": 8,
                 "dashboardConfig": {
                     "pacsImageUrl": "/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
@@ -143,10 +144,11 @@
                         "Diastolic",
                         "Posture",
                         "Temperature"
-                    ]
+                    ],
+                    "showDetailsButton":true
                 }
             },
-            "bacteriologyResults":{
+            "bacteriologyResults": {
                 "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
                 "type": "bacteriologyResultsControl",
                 "scope": "All",
@@ -155,11 +157,10 @@
                     "conceptNames": [
                         "BACTERIOLOGY CONCEPT SET"
                     ]
-
                 }
             },
             "labResults": {
-                "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type": "labOrders",
                 "displayOrder": 10,
                 "dashboardConfig": {
@@ -176,7 +177,7 @@
                 }
             },
             "nutritionalValues": {
-                "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
+                "translationKey": "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type": "vitals",
                 "isObservation": true,
                 "displayOrder": 11,
@@ -187,6 +188,7 @@
                         "BMI",
                         "BMI STATUS"
                     ],
+                    "showDetailsButton":true,
                     "numberOfVisits": 2
                 },
                 "expandedViewConfig": {
@@ -208,6 +210,7 @@
                 "isObservation": true,
                 "displayOrder": 12,
                 "dashboardConfig": {
+                    "showDetailsButton": true,
                     "conceptNames": [
                         "Vitals"
                     ],
@@ -232,11 +235,12 @@
                 }
             },
             "secondVitals": {
-                "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
+                "translationKey": "DASHBOARD_TITLE_SECOND_VITALS_KEY",
                 "type": "second vitals",
                 "isObservation": true,
                 "displayOrder": 13,
                 "dashboardConfig": {
+                    "showDetailsButton": true,
                     "conceptNames": [
                         "Second Vitals"
                     ],
@@ -257,6 +261,7 @@
                 "isObservation": true,
                 "displayOrder": 14,
                 "dashboardConfig": {
+                    "showDetailsButton": true,
                     "conceptNames": [
                         "History and Examination"
                     ],
@@ -272,7 +277,7 @@
                 }
             },
             "gynaecology": {
-                "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
+                "translationKey": "DASHBOARD_TITLE_GYNAECOLOGY_KEY",
                 "type": "gynaecology",
                 "isObservation": true,
                 "displayOrder": 15,
@@ -280,6 +285,7 @@
                     "conceptNames": [
                         "Gynaecology"
                     ],
+                    "showDetailsButton":true,
                     "numberOfVisits": 2
                 },
                 "expandedViewConfig": {
@@ -292,11 +298,12 @@
                 }
             },
             "obstetrics": {
-                "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
+                "translationKey": "DASHBOARD_TITLE_OBSTETRICS_KEY",
                 "type": "obstetrics",
                 "isObservation": true,
                 "displayOrder": 16,
                 "dashboardConfig": {
+                    "showDetailsButton": true,
                     "conceptNames": [
                         "Obstetrics"
                     ],
@@ -359,9 +366,10 @@
                 }
             },
             "admissionDetails": {
-                "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
+                "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type": "admissionDetails",
-                "displayOrder": 19
+                "displayOrder": 19,
+                "showDetailsButton": true
             }
         }
     },
@@ -370,8 +378,7 @@
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patientInformation": {
-               "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type": "patientInformation",
                 "patientAttributes": [
                     "caste",
@@ -517,10 +524,10 @@
                 "type": "chronicTreatmentChart",
                 "dashboardConfig": {
                     "drugs": []
-                 },
-                 "expandedViewConfig": {
+                },
+                "expandedViewConfig": {
                     "drugs": []
-                 }
+                }
             }
         }
     }
