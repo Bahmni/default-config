@@ -57,7 +57,7 @@
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Smoking History123"],
+            "conceptNames": ["Smoking History"],
             "countOnlyClosedVisits":"false",
             "countOncePerPatient":"true"
         }
@@ -83,7 +83,7 @@
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Diabetes, Intake"],
+            "conceptNames": ["Diabetes Intake"],
             "visitTypes": ["OPD","IPD"]
         }
     },
