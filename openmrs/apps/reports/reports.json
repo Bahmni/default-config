@@ -1,4 +1,35 @@
 {
+    "visitReport10":{
+        "name": "Visit Report",
+        "type": "genericVisitReport",
+        "config": {
+            "forDataAnalysis": true,
+            "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
+            "visitAttributes": ["Visit Status", "Admission Status"],
+            "patientAddresses": ["address3", "city_village"],
+            "applyDateRangeFor": "visitStopDate",
+            "visitTypesToFilter": ["PHARMACY VISIT", "OPD"],
+            "locationTagsToFilter": ["Login Location"]
+        }
+    },
+    "testReport":{
+        "name": "Test Observation Report",
+        "type": "genericObservationReport",
+        "config": {
+            "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
+            "patientAddresses": ["address3", "city_village"],
+            "visitAttributes": ["Visit Status", "Admission Status"],
+            "showVisitInfo": true,
+            "showProvider": true,
+            "conceptNamesToFilter": ["Blood"],
+            "conceptClassesToFilter": [],
+            "locationTagsToFilter": [],
+            "programsToFilter" : [],
+            "applyDateRangeFor": "obsDatetime",
+            "encounterPerRow": true,
+            "forDataAnalysis": true
+        }
+    },
     "chiefComplaintReport":{
         "name": "Chief Complaint Report",
         "type": "obsCount",
