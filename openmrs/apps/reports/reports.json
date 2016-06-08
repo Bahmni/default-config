@@ -13,7 +13,7 @@
     },
     "testReport":{
         "name": "Test Observation Report",
-        "type": "genericObservationReport",
+        "type": "observations",
         "config": {
             "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
             "patientAddresses": ["address3", "city_village"],
@@ -26,7 +26,8 @@
             "programsToFilter" : [],
             "applyDateRangeFor": "obsDatetime",
             "encounterPerRow": true,
-            "forDataAnalysis": true
+            "forDataAnalysis": true,
+            "visitTypesToFilter": ["PHARMACY VISIT", "OPD"]
         }
     },
     "chiefComplaintReport":{
