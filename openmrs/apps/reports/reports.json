@@ -249,5 +249,58 @@
     "drugOrderReport":{
         "name": "Drug Order report",
         "type":"DrugOrder"
+    },
+    "SampleGenericVisitReport":{
+        "name": "Generic visit sample report",
+        "type": "genericVisitReport",
+        "config": {
+            "forDataAnalysis": true,
+            "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
+            "visitAttributes": ["Visit Status", "Admission Status"],
+            "patientAddresses": ["address3", "city_village"],
+            "applyDateRangeFor": "visitStopDate",
+            "visitTypesToFilter": ["PHARMACY VISIT", "OPD"],
+            "locationTagsToFilter": ["Login Location"]
+        }
+    },
+    "SampleGenericObservationReport":{
+        "name": "Generic observation sample report",
+        "type": "genericObservationReport",
+        "config": {
+            "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
+            "patientAddresses": ["address3", "city_village"],
+            "visitAttributes": ["Visit Status", "Admission Status"],
+            "showVisitInfo": true,
+            "showProvider": true,
+            "conceptNamesToFilter": ["Blood"],
+            "conceptClassesToFilter": [],
+            "locationTagsToFilter": [],
+            "programsToFilter" : [],
+            "applyDateRangeFor": "obsDatetime",
+            "encounterPerRow": true,
+            "forDataAnalysis": true
+        }
+    },
+    "SampleGenericProgramReport":{
+
+        "name":"Generic program sample report",
+        "type": "genericProgramReport",
+        "config":{
+            "patientAttributes": [
+                "education",
+                "primaryContact",
+                "secondaryContact",
+                "class",
+                "cluster"
+            ],
+            "patientAddresses": [
+                "city_village",
+                "address3"
+            ],
+            "programAttributes": [],
+            "forDataAnalysis": true,
+            "showAllStates": true,
+            "programNamesToFilter":["MDR-TB PROGRAM"]
+        }
     }
 }
