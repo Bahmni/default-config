@@ -1,0 +1,12 @@
+.birth-certificate{
+        border:none !important;
+        padding :0;
+}
+.birth-certificate .birth-certificate-wrapper{
+        border: 1px red solid;
+        page-break-after:always;
+        padding: 20px 10px 10px;
+}
+.birth-certificate u{
+    font-family: Arial, sans-serif !important;
+}

@@ -1,0 +1,41 @@
+.birth-certificate{
+border: 1px red solid;
+width: 100%;
+padding: 5px;
+font-size:16px;
+}
+.birth-certificate span {
+display: block;
+}
+.birth-certificate .cer_content h1{
+color:red;
+}
+.birth-certificate .cer_content span{
+
+padding: 0px 0px 10px 0px;
+}
+
+
+.birth-certificate .issued_content .col-2{
+    width: 49%;
+    float: left;
+    margin:1.5% .5% 0;
+    display block;
+}
+
+.birth-certificate .issued_content-2 .col-2{
+    width: 49%;
+    float: right;
+    margin:1.5% .5% 0;
+    display block;
+}
+
+.birth-certificate .issued_content span, .birth-certificate .issued_content-2 span{
+        padding: 0px 0px 10px 0px;
+}
+.birth-certificate .issued_content span.color-change{
+color:red;
+}
+.birth-certificate .issued_content-2 span.color-change{
+color:red;
+}
