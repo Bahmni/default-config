@@ -25,17 +25,23 @@
                 "showDetailsButton": true,
                 "displayOrder": 1
             },
+            "navigationLinksControl": {
+                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                "type": "navigationLinksControl",
+                "displayOrder": 2,
+                "showLinks" : ["home", "visit", "registration", "inpatient", "enrolment", "visitAttribute"]
+            },
             "disposition": {
                 "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
                 "showDetailsButton": true,
                 "type": "disposition",
                 "numberOfVisits": 1,
-                "displayOrder": 2
+                "displayOrder": 3
             },
             "treatments": {
                 "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type": "treatment",
-                "displayOrder": 3,
+                "displayOrder": 4,
                 "dashboardConfig": {
                     "showFlowSheet": true,
                     "showListView": true,
@@ -60,47 +66,12 @@
                 "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "type": "radiology",
                 "showDetailsButton": true,
-                "displayOrder": 4
+                "displayOrder": 5
             },
             "programs": {
                 "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
                 "type": "programs",
-                "displayOrder": 5
-            },
-            "navigationLinksControl": {
-                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                "type": "navigationLinksControl",
-                "displayOrder": 6,
-                "links": [
-                    {
-                        "translationKey": "HOME_DASHBOARD_KEY",
-                        "url": "../home/#/dashboard"
-                    },
-                    {
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
-                        "translationKey": "PATIENT_VISIT_PAGE_KEY"
-                    },
-                    {
-                        "translationKey": "PATIENT_ADT_PAGE_KEY",
-                        "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
-                    },
-                    {
-                        "translationKey": "PATIENT_DASHBOARD_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
-                    },
-                    {
-                        "translationKey": "DISCHARGE_SUMMARY_PAGE_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
-                    },
-                    {
-                        "translationKey": "PROGRAM_MANAGEMENT_PAGE_KEY",
-                        "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
-                    },
-                    {
-                        "translationKey": "CONSULTATION_PAGE_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
-                    }
-                ]
+                "displayOrder": 6
             },
             "radiologyOrders": {
                 "orderType": "Radiology Order",
