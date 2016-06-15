@@ -31,7 +31,7 @@
             "defaultVisitType": "IPD",
             "maxPatientsPerBed" : 2,
             "dashboard":{
-                "dashboardName": "General",
+                "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
                 "conceptName": "Adt Notes",
                 "sections": {
                 "vitals":{
@@ -73,36 +73,7 @@
                     "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                     "type": "navigationLinksControl",
                     "displayOrder": 5,
-                    "links": [
-                        {
-                            "translationKey":"HOME_DASHBOARD_KEY",
-                            "url": "../home/#/dashboard"
-                        },
-                        {
-                            "translationKey":"PATIENT_VISIT_PAGE_KEY",
-                            "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
-                        },
-                        {
-                            "translationKey":"PATIENT_ADT_PAGE_KEY",
-                            "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
-                        },
-                        {
-                            "translationKey":"PATIENT_DASHBOARD_KEY",
-                            "url": "../clinical/#/patient/{{patientUuid}}/dashboard"
-                        },
-                        {
-                            "translationKey":"DISCHARGE_SUMMARY_PAGE_KEY",
-                            "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
-                        },
-                        {
-                            "translationKey":"PROGRAM_MANAGEMENT_PAGE_KEY",
-                            "url": "../clinical/#/patient/{{patientUuid}}/consultationContext"
-                        },
-                        {
-                            "translationKey":"CONSULTATION_PAGE_KEY",
-                            "url": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
-                        }
-                    ]
+                    "showLinks" : ["home", "visit", "registration", "inpatient", "enrolment", "visitAttribute"]
                 }
 
             }}
