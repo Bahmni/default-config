@@ -16,7 +16,6 @@
                 "config": {
                     "groupBy": "encounters",
                     "obsConcepts": [
-                        "Vitals",
                         "Pulse",
                         "Diastolic",
                         "Systolic",

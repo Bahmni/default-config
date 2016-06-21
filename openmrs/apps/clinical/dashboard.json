@@ -108,15 +108,6 @@
                         "Posture",
                         "Temperature"
                     ]
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ],
-                    "showDetailsButton":true
                 }
             },
             "bacteriologyResults": {
