@@ -1,291 +1,371 @@
 {
-    "visitReport10":{
+    "visitReport10": {
         "name": "Visit Report",
         "type": "visits",
         "config": {
             "forDataAnalysis": true,
-            "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
-            "visitAttributes": ["Visit Status", "Admission Status"],
-            "patientAddresses": ["address3", "city_village"],
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "visitAttributes": [
+                "Visit Status",
+                "Admission Status"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
             "applyDateRangeFor": "visitStopDate",
-            "visitTypesToFilter": ["PHARMACY VISIT", "OPD"]
+            "visitTypesToFilter": [
+                "PHARMACY VISIT",
+                "OPD"
+            ]
         }
     },
-    "testReport":{
+    "testReport": {
         "name": "Test Observation Report",
         "type": "observations",
         "config": {
-            "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
-            "patientAddresses": ["address3", "city_village"],
-            "visitAttributes": ["Visit Status", "Admission Status"],
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
+            "visitAttributes": [
+                "Visit Status",
+                "Admission Status"
+            ],
             "showVisitInfo": true,
             "showProvider": true,
-            "conceptNamesToFilter": ["Blood"],
+            "conceptNamesToFilter": [
+                "Blood"
+            ],
             "conceptClassesToFilter": [],
             "locationTagsToFilter": [],
-            "programsToFilter" : [],
+            "programsToFilter": [],
             "applyDateRangeFor": "obsDatetime",
             "encounterPerRow": true,
             "forDataAnalysis": true,
-            "visitTypesToFilter": ["PHARMACY VISIT", "OPD"]
+            "visitTypesToFilter": [
+                "PHARMACY VISIT",
+                "OPD"
+            ]
         }
     },
-    "chiefComplaintReport":{
+    "chiefComplaintReport": {
         "name": "Chief Complaint Report",
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Chief Complaint"],
-            "countOnlyClosedVisits":"false",
-            "visitTypes": ["IPD","OPD"]
+            "conceptNames": [
+                "Chief Complaint"
+            ],
+            "countOnlyClosedVisits": "false",
+            "visitTypes": [
+                "IPD",
+                "OPD"
+            ]
         }
     },
-    "inpatientMorbidity":{
+    "inpatientMorbidity": {
         "name": "Inpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
-            "visitTypes": ["IPD"]
+            "visitTypes": [
+                "IPD"
+            ]
         }
     },
-    "outpatientMorbidity":{
+    "outpatientMorbidity": {
         "name": "Outpatient Morbidity",
         "type": "diagnosisCount",
         "config": {
-            "visitTypes": ["OPD"]
+            "visitTypes": [
+                "OPD"
+            ]
         }
     },
-    "laboratoryServices":{
+    "laboratoryServices": {
         "name": "Laboratory Services",
         "type": "TestCount"
     },
-    "genericLaboratoryServices":{
+    "genericLaboratoryServices": {
         "name": "Generic Laboratory Services",
         "type": "ElisGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
         }
     },
-    "genericOutpatientMorbidity":{
+    "genericOutpatientMorbidity": {
         "name": "Generic Outpatient Morbidity",
         "type": "MRSGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
         }
     },
-    "bloodPressure":{
+    "bloodPressure": {
         "name": "Blood Pressure",
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Systolic","Diastolic"],
-            "countOnlyClosedVisits":"false",
-            "countOncePerPatient":"false",
-            "visitTypes": ["OPD","IPD"]
+            "conceptNames": [
+                "Systolic",
+                "Diastolic"
+            ],
+            "countOnlyClosedVisits": "false",
+            "countOncePerPatient": "false",
+            "visitTypes": [
+                "OPD",
+                "IPD"
+            ]
         }
     },
-    "smokingHistoryReport":{
+    "smokingHistoryReport": {
         "name": "Smoking History Report",
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Smoking History"],
-            "countOnlyClosedVisits":"false",
-            "countOncePerPatient":"true"
+            "conceptNames": [
+                "Smoking History"
+            ],
+            "countOnlyClosedVisits": "false",
+            "countOncePerPatient": "true"
         }
     },
-    "vitalsTemplateReport":{
+    "vitalsTemplateReport": {
         "name": "Vitals Template Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "Vitals",
-            "patientAttributes": ["caste", "education"],
+            "patientAttributes": [
+                "caste",
+                "education"
+            ],
             "applyDateRangeFor": "encounterCreateDate"
         }
     },
-    "tuberculosisIntakeTemplateReport":{
+    "tuberculosisIntakeTemplateReport": {
         "name": "Tuberculosis Intake Template Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "Tuberculosis Intake Template"
         }
     },
-    "diabetes":{
+    "diabetes": {
         "name": "Diabetes",
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Diabetes Intake"],
-            "visitTypes": ["OPD","IPD"]
+            "conceptNames": [
+                "Diabetes Intake"
+            ],
+            "visitTypes": [
+                "OPD",
+                "IPD"
+            ]
         }
     },
-    "codedValueRangeBasedReport":{
+    "codedValueRangeBasedReport": {
         "name": "Coded Value Range Based Report",
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Diabetes, Cormorbidities"],
+            "conceptNames": [
+                "Diabetes, Cormorbidities"
+            ],
             "countOncePerPatient": "true"
         }
     },
-    "OPD/IPDVisitCount":{
-	    "name": "OPD/IPD Visit Count",
-    	"type": "IpdOpdVisitCount"
+    "OPD/IPDVisitCount": {
+        "name": "OPD/IPD Visit Count",
+        "type": "IpdOpdVisitCount"
     },
-    "haemoglobinRangeBasedReport":{
-	    "name": "Haemoglobin Range Based Report",
-    	"type": "NumericConceptValuesCount",
+    "haemoglobinRangeBasedReport": {
+        "name": "Haemoglobin Range Based Report",
+        "type": "NumericConceptValuesCount",
         "config": {
             "rangeGroupName": "Haemoglobin",
             "ageGroupName": "Haemoglobin",
-            "conceptNames": ["Haemoglobin"],
-            "countOncePerPatient":"false"
+            "conceptNames": [
+                "Haemoglobin"
+            ],
+            "countOncePerPatient": "false"
         }
     },
-    "radiology(X-Ray)Count":{
-	    "name": "Radiology(X-Ray) Count",
-    	"type": "ObsCountByConceptClass",
+    "radiology(X-Ray)Count": {
+        "name": "Radiology(X-Ray) Count",
+        "type": "ObsCountByConceptClass",
         "config": {
-            "conceptClassNames": ["Radiology"]
+            "conceptClassNames": [
+                "Radiology"
+            ]
         }
     },
-    "obsValuesCountsForAlbuminMCHOperationDateAndPosture(bloodPressure)":{
-	    "name": "Obs Values Counts for Albumin, MCH, Operation Date and Posture(blood pressure)",
-    	"type": "ObsValueCount",
+    "obsValuesCountsForAlbuminMCHOperationDateAndPosture(bloodPressure)": {
+        "name": "Obs Values Counts for Albumin, MCH, Operation Date and Posture(blood pressure)",
+        "type": "ObsValueCount",
         "config": {
-            "conceptNames": ["Albumin","MCH","Date of Operation","Posture"]
+            "conceptNames": [
+                "Albumin",
+                "MCH",
+                "Date of Operation",
+                "Posture"
+            ]
         }
     },
-    "tuberculosisTreatmentCompletionDates":{
-	    "name": "Tuberculosis Treatment Completion dates",
+    "tuberculosisTreatmentCompletionDates": {
+        "name": "Tuberculosis Treatment Completion dates",
         "type": "DateConceptValuesPatientsList",
         "config": {
-            "conceptNames": ["Tuberculosis, Treatment Completion Date"],
+            "conceptNames": [
+                "Tuberculosis, Treatment Completion Date"
+            ],
             "templateName": "Tuberculosis Outcome Template"
         }
     },
-    "patientsListWithAlbuminMCHAndHIVELISA(Blood)TestsResults":{
+    "patientsListWithAlbuminMCHAndHIVELISA(Blood)TestsResults": {
         "name": "Patients list with Albumin, MCH and HIV ELISA (Blood) tests results",
         "type": "PatientsWithLabtestResults",
         "config": {
-            "conceptNames": ["HIV ELISA (Blood)","Albumin","MCH"],
-            "testOutcome": ["abnormal", "normal"]
-            }
+            "conceptNames": [
+                "HIV ELISA (Blood)",
+                "Albumin",
+                "MCH"
+            ],
+            "testOutcome": [
+                "abnormal",
+                "normal"
+            ]
+        }
     },
-    "IPDPatientsReport":{
+    "IPDPatientsReport": {
         "name": "IPD Patients Report",
         "type": "ipdPatients",
         "config": {
-            "addressAttributes": ["address1", "city_village"],
-            "patientAttributes": ["caste", "education"],
-            "conceptNames": ["Height", "Weight"],
+            "addressAttributes": [
+                "address1",
+                "city_village"
+            ],
+            "patientAttributes": [
+                "caste",
+                "education"
+            ],
+            "conceptNames": [
+                "Height",
+                "Weight"
+            ],
             "filterBy": "Date of Discharge"
         }
-	},
-    "nutritionProgramNutritionalStatusOfRegisteredChildren":{
+    },
+    "nutritionProgramNutritionalStatusOfRegisteredChildren": {
         "name": "Nutrition Program - Nutritional status of registered children",
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Nutrition, Nutritional Status"],
-            "countOncePerPatient":"true",
-            "countOnlyClosedVisits":"false"
+            "conceptNames": [
+                "Nutrition, Nutritional Status"
+            ],
+            "countOncePerPatient": "true",
+            "countOnlyClosedVisits": "false"
         }
     },
-    "patientsProgramStateCountReport":{
+    "patientsProgramStateCountReport": {
         "name": "Patients Program State Count Report",
         "type": "programStateCount",
         "config": {
             "programName": "Malaria Program"
         }
     },
-    "programPatientStateReport":{
+    "programPatientStateReport": {
         "name": "Program Patient State Report",
         "type": "PatientProgramReport",
         "config": {
             "programName": "Malaria Program"
         }
     },
-    "programStateTransitionReport":{
-        "name":"Program State Transition Report",
-        "type":"programStateTransitionReport",
-        "config":{
-            "programName":"Malaria Program"
+    "programStateTransitionReport": {
+        "name": "Program State Transition Report",
+        "type": "programStateTransitionReport",
+        "config": {
+            "programName": "Malaria Program"
         }
-
     },
-    "OrderFulfillmentReport":{
+    "OrderFulfillmentReport": {
         "name": "Order Fulfillment Report",
         "type": "OrderFulfillmentReport",
         "config": {
             "type": "OrderFulfillmentReport",
-            "orderTypes": ["Order", "Drug Order"]
+            "orderTypes": [
+                "Order",
+                "Drug Order"
+            ]
         }
     },
-    "visitReport":{
+    "visitReport": {
         "name": "Visit Report",
         "type": "visitReport",
         "config": {
-            "personAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
-            "visitAttributes": ["Visit Status"]
+            "personAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation",
+                "primaryContact"
+            ],
+            "visitAttributes": [
+                "Visit Status"
+            ]
         }
-	  },
-    "patientReport":  {
-      "name": "Patient Information",
-      "type": "PatientReport"
     },
-    "obsCannedReport":  {
+    "patientReport": {
+        "name": "Patient Information",
+        "type": "PatientReport"
+    },
+    "obsCannedReport": {
         "name": "Obs Canned Report",
         "type": "obsCannedReport",
         "config": {
-            "patientAttributes": ["caste", "education"],
-            "applyDateRangeFor":  "ObsRecording",
-            "addressAttributes": ["postal_code", "city_village"],
-            "conceptNames": ["Pulse", "WEIGHT","Vitals, Systolic","Temperature"],
-            "visitIndependentConcept": ["HEIGHT","Temperature"],
-            "enrolledProgram" :"HIV Program" ,
+            "patientAttributes": [
+                "caste",
+                "education"
+            ],
+            "applyDateRangeFor": "ObsRecording",
+            "addressAttributes": [
+                "postal_code",
+                "city_village"
+            ],
+            "conceptNames": [
+                "Pulse",
+                "WEIGHT",
+                "Vitals, Systolic",
+                "Temperature"
+            ],
+            "visitIndependentConcept": [
+                "HEIGHT",
+                "Temperature"
+            ],
+            "enrolledProgram": "HIV Program",
             "showObsOnlyForProgramDuration": false
         }
     },
-    "drugOrderReport":{
+    "drugOrderReport": {
         "name": "Drug Order report",
-        "type":"DrugOrder"
+        "type": "DrugOrder"
     },
-    "SampleGenericVisitReport":{
-        "name": "Generic visit sample report",
-        "type": "genericVisitReport",
+    "SampleGenericProgramReport": {
+        "name": "Generic program sample report",
+        "type": "programs",
         "config": {
-            "forDataAnalysis": true,
-            "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
-            "visitAttributes": ["Visit Status", "Admission Status"],
-            "patientAddresses": ["address3", "city_village"],
-            "applyDateRangeFor": "visitStopDate",
-            "visitTypesToFilter": ["PHARMACY VISIT", "OPD"],
-            "locationTagsToFilter": ["Login Location"]
-        }
-    },
-    "SampleGenericObservationReport":{
-        "name": "Generic observation sample report",
-        "type": "genericObservationReport",
-        "config": {
-            "patientAttributes": ["caste", "class", "education", "occupation", "primaryContact"],
-            "patientAddresses": ["address3", "city_village"],
-            "visitAttributes": ["Visit Status", "Admission Status"],
-            "showVisitInfo": true,
-            "showProvider": true,
-            "conceptNamesToFilter": ["Blood"],
-            "conceptClassesToFilter": [],
-            "locationTagsToFilter": [],
-            "programsToFilter" : [],
-            "applyDateRangeFor": "obsDatetime",
-            "encounterPerRow": true,
-            "forDataAnalysis": true
-        }
-    },
-    "SampleGenericProgramReport":{
-
-        "name":"Generic program sample report",
-        "type": "genericProgramReport",
-        "config":{
             "patientAttributes": [
                 "education",
                 "primaryContact",
@@ -300,7 +380,9 @@
             "programAttributes": [],
             "forDataAnalysis": true,
             "showAllStates": true,
-            "programNamesToFilter":["MDR-TB PROGRAM"]
+            "programNamesToFilter": [
+                "HIV Program"
+            ]
         }
     }
 }
