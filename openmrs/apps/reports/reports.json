@@ -384,5 +384,32 @@
                 "HIV Program"
             ]
         }
+    },
+    "pivotReport": {
+        "name": "Blood Pressure",
+        "type": "aggregation",
+        "config": {
+            "report":{
+                "type": "observations",
+                "config": {
+                    "conceptNamesToFilter":["Diastolic Data", "Systolic Data"],
+                    "showVisitInfo" : true,
+                    "forDataAnalysis": true,
+                    "visitAttributes": ["Visit Status", "Admission Status"],
+                    "visitTypesToFilter": ["IPD"]
+
+                }
+            },
+            "rowGroups": [
+                "Gender"
+            ],
+            "columnGroups": [
+                "Concept Name", "value"
+            ],
+            "distinctGroups": [
+                "Patient Identifier"
+            ]
+        }
+
     }
 }
