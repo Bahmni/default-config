@@ -126,3 +126,16 @@
     </tr>
     </tbody>
 </table>
+
+<div class="print-wrapper">
+    <link rel="stylesheet" href="../styles/registrationPrint.css" media="all"/>
+    <section class="block observation dashboard-section">
+        <bahmni-diagnosis patient-uuid="::patient.uuid"
+                          config='{"title": "Diagnosis","type": "diagnosis"}'></bahmni-diagnosis>
+    </section>
+    <section class="block observation dashboard-section">
+        <bahmni-observation patient="patient" config="{conceptNames: ['Vitals']}" section-title="'Vitals'">
+
+        </bahmni-observation>
+    </section>
+</div>
