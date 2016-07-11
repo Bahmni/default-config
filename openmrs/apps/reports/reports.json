@@ -438,14 +438,49 @@
                     "visitTypesToFilter": [
                         "PHARMACY VISIT",
                         "OPD"
+                    ],
+                    "rowGroups": [
+                        "Gender"
+                    ],
+                    "columnGroups": [
+                        "Concept Name",
+                        "value"
+                    ],
+                    "distinctGroups": [
+                        "Patient Identifier"
+                    ]
+                }
+            }
+        }
+    },
+    "pivotReportForPrograms": {
+        "name": "HIV Program Pivot Report",
+        "type": "aggregation",
+        "config": {
+            "report": {
+                "type": "programs",
+                "config": {
+                    "patientAttributes": [
+                    ],
+                    "patientAddresses": [
+                        "city_village",
+                        "address3"
+                    ],
+                    "programAttributes": [],
+                    "forDataAnalysis": true,
+                    "showAllStates": true,
+                    "programNamesToFilter": [
+                        "TB Program",
+                        "HIV Program"
                     ]
                 }
             },
+            "columnGroups": [
+                "Concept Name",
+                "Program name"
+            ],
             "rowGroups": [
                 "Gender"
-            ],
-            "columnGroups": [
-                "Concept Name", "value"
             ],
             "distinctGroups": [
                 "Patient Identifier"
