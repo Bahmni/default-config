@@ -438,19 +438,18 @@
                     "visitTypesToFilter": [
                         "PHARMACY VISIT",
                         "OPD"
-                    ],
-                    "rowGroups": [
-                        "Gender"
-                    ],
-                    "columnGroups": [
-                        "Concept Name",
-                        "value"
-                    ],
-                    "distinctGroups": [
-                        "Patient Identifier"
                     ]
                 }
-            }
+            },
+            "rowGroups": [
+                "Gender"
+            ],
+            "columnGroups": [
+                "Visit Status"
+            ],
+            "distinctGroups": [
+                "Patient Identifier"
+            ]
         }
     },
     "pivotReportForPrograms": {
