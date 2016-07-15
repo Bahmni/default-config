@@ -9,7 +9,7 @@
 <body>
 
 <div class="container birth-certificate">
-    <div ng-repeat="groupMember in observations.groupMembers" class="birth-certificate-wrapper">
+    <div ng-repeat="x in observations" class="birth-certificate-wrapper">
         <div class="cer_content">
             <h1 class="page-title"><center>Birth Certificate</center></h1><br><br>
             This is to certifiy that a live <u>{{x.groupMembers[0].valueAsString}}</u>  (Male/Female/Undertermined)
@@ -21,7 +21,7 @@
             <u>Nepal</u> district <u>{{patient.address.countyDistrict}}</u>  village /muncipality <u>{{patient.address.cityVillage}}</u>
             ward number <u>{{patient.address.address1}}</u> tole
         </div>
-        <div class="clearfix">
+        <div class="clearfix birth-certificate-bottom">
             <div class="issued_content col-2 fl">
                 <div>
                     <span class="color-change">Issued by :</span>

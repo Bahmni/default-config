@@ -5,9 +5,9 @@ angular.module('bahmni.common.displaycontrol.custom')
         var link = function ($scope)
         {
 
-            var conceptNames = ["Birth Note Set"];
+            var conceptNames = ["Delivery Note, Liveborn infant details"];
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "previous", undefined, $scope.visitUuid, undefined).then(function (response) {
-                    $scope.observations = response.data[0];
+                    $scope.observations = response.data;
 
 
                 }));
