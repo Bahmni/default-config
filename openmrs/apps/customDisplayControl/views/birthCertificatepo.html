@@ -11,7 +11,7 @@
 <div class="container birth-certificate">
     <div ng-repeat="x in observations" class="birth-certificate-wrapper">
         <div class="cer_content">
-            <h1 class="page-title"><center>Birth Certificate</center></h1><br><br>
+            <h1 class="page-title"><center><u>Birth Report</u></center></h1>
             This is to certifiy that a live <u>{{x.groupMembers[0].valueAsString}}</u>  (Male/Female/Undertermined)
             baby was born on BS <u>{{x.groupMembers[1].valueAsString | bahmniDate }}</u> (AD .../.../.... DD/MM/YYYY)
             at <u>{{x.groupMembers[1].valueAsString | bahmniTime}}</u> (24 hours )with birth weight <u>{{x.groupMembers[2].valueAsString}}</u>  grams. The type of
