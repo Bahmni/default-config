@@ -77,5 +77,14 @@
         "target": "_blank",
         "icon": "fa-pencil-square-o",
         "order": 10
+    },
+    "bahmniPrograms": {
+        "id": "bahmni.programs",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Programs",
+        "url": "../clinical/#/programs/patient/search",
+        "icon": "fa-tasks",
+        "order": 11
     }
 }

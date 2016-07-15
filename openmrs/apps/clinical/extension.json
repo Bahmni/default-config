@@ -74,7 +74,7 @@
         "requiredPrivilege": "app:radiologyOrders"
     },
     "bahmni_clinical_patients_search_allpatients_active_app_clinical": {
-        "id": "bahmni.clinical.patients.search.allPatients",
+        "id": "bahmni.clinical.patients.search.activeappclinicalPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -87,7 +87,7 @@
         "requiredPrivilege": "app:clinical"
     },
     "bahmni_clinical_patients_search_allpatients_my_patients_app_clinical": {
-        "id": "bahmni.clinical.patients.search.allPatients",
+        "id": "bahmni.clinical.patients.search.mypatientPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -113,7 +113,7 @@
         "requiredPrivilege": "app:clinical"
     },
     "bahmni_clinical_patients_search_allpatients_all_app_clinical": {
-        "id": "bahmni.clinical.patients.search.allPatients",
+        "id": "bahmni.clinical.patients.search.appallPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -138,7 +138,7 @@
         "requiredPrivilege": "app:pharmacy"
     },
     "bahmni_clinical_patients_search_allpatients_today's_patients_app_pharmacy": {
-        "id": "bahmni.clinical.patients.search.allPatients",
+        "id": "bahmni.clinical.patients.search.todayspatientPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -151,7 +151,7 @@
         "requiredPrivilege": "app:clinical"
     },
     "bahmni_clinical_patients_search_allpatients_all_app_pharmacy": {
-        "id": "bahmni.clinical.patients.search.allPatients",
+        "id": "bahmni.clinical.patients.search.allapppharmcyPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
@@ -195,5 +195,23 @@
         },
         "order": 3,
         "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalTreatmentLinks": {
+        "id": "bahmni.clinical.treatment.links",
+        "extensionPointId": "org.bahmni.clinical.treatment.links",
+        "type": "link",
+        "label": "Open <u>Q</u>uotation",
+        "url": "http://192.168.33.10:8069/quotations/latest?patient_ref={{patient_ref}}&dispensed=false&location_ref={{location_ref}}",
+        "shortcutKey": "q",
+        "requiredPrivilege": "app:billing"
+    },
+    "bahmniClinicalTreatmentDispensedLinks": {
+        "id": "bahmni.clinical.treatment.links",
+        "extensionPointId": "org.bahmni.clinical.treatment.links",
+        "type": "link",
+        "label": "Open <u>D</u>ispensed Quotation",
+        "url": "http://192.168.33.10:8069/quotations/latest?patient_ref={{patient_ref}}&dispensed=true&location_ref={{location_ref}}",
+        "shortcutKey": "q",
+        "requiredPrivilege": "app:billing"
     }
 }

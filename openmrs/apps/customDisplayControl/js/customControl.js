@@ -6,7 +6,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         {
 
             var conceptNames = ["Birth Note Set"];
-            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "previous", undefined, $scope.visitUuid, undefined).then(function (response) {
                     $scope.observations = response.data[0];
 
 

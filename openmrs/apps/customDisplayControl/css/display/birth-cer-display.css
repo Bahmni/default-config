@@ -10,9 +10,9 @@ display: block;
 .birth-certificate .cer_content h1{
 color:red;
 }
-.birth-certificate .cer_content span{
-
-padding: 0px 0px 10px 0px;
+.birth-certificate .cer_content{
+line-height: 39px;
+padding: 0px 0px 10px 50px;
 }
 
 

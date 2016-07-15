@@ -179,5 +179,23 @@
                 "displayOrder": 5
             }
         }
+    },
+    "birthCertificate": {
+        "title": "Birth Certificate",
+        "printing": {
+            "title": "",
+            "header": "",
+            "logo": ""
+        },
+        "sections": {
+            "Birth Certificate": {
+                "type": "custom",
+                "displayOrder": 1,
+                "config": {
+                    "title": "Possible Birth Certificate",
+                    "template": "<birth-certificates></birth-certificates>"
+                }
+            }
+        }
     }
 }
