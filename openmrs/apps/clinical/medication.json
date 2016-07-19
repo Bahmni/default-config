@@ -1,8 +1,11 @@
 {
+  "commonConfig": {
+  },
   "tabConfig": {
     "allMedicationTabConfig": {
       "inputOptionsConfig": {
         "defaultDurationUnit": "Day(s)",
+        "hideOrderSet" : true,
         "defaultInstructions": "As directed",
         "frequencyDefaultDurationUnitsMap": [
           {
