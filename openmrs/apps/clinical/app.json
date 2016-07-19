@@ -24,6 +24,106 @@
     ],
     "config": {
         "visitTypeForRetrospectiveEntries": "General",
+        "drugOrder": {
+            "defaultDurationUnit": "Day(s)",
+            "defaultInstructions": "As directed",
+            "frequencyDefaultDurationUnitsMap": [
+                {
+                    "minFrequency": "1/7",
+                    "maxFrequency": 5,
+                    "defaultDurationUnit": "Day(s)"
+                },
+                {
+                    "minFrequency": "1/30",
+                    "maxFrequency": "1/7",
+                    "defaultDurationUnit": "Week(s)"
+                },
+                {
+                    "minFrequency": null,
+                    "maxFrequency": "1/30",
+                    "defaultDurationUnit": "Month(s)"
+                }
+            ],
+            "drugFormDefaults": {
+                "Suspension": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Oral Rinse": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Mouth Paint": {
+                    "route": "Topical"
+                },
+                "Rotacap": {
+                    "route": "Inhalation"
+                },
+                "Nasal Solution": {
+                    "doseUnits": "Drop",
+                    "route": "Topical"
+                },
+                "Oral Solution": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Capsule": {
+                    "doseUnits": "Capsule(s)",
+                    "route": "Oral"
+                },
+                "Cream": {
+                    "route": "Topical"
+                },
+                "Drops": {
+                    "doseUnits": "Drop",
+                    "route": "Topical"
+                },
+                "Gel": {
+                    "route": "Topical"
+                },
+                "Inhaler": {
+                    "doseUnits": "Puff(s)",
+                    "route": "Inhalation"
+                },
+                "Injection": {
+                    "doseUnits": "mg",
+                    "route": "Intravenous"
+                },
+                "Liquid": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Lotion": {
+                    "route": "Topical"
+                },
+                "Ointment": {
+                    "route": "Topical"
+                },
+                "Pessary": {
+                    "doseUnits": "Unit(s)",
+                    "route": "Per Vaginal"
+                },
+                "Powder": {
+                    "route": "Topical"
+                },
+                "Solution": {
+                    "doseUnits": "ml",
+                    "route": "Topical"
+                },
+                "Spray": {
+                    "doseUnits": "Puff(s)",
+                    "route": "Nasal"
+                },
+                "Syrup": {
+                    "doseUnits": "ml",
+                    "route": "Oral"
+                },
+                "Tablet": {
+                    "doseUnits": "Tablet(s)",
+                    "route": "Oral"
+                }
+            }
+        },
         "obsIgnoreList": [
             "Patient file"
         ],
@@ -191,7 +291,7 @@
                 "required":true
             },
             "CHP ANC, Follow up": {
-                "required":true
+                "required":false
             },
             "CHP ANC, Diagnosis, High Risk Low Touch": {
                 "multiSelect": true,
@@ -325,6 +425,9 @@
             },
             "Dental Note, Treatment": {
                 "allowAddMore": true
+            },
+            "Out Patient Details, Chief Complaint": {
+                "required": true
             },
             "Out Patient Details, Duration": {
                 "conciseText": true
@@ -906,6 +1009,12 @@
             "Nutrition, Bal Vita Provided by FCHV": {
                 "required": true
             },
+            "PNC, PNC visit": {
+                "allowAddMore": true
+            },
+            "PNC, PNC visit date": {
+                "required": true
+            },
             "PNC, Visit Time": {
                 "required": true
             },
@@ -925,7 +1034,8 @@
                 "required": true
             },
             "ANC, ANC Visit": {
-                "required": true
+                "required": true,
+                "multiSelect": true
             },
             "ANC, Completed 4 ANC visits": {
                 "required": true
@@ -990,8 +1100,122 @@
             "Childhood Illness, 2 months, Counseling purpose": {
                 "multiSelect": true
             },
-            "Delivery note, Fathers Name": {
+            "Asthma, Exacerbations in last 3 months": {
                 "required": true
+            },
+            "Asthma, Asthma, FollowUp": {
+                "required": true
+            },
+            "COPD, Exacerbations in Last 3 Months": {
+                "required": true
+            },
+            "COPD, FollowUp": {
+                "required": true
+            },
+            "CHF, Exacerbations in Last 3 Months": {
+                "required": true
+            },
+            "CHF, Followup": {
+                "required": true
+            },
+            "Diabetes, Urine sugar outcome": {
+                "required": true
+            },
+            "Diabetes, Followup": {
+                "required": true
+            },
+            "CKD, BP less than 140/90": {
+                "required": true
+            },
+            "CKD, FollowUp": {
+                "required": true
+            },
+            "RA, Pain exacerbations in the past 3 months": {
+                "required": true
+            },
+            "RA, FollowUp": {
+                "required": true
+            },
+            "CHD, BP less than 140/90": {
+                "required": true
+            },
+            "CHD, Followup": {
+                "required": true
+            },
+            "Seizure Disorder, Number of seizures in last 3 months": {
+                "required": true
+            },
+            "Seizure Disorder, FollowUp": {
+                "required": true
+            },
+            "Tuberculosis, Treatment Outcome": {
+                "required": true
+            },
+            "Tuberculosis, FollowUp": {
+                "required": true
+            },
+            "HIVTC, CD4 count": {
+                "required": true
+            },
+            "HIVTC, Followup": {
+                "required": true
+            },
+            "Hypertension, Patient at Treatment Goal": {
+                "required": true
+            },
+            "Hypertension, FollowUp": {
+                "required": true
+            },
+            "Acute HEENT Complaint-Other symptoms": {
+                "multiSelect": true
+            },
+            "Acute HEENT Complaint-Plan": {
+                "multiSelect": true
+            },
+            "Acute Abdominal Complaint-Other Symptoms": {
+                "multiSelect": true
+            },
+            "Acute Abdominal Complaint-Plan": {
+                "multiSelect": true
+            },
+            "Acute MSK Complaint-Other symptoms": {
+                "multiSelect": true
+            },
+            "Acute MSK Complaint-Plan": {
+                "multiSelect": true
+            },
+            "Acute Skin Complaint-Other Symptoms": {
+                "multiSelect": true
+            },
+            "Acute Skin Complaint-Plan": {
+                "multiSelect": true
+            },
+            "Acute GU Complaint-Other symptoms": {
+                "multiSelect": true
+            },
+            "Acute GU Complaint-Plan": {
+                "multiSelect": true
+            },
+            "COPD, Co-morbidity": {
+                "multiSelect": true
+            },
+            "Diabetes, A1C": {
+                "required": true
+            },
+            "Depression-PHQ9 Total": {
+                "required":true
+            },
+            "Psychiatrist's Rec, Pyschiatrist's Name": {
+                "conciseText": true
+            },
+            "Psychiatrist's Rec, Reasoning/rationale": {
+                "required": true
+            },
+            "Psychiatrist's Rec, Recommendation": {
+                "required": true
+            },
+            "Procedure Notes, Procedure": {
+                "multiSelect": true
             }
         }
     }
