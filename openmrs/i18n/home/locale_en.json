@@ -8,5 +8,6 @@
     "MODULE_LABEL_REPORTS_KEY": "Reports",
     "MODULE_LABEL_APOOINTMENTS_KEY": "Appointments",
     "MODULE_LABEL_ORDERS_KEY": "Orders",
-    "MODULE_LABEL_PROGRAMS_KEY": "Programs"
+    "MODULE_LABEL_PROGRAMS_KEY": "Programs",
+    "MODULE_LABEL_IMPLEMENTER_INTERFACE_KEY": "Implementer Interface"
 }
