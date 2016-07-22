@@ -50,18 +50,20 @@
                 },
                 "displayOrder": 3
             },
-            "radiology_orders": {
-                "title": "Radiology Orders",
+            "otherdiagnosticOrderControl":  {
+                "title": "Other Diagnostics",
                 "type": "ordersControl",
-                "orderType": "Radiology Order",
+                "orderType": "USG Order",
                 "displayOrder": 4,
                 "dashboardConfig": {
-                    "title": null,
-                    "conceptNames": [
-                        "Chest",
-                        "Neck"
-                    ],
-                    "numberOfVisits": 1
+                    "numberOfVisits": "4",
+                    "showHeader": true,
+                    "conceptNames":["USG Order fulfillment Notes, Findings", "USG Order fulfillment, Clinician", "USG Order fulfillment, Remarks"]
+                },
+                "expandedViewConfig": {
+                    "showHeader": true,
+                    "conceptNames":["USG Order fulfillment Notes, Findings", "USG Order fulfillment, Clinician", "USG Order fulfillment, Remarks"]
+
                 }
             },
             "treatments": {
@@ -350,6 +352,16 @@
                     "showDetailsButton": true
                 },
                 "displayOrder": 20
+            },
+            "formDisplaySummary":{
+                "title": "Active Visit notes",
+                "type": "forms",
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 1
+                },
+                "formGroup":[""],
+                "displayOrder": 21
             }
         }
     },

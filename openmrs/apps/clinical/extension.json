@@ -213,5 +213,17 @@
         "url": "http://192.168.33.10:8069/quotations/latest?patient_ref={{patient_ref}}&dispensed=true&location_ref={{location_ref}}",
         "shortcutKey": "q",
         "requiredPrivilege": "app:billing"
+    },
+    "bahmniClinicalPatientsSearchActivePatientsForPrograms": {
+        "id": "bahmni.clinical.patients.search.activePatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatients",
+            "display": "Programs",
+            "forwardUrl": "#/default/patient/{{patientUuid}}/consultationContext"
+        },
+        "label": "Active",
+        "order": 1
     }
 }
