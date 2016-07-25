@@ -5,7 +5,7 @@
     "allMedicationTabConfig": {
       "inputOptionsConfig": {
         "defaultDurationUnit": "Day(s)",
-        "hideOrderSet" : true,
+        "hideOrderSet" : false,
         "defaultInstructions": "As directed",
         "frequencyDefaultDurationUnitsMap": [
           {
