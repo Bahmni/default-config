@@ -23,7 +23,8 @@
         "visitUuid"
     ],
     "config": {
-        "diagnosisStatus": "Inactive",
+        "quickPrints":false,
+	"diagnosisStatus": "Inactive",
         "program": {
             "patientInformation": {
                 "ageLimit": 100
