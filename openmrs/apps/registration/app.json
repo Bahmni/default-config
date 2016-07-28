@@ -55,10 +55,15 @@
         },
         "patientSearch": {
             "address": {
-                "label": "Village",
-                "placeholder": "Enter Village",
+                "label": "VDC/Municipality",
+                "placeholder": "Enter VDC/Municipality",
                 "field": "city_village"
             }
-        }
+        },
+		"patientSearchResults": {
+			"address": {
+				"fields" : ["city_village", "address1"]
+			}
+		}
     }
 }
