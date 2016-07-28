@@ -25,7 +25,7 @@
         ],
         "printOptions": [
             {
-                "label": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
+                "label": "Print Label",
                 "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
                 "shortcutKey": "r"
             }
@@ -35,9 +35,14 @@
         "conceptSetUI": {
             "Department Sent To": {
                 "required": false,
+                "answersConceptName": "Department Sent To",
                 "autocomplete": true
             },
-            "Hospitals, Referred by, Data": {},
+            "Hospitals, Referred by, Data": {
+                "autocomplete": true,
+                "codedConceptName": "Hospitals, Referred by",
+                "nonCodedConceptName": "Hospitals, Referred by, Non coded"
+            },
             "Hospitals, Referred by": {
                 "answersConceptName": "Hospitals, Referred by, Answers",
                 "required": false,
@@ -48,6 +53,12 @@
                 "required": false,
                 "autocomplete": true
             }
-        }
+        },
+        "patientSearch": {
+            "address": {
+                "label": "Village",
+                "placeholder": "Enter Village",
+                "field": "cityVillage"
+            }
     }
 }
