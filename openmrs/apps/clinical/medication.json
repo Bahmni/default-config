@@ -1,6 +1,7 @@
 {
+  "commonConfig": {},
   "tabConfig": {
-    "allMedicationConfig": {
+    "allMedicationTabConfig": {
       "inputOptionsConfig": {
         "defaultDurationUnit": "Day(s)",
         "defaultInstructions": "As directed",
@@ -128,7 +129,8 @@
             "doseUnits": "Tablet(s)",
             "route": "Oral"
           }
-        }
+        },
+        "routesToMakeDoseSectionNonMandatory" : ["Topical","Inhalation"]
       },
       "drugOrderHistoryConfig": {
         "view": "default"

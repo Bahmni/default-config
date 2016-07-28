@@ -35,8 +35,7 @@
         "conceptSetUI": {
             "Department Sent To": {
                 "required": false,
-                "answersConceptName": "Department Sent To",
-                "autocomplete": true
+                "dropdown":true
             },
             "Hospitals, Referred by, Data": {
                 "autocomplete": true,
@@ -58,7 +57,8 @@
             "address": {
                 "label": "Village",
                 "placeholder": "Enter Village",
-                "field": "cityVillage"
+                "field": "city_village"
             }
+        }
     }
 }
