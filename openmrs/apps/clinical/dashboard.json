@@ -14,6 +14,7 @@
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
+					"address1",
                     "countyDistrict"
                 ],
                 "displayOrder": 0
@@ -35,36 +36,41 @@
                 "showDetailsButton": true,
                 "displayOrder": 2
             },
-            "lab_results": {
-                "title": "Lab Results",
-                "type": "labOrders",
+            "formDisplaySummary":{
+                "title": "Active Visit notes",
+                "type": "forms",
                 "dashboardConfig": {
                     "title": null,
-                    "numberOfVisits": 1,
-                    "showChart": false,
-                    "showTable": true,
-                    "showDetailsButton": false
+                    "maximumNoOfVisits": 1
                 },
-                "expandedViewConfig": {
-                    "numberOfVisits": 3
-                },
+                "formGroup":["Patient Vitals","Acute OPD visit","Acute Abdominal Complaint","Acute HEENT Complaint",
+                             "Acute MSK Complaint","Acute Skin Complaint","Acute GU Complaint","ANC","Asthma, Progress","Childhood Illness (Children aged below 2 months)",
+                             "Childhood Illness( Children aged 2 months to 5 years)","CHP Antenatal Care","CHP Chronic Disease Counseling", "CHP Registration",
+                             "Chronic Kidney Disease, Progress","COPD, Progress","Congestive Heart Failure, Progress","Death Note","Delivery note","Dental","Dental Note",
+                             "Depression Note","Diabetes, Progress","Discharge Note","DRTuberculosis, Intake","ECG Notes","ER General Notes","Family Planning Template",
+                             "HIV Testing and Counseling Intake Template","HIV Treatment and Care Intake Template","HIV Treatment and Care Progress Template","Hypertension, Progress",
+                             "IMAM Program","Kalaazar, Template","Leprosy, Template","Mental Health","Mental Health Screener","Malaria","Nutrition","Operative Notes",
+                             "Opioid Substitution Therapy Intake Template","Opioid Substitution Therapy Intake Template","Opportunistic Infection Template","Orthopaedic Examination",
+                             "PNC Note","Post Delivery Family Planning Checklist","Prevention of Mother-to-Child Transmission Intake Template","Procedure Notes","Psychiatrist's Recommendation",
+                             "Psychosis Followup Note","Psychosis Intake Note","Rheumatoid Arthritis, Progress","Rheumatic Heart Disease, Progress","Safe Abortion","Seizure Disorder, Progress",
+                             "Sextually Transmitted Infections Intake Template","Stroke OPD","Trauma Notes","Tuberculosis, Intake","USG Notes","TEST TEMPLATE (टेस्ट टेम्प्लेट)"],
                 "displayOrder": 3
             },
-            "otherdiagnosticOrderControl":  {
-                "title": "Other Diagnostics",
-                "type": "ordersControl",
-                "orderType": "USG Order",
-                "displayOrder": 4,
+            "death_note": {
+                "title": "Death Note",
+                "templateName": "Death Note Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
                 "dashboardConfig": {
-                    "numberOfVisits": "4",
-                    "showHeader": true,
-                    "conceptNames":["USG Order fulfillment Notes, Findings", "USG Order fulfillment, Clinician", "USG Order fulfillment, Remarks"]
+                    "showOnly": [],
+                    "showDetailsButton": true
                 },
                 "expandedViewConfig": {
-                    "showHeader": true,
-                    "conceptNames":["USG Order fulfillment Notes, Findings", "USG Order fulfillment, Clinician", "USG Order fulfillment, Remarks"]
-
-                }
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 3
             },
             "treatments": {
                 "title": "Treatments",
@@ -88,7 +94,37 @@
                     "showOtherActive": true,
                     "showDetailsButton": false
                 },
+                "displayOrder": 4
+            },
+            "lab_results": {
+                "title": "Lab Results",
+                "type": "labOrders",
+                "dashboardConfig": {
+                    "title": null,
+                    "numberOfVisits": 1,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false
+                },
+                "expandedViewConfig": {
+                    "numberOfVisits": 3
+                },
                 "displayOrder": 5
+            },
+            "otherdiagnosticOrderControl":  {
+                "title": "Other Diagnostics",
+                "type": "ordersControl",
+                "orderType": "USG Order",
+                "dashboardConfig": {
+                    "numberOfVisits": "1",
+                    "showHeader": true,
+                    "conceptNames":["USG Order fulfillment Notes, Findings", "USG Order fulfillment, Clinician", "USG Order fulfillment, Remarks"]
+                },
+                "expandedViewConfig": {
+                    "showHeader": true,
+                    "conceptNames":["USG Order fulfillment Notes, Findings", "USG Order fulfillment, Clinician", "USG Order fulfillment, Remarks"]
+                },
+                "displayOrder": 6
             },
             "vitals": {
                 "title": "Vitals",
@@ -121,30 +157,7 @@
                         "labConcepts": ""
                     }
                 },
-                "displayOrder": 6
-            },
-            "disposition": {
-                "title": "Disposition",
-                "type": "disposition",
-                "numberOfVisits": 2,
-                "showDetailsButton": true,
                 "displayOrder": 7
-            },
-            "chronic_diseases": {
-                "title": "Chronic Diseases",
-                "templateName": "Chronic Diseases",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "displayOrder": 8
             },
             "general_consultation": {
                 "title": "General Consultation",
@@ -160,7 +173,51 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
+                "displayOrder": 8
+            },
+            "operations_and_procedures": {
+                "title": "Operations & Procedures",
+                "templateName": "Disease template, Orthopaedic",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
                 "displayOrder": 9
+            },
+            "disposition": {
+                "title": "Disposition",
+                "type": "disposition",
+                "numberOfVisits": 1,
+                "showDetailsButton": true,
+                "displayOrder": 10
+            },
+            "programs": {
+                "title": "Programs",
+                "type": "programs",
+                "displayOrder": 11
+            },
+            "chronic_diseases": {
+                "title": "Chronic Diseases",
+                "templateName": "Chronic Diseases",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 12
             },
             "childhood_templates": {
                 "title": "Childhood Templates",
@@ -176,74 +233,12 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 10
+                "displayOrder": 13,
+				"scope": "latest"
             },
             "motherhood": {
                 "title": "Motherhood",
                 "templateName": "Motherhood templates",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "displayOrder": 11
-            },
-            "Community Health": {
-                "title": "Community Health",
-                "templateName": "Community Health Program Templates",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                }
-            },
-            "hiv": {
-                "title": "HIV",
-                "templateName": "HIV Profile",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "displayOrder": 12
-            },
-            "orthopaedic": {
-                "title": "Orthopaedic",
-                "templateName": "Disease template, Orthopaedic",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "displayOrder": 13
-            },
-            "death_note": {
-                "title": "Death Note",
-                "templateName": "Death Note Template",
                 "type": "diseaseTemplate",
                 "showOnly": [],
                 "showDetailsButton": true,
@@ -271,71 +266,8 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 15
-            },
-            "tuberculosis": {
-                "title": "Tuberculosis",
-                "templateName": "Tuberculosis Disease Template",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "displayOrder": 16
-            },
-            "kalaazar": {
-                "title": "Kalaazar",
-                "templateName": "Kalaazar Disease Template",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "displayOrder": 17
-            },
-            "malaria": {
-                "title": "Malaria",
-                "templateName": "Malaria Disease Template",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "displayOrder": 18
-            },
-            "leprosy": {
-                "title": "Leprosy",
-                "templateName": "Leprosy Disease Template",
-                "type": "diseaseTemplate",
-                "showOnly": [],
-                "showDetailsButton": true,
-                "dashboardConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "expandedViewConfig": {
-                    "showOnly": [],
-                    "showDetailsButton": true
-                },
-                "displayOrder": 19
+                "displayOrder": 15,
+				"scope": "latest"
             },
             "mental_health": {
                 "title": "Mental Health",
@@ -351,32 +283,98 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 },
-                "displayOrder": 20
+                "displayOrder": 16
             },
-            "programs": {
-                "title": "Programs",
-                "type": "programs",
-                "displayOrder": 21
-            },
-            "formDisplaySummary":{
-                "title": "Active Visit notes",
-                "type": "forms",
+            "hiv": {
+                "title": "HIV",
+                "templateName": "HIV Profile",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
                 "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 1
+                    "showOnly": [],
+                    "showDetailsButton": true
                 },
-                "formGroup":["Patient Vitals","Acute OPD visit","Acute Abdominal Complaint","Acute HEENT Complaint",
-                             "Acute MSK Complaint","Acute Skin Complaint","Acute GU Complaint","ANC","Asthma, Progress","Childhood Illness (Children aged below 2 months)",
-                             "Childhood Illness( Children aged 2 months to 5 years)","CHP Antenatal Care","CHP Chronic Disease Counseling", "CHP Registration",
-                             "Chronic Kidney Disease, Progress","COPD, Progress","Congestive Heart Failure, Progress","Death Note","Delivery note","Dental","Dental Note",
-                             "Depression Note","Diabetes, Progress","Discharge Note","DRTuberculosis, Intake","ECG Notes","ER General Notes","Family Planning Template",
-                             "HIV Testing and Counseling Intake Template","HIV Treatment and Care Intake Template","HIV Treatment and Care Progress Template","Hypertension, Progress",
-                             "IMAM Program","Kalaazar, Template","Leprosy, Template","Mental Health","Mental Health Screener","Malaria","Nutrition","Operative Notes",
-                             "Opioid Substitution Therapy Intake Template","Opioid Substitution Therapy Intake Template","Opportunistic Infection Template","Orthopaedic Examination",
-                             "PNC Note","Post Delivery Family Planning Checklist","Prevention of Mother-to-Child Transmission Intake Template","Procedure Notes","Psychiatrist's Recommendation",
-                             "Psychosis Followup Note","Psychosis Intake Note","Rheumatoid Arthritis, Progress","Rheumatic Heart Disease, Progress","Safe Abortion","Seizure Disorder, Progress",
-                             "Sextually Transmitted Infections Intake Template","Stroke OPD","Trauma Notes","Tuberculosis, Intake","USG Notes","TEST TEMPLATE (टेस्ट टेम्प्लेट)"],
-                "displayOrder": 22
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 17
+            },
+            "Community Health": {
+                "title": "Community Health",
+                "templateName": "Community Health Program Templates",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "tuberculosis": {
+                "title": "Tuberculosis",
+                "templateName": "Tuberculosis Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "kalaazar": {
+                "title": "Kalaazar",
+                "templateName": "Kalaazar Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "malaria": {
+                "title": "Malaria",
+                "templateName": "Malaria Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "leprosy": {
+                "title": "Leprosy",
+                "templateName": "Leprosy Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
             }
         }
     },
@@ -394,6 +392,7 @@
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
+					"address1",
                     "countyDistrict"
                 ],
                 "displayOrder": 0
@@ -430,6 +429,7 @@
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
+					"address1",
                     "countyDistrict"
                 ],
                 "displayOrder": 0
@@ -452,11 +452,11 @@
             }
         }
     },
-    "orthopaedic": {
-        "dashboardName": "Orthopaedic",
+    "operations_and_procedures": {
+        "dashboardName": "Operations and Procedures",
         "printing": {
             "title": "Bayalpata Hospital",
-            "header": "Orthopaedic Summary",
+            "header": "Operations and Procedures Summary",
             "logo": "../images/nhn-logo.png"
         },
         "sections": {
@@ -466,12 +466,13 @@
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
+					"address1",
                     "countyDistrict"
                 ],
                 "displayOrder": 0
             },
-            "orthopaedic": {
-                "title": "Orthopaedic",
+            "operations_and_procedures": {
+                "title": "Operations & Procedures",
                 "templateName": "Disease template, Orthopaedic",
                 "type": "diseaseTemplate",
                 "showOnly": [],
@@ -502,6 +503,7 @@
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
+					"address1",
                     "countyDistrict"
                 ],
                 "displayOrder": 0
@@ -538,6 +540,7 @@
                 "patientAttributes": [],
                 "addressFields": [
                     "cityVillage",
+					"address1",
                     "countyDistrict"
                 ]
             },
