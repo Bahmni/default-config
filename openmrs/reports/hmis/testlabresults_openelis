@@ -1,0 +1,302 @@
+                    test                    | total_count 
+--------------------------------------------+-------------
+ 20-min whole blood clotting                |           0
+ 24 hour Urine Protein                      |           0
+ Absolute Eosinophil Count                  |           0
+ ADA (CSF)                                  |           0
+ ADA (Pericardial Fluid)                    |           0
+ ADA (Peritoneal Fluid)                     |           0
+ ADA (Pleural Fluid)                        |           0
+ ADA (Synovial Fluid)                       |           0
+ AFB Stain (Blood)                          |           0
+ AFB Stain (CSF)                            |           0
+ AFB Stain (Pericardial Fluid)              |           0
+ AFB Stain (Peritoneal Fluid)               |           0
+ AFB Stain (Pleural Fluid)                  |           1
+ AFB Stain (Pus)                            |           0
+ AFB Stain (Semen)                          |           0
+ AFB Stain (Serum)                          |           0
+ AFB Stain (Slit Skin)                      |           0
+ AFB Stain (Sputum)                         |           1
+ AFB Stain (Stool)                          |           0
+ AFB Stain (Synovial Fluid)                 |           0
+ AFB Stain (Urine)                          |           0
+ Agranulocyte Count                         |          55
+ Agranulocyte Count (CSF)                   |           0
+ Agranulocyte Count (Pericardial Fluid)     |           0
+ Agranulocyte Count (Peritoneal Fluid)      |           0
+ Agranulocyte Count (Pleural Fluid)         |           0
+ Agranulocyte Count (Synovial Fluid)        |           0
+ A-G Ratio                                  |           0
+ Albumin (Serum)                            |           1
+ Albumin (Urine)                            |          61
+ Alkaline Phosphate                         |          12
+ Amylase                                    |           0
+ ANA                                        |           0
+ Antibiotic Sensitivity                     |           0
+ Antibiotic Sensitivity (Blood)             |           0
+ Antibiotic Sensitivity (CSF)               |           0
+ Antibiotic Sensitivity (Pericardial Fluid) |           0
+ Antibiotic Sensitivity (Peritoneal Fluid)  |           0
+ Antibiotic Sensitivity (Pleural Fluid)     |           0
+ Antibiotic Sensitivity (Pus)               |           0
+ Antibiotic Sensitivity (Semen)             |           0
+ Antibiotic Sensitivity (Serum)             |           0
+ Antibiotic Sensitivity (Slit Skin)         |           0
+ Antibiotic Sensitivity (Sputum)            |           0
+ Antibiotic Sensitivity (Stool)             |           0
+ Antibiotic Sensitivity (Synovial Fluid)    |           0
+ Antibiotic Sensitivity (Urine)             |           0
+ Appearance (CSF)                           |           0
+ Appearance (Pericardial Fluid)             |           0
+ Appearance (Peritoneal Fluid)              |           0
+ Appearance (Pleural Fluid)                 |           0
+ Appearance (Synovial Fluid)                |           0
+ APTT                                       |           0
+ ASO                                        |           1
+ Band Form                                  |           0
+ Basophil (Blood)                           |           0
+ Basophil (CSF)                             |           0
+ Basophil (Pericardial Fluid)               |           0
+ Basophil (Peritoneal Fluid)                |           0
+ Basophil (Pleural Fluid)                   |           1
+ Basophil (Synovial Fluid)                  |           0
+ Bile pigment                               |           0
+ Bile Salt (Urine)                          |           0
+ Bilirubin Direct                           |          13
+ Bilirubin Total                            |          13
+ Bilirubin (Urine)                          |           0
+ Bleeding Time                              |           3
+ Blood Bank Screening Test                  |           0
+ Blood Group                                |          18
+ Blood (Stool)                              |          17
+ Blood Sugar Fasting                        |           2
+ Blood Sugar P.P                            |           2
+ Blood Sugar Random                         |           4
+ Borderline Tuberculoid                     |           0
+ BUN                                        |          27
+ Calcium                                    |          27
+ Casts                                      |          61
+ CD4                                        |           0
+ Chlamydia                                  |           1
+ Chloride                                   |          27
+ Chyle                                      |           0
+ CK-MB                                      |           0
+ CK-NAC                                     |           0
+ Clotting Time                              |           3
+ Color (Semen)                              |           0
+ Colour (CSF)                               |           0
+ Colour (Pericardial Fluid)                 |           0
+ Colour (Peritoneal Fluid)                  |           0
+ Colour (Pleural Fluid)                     |           0
+ Colour (Stool)                             |          17
+ Colour (Synovial Fluid)                    |           0
+ Colour (Urine)                             |          61
+ Consistency                                |          17
+ Coomb's test                               |           0
+ Coomb's test-major                         |           0
+ Coomb's test-minor                         |           0
+ CPK                                        |           0
+ Creatinine                                 |          27
+ Cross Match                                |           0
+ Cross Match-major                          |           2
+ Cross Match-minor                          |           0
+ CRP                                        |           2
+ CT                                         |           0
+ Culture (Blood)                            |           0
+ Culture (CSF)                              |           0
+ Culture (Pericardial Fluid)                |           0
+ Culture (Peritoneal Fluid)                 |           0
+ Culture (Pleural Fluid)                    |           0
+ Culture (Pus)                              |           0
+ Culture (Stool)                            |           0
+ Culture (Synovial Fluid)                   |           0
+ Culture (Urine)                            |           0
+ D-dimer                                    |           0
+ Dengue                                     |           0
+ DLC (CSF)                                  |           0
+ DLC (Pericardial Fluid)                    |           0
+ DLC (Peritoneal Fluid)                     |           0
+ DLC (Pleural Fluid)                        |           0
+ DLC (Synovial Fluid)                       |           0
+ Eosinophil (Blood)                         |           0
+ Eosinophil (CSF)                           |           0
+ Eosinophil (Pericardial Fluid)             |           0
+ Eosinophil (Peritoneal Fluid)              |           0
+ Eosinophil (Pleural Fluid)                 |           1
+ Eosinophil (Synovial Fluid)                |           0
+ Epithelial Cells                           |          61
+ ESR (Blood)                                |          11
+ ESR (Serum)                                |           0
+ Fat Droplets                               |          17
+ Gamma-GT                                   |           0
+ GenXpert                                   |           0
+ Glucose (CSF)                              |           0
+ Glucose(F)                                 |           2
+ Glucose (Pericardial Fluid)                |           0
+ Glucose (Peritoneal Fluid)                 |           0
+ Glucose (Pleural Fluid)                    |           1
+ Glucose(P.P)                               |           2
+ Glucose(R)                                 |          27
+ Glucose (Synovial Fluid)                   |           0
+ Gram Stain (Blood)                         |           0
+ Gram Stain (CSF)                           |           0
+ Gram Stain (Pericardial Fluid)             |           0
+ Gram' Stain (Peritoneal Fluid)             |           0
+ Gram Stain (Pleural Fluid)                 |           1
+ Gram Stain (Pus)                           |           0
+ Gram Stain (Semen)                         |           0
+ Gram Stain (Serum)                         |           0
+ Gram Stain (Slit Skin)                     |           0
+ Gram Stain (Sputum)                        |           0
+ Gram Stain (Stool)                         |           0
+ Gram' Stain (Synovial Fluid)               |           0
+ Gram Stain (Urine)                         |           0
+ Granulocyte Count                          |          55
+ Granulocyte Count (CSF)                    |           0
+ Granulocyte Count (Pericardial Fluid)      |           0
+ Granulocyte Count (Peritoneal Fluid)       |           0
+ Granulocyte Count (Pleural Fluid)          |           0
+ Granulocyte Count (Synovial Fluid)         |           0
+ Haemoglobin (Blood)                        |          65
+ Haemoglobin (Serum)                        |           0
+ Hanging Drop Preparation (Stool)           |           0
+ HbA1c                                      |           0
+ HBsAg (Blood)                              |           8
+ HBsAg (Serum)                              |           2
+ HCV (Blood)                                |           8
+ HCV (Serum)                                |           2
+ HDL                                        |           0
+ Helminths parasite/Ova/Cyst/Trophozoites   |          17
+ High Vaginal Swab Culture                  |           0
+ HIV (Blood)                                |           7
+ HIV (Serum)                                |           2
+ H. Pylori                                  |           0
+ INR                                        |           4
+ K-39                                       |           1
+ Ketone Bodies                              |           0
+ KOH Preparation                            |           0
+ LDH (Pericardial Fluid)                    |           0
+ LDH (Peritoneal Fluid)                     |           0
+ LDH (Pleural Fluid)                        |           0
+ LDH (Serum)                                |           0
+ LDH (Synovial Fluid)                       |           0
+ LDL                                        |           0
+ LDL/HDL                                    |           0
+ Leucocytes (Urine)                         |           0
+ Lipase (Serum)                             |           0
+ Liquification time (Semen)                 |           0
+ Lymphocyte (Blood)                         |          55
+ Lymphocyte (CSF)                           |           0
+ Lymphocyte (Pericardial Fluid)             |           0
+ Lymphocyte (Peritoneal Fluid)              |           0
+ Lymphocyte (Pleural Fluid)                 |           1
+ Lymphocyte (Synovial Fluid)                |           0
+ Magnesium                                  |           0
+ Major Surgery TBD                          |           0
+ Malaria Abs                                |           2
+ Malaria Ags                                |           6
+ Mantoux Test                               |           0
+ MCH                                        |          55
+ MCHC                                       |          55
+ MCV                                        |          55
+ M. Leprae (Slit Skin)                      |           0
+ Monocyte (Blood)                           |          55
+ Monocyte (CSF)                             |           0
+ Monocyte (Pericardial Fluid)               |           0
+ Monocyte (Peritoneal Fluid)                |           0
+ Monocyte (Pleural Fluid)                   |           1
+ Monocyte (Synovial Fluid)                  |           0
+ Morphology                                 |           0
+ Motility (Semen)                           |           0
+ MP Serology                                |           0
+ M. Tuberculosis (Pus)                      |           0
+ M. Tuberculosis (Slit Skin)                |           0
+ M. Tuberculosis (Sputum)                   |           0
+ Mucus                                      |          17
+ Myoglobin                                  |           0
+ Neutrophil                                 |           0
+ Neutrophil (CSF)                           |           0
+ Neutrophil (Pericardial Fluid)             |           0
+ Neutrophil (Peritoneal Fluid)              |           0
+ Neutrophil (Pleural Fluid)                 |           1
+ Neutrophil (Synovial Fluid)                |           0
+ Nitrates (Urine)                           |           0
+ Occult Blood Test                          |           6
+ Oxalates (Urine)                           |          61
+ PBS for Malaria,Filaria Parasites          |           0
+ PCV (Blood)                                |          55
+ pH (CSF)                                   |           0
+ Phosphates (Urine)                         |          61
+ pH (Pericardial Fluid)                     |           0
+ pH (Peritoneal Fluid)                      |           0
+ pH (Pleural Fluid)                         |           0
+ pH (Semen)                                 |           0
+ pH (Synovial Fluid)                        |           0
+ pH (Urine)                                 |          61
+ Platelets                                  |          55
+ Potassium                                  |          27
+ Protein (CSF)                              |           0
+ Protein (Pericardial Fluid)                |           0
+ Protein (Peritoneal Fluid)                 |           0
+ Protein (Pleural Fluid)                    |           1
+ Protein (Serum)                            |           2
+ Protein (Synovial Fluid)                   |           0
+ Protozol parasite/Ova/Cyst/Trophozoites    |          17
+ PS for RBC Morphology                      |           0
+ PT                                         |           4
+ Pus Cells (Semen)                          |           0
+ Pus (Stool)                                |          17
+ Pus (Urine)                                |          61
+ RA                                         |           9
+ RBC count                                  |          55
+ RBC (Stool)                                |          17
+ RBCs (Urine)                               |          61
+ Reticulocyte count                         |           0
+ Rifampicin resistance (Pus)                |           0
+ Rifampicin resistance (Slit Skin)          |           0
+ Rifampicin resistance (Sputum)             |           0
+ SGOT/AST                                   |          12
+ SGPT/ALT                                   |          12
+ Sickling Test                              |           0
+ Smear Test (Pus)                           |           0
+ Smear Test (Slit Skin)                     |           0
+ Smear Test (Sputum)                        |           0
+ Sodium                                     |          27
+ Stool Reducing Substance Test              |           1
+ Sugar                                      |          61
+ TB-IgM/IgG                                 |           0
+ TLC (CSF)                                  |           0
+ TLC (Pericardial Fluid)                    |           0
+ TLC (Peritoneal Fluid)                     |           0
+ TLC (Pleural Fluid)                        |           1
+ TLC (Synovial Fluid)                       |           0
+ Total Cholesterol                          |           0
+ Total Cholesterol/HDL                      |           0
+ Total Leucocyte Count                      |          55
+ Total Sperm Count                          |           0
+ Transparency (CSF)                         |           0
+ Transparency (Pericardial Fluid)           |           0
+ Transparency (Peritoneal Fluid)            |           0
+ Transparency (Pleural Fluid)               |           0
+ Transparency (Synovial Fluid)              |           0
+ Transparency (Urine)                       |          61
+ Triglyceride                               |           0
+ Troponin-I                                 |           0
+ Urates (Urine)                             |          61
+ Urea                                       |          27
+ Urea Clearance Test                        |           0
+ Uric acid                                  |           2
+ Uric acid (Urine)                          |          61
+ Urine Pregnancy Test                       |          18
+ Urobilinogen (Urine)                       |           0
+ VDRL(TPHA) (Blood)                         |           8
+ VDRL(TPHA) (Serum)                         |           2
+ Viscosity                                  |           0
+ VLDL                                       |           0
+ Volume (Semen)                             |           0
+ Wet Mouth Preparation                      |           0
+ Yeast Cells (Stool)                        |          17
+ Yeast Cells (Urine)                        |          61
+(298 rows)
+

@@ -21,4 +21,5 @@ FROM visit
     ON visit.visit_id = va.visit_id
 	AND va.value_reference = 'OPD'
   LEFT JOIN visit_attribute_type vat ON vat.visit_attribute_type_id = va.attribute_type_id 
-  	AND vat.name = 'Visit Status';
+  	AND vat.name = 'Visit Status'
+  ORDER BY visit.date_started ASC;
