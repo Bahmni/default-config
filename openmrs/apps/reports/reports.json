@@ -1578,5 +1578,174 @@
         "config": {
             "templateName": "Discharge Note"
         }
+    },
+    "dental_note" : {
+        "name": "Dental Note",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Dental Note"
+        }
+    },
+    "cd_asthma_progress" : {
+        "name": "CD - Asthma progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Asthma, Progress"
+        }
+    },
+    "cd_ckd_progress" : {
+        "name": "CD - Chronic Kidney Disease progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Chronic Kidney Disease, Progress"
+        }
+    },
+    "cd_copd_progress" : {
+        "name": "CD - COPD progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "COPD, Progress"
+        }
+    },
+    "cd_chf_progress" : {
+        "name": "CD - Congestive Heart Failure progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Congestive Heart Failure, Progress"
+        }
+    },
+    "cd_chd_progress" : {
+        "name": "CD - Coronary Heart Disease progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Coronary Heart Disease, Progress"
+        }
+    },
+    "cd_diabetes_progress" : {
+        "name": "CD - Diabetes progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Diabetes, Progress"
+        }
+    },
+    "cd_hypertension_progress" : {
+        "name": "CD - Hypertension progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Hypertension, Progress"
+        }
+    },
+    "cd_rheumatoid_arthritis_progress" : {
+        "name": "CD - Rheumatoid Arthritis progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Rheumatoid Arthritis, Progress"
+        }
+    },
+    "cd_rheumatoid_heart_disease_progress" : {
+        "name": "CD - Rheumatoid Heart Disease progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Rheumatic Heart Disease, Progress"
+        }
+    },
+    "cd_seizure_disorder_progress" : {
+        "name": "CD - Seizure Disorder progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Seizure Disorder, Progress"
+        }
+    },
+    "cd_stroke_progress" : {
+        "name": "CD - Stroke OPD",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Stroke OPD"
+        }
+    },
+    "cd_hivtc_progress" : {
+        "name": "CD - HIVTC progress",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "HIV Treatment and Care Progress Template"
+        }
+    },
+    "cd_tuberculosis" : {
+        "name": "CD - Tuberculosis",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Tuberculosis, Intake"
+        }
+    },
+    "childhood_illness_lessthan_2months_template" : {
+        "name": "Childhood Illness less than 2 months template",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Childhood Illness (Children aged below 2 months)"
+        }
+    },
+    "chp_anc_note" : {
+        "name": "CHP Antenatal Care",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "CHP Antenatal Care"
+        }
+    },
+    "chp_registration_note" : {
+        "name": "CHP Registration",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "CHP Registration"
+        }
+    },
+    "death_note" : {
+        "name": "Death Note",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "Death Note"
+        }
+    },
+    "cd_patient_visits_by_month": {
+        "name": "Chronic Disease Patient Visits by Month (2015-03-15 until today)",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/others/cd_patient_visits_by_month.sql"
+        }
+    },
+    "opd_patients_with_address_diagnosis": {
+        "name": "OPD Patients with Address and Diagnosis",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/OPDpatients_with_address_diagnosis.sql"
+        }
+    },
+        "ipd_patients_with_address_diagnosis": {
+        "name": "IPD Patients with Address and Diagnosis",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/IPDpatients_with_address_diagnosis.sql"
+        }
+    },
+        "emergency_patients_with_address_diagnosis": {
+        "name": "Emergency Patients with Address and Diagnosis",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/ERpatients_with_address_diagnosis.sql"
+        }
+    },
+      "daily_labtest": {
+        "name": "Lab tests and results",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/labresult.sql"
+        }
+    },
+      "mental_health_registry": {
+        "name": "Mental Health Registry",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/mental_health_registry.sql"
+        }
     }
 }
+	
