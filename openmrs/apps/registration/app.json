@@ -39,8 +39,8 @@
             },
             "Hospitals, Referred by, Data": {
                 "autocomplete": true,
-                "codedConceptName": "Hospitals, Referred by, Answers",
-                "nonCodedConceptName": "Hospitals, Referred by, Non coded"
+                "nonCodedConceptName": "Hospitals, Referred by, Non coded",
+                "codedConceptName": "Hospitals, Referred by, Answers"
             },
             "Hospitals, Referred by": {
                 "answersConceptName": "Hospitals, Referred by, Answers",
