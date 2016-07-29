@@ -7,17 +7,24 @@
 </head>
 
 <body>
-
 <div class="container birth-certificate">
-    <div ng-repeat="x in observations" class="birth-certificate-wrapper">
+    <div ng-repeat="birthCertificate in birthCertificates" class="birth-certificate-wrapper">
         <div class="cer_content">
+            <div class="birth-certificate-top">
+                <div class="issued_content-1 col-2 fl">
+                    Fiscal Year:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+                </div>
+                <div class="issued_content-1 col-2 fr" >
+                    Birth Certificate No:
+                </div>
+            </div>
             <h1 class="page-title"><center><u>Birth Report</u></center></h1><br>
-            This is to certifiy that a live <u>{{x.groupMembers[0].valueAsString}}</u>  (Male/Female/Undertermined)
-            baby was born on BS <u>{{x.groupMembers[1].valueAsString | bahmniDate }}</u> (AD .../.../.... DD/MM/YYYY)
-            at <u>{{x.groupMembers[1].valueAsString | bahmniTime}}</u> (24 hours )with birth weight <u>{{x.groupMembers[2].valueAsString}}</u>  grams. The type of
-            birth was  <u>{{x.groupMembers[3].valueAsString}}</u>  by <u>{{x.groupMembers[4].valueAsString}}</u>.
+            This is to certifiy that a live <u>{{birthCertificate["Infant gender"]}}</u>  (Male/Female/Undertermined)
+            baby was born on BS <u>{{birthCertificate["Delivery date and time"] | bahmniDate}}</u> (AD .../.../.... DD/MM/YYYY)
+            at <u>{{birthCertificate["Delivery date and time"] | bahmniTime}}</u> (24 hours )with birth weight <u>{{x.groupMembers[2].valueAsString}}</u>  grams. The type of
+            birth was  <u>{{birthCertificate["Delivery outcome"]}}</u>  by <u>{{birthCertificate["Delivery method"]}}</u>.
             <br>According to, hospital/facility record the name of mother is Ms
-            <u>{{patient.name}}</u> and father is Mr <u>{{x.groupMembers[5].valueAsString}}</u> resident of Country
+            <u>{{patient.name}}</u> and father is Mr <u>{{birthCertificate["Father's Name"]}}</u> resident of Country
             <u>Nepal</u> district <u>{{patient.address.countyDistrict}}</u>  village /muncipality <u>{{patient.address.cityVillage}}</u>
             ward number <u>{{patient.address.address1}}</u> tole
         </div>
@@ -49,8 +56,8 @@
         <br>
         <br>
         <br>
-    </div>
-</div>
+        <div>
+        </div>
 </body>
 
 </html>
