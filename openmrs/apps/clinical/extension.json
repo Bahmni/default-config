@@ -58,6 +58,9 @@
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
         "label": "Treatment",
+        "extensionParams": {
+            "tabConfigName": "allMedicationTabConfig"
+        },
         "url": "treatment",
         "icon": "fa-user-md",
         "order": 4,

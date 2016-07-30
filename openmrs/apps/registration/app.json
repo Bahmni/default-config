@@ -60,10 +60,10 @@
                 "field": "city_village"
             }
         },
-		"patientSearchResults": {
-			"address": {
-				"fields" : ["city_village", "address1"]
-			}
-		}
+        "patientSearchResults": {
+            "address": {
+                "fields" : ["city_village", "address1"]
+            }
+        }
     }
 }
