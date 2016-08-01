@@ -87,6 +87,7 @@
                 "type": "treatment",
                 "config": {
                     "title": "Treatments",
+                    "translationKey": "Treatments",
                     "showFlowSheet": true,
                     "showListView": true,
                     "showOtherActive": false,
@@ -147,6 +148,7 @@
             "disposition": {
                 "type": "disposition",
                 "config": {
+                    "title": "Disposition",
                     "numberOfVisits": 1,
                     "showDetailsButton": true
                 },
@@ -168,6 +170,7 @@
             "treatment": {
                 "type": "treatment",
                 "config": {
+                    "translationKey": "Treatments",
                     "title": "Treatments",
                     "showFlowSheet": true,
                     "showListView": true,
