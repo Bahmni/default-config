@@ -482,7 +482,10 @@
             ],
             "distinctGroups": [
                 "Patient Identifier"
-            ]
+            ],
+            "showTotalRow":true,
+            "showTotalColumn":true
+
         }
     },
     "concatenatedReport": {
