@@ -89,6 +89,19 @@
         "order": 1,
         "requiredPrivilege": "app:clinical"
     },
+    "bahmni_clinical_patients_search_nodisposition_clinical": {
+        "id": "bahmni.clinical.patients.search.nodispositionPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.mypatients_nodisposition",
+            "display": "No Disposition",
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
+        },
+        "label": "No Disposition",
+        "order": 2,
+        "requiredPrivilege": "app:clinical"
+    },
     "bahmni_clinical_patients_search_allpatients_my_patients_app_clinical": {
         "id": "bahmni.clinical.patients.search.mypatientPatients",
         "extensionPointId": "org.bahmni.patient.search",
