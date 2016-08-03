@@ -412,6 +412,17 @@
                     "showDetailsButton": true
                 },
                 "displayOrder": 1
+            },
+            "hiv_all":{
+                "title": "HIV Notes",
+                "type": "forms",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 10000
+                },
+                "formGroup":["HIV Testing and Counseling Intake Template","HIV Treatment and Care Intake Template","HIV Treatment and Care Progress Template","Opportunistic Infection Template"]
             }
         }
     },
