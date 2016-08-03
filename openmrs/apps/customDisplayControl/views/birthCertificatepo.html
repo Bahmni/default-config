@@ -19,12 +19,12 @@
                 </div>
             </div>
             <h1 class="page-title"><center><u>Birth Report</u></center></h1><br>
-            This is to certifiy that a live <u>{{birthCertificate["Infant gender"]}}</u>  (Male/Female/Undertermined)
-            baby was born on BS <u>{{birthCertificate["Delivery date and time"] | bahmniDate}}</u> (AD .../.../.... DD/MM/YYYY)
-            at <u>{{birthCertificate["Delivery date and time"] | bahmniTime}}</u> (24 hours )with birth weight <u>{{birthCertificate["Infant weight"]}}</u>  grams. The type of
-            birth was  <u>{{birthCertificate["Delivery outcome"]}}</u>  by <u>{{birthCertificate["Delivery method"]}}</u>.
+            This is to certifiy that a live <u class="gender">{{birthCertificate["Infant gender"]}}</u>  (Male/Female/Undertermined)
+            baby was born on BS <u class="deliverydate">{{birthCertificate["Delivery date and time"] | bahmniDate}}</u> (AD .../.../.... DD/MM/YYYY)
+            at <u class="deliverytime">{{birthCertificate["Delivery date and time"] | bahmniTime}}</u> (24 hours )with birth weight <u class="deliveryweight">{{birthCertificate["Infant weight"]}}</u>  grams. The type of
+            birth was  <u class="deliveryoutcome">{{birthCertificate["Delivery outcome"]}}</u>  by <u class="deliverymethod">{{birthCertificate["Delivery method"]}}</u>.
             <br>According to, hospital/facility record the name of mother is Ms
-            <u>{{patient.name}}</u> and father is Mr <u>{{birthCertificate["Father's Name"]}}</u> resident of Country
+            <u class="patientname">{{patient.name}}</u> and father is Mr <u class="fathername">{{birthCertificate["Father's Name"]}}</u> resident of Country
             <u>Nepal</u> district <u>{{patient.address.countyDistrict}}</u>  village /muncipality <u>{{patient.address.cityVillage}}</u>
             ward number <u>{{patient.address.address1}}</u> tole
         </div>
@@ -56,7 +56,7 @@
         <br>
         <br>
         <br>
-        <div>
+        </div>
         </div>
 </body>
 

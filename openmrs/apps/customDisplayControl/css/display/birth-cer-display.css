@@ -18,6 +18,43 @@ padding: 0px 50px 10px 50px;
 }
 
 
+.birth-certificate .cer_content u{
+    line-height: 1.3;
+    text-align: center;
+    display: inline-block;
+    margin: 0px;
+}
+
+.birth-certificate .cer_content u.gender{
+ width: 80px;
+}
+
+.birth-certificate .cer_content u.deliverydate{
+ width: 80px;
+}
+
+.birth-certificate .cer_content u.deliverytime{
+ width: 80px;
+}
+
+.birth-certificate .cer_content u.deliveryweight{
+ width: 80px;
+}
+
+.birth-certificate .cer_content u.deliveryoutcome{
+ width: 200px;
+}
+
+.birth-certificate .cer_content u.deliverymethod{
+ width: 100px;
+}
+
+.birth-certificate .cer_content u.fathername{
+ width: 100px;
+}
+
+
+
 .birth-certificate .issued_content .col-2{
     width: 49%;
     float: left;
