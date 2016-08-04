@@ -549,5 +549,61 @@
                 }
             ]
         }
+    },
+  "GenericLabOrderReport": {
+    "name": "Lab Order Results",
+    "type": "labOrders",
+    "config": {
+      "patientAttributes": [
+        "caste",
+        "class",
+        "education",
+        "occupation",
+        "primaryContact"
+      ],
+      "patientAddresses": [
+        "address3",
+        "city_village"
+      ],
+      "visitAttributes": [
+        "Visit Status"
+      ],
+      "showVisitInfo": true,
+      "showProvider": true,
+      "programsToFilter": [],
+      "conceptNamesToFilter": [
+        "Haemoglobin (Blood)"
+      ],
+      "conceptValuesToFilter": [
+        "10..100"
+      ],
+      "forDataAnalysis": true,
+      "excludeColumns": [
+        "address3"
+      ],
+      "showOrderDateTime": true
     }
+  },
+  "GenericLabOrderReportAggregation": {
+    "name": "Test Name vs Gender",
+    "type": "aggregation",
+    "config": {
+      "report": {
+        "type": "labOrders",
+        "config": {
+          "forDataAnalysis": true,
+          "showVisitInfo": true
+        }
+      },
+      "rowGroups": [
+        "Test Name"
+      ],
+      "columnGroups": [
+        "Gender"
+      ],
+      "distinctGroups": [
+        "Patient Identifier"
+      ]
+    }
+  }
 }
