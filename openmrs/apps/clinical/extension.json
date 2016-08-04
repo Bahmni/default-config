@@ -217,7 +217,7 @@
         "extensionPointId": "org.bahmni.clinical.treatment.links",
         "type": "link",
         "label": "Open <u>Q</u>uotation",
-        "url": "http://10.0.0.40:8069/quotations/latest?patient_ref={{patient_ref}}&dispensed=false&location_ref={{location_ref}}",
+        "url": "http://192.168.33.10:8069/quotations/latest?patient_ref={{patient_ref}}&dispensed=false&location_ref={{location_ref}}",
         "shortcutKey": "q",
         "requiredPrivilege": "app:billing"
     },
@@ -226,7 +226,7 @@
         "extensionPointId": "org.bahmni.clinical.treatment.links",
         "type": "link",
         "label": "Open <u>D</u>ispensed Quotation",
-        "url": "http://10.0.0.40:8069/quotations/latest?patient_ref={{patient_ref}}&dispensed=true&location_ref={{location_ref}}",
+        "url": "http://192.168.33.10:8069/quotations/latest?patient_ref={{patient_ref}}&dispensed=true&location_ref={{location_ref}}",
         "shortcutKey": "q",
         "requiredPrivilege": "app:billing"
     }

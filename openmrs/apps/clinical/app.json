@@ -1172,9 +1172,6 @@
 			},
 			"CHP ANC, EDD (Gregorian)": {
 				"allowFutureDates": true
-			},
-			"Mental Health, Followup": {
-				"allowFutureDates": true
 			}
 		}
 	}
