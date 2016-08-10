@@ -20,6 +20,7 @@ FROM
 	   person p
 			INNER JOIN patient_identifier pi ON p.person_id = pi.patient_id
 				AND pi.identifier != 'BAH200052'
+				AND pi.preferred = 1
 				AND pi.voided = 0
 				AND p.voided = 0
 			INNER JOIN
