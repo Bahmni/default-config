@@ -30,6 +30,21 @@
                 "ageLimit": 100
             }
         },
+        "patientContext": {
+    		"programAttributes": [
+        		"Id_Number",
+        		"Doctor",
+        		"Stage"
+    		],
+    		"personAttributes": [
+        		"class",
+        		"caste"
+    		],
+    		"additionalPatientIdentifiers": [
+       			"National ID"
+   		],
+    		"preferredIdentifier": "Id_Number"
+	},
         "obsIgnoreList": [
             "REGISTRATION FEES",
             "COMMENTS",
