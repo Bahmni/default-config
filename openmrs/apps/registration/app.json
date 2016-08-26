@@ -42,7 +42,7 @@
             },
             "addressHierarchy": {
                 "showAddressFieldsTopDown": false,
-                "freeTextAddressFields": ["address2", "address1"]
+                "strictAutocompleteFromLevel": "stateProvince"
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
