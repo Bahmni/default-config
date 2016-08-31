@@ -1,0 +1,12 @@
+{
+    "MODULE_LABEL_REGISTRATION_KEY": "Registro",
+    "MODULE_LABEL_CLINICAL_KEY": "Cl\u00EDnico",
+    "MODULE_LABEL_INPATIENT_KEY": "Internado",
+    "MODULE_LABEL_RADIOLOGY_UPLOAD_KEY": "Carregar Radiologia",
+    "MODULE_LABEL_PATIENT_DOCUMENTS_KEY": "Documentos do Paciente",
+    "MODULE_LABEL_ADMIN_KEY": "Admin",
+    "MODULE_LABEL_REPORTS_KEY": "Relat\u00F3rios",
+    "MODULE_LABEL_APOOINTMENTS_KEY": "Agendamentos",
+    "MODULE_LABEL_ORDERS_KEY": "Pedidos",
+    "MODULE_LABEL_PROGRAMS_KEY": "Programas"
+}
