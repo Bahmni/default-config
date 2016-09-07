@@ -53,7 +53,7 @@
             "conceptClassesToFilter": [],
             "locationTagsToFilter": [],
             "programsToFilter": [],
-            "applyDateRangeFor": "obsDate",
+            "applyDateRangeFor": "obsDatetime",
             "encounterPerRow": true,
             "forDataAnalysis": true,
             "visitTypesToFilter": [
