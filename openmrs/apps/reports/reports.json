@@ -571,6 +571,7 @@
       "showVisitInfo": true,
       "showProvider": true,
       "programsToFilter": [],
+      "showReferredOutTests": true,
       "conceptNamesToFilter": [
         "Haemoglobin (Blood)"
       ],
