@@ -48,8 +48,9 @@
             "showVisitInfo": true,
             "showProvider": true,
             "conceptNamesToFilter": [
-                "Blood"
             ],
+            "conceptNameDisplayFormat": "shortNamePreferred",
+            "conceptValuesToFilter": ["0..20","100..","True"],
             "conceptClassesToFilter": [],
             "locationTagsToFilter": [],
             "programsToFilter": [],
