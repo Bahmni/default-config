@@ -1196,7 +1196,8 @@
         "config": {
             "visitTypes": [
                 "OPD"
-            ]
+            ],
+	"icd10ConceptSource" : "ICD-10-WHO"
         }
     },
     "laboratory_services": {
@@ -1406,7 +1407,8 @@
             "ageGroupName": "Inpatient",
             "visitTypes": [
                 "IPD"
-            ]
+            ],
+	    "icd10ConceptSource" : "ICD-10-WHO"
         }
     },
     "summary_of_indoor_services__inpatient_morbidity_total_deaths": {
