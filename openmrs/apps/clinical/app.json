@@ -24,8 +24,15 @@
     ],
     "config": {
         "quickPrints":false,
-        "showNetworkStatusMessage": false,
-        "networkStatusCheckInterval": 5000,
+        "networkConnectivity" : {
+            "showNetworkStatusMessage": true,
+            "networkStatusCheckInterval": 5000,
+            "locales" : [
+                { "locale" : "fr", "css" : "offline-language-french"},
+                { "locale" : "es", "css": "offline-language-spanish"},
+                { "locale" : "pt", "css": "offline-language-portuguese-brazil"}
+            ]
+        },
     	"diagnosisStatus": "Inactive",
             "program": {
                 "patientInformation": {
