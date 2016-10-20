@@ -47,7 +47,7 @@
     "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
     "icon": "icon-bahmni-radiology",
     "order": 5,
-    "requiredPrivilege": "app:document-upload"
+    "requiredPrivilege": "app:radiology-upload"
   },
   "patientDocumentUpload": {
     "id": "bahmni.patient.document.upload",
@@ -57,7 +57,7 @@
     "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
     "icon": "icon-bahmni-documents",
     "order": 6,
-    "requiredPrivilege": "app:document-upload"
+    "requiredPrivilege": "app:patient-documents"
   },
   "admin": {
     "id": "bahmni.admin",
@@ -86,7 +86,8 @@
     "translationKey": "MODULE_LABEL_REPORTS_KEY",
     "url": "../reports/#/dashboard",
     "icon": "icon-bahmni-reports",
-    "order": 8
+    "order": 8,
+    "requiredPrivilege": "app:reports"
   },
   "appointments": {
     "id": "bahmni.appointments",

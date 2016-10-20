@@ -211,7 +211,7 @@
     "url": "treatment",
     "icon": "fa-user-md",
     "order": 7,
-    "requiredPrivilege": "app:clinical:consultationTab"
+    "requiredPrivilege": "app:clinical:treatmentTab"
   },
   "bahmniClinicalConsultationOrders": {
     "id": "bahmni.clinical.consultation.orders",
@@ -222,7 +222,7 @@
     "url": "orders",
     "icon": "icon-user-md",
     "order": 6,
-    "requiredPrivilege": "app:clinical:diagnosisTab"
+    "requiredPrivilege": "app:clinical:ordersTab"
   },
   "bahmniClinicalConsultationBacteriology": {
     "id": "bahmni.clinical.consultation.bacteriology",
@@ -233,6 +233,6 @@
     "url": "bacteriology",
     "icon": "icon-user-md",
     "order": 7,
-    "requiredPrivilege": "app:clinical:diagnosisTab"
+    "requiredPrivilege": "app:clinical:bacteriologyTab"
   }
 }

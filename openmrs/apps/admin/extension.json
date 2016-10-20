@@ -9,7 +9,7 @@
         "url": "#/csv",
         "icon": "fa-upload",
         "order": 1,
-        "requiredPrivilege": "app:registration"
+        "requiredPrivilege": "app:admin"
     },
     "csvExport":{
         "id": "bahmni.admin.csvExport",
@@ -21,7 +21,7 @@
         "url": "#/csvExport",
         "icon": "fa-download",
         "order": 1,
-        "requiredPrivilege": "app:registration"
+        "requiredPrivilege": "app:admin"
     },
     "orderSet":{
         "id": "bahmni.admin.orderSet",
@@ -33,6 +33,6 @@
         "url": "#/ordersetdashboard",
         "icon": "fa-upload",
         "order": 1,
-        "requiredPrivilege": "app:registration"
+        "requiredPrivilege": "app:admin"
     }
 }
