@@ -23,6 +23,7 @@
         "visitUuid"
     ],
     "config": {
+        "enablePACSOptions":true,
         "quickPrints":false,
         "networkConnectivity" : {
             "showNetworkStatusMessage": true,
