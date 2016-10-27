@@ -1051,7 +1051,7 @@
 				"required": true
 			},
 			"HIVTC, CD4 count": {
-				"required": true
+				"required": false
 			},
 			"HIVTC, Followup": {
 				"required": true
@@ -1175,6 +1175,21 @@
 			},
 			"Mental Health, Followup": {
 				"allowFutureDates": true
+			},
+			"ANC, HIV Testing": {
+        		"required": true
+     			},
+      			"ANC, HIV Counseling": {
+        		"required": true
+      			},
+      			"Referred In": {
+        		"required": true
+     			},
+      			"Discharge Note-Type of Delivery": {
+        		"multiSelect": true
+     			},
+      			"Childhood Illness, Fever present": {
+        		"required": true
 			}
 		}
 	}

@@ -1748,6 +1748,27 @@
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/mental_health_registry.sql"
         }
+      },
+  "Mental_Health_Screener": {
+    "name": "Mental Health Screener",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Mental Health Screener"
+    }
+  },
+  "Psychosis_Intake_Note": {
+    "name": "Psychosis Intake Note",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Psychosis Intake Note"
+    }
+  },
+  "Psychosis_Followup_Note": {
+    "name": "Psychosis Followup Note",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Psychosis Followup Note"
+      }
     }
 }
 	
