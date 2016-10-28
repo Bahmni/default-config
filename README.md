@@ -1,14 +1,12 @@
 ## Default Bahmni configuration and data. 
 ======================================================================
 
-#### On merging into the master branch
-- update the `program_auto_enrolment_properties_url` in playbooks/roles/possible-mrs-batch/defaults/mail.yml
-- remove this(`On merging into the master branch`) task from README.md
-
 #### Deploy
 - under server (apache) www directory
 - alias root (possible-config) to bahmni_config
-
+- run `bahmni -i <inventory file> -impl-play <possible config path>/playbooks/all.yml install-impl` command to run the ansible tasks.
+  
+  ex: bahmni -i local -impl-play /var/www/bahmni_config/playbooks/all.yml install-impl
 
 #### Dev commands
 * `./scripts/vagrant-link.sh` to link default_config to vagrants /var/www/bahmni_config
