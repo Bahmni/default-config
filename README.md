@@ -1,6 +1,10 @@
 ## Default Bahmni configuration and data. 
 ======================================================================
 
+#### On merging into the master branch
+- update the `program_auto_enrolment_properties_url` in playbooks/roles/possible-mrs-batch/defaults/mail.yml
+- remove this(`On merging into the master branch`) task from README.md
+
 #### Deploy
 - under server (apache) www directory
 - alias root (possible-config) to bahmni_config

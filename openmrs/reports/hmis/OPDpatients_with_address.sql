@@ -1,5 +1,5 @@
 SELECT
-  COALESCE(pn.given_name, pn.family_name),
+  COALESCE(pn.given_name, pn.family_name) as Name,
   pi.identifier,
   person.birthdate,
   person.gender,
@@ -16,7 +16,7 @@ FROM visit
   INNER JOIN person_address pa
     ON pa.person_id = person.person_id
   INNER JOIN patient_identifier pi
-    ON pi.patient_id = person.person_id
+    ON pi.patient_id = person.person_id AND pi.preferred = 1
   INNER JOIN visit_attribute va
     ON visit.visit_id = va.visit_id
 	AND va.value_reference = 'OPD'

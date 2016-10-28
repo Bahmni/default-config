@@ -4,3 +4,5 @@ target/
 *.iml
 */logs/*
 logs/*
+playbooks/**/all.retry
+migration-run-log.txt

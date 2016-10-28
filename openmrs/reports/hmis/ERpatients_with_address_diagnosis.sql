@@ -23,6 +23,7 @@ FROM visit
     ON pa.person_id = person.person_id
   INNER JOIN patient_identifier pi
     ON pi.patient_id = person.person_id
+    AND pi.preferred = 1
   INNER JOIN visit_type vt
     ON visit.visit_type_id = vt.visit_type_id
        AND vt.name = 'Emergency'

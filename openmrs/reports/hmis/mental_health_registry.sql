@@ -14,21 +14,22 @@ FROM
                 group_concat(distinct vcov.value_concept_full_name SEPARATOR ',') as diag,
                 min(date(vcov.obs_datetime)) as first_diag_date,
         -- (select max(date(date_started)) from visit where patient_id = p.person_id and date(date_started) < max(date(v.date_started)) and voided = 0) as previous_visit,
-                max(date(v.date_started)) as recent_visit
-        FROM
-           person p
-                        INNER JOIN patient_identifier pi ON p.person_id = pi.patient_id
-                                AND pi.identifier != 'BAH200052'
-                                AND pi.voided = 0
-                                AND p.voided = 0
-                        INNER JOIN
-                                valid_coded_obs_view vcov ON vcov.person_id = p.person_id
-                                AND vcov.concept_full_name = "Coded Diagnosis"
-                        INNER JOIN
-                                concept_children_view ccv ON ccv.child_concept_id = vcov.value_coded
-                                AND ccv.parent_concept_name = 'Mental Health Related Problems'
-                        LEFT JOIN visit v ON v.patient_id = p.person_id
-                                AND v.voided = 0
+		max(date(v.date_started)) as recent_visit
+	FROM
+	   person p
+			INNER JOIN patient_identifier pi ON p.person_id = pi.patient_id
+				AND pi.identifier != 'BAH200052'
+				AND pi.preferred = 1
+				AND pi.voided = 0
+				AND p.voided = 0
+			INNER JOIN
+				valid_coded_obs_view vcov ON vcov.person_id = p.person_id
+				AND vcov.concept_full_name = "Coded Diagnosis"
+			INNER JOIN
+				concept_children_view ccv ON ccv.child_concept_id = vcov.value_coded
+				AND ccv.parent_concept_name = 'Mental Health Related Problems'
+			LEFT JOIN visit v ON v.patient_id = p.person_id
+				AND v.voided = 0
                 AND v.visit_type_id not in (7, 11)
         GROUP BY ID
     ) reg

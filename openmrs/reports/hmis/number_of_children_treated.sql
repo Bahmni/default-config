@@ -1,6 +1,7 @@
-SELECT count(*)
+SELECT COUNT(DISTINCT person.person_id) AS Count
 FROM person
 JOIN patient_identifier ON person.person_id = patient_identifier.patient_id
+  AND patient_identifier.preferred = 1
 	AND person.voided=0
 JOIN visit on visit.patient_id = person.person_id
 	AND visit.voided=0

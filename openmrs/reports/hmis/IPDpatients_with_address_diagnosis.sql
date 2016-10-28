@@ -21,7 +21,7 @@ FROM visit
   INNER JOIN person_address pa
     ON pa.person_id = person.person_id
   INNER JOIN patient_identifier pi
-    ON pi.patient_id = person.person_id
+    ON pi.patient_id = person.person_id and pi.preferred = 1
   INNER JOIN visit_attribute va
     ON visit.visit_id = va.visit_id
        AND va.value_reference = 'IPD'
