@@ -64,7 +64,7 @@
                 <tr>
                 <td>
                 <img id="barcode"
-                     jsbarcode-value="{{patient.identifier}}"
+                     jsbarcode-value="{{patient.primaryIdentifier.identifier}}"
                      jsbarcode-width="3"
                      jsbarcode-height="100"
                      jsbarcode-margin="0"
@@ -74,7 +74,7 @@
                      jsbarcode-fontSize="10"
 
                 />
-                <div class="title">{{patient.identifier}}</div>
+                <div class="title">{{patient.primaryIdentifier.identifier}}</div>
                 </td>
                 </tr>
                 </tbody>
