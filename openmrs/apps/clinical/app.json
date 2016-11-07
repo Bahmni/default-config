@@ -19,6 +19,7 @@
 	"contextModel": ["patientUuid",
 	"visitUuid"],
 	"config": {
+		"defaultVisitType": "General",
 		"visitTypeForRetrospectiveEntries": "General",
 		"obsIgnoreList": ["Patient file"],
 		"otherInvestigationsMap": {
