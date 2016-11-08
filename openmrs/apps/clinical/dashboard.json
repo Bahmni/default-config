@@ -165,8 +165,8 @@
                     "conceptNames":[  
                         "HEIGHT",
                         "Weight",
-                        "BMI",
-                        "BMI STATUS"
+                        "BMI Data",
+                        "BMI Status Data"
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
