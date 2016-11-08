@@ -98,9 +98,6 @@
             "Examination Notes": {
                 "conciseText": true
             },
-            "Tuberculosis Intake Template": {
-                "computeDrugs": true
-            },
             "Set1": {
                 "allowAddMore": true
             },
