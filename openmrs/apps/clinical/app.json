@@ -22,6 +22,7 @@
 		"defaultVisitType": "General",
 		"visitTypeForRetrospectiveEntries": "General",
 		"obsIgnoreList": ["Patient file"],
+		"quickPrints": true,
 		"otherInvestigationsMap": {
 			
 		},
