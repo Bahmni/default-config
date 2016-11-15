@@ -9,11 +9,6 @@
         "defaultInstructions": "As directed",
         "frequencyDefaultDurationUnitsMap": [
           {
-            "minFrequency": 5,
-            "maxFrequency": null,
-            "defaultDurationUnit": "Hour(s)"
-          },
-          {
             "minFrequency": "1/7",
             "maxFrequency": 5,
             "defaultDurationUnit": "Day(s)"
