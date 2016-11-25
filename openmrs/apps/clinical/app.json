@@ -80,6 +80,10 @@
                 "durationRequired": false,
                 "allowAddMore": true
             },
+            "Tuberculosis, Adverse Effects" :{
+                "multiSelect" : true,
+                "autocomplete" : true
+            },
             "Posture": {
                 "buttonSelect": true
             },

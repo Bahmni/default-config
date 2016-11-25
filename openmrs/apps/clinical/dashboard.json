@@ -40,6 +40,17 @@
                     "visitAttribute"
                 ]
             },
+	    "tuberculosis": {
+                "title": "Tuberculosis Follow Up",
+                "type": "tuberculosis",
+                "isObservation": true,
+                "dashboardConfig": {
+                    "conceptNames": [
+                        "Tuberculosis Followup Template"
+                    ],
+                    "numberOfVisits": 2
+                }
+            },
             "disposition":{  
                 "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
                 "showDetailsButton":true,
