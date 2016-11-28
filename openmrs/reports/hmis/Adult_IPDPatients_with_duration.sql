@@ -1,6 +1,7 @@
  SELECT patient_identifier.identifier, TIMESTAMPDIFF(DAY, visit.date_started, visit.date_stopped) AS 'IPD Duration'
 FROM person
 JOIN patient_identifier ON person.person_id = patient_identifier.patient_id
+  AND patient_identifier.preferred = 1
 	AND person.voided = 0
 JOIN visit on visit.patient_id = person.person_id
     AND cast(visit.date_stopped as date) BETWEEN '#startDate#' AND '#endDate#'

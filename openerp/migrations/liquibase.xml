@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="possible-20161003145926" author="pankaj,gautam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from information_schema.tables WHERE lower(table_name)=lower('custom_report_props');</sqlCheck>
+        </preConditions>
+        <comment>Add new table for keeping properties related to Custom reports</comment>
+        <sql>
+            CREATE TABLE custom_report_props (
+                id SERIAL PRIMARY KEY,
+                name character varying(64) NOT NULL,
+                value character VARYING(64) NOT NULL,
+                comment text
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>

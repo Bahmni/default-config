@@ -19,6 +19,16 @@
                 ],
                 "displayOrder": 0
             },
+ 		"pacs":  {
+              	"orderType":"Radiology Order",
+                "type":"pacsOrders",
+                "translationKey":"Pacs Order",
+                "displayOrder":8,
+                "dashboardConfig":{
+                    "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}&serverName=dcm4chee",
+                    "numberOfVisits":4
+                }
+            },
             "visits": {
                 "title": "Visits",
                 "type": "visits",

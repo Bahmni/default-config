@@ -1,0 +1,7 @@
+erp_custom_modules_url: "https://github.com/Possiblehealth/possible-erp-custom/archive/master.zip"
+modules:
+ - bahmni_custom
+ - web_d3_chart
+bahmni_erp_temp_files:
+  - possible-erp-custom-master.zip
+  - possible-erp-custom-master

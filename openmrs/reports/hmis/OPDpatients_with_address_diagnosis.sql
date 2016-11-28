@@ -13,7 +13,7 @@ SELECT
 
 FROM visit
   INNER JOIN patient ON visit.patient_id = patient.patient_id AND
-                        DATE(visit.date_stopped) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#stopDate#' AS DATE)
+                        DATE(visit.date_stopped) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#endDate#' AS DATE)
                         AND patient.voided = 0 AND visit.voided = 0
   INNER JOIN person ON person.person_id = patient.patient_id AND person.voided = 0
   INNER JOIN person_name pn
@@ -21,7 +21,7 @@ FROM visit
   INNER JOIN person_address pa
     ON pa.person_id = person.person_id
   INNER JOIN patient_identifier pi
-    ON pi.patient_id = person.person_id
+    ON pi.patient_id = patient.patient_id AND pi.preferred = 1
   INNER JOIN visit_attribute va
     ON visit.visit_id = va.visit_id
        AND va.value_reference = 'OPD'

@@ -59,4 +59,15 @@
             UPDATE address_hierarchy_level set required = true where name = 'Ward';
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-IMPL-ADDRESS-HIERARCHY-HID" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from address_hierarchy_level where name='Household ID';
+            </sqlCheck>
+        </preConditions>
+        <comment>Set up Household ID</comment>
+        <sql>
+            call introduce_new_address_level('Ward','Household ID', 'ADDRESS_2');
+        </sql>
+    </changeSet>
 </databaseChangeLog>

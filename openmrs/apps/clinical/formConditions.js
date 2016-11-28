@@ -1,30 +1,19 @@
+var onBloodPressureChange = function (formName, formFieldValues) {
+    var systolic = formFieldValues['Systolic Data'];
+    var diastolic = formFieldValues['Diastolic Data'];
+    if (systolic == null && diastolic == null) {
+        return {
+            disable: ["Posture"]
+        }
+    } else {
+        return {
+            enable: ["Posture"]
+        }
+    }
+};
 Bahmni.ConceptSet.FormConditions.rules = {
-    'Diastolic Data' : function (formName, formFieldValues) {
-        var systolic = formFieldValues['Systolic'];
-        var diastolic = formFieldValues['Diastolic'];
-        if (systolic || diastolic) {
-            return {
-                enable: ["Posture"]
-            }
-        } else {
-            return {
-                disable: ["Posture"]
-            }
-        }
-    },
-    'Systolic Data' : function (formName, formFieldValues) {
-        var systolic = formFieldValues['Systolic'];
-        var diastolic = formFieldValues['Diastolic'];
-        if (systolic || diastolic) {
-            return {
-                enable: ["Posture"]
-            }
-        } else {
-            return {
-                disable: ["Posture"]
-            }
-        }
-    },
+    'Diastolic Data' : onBloodPressureChange,
+    'Systolic Data' : onBloodPressureChange,
     'Diabetes, Last A1C result known?' : function (formName, formFieldValues) {
         var a1c_known = formFieldValues['Diabetes, Last A1C result known?'];
         if (a1c_known) {

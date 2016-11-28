@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="POSSIBLE-TODAYS-PATIENT-SEARCH-QUERY" author="tw" runOnChange="true">
+        <comment>update the search query emrapi.sqlSearch.todaysPatients</comment>
+        <sql>
+            DELETE FROM global_property WHERE property = "emrapi.sqlSearch.todaysPatients";
+
+            INSERT INTO global_property (property,property_value,description,uuid) VALUES ('emrapi.sqlSearch.todaysPatients',
+            'SELECT DISTINCT
+                concat(pn.given_name, " ", pn.family_name) AS name,
+                pi.identifier                              AS identifier,
+                concat("", p.uuid)                         AS uuid,
+                v.activeVisitUuid                          AS activeVisitUuid
+                FROM
+                (SELECT DISTINCT
+                    concat("", v.uuid) AS activeVisitUuid,
+                    patient_id         AS patientId
+                    FROM visit v
+                    WHERE v.date_stopped IS NULL AND v.voided = 0 AND date(v.date_started) = date(now())
+                ) AS v
+                JOIN person_name pn ON v.patientId = pn.person_id AND pn.voided = 0
+                JOIN patient_identifier pi ON v.patientId = pi.patient_id
+                JOIN patient_identifier_type pit ON pi.identifier_type = pit.patient_identifier_type_id
+                JOIN global_property gp ON gp.property = "emr.primaryIdentifierType" AND gp.property_value = pit.uuid
+                JOIN person p ON p.person_id = v.patientId',
+            'SQL Query to get todays patients',uuid());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

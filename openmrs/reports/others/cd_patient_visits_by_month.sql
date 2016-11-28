@@ -67,6 +67,7 @@ FROM
     patient_identifier pi ON p.person_id = pi.patient_id
         AND pi.identifier != 'BAH200052'
         AND pi.voided = '0'
+          AND pi.preferred = 1
         INNER JOIN
     person_name pn ON pn.person_id = p.person_id
         AND pn.voided = '0'

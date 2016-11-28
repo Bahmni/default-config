@@ -15,4 +15,5 @@
         <include file = "visit-types-liquibase.xml"/>
         <include file = "bahmni-reports-liquibase.xml"/>
         <include file = "views-liquibase.xml"/>
+        <include file = "openmrs-global-properties.xml"/>
 </databaseChangeLog>

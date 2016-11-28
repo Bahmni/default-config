@@ -32,7 +32,7 @@ FROM
       FROM obs_view o
         INNER JOIN person p ON o.person_id = p.person_id
         INNER JOIN person_address pa ON p.person_id = pa.person_id
-        INNER JOIN patient_identifier pi ON p.person_id = pi.patient_id
+        INNER JOIN patient_identifier pi ON p.person_id = pi.patient_id and pi.preferred = 1
         LEFT OUTER JOIN concept_view c ON o.value_coded = c.concept_id
       WHERE
         (o.voided = 0 AND o.concept_full_name IN ('HTC, Risk Group', 'PMTCT, Risk Group') AND o.value_coded IS NOT NULL)
