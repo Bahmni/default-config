@@ -22,6 +22,9 @@
 		"defaultVisitType": "General",
 		"visitTypeForRetrospectiveEntries": "General",
 		"obsIgnoreList": ["Patient file"],
+		"patientConfig":{
+			"showMiddleNameOn" : ["patient-profile","patient-context"]
+		},
 		"quickPrints": true,
 		"otherInvestigationsMap": {
 			
