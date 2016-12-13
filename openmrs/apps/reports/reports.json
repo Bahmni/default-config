@@ -136,13 +136,6 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
         }
     },
-    "genericOutpatientMorbidity": {
-        "name": "Generic Outpatient Morbidity",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
-        }
-    },
     "bloodPressure": {
         "name": "Blood Pressure",
         "type": "obsCount",
