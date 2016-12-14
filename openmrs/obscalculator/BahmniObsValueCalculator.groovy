@@ -22,7 +22,6 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static Double BMI_OVERWEIGHT = 30.0;
     static Double BMI_OBESE = 35.0;
     static Double BMI_SEVERELY_OBESE = 40.0;
-    static Double ZERO = 0.0;
     static Map<BahmniObservation, BahmniObservation> obsParentMap = new HashMap<BahmniObservation, BahmniObservation>();
 
     public static enum BmiStatus {
@@ -192,11 +191,6 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     static def bmi(Double height, Double weight) {
-        if (height == ZERO) {
-            throw new IllegalArgumentException("Please enter Height greater than zero")
-        } else if (weight == ZERO) {
-            throw new IllegalArgumentException("Please enter Weight greater than zero")
-        }
         Double heightInMeters = height / 100;
         Double value = weight / (heightInMeters * heightInMeters);
         return new BigDecimal(value).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
