@@ -70,9 +70,6 @@
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
         "conceptSetUI": {
-            "All Observation Templates": {
-                "showPanelView": false
-            },
             "Chief Complaint Data": {
                 "autocomplete":true,
                 "codedConceptName":"Chief Complaint",

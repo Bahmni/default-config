@@ -63,6 +63,35 @@
             ]
         }
     },
+    "testFormReport":{
+    "name": "Test Forms Report",
+    "type": "forms",
+     "config": {
+     "patientAttributes": [
+            "caste",
+            "class",
+            "education",
+            "occupation",
+            "primaryContact"
+        ],
+     "patientAddresses": [
+            "address3",
+            "city_village"
+        ],
+     "visitAttributes": [
+            "Visit Status",
+            "Admission Status"
+        ],    
+     "showVisitInfo": true,
+     "showProvider": true,
+     "formNamesToFilter": ["Vitals"],
+     "conceptNameDisplayFormat": "shortNamePreferred",
+     "locationTagsToFilter": [],
+     "programsToFilter": [],
+     "applyDateRangeFor": "obsDate",
+     "visitTypesToFilter": []
+     }
+},
     "chiefComplaintReport": {
         "name": "Chief Complaint Report",
         "type": "obsCount",
@@ -105,13 +134,6 @@
         "type": "ElisGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
-        }
-    },
-    "genericOutpatientMorbidity": {
-        "name": "Generic Outpatient Morbidity",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diagnosisCountOPD.sql"
         }
     },
     "bloodPressure": {

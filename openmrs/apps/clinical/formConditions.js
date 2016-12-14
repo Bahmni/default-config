@@ -1,8 +1,8 @@
 Bahmni.ConceptSet.FormConditions.rules = {
-    'Blood Pressure' : function (formName, formFieldValues) {
-        var bloodPressure = formFieldValues['Blood Pressure'];
-        var regex = /\d/g;
-        if (regex.test(bloodPressure)) {
+    'Diastolic Data' : function (formName, formFieldValues) {
+        var systolic = formFieldValues['Systolic'];
+        var diastolic = formFieldValues['Diastolic'];
+        if (systolic || diastolic) {
             return {
                 enable: ["Posture"]
             }
@@ -12,22 +12,17 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    'Diastolic Data' : function (formName, formFieldValues) {
-        var diastolic = formFieldValues['Diastolic Data'];
-        if (diastolic) {
+    'Systolic Data' : function (formName, formFieldValues) {
+        var systolic = formFieldValues['Systolic'];
+        var diastolic = formFieldValues['Diastolic'];
+        if (systolic || diastolic) {
             return {
                 enable: ["Posture"]
             }
         } else {
-            return {}
-        }
-    },
-    'Systolic Data' : function (formName, formFieldValues) {
-        var systolic = formFieldValues['Systolic Data'];
-        if (systolic) {
             return {
-                enable: ["Posture"]
+                disable: ["Posture"]
             }
-        } else {}
+        }
     }
 };
