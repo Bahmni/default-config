@@ -7,3 +7,8 @@
   become: yes
   roles:
     - { role: possible-mrs-batch }
+
+- hosts: bahmni-lab
+  become: yes
+  roles:
+    - { role: possible-lab-batch }

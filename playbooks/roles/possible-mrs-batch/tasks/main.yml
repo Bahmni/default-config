@@ -22,6 +22,32 @@
     group={{ bahmni_group }}
     mode=755
 
+- name: Get bahmniapps from remote location if configured
+  get_url: url={{ bahmniapps_url }}
+   force=yes
+   dest=/opt/bahmni-web/etc/bahmniapps.zip
+   mode=0755
+  when: bahmniapps_url is defined
+
+- name: unlinking /var/www/bahmniapps
+  command: unlink /var/www/bahmniapps
+  when: bahmniapps_url is defined
+
+- name: Unzip downloaded bahmniapps file
+  command: unzip /opt/bahmni-web/etc/bahmniapps.zip -d /opt/bahmni-web/etc/possible-bahmniapps
+  when: bahmniapps_url is defined
+
+- name: linking /var/www/bahmniapps to Possible bahmniapps
+  command: ln -s /opt/bahmni-web/etc/possible-bahmniapps /var/www/bahmniapps
+  when: bahmniapps_url is defined
+
+- name: Removing temporary files from /opt/bahmni-web/etc
+  file:
+      path=/opt/bahmni-web/etc/{{item}}
+      state=absent
+  with_items:
+      - "{{ bahmni_mrs_temp_files }}"
+
 - name: Start openmrs
   service:
     name=openmrs

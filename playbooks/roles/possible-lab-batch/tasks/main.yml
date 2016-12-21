@@ -1,0 +1,37 @@
+- name: Stop bahmni-lab
+  service:
+    name=bahmni-lab
+    state=stopped
+  when: passive is not defined or passive != 'yes'
+
+- name: Get bahmni-lab from remote location if configured
+  get_url: url={{ bahmni-lab_url }}
+   force=yes
+   dest=/opt/bahmni-web/etc/bahmni-lab.zip
+   mode=0755
+  when: bahmni-lab_url is defined
+
+- name: Removing product bahmni-lab 
+  command: sudo rm -rf /opt/bahmni-lab/bahmni-lab/*
+  when: bahmni-lab_url is defined
+
+- name: Unzip downloaded bahmni-lab file
+  command: unzip /opt/bahmni-web/etc/bahmni-lab.zip -d /opt/bahmni-web/etc/possible-bahmni-lab
+  when: bahmni-lab_url is defined
+
+- name: copying from /var/www/bahmni-lab to Possible bahmni-lab
+  command: cp -r /opt/bahmni-web/etc/possible-bahmni-lab/* /opt/bahmni-lab/bahmni-lab/.
+  when: bahmni-lab_url is defined
+
+- name: Removing temporary files from bahmni-lab
+  file:
+      path=/opt/bahmni-web/etc/{{item}}
+      state=absent
+  with_items:
+      - "{{ bahmni_lab_temp_files }}"
+
+- name: Start bahmni-lab
+  service:
+    name=bahmni-lab
+    state=started
+  when: passive is not defined or passive != 'yes'
