@@ -11,9 +11,12 @@
    mode=0755
   when: bahmnilab_url is defined
 
-- name: Removing product bahmni-lab 
-  command: sudo rm -rf /opt/bahmni-lab/bahmni-lab/*
-  when: bahmnilab_url is defined
+- name: Removing Possible files from bahmni-lab
+  file:
+      path=/opt/bahmni-lab/bahmni-lab/{{item}}
+      state=absent
+  with_items:
+      - "{{ possible_lab }}"
 
 - name: Unzip downloaded bahmni-lab file
   command: unzip /opt/bahmni-web/etc/bahmni-lab.zip -d /opt/bahmni-web/etc/possible-bahmni-lab

@@ -17,7 +17,7 @@
       state=absent
   with_items:
       - "{{ modules_erp }}"
-
+  
 - name: Download Custom ERP modules from Git
   get_url:
     url={{ erp_custom_modules_url }}
