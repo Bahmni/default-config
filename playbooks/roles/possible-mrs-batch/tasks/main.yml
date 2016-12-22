@@ -33,6 +33,10 @@
   command: unlink /var/www/bahmniapps
   when: bahmniapps_url is defined
 
+- name: Removing endtb-bahmniapps folder
+  command: rm -rf /opt/bahmni-web/etc/possible-bahmniapps
+  when: bahmniapps_url is defined
+
 - name: Unzip downloaded bahmniapps file
   command: unzip /opt/bahmni-web/etc/bahmniapps.zip -d /opt/bahmni-web/etc/possible-bahmniapps
   when: bahmniapps_url is defined
@@ -40,13 +44,6 @@
 - name: linking /var/www/bahmniapps to Possible bahmniapps
   command: ln -s /opt/bahmni-web/etc/possible-bahmniapps /var/www/bahmniapps
   when: bahmniapps_url is defined
-
-- name: Removing temporary files from /opt/bahmni-web/etc
-  file:
-      path=/opt/bahmni-web/etc/{{item}}
-      state=absent
-  with_items:
-      - "{{ bahmni_mrs_temp_files }}"
 
 - name: Start openmrs
   service:

@@ -1,4 +1,14 @@
-bahmni-lab_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/OpenElis.zip"
+bahmnilab_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/OpenElis.zip"
 bahmni_lab_temp_files:
-  -bahmni-lab.zip
-  -possible-bahmni-lab
+  - bahmni-lab.zip
+  - possible-bahmni-lab
+possible_lab:
+  - build
+  - build.properties
+  - build.xml
+  - data_migration
+  - db_backup
+  - junit
+  - liquibase
+  - reference_build.xml
+  - scripts

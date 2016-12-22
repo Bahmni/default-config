@@ -3,5 +3,3 @@ program_auto_enrolment_omod_url: "https://github.com/Possiblehealth/program-auto
 bahmniapps_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/bahmniapps.zip"
 bahmni_user: bahmni
 bahmni_group: bahmni
-bahmni_mrs_temp_files:
-  - bahmniapps.zip

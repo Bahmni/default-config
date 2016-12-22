@@ -5,23 +5,23 @@
   when: passive is not defined or passive != 'yes'
 
 - name: Get bahmni-lab from remote location if configured
-  get_url: url={{ bahmni-lab_url }}
+  get_url: url={{ bahmnilab_url }}
    force=yes
    dest=/opt/bahmni-web/etc/bahmni-lab.zip
    mode=0755
-  when: bahmni-lab_url is defined
+  when: bahmnilab_url is defined
 
 - name: Removing product bahmni-lab 
   command: sudo rm -rf /opt/bahmni-lab/bahmni-lab/*
-  when: bahmni-lab_url is defined
+  when: bahmnilab_url is defined
 
 - name: Unzip downloaded bahmni-lab file
   command: unzip /opt/bahmni-web/etc/bahmni-lab.zip -d /opt/bahmni-web/etc/possible-bahmni-lab
-  when: bahmni-lab_url is defined
+  when: bahmnilab_url is defined
 
 - name: copying from /var/www/bahmni-lab to Possible bahmni-lab
-  command: cp -r /opt/bahmni-web/etc/possible-bahmni-lab/OpenElis/* /opt/bahmni-lab/bahmni-lab/
-  when: bahmni-lab_url is defined
+  command: cp -r /opt/bahmni-web/etc/possible-bahmni-lab/OpenElis/{{item}} /opt/bahmni-lab/bahmni-lab/
+  with_items: "{{ possible_lab }}"
 
 - name: Removing temporary files from bahmni-lab
   file:
