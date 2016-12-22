@@ -31,8 +31,8 @@
   with_items: "{{ modules }}"
 
 - name: Moving possible erp modules to Addons Folder
-  command: mv -f /opt/bahmni-erp/possible-erp-master/openerp-modules/* /usr/lib/python2.6/site-packages/openerp-7.0_20130301_002301-py2.6.egg/openerp/addons/
-  with_items: "{{ modules }}"
+  command: mv -f /opt/bahmni-erp/possible-erp-master/openerp-modules/{{modules_erp}} /usr/lib/python2.6/site-packages/openerp-7.0_20130301_002301-py2.6.egg/openerp/addons/
+  with_items: "{{ modules_erp }}"
 
 - name: Removing temporary files from bahmni-erp
   file:
