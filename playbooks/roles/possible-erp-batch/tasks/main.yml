@@ -26,13 +26,12 @@
 - name: Unzip downloaded Custom ERP Module
   command: unzip -o /opt/bahmni-erp/possible-erp-master.zip -d /opt/bahmni-erp/possible-erp-master
 
-
 - name: Moving Custom modules to Addons Folder
-  command: mv -f /opt/bahmni-erp/possible-erp-custom-master/{{item}} /usr/lib/python2.6/site-packages/openerp-7.0_20130301_002301-py2.6.egg/openerp/addons/
+  command: mv -f /opt/bahmni-erp/possible-erp-custom-master/possible-erp-custom-master/{{item}} /usr/lib/python2.6/site-packages/openerp-7.0_20130301_002301-py2.6.egg/openerp/addons/
   with_items: "{{ modules }}"
 
 - name: Moving possible erp modules to Addons Folder
-  command: mv -f /opt/bahmni-erp/possible-erp-master/* /usr/lib/python2.6/site-packages/openerp-7.0_20130301_002301-py2.6.egg/openerp/addons/
+  command: mv -f /opt/bahmni-erp/possible-erp-master/openerp-modules/* /usr/lib/python2.6/site-packages/openerp-7.0_20130301_002301-py2.6.egg/openerp/addons/
   with_items: "{{ modules }}"
 
 - name: Removing temporary files from bahmni-erp

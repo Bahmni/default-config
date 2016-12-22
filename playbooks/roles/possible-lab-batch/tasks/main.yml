@@ -20,7 +20,7 @@
   when: bahmni-lab_url is defined
 
 - name: copying from /var/www/bahmni-lab to Possible bahmni-lab
-  command: cp -r /opt/bahmni-web/etc/possible-bahmni-lab/* /opt/bahmni-lab/bahmni-lab/.
+  command: cp -r /opt/bahmni-web/etc/possible-bahmni-lab/OpenElis/* /opt/bahmni-lab/bahmni-lab/
   when: bahmni-lab_url is defined
 
 - name: Removing temporary files from bahmni-lab
