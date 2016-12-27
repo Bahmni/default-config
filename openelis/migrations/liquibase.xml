@@ -43,5 +43,18 @@
             INSERT INTO site_information(id, name, lastupdated, description, value, encrypted, value_type)  VALUES ( nextVal( 'site_information_seq' ) , 'defaultOrganizationName', now(), 'Default organization name for department to be synced from openmrs',  'Possible', 'f', 'text' );
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-ELIS-5" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from site_information where name='showMiddleNameOnReportPrint';
+            </sqlCheck>
+        </preConditions>
+        <comment>Show middle name of patient on print</comment>
+        <sql>
+            INSERT INTO site_information(id, name, description, value, encrypted, value_type, domain_id)
+            VALUES (nextVal('site_information_seq') , 'showMiddleNameOnReportPrint', 'Show Middle name on report print for Elis',  'true', 'f', 'text',
+            (select id from site_information_domain where name = 'printedReportsConfig'));
+        </sql>
+    </changeSet>
 
 </databaseChangeLog>

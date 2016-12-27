@@ -24,6 +24,9 @@
         "visitUuid"
     ],
     "config": {
+        "patientConfig":{
+            "showMiddleNameOn" : ["patient-profile","patient-context"]
+        },
         "onAdmissionForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onDischargeForwardTo": "#/patient/search",
