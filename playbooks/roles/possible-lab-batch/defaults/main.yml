@@ -3,12 +3,16 @@ bahmni_lab_temp_files:
   - bahmni-lab.zip
   - possible-bahmni-lab
 possible_lab:
-  - build
-  - build.properties
-  - build.xml
-  - data_migration
-  - db_backup
-  - junit
-  - liquibase
-  - reference_build.xml
+  - config.rb
+  - css
+  - documentation
+  - fonts
+  - images
+  - index.jsp
+  - LICENSE
+  - media
+  - META-INF
+  - pages
   - scripts
+  - tree_images
+  - WEB-INF
