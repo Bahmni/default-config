@@ -7,11 +7,11 @@
 - name: Get bahmni-lab from remote location if configured
   get_url: url={{ bahmnilab_url }}
    force=yes
-   dest=/opt/bahmni-web/etc/bahmni-lab.zip
+   dest=/tmp/possible-bahmni-lab.war
    mode=0755
   when: bahmnilab_url is defined
 
-- name: Removing Possible files from bahmni-lab
+- name: Removing replacable files from bahmni-lab
   file:
       path=/opt/bahmni-lab/bahmni-lab/{{item}}
       state=absent
@@ -19,16 +19,16 @@
       - "{{ possible_lab }}"
 
 - name: Unzip downloaded bahmni-lab file
-  command: unzip /opt/bahmni-web/etc/bahmni-lab.zip -d /opt/bahmni-web/etc/possible-bahmni-lab
+  command: unzip /tmp/possible-bahmni-lab.war -d /tmp/possible-bahmni-lab
   when: bahmnilab_url is defined
 
-- name: copying from /var/www/bahmni-lab to Possible bahmni-lab
-  command: cp -r /opt/bahmni-web/etc/possible-bahmni-lab/OpenElis/{{item}} /opt/bahmni-lab/bahmni-lab/
+- name: Copy from /tmp/possible-bahmni-lab to /opt/bahmni-lab 
+  command: cp -r /tmp/possible-bahmni-lab/{{item}} /opt/bahmni-lab/bahmni-lab/
   with_items: "{{ possible_lab }}"
 
 - name: Removing temporary files from bahmni-lab
   file:
-      path=/opt/bahmni-web/etc/{{item}}
+      path=/tmp/{{item}}
       state=absent
   with_items:
       - "{{ bahmni_lab_temp_files }}"
