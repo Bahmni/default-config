@@ -23,7 +23,7 @@
         "visitUuid"
     ],
     "config": {
-        "enablePACSOptions":true,
+        "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "quickPrints":false,
         "networkConnectivity" : {
             "showNetworkStatusMessage": true,
