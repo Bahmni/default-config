@@ -22,6 +22,15 @@
     group={{ bahmni_group }}
     mode=755
 
+- name: Download omod file for bahmni-core omod
+  get_url:
+    url={{ program_bahmni_omod_omod_url }}
+    force=yes
+    dest=/opt/openmrs/modules/
+    owner={{ bahmni_user }}
+    group={{ bahmni_group }}
+    mode=755
+
 - name: Get bahmniapps from remote location if configured
   get_url: url={{ bahmniapps_url }}
    force=yes
