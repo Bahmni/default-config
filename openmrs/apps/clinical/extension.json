@@ -11,6 +11,25 @@
     "order": 1,
     "requiredPrivilege": "app:clinical:observationTab"
   },
+  "bahmniCustomFormTab": {
+    "id": "bahmni.clinical.patients.customform",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Custom Form",
+    "url": "clinical-component/container",
+    "extensionParams": {
+      "framework": "react",
+      "props": {
+        "validate":true,
+        "collapse": false,
+        "metadata": {"name":"testing","version": "1","id":18,"uuid":"c2906545-a608-477a-a3ed-6be49823a9bb","controls":[{"type":"obsControl","label":{"type":"label","value":"HEAD Skull PA"},"properties":{"mandatory":true,"notes":false,"addMore":false,"hideLabel":false,"location":{"column":0,"row":0}},"id":"1","concept":{"name":"HEAD Skull PA","uuid":"c42d60a4-3f10-11e4-adec-0800271c1b75","description":[],"datatype":"Text","answers":[],"properties":{"allowDecimal":null}},"units":null,"hiNormal":null,"lowNormal":null,"hiAbsolute":null,"lowAbsolute":null}]},
+        "observations": []
+      }
+    },
+    "icon": "fa-user-md",
+    "order": 1,
+    "requiredPrivilege": "app:clinical"
+  },  
   "diagnosis": {
     "id": "bahmni.clinical.consultation.diagnosis",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
