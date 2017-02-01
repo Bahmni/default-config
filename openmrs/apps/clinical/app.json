@@ -23,7 +23,7 @@
 		"visitTypeForRetrospectiveEntries": "General",
 		"obsIgnoreList": ["Patient file"],
 		"patientConfig":{
-			"showMiddleNameOn" : ["patient-profile","patient-context"]
+		"showMiddleNameOn" : ["patient-profile","patient-context"]
 		},
 		"quickPrints": true,
 		"otherInvestigationsMap": {
@@ -1182,20 +1182,162 @@
 				"allowFutureDates": true
 			},
 			"ANC, HIV Testing": {
-        		"required": true
+        			"required": true
      			},
       			"ANC, HIV Counseling": {
-        		"required": true
+        			"required": true
       			},
       			"Referred In": {
-        		"required": true
+        			"required": true
      			},
       			"Discharge Note-Type of Delivery": {
-        		"multiSelect": true
+        			"multiSelect": true
      			},
       			"Childhood Illness, Fever present": {
-        		"required": true
-			}
+        			"required": true
+			},
+			"HTC, Risk Group": {
+        			"required": true
+			},
+			"Malaria, Classification": {
+        			"required": true
+			},
+			"Discharge Note-Major surgery this admission": {
+        			"required": true
+			},
+			"Discharge Note-Post op surgery complications": {
+        			"required": true
+			},
+                        "Diabetes-Diabetes in control per last lab value": {
+                                "required": true
+                        },
+                        "Diabetes-Reviewed last lab value": {
+                                "required": true
+                        },
+                        "HIVTC, Any OI in past 3 months?": {
+                                "required": true
+                        },
+                        "HIVTC, CD4 count performed in last 6 months and greater than 350": {
+                                "required": true
+                        },
+                        "COPD-Hospitalizations due to COPD in last 3 months": {
+                                "required": true
+                        },
+                        "COPD-Meets Criteria for COPD Exacerbation": {
+                                "required": true
+                        },
+                        "COPD-Sent to chronic disease counseling": {
+                                "required": true
+                        },
+                        "COPD-Med Side Effects-Salbutamol": {
+                                "multiSelect": true
+                        },
+                        "COPD-Med Side Effects-Theophylline": {
+                                "multiSelect": true
+                        },
+                        "COPD-Pulmonary Exam": {
+                                "multiSelect": true
+                        },
+                        "COPD-Cardiovascular exam": {
+                                "multiSelect": true
+                        },
+                        "Referred In": {
+                                "required": true
+                        },
+                        "Delivery Note, Liveborn gender": {
+                                "required": true
+                        },
+                        "COPD-Discuss": {
+                                "required": true
+                        },
+                        "COPD-Complications of COPD": {
+                                "required": true
+                        },
+                        "COPD-Smoking Status": {
+                                "required": true
+                        },
+                        "CD, Smoking status": {
+                                "required": true
+                        },
+                        "COPD-Discuss lifestyle modifications": {
+                                "required": true
+                        },
+                        "COPD-Correct Medication Use": {
+                                "required": true
+                        },
+                        "COPD-Discuss signs of COPD exacerbation": {
+                                "required": true
+                        },
+                        "COPD-Follow Up": {
+                                "required": true
+                        },
+                        "MHS-In the last two weeks": {
+                                "required": true
+                        },
+                        "MHS-Medical conditions": {
+                                "required": true
+                        },
+                        "HTN-Discuss Hypertension": {
+                                "required": true
+                        },
+                        "HTN-Discuss complications of Hypertension": {
+                                "required": true
+                        },
+                        "HTN-Blood Pressure Level": {
+                                "required": true
+                        },
+                        "COPD-Smoking Status": {
+                                "required": true
+                        },
+                        "COPD-Discuss lifestyle modifications": {
+                                "required": true
+                        },
+                        "HTN-Discuss signs of worsening hypertension": {
+                                "required": true
+                        },
+                        "HTN-Follow up": {
+                                "required": true
+                        },
+                        "Diabetes-Discuss diabetes": {
+                                "required": true
+                        },
+                        "Diabetes-Discuss complications of diabetes": {
+                                "required": true
+                        },
+                        "HTN-Is Blood sugar controlled?": {
+                                "required": true
+                        },
+                        "Diabetes-Discuss lifestyle modifications": {
+                                "required": true
+                        },
+                        "Diabetes-Correct Medication Use": {
+                                "required": true
+                        },
+                        "Diabetes-Discuss signs of worsening diabetes": {
+                                "required": true
+                        },
+                        "Diabetes-Discuss signs of low blood sugar": {
+                                "required": true
+                        },
+                        "HTN-Discuss Hypertension": {
+                                "required": true
+                        },
+                        "HTN-Discuss lifestyle modifications": {
+                                "required": true
+                        },
+                        "HTN-Correct Medication Use": {
+                                "required": true
+                        },
+                        "COPD-Hospitalizations due to COPD": {
+                                "required": true
+                        },
+                        "Discharge Note, Diagnosis": {
+                                "required": true
+                        },
+                        "Childhood Illness - Treatment - Treated with 2-59": {
+                                "multiSelect": true
+                        }
+
 		}
 	}
 }
