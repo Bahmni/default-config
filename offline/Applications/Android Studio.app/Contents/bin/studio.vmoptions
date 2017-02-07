@@ -1,0 +1,11 @@
+#
+# *DO NOT* modify this file directly. If there is a value that you would like to override,
+# please add it to your user specific configuration file.
+#
+# See http://tools.android.com/tech-docs/configuration
+#
+-Xms256m
+-Xmx1280m
+-XX:MaxPermSize=350m
+-XX:ReservedCodeCacheSize=240m
+-XX:+UseCompressedOops
