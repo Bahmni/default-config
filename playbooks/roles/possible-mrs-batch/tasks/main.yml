@@ -24,7 +24,7 @@
 
 - name: Download omod file for bahmni-core omod
   get_url:
-    url={{ program_bahmni_omod_omod_url }}
+    url={{ bahmni_omod_url }}
     force=yes
     dest=/opt/openmrs/modules/
     owner={{ bahmni_user }}
