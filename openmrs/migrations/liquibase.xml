@@ -50,29 +50,4 @@
             </sql>
         </changeSet>
 
-
-        <changeSet id="default-201703061748" author="Shruthi P, Pushpa">
-            <preConditions onFail="MARK_RAN">
-                <sqlCheck expectedResult="1">
-                    SELECT count(property) FROM global_property where property='emr.primaryIdentifierType';
-                </sqlCheck>
-            </preConditions>
-            <comment>update global property key 'emr.primaryIdentifierType' to 'bahmni.primaryIdentifierType'</comment>
-            <sql>
-                update global_property set property='bahmni.primaryIdentifierType' where property='emr.primaryIdentifierType';
-            </sql>
-        </changeSet>
-
-        <changeSet id="default-201703061756" author="Shruthi P, Pushpa">
-            <preConditions onFail="MARK_RAN">
-                <sqlCheck expectedResult="1">
-                    SELECT count(property) FROM global_property where property='emr.extraPatientIdentifierTypes';
-                </sqlCheck>
-            </preConditions>
-            <comment>update global property key 'emr.extraPatientIdentifierTypes' to 'bahmni.extraPatientIdentifierTypes'</comment>
-            <sql>
-                update global_property set property='bahmni.extraPatientIdentifierTypes' where property='emr.extraPatientIdentifierTypes';
-            </sql>
-        </changeSet>
-
 </databaseChangeLog>
