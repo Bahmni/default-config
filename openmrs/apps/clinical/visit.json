@@ -39,6 +39,13 @@
                 },
                 "displayOrder": 1
             },
+            "conditions": {
+                "type": "conditionsList",
+                "config": {
+                    "title": "Conditions"
+                },
+                "displayOrder": 7
+            },
             "discharge_notes": {
                 "type": "Discharge Notes",
                 "config": {
@@ -128,6 +135,13 @@
                     "showDetailsButton": true
                 },
                 "displayOrder": 1
+            },
+            "conditions": {
+                "type": "conditionsList",
+                "config": {
+                    "title": "Conditions"
+                },
+                "displayOrder": 6
             },
             "observation": {
                 "type": "observation",
