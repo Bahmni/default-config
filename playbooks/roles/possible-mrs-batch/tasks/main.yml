@@ -15,7 +15,7 @@
 
 - name: Download omod file for Program Auto Enrolment
   get_url:
-    url={{ program_auto_enrolment_omod_url }}
+    url={{ possiblemodule_omod_url }}
     force=yes
     dest=/opt/openmrs/modules/
     owner={{ bahmni_user }}

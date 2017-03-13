@@ -1,5 +1,5 @@
 program_auto_enrolment_properties_url: "https://raw.githubusercontent.com/Possiblehealth/possible-config/master/properties/programautoenrolment.properties"
-program_auto_enrolment_omod_url: "https://github.com/Possiblehealth/possible-openmrs-module/releases/download/1.0.2/possiblemodule-1.0.2-SNAPSHOT.omod"
+possiblemodule_omod_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/possiblemodule-1.0-SNAPSHOT.omod"
 bahmniapps_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/bahmniapps.zip"
 bahmni_omod_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/bahmnicore-0.88-SNAPSHOT.omod"
 emrapi_omod_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/emrapi-1.20.omod"
