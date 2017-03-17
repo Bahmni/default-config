@@ -1769,6 +1769,12 @@
     "config": {
       "templateName": "Psychosis Followup Note"
       }
+  },
+  "Nutritional_status_of_registered_children": {
+    "name": "Nutritional status of registered children",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Nutritional_status_of_registered_children.sql"
     }
+  }
 }
-	

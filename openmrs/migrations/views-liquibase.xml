@@ -152,4 +152,34 @@
             inner join person p on o.person_id = p.person_id);
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-nonVoidedConceptFullName" author="tw" runOnChange="true">
+        <sql>
+            CREATE OR REPLACE VIEW nonVoidedConceptFullName AS
+            SELECT *
+            FROM concept_name
+            WHERE !voided AND concept_name_type = 'FULLY_SPECIFIED';
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-nonVoidedQuestionAnswerObs" author="tw" runOnChange="true">
+        <sql>
+            CREATE OR REPLACE VIEW nonVoidedQuestionAnswerObs AS
+            SELECT
+            observation.obs_id,
+            observation.concept_id,
+            observation.person_id,
+            observation.value_coded,
+            observation.obs_group_id,
+            observation.obs_datetime,
+            observation.encounter_id,
+            observation.creator,
+            question_concept.name       question_full_name,
+            question_concept.concept_id question_id,
+            value_concept.name          answer_full_name,
+            value_concept.concept_id    answer_id
+            FROM obs observation
+            JOIN nonVoidedConceptFullName question_concept ON observation.concept_id = question_concept.concept_id
+            JOIN nonVoidedConceptFullName value_concept ON observation.value_coded = value_concept.concept_id
+            WHERE !observation.voided;
+        </sql>
+    </changeSet>
 </databaseChangeLog>
