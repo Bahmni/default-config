@@ -1776,5 +1776,12 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Nutritional_status_of_registered_children.sql"
     }
-  }
+  },
+    "Integrated_Management_of_Acute_Malnutrition_(IMAM)_Program": {
+        "name": "Integrated Management of Acute Malnutrition (IMAM) Program",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Integrated_Management_of_Acute_Malnutrition_(IMAM)_Program.sql"
+        }
+    }
 }
