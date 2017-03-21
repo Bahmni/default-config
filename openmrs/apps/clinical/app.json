@@ -26,8 +26,8 @@
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "quickPrints":false,
         "networkConnectivity" : {
-            "showNetworkStatusMessage": true,
-            "networkStatusCheckInterval": 5000,
+            "showNetworkStatusMessage": false,
+            "networkStatusCheckInterval": 20000,
             "locales" : [
                 { "locale" : "fr", "css" : "offline-language-french"},
                 { "locale" : "es", "css": "offline-language-spanish"},
