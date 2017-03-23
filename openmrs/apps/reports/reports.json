@@ -1783,5 +1783,12 @@
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Integrated_Management_of_Acute_Malnutrition_(IMAM)_Program.sql"
         }
+    },
+    "IYCF_and_Baal_Vita_Community_Promotion_Programme":{
+        "name": "IYCF and Baal Vita Community Promotion Programme",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/IYCF_and_Baal_Vita_Community_Promotion_Programme.sql"
+        }
     }
 }
