@@ -147,6 +147,13 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Nutrition_Program_<_5_yrs_Children_receiving_(Bi-annual).sql"
         }
     },
+    "Nutrition_Program_Infant_&_Young_Child_Feeding": {
+        "name": "Nutrition Program Infant And Young Child Feeding",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Infant_And_Young_Child_Feeding.sql"
+        }
+    },
     "nutrition_program__integrated_management_of_acute_malnutrition_imam_program": {
         "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program",
         "type": "obsCount",
