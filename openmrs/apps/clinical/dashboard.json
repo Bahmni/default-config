@@ -40,7 +40,7 @@
                     "visitAttribute"
                 ]
             },
-	    "tuberculosis": {
+	          "tuberculosis": {
                 "title": "Tuberculosis Follow Up",
                 "type": "tuberculosis",
                 "isObservation": true,
@@ -377,6 +377,11 @@
                 "type":"admissionDetails",
                 "displayOrder":19,
                 "showDetailsButton":true
+            },
+            "conditions": {
+                "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
+                "type": "conditionsList",
+                "displayOrder": 20
             }
         }
     },
