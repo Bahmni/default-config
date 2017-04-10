@@ -382,6 +382,20 @@
                 "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
                 "type": "conditionsList",
                 "displayOrder": 20
+            },
+            "someForms": {
+                "type": "forms",
+                "displayOrder": 21,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 10
+                },
+                "formGroup": [
+                    "History and Examination",
+                    "Discharge Summary",
+                    "ANC"
+                ],
+                "translationKey": "Forms Table Display"
             }
         }
     },
