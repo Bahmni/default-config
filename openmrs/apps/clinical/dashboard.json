@@ -383,7 +383,7 @@
                 "type": "conditionsList",
                 "displayOrder": 20
             },
-            "someForms": {
+            "formsDisplay": {
                 "type": "forms",
                 "displayOrder": 21,
                 "dashboardConfig": {
@@ -395,7 +395,7 @@
                     "Discharge Summary",
                     "ANC"
                 ],
-                "translationKey": "Forms Table Display"
+                "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             }
         }
     },
