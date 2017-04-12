@@ -19,5 +19,9 @@
   "EVENT_TYPE": "Event Type",
   "USERNAME": "Username",
   "PATIENT_ID": "Patient ID",
-  "MESSAGE": "Message"
+  "MESSAGE": "Message",
+  "MATCHING_EVENTS_NOT_FOUND": "No matching events found for given criteria !!",
+  "INVALID_DATE": "Please enter valid date !!",
+  "NO_EVENTS_FOUND": "No events to display !!",
+  "NO_MORE_EVENTS_FOUND": "No more events to be displayed !!"
 }
