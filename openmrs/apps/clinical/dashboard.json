@@ -56,7 +56,7 @@
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":1,
-                "displayOrder":3
+                "displayOrder":7
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
@@ -97,7 +97,7 @@
                 "orderType":"Radiology Order",
                 "type":"ordersControl",
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
-                "displayOrder":7,
+                "displayOrder":17,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "Summary"
@@ -326,7 +326,7 @@
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":17,
+                "displayOrder":3,
                 "dashboardConfig":{  
                     "title":null,
                     "maximumNoOfVisits":8,
