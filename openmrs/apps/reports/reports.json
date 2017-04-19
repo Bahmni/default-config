@@ -140,20 +140,6 @@
             ]
         }
     },
-    "Nutrition_Program_<_5_yrs_Children_receiving_(Bi-annual)": {
-        "name": "Nutrition Program < 5 yrs Children receiving (Bi-annual)",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Nutrition_Program_<_5_yrs_Children_receiving_(Bi-annual).sql"
-        }
-    },
-    "Nutrition_Program_Infant_&_Young_Child_Feeding": {
-        "name": "Nutrition Program Infant And Young Child Feeding",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Infant_And_Young_Child_Feeding.sql"
-        }
-    },
     "nutrition_program__integrated_management_of_acute_malnutrition_imam_program": {
         "name": "Nutrition Program - Integrated Management of Acute Malnutrition (IMAM) Program",
         "type": "obsCount",
@@ -1782,27 +1768,106 @@
     "type": "obsTemplate",
     "config": {
       "templateName": "Psychosis Followup Note"
-      }
+    }
   },
-  "Nutritional_status_of_registered_children": {
-    "name": "Nutritional status of registered children",
-    "type": "MRSGeneric",
+  "Safe Motherhood Program": {
+    "name": "Safe Motherhood Program",
+    "DHISProgram": true,
+    "type": "concatenated",
     "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Nutritional_status_of_registered_children.sql"
-    }
-  },
-    "Integrated_Management_of_Acute_Malnutrition_(IMAM)_Program": {
-        "name": "Integrated Management of Acute Malnutrition (IMAM) Program",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/Integrated_Management_of_Acute_Malnutrition_(IMAM)_Program.sql"
+      "reports":[
+        {
+          "name":"Antenatal Checkup",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Antenatal_Checkup.sql"
+          }
+        },
+        {
+          "name":"Delivery Service",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Delivery_Service.sql"
+          }
+        },
+        {
+          "name":"Type of Delivery",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Type_of_Delivery.sql"
+          }
+        },
+        {
+          "name":"Delivery Outcome",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Delivery_Outcome.sql"
+          }
+        },
+        {
+          "name":"Birth weight",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Birth_weight.sql"
+          }
+        },
+        {
+          "name":"No of still births",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/No_of_still_births.sql"
+          }
+        },
+        {
+          "name":"CHX applied in cord",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/CHX_applied_in_cord.sql"
+          }
+        },
+        {
+          "name":"Blood transfusion",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Blood_transfusion.sql"
+          }
+        },
+        {
+          "name":"PNC Visit",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/PNC_Visit.sql"
+          }
+        },
+        {
+          "name":"Obstetric Complications",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Obstetric_Complications.sql"
+          }
+        },
+        {
+          "name":"Maternal Death",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Maternal_Death.sql"
+          }
+        },
+        {
+          "name":"Number Of Neo-Natal Deaths",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Number_Of_Neo-Natal_Deaths.sql"
+          }
+        },
+        {
+          "name":"Safe Abortion Service",
+          "type":"MRSGeneric",
+          "config":{
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Safe_Abortion_Service.sql"
+          }
         }
-    },
-    "IYCF_and_Baal_Vita_Community_Promotion_Programme":{
-        "name": "IYCF and Baal Vita Community Promotion Programme",
-        "type": "MRSGeneric",
-        "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/IYCF_and_Baal_Vita_Community_Promotion_Programme.sql"
-        }
+      ]
     }
+  }
 }

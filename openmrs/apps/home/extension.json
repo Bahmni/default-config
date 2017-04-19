@@ -96,5 +96,14 @@
         "target": "_blank",
         "icon": "fa-bug",
         "order": 10
+    },
+    "possible_dhis_2_integration": {
+        "id": "possible.dhis2Integration",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Dhis Integration",
+        "url": "/dhis-integration/index.html",
+        "icon": "icon-bahmni-reports",
+        "order": 11
     }
 }
