@@ -91,7 +91,7 @@
             "programs":{  
                 "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
                 "type":"programs",
-                "displayOrder":6
+                "displayOrder":10
             },
             "radiologyOrders":{  
                 "orderType":"Radiology Order",
@@ -153,15 +153,16 @@
             "labResults":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type":"labOrders",
-                "displayOrder":10,
+                "displayOrder":6,
                 "dashboardConfig":{  
                     "title":null,
-                    "numberOfVisits":1,
-                    "showChart":false,
-                    "showTable":true,
-                    "showDetailsButton":false,
-                    "initialAccessionCount":0,
-                    "latestAccessionCount":1
+                    "numberOfVisits":6,
+                    "showChart":true,
+                    "showTable":false,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "showDetailsButton":false
                 },
                 "expandedViewConfig":{  
                     "numberOfVisits":10
@@ -390,11 +391,7 @@
                     "title": null,
                     "maximumNoOfVisits": 10
                 },
-                "formGroup": [
-                    "History and Examination",
-                    "Discharge Summary",
-                    "ANC"
-                ],
+                "formGroup": [ ],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             }
         }
