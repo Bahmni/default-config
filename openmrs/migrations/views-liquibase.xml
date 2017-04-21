@@ -182,4 +182,23 @@
             WHERE !observation.voided;
         </sql>
     </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-nonVoidedQuestionObs" author="tw" runOnChange="true">
+        <sql>
+            CREATE OR REPLACE VIEW nonVoidedQuestionObs AS
+            SELECT
+            observation.obs_id,
+            observation.concept_id,
+            observation.person_id,
+            observation.value_coded,
+            observation.obs_group_id,
+            observation.obs_datetime,
+            observation.encounter_id,
+            observation.creator,
+            question_concept.name       question_full_name,
+            question_concept.concept_id question_id
+            FROM obs observation
+            JOIN nonVoidedConceptFullName question_concept ON observation.concept_id = question_concept.concept_id
+            WHERE !observation.voided;
+        </sql>
+    </changeSet>
 </databaseChangeLog>
