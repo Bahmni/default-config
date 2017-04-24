@@ -46,6 +46,11 @@
                 "showDetailsButton": true,
                 "displayOrder": 2
             },
+            "conditions": {
+                "title": "Conditions",
+                "type": "conditionsList",
+                "displayOrder": 3
+            },
             "formDisplaySummary":{
                 "title": "Active Visit notes",
                 "type": "forms",

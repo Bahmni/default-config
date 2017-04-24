@@ -16,4 +16,5 @@
         <include file = "bahmni-reports-liquibase.xml"/>
         <include file = "views-liquibase.xml"/>
         <include file = "openmrs-global-properties.xml"/>
+        <include file = "diagnosis-to-conditions-liquibase.xml"/>
 </databaseChangeLog>
