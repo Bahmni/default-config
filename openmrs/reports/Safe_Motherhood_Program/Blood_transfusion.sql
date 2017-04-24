@@ -2,7 +2,7 @@ SELECT
   final.Blood AS Blood,
   sum(final.BloodTransfusion) AS 'Blood Transfusion'
 FROM
-#################################################################
+-- ----------------------------------------------
 (SELECT
    'No'     AS Blood,
    COUNT(*) AS BloodTransfusion
@@ -30,7 +30,7 @@ SELECT
        AND t1.voided = 0 AND
        (t1.obs_datetime >= '#startDate#' AND t1.obs_datetime <= '#endDate#')
  GROUP BY t5.name
-#################################################################
+-- ----------------------------------------------
 UNION ALL SELECT 'No',0
 UNION ALL SELECT 'Unit',0) final
 GROUP BY final.Blood

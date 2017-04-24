@@ -3,7 +3,7 @@ SELECT final.TypeofDelivery AS 'Type of Delivery',
   sum(final.Shoulder) AS 'Shoulder Presentation',
   sum(final.Breech) AS 'Breech Presentation'
 FROM
-###############################################################
+-- ----------------------------------------------
 (SELECT DeliveryDetails.TypeofDelivery AS TypeofDelivery,
 SUM(IF(DeliveryDetails.Presentation LIKE '%Cephalic%', 1, 0)) AS Cephalic,
 SUM(IF(DeliveryDetails.Presentation LIKE '%Shoulder%', 1, 0)) AS Shoulder,
@@ -35,7 +35,7 @@ AND t1.voided = 0 AND
 GROUP BY t1.obs_group_id, t5.name, t2.Name) T2 ON
 T1.obs_group_id = T2.obs_group_id) DeliveryDetails
 GROUP BY DeliveryDetails.TypeofDelivery
-###############################################################
+-- ----------------------------------------------
 UNION ALL SELECT 'Caesarean Section',0,0,0
 UNION ALL SELECT 'Forceps or Vaccum Extractor Delivery',0,0,0
 UNION ALL SELECT 'Spontaneous Vaginal Delivery',0,0,0) final

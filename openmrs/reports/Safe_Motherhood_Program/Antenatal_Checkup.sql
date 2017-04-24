@@ -3,7 +3,6 @@ SELECT
   sum(final.lessThan20) '< 20 Years',
   sum(final.moreThan20) '>=20 Years'
 FROM
-###############################################################
 (SELECT
   anc_table.concept_name             AS antenatalCheckup,
   SUM(IF(anc_table.age < 20, 1, 0))  AS lessThan20,
@@ -45,7 +44,7 @@ FROM
        t1.voided = 0
     )) anc_table
 GROUP BY anc_table.concept_name
-###############################################################
+-- ------------------------------------------------------------------------------------
 UNION ALL SELECT '1st (per protocol)', 0, 0
 UNION ALL SELECT'1st (any time)',0,0
 UNION ALL SELECT 'Completed 4 ANC visits per protocol',0,0) final

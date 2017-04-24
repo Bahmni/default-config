@@ -1,5 +1,3 @@
-set @startDate='#startDate#';
-set @endDate='#endDate#';
 
 SELECT final.`Safe Abortion Service`,
   sum(final.Medical) AS medical,
@@ -21,7 +19,7 @@ FROM
       t1.value_coded IN (SELECT answer_concept FROM concept_answer
       WHERE concept_id IN (SELECT concept_id FROM concept_name WHERE NAME='PAC Cause' AND voided = 0))
       AND
-      (t1.obs_datetime >=@startDate AND t1.obs_datetime <= @endDate)
+      (t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')
       AND
       t1.voided = 0) AS Safe_Abortion
  GROUP BY Safe_Abortion.Age_Cat
@@ -46,7 +44,7 @@ FROM
          WHERE
            t1.concept_id IN (SELECT concept_id FROM concept_name WHERE NAME='Accepted Family Planning methods' AND voided = 0)
            AND
-           (t1.obs_datetime >=@startDate AND t1.obs_datetime <= @endDate)
+           (t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')
            AND
            t1.voided = 0) AS Abortion_method
        LEFT OUTER JOIN
@@ -62,7 +60,7 @@ FROM
            t1.value_coded IN (SELECT answer_concept FROM concept_answer
            WHERE concept_id IN (SELECT concept_id FROM concept_name WHERE NAME='PAC Cause' AND voided = 0))
            AND
-           (t1.obs_datetime >=@startDate AND t1.obs_datetime <= @endDate)
+           (t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')
            AND
            t1.voided = 0
        ) AS PAC_Cause
@@ -84,7 +82,7 @@ FROM
         INNER JOIN encounter t4 ON t1.encounter_id = t4.encounter_id
         INNER JOIN visit t5 ON t4.visit_id = t5.visit_id
       WHERE
-        (t1.obs_datetime >=@startDate AND t1.obs_datetime <= @endDate)
+        (t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')
         AND
         t1.voided = 0
       GROUP BY t2.name) AS PAC_Compilications
@@ -105,7 +103,7 @@ FROM
         INNER JOIN encounter t4 ON t1.encounter_id = t4.encounter_id
         INNER JOIN visit t5 ON t4.visit_id = t5.visit_id
       WHERE
-       (t1.obs_datetime >=@startDate AND t1.obs_datetime <= @endDate)
+       (t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')
         AND
         t1.voided = 0
       GROUP BY t2.name) AS PAC_Cause

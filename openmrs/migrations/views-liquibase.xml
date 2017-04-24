@@ -186,14 +186,7 @@
         <sql>
             CREATE OR REPLACE VIEW nonVoidedQuestionObs AS
             SELECT
-            observation.obs_id,
-            observation.concept_id,
-            observation.person_id,
-            observation.value_coded,
-            observation.obs_group_id,
-            observation.obs_datetime,
-            observation.encounter_id,
-            observation.creator,
+            observation.*,
             question_concept.name       question_full_name,
             question_concept.concept_id question_id
             FROM obs observation

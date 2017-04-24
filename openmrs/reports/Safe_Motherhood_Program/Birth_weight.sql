@@ -5,7 +5,7 @@ SELECT
   sum(final.Defect) AS Defect,
   sum(final.Others) AS Others
 FROM
-#################################################################
+-- ----------------------------------------------
 (SELECT T1.Weight_Category AS BirthWeight,
 Sum(IF(InfantStatus IN ('Others','Defect','Asphyxia'), 1, 0)) AS TotalNo,
 Sum(IF(InfantStatus = 'Asphyxia', 1, 0)) AS Asphyxia,
@@ -47,7 +47,7 @@ AND t1.voided = 0 AND
 (t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')) AS InfantBirthStatus
 ON InfantBirthWeights.encounter_id = InfantBirthStatus.encounter_id) AS T1
 GROUP BY T1.Weight_Category
-#################################################################
+-- ----------------------------------------------
 UNION ALL SELECT 'Normal (>= 2.5 kg)',0,0,0,0
 UNION ALL SELECT 'Low (2 to < 2.5 kg)',0,0,0,0
 UNION ALL SELECT 'Very low (< 2 kg)',0,0,0,0

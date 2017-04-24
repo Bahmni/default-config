@@ -4,7 +4,7 @@ SELECT
   sum(final.multipleTwinCount) AS 'Multiple Twin',
   sum(final.multipleTripletCount) AS 'Multiple >= Triplet'
 FROM
-#################################################################
+-- ----------------------------------------------
 (SELECT 'No of Mother (Live + Still)' AS deliveryOutCome,
 Sum(IF(MotherDetails.Answer LIKE '%single%', MotherDetails.Count, 0)) AS singleCount,
 Sum(IF(MotherDetails.Answer LIKE '%twins%', MotherDetails.Count, 0)) AS multipleTwinCount,
@@ -60,7 +60,7 @@ GROUP BY T1.Answer, T2.Answer
 ORDER BY T1.Answer, T2.Answer) AS InfantDetails
 GROUP BY Gender
 )
-#################################################################
+-- ----------------------------------------------
 UNION ALL SELECT 'No of Mother (Live + Still)',0,0,0
 UNION ALL SELECT 'No of LiveBirths.Female',0,0,0
 UNION ALL SELECT 'No of LiveBirths.Male',0,0,0

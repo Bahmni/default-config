@@ -2,7 +2,7 @@ SELECT
   final.deliveryService AS 'Delivery Service',
   sum(final.facility) AS Facility
 FROM
-###############################################################
+-- ----------------------------------------------
 (SELECT
  t2.name  deliveryService,
  COUNT(*) facility
@@ -24,7 +24,7 @@ WHERE t1.concept_id IN (SELECT concept_id
      AND t1.voided = 0 AND
      (t1.obs_datetime >= '#startDate#' AND t1.obs_datetime <= '#endDate#')
 GROUP BY t2.name
-###############################################################
+-- ----------------------------------------------
 UNION ALL SELECT 'SBA',0
 UNION ALL SELECT 'Non SBA',0) final
 GROUP BY final.deliveryService

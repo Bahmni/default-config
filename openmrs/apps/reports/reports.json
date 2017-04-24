@@ -1869,5 +1869,49 @@
         }
       ]
     }
-  }
+  },
+    "Nutrition Program": {
+        "name": "Nutrition Program",
+        "type": "concatenated",
+        "DHISProgram": true,
+        "config": {
+            "reports": [
+                {
+                    "name": "Nutrition status of registered children (new + old)",
+                    "type": "MRSGeneric",
+                    "config": {
+                        "sqlPath": "/var/www/bahmni_config/openmrs/reports/Nutrition_Program/Nutrition_status_of_registered_children.sql"
+                    }
+                },
+                {
+                    "name": "Pregnant women receiving",
+                    "type": "MRSGeneric",
+                    "config": {
+                        "sqlPath": "/var/www/bahmni_config/openmrs/reports/Nutrition_Program/Pregnant_women_receiving.sql"
+                    }
+                },
+                {
+                    "name": "< 5 yrs Children receiving (Bi annual)",
+                    "type": "MRSGeneric",
+                    "config": {
+                        "sqlPath": "/var/www/bahmni_config/openmrs/reports/Nutrition_Program/Under_5_yrs_Children_receiving.sql"
+                    }
+                },
+                {
+                    "name": "Integrated Management of Acute Malnutrition (IMAM) Program",
+                    "type": "MRSGeneric",
+                    "config": {
+                        "sqlPath": "/var/www/bahmni_config/openmrs/reports/Nutrition_Program/Integrated_Management_of_Acute_Malnutrition_IMAM_Program.sql"
+                    }
+                },
+                {
+                    "name": "Infant & Young Child Feeding",
+                    "type": "MRSGeneric",
+                    "config": {
+                        "sqlPath": "/var/www/bahmni_config/openmrs/reports/Nutrition_Program/Infant_Young_Child_Feeding.sql"
+                    }
+                }
+            ]
+        }
+    }
 }
