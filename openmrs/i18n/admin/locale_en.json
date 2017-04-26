@@ -23,5 +23,15 @@
   "MATCHING_EVENTS_NOT_FOUND": "No matching events found for given criteria !!",
   "INVALID_DATE": "Please enter valid date !!",
   "NO_EVENTS_FOUND": "No events to display !!",
-  "NO_MORE_EVENTS_FOUND": "No more events to be displayed !!"
+  "NO_MORE_EVENTS_FOUND": "No more events to be displayed !!",
+  "VIEWED_REGISTRATION_PATIENT_SEARCH_MESSAGE": "User {{userId}} accessed patient search screen in registration app.",
+  "VIEWED_NEW_PATIENT_PAGE_MESSAGE": "User {{userId}} accessed new patient screen.",
+  "REGISTER_NEW_PATIENT_MESSAGE": "User {{userId}} register patient {{patientId}}.",
+  "EDIT_PATIENT_MESSAGE": "User {{userId}} edit patient {{patientId}}.",
+  "ACCESSED_REGISTRATION_SECOND_PAGE_MESSAGE": "User {{userId}} accessed registration second page of patient {{patientId}}.",
+  "PRINT_PATIENT_STICKER_MESSAGE": "User {{userId}} print sticker of patient {{patientId}}.",
+  "CLOSE_OPD_VISIT_MESSAGE": "User {{userId}} close OPD visit of patient {{patientId}}.",
+  "CLOSE_OPD_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close OPD visit of patient {{patientId}}, but failed.",
+  "START_OPD_VISIT_MESSAGE": "User {{userId}} start a new OPD visit of patient {{patientId}}.",
+  "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active visit of patient {{patientId}}."
 }
