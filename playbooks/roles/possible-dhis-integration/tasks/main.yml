@@ -1,0 +1,13 @@
+- name: Uninstall dhis-integration rpm
+  yum: name="dhis-integration" state=absent
+
+- name: Install dhis-integration rpm
+  yum: name="{{ dhis_integration_rpm_url }}" state=present
+
+- name: Copy ssl conf file
+  template:
+    src=dhis_integration_ssl.conf
+    dest=/etc/httpd/conf.d/dhis_integration_ssl.conf
+    owner=bahmni
+    group=bahmni
+    mode=0644
