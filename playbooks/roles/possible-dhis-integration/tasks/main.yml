@@ -6,6 +6,7 @@
 
 - name: Copy ssl conf file
   template:
+    force=true
     src=dhis_integration_ssl.conf
     dest=/etc/httpd/conf.d/dhis_integration_ssl.conf
     owner=bahmni
@@ -14,6 +15,7 @@
 
 - name: Copy dhis-integration properties file
   template:
+    force=true
     src=dhis_integration.properties
     dest=/etc/dhis-integration/dhis-integration.yml
     owner=bahmni
