@@ -11,3 +11,6 @@
     owner=bahmni
     group=bahmni
     mode=0644
+
+- name: Start dhis-integration
+  service: name="dhis-integration" state=started
