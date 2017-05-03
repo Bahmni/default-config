@@ -103,7 +103,8 @@
         "type": "link",
         "label": "Dhis Integration",
         "url": "/dhis-integration/index.html",
-        "icon": "icon-bahmni-reports",
-        "order": 11
+        "icon": "fa-book",
+        "order": 11,
+        "requiredPrivilege": "app:admin"
     }
 }
