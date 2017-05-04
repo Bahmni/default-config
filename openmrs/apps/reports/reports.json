@@ -1854,13 +1854,6 @@
           }
         },
         {
-          "name":"Number Of Neo-Natal Deaths",
-          "type":"MRSGeneric",
-          "config":{
-            "sqlPath": "/var/www/bahmni_config/openmrs/reports/Safe_Motherhood_Program/Number_Of_Neo_Natal_Deaths.sql"
-          }
-        },
-        {
           "name":"Safe Abortion Service",
           "type":"MRSGeneric",
           "config":{

@@ -1,7 +1,7 @@
 
 SELECT final.`Safe Abortion Service`,
   sum(final.Medical) AS medical,
-  sum(final.Surgical) AS surgical
+  IF(final.Surgical='NA','NA',sum(final.Surgical)) AS surgical
 FROM
 (SELECT Safe_Abortion.Age_Cat AS 'Safe Abortion Service',
         SUM(IF(Safe_Abortion.concept_name LIKE 'Medical abortion%',1, 0)) AS 'Medical',
@@ -110,7 +110,7 @@ FROM
 
  UNION ALL SELECT 'No of Women : < 20 Years' ,0,0
  UNION ALL SELECT 'No of Women : >=20 Years', 0 ,0
- UNION ALL SELECT 'Post Abortion Care Service Availed', 0 ,0
+ UNION ALL SELECT 'Post Abortion Care Service Availed', 0 ,'NA'
  UNION ALL SELECT 'Post Abortion Complications', 0 ,0
  UNION ALL SELECT 'Post Abortion FP methods:Long term', 0 ,0
  UNION ALL SELECT 'Post Abortion FP methods:Short term', 0 ,0
