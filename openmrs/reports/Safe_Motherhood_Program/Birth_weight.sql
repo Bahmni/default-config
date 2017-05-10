@@ -17,8 +17,8 @@ InfantBirthWeights.Weight_Category,
 InfantBirthStatus.InfantStatus
 FROM
 (SELECT t1.encounter_id,CASE
-WHEN t1.value_numeric < 2000 THEN 'Very low (< 2 kg)'
-WHEN t1.value_numeric >= 2000 AND t1.value_numeric < 2500 THEN 'Low (2 to < 2.5 kg)'
+WHEN t1.value_numeric < 1500 THEN 'Very low (< 1.5 kg)'
+WHEN t1.value_numeric >= 1500 AND t1.value_numeric < 2500 THEN 'Low (1.5 to < 2.5 kg)'
 ELSE 'Normal (>= 2.5 kg)'
 END AS Weight_Category
 FROM obs t1
@@ -49,11 +49,11 @@ ON InfantBirthWeights.encounter_id = InfantBirthStatus.encounter_id) AS T1
 GROUP BY T1.Weight_Category
 -- ----------------------------------------------
 UNION ALL SELECT 'Normal (>= 2.5 kg)',0,0,0,0
-UNION ALL SELECT 'Low (2 to < 2.5 kg)',0,0,0,0
-UNION ALL SELECT 'Very low (< 2 kg)',0,0,0,0
+UNION ALL SELECT 'Low (1.5 to < 2.5 kg)',0,0,0,0
+UNION ALL SELECT 'Very low (< 1.5 kg)',0,0,0,0
 )final
 GROUP BY final.BirthWeight
 ORDER BY CASE final.BirthWeight
 WHEN 'Normal (>= 2.5 kg)' THEN 1
-WHEN 'Low (2 to < 2.5 kg)' THEN 2
+WHEN 'Low (1.5 to < 2.5 kg)' THEN 2
 ELSE 3 END;
