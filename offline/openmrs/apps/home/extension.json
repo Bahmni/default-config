@@ -9,16 +9,6 @@
     "order": 1,
     "requiredPrivilege": "app:registration"
   },
-  "programs": {
-    "id": "bahmni.programs",
-    "extensionPointId": "org.bahmni.home.dashboard",
-    "type": "link",
-    "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
-    "url": "../clinical/#/programs/patient/search",
-    "icon": "icon-bahmni-program",
-    "order": 2,
-    "requiredPrivilege": "app:clinical"
-  },
   "clinical": {
     "id": "bahmni.clinical",
     "extensionPointId": "org.bahmni.home.dashboard",
