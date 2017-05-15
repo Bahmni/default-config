@@ -1870,7 +1870,7 @@
         "config": {
             "reports": [
                 {
-                    "name": "Nutrition status of registered children (new + old)",
+                    "name": "Nutrition status of registered children (new and old)",
                     "type": "MRSGeneric",
                     "config": {
                         "sqlPath": "/var/www/bahmni_config/openmrs/reports/Nutrition_Program/Nutrition_status_of_registered_children.sql"
@@ -1884,7 +1884,7 @@
                     }
                 },
                 {
-                    "name": "< 5 yrs Children receiving (Bi annual)",
+                    "name": "Less then 5 yrs Children receiving (Bi annual)",
                     "type": "MRSGeneric",
                     "config": {
                         "sqlPath": "/var/www/bahmni_config/openmrs/reports/Nutrition_Program/Under_5_yrs_Children_receiving.sql"
@@ -1898,7 +1898,7 @@
                     }
                 },
                 {
-                    "name": "Infant & Young Child Feeding",
+                    "name": "Infant and Young Child Feeding",
                     "type": "MRSGeneric",
                     "config": {
                         "sqlPath": "/var/www/bahmni_config/openmrs/reports/Nutrition_Program/Infant_Young_Child_Feeding.sql"
