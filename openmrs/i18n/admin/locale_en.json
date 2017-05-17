@@ -14,6 +14,7 @@
   "VIEWED_PATIENTPROGRAM_MESSAGE": "User {{userId}} accessed the Visit Dashboard of patient {{patientId}}.",
   "VIEWED_DASHBOARD_OBSERVATION_MESSAGE": "User {{userId}} accessed the Edit Form on  Dashboard of patient {{patientId}}.",
   "VIEWED_DIAGNOSIS_TAB_MESSAGE": "User {{userId}} accessed the diagnosis tab of patient {{patientId}}.",
+  "RUN_REPORT_MESSAGE": "Report {{entityName}} was run by user {{userId}}.",
   "EVENT_ID": "Event ID",
   "CREATED_AT": "Created At",
   "EVENT_TYPE": "Event Type",
