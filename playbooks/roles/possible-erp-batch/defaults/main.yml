@@ -1,6 +1,7 @@
 erp_custom_modules_url: "https://github.com/Possiblehealth/possible-erp-custom/archive/master.zip"
 erp_modules_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/89-artifacts/openerp-modules.zip"
 modules:
+ - asset
  - bahmni_custom
  - web_d3_chart
 modules_erp:
