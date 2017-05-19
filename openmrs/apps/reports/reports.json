@@ -1770,6 +1770,13 @@
       "templateName": "Psychosis Followup Note"
     }
   },
+    "Defaulters list": {
+        "name": "Defaulters List",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/reports/defaultersList.sql"
+        }
+    },
   "Safe Motherhood Program": {
     "name": "Safe Motherhood Program",
     "DHISProgram": true,

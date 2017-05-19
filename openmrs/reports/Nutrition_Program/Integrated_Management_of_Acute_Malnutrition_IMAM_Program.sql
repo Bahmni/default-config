@@ -15,6 +15,10 @@ SELECT
   sum(final.`Children at End of This Month`) AS 'Children at End of This Month'
 FROM
 (SELECT
+  withoutDefaulters.*,
+  defaultersCount.Count As 'Discharge - Defaulter'
+FROM
+(SELECT
   if(age < 6, '< 6 month', '6-59 month')             AS 'Age Group',
   gender                                             AS 'Sex',
   COUNT(DISTINCT lastMonthPatient)                   AS 'Children at End of Last Month',
@@ -23,7 +27,6 @@ FROM
   SUM(IF(adtType = 'Transfer In', 1, 0))             AS 'Transfer In',
   SUM(IF(adtType = 'Recovered', 1, 0))               AS 'Discharge - Recovered',
   SUM(IF(adtType = 'Death', 1, 0))                   AS 'Discharge - Death',
-  SUM(IF(adtType = 'Defaulter', 1, 0))               AS 'Discharge - Defaulter',
   SUM(IF(adtType = 'Not Improved', 1, 0))            AS 'Discharge - Not Improved',
   SUM(IF(adtType = 'IMAM, Refer to Hospital', 1, 0)) AS 'Discharge - Refer to Hospital',
   SUM(IF(adtType = 'Transfer Out - TO', 1, 0))       AS 'Transfer Out',
@@ -48,7 +51,33 @@ FROM (
              AND TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) < 60
              AND (oAdtType.question_full_name = 'Admission Type' OR
                   oAdtType.question_full_name = 'Status At Discharge')) IMAM
-GROUP BY `Age Group`,`Sex`
+GROUP BY `Age Group`,`Sex`) as withoutDefaulters
+LEFT JOIN (SELECT
+             count(DISTINCT t3.patient_id)                                                        AS `Count`,
+             IF(TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) < 6, '< 6 month', '6-59 month') AS 'Age Group',
+             p.gender                                                                             AS `Sex`
+           FROM nonVoidedQuestionAnswerObs prevObs
+             LEFT JOIN nonVoidedQuestionAnswerObs currentObs
+               ON currentObs.person_id = prevObs.person_id
+                  AND currentObs.obs_datetime <= DATE_ADD(prevObs.obs_datetime, INTERVAL 28 DAY)
+                  AND currentObs.obs_datetime > prevObs.obs_datetime
+                  AND currentObs.obs_datetime <= '#endDate#'
+                  AND currentObs.question_full_name = 'Admission Type'
+
+             INNER JOIN patient_identifier t3 ON
+                                                prevObs.person_id = t3.patient_id AND t3.identifier_type = 3 AND !t3.voided
+             INNER JOIN encounter e ON e.encounter_id = prevObs.encounter_id AND !e.voided
+             INNER JOIN visit v ON v.visit_id = e.visit_id AND !v.voided
+
+             INNER JOIN person p ON p.person_id = prevObs.person_id AND !p.voided
+           WHERE
+             currentObs.obs_id IS NULL
+             AND prevObs.obs_datetime >= DATE_SUB('#startDate#', INTERVAL 28 DAY)
+             AND prevObs.obs_datetime <= DATE_SUB('#endDate#', INTERVAL 28 DAY)
+             AND prevObs.question_full_name = 'Admission Type'
+             AND TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) < 60
+           GROUP BY `Age Group`, `Sex`) as defaultersCount ON defaultersCount.Sex = withoutDefaulters.Sex
+                                                       AND withoutDefaulters.`Age Group` = defaultersCount.`Age Group`
 UNION ALL SELECT '< 6 month','F',0,0,0,0,0,0,0,0,0,0,0
 UNION ALL SELECT '< 6 month','M',0,0,0,0,0,0,0,0,0,0,0
 UNION ALL SELECT '< 6 month','O',0,0,0,0,0,0,0,0,0,0,0
