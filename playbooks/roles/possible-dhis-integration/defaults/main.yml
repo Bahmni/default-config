@@ -1,6 +1,0 @@
-dhis_integration_rpm_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/dhis-integration-1.0-1.noarch.rpm"
-dhis_url: ""
-dhis_user: ""
-dhis_password: ""
-openmrs_db_user: ""
-openmrs_db_password: ""
