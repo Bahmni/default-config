@@ -34,5 +34,8 @@
   "CLOSE_OPD_VISIT_MESSAGE": "User {{userId}} close OPD visit of patient {{patientId}}.",
   "CLOSE_OPD_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close OPD visit of patient {{patientId}}, but failed.",
   "START_OPD_VISIT_MESSAGE": "User {{userId}} start a new OPD visit of patient {{patientId}}.",
-  "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active visit of patient {{patientId}}."
+  "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active visit of patient {{patientId}}.",
+  "USER_LOGOUT_SUCCESS_MESSAGE": "User {{userId}} logged out.",
+  "USER_LOGIN_SUCCESS_MESSAGE": "User {{userId}} logged in.",
+  "USER_LOGIN_FAILED_MESSAGE": "User {{entityName}} had a failed login attempt."
 }
