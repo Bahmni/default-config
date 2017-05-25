@@ -19,7 +19,7 @@ INNER JOIN concept_name t5 ON t1.concept_id = t5.concept_id AND t5.voided = 0
 AND t5.concept_name_type = 'FULLY_SPECIFIED'
 WHERE t5.name IN ('Delivery Note, Outcome of Delivery')
 AND t1.voided = 0 AND
-(t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')
+(DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
 GROUP BY t2.Name) AS MotherDetails
 UNION ALL
 (
@@ -55,7 +55,7 @@ WHERE t5.name IN ('Delivery Note, Outcome of Delivery')
 AND t1.voided = 0
 ) T2 ON T1.encounter_id = T2.encounter_id
 WHERE
-(T1.obs_datetime >='#startDate#' AND T1.obs_datetime <= '#endDate#')
+(DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
 GROUP BY T1.Answer, T2.Answer
 ORDER BY T1.Answer, T2.Answer) AS InfantDetails
 GROUP BY Gender

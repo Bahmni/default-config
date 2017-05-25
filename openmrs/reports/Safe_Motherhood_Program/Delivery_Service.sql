@@ -22,7 +22,7 @@ WHERE t1.concept_id IN (SELECT concept_id
                                               WHERE NAME IN ('Non SBA Health worker', 'Skilled Birth Attendant') AND
                                                     voided = 0)
      AND t1.voided = 0 AND
-     (t1.obs_datetime >= '#startDate#' AND t1.obs_datetime <= '#endDate#')
+     (DATE(t1.obs_datetime) >= '#startDate#' AND DATE(t1.obs_datetime) <= '#endDate#')
 GROUP BY t2.name
 -- ----------------------------------------------
 UNION ALL SELECT 'SBA',0

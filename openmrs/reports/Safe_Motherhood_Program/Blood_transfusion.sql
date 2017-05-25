@@ -15,7 +15,7 @@ FROM
                                  AND t5.concept_name_type = 'FULLY_SPECIFIED'
  WHERE t5.name = 'Delivery Note, Blood transfusion provided'
        AND t1.voided = 0 AND t1.value_coded = 1 AND
-       (t1.obs_datetime >= '#startDate#' AND t1.obs_datetime <= '#endDate#')
+       (DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
  GROUP BY t2.name
 UNION ALL
 SELECT
@@ -28,7 +28,7 @@ SELECT
                                  AND t5.concept_name_type = 'FULLY_SPECIFIED'
  WHERE t5.name LIKE 'Delivery Note, Blood transfusion quantity%'
        AND t1.voided = 0 AND
-       (t1.obs_datetime >= '#startDate#' AND t1.obs_datetime <= '#endDate#')
+       (DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
  GROUP BY t5.name
 -- ----------------------------------------------
 UNION ALL SELECT 'No of Females',0

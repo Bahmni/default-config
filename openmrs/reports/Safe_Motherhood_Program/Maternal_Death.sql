@@ -7,4 +7,4 @@ SELECT
 FROM nonVoidedQuestionObs obs
   LEFT JOIN nonVoidedConceptFullName answer ON obs.value_coded = answer.concept_id
 WHERE question_full_name IN ('Death Note, Maternal Death','PNC, Date of Neonatal Death')
-      AND obs_datetime >= '#startDate#' AND obs_datetime <= '#endDate#';
+      AND (DATE(obs_datetime) BETWEEN '#startDate#' AND '#endDate#');

@@ -27,8 +27,7 @@ INNER JOIN visit t4 ON t3.visit_id = t4.visit_id
 INNER JOIN concept_name t5 ON t1.concept_id = t5.concept_id AND t5.voided = 0
 AND t5.concept_name_type = 'FULLY_SPECIFIED'
 WHERE t5.name IN ('Delivery Note, Liveborn weight')
-AND t1.voided = 0 AND
-(t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')) AS InfantBirthWeights
+AND t1.voided = 0 AND (DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')) AS InfantBirthWeights
 INNER JOIN
 (SELECT t1.encounter_id, CASE
 WHEN t2.name = 'Asphyxiated' THEN 'Asphyxia'
@@ -44,7 +43,7 @@ INNER JOIN concept_name t5 ON t1.concept_id = t5.concept_id AND t5.voided = 0
 AND t5.concept_name_type = 'FULLY_SPECIFIED'
 WHERE t5.name IN ('Delivery Note, New Born Status')
 AND t1.voided = 0 AND
-(t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')) AS InfantBirthStatus
+(DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')) AS InfantBirthStatus
 ON InfantBirthWeights.encounter_id = InfantBirthStatus.encounter_id) AS T1
 GROUP BY T1.Weight_Category
 -- ----------------------------------------------

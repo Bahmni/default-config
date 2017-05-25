@@ -19,7 +19,7 @@ INNER JOIN concept_name t5 ON t1.concept_id = t5.concept_id AND t5.voided = 0
 AND t5.concept_name_type = 'FULLY_SPECIFIED'
 WHERE t5.name IN ('Delivery Note, Fetal Presentation')
 AND t1.voided = 0 AND
-(t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')
+(DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
 GROUP BY t1.obs_group_id, t5.name, t2.Name) T1
 INNER JOIN
 (SELECT t1.obs_group_id, t5.name AS Question, t2.name AS Answer FROM obs t1
@@ -31,7 +31,7 @@ INNER JOIN concept_name t5 ON t1.concept_id = t5.concept_id AND t5.voided = 0
 AND t5.concept_name_type = 'FULLY_SPECIFIED'
 WHERE t5.name IN ('Delivery Note, Method of Delivery')
 AND t1.voided = 0 AND
-(t1.obs_datetime >='#startDate#' AND t1.obs_datetime <= '#endDate#')
+(DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
 GROUP BY t1.obs_group_id, t5.name, t2.Name) T2 ON
 T1.obs_group_id = T2.obs_group_id) DeliveryDetails
 GROUP BY DeliveryDetails.TypeofDelivery

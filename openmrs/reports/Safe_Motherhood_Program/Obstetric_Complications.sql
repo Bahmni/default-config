@@ -14,7 +14,7 @@ FROM nonVoidedQuestionAnswerObs o
     ON crterm.concept_source_id = crsorce.concept_source_id AND crsorce.name = 'ICD-10-WHO'
 WHERE o.question_full_name = 'ANC-Obstetric Complication'
       AND o.answer_full_name NOT LIKE '%Not present%'
-      AND o.obs_datetime >= '#startDate#' AND o.obs_datetime <= '#endDate#'
+      AND (DATE(o.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
 GROUP BY crterm.code
  UNION ALL SELECT 'Ectopic Pregnancy',            'O00',0
  UNION ALL SELECT 'Abortion Complication',        'O08',0

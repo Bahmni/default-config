@@ -22,7 +22,7 @@ FROM
                          FROM concept_name
                          WHERE NAME = 'ANC, Completed 4 ANC visits' AND voided = 0)
        AND t1.value_coded = 1 AND
-       (t1.obs_datetime >= '#startDate#' AND t1.obs_datetime <= '#endDate#')
+       (DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
        AND t1.voided = 0)
     UNION ALL
     (SELECT
@@ -39,7 +39,7 @@ FROM
                           WHERE NAME IN ('ANC, 1st (per protocol)', 'ANC, 1st (any time)')
                                 AND voided = 0)
        AND
-       (t1.obs_datetime >= '#startDate#' AND t1.obs_datetime <= '#endDate#')
+       (DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
        AND
        t1.voided = 0
     )) anc_table
