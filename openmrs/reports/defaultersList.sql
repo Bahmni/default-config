@@ -11,7 +11,7 @@ FROM nonVoidedQuestionAnswerObs prevObs
     ON currentObs.person_id = prevObs.person_id
        AND currentObs.obs_datetime <= DATE_ADD(prevObs.obs_datetime, INTERVAL 28 DAY)
        AND currentObs.obs_datetime > prevObs.obs_datetime
-       AND currentObs.obs_datetime <= '#endDate#'
+       AND DATE(currentObs.obs_datetime) <= '#endDate#'
        AND currentObs.question_full_name = 'Admission Type'
 
   INNER JOIN patient_identifier t3 ON
@@ -29,5 +29,5 @@ FROM nonVoidedQuestionAnswerObs prevObs
 WHERE
   currentObs.obs_id is NULL
   AND prevObs.obs_datetime >= DATE_SUB('#startDate#', INTERVAL 28 DAY)
-  AND prevObs.obs_datetime <= DATE_SUB('#endDate#',INTERVAL 28 DAY)
+  AND DATE(prevObs.obs_datetime) <= DATE_SUB('#endDate#',INTERVAL 28 DAY)
   AND prevObs.question_full_name = 'Admission Type';
