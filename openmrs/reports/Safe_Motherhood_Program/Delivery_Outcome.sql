@@ -55,7 +55,7 @@ WHERE t5.name IN ('Delivery Note, Outcome of Delivery')
 AND t1.voided = 0
 ) T2 ON T1.encounter_id = T2.encounter_id
 WHERE
-(DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
+(DATE(T1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
 GROUP BY T1.Answer, T2.Answer
 ORDER BY T1.Answer, T2.Answer) AS InfantDetails
 GROUP BY Gender
