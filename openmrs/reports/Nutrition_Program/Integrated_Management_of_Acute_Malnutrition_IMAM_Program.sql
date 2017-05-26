@@ -61,7 +61,7 @@ LEFT JOIN (SELECT
                ON currentObs.person_id = prevObs.person_id
                   AND currentObs.obs_datetime <= DATE_ADD(prevObs.obs_datetime, INTERVAL 28 DAY)
                   AND currentObs.obs_datetime > prevObs.obs_datetime
-                  AND currentObs.obs_datetime <= '#endDate#'
+                  AND DATE(currentObs.obs_datetime) <= '#endDate#'
                   AND currentObs.question_full_name = 'Admission Type'
 
              INNER JOIN patient_identifier t3 ON
@@ -73,7 +73,7 @@ LEFT JOIN (SELECT
            WHERE
              currentObs.obs_id IS NULL
              AND prevObs.obs_datetime >= DATE_SUB('#startDate#', INTERVAL 28 DAY)
-             AND prevObs.obs_datetime <= DATE_SUB('#endDate#', INTERVAL 28 DAY)
+             AND DATE(prevObs.obs_datetime) <= DATE_SUB('#endDate#', INTERVAL 28 DAY)
              AND prevObs.question_full_name = 'Admission Type'
              AND TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) < 60
            GROUP BY `Age Group`, `Sex`) as defaultersCount ON defaultersCount.Sex = withoutDefaulters.Sex
