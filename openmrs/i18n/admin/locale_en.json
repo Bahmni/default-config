@@ -31,11 +31,11 @@
   "EDIT_PATIENT_MESSAGE": "User {{userId}} edit patient {{patientId}}.",
   "ACCESSED_REGISTRATION_SECOND_PAGE_MESSAGE": "User {{userId}} accessed registration second page of patient {{patientId}}.",
   "PRINT_PATIENT_STICKER_MESSAGE": "User {{userId}} print sticker of patient {{patientId}}.",
-  "CLOSE_OPD_VISIT_MESSAGE": "User {{userId}} close OPD visit of patient {{patientId}}.",
-  "CLOSE_OPD_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close OPD visit of patient {{patientId}}, but failed.",
-  "START_OPD_VISIT_MESSAGE": "User {{userId}} start a new OPD visit of patient {{patientId}}.",
-  "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active visit of patient {{patientId}}.",
   "USER_LOGOUT_SUCCESS_MESSAGE": "User {{userId}} logged out.",
   "USER_LOGIN_SUCCESS_MESSAGE": "User {{userId}} logged in.",
-  "USER_LOGIN_FAILED_MESSAGE": "User {{entityName}} had a failed login attempt."
+  "USER_LOGIN_FAILED_MESSAGE": "User {{entityName}} had a failed login attempt.",
+  "OPEN_VISIT_MESSAGE": "User {{userId}} started a visit {{entityName}} for patient {{patientId}} ",
+  "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active visit {{entityName}} of patient {{patientId}}.",
+  "CLOSE_VISIT_MESSAGE": "User {{userId}} closed visit {{entityName}} of patient {{patientId}}.",
+  "CLOSE_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close visit {{entityName}} of patient {{patientId}}, but failed."
 }
