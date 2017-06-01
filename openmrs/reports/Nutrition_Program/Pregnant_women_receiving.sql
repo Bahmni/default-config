@@ -27,7 +27,7 @@ FROM
          AND ov1.value_numeric > 0) AS last_9_months
     ON this_month.patient = last_9_months.patient
 WHERE last_9_months.patient IS NULL
-
+# filter on ANC Visit -> 1st (any time )
 UNION ALL
 
 -- Pregnant women receiving - 180 iron tablets
@@ -35,23 +35,33 @@ SELECT
   0,COUNT(DISTINCT result.patient),0,0,0
 FROM
   (SELECT
-     ov.person_id          AS patient,
-     SUM(ov.value_numeric) AS TABLET_COUNT
-   FROM nonVoidedQuestionObs ov
-   WHERE ov.question_full_name = 'ANC, Number of IFA Tablets given'
-         AND date(ov.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
-   GROUP BY ov.person_id) AS result
-WHERE result.TABLET_COUNT >= 180
-
+     ifaTablet.person_id as patient
+   FROM nonVoidedQuestionObs ifaTablet
+     INNER JOIN nonVoidedQuestionAnswerObs ancVisit
+       ON ancVisit.person_id = ifaTablet.person_id AND ancVisit.obs_id <> ifaTablet.obs_id
+   WHERE ifaTablet.question_full_name = 'ANC, Number of IFA Tablets given'
+         AND date(ifaTablet.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
+         AND ancVisit.question_full_name = 'ANC, ANC Visit'
+         AND ancVisit.answer_full_name = 'ANC, 4th (per protocol)'
+         AND date(ancVisit.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
+  ) AS result
+#done filter ANC Visit -> 4th ( per protocol ) and remove 180 tablet count filter
 UNION ALL
 
 -- Pregnant women receiving - Deworming tablets
 SELECT
-  0,0,COUNT(DISTINCT (ov.person_id)),0,0
-FROM nonVoidedQuestionObs ov
-WHERE ov.question_full_name = 'ANC, Albendazole given'
-      AND (date(ov.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
-      AND ov.value_coded = 1
+  0,0,COUNT(DISTINCT (dewormTablet.person_id)),0,0
+FROM
+  nonVoidedQuestionObs dewormTablet
+  INNER JOIN nonVoidedQuestionAnswerObs ancVisit
+    ON ancVisit.person_id = dewormTablet.person_id AND ancVisit.obs_id <> dewormTablet.obs_id
+WHERE dewormTablet.question_full_name = 'ANC, Albendazole given'
+      AND (date(dewormTablet.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
+      AND dewormTablet.value_coded = 1
+      AND ancVisit.question_full_name = 'ANC, ANC Visit'
+      AND ancVisit.answer_full_name = 'ANC, 1st (any time)'
+      AND (date(ancVisit.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
+#done filter on ANC Visit -> 1st (any time )
 
 UNION ALL
 
