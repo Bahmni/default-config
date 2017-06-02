@@ -26,8 +26,11 @@ FROM
          AND date(ov1.obs_datetime) NOT BETWEEN '#startDate#' AND '#endDate#'
          AND ov1.value_numeric > 0) AS last_9_months
     ON this_month.patient = last_9_months.patient
+   INNER JOIN nonVoidedQuestionAnswerObs ancVisit ON ancVisit.person_id = this_month.patient
 WHERE last_9_months.patient IS NULL
-# filter on ANC Visit -> 1st (any time )
+      AND ancVisit.question_full_name = 'ANC, ANC Visit'
+      AND ancVisit.answer_full_name = 'ANC, 1st (any time)'
+      AND date(ancVisit.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
 UNION ALL
 
 -- Pregnant women receiving - 180 iron tablets
@@ -45,7 +48,6 @@ FROM
          AND ancVisit.answer_full_name = 'ANC, 4th (per protocol)'
          AND date(ancVisit.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
   ) AS result
-#done filter ANC Visit -> 4th ( per protocol ) and remove 180 tablet count filter
 UNION ALL
 
 -- Pregnant women receiving - Deworming tablets
@@ -61,7 +63,6 @@ WHERE dewormTablet.question_full_name = 'ANC, Albendazole given'
       AND ancVisit.question_full_name = 'ANC, ANC Visit'
       AND ancVisit.answer_full_name = 'ANC, 1st (any time)'
       AND (date(ancVisit.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
-#done filter on ANC Visit -> 1st (any time )
 
 UNION ALL
 
