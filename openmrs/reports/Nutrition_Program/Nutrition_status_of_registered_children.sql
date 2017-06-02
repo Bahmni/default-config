@@ -28,7 +28,9 @@ FROM (SELECT
         JOIN encounter e ON v.visit_id = e.visit_id
         JOIN nonVoidedQuestionAnswerObs oStatus ON e.encounter_id = oStatus.encounter_id
         JOIN nonVoidedQuestionAnswerObs oVisitType ON e.encounter_id = oVisitType.encounter_id
+        JOIN person_address address ON p.person_id = address.person_id
       WHERE !p.voided AND !v.voided AND !e.voided
+            AND address.address1 ='10'
             AND DATE(oStatus.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             AND DATE(oVisitType.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             AND TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) < 24

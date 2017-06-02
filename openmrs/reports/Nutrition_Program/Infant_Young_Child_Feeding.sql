@@ -14,7 +14,7 @@ WHERE !p.voided AND
       DATE(onlyBreastFeeding.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
       AND (onlyBreastFeeding.question_full_name IN
            ('Nutrition, Only Breast Feeding for 6 Months', 'Nutrition, Breast Feeding and Light Food'))
-      AND address.address1 ='10' AND address.county_district = 'saanfebagar'
+      AND address.address1 ='10'
 GROUP BY question
 UNION ALL SELECT 'Excl. breast feeding', 0
 UNION ALL SELECT 'Complementary feeding', 0
