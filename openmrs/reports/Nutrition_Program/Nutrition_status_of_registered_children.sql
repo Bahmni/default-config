@@ -11,11 +11,11 @@ FROM
 (SELECT
   visitType                                       AS "Visit Type",
   SUM(IF(age < 12 && status = 'Normal', 1, 0))    AS "0-11 Normal",
-  SUM(IF(age < 12 && status = 'Severe', 1, 0))    AS "0-11 Moderate",
-  SUM(IF(age < 12 && status = 'Moderate', 1, 0))  AS "0-11 Severe",
+  SUM(IF(age < 12 && status = 'Severe', 1, 0))    AS "0-11 Severe",
+  SUM(IF(age < 12 && status = 'Moderate', 1, 0))  AS "0-11 Moderate",
   SUM(IF(age >= 12 && status = 'Normal', 1, 0))   AS "12-23 Normal",
-  SUM(IF(age >= 12 && status = 'Severe', 1, 0))   AS "12-23 Moderate",
-  SUM(IF(age >= 12 && status = 'Moderate', 1, 0)) AS "12-23 Severe"
+  SUM(IF(age >= 12 && status = 'Severe', 1, 0))   AS "12-23 Severe",
+  SUM(IF(age >= 12 && status = 'Moderate', 1, 0)) AS "12-23 Moderate"
 FROM (SELECT
         TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) AS age,
         oStatus.answer_full_name                          AS status,
