@@ -14,7 +14,7 @@
   "VIEWED_PATIENTPROGRAM_MESSAGE": "User {{userId}} accessed the Visit Dashboard of patient {{patientId}}.",
   "VIEWED_DASHBOARD_OBSERVATION_MESSAGE": "User {{userId}} accessed the Edit Form on  Dashboard of patient {{patientId}}.",
   "VIEWED_DIAGNOSIS_TAB_MESSAGE": "User {{userId}} accessed the diagnosis tab of patient {{patientId}}.",
-  "RUN_REPORT_MESSAGE": "Report {{entityName}} was run by user {{userId}}.",
+  "RUN_REPORT_MESSAGE": "Report {{params.reportName}} was run by user {{userId}}.",
   "EVENT_ID": "Event ID",
   "CREATED_AT": "Created At",
   "EVENT_TYPE": "Event Type",
@@ -33,9 +33,9 @@
   "PRINT_PATIENT_STICKER_MESSAGE": "User {{userId}} print sticker of patient {{patientId}}.",
   "USER_LOGOUT_SUCCESS_MESSAGE": "User {{userId}} logged out.",
   "USER_LOGIN_SUCCESS_MESSAGE": "User {{userId}} logged in.",
-  "USER_LOGIN_FAILED_MESSAGE": "User {{entityName}} had a failed login attempt.",
-  "OPEN_VISIT_MESSAGE": "User {{userId}} started a visit {{entityName}} for patient {{patientId}} ",
-  "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active visit {{entityName}} of patient {{patientId}}.",
-  "CLOSE_VISIT_MESSAGE": "User {{userId}} closed visit {{entityName}} of patient {{patientId}}.",
-  "CLOSE_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close visit {{entityName}} of patient {{patientId}}, but failed."
+  "USER_LOGIN_FAILED_MESSAGE": "User {{params.userName}} had a failed login attempt.",
+  "OPEN_VISIT_MESSAGE": "User {{userId}} started {{params.visitType}} visit for patient {{patientId}} ",
+  "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active {{params.visitType}} visit  of patient {{patientId}}.",
+  "CLOSE_VISIT_MESSAGE": "User {{userId}} closed {{params.visitType}} visit of patient {{patientId}}.",
+  "CLOSE_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close {{params.visitType}} visit of patient {{patientId}}, but failed."
 }
