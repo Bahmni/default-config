@@ -3,6 +3,9 @@
   },
   "tabConfig": {
     "allMedicationTabConfig": {
+      "orderSet": {
+        "calculateDoseOnCurrentVisitValues": true
+      },
       "inputOptionsConfig": {
         "defaultDurationUnit": "Day(s)",
         "hideOrderSet" : false,
