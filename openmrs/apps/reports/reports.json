@@ -91,7 +91,34 @@
      "applyDateRangeFor": "obsDate",
      "visitTypesToFilter": []
      }
-},
+    },
+    "formBuilderReport":{
+        "name": "Form builder form Report",
+        "type": "formBuilder",
+        "config": {
+            "patientAttributes": [
+                "caste",
+                "class",
+                "education",
+                "occupation"
+            ],
+            "patientAddresses": [
+                "address3",
+                "city_village"
+            ],
+            "visitAttributes": [
+                "Visit Status"
+            ],
+            "showVisitInfo": true,
+            "showProvider": true,
+            "formNamesToFilter": [ "Test Form"],
+            "conceptNameDisplayFormat": "shortNamePreferred",
+            "locationTagsToFilter": [],
+            "programsToFilter": [],
+            "applyDateRangeFor": "obsDate",
+            "visitTypesToFilter": []
+        }
+    },
     "chiefComplaintReport": {
         "name": "Chief Complaint Report",
         "type": "obsCount",
