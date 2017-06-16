@@ -4,7 +4,7 @@
   "tabConfig": {
     "allMedicationTabConfig": {
       "orderSet": {
-        "calculateDoseOnCurrentVisitValues": true
+        "calculateDoseOnlyOnCurrentVisitValues": false
       },
       "inputOptionsConfig": {
         "defaultDurationUnit": "Day(s)",
