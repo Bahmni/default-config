@@ -67,7 +67,8 @@ Once you open the app you land on DHIS integration app page, where you select th
 1. Configure the [concatenated reports ](https://bahmni.atlassian.net/wiki/display/BAH/Reports#Reports-6.ConcatenatingMultipleReports) for the program
 2. Put the following configuration in the concatenated report to make it DHIS2 program.
    > "DHISProgram": true,
-   > Example: [Safe motherhood program](https://github.com/Possiblehealth/possible-config/blob/8228d24730d854fa282ee04f16ec3d598e86909c/openmrs/apps/reports/reports.json#L1780-L1782)
+
+Example: [Safe motherhood program](https://github.com/Possiblehealth/possible-config/blob/8228d24730d854fa282ee04f16ec3d598e86909c/openmrs/apps/reports/reports.json#L1780-L1782)
 
 3. Create a DHIS configuration file for the program with the name of program under '/var/www/bahmni_config/dhis2/' folder.
 To use different folder change 'dhis.config.directory' configuration at '/etc/dhis-integration/dhis-integration.yml'.
