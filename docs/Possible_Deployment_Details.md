@@ -1,19 +1,23 @@
 Possible Deployment Details 
 ---
 
-|On this page|
-|:---|
-|[Intended Audience](#intended-audience)|
-|[Purpose and Objective](#purpose-and-objective)|
-|[Abbreviations and Terminologies](#abbreviations-and-terminologies)|
-|[High level diagram of Possible hospital setup](#high-level-diagram-of-possible-hospital-setup)|
-|[Bahmni deployment setup](#bahmni-deployment-setup)|
-|[Extra Github Repositories](#extra-github-repositories)|
-|[Configurations](#configurations)|
-|[Backup strategy and configuration](#backup-strategy-and-configuration)|
-|[Monitoring setup](#monitoring-setup)|
-|[Contact Persons](#contact-persons)|
-|[Appendix and References](#appendix-and-references)|
+<details>
+<summary>On this page</summary>
+
+- [Intended Audience](#intended-audience)
+- [Purpose and Objective](#purpose-and-objective)
+- [Abbreviations and Terminologies](#abbreviations-and-terminologies)
+- [High level diagram of Possible hospital setup](#high-level-diagram-of-possible-hospital-setup)
+- [Bahmni deployment setup](#bahmni-deployment-setup)
+- [Extra Github Repositories](#extra-github-repositories)
+- [Configurations](#configurations)
+- [Backup strategy and configuration](#backup-strategy-and-configuration)
+- [Monitoring setup](#monitoring-setup)
+- [Contact Persons](#contact-persons)
+- [Appendix and References](#appendix-and-references)
+
+</details>
+
 
 #### Intended Audience
 The intended audience of this document are i) Implementation Leads and ii) Implementation Engineers who are familiar with the Bahmni.
