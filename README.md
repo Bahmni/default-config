@@ -1,3 +1,7 @@
+|Other Documents|
+|:--|
+|[Possible Deployment Details](./docs/Possible_Deployment_Details.md)|
+
 ## Default Bahmni configuration and data. 
 ======================================================================
 
