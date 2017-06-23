@@ -17,14 +17,14 @@ The purpose of this document is to give a brief overview about the Bahmni deploy
 
 #### High level diagram of Possible hospital set up
 The image below depicts different rooms/buildings of the Bayalpata hospital
-[img here]
+!["Hospital setup image"](../attachments/hospital_setup.png "Hospital setup image")
 
 #### Bahmni deployment setup
 At present we have 3 centos 6.7 machines dedicated for Bahmni.
   * Prod Master (xx.x.x.45)
   * Prod Slave  (xx.x.x.30)
   * Pre-Prod  (xx.x.x.40)
-[img here]
+!["Deployment setup image"](../attachments/deployment_setup.png "Deployment setup image")
 
 We have the following modules installed.
 
