@@ -1,18 +1,20 @@
 Integration with Care-Stream
 ---
+<details>
+<summary>On this page</summary>
 
-|On this page|
-|:---|
-|[Some Useful terms](#some-useful-terms)|
-|[Carestream](#carestream)| 
-|[ImageSuite](#imagesuite)|
-|[Modality](#modality)|
-|[DICOM](#dicom)|
-|[Study](#study)|
-|[Work List](#work-list)|
-|[PACS](#pacs)|
-|[1. Order Creation Flow](#1.order-creation-flow)|
-|[2. DICOM View Flow](#2.dicom-view-flow)|
+- [Some Useful terms](#some-useful-terms)
+- [Carestream](#carestream)
+- [ImageSuite](#imagesuite)
+- [Modality](#modality)
+- [DICOM](#dicom)
+- [Study](#study)
+- [Work List](#work-list)
+- [PACS](#pacs)
+- [Order Creation Flow](#order-creation-flow)
+- [DICOM View Flow](#dicom-view-flow)
+</details>
+
 
 ```markdown
 This does not include the detailed steps for Integration of Bahmni with Care-Stream. Below are some brief steps.
