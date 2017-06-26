@@ -1,4 +1,6 @@
-###### [Wiki](docs#possible-specific-documentations)
+
+#### [Wiki](docs/Wiki.md#wiki)
+
 
 ## Default Bahmni configuration and data. 
 
