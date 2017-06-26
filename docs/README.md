@@ -1,4 +1,4 @@
-## Possible specific documentations
+## Wiki
 
 - [DHIS2 integration](docs/DHIS2_Integration.md)
 - [Integration with Care Stream](docs/Integration_with_Care_Stream.md)
