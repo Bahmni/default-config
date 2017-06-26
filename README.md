@@ -1,4 +1,4 @@
-###### [Other Documentations](docs#possible-specific-documentations)
+###### [Wiki](docs#possible-specific-documentations)
 
 ## Default Bahmni configuration and data. 
 
