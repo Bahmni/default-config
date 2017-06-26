@@ -1,9 +1,6 @@
-|Other Documents|
-|:--|
-|[Possible Deployment Details](./docs/Possible_Deployment_Details.md)|
+###### [Other Documentations](docs#possible-specific-documentations)
 
 ## Default Bahmni configuration and data. 
-======================================================================
 
 #### Deploy
 - under server (apache) www directory
