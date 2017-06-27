@@ -118,5 +118,16 @@
     "icon": "fa fa-terminal",
     "order": 13,
     "requiredPrivilege": "app:admin"
+  },
+  "appointmentScheduling": {
+    "id": "bahmni.appointment.scheduling",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_APPOINTMENT_SCHEDULING_KEY",
+    "url": "/appointment-scehduling",
+    "icon": "fa fa-terminal",
+    "order": 14,
+    "requiredPrivilege": "app:admin"
   }
+
 }
