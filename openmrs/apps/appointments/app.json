@@ -6,5 +6,8 @@
       "id": "org.bahmni.appointments",
       "description": "Bahmni Admin Page"
     }
-  ]
+  ],
+  "config": {
+    "enableSpecialities": false
+  }
 }
