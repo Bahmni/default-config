@@ -16,7 +16,7 @@
                     "address1",
                     "address2",
                     "cityVillage",
-                    "countryDistrict"
+                    "countyDistrict"
                 ]
             },
             "diagnosis":{  
@@ -312,7 +312,7 @@
                     "address1",
                     "address2",
                     "cityVillage",
-                    "countryDistrict"
+                    "countyDistrict"
                 ],
                 "displayOrder":0
             },
