@@ -39,7 +39,7 @@
   "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active {{params.visitType}} visit  of patient {{patientId}}.",
   "CLOSE_VISIT_MESSAGE": "User {{userId}} closed {{params.visitType}} visit of patient {{patientId}}.",
   "CLOSE_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close {{params.visitType}} visit of patient {{patientId}}, but failed.",
-  "EDIT_ENCOUNTER_MESSAGE": "User {{userId}} edited an {{params.encounterType}} encounter of patient {{patientID}}",
+  "EDIT_ENCOUNTER_MESSAGE": "User {{userId}} edited {{params.encounterType}} encounter of patient {{patientId}}",
   "MODULE_LABEL_REGISTRATION_KEY": "Registration",
   "MODULE_LABEL_CLINICAL_KEY": "Clinical",
   "MODULE_LABEL_INPATIENT_KEY": "InPatient",
