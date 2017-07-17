@@ -21,6 +21,7 @@
   "USERNAME": "Username",
   "PATIENT_ID": "Patient ID",
   "MESSAGE": "Message",
+  "MODULE": "Module",
   "MATCHING_EVENTS_NOT_FOUND": "No matching events found for given criteria !!",
   "INVALID_DATE": "Please enter valid date !!",
   "NO_EVENTS_FOUND": "No events to display !!",
@@ -37,5 +38,13 @@
   "OPEN_VISIT_MESSAGE": "User {{userId}} started {{params.visitType}} visit for patient {{patientId}} ",
   "EDIT_VISIT_MESSAGE": "User {{userId}} edit currently active {{params.visitType}} visit  of patient {{patientId}}.",
   "CLOSE_VISIT_MESSAGE": "User {{userId}} closed {{params.visitType}} visit of patient {{patientId}}.",
-  "CLOSE_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close {{params.visitType}} visit of patient {{patientId}}, but failed."
+  "CLOSE_VISIT_FAILED_MESSAGE": "User {{userId}} tries to close {{params.visitType}} visit of patient {{patientId}}, but failed.",
+  "EDIT_ENCOUNTER_MESSAGE": "User {{userId}} edited {{params.encounterType}} encounter of patient {{patientId}}",
+  "MODULE_LABEL_REGISTRATION_KEY": "Registration",
+  "MODULE_LABEL_CLINICAL_KEY": "Clinical",
+  "MODULE_LABEL_INPATIENT_KEY": "InPatient",
+  "MODULE_LABEL_RADIOLOGY_UPLOAD_KEY": "Radiology Upload",
+  "MODULE_LABEL_PATIENT_DOCUMENTS_KEY": "Patient Documents",
+  "MODULE_LABEL_ADMIN_KEY": "Admin",
+  "MODULE_LABEL_REPORTS_KEY": "Reports"
 }
