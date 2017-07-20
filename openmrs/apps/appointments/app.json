@@ -8,6 +8,7 @@
     }
   ],
   "config": {
-    "enableSpecialities": false
+    "enableSpecialities": true,
+    "startOfWeek": 1
   }
 }
