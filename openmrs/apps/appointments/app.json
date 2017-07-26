@@ -9,7 +9,7 @@
   ],
   "config": {
     "enableSpecialities": true,
-    "startOfWeek": 1,
+    "startOfWeek": 2,
     "enableServiceTypes": true
   }
 }
