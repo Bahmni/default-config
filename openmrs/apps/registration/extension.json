@@ -56,5 +56,18 @@
         },
         "order": 2,
         "requiredPrivilege": "Edit Visits"
+    },
+    "nutritionalValue":{
+        "id": "bahmni.registration.conceptSetGroup.nutritionalValue",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "forms",
+        "extensionParams": {
+            "formName": "Nutritional Values",
+            "conceptNames": ["Height", "Weight", "BMI Data", "BMI Status Data"],
+            "required":true,
+            "showLatest": true
+        },
+        "order": 3,
+        "requiredPrivilege": "Edit Visits"
     }
 }
