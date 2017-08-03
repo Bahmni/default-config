@@ -111,7 +111,8 @@
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "OPD Summary",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/nhn-logo.png",
+		"showNameAndImage": true
         },
         "sections": {
             "patientinformation": {
@@ -196,7 +197,93 @@
                 "displayOrder": 5
             }
         }
-    },
+},
+    "test_summary": {
+        "title": "OPD One Pager",
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "OPD One Pager",
+            "logo": "../images/nhn-logo.png",
+                "showNameAndImage": true
+        },
+        "sections": {
+            "patientinformation": {
+                "type": "patientInformation",
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": [],
+                    "addressFields": [
+                        "cityVillage",
+                        "countyDistrict"
+                    ]
+                },
+                "displayOrder": 0
+            },
+            "diagnosis": {
+                "type": "diagnosis",
+                "config": {
+                    "title": "Diagnoses",
+                    "showCertainty": true,
+                    "showOrder": true,
+                    "showDetailsButton": true
+                },
+                "displayOrder": 1
+            },
+            "observation": {
+                "type": "observation",
+                "title": "Observation",
+                "config": {
+                    "numberOfVisits": 2,
+                    "obsIgnoreList": [
+                        "Patient file",
+                        "Radiology",
+                        "Lab Manager Notes",
+                        "Accession Uuid",
+                        "Impression"
+                    ],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 2
+            },
+            "disposition": {
+                "type": "disposition",
+                "config": {
+                    "title": "Disposition",
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true
+                },
+                "displayOrder": 3
+            },
+            "investigationresult": {
+                "type": "investigationResult",
+                "config": {
+                    "title": "Lab Investigations",
+                    "showChart": true,
+                    "showTable": false,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 1
+                },
+                "displayOrder": 4
+            },
+            "treatment": {
+                "type": "treatment",
+                "config": {
+                    "translationKey": "Treatments",
+                    "title": "Treatments",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": false,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                },
+                "displayOrder": 5
+            }
+        }   
+
+ },
     "birthCertificate": {
         "title": "Birth Certificate",
         "printing": {

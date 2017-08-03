@@ -1336,6 +1336,12 @@
                         },
                         "Childhood Illness - Treatment - Treated with 2-59": {
                                 "multiSelect": true
+                        },
+                        "Delivery Note, Delivery date and time": {
+                                "required": true
+                        },
+                        "FRH-Procedure Follow Up": {
+                                "allowFutureDates": true
                         }
 
 		}
