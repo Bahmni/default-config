@@ -1,5 +1,8 @@
+
+#### [Wiki](docs/Wiki.md#wiki)
+
+
 ## Default Bahmni configuration and data. 
-======================================================================
 
 #### Deploy
 - under server (apache) www directory
