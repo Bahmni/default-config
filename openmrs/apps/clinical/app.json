@@ -23,6 +23,7 @@
         "visitUuid"
     ],
     "config": {
+        "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "quickPrints":false,
         "networkConnectivity" : {
