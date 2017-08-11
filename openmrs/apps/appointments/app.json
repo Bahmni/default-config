@@ -10,6 +10,10 @@
   "config": {
     "enableSpecialities": true,
     "startOfWeek": 2,
+    "calendarSlotDuration": "00:30:00",
+    "calendarSlotLabelInterval": "01:00:00",
+    "startOfDay":"09:00",
+    "endOfDay":"19:00",
     "enableServiceTypes": true,
     "enableCalendarView": true,
     "colorsForAppointmentService": [
