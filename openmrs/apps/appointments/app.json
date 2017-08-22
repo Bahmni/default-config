@@ -10,6 +10,7 @@
   "config": {
     "enableSpecialities": true,
     "startOfWeek": 2,
+    "weekStart": "isoWeek",
     "calendarSlotDuration": "00:30:00",
     "calendarSlotLabelInterval": "01:00:00",
     "startOfDay":"09:00",
