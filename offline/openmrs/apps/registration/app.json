@@ -52,6 +52,8 @@
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
             "defaultVisitType": "OPD",
+            "showLastName": true,
+            "isLastNameMandatory": false,
             "disablePhotoCapture": true,
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
