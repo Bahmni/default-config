@@ -53,7 +53,7 @@
             "defaultIdentifierPrefix": "GAN",
             "defaultVisitType": "OPD",
             "showLastName": true,
-            "isLastNameMandatory": false,
+            "isLastNameMandatory": true,
             "disablePhotoCapture": true,
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
