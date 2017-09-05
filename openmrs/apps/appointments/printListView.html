@@ -1,0 +1,59 @@
+<title>{{::'APPOINTMENT_LIST' | translate}}</title>
+<style>
+    h4, p {
+        text-align: center;
+    }
+    table {
+        border: none;
+    }
+    table th, table td {
+        border: 1px solid #444;
+        border-left: none;
+        text-align: center;
+    }
+    table th:first-child {
+        border-left: 1px solid #444;
+    }
+    table td:first-child {
+        border-left: 1px solid #444;
+    }
+    .table-mid-width {
+        width: 180px;
+        min-width: 180px;
+        max-width: 180px;
+    }
+</style>
+
+<div>
+    <div>
+        <span>{{::'APPOINTMENT_DATE' | translate}} {{::startDate | bahmniDate}}</span>
+        <table cellpadding="2" cellspacing="0">
+            <thead>
+            <tr>
+                <th>{{::'APPOINTMENT_PATIENT_ID' |translate}}</th>
+                <th class="table-mid-width">{{::'APPOINTMENT_PATIENT_NAME' |translate}}</th>
+                <th>{{::'APPOINTMENT_START_TIME_KEY' |translate}}</th>
+                <th>{{::'APPOINTMENT_END_TIME_KEY' |translate}}</th>
+                <th class="table-mid-width">{{::'APPOINTMENT_PROVIDER' |translate}}</th>
+                <th>{{::'APPOINTMENT_SERVICE' |translate}}</th>
+                <th class="table-mid-width" ng-if="enableServiceTypes">{{::'APPOINTMENT_SERVICE_TYPE_FULL' |translate}}</th>
+                <th class="table-mid-width">{{::'APPOINTMENT_SERVICE_LOCATION_KEY' |translate}}</th>
+                <th>{{::'APPOINTMENT_STATUS' |translate}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="appointment in filteredAppointments">
+                <td>{{::appointment.patient.identifier}}</td>
+                <td class="table-mid-width">{{::appointment.patient.name | titleCase}}</td>
+                <td>{{::appointment.startDateTime | bahmniTime}}</td>
+                <td>{{::appointment.endDateTime | bahmniTime}}</td>
+                <td class="table-mid-width">{{::appointment.provider.name}}</td>
+                <td>{{::appointment.service.name}}</td>
+                <td class="table-mid-width" ng-if="enableServiceTypes">{{::appointment.serviceType && (appointment.serviceType.name + ' [' + appointment.serviceType.duration + ' min]')}}</td>
+                <td class="table-mid-width">{{::appointment.location.name}}</td>
+                <td>{{::appointment.status}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
