@@ -39,6 +39,15 @@
             "program": {
                 "patientInformation": {
                     "ageLimit": 100
+                },
+                "ID_Number": {
+                    "required" : true
+                },
+                "Co-morbidites": {
+                    "excludeFrom": ["HIV Program"]
+                },
+                "Doctor": {
+                    "excludeFrom": ["TB Program"]
                 }
             },
             "patientContext": {
