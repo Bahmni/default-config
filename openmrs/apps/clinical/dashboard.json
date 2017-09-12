@@ -150,6 +150,14 @@
                     ]
                 }
             },
+            "patientAppointments": {
+                "type": "custom",
+                "displayOrder": 15,
+                "config": {
+                    "title": "DASHBOARD_TITLE_SURGICAL_APPOINTMENTS_KEY",
+                    "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
+                }
+            },
             "labResults":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type":"labOrders",
