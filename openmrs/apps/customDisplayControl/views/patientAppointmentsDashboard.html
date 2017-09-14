@@ -1,6 +1,6 @@
-<section class="bacteriology-dashboard">
+<section class="app-dashboard-integration">
     <h2 class="section-title">{{ section.title | titleTranslate}}</h2>
-    {{::"DASHBOARD_UPCOMING_APPOINTMENTS_KEY" | translate}} <a ng-click="goToListView()">link</a>
+    <h4>{{::"DASHBOARD_UPCOMING_APPOINTMENTS_KEY" | translate}} <a ng-click="goToListView()">{{::"DASHBOARD_UPCOMING_APPOINTMENTS_KEY_LINK" | translate}} <i class="fa fa-external-link" aria-hidden="true"></i></a></h4>
     <table class="table-header">
         <thead>
         <tr>
@@ -19,7 +19,7 @@
         </tbody>
     </table>
 
-    {{::"DASHBOARD_PAST_APPOINTMENTS_KEY" | translate}}
+    <h4>{{::"DASHBOARD_PAST_APPOINTMENTS_KEY" | translate}}</h4>
     <p ng-if="pastAppointments.length === 0">{{::"DASHBOARD_NO_PAST_APPOINTMENTS_KEY" | translate}}</p>
     <table class="table-header">
         <thead>
