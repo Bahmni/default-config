@@ -272,20 +272,6 @@
                         ]
                     }
                 }
-            },
-            "formsDisplay": {
-                "type": "forms",
-                "displayOrder": 21,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "formGroup": [
-                    "History and Examination",
-                    "Discharge Summary",
-                    "ANC"
-                ],
-                "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
             }
         }
     },
