@@ -70,6 +70,14 @@
                 "Doctor":"provider",
                 "Parent":"patient"
             },
+            "mandatoryPersonAttributes": [
+                "patientType",
+                "bloodType",
+                "maritalStatus",
+                "nationality",
+                "countryOfResidency",
+                "education"
+            ],
 
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
