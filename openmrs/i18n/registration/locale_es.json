@@ -87,5 +87,6 @@
     "NO_LOCATION_TAGGED_TO_VISIT_LOCATION": "No hay ubicación puesta para la Ubicacion de la Visita Encontrada",
     "REGISTRATION_FORM_ERRORS_MESSAGE_KEY": "Please enter a value in the mandatory fields or correct the value in the highlighted fields to proceed",
     "OBS_BOOLEAN_YES_KEY": "Yes",
-    "OBS_BOOLEAN_NO_KEY": "No"
+    "OBS_BOOLEAN_NO_KEY": "No",
+    "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY" : "Imprimir Tarjeta Reg. (<u>L</u>ocal)"
 }
