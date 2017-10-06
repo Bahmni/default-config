@@ -18,17 +18,39 @@
         ],
         "config" : {
             "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
+                "patientType": {
+                    "title": "patientType",
+                    "translationKey": "patientType",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
+                        "patientType"
                     ]
+                },
+                "personalInfo": {
+                    "title": "personalInfo",
+                    "translationKey": "personalInfo",
+                    "attributes": [
+                        "maritalStatus",
+                        "bloodType",
+                        "ethnicGroup",
+                        "education",
+                        "religion",
+                        "countryOfResidency",
+                        "nationality"
+                    ]
+                },
+                "contactInfo": {
+                    "title": "Información de contacto de paciente",
+                    "translationKey": "Información de contacto de paciente",
+                    "attributes": [
+                        "cellphone",
+                        "telephoneHouse",
+                        "telephoneWork",
+                        "emailPersonal",
+                        "emailWork"
+                    ],
+                    "cellphone": {
+                        "placeholder": "meow"
+                    }
                 },
                 "hidden": {
                     "attributes": [
