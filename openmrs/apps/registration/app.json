@@ -38,6 +38,15 @@
                         "nationality"
                     ]
                 },
+                "serviceInfo": {
+                    "title": "Información de servicio",
+                    "translationKey": "Información de servicio",
+                    "attributes": [
+                        "retiredPatient",
+                        "auxiliaryOfficer",
+                        "branch"
+                    ]
+                },
                 "contactInfo": {
                     "title": "Información de contacto de paciente",
                     "translationKey": "Información de contacto de paciente",
