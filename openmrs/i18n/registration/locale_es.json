@@ -4,7 +4,6 @@
     "REGISTRATION_SEARCH_CONFIG_ACCESS_KEY": "e",
     "REGISTRATION_CREATE_NEW_CONFIG_ACCESS_KEY": "n",
     "REGISTRATION_VIEW_CONFIG_KEY": "Ver",
-    "REGISTRATION_LABEL_NEW_PATIENT": "NUEVO PACIENTE",
     "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY" : "Imprimir Tarjeta de Reg. (<u>L</u>ocal)",
     "REGISTRATION_PRINT_REG_CARD_KEY":"<u>I</u>mprimir Tarjeta de Registro",
     "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER":"I<u>m</u>primir Papel Suplementario",
@@ -23,7 +22,6 @@
     "FEE_INFORMATION_LOCALE_KEY": "Fee Information",
     "NUTRITIONAL_VALUES_LOCALE_KEY": "Nutritional Values",
     "REGISTRATION_PRINT_WITH_BARCODE": "Imprimir <u>C</u>ódigo de Barra ",
-
     "REGISTRATION_TITLE_KEY": "Registro de Pacientes",
     "REGISTRATION_LABEL_SCANNED": "Escaneada",
     "REGISTRATION_LABEL_PAPER": "Papel",
@@ -39,6 +37,7 @@
     "REGISTRATION_LABEL_PATIENT_FIRSTNAME": "Nombre",
     "REGISTRATION_LABEL_PATIENT_MIDDLE_NAME": "Segundo nombre",
     "REGISTRATION_LABEL_PATIENT_LAST_NAME": "Apellido",
+    "REGISTRATION_LABEL_PATIENT_SECOND_LAST_NAME": "Segundo apellido",
     "REGISTRATION_LABEL_PATIENT_ENTER_NAME": "Introduzca el nombre del paciente.",
     "REGISTRATION_LABEL_PATIENT_ENTER_MIDDLE_NAME": "Ingrese el medio nombre del paciente.",
     "REGISTRATION_LABEL_PATIENT_ENTER_LAST_NAME": "Ingrese el apellido del paciente.",
@@ -83,7 +82,6 @@
     "REGISTRATION_LABEL_NO": "No",
     "REGISTRATION_LABEL_SAVE": "<u>S</u>alvar",
     "REGISTRATION_LABEL_BACK": "<u>E</u>spalda",
-
     "REGISTRATION_LABEL_ENTER_VISIT": "Introduzca\ndetalles de la <u>V</u>isita",
     "REGISTRATION_TITLE_ADDITIONAL_PATIENT": "informacion Adicional del Paciente ",
     "REGISTRATION_TITLE_RELATIONSHIPS": "Relaciones",
@@ -110,8 +108,5 @@
     "NO_LOCATION_TAGGED_TO_VISIT_LOCATION": "No hay ubicación puesta para la Ubicacion de la Visita Encontrada",
     "REGISTRATION_FORM_ERRORS_MESSAGE_KEY": "Please enter a value in the mandatory fields or correct the value in the highlighted fields to proceed",
     "OBS_BOOLEAN_YES_KEY": "Yes",
-    "OBS_BOOLEAN_NO_KEY": "No",
-
-    "REGISTRATION_SEARCH_CONFIG_KEY": "B<u>u</u>scar",
-    "REGISTRATION_CREATE_NEW_CONFIG_KEY":"Crear <u>N</u>evo"
+    "OBS_BOOLEAN_NO_KEY": "No"
 }
