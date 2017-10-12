@@ -16,5 +16,11 @@ Bahmni.Registration.customValidator = {
             return value.match(/^\w+$/);
         },
         errorMessage: "REGISTRATION_CASTE_TEXT_ERROR_KEY"
-    }
+    },
+    "primaryIdentifier.identifier":{   
+        method: function(name,value){
+            return value.match(/RE[0-9]{15}|ID[0-9]{13}|PA[0-9]+/)
+         },
+         errorMessage : "El campo documento de Identificacion no cumple el formato adecuado"
+      }
 };
