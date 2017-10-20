@@ -22,7 +22,8 @@
                     "title": "patientType",
                     "translationKey": "patientType",
                     "attributes": [
-                        "patientType"
+                        "patientType",
+                        "identifierDocument"
                     ]
                 },
                 "personalInfo": {
@@ -81,6 +82,7 @@
             },
             "mandatoryPersonAttributes": [
                 "patientType",
+                "identifierDocument",
                 "bloodType",
                 "maritalStatus",
                 "nationality",

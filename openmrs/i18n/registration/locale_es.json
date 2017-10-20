@@ -109,5 +109,8 @@
     "REGISTRATION_FORM_ERRORS_MESSAGE_KEY": "Please enter a value in the mandatory fields or correct the value in the highlighted fields to proceed",
     "OBS_BOOLEAN_YES_KEY": "Yes",
     "OBS_BOOLEAN_NO_KEY": "No",
-    "REGISTRATION_PATIENT_IDENTIFIER_ERROR_KEY" : "El campo documento de Identificacion no cumple el formato adecuado"
+    "REGISTRATION_PATIENT_IDENTIFIER_ERROR_KEY": "Número de ID no válido",
+    "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY": "Número de celular no tiene el formato válido +504 0000-0000",
+    "REGISTRATION_TELEPHONE_TEXT_ERROR_KEY": "Número de teléfono no tiene el formato válido 0000-0000",
+    "REGISTRATION_EMAIL_TEXT_ERROR_KEY": "La cuenta de correo electrónico no tiene el formato válido correo@dominio.com"
 }

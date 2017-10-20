@@ -4,6 +4,7 @@ Bahmni.Registration.AttributesConditions.rules = {
     }
 };
 
+
 var showOrHideServiceInfoSection = function (patient) {
     var returnValues = {
         show: [],
@@ -11,6 +12,7 @@ var showOrHideServiceInfoSection = function (patient) {
     };
     
     var patientAttribute = patient["patientType"];
+    
     if(patientAttribute){
         if (patientAttribute.conceptUuid === "ab73372f-0148-4f1d-b91b-d4a45dc94117") {
             returnValues.show.push("serviceInfo");
