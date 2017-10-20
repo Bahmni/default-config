@@ -82,6 +82,7 @@
             },
             "mandatoryPersonAttributes": [
                 "patientType",
+                "identifierDocument",
                 "bloodType",
                 "maritalStatus",
                 "nationality",
