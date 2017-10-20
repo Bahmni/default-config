@@ -5,16 +5,34 @@ Bahmni.Registration.customValidator = {
         },
         errorMessage: "REGISTRATION_AGE_ERROR_KEY"
     },
-    "Telephone Number": {
+    "cellphone": {
         method: function (name, value, personAttributeDetails) {
-            return value && value.length> 6;
+            return value.match(/\(?([0-9]{3})\)?([ .-]?)([0-9]{4})-([0-9]{4})/);
         },
-        errorMessage: "REGISTRATION_TELEPHONE_NUMBER_ERROR_KEY"
+        errorMessage: "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY"
     },
-    "caste": {
+    "telephoneHouse": {
         method: function (name, value, personAttributeDetails) {
-            return value.match(/^\w+$/);
+            return value.match(/[0-9]{4}-[0-9]{4}/);
         },
-        errorMessage: "REGISTRATION_CASTE_TEXT_ERROR_KEY"
+        errorMessage: "REGISTRATION_TELEPHONE_TEXT_ERROR_KEY"
+    },
+    "telephoneWork": {
+        method: function (name, value, personAttributeDetails) {
+            return value.match(/[0-9]{4}-[0-9]{4}/);
+        },
+        errorMessage: "REGISTRATION_TELEPHONE_TEXT_ERROR_KEY"
+    },
+    "emailPersonal": {
+        method: function (name, value, personAttributeDetails) {
+            return value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        },
+        errorMessage: "REGISTRATION_EMAIL_TEXT_ERROR_KEY"
+    },
+    "emailWork": {
+        method: function (name, value, personAttributeDetails) {
+            return value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        },
+        errorMessage: "REGISTRATION_EMAIL_TEXT_ERROR_KEY"
     }
 };
