@@ -18,49 +18,17 @@
         ],
         "config" : {
             "patientInformation": {
-                "patientType": {
-                    "title": "patientType",
-                    "translationKey": "patientType",
+                "additionalPatientInformation": {
+                    "title": "Additional Patient Information",
                     "attributes": [
-                        "patientType",
-                        "identifierDocument"
+                        "distanceFromCenter",
+                        "isUrban",
+                        "cluster",
+                        "RationCard",
+                        "familyIncome",
+                        "debt",
+                        "cluster"
                     ]
-                },
-                "personalInfo": {
-                    "title": "personalInfo",
-                    "translationKey": "personalInfo",
-                    "attributes": [
-                        "maritalStatus",
-                        "bloodType",
-                        "ethnicGroup",
-                        "education",
-                        "religion",
-                        "countryOfResidency",
-                        "nationality"
-                    ]
-                },
-                "serviceInfo": {
-                    "title": "Información de servicio",
-                    "translationKey": "Información de servicio",
-                    "attributes": [
-                        "retiredPatient",
-                        "auxiliaryOfficer",
-                        "branch"
-                    ]
-                },
-                "contactInfo": {
-                    "title": "Información de contacto de paciente",
-                    "translationKey": "Información de contacto de paciente",
-                    "attributes": [
-                        "cellphone",
-                        "telephoneHouse",
-                        "telephoneWork",
-                        "emailPersonal",
-                        "emailWork"
-                    ],
-                    "cellphone": {
-                        "placeholder": "meow"
-                    }
                 },
                 "hidden": {
                     "attributes": [
@@ -80,18 +48,9 @@
                 "Doctor":"provider",
                 "Parent":"patient"
             },
-            "mandatoryPersonAttributes": [
-                "patientType",
-                "identifierDocument",
-                "bloodType",
-                "maritalStatus",
-                "nationality",
-                "countryOfResidency",
-                "education"
-            ],
 
-            "autoCompleteFields":["familyName"],
-            "defaultIdentifierPrefix": "ID",
+            "autoCompleteFields":["familyName", "caste"],
+            "defaultIdentifierPrefix": "GAN",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
@@ -134,9 +93,9 @@
             "fieldValidation" : {
                 "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
                 "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
-                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Debe contener caracteres de letras No se permiten números"},
-                "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Debe contener caracteres de letras No se permiten números"},
-                "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Debe contener caracteres de letras No se permiten números"},
+                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
+                "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
+                "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "address1" : {"pattern" : "[a-zA-Z0-9]{3}", "errorMessage" : "Should contain 3 characters"}
             },
             "patientSearch": {

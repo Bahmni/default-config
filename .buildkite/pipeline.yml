@@ -1,8 +1,0 @@
-steps:
-
-  - name: ':rocket: Deploy'
-    command: '/.buildkite/deploy.sh'
-    branches: 'develop staging master ci-configuration'
-    agents:
-      node: 'true'
-      frontend: 'true'
