@@ -1,6 +1,5 @@
 Bahmni.Registration.AttributesConditions.rules = {
     'patientType': function(patient) {
-        console.log(patient);
         return showOrHideServiceInfoSection(patient);
     }
 };
