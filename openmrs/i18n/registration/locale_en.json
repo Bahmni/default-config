@@ -25,5 +25,8 @@
   "REGISTRATION_PATIENT_IDENTIFIER_ERROR_KEY" : "ID number not valid",
   "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY": "Cellphone number not valid +504 0000-0000",
   "REGISTRATION_TELEPHONE_TEXT_ERROR_KEY": "Telephone number not valid 0000-0000",
-  "REGISTRATION_EMAIL_TEXT_ERROR_KEY": "Email account not valid email@domain.com"
+  "REGISTRATION_EMAIL_TEXT_ERROR_KEY": "Email account not valid email@domain.com",
+  "REGISTRATION_ID_TEXT_ERROR_KEY": "Invalid ID number the correct format has 13 numbers => 0000000000000",
+  "REGISTRATION_RESIDENCE_TEXT_ERROR_KEY": "Invalid Residence number the correct format has 15 numbers => 000000000000000",
+  "REGISTRATION_PASSPORT_TEXT_ERROR_KEY": "Error trying to save the Passport number"
 }
