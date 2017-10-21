@@ -112,5 +112,8 @@
     "REGISTRATION_PATIENT_IDENTIFIER_ERROR_KEY": "Número de ID no válido",
     "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY": "Número de celular no tiene el formato válido +504 0000-0000",
     "REGISTRATION_TELEPHONE_TEXT_ERROR_KEY": "Número de teléfono no tiene el formato válido 0000-0000",
-    "REGISTRATION_EMAIL_TEXT_ERROR_KEY": "La cuenta de correo electrónico no tiene el formato válido correo@dominio.com"
+    "REGISTRATION_EMAIL_TEXT_ERROR_KEY": "La cuenta de correo electrónico no tiene el formato válido correo@dominio.com",
+    "REGISTRATION_ID_TEXT_ERROR_KEY": "El numero de identidad ingresado es inválido el formato correcto contiene 13 números => 0000000000000",
+    "REGISTRATION_RESIDENCE_TEXT_ERROR_KEY": "El numero de residencia ingresado es inválido el formato correcto contiene 15 números => 000000000000000",
+    "REGISTRATION_PASSPORT_TEXT_ERROR_KEY": "Existe un error al momento de guardar el número de Pasaporte"
 }
