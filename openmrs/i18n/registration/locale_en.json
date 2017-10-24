@@ -23,10 +23,12 @@
   "NUTRITIONAL_VALUES_LOCALE_KEY": "Nutritional Values",
   "REGISTRATION_PRINT_WITH_BARCODE": "Bar<u>c</u>ode Print",
   "REGISTRATION_PATIENT_IDENTIFIER_ERROR_KEY" : "ID number not valid",
-  "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY": "Cellphone number not valid +504 0000-0000",
-  "REGISTRATION_TELEPHONE_TEXT_ERROR_KEY": "Telephone number not valid 0000-0000",
-  "REGISTRATION_EMAIL_TEXT_ERROR_KEY": "Email account not valid email@domain.com",
-  "REGISTRATION_ID_TEXT_ERROR_KEY": "Invalid ID number the correct format has 13 numbers => 0000000000000",
-  "REGISTRATION_RESIDENCE_TEXT_ERROR_KEY": "Invalid Residence number the correct format has 15 numbers => 000000000000000",
-  "REGISTRATION_PASSPORT_TEXT_ERROR_KEY": "Error trying to save the Passport number"
+  "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY": "The field 'Teléfono móvil' doesn't have a valid format +5040000-0000",
+  "REGISTRATION_TELEPHONE_HOUSE_TEXT_ERROR_KEY": "The field 'Teléfono casa' doesn't have a valid format 0000-0000",
+  "REGISTRATION_TELEPHONE_WORK_TEXT_ERROR_KEY": "The field 'Teléfono trabajo' doesn't have a valid format 0000-0000",
+  "REGISTRATION_EMAIL_PERSONAL_TEXT_ERROR_KEY": "The field 'Correo electrónico personal' doesn't have a valid format email@domain.com",
+  "REGISTRATION_EMAIL_WORK_TEXT_ERROR_KEY": "The field 'Correo electrónico trabajo' doesn't have a valid format email@domain.com",
+  "REGISTRATION_ID_TEXT_ERROR_KEY": "The field 'Numero de identificacion' doesn't have a valid format for Card Id. Valid format is 13 numbers without spaces",
+  "REGISTRATION_RESIDENCE_TEXT_ERROR_KEY": "The field 'Numero de identificacion' doesn't have a valid format for Residence number. Valid format is 15 numbers without spaces",
+  "REGISTRATION_PASSPORT_TEXT_ERROR_KEY": "The field 'Numero de identificacion' can't be blank"
 }
