@@ -1,3 +1,44 @@
+var fieldValidations = function () {
+    Bahmni.Registration.customValidator = {
+        "age.days": {
+            method: function (name, value) {
+                return value >= 0;
+            },
+            errorMessage: "REGISTRATION_AGE_ERROR_KEY"
+        },
+        "cellphone": {
+            method: function (name, value, personAttributeDetails) {
+                return value.match(/^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/);
+            },
+            errorMessage: "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY"
+        },
+        "telephoneHouse": {
+            method: function (name, value, personAttributeDetails) {
+                return value.match(/^[0-9]{4}-[0-9]{4}$/);
+            },
+            errorMessage: "REGISTRATION_TELEPHONE_HOUSE_TEXT_ERROR_KEY"
+        },
+        "telephoneWork": {
+            method: function (name, value, personAttributeDetails) {
+                return value.match(/^[0-9]{4}-[0-9]{4}$/);
+            },
+            errorMessage: "REGISTRATION_TELEPHONE_WORK_TEXT_ERROR_KEY"
+        },
+        "emailPersonal": {
+            method: function (name, value, personAttributeDetails) {
+                return value.match(/^[a-zA-Z0-9_.+-]{3,244}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,5}$/);
+            },
+            errorMessage: "REGISTRATION_EMAIL_PERSONAL_TEXT_ERROR_KEY"
+        },
+        "emailWork": {
+            method: function (name, value, personAttributeDetails) {
+                return value.match(/^[a-zA-Z0-9_.+-]{3,244}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,5}$/);
+            },
+            errorMessage: "REGISTRATION_EMAIL_WORK_TEXT_ERROR_KEY"
+        }
+    };
+}
+
 Bahmni.Registration.AttributesConditions.rules = {
     'patientType': function(patient) {
         return showOrHideServiceInfoSection(patient);
@@ -14,6 +55,7 @@ Bahmni.Registration.AttributesConditions.rules = {
                             errorMessage: "REGISTRATION_ID_TEXT_ERROR_KEY"
                         }
                     };
+                    fieldValidations();
                     break;
                 
                 case "dafa2194-f468-4b6e-9b3f-97fbb181de55":
@@ -25,6 +67,7 @@ Bahmni.Registration.AttributesConditions.rules = {
                             errorMessage: "REGISTRATION_RESIDENCE_TEXT_ERROR_KEY"
                         }
                     };
+                    fieldValidations();
                     break;
             
                 default:
@@ -36,6 +79,7 @@ Bahmni.Registration.AttributesConditions.rules = {
                             errorMessage: "REGISTRATION_PASSPORT_TEXT_ERROR_KEY"
                         }
                     };
+                    fieldValidations();
                     break;
             }
         }
