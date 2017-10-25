@@ -7,12 +7,12 @@ Bahmni.Registration.AttributesConditions.rules = {
             var regex, error_msg = "";
             switch (patient['identifierDocument'].conceptUuid) {
                 case "c74c7f3b-954f-41e1-ba26-b595906020b5":
-                    regex = /[0-9]{13}/;
+                    regex = /^[0-9]{13}$/;
                     error_msg = "REGISTRATION_ID_TEXT_ERROR_KEY";
                     break;
                 
                 case "dafa2194-f468-4b6e-9b3f-97fbb181de55":
-                    regex = /[0-9]{15}/;
+                    regex = /^[0-9]{15}$/;
                     error_msg = "REGISTRATION_RESIDENCE_TEXT_ERROR_KEY";
                     break;
             
