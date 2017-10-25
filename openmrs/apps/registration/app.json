@@ -45,7 +45,7 @@
                     "attributes": [
                         "retiredPatient",
                         "auxiliaryOfficer",
-                        "branch"
+                        "force"
                     ]
                 },
                 "contactInfo": {
@@ -61,6 +61,41 @@
                     "cellphone": {
                         "placeholder": "meow"
                     }
+                },
+                "gradoFuerzaEjercito": {
+                    "title": "Grado",
+                    "translationKey": "gradoFuerzaEjercito",
+                    "attributes": [
+                        "gradoFuerzaEjercito"
+                    ]
+                },
+                "gradoFuerzaNaval": {
+                    "title": "Grado",
+                    "translationKey": "gradoFuerzaNaval",
+                    "attributes": [
+                        "gradoFuerzaNaval"
+                    ]
+                },
+                "gradoFuerzaAerea": {
+                    "title": "Grado",
+                    "translationKey": "gradoFuerzaAerea",
+                    "attributes": [
+                        "gradoFuerzaAerea"
+                    ]
+                },
+                "gradoPoliciaNacional": {
+                    "title": "Grado",
+                    "translationKey": "gradoPoliciaNacional",
+                    "attributes": [
+                        "gradoPoliciaNacional"
+                    ]
+                },
+                "gradoDireccionNacionalInvestigacion": {
+                    "title": "Grado",
+                    "translationKey": "gradoDireccionNacionalInvestigacion",
+                    "attributes": [
+                        "gradoDireccionNacionalInvestigacion"
+                    ]
                 },
                 "hidden": {
                     "attributes": [

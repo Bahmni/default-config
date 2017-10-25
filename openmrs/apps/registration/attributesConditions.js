@@ -63,6 +63,9 @@ Bahmni.Registration.AttributesConditions.rules = {
         }
         
         return true;
+    },
+    'force': function(patient) {
+        return showOrHideGradoSection(patient);
     }
 };
 
@@ -85,3 +88,54 @@ var showOrHideServiceInfoSection = function (patient) {
     }
     return returnValues;
 };
+
+var showOrHideGradoSection = function (patient) {
+    var returnValues = {
+        show: [],
+        hide: []
+    };
+
+    var patientAttribute = patient["force"];
+    if(patientAttribute){
+        if (patientAttribute.conceptUuid === "6a5ed660-284a-4369-b986-76dae3e95b4b")
+        {
+            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaEjercito");
+        }
+        else if (patientAttribute.conceptUuid === "ba54570b-ee77-43b9-9a15-9ce175f84022")
+        {
+            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaNaval");
+        }
+        else if (patientAttribute.conceptUuid === "d99b2f70-ad6a-4c76-87fe-a824e90c27e6")
+        {
+            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaAerea");
+        }
+        else if (patientAttribute.conceptUuid === "f8ad6a17-9b17-4c66-8089-a0f15dfe2c2f")
+        {
+            returnValues = hideShowGrado(patient, returnValues, "gradoPoliciaNacional");
+        }
+        else if (patientAttribute.conceptUuid === "a7d26ea3-f686-4e3a-9b9a-7998b8998e03")
+        {        
+            returnValues = hideShowGrado(patient, returnValues, "gradoDireccionNacionalInvestigacion");
+        }
+    }else {
+        returnValues = hideShowGrado(patient, returnValues, "");
+        
+    }
+
+    return returnValues;
+}; 
+
+var hideShowGrado = function(patient, returnValues, branchUsed) {
+    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval'];
+
+    var selectedGrado = allGradoSections.indexOf(branchUsed);
+    if (selectedGrado >= 0) {
+        allGradoSections.splice(selectedGrado, 1);
+    }
+    returnValues.hide = allGradoSections;
+    if (branchUsed !== "") {
+        returnValues.show.push(branchUsed);
+    }
+
+    return returnValues;
+}
