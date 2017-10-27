@@ -66,6 +66,9 @@ Bahmni.Registration.AttributesConditions.rules = {
     },
     'force': function(patient) {
         return showOrHideGradoSection(patient);
+    },
+    'retiredPatient': function(patient) {
+        return hideSections(patient);
     }
 };
 
@@ -99,43 +102,139 @@ var showOrHideGradoSection = function (patient) {
     if(patientAttribute){
         if (patientAttribute.conceptUuid === "6a5ed660-284a-4369-b986-76dae3e95b4b")
         {
-            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaEjercito");
+            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaEjercito", "unidadFuerzaEjercito");
         }
         else if (patientAttribute.conceptUuid === "ba54570b-ee77-43b9-9a15-9ce175f84022")
         {
-            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaNaval");
+            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaNaval", "unidadFuerzaNaval");
         }
         else if (patientAttribute.conceptUuid === "d99b2f70-ad6a-4c76-87fe-a824e90c27e6")
         {
-            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaAerea");
+            returnValues = hideShowGrado(patient, returnValues, "gradoFuerzaAerea", "unidadFuerzaAerea");
         }
         else if (patientAttribute.conceptUuid === "f8ad6a17-9b17-4c66-8089-a0f15dfe2c2f")
         {
-            returnValues = hideShowGrado(patient, returnValues, "gradoPoliciaNacional");
+            returnValues = hideShowGrado(patient, returnValues, "gradoPoliciaNacional", "unidadPoliciaNacional");
         }
         else if (patientAttribute.conceptUuid === "a7d26ea3-f686-4e3a-9b9a-7998b8998e03")
         {        
-            returnValues = hideShowGrado(patient, returnValues, "gradoDireccionNacionalInvestigacion");
+            returnValues = hideShowGrado(patient, returnValues, "gradoDireccionNacionalInvestigacion", "unidadDNI");
         }
-    }else {
+        else if (patientAttribute.conceptUuid === "d771e63e-7ff1-47cd-b2df-98739d6e6118")
+        {
+            returnValues = hideShowGrado(patient, returnValues, "gradoSecretariaDefensaNacional", "unidadSecretariaDefensaNacional");
+        }
+        else if (patientAttribute.conceptUuid === "66de2a62-0e27-4375-91b1-057dad32a1ce")
+        {
+            returnValues = hideShowGrado(patient, returnValues, "gradoDependenciasFFAA", "unidadDependenciasFFAA");
+        }
+    } else {
         returnValues = hideShowGrado(patient, returnValues, "");
-        
     }
 
     return returnValues;
 }; 
 
-var hideShowGrado = function(patient, returnValues, branchUsed) {
-    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval'];
+var hideShowGrado = function(patient, returnValues, branchUsed, unitUsed) {
+    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval', 'gradoSecretariaDefensaNacional', 'gradoDependenciasFFAA'];
+
+    var allUnitSection = ['unidadFuerzaEjercito', 'unidadFuerzaAerea', 'unidadPoliciaNacional', 'unidadDNI', 'unidadFuerzaNaval', 'unidadSecretariaDefensaNacional', 'unidadDependenciasFFAA', 'unidadPMOP'];
 
     var selectedGrado = allGradoSections.indexOf(branchUsed);
+    var selectedUnit = allUnitSection.indexOf(unitUsed);
     if (selectedGrado >= 0) {
         allGradoSections.splice(selectedGrado, 1);
     }
-    returnValues.hide = allGradoSections;
-    if (branchUsed !== "") {
-        returnValues.show.push(branchUsed);
+    if (selectedUnit >= 0) {
+        allUnitSection.splice(selectedUnit, 1);
     }
 
+    var branchUnit = [];
+    if (branchUsed !== "" && unitUsed !== "") {
+        branchUnit.push(branchUsed);
+        branchUnit.push(unitUsed);
+        returnValues.show = branchUnit;     
+    }
+
+    var allSectionsBranch = allGradoSections.concat(allUnitSection);
+    returnValues.hide = allSectionsBranch;
+
     return returnValues;
-}
+};
+
+var hideSections = function (patient) {
+    var returnValues = {
+        show: [],
+        hide: []
+    };
+
+    var retiredPatient = patient["retiredPatient"];
+    var force = patient["force"];
+
+    if(retiredPatient){
+        var checkbox = document.getElementById("retiredPatient");
+        checkbox.addEventListener( 'change', function() {
+            if(this.checked) {
+                document.getElementById("auxiliaryOfficer").disabled = true;
+                document.getElementById("force").disabled = true;
+                if (force.conceptUuid === "6a5ed660-284a-4369-b986-76dae3e95b4b") {
+                    document.getElementById("gradoFuerzaEjercito").disabled = true;
+                    document.getElementById("unidadFuerzaEjercito").disabled = true;
+                } else if (force.conceptUuid === "ba54570b-ee77-43b9-9a15-9ce175f84022") {
+                    document.getElementById("gradoFuerzaNaval").disabled = true;
+                    document.getElementById("unidadFuerzaNaval").disabled = true;
+                } else if (force.conceptUuid === "d99b2f70-ad6a-4c76-87fe-a824e90c27e6") {
+                    document.getElementById("gradoFuerzaAerea").disabled = true;
+                    document.getElementById("unidadFuerzaAerea").disabled = true;
+                } else if (force.conceptUuid === "f8ad6a17-9b17-4c66-8089-a0f15dfe2c2f")
+                {
+                    document.getElementById("gradoPoliciaNacional").disabled = true;
+                    document.getElementById("unidadPoliciaNacional").disabled = true;
+                } else if (force.conceptUuid === "a7d26ea3-f686-4e3a-9b9a-7998b8998e03")
+                {        
+                    document.getElementById("gradoDireccionNacionalInvestigacion").disabled = true;
+                    document.getElementById("unidadDNI").disabled = true;
+                } else if (force.conceptUuid === "d771e63e-7ff1-47cd-b2df-98739d6e6118")
+                {
+                    document.getElementById("gradoSecretariaDefensaNacional").disabled = true;
+                    document.getElementById("unidadSecretariaDefensaNacional").disabled = true;
+                } else if (force.conceptUuid === "66de2a62-0e27-4375-91b1-057dad32a1ce")
+                {
+                    document.getElementById("gradoDependenciasFFAA").disabled = true;
+                    document.getElementById("unidadDependenciasFFAA").disabled = true;
+                }
+            } else {
+                document.getElementById("auxiliaryOfficer").disabled = false;
+                document.getElementById("force").disabled = false;
+                if (force.conceptUuid === "6a5ed660-284a-4369-b986-76dae3e95b4b") {
+                    document.getElementById("gradoFuerzaEjercito").disabled = false;
+                    document.getElementById("unidadFuerzaEjercito").disabled = false;
+                } else if (force.conceptUuid === "ba54570b-ee77-43b9-9a15-9ce175f84022") {
+                    document.getElementById("gradoFuerzaNaval").disabled = false;
+                    document.getElementById("unidadFuerzaNaval").disabled = false;
+                } else if (force.conceptUuid === "d99b2f70-ad6a-4c76-87fe-a824e90c27e6") {
+                    document.getElementById("gradoFuerzaAerea").disabled = false;
+                    document.getElementById("unidadFuerzaAerea").disabled = false;
+                } else if (force.conceptUuid === "f8ad6a17-9b17-4c66-8089-a0f15dfe2c2f")
+                {
+                    document.getElementById("gradoPoliciaNacional").disabled = false;
+                    document.getElementById("unidadPoliciaNacional").disabled = false;
+                } else if (force.conceptUuid === "a7d26ea3-f686-4e3a-9b9a-7998b8998e03")
+                {        
+                    document.getElementById("gradoDireccionNacionalInvestigacion").disabled = false;
+                    document.getElementById("unidadDNI").disabled = false;
+                } else if (force.conceptUuid === "d771e63e-7ff1-47cd-b2df-98739d6e6118")
+                {
+                    document.getElementById("gradoSecretariaDefensaNacional").disabled = false;
+                    document.getElementById("unidadSecretariaDefensaNacional").disabled = false;
+                } else if (force.conceptUuid === "66de2a62-0e27-4375-91b1-057dad32a1ce")
+                {
+                    document.getElementById("gradoDependenciasFFAA").disabled = false;
+                    document.getElementById("unidadDependenciasFFAA").disabled = false;
+                }
+            }
+        });
+    }
+    
+    return returnValues;
+};

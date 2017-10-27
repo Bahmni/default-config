@@ -97,6 +97,76 @@
                         "gradoDireccionNacionalInvestigacion"
                     ]
                 },
+                "gradoSecretariaDefensaNacional": {
+                    "title": "Grado",
+                    "translationKey": "gradoSecretariaDefensaNacional",
+                    "attributes": [
+                        "gradoSecretariaDefensaNacional"
+                    ]
+                },
+                "gradoDependenciasFFAA": {
+                    "title": "Grado",
+                    "translationKey": "gradoDependenciasFFAA",
+                    "attributes": [
+                        "gradoDependenciasFFAA"
+                    ]
+                },
+                "unidadSecretariaDefensaNacional": {
+                    "title": "Grado",
+                    "translationKey": "unidadSecretariaDefensaNacional",
+                    "attributes": [
+                        "unidadSecretariaDefensaNacional"
+                    ]
+                },
+                "unidadDependenciasFFAA": {
+                    "title": "Grado",
+                    "translationKey": "unidadDependenciasFFAA",
+                    "attributes": [
+                        "unidadDependenciasFFAA"
+                    ]
+                },
+                "unidadFuerzaEjercito": {
+                    "title": "Grado",
+                    "translationKey": "unidadFuerzaEjercito",
+                    "attributes": [
+                        "unidadFuerzaEjercito"
+                    ]
+                },
+                "unidadFuerzaNaval": {
+                    "title": "Grado",
+                    "translationKey": "unidadFuerzaNaval",
+                    "attributes": [
+                        "unidadFuerzaNaval"
+                    ]
+                },
+                "unidadFuerzaAerea": {
+                    "title": "Grado",
+                    "translationKey": "unidadFuerzaAerea",
+                    "attributes": [
+                        "unidadFuerzaAerea"
+                    ]
+                },
+                "unidadPMOP": {
+                    "title": "Grado",
+                    "translationKey": "unidadPMOP",
+                    "attributes": [
+                        "unidadPMOP"
+                    ]
+                },
+                "unidadPoliciaNacional": {
+                    "title": "Grado",
+                    "translationKey": "unidadPoliciaNacional",
+                    "attributes": [
+                        "unidadPoliciaNacional"
+                    ]
+                },
+                "unidadDNI": {
+                    "title": "Grado",
+                    "translationKey": "unidadDNI",
+                    "attributes": [
+                        "unidadDNI"
+                    ]
+                },
                 "hidden": {
                     "attributes": [
                         "primaryContact"
