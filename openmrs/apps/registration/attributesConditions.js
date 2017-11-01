@@ -130,7 +130,7 @@ var showOrHideGradoSection = function (patient) {
         }
         else if (patientAttribute.conceptUuid === "c1c99ee0-81de-4ed4-8d59-fc1e011a799b")
         {
-            returnValues = hideShowGrado(patient, returnValues, "gradoPMOP", "unidadDependenciasFFAA");
+            returnValues = hideShowGrado(patient, returnValues, "gradoPMOP", "unidadPMOP");
         }
     } else {
         returnValues = hideShowGrado(patient, returnValues, "");
@@ -140,7 +140,7 @@ var showOrHideGradoSection = function (patient) {
 }; 
 
 var hideShowGrado = function(patient, returnValues, branchUsed, unitUsed) {
-    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval', 'gradoSecretariaDefensaNacional', 'gradoDependenciasFFAA'];
+    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval', 'gradoSecretariaDefensaNacional', 'gradoDependenciasFFAA', 'gradoPMOP'];
 
     var allUnitSection = ['unidadFuerzaEjercito', 'unidadFuerzaAerea', 'unidadPoliciaNacional', 'unidadDNI', 'unidadFuerzaNaval', 'unidadSecretariaDefensaNacional', 'unidadDependenciasFFAA', 'unidadPMOP'];
 
