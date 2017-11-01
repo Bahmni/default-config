@@ -111,13 +111,6 @@
                         "gradoDependenciasFFAA"
                     ]
                 },
-                "gradoPMOP": {
-                    "title": "Grado",
-                    "translationKey": "gradoPMOP",
-                    "attributes": [
-                        "gradoPMOP"
-                    ]
-                },
                 "unidadSecretariaDefensaNacional": {
                     "title": "Grado",
                     "translationKey": "unidadSecretariaDefensaNacional",
@@ -151,13 +144,6 @@
                     "translationKey": "unidadFuerzaAerea",
                     "attributes": [
                         "unidadFuerzaAerea"
-                    ]
-                },
-                "unidadPMOP": {
-                    "title": "Grado",
-                    "translationKey": "unidadPMOP",
-                    "attributes": [
-                        "unidadPMOP"
                     ]
                 },
                 "unidadPoliciaNacional": {

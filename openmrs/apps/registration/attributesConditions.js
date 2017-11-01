@@ -128,10 +128,6 @@ var showOrHideGradoSection = function (patient) {
         {
             returnValues = hideShowGrado(patient, returnValues, "gradoDependenciasFFAA", "unidadDependenciasFFAA");
         }
-        else if (patientAttribute.conceptUuid === "c1c99ee0-81de-4ed4-8d59-fc1e011a799b")
-        {
-            returnValues = hideShowGrado(patient, returnValues, "gradoPMOP", "unidadPMOP");
-        }
     } else {
         returnValues = hideShowGrado(patient, returnValues, "");
     }
@@ -140,9 +136,9 @@ var showOrHideGradoSection = function (patient) {
 }; 
 
 var hideShowGrado = function(patient, returnValues, branchUsed, unitUsed) {
-    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval', 'gradoSecretariaDefensaNacional', 'gradoDependenciasFFAA', 'gradoPMOP'];
+    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval', 'gradoSecretariaDefensaNacional', 'gradoDependenciasFFAA'];
 
-    var allUnitSection = ['unidadFuerzaEjercito', 'unidadFuerzaAerea', 'unidadPoliciaNacional', 'unidadDNI', 'unidadFuerzaNaval', 'unidadSecretariaDefensaNacional', 'unidadDependenciasFFAA', 'unidadPMOP'];
+    var allUnitSection = ['unidadFuerzaEjercito', 'unidadFuerzaAerea', 'unidadPoliciaNacional', 'unidadDNI', 'unidadFuerzaNaval', 'unidadSecretariaDefensaNacional', 'unidadDependenciasFFAA'];
 
     var selectedGrado = allGradoSections.indexOf(branchUsed);
     var selectedUnit = allUnitSection.indexOf(unitUsed);
@@ -206,10 +202,6 @@ var hideSections = function (patient) {
                 {
                     document.getElementById("gradoDependenciasFFAA").disabled = true;
                     document.getElementById("unidadDependenciasFFAA").disabled = true;
-                } else if (force.conceptUuid === "c1c99ee0-81de-4ed4-8d59-fc1e011a799b")
-                {
-                    document.getElementById("gradoPMOP").disabled = true;
-                    document.getElementById("unidadPMOP").disabled = true;
                 }
             } else {
                 document.getElementById("auxiliaryOfficer").disabled = false;
@@ -239,10 +231,6 @@ var hideSections = function (patient) {
                 {
                     document.getElementById("gradoDependenciasFFAA").disabled = false;
                     document.getElementById("unidadDependenciasFFAA").disabled = false;
-                } else if (force.conceptUuid === "c1c99ee0-81de-4ed4-8d59-fc1e011a799b")
-                {
-                    document.getElementById("gradoPMOP").disabled = false;
-                    document.getElementById("unidadPMOP").disabled = false;
                 }
             }
         });
