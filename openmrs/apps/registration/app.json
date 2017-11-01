@@ -111,6 +111,13 @@
                         "gradoDependenciasFFAA"
                     ]
                 },
+                "gradoPMOP": {
+                    "title": "Grado",
+                    "translationKey": "gradoPMOP",
+                    "attributes": [
+                        "gradoPMOP"
+                    ]
+                },
                 "unidadSecretariaDefensaNacional": {
                     "title": "Grado",
                     "translationKey": "unidadSecretariaDefensaNacional",

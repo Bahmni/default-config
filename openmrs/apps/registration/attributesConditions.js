@@ -128,6 +128,10 @@ var showOrHideGradoSection = function (patient) {
         {
             returnValues = hideShowGrado(patient, returnValues, "gradoDependenciasFFAA", "unidadDependenciasFFAA");
         }
+        else if (patientAttribute.conceptUuid === "c1c99ee0-81de-4ed4-8d59-fc1e011a799b")
+        {
+            returnValues = hideShowGrado(patient, returnValues, "gradoPMOP", "unidadDependenciasFFAA");
+        }
     } else {
         returnValues = hideShowGrado(patient, returnValues, "");
     }
