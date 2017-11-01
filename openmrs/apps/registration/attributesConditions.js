@@ -206,6 +206,10 @@ var hideSections = function (patient) {
                 {
                     document.getElementById("gradoDependenciasFFAA").disabled = true;
                     document.getElementById("unidadDependenciasFFAA").disabled = true;
+                } else if (force.conceptUuid === "c1c99ee0-81de-4ed4-8d59-fc1e011a799b")
+                {
+                    document.getElementById("gradoPMOP").disabled = true;
+                    document.getElementById("unidadPMOP").disabled = true;
                 }
             } else {
                 document.getElementById("auxiliaryOfficer").disabled = false;
@@ -235,6 +239,10 @@ var hideSections = function (patient) {
                 {
                     document.getElementById("gradoDependenciasFFAA").disabled = false;
                     document.getElementById("unidadDependenciasFFAA").disabled = false;
+                } else if (force.conceptUuid === "c1c99ee0-81de-4ed4-8d59-fc1e011a799b")
+                {
+                    document.getElementById("gradoPMOP").disabled = false;
+                    document.getElementById("unidadPMOP").disabled = false;
                 }
             }
         });
