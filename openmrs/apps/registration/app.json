@@ -146,13 +146,6 @@
                         "unidadFuerzaAerea"
                     ]
                 },
-                "unidadPMOP": {
-                    "title": "Grado",
-                    "translationKey": "unidadPMOP",
-                    "attributes": [
-                        "unidadPMOP"
-                    ]
-                },
                 "unidadPoliciaNacional": {
                     "title": "Grado",
                     "translationKey": "unidadPoliciaNacional",

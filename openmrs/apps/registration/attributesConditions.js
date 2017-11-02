@@ -138,7 +138,7 @@ var showOrHideGradoSection = function (patient) {
 var hideShowGrado = function(patient, returnValues, branchUsed, unitUsed) {
     var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval', 'gradoSecretariaDefensaNacional', 'gradoDependenciasFFAA'];
 
-    var allUnitSection = ['unidadFuerzaEjercito', 'unidadFuerzaAerea', 'unidadPoliciaNacional', 'unidadDNI', 'unidadFuerzaNaval', 'unidadSecretariaDefensaNacional', 'unidadDependenciasFFAA', 'unidadPMOP'];
+    var allUnitSection = ['unidadFuerzaEjercito', 'unidadFuerzaAerea', 'unidadPoliciaNacional', 'unidadDNI', 'unidadFuerzaNaval', 'unidadSecretariaDefensaNacional', 'unidadDependenciasFFAA'];
 
     var selectedGrado = allGradoSections.indexOf(branchUsed);
     var selectedUnit = allUnitSection.indexOf(unitUsed);
