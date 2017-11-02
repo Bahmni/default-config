@@ -8,6 +8,7 @@
   "BACTERIOLOGY_BUTTON_ADD_SAMPLE_KEY":"Agregar muestra",
   "BACTERIOLOGY_BUTTON_CLEAR_KEY":"Borrar",
 
+
   "BAHMNI_HOME_TRANSLATION_KEY": "Sitio Bahmni",
 
   "CLINICAL_DAYS_TRANSLATION_KEY": "días ",
@@ -21,7 +22,6 @@
   "CLINICAL_DIAGNOSIS_ORDER_PRIMARY":"Primario",
   "CLINICAL_DIAGNOSIS_ORDER_SECONDARY":"Secundario",
   "CLINICAL_DIAGNOSIS_CERTAINTY_CONFIRMED":"Confirmado",
-  "CLINICAL_DIAGNOSIS_CERTAINTY_PRESUMED":"Presunto",
   "CLINICAL_SAVE_SUCCESS_MESSAGE_KEY":"Guardado",
 
   "CONDITION_LIST_NO_RETRO_MODE":"Lista de Condiciones",
@@ -41,6 +41,15 @@
   "CONCEPT_SET_GROUP_PIN_UNPIN_KEY":"Anclar/Desanclar",
   "CONSULTATION_PAGE_KEY": "Consulta",
   "CONSULTATION_TAB_KEY": "Consulta",
+  "CONCEPT_SET_GROUP_SEARCH_LABEL":"Búsqueda Formulario de Historia Clínica",
+  "OBSERVATIONS_BOARD_LABEL_KEY": "Historia Clínica",
+  "ORDERS_BOARD_LABEL_KEY":"Estudios y Peticiones",
+  "MEDICATIONS_BOARD_LABEL_KEY":"Tratamiento",
+  "CONSULTATION_BOARD_LABEL_KEY":"Notas de Consulta",
+  "EMPTY_TEMPLATE_MESSAGE":"Lista de Formularios de Historia Clínica Vacía",
+  "DISPOSITION_BOARD_LABEL_KEY":"Remisiones",
+  "CLINICAL_DIAGNOSIS_CERTAINTY_PRESUMED":"Probable",
+
 
   "CONDITION_LIST_DISPLAY_CONTROL_TITLE":"Condiciones",
       "CONDITION_LIST_NO_CONDITIONS":"No hay Condiciones disponibles",
