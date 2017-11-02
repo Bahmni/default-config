@@ -35,13 +35,17 @@
   "CLINICAL_ACCEPT":"Aceptar",
 
   "CONCEPT_SET_GROUP_COLLAPSE_ALL_KEY": "Desplegar todo",
+  "CONCEPT_SET_GROUP_SEARCH_LABEL":"Busqueda Formulario de Observación",
   "CONCEPT_SET_GROUP_EXPAND_ALL_KEY": "Expandir todo",
+  "CONCEPT_SET_GROUP_REMOVE_KEY":"Remover",
+  "CONCEPT_SET_GROUP_PIN_UNPIN_KEY":"Anclar/Desanclar",
   "CONSULTATION_PAGE_KEY": "Consulta",
   "CONSULTATION_TAB_KEY": "Consulta",
 
   "CONDITION_LIST_DISPLAY_CONTROL_TITLE":"Condiciones",
       "CONDITION_LIST_NO_CONDITIONS":"No hay Condiciones disponibles",
 
+  "DASHBOARD_TAB_GENERAL_KEY": "General",
   "DASHBOARD_TAB_GENERAL_KEY": "General",
   "DASHBOARD_TAB_PATIENT_DOCUMENTS_KEY": "Documentos",
   "DASHBOARD_TAB_PATIENT_MONITORING_DRUGS_START_DATE_KEY": "Monitoreo de Paciente (D)",
@@ -86,7 +90,7 @@
   "DASHBOARD_TITLE_TREATMENTS_KEY": "Tratamientos",
       "NO_TREATMENTS_MESSAGE": "Sin tratamientos para este paciente.",
   "DASHBOARD_TITLE_VISITS_KEY": "Visitas",
-  "DASHBOARD_TITLE_VITALS_KEY":"Valores Nutricionales",
+  "DASHBOARD_TITLE_VITALS_KEY":"Vitales",
 
   "DIAGNOSIS_BOARD_LABEL_KEY":"Diagnóstico",
   "DISPOSITION_BOARD_LABEL_KEY":"Disposición",
@@ -180,6 +184,8 @@
   "MEDICATION_DOSING_INSTRUCTIONS_PLACEHOLDER":"Escoger Instrucciones",
   "MEDICATION_CHOOSE_QUANTITY_UNIT_PLACEHOLDER":"Escoger Unidades",
   "MEDICATION_ADD_ORDERSET_FORM_TITLE":"Ordenar conjunto de pedidos",
+  "MESSAGE_DIALOG_OPTION_COPY":"COPIAR",
+  "MESSAGE_DIALOG_OPTION_OKAY":"OKAY",
 
   "MODULE_LABEL_ACTIVE_KEY": "Activo",
   "MODULE_LABEL_ALL_KEY": "Todos los pacientes",
