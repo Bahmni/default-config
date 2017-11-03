@@ -58,6 +58,60 @@ Bahmni.Registration.AttributesConditions.rules = {
                         return value.match(/^[a-zA-Z0-9_.+-]{3,244}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,5}$/);
                     },
                     errorMessage: "REGISTRATION_EMAIL_WORK_TEXT_ERROR_KEY"
+                },
+                "residenceWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_RESIDENCE_WORK_TEXT_ERROR_KEY"
+                },
+                "houseNoWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_HOUSE_NUMBER_WORK_TEXT_ERROR_KEY"
+                },
+                "streetWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_STREET_NUMBER_WORK_TEXT_ERROR_KEY"
+                },
+                "blockWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_BLOCK_NUMBER_WORK_TEXT_ERROR_KEY"
+                },
+                "cityWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_CITY_WORK_TEXT_ERROR_KEY"
+                },
+                "municipalityWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_MUNICIPALITY_WORK_TEXT_ERROR_KEY"
+                },
+                "departmentWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_DEPARTMENT_WORK_TEXT_ERROR_KEY"
+                },
+                "countryWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_COUNTRY_WORK_TEXT_ERROR_KEY"
+                },
+                "addressWork": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.length <= 50;
+                    },
+                    errorMessage: "REGISTRATION_ADDRESS_WORK_TEXT_ERROR_KEY"
                 }
             };
         }

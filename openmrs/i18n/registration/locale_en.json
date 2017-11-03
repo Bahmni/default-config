@@ -30,5 +30,16 @@
   "REGISTRATION_EMAIL_WORK_TEXT_ERROR_KEY": "The field 'Correo electrónico trabajo' doesn't have a valid format email@domain.com",
   "REGISTRATION_ID_TEXT_ERROR_KEY": "The field 'Numero de identificacion' doesn't have a valid format for Card Id. Valid format is 13 numbers without spaces",
   "REGISTRATION_RESIDENCE_TEXT_ERROR_KEY": "The field 'Numero de identificacion' doesn't have a valid format for Residence number. Valid format is 15 numbers without spaces",
-  "REGISTRATION_PASSPORT_TEXT_ERROR_KEY": "The field 'Numero de identificacion' can't be blank"
+  "REGISTRATION_PASSPORT_TEXT_ERROR_KEY": "The field 'Numero de identificacion' can't be blank",
+
+  "REGISTRATION_RESIDENCE_WORK_TEXT_ERROR_KEY": "The field 'Residencia, Colonia, o Barrio' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_HOUSE_NUMBER_WORK_TEXT_ERROR_KEY": "The field 'Número de Casa' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_STREET_NUMBER_WORK_TEXT_ERROR_KEY": "The field 'Calle' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_BLOCK_NUMBER_WORK_TEXT_ERROR_KEY": "The field 'Bloque' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_CITY_WORK_TEXT_ERROR_KEY": "The field 'Ciudad' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_MUNICIPALITY_WORK_TEXT_ERROR_KEY": "The field 'Municipalidad' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_DEPARTMENT_WORK_TEXT_ERROR_KEY": "The field 'Departamento' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_COUNTRY_WORK_TEXT_ERROR_KEY": "The field 'País' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_ADDRESS_WORK_TEXT_ERROR_KEY": "The field 'Dirección Descriptiva' from Work of Place exceeds the limit of allowed characters (50)",
+  "REGISTRATION_LABEL_ADDRESS_WORK_INFO": "Work Place"
 }
