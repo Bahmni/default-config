@@ -160,6 +160,21 @@
                         "unidadDNI"
                     ]
                 },
+                "workPlaceAddress": {
+                    "title": "Lugar de Trabajo",
+                    "translationKey": "Lugar de Trabajo",
+                    "attributes": [
+                        "residenceWork",
+                        "houseNoWork",
+                        "streetWork",
+                        "blockWork",
+                        "cityWork",
+                        "municipalityWork",
+                        "departmentWork",
+                        "countryWork",
+                        "addressWork"
+                    ]
+                },
                 "hidden": {
                     "attributes": [
                         "primaryContact"
