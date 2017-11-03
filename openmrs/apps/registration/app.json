@@ -160,6 +160,10 @@
                         "unidadDNI"
                     ]
                 },
+                "patientHomeAddress": {
+                    "title": "Domicilio",
+                    "translationKey": "Domicilio"
+                },
                 "workPlaceAddress": {
                     "title": "Lugar de Trabajo",
                     "translationKey": "Lugar de Trabajo",
