@@ -178,9 +178,7 @@
                      "emergencyContactKin",
                      "emergencyContactEmail"  
                     ]
-
-                }
-                ,
+                },
                 "workPlaceAddress": {
                     "title": "Lugar de Trabajo",
                     "translationKey": "Lugar de Trabajo",
