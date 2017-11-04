@@ -164,6 +164,23 @@
                     "title": "Domicilio",
                     "translationKey": "Domicilio"
                 },
+                "emergencyContact":{
+                    "title": "Contacto de Emergencia",
+                    "translationKey": "Contacto de emergencia",
+                    "attributes" :[
+                     "emergencyContactFirstName",
+                     "emergencyContactSecondName",
+                     "emergencyContactFirstLastname",
+                     "emergencyContactSecondLastname",
+                     "emergencyContactPhone1",
+                     "emergencyContactPhone2",
+                     "emergencyContactPhone3",
+                     "emergencyContactKin",
+                     "emergencyContactEmail"  
+                    ]
+
+                }
+                ,
                 "workPlaceAddress": {
                     "title": "Lugar de Trabajo",
                     "translationKey": "Lugar de Trabajo",
