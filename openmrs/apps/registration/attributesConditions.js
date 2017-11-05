@@ -112,6 +112,29 @@ Bahmni.Registration.AttributesConditions.rules = {
                         return value.length <= 50;
                     },
                     errorMessage: "REGISTRATION_ADDRESS_WORK_TEXT_ERROR_KEY"
+                },
+                "emergencyContactPhone1": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_PHONE1_EMERGENCY_CONTACT_TEXT_KEY"
+                },
+                "emergencyContactPhone2": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_PHONE2_EMERGENCY_CONTACT_TEXT_KEY"
+                },
+                "emergencyContactPhone3": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_PHONE3_EMERGENCY_CONTACT_TEXT_KEY"
+                },"emergencyContactEmail": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-Z0-9_.+-]{3,244}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,5}$/);
+                    },
+                    errorMessage: "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY"
                 }
             };
         }
