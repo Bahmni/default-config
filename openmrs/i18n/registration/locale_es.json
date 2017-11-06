@@ -40,7 +40,7 @@
     "REGISTRATION_LABEL_PATIENT_LAST_NAME": "Apellido",
     "REGISTRATION_LABEL_PATIENT_SECOND_LAST_NAME": "Segundo apellido",
     "REGISTRATION_LABEL_PATIENT_ENTER_NAME": "Introduzca el nombre del paciente.",
-    "REGISTRATION_LABEL_PATIENT_ENTER_MIDDLE_NAME": "Ingrese el medio nombre del paciente.",
+    "REGISTRATION_LABEL_PATIENT_ENTER_MIDDLE_NAME": "Ingrese el segundo nombre del paciente.",
     "REGISTRATION_LABEL_PATIENT_ENTER_LAST_NAME": "Ingrese el apellido del paciente.",
     "REGISTRATION_LABEL_PATIENT_ENTER_REGISTRATION": "Introduzca número de registro de pacientes",
     "REGISTRATION_LABEL_CASTE_SAME_LAST_NAME": "Casta igual que el apellido",
@@ -136,5 +136,5 @@
     "REGISTRATION_LABEL_ADDRESS_WORK_INFO": "Lugar de Trabajo",
     "REGISTRATION_TITLE_ADDRESS_PATIENT": "Domicilio",
     "REGISTRATION_TITLE_EMERGENCY_CONTACT_KEY": "Contacto de emergencia",
-    "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY": "El campo 'Correo electrónico personal en contacto de emergencia' no tiene el formato válido correo@dominio.com"
+    "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY": "El campo 'Correo Electrónico Personal' en contacto de emergencia no tiene el formato válido correo@dominio.com"
 }
