@@ -183,7 +183,7 @@
                     "title": "Contacto de Emergencia Adicional",
                     "translationKey": "Contacto de Emergencia Adicional",
                     "attributes" :[
-                     "scundaryEmergencyContactFirstName",
+                     "secundaryEmergencyContactFirstName",
                      "secundaryEmergencyContactSecondName",
                      "secundaryEmergencyContactFirstLastname",
                      "secundaryEmergencyContactSecondLastname",
