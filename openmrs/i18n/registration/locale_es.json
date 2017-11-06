@@ -134,5 +134,6 @@
     "REGISTRATION_LABEL_ADDRESS_WORK_INFO": "Lugar de Trabajo",
     "REGISTRATION_TITLE_ADDRESS_PATIENT": "Domicilio",
     "REGISTRATION_TITLE_EMERGENCY_CONTACT_KEY" : "Contacto de emergencia",
-    "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY" : "El campo 'Correo electrónico personal en contacto de emergencia' no tiene el formato válido correo@dominio.com"
+    "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY" : "El campo 'Correo electrónico personal en contacto de emergencia' no tiene el formato válido correo@dominio.com",
+    "REGISTRATION_TITLE_SECUNDARY_EMERGENCY_CONTACT_KEY": "Contacto de Emergencia Adicional (Opcional)"
 }

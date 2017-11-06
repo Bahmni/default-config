@@ -179,6 +179,21 @@
                      "emergencyContactEmail"  
                     ]
                 },
+                "secundaryEmergencyContact":{
+                    "title": "Contacto de Emergencia Adicional",
+                    "translationKey": "Contacto de Emergencia Adicional",
+                    "attributes" :[
+                     "scundaryEmergencyContactFirstName",
+                     "secundaryEmergencyContactSecondName",
+                     "secundaryEmergencyContactFirstLastname",
+                     "secundaryEmergencyContactSecondLastname",
+                     "secundaryEmergencyContactPhone1",
+                     "secundaryEmergencyContactPhone2",
+                     "secundaryEmergencyContactPhone3",
+                     "secundaryEmergencyContactKin",
+                     "secundaryEmergencyContactEmail"  
+                    ]
+                },
                 "workPlaceAddress": {
                     "title": "Lugar de Trabajo",
                     "translationKey": "Lugar de Trabajo",

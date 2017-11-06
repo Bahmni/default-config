@@ -47,5 +47,6 @@
   "REGISTRATION_PHONE1_EMERGENCY_CONTACT_TEXT_KEY" : "The field 'Teléfono móvil en contacto de emergencia' doesn't have a valid format 0000-0000",
   "REGISTRATION_PHONE2_EMERGENCY_CONTACT_TEXT_KEY" : "The field 'Teléfono móvil en contacto de emergencia' doesn't have a valid format 0000-0000",
   "REGISTRATION_PHONE3_EMERGENCY_CONTACT_TEXT_KEY" : "The field 'Teléfono móvil en contacto de emergencia' doesn't have a valid format 0000-0000",
-  "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY" : "The field 'Correo electrónico personal en contacto de emergencia' doesn't have a valid format email@domain.com"
+  "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY" : "The field 'Correo electrónico personal en contacto de emergencia' doesn't have a valid format email@domain.com",
+  "REGISTRATION_TITLE_SECUNDARY_EMERGENCY_CONTACT_KEY": "Additional Emergency Contact (Optional)"
 }
