@@ -135,6 +135,52 @@ Bahmni.Registration.AttributesConditions.rules = {
                         return value.match(/^[a-zA-Z0-9_.+-]{3,244}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,5}$/);
                     },
                     errorMessage: "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY"
+                },
+                "secundaryEmergencyContactPhone1": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_SECUNDARY_PHONE1_EMERGENCY_CONTACT_TEXT_KEY"
+                },
+                "secundaryEmergencyContactPhone2": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_SECUNDARY_PHONE2_EMERGENCY_CONTACT_TEXT_KEY"
+                },
+                "secundaryEmergencyContactPhone3": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_SECUNDARY_PHONE3_EMERGENCY_CONTACT_TEXT_KEY"
+                },"secundaryEmergencyContactEmail": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-Z0-9_.+-]{3,244}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,5}$/);
+                    },
+                    errorMessage: "REGISTRATION_SECUNDARY_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY"
+                },
+                "thirdEmergencyContactPhone1": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_THIRD_PHONE1_EMERGENCY_CONTACT_TEXT_KEY"
+                },
+                "thirdEmergencyContactPhone2": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_THIRD_PHONE2_EMERGENCY_CONTACT_TEXT_KEY"
+                },
+                "thirdEmergencyContactPhone3": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
+                    },
+                    errorMessage:"REGISTRATION_THIRD_PHONE3_EMERGENCY_CONTACT_TEXT_KEY"
+                },"thirdEmergencyContactEmail": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-Z0-9_.+-]{3,244}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,5}$/);
+                    },
+                    errorMessage: "REGISTRATION_THIRD_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY"
                 }
             };
         }

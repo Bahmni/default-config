@@ -179,6 +179,36 @@
                      "emergencyContactEmail"  
                     ]
                 },
+                "secundaryEmergencyContact":{
+                    "title": "Contacto de Emergencia Adicional 1",
+                    "translationKey": "Contacto de Emergencia Adicional",
+                    "attributes" :[
+                     "secundaryEmergencyContactFirstName",
+                     "secundaryEmergencyContactSecondName",
+                     "secundaryEmergencyContactFirstLastname",
+                     "secundaryEmergencyContactSecondLastname",
+                     "secundaryEmergencyContactPhone1",
+                     "secundaryEmergencyContactPhone2",
+                     "secundaryEmergencyContactPhone3",
+                     "secundaryEmergencyContactKin",
+                     "secundaryEmergencyContactEmail"  
+                    ]
+                },
+                "thirdEmergencyContact":{
+                    "titlle": "Contacto de Emergencia Adicional 2",
+                    "translationKey": "Contacto de Emergencia Adicional",
+                    "attributes" :[
+                     "thirdEmergencyContactFirstName",
+                     "thirdEmergencyContactSecondName",
+                     "thirdEmergencyContactFirstLastname",
+                     "thirdEmergencyContactSecondLastname",
+                     "thirdEmergencyContactPhone1",
+                     "thirdEmergencyContactPhone2",
+                     "thirdEmergencyContactPhone3",
+                     "thirdEmergencyContactKin",
+                     "thirdEmergencyContactEmail"  
+                    ]
+                },
                 "workPlaceAddress": {
                     "title": "Lugar de Trabajo",
                     "translationKey": "Lugar de Trabajo",
