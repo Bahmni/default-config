@@ -29,12 +29,6 @@ Bahmni.Registration.AttributesConditions.rules = {
                     },
                     errorMessage: error_msg
                 },
-                "patient.givenName":{
-                    method: function (name, value, personAttributeDetails) {
-                        return value && value.legnth > 0;
-                    },
-                    errorMessage: "Error personalizado" 
-                },
                 "cellphone": {
                     method: function (name, value, personAttributeDetails) {
                         return value.match(/^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/);
