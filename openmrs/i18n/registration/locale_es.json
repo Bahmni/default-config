@@ -118,7 +118,6 @@
     "REGISTRATION_ID_TEXT_ERROR_KEY": "El campo 'Numero de identificacion' no tiene un formato válido para el tipo 'Tarjeta de identidad'. Deben ser 13 números sin espacios.",
     "REGISTRATION_RESIDENCE_TEXT_ERROR_KEY": "El campo 'Numero de identificacion' no tiene un formato válido para el tipo 'Numero de Residencia'. Deben ser 15 números sin espacios.",
     "REGISTRATION_PASSPORT_TEXT_ERROR_KEY": "Existe un error al momento de guardar el número de Pasaporte",
-
     "REGISTRATION_RESIDENCE_WORK_TEXT_ERROR_KEY": "El campo 'Residencia, Colonia, o Barrio' de Lugar de Trabajo supera el límite de caracteres permitidos (50)",
     "REGISTRATION_HOUSE_NUMBER_WORK_TEXT_ERROR_KEY": "El campo 'Número de Casa' de Lugar de Trabajo supera el límite de caracteres permitidos (50)",
     "REGISTRATION_STREET_NUMBER_WORK_TEXT_ERROR_KEY": "El campo 'Calle' de Lugar de Trabajo supera el límite de caracteres permitidos (50)",
@@ -135,5 +134,11 @@
     "REGISTRATION_TITLE_ADDRESS_PATIENT": "Domicilio",
     "REGISTRATION_TITLE_EMERGENCY_CONTACT_KEY" : "Contacto de emergencia",
     "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY" : "El campo 'Correo electrónico personal en contacto de emergencia' no tiene el formato válido correo@dominio.com",
-    "REGISTRATION_TITLE_SECUNDARY_EMERGENCY_CONTACT_KEY": "Contacto de Emergencia Adicional (Opcional)"
+    "REGISTRATION_TITLE_SECUNDARY_EMERGENCY_CONTACT_KEY": "Contacto de Emergencia Adicional (Opcional)",
+    "REGISTRATION_SECUNDARY_PHONE1_EMERGENCY_CONTACT_TEXT_KEY" : "El campo 'Teléfono 1' de Contacto de Emergencia opcional #1 no tiene el formato válido +5040000-0000",
+    "REGISTRATION_SECUNDARY_PHONE2_EMERGENCY_CONTACT_TEXT_KEY" : "El campo 'Teléfono 2' de Contacto de Emergencia opcional #1 no tiene el formato válido +5040000-0000",
+    "REGISTRATION_SECUNDARY_PHONE3_EMERGENCY_CONTACT_TEXT_KEY" : "El campo 'Teléfono 3' de Contacto de Emergencia opcional #1 no tiene el formato válido +5040000-0000",
+    "REGISTRATION_THIRD_PHONE1_EMERGENCY_CONTACT_TEXT_KEY" : "El campo 'Teléfono 1' de Contacto de Emergencia opcional #2 no tiene el formato válido +5040000-0000",
+    "REGISTRATION_THIRD_PHONE2_EMERGENCY_CONTACT_TEXT_KEY" : "El campo 'Teléfono 2' de Contacto de Emergencia opcional #2 no tiene el formato válido +5040000-0000",
+    "REGISTRATION_THIRD_PHONE3_EMERGENCY_CONTACT_TEXT_KEY" : "El campo 'Teléfono 3' de Contacto de Emergencia opcional #2 no tiene el formato válido +5040000-0000"
 }
