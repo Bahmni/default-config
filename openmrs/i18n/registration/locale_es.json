@@ -86,7 +86,7 @@
 
     "REGISTRATION_LABEL_ENTER_VISIT": "Introduzca\ndetalles de la <u>V</u>isita",
     "REGISTRATION_TITLE_ADDITIONAL_PATIENT": "informacion Adicional del Paciente ",
-    "REGISTRATION_TITLE_RELATIONSHIPS": "Relaciones",
+    "REGISTRATION_TITLE_RELATIONSHIPS": "Dependientes",
     "REGISTRATION_CONTENT_ENTERING_ID": "Está ingresando ID(s) que están fuera de la secuencia. Creará una brecha en la secuencia. ¿Desea continuar?",
     "REGISTRATION_LABEL_SAVED": "Salvado",
     "REGISTRATION_NO_RESULTS_FOUND": "No se han encontrado resultados",
