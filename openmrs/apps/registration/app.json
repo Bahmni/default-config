@@ -195,7 +195,7 @@
                     ]
                 },
                 "thirdEmergencyContact":{
-                    "titlle": "Contacto de Emergencia Adicional 2",
+                    "title": "Contacto de Emergencia Adicional 2",
                     "translationKey": "Contacto de Emergencia Adicional",
                     "attributes" :[
                      "thirdEmergencyContactFirstName",
