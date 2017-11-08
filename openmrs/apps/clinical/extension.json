@@ -3,13 +3,24 @@
     "id": "bahmni.clinical.consultation.observations",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "label": "Observations",
+    "label": "Historia Clínica",
     "translationKey":"OBSERVATIONS_BOARD_LABEL_KEY",
     "url": "concept-set-group/observations",
     "default": true,
     "icon": "fa-user-md",
     "order": 1,
     "requiredPrivilege": "app:clinical:observationTab"
+  },
+  "bahmniClinicalConsultationOrders": {
+    "id": "bahmni.clinical.consultation.orders",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Orders",
+    "translationKey":"ORDERS_BOARD_LABEL_KEY",
+    "url": "orders",
+    "icon": "icon-user-md",
+    "order": 2,
+    "requiredPrivilege": "app:clinical:ordersTab"
   },
   "diagnosis": {
     "id": "bahmni.clinical.consultation.diagnosis",
@@ -19,19 +30,22 @@
     "translationKey":"DIAGNOSIS_BOARD_LABEL_KEY",
     "url": "diagnosis",
     "icon": "fa-user-md",
-    "order": 2,
+    "order": 3,
     "requiredPrivilege": "app:clinical:diagnosisTab"
   },
-  "disposition": {
-    "id": "bahmni.clinical.consultation.disposition",
+  "bahmniClinicalBillingTreatment": {
+    "id": "bahmni.clinical.billing.treatment",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",
-    "label": "Disposition",
-    "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
-    "url": "disposition",
+    "label": "Medications",
+    "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
+    "extensionParams":{
+      "tabConfigName": "allMedicationTabConfig"
+    },
+    "url": "treatment",
     "icon": "fa-user-md",
-    "order": 3,
-    "requiredPrivilege": "app:clinical:dispositionTab"
+    "order": 4,
+    "requiredPrivilege": "app:clinical:treatmentTab"
   },
   "consultationSummary": {
     "id": "bahmni.clinical.consultation.summary",
@@ -43,6 +57,17 @@
     "icon": "fa-user-md",
     "order": 5,
     "requiredPrivilege": "app:clinical:consultationTab"
+  },
+  "disposition": {
+    "id": "bahmni.clinical.consultation.disposition",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Disposition",
+    "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
+    "url": "disposition",
+    "icon": "fa-user-md",
+    "order": 6,
+    "requiredPrivilege": "app:clinical:dispositionTab"
   },
   "bahmniClinicalOrdersPending": {
     "id": "bahmni.clinical.orders.pending",
@@ -142,15 +167,26 @@
     "order": 1,
     "requiredPrivilege": "app:clinical:history"
   },
-  "bahmniClinicalConceptSetGroupObservationsVitals": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+  "bahmniClinicalConceptSetGroupObservationsCurrent": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.current",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "default": true,
-      "conceptName": "Vitals"
+      "conceptName": "Current History"
     },
     "order": 2,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsPhysicalExam": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.physical_exam",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Physical Examination"
+    },
+    "order": 3,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
@@ -198,41 +234,5 @@
     },
     "order": 6,
     "requiredPrivilege": "Discharge Summary"
-  },
-  "bahmniClinicalBillingTreatment": {
-    "id": "bahmni.clinical.billing.treatment",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Medications",
-    "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
-    "extensionParams":{
-      "tabConfigName": "allMedicationTabConfig"
-    },
-    "url": "treatment",
-    "icon": "fa-user-md",
-    "order": 7,
-    "requiredPrivilege": "app:clinical:treatmentTab"
-  },
-  "bahmniClinicalConsultationOrders": {
-    "id": "bahmni.clinical.consultation.orders",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Orders",
-    "translationKey":"ORDERS_BOARD_LABEL_KEY",
-    "url": "orders",
-    "icon": "icon-user-md",
-    "order": 6,
-    "requiredPrivilege": "app:clinical:ordersTab"
-  },
-  "bahmniClinicalConsultationBacteriology": {
-    "id": "bahmni.clinical.consultation.bacteriology",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Bacteriology",
-    "translationKey":"BACTERIOLOGY_BOARD_LABEL_KEY",
-    "url": "bacteriology",
-    "icon": "icon-user-md",
-    "order": 7,
-    "requiredPrivilege": "app:clinical:bacteriologyTab"
   }
 }

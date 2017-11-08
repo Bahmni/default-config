@@ -1,0 +1,60 @@
+{
+
+  "ALL_DIAGNOSES_KEY": "Todos los diagnósticos",
+
+  "CLINICAL_DAYS_TRANSLATION_KEY": "días ",
+  "CLINICAL_MONTHS_TRANSLATION_KEY": "meses",
+  "CLINICAL_YEARS_TRANSLATION_KEY": "Años",
+
+  "CONCEPT_SET_GROUP_COLLAPSE_ALL_KEY": "Contraer todo",
+  "CONCEPT_SET_GROUP_EXPAND_ALL_KEY": "Expandir todo",
+
+  "CONDITION_LIST_ACTIVE_SINCE": "condición de",
+  "CONDITION_LIST_CONDITIONS_ACTIVE": "Condiciones Activas",
+  "CONDITION_LIST_CONDITIONS_HISTORY_OF": "Historial de Condiciones",
+  "CONDITION_LIST_CONDITIONS_INACTIVE": "Condiciones Inactivas",
+  "CONDITION_LIST_CREATED_BY": "por",
+  "CONDITION_LIST_DISPLAY_CONTROL_TITLE": "Condiciones",
+  "CONDITION_LIST_NO_CONDITIONS": "Sin Condiciones disponibles",
+  "CONDITION_LIST_NOTES": "Notas",
+  "CONDITION_LIST_STATUS": "Estado",
+
+  "DASHBOARD_TITLE_VITALS_KEY":"Vitales",
+  "DASHBOARD_TITLE_DIAGNOSIS_KEY":"Diagnostico",
+  "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY":"Detalles de Admisión",
+  "DASHBOARD_TITLE_DISPOSITION_KEY":"Dispociciones",
+
+  "HOME_DASHBOARD_KEY":"Panel de Control",
+  "PATIENT_VISIT_PAGE_KEY":"Pagina Visita del Paciente",
+  "PATIENT_ADT_PAGE_KEY":"Pagina de ADT del Paciente",
+  "PROGRAM_MANAGEMENT_PAGE_KEY":"Pagina Administrador del Programa",
+
+  "DISPLAY_CONTROL_ERROR_MESSAGE_KEY": "No {{ displayControl }} para este paciente",
+
+  "MESSAGE_DEFAULT_VISIT_TYPE_INVALID_KEY": "Por favor, configure un tipo de visita predeterminada válida ",
+  "MESSAGE_DEFAULT_VISIT_TYPE_NOT_FOUND_KEY": "Por favor configure por defecto un tipo de visita ",
+  "MESSAGE_DIALOG_OPTION_COPY": "Error en la copia",
+  "MESSAGE_DIALOG_OPTION_OKAY": "OK",
+
+  "MODULE_LABEL_ADMITTED_KEY":"Admitido",
+  "MODULE_LABEL_TO_ADMIT_KEY":"Para Admitir",
+  "MODULE_LABEL_TO_DISCHARGE_KEY":"Para dar de Alta",
+  "MODULE_LABEL_ALL_KEY":"Todos",
+
+
+  "NO_ADMISSION_DETAILS_MESSAGE": "No hay detalles de admisión para este paciente.",
+  "NO_DIAGNOSIS_MESSAGE": "No hay diagnóstico para este paciente",
+  "NO_DISPOSTIONS_AVAILABLE_MESSAGE_KEY": "No hay disposiciones disponibles.",
+
+  "PATIENT_REGISTRATION_PAGE_KEY": "Registro",
+  "PATIENT_VISIT_ATTRIBUTES_PAGE_KEY": "Atributos de visita",
+
+  "SEARCH_KEY": "Buscar",
+  "SEARCH_NAME_PLACEHOLDER_KEY": "Buscar nombre/{{ primaryIdentifier }}  ...",
+
+  "VISIT_CHANGE_CONFIRMATION_DIALOG_MESSAGE_KEY": "El tipo de visita actual es<b>{{ visitType }}<b>, ¿Desea cerrar y empezar una nueva <b>{{ defaultVisitType }}</b>  visita? ",
+  "VISIT_CHANGE_CONFIRMATION_OPTION_CANCEL_KEY": "Cancelar",
+  "VISIT_CHANGE_CONFIRMATION_OPTION_CONTINUE_KEY": "Continue con la visita actual",
+  "VISIT_CHANGE_CONFIRMATION_OPTION_YES_KEY": "Si"
+
+}
