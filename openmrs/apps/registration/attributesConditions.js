@@ -31,7 +31,7 @@ Bahmni.Registration.AttributesConditions.rules = {
                 },
                 "cellphone": {
                     method: function (name, value, personAttributeDetails) {
-                        return value.match(/^[0-9]{4}-[0-9]{4})$/);
+                        return value.match(/^[0-9]{4}-[0-9]{4}$/);
                     },
                     errorMessage: "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY"
                 },
