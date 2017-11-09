@@ -49,10 +49,5 @@
                 );
             </sql>
         </changeSet>
-        <changeSet id="default-201709081630" author="Maharjun, Shireesha" runOnChange="true">
-            <comment>Adding upcoming and past appointments for patient</comment>
-            <sqlFile path="patientPastAppointments.sql"/>
-            <sqlFile path="patientUpcomingAppointments.sql"/>
-        </changeSet>
 
 </databaseChangeLog>
