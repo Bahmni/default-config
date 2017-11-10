@@ -31,7 +31,7 @@
     "REGISTRATION_LABEL_SYNC": "Sincronizar",
     "REGISTRATION_LABEL_NEW_PATIENT": "NUEVO PACIENTE",
     "REGISTRATION_LABEL_PATIENT_IDENTIFIER": "Identificador del paciente",
-    "REGISTRATION_LABEL_ENTER_ID": "Introduzca la ID",
+    "REGISTRATION_LABEL_ENTER_ID": "Número de Identificación",
     "REGISTRATION_LABEL_NO_PRINT_LAYOUT": "No se encontró diseño de impresión",
     "REGISTRATION_LABEL_FEATURE_NOT_IMPLEMENTED": "La función que está pidiendo aún no está implementado .",
     "REGISTRATION_LABEL_PATIENT_NAME": "Nombre del paciente",
