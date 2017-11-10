@@ -31,21 +31,18 @@
   "CONDITION_LIST_ACTIVE":"Activo",
   "CONDITION_LIST_INACTIVE":"Inactivo",
   "CONDITION_LIST_HISTORY_OF":"Historia de",
+  "OBSERVATIONS_BOARD_LABEL_KEY": "Historia Clínica",
   "CLINICAL_ACCEPT":"Aceptar",
-  "CONCEPT_SET_GROUP_COLLAPSE_ALL_KEY": "Desplegar todo",
-  "CONCEPT_SET_GROUP_SEARCH_LABEL":"Busqueda Formulario de Observación",
+  "CONCEPT_SET_GROUP_SEARCH_LABEL":"Búsqueda Formulario de Historia Clínica",
   "CONCEPT_SET_GROUP_EXPAND_ALL_KEY": "Expandir todo",
   "CONCEPT_SET_GROUP_REMOVE_KEY":"Remover",
   "CONCEPT_SET_GROUP_PIN_UNPIN_KEY":"Anclar/Desanclar",
   "CONSULTATION_PAGE_KEY": "Consulta",
   "CONSULTATION_TAB_KEY": "Consulta",
-  "EMPTY_TEMPLATE_MESSAGE":"Lista de Formularios de Historia Clínica Vacía",
   "CLINICAL_DIAGNOSIS_CERTAINTY_PRESUMED":"Probable",
-
-
+  "CLINICAL_TEMPLATE_ADDED_SUCCESS_KEY":"Agregado Exitosamente",
   "CONDITION_LIST_DISPLAY_CONTROL_TITLE":"Condiciones",
-      "CONDITION_LIST_NO_CONDITIONS":"No hay Condiciones disponibles",
-
+  "CONDITION_LIST_NO_CONDITIONS":"No hay Condiciones disponibles",
   "DASHBOARD_TAB_GENERAL_KEY": "General",
   "DASHBOARD_TAB_PATIENT_DOCUMENTS_KEY": "Documentos",
   "DASHBOARD_TAB_PATIENT_MONITORING_DRUGS_START_DATE_KEY": "Monitoreo de Paciente (D)",
@@ -91,16 +88,12 @@
       "NO_TREATMENTS_MESSAGE": "Sin tratamientos para este paciente.",
   "DASHBOARD_TITLE_VISITS_KEY": "Visitas",
   "DASHBOARD_TITLE_VITALS_KEY":"Vitales",
-
+  "EMPTY_TEMPLATE_MESSAGE":"Lista de Formularios de Historia Clínica Vacía",
   "DIAGNOSIS_BOARD_LABEL_KEY":"Diagnóstico",
-  "DISPOSITION_BOARD_LABEL_KEY":"Disposición",
-  "CONSULTATION_BOARD_LABEL_KEY":"Consulta",
-  "ORDERS_BOARD_LABEL_KEY":"Órdenes",
-  "MEDICATIONS_BOARD_LABEL_KEY":"Prescripciones Médicas",
-
-
+  "CONSULTATION_BOARD_LABEL_KEY":"Notas de Consulta",
+  "MEDICATIONS_BOARD_LABEL_KEY":"Tratamiento",
   "DISPLAY_CONTROL_ERROR_MESSAGE_KEY": "No {{ displayControl }} para este paciente",
-
+  "DISPOSITION_BOARD_LABEL_KEY":"Remisiones",
   "DQ_COLUMN_TITLE_ACTION": "Acción",
   "DQ_COLUMN_TITLE_EMR_ID": "ID EMR",
   "DQ_COLUMN_TITLE_NAME": "Nombre",
@@ -200,8 +193,7 @@
   "NO_DOCUMENTS_MESSAGE": "No hay documentos para este paciente",
   "NO_LAB_ORDERS_FOR_PATIENT_MESSAGE_KEY": "Este paciente no tiene ordenes para exámenes de laboratorio",
   "NO_DRUG_DETAILS_MESSAGE":"No hay detalle del medicamento",
-
-  "OBSERVATIONS_BOARD_LABEL_KEY": "Observaciones",
+  "ORDERS_BOARD_LABEL_KEY":"Estudios y Peticiones",
   "ON_BEHALF_OF_TRANSLATION_KEY": "De parte de",
   "OBS_BOOLEAN_YES_KEY":"Sí",
   "OBS_BOOLEAN_NO_KEY":"No",
