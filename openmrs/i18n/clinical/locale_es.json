@@ -92,7 +92,7 @@
   "DIAGNOSIS_BOARD_LABEL_KEY":"Diagnóstico",
   "CONSULTATION_BOARD_LABEL_KEY":"Notas de Consulta",
   "MEDICATIONS_BOARD_LABEL_KEY":"Tratamiento",
-  "DISPLAY_CONTROL_ERROR_MESSAGE_KEY": "No {{ pantalla de control }} para este paciente",
+  "DISPLAY_CONTROL_ERROR_MESSAGE_KEY": "No {{ displayControl }} para este paciente",
   "DISPOSITION_BOARD_LABEL_KEY":"Remisiones",
   "ORDERS_BOARD_LABEL_KEY":"Órdenes",
   "DQ_COLUMN_TITLE_ACTION": "Acción",
