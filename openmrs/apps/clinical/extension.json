@@ -161,10 +161,21 @@
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
-      "conceptName": "History and Examination",
+      "conceptName": "Vitals",
       "default": true
     },
     "order": 1,
+    "requiredPrivilege": "app:clinical:history"
+  },
+  "bahmniClinicalConceptSetGroupObservationsHistory": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.history",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "conceptName": "Medical History",
+      "default": true
+    },
+    "order": 2,
     "requiredPrivilege": "app:clinical:history"
   },
   "bahmniClinicalConceptSetGroupObservationsCurrent": {
@@ -175,7 +186,7 @@
       "default": true,
       "conceptName": "Current History"
     },
-    "order": 2,
+    "order": 3,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsPhysicalExam": {
@@ -186,7 +197,7 @@
       "default": true,
       "conceptName": "Physical Examination"
     },
-    "order": 3,
+    "order": 4,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
