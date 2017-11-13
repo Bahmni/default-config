@@ -113,6 +113,30 @@ Bahmni.Registration.AttributesConditions.rules = {
                     },
                     errorMessage: "REGISTRATION_ADDRESS_WORK_TEXT_ERROR_KEY"
                 },
+                "emergencyContactFirstName": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_EMERGENCY_CONTACT_FIRST_NAME_TEXT_KEY"
+                },
+                "emergencyContactSecondName": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_EMERGENCY_CONTACT_SECOND_NAME_TEXT_KEY"
+                },
+                "emergencyContactFirstLastname": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_EMERGENCY_CONTACT_FIRST_LAST_NAME_TEXT_KEY"
+                },
+                "emergencyContactSecondLastname": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_EMERGENCY_CONTACT_SECOND_LAST_NAME_TEXT_KEY"
+                },
                 "emergencyContactPhone1": {
                     method:  function (name, value, personAttributeDetails) {
                         return value.match(/^[0-9]{4}-[0-9]{4}$/);
