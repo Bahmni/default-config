@@ -1,40 +1,44 @@
 <section  class="app-dashboard-integration">
     <h2 class="section-title"><a ng-click="goToListView()">{{ section.title | titleTranslate}}</a></h2>
     <h4>{{::"DASHBOARD_UPCOMING_APPOINTMENTS_KEY" | translate}}</h4>
-    <table class="table-header">
-        <thead>
-        <tr>
-            <th ng-repeat="heading in upcomingAppointmentsHeadings">
-                {{heading | translate}}
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <p ng-if="upcomingAppointments.length === 0">{{::"DASHBOARD_NO_UPCOMING_APPOINTMENTS_KEY" | translate}}</p>
-        <tr ng-repeat="appointment in upcomingAppointments">
-            <td ng-repeat="detail in appointment">
-                {{detail}}
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div style="overflow: auto">
+        <table class="table-header">
+            <thead>
+            <tr>
+                <th ng-repeat="heading in upcomingAppointmentsHeadings">
+                    {{heading | translate}}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <p ng-if="upcomingAppointments.length === 0">{{::"DASHBOARD_NO_UPCOMING_APPOINTMENTS_KEY" | translate}}</p>
+            <tr ng-repeat="appointment in upcomingAppointments">
+                <td ng-repeat="detail in appointment">
+                    {{detail}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h4>{{::"DASHBOARD_PAST_APPOINTMENTS_KEY" | translate}}</h4>
     <p ng-if="pastAppointments.length === 0">{{::"DASHBOARD_NO_PAST_APPOINTMENTS_KEY" | translate}}</p>
-    <table class="table-header">
-        <thead>
-        <tr>
-            <th ng-repeat="heading in pastAppointmentsHeadings">
-                {{heading | translate}}
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="appointment in pastAppointments">
-            <td ng-repeat="detail in appointment">
-                {{detail}}
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div style="overflow: auto">
+        <table class="table-header">
+            <thead>
+            <tr>
+                <th ng-repeat="heading in pastAppointmentsHeadings">
+                    {{heading | translate}}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="appointment in pastAppointments">
+                <td ng-repeat="detail in appointment">
+                    {{detail}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
