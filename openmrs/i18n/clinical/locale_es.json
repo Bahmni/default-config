@@ -260,12 +260,12 @@
   "PROGRAM_MANAGEMENT_STARTED_ON_KEY": "Registrado en ",
   "PROGRAM_MANAGEMENT_STOP_DATE_KEY": "Fecha de finalización",
   "PROGRAM_MANAGEMENT_TO_KEY": "Para",
-
   "REGISTRATION_LABEL_NUMBER": "ID de Registro Médico Electrónico (RME)",
   "SAVE_ACCESS_KEY": "s",
   "SEARCH_NAME_PLACEHOLDER_KEY":"Buscar por Nombre/Paciente",
   "SEARCH_KEY":"BUSCAR",
-
+  "REMOVE_CONFIRMATION_KEY" : "Está seguro de borrar la observación?",
+  "CLINICAL_TEMPLATE_REMOVED_SUCCESS_KEY" : "La observación se borro exitosamente",
   "SUMMARY_TITLE_ADVERSE_EVENTS": "Eventos Adversos",
   "SUMMARY_TITLE_AUDIOMETRY_LEFT": "Audiometría oído izquierdo",
   "SUMMARY_TITLE_AUDIOMETRY_RIGHT": "Audiometría oído derecho",

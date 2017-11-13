@@ -5,7 +5,8 @@
   "MODULE_LABEL_ACTIVE_PATIENTS_BY_LOCATION": "PatientsByLocation",
   "MODULE_LABEL_OPD_1_KEY": "OPD-1",
   "MODULE_LABEL_ALL_KEY": "All",
-
+  "REMOVE_CONFIRMATION_KEY" : "Está seguro de borrar la observación?",
+  "CLINICAL_TEMPLATE_REMOVED_SUCCESS_KEY" : "La observación se borro exitosamente",
   "DASHBOARD_TITLE_LAB_RESULTS_KEY": "Lab Results",
   "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY": "Lab Orders Display Control",
   "DASHBOARD_TITLE_PACS_KEY": "Pacs",
@@ -46,7 +47,6 @@
   "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY": "Clinical Notes",
   "DISCHARGE_SUMMARY_AT_DISCHARGE_KEY": "At Discharge",
   "DISCHARGE_SUMMARY_TREATMENTS_KEY": "Treatments",
-  "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY": "Admission Details",
 
   "OBSERVATIONS_BOARD_LABEL_KEY":"Observations",
   "MEDICATIONS_BOARD_LABEL_KEY":"Medications",
