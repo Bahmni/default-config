@@ -81,6 +81,12 @@
                 "multiSelect" : true,
                 "autocomplete" : true
             },
+            "FP, Family Planning Method" :{
+                "multiSelect" : true
+            },
+            "Exploración Física de Reumatología - Piel y Faneras, Patologías" :{
+                "multiSelect" : true
+            },
             "Posture": {
                 "buttonSelect": true
             },
@@ -90,6 +96,7 @@
             "FHS": {
                 "buttonSelect": true
             },
+            
             "P/S (Per Speculum) - Cervix": {
                 "grid": true
             },
