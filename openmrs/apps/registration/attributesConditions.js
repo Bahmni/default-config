@@ -160,6 +160,30 @@ Bahmni.Registration.AttributesConditions.rules = {
                     },
                     errorMessage: "REGISTRATION_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY"
                 },
+                "secundaryEmergencyContactFirstName": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_SECUNDARY_EMERGENCY_CONTACT_FIRST_NAME_TEXT_KEY"
+                },
+                "secundaryEmergencyContactSecondName": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_SECUNDARY_EMERGENCY_CONTACT_SECOND_NAME_TEXT_KEY"
+                },
+                "secundaryEmergencyContactFirstLastname": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_SECUNDARY_EMERGENCY_CONTACT_FIRST_LAST_NAME_TEXT_KEY"
+                },
+                "secundaryEmergencyContactSecondLastname": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_SECUNDARY_EMERGENCY_CONTACT_SECOND_LAST_NAME_TEXT_KEY"
+                },
                 "secundaryEmergencyContactPhone1": {
                     method:  function (name, value, personAttributeDetails) {
                         return value.match(/^[0-9]{4}-[0-9]{4}$/);
@@ -205,6 +229,30 @@ Bahmni.Registration.AttributesConditions.rules = {
                         return value.match(/^[a-zA-Z0-9_.+-]{3,244}@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,5}$/);
                     },
                     errorMessage: "REGISTRATION_THIRD_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY"
+                },
+                "thirdEmergencyContactFirstName": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_THIRD_EMERGENCY_CONTACT_FIRST_NAME_TEXT_KEY"
+                },
+                "thirdEmergencyContactSecondName": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_THIRD_EMERGENCY_CONTACT_SECOND_NAME_TEXT_KEY"
+                },
+                "thirdEmergencyContactFirstLastname": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_THIRD_EMERGENCY_CONTACT_FIRST_LAST_NAME_TEXT_KEY"
+                },
+                "thirdEmergencyContactSecondLastname": {
+                    method:  function (name, value, personAttributeDetails) {
+                        return value.match(/^[a-zA-ZÁÉÍÓÚ\u00E0-\u00FC\s]{2,60}$/);
+                    },
+                    errorMessage:"REGISTRATION_NAME_THIRD_EMERGENCY_CONTACT_SECOND_LAST_NAME_TEXT_KEY"
                 }
             };
         }
