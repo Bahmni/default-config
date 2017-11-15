@@ -104,7 +104,7 @@
     "REGISTRATON_LATEST_KEY": "Reciente",
     "DISPLAY_CONTROL_ERROR_MESSAGE_KEY": "No {{  }} para este paciente",
     "REGISTRATION_LABEL_NUMBER": "Número de registro",
-    "REGISTRATION_START_VISIT": "Empezar {{visitType}} Consulta Externa"
+    "REGISTRATION_START_VISIT": "Empezar {{visitType}} Consulta Externa",
     "MESSAGE_DIALOG_OPTION_COPY": "Copia error",
     "MESSAGE_DIALOG_OPTION_OKAY": "OK",
     "NO_LOCATION_TAGGED_TO_VISIT_LOCATION": "No hay ubicación puesta para la Ubicacion de la Visita Encontrada",
