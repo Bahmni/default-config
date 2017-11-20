@@ -22,7 +22,7 @@
     "FEE_INFORMATION_LOCALE_KEY": "Información de Tarifa",
     "NUTRITIONAL_VALUES_LOCALE_KEY": "Valores Nutricionales",
     "REGISTRATION_PRINT_WITH_BARCODE": "Imprimir <u>C</u>ódigo de Barra ",
-
+    "OBS_ABNORMAL_TRANSLATE_KEY":"Anormal",
     "REGISTRATION_TITLE_KEY": "Registro de Pacientes",
     "REGISTRATION_LABEL_SCANNED": "Escaneada",
     "REGISTRATION_LABEL_PAPER": "Papel",
