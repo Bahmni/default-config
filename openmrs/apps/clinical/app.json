@@ -34,7 +34,7 @@
                 { "locale" : "pt", "css": "offline-language-portuguese-brazil"}
             ]
         },
-    	"diagnosisStatus": "Inactive",
+    	"diagnosisStatus": "Inactivo",
             "program": {
                 "patientInformation": {
                     "ageLimit": 100
