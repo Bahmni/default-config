@@ -27,7 +27,7 @@
     "url": "../pre-clinical/index.html#/default/patient/search",
     "icon": "fa-heartbeat",
     "order": 3,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:pre-clinical"
   },
   "clinical": {
     "id": "bahmni.clinical",
