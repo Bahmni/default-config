@@ -44,7 +44,7 @@
   "CONDITION_LIST_NO_CONDITIONS":"No hay Condiciones disponibles",
   "CONDITION_LIST_INACTIVE":"Inactivo",
   "CONDITION_LIST_NO_RETRO_MODE":"Lista de Condiciones",
-  "CONDITION_LIST_STATUS":"Estatus",
+  "CONDITION_LIST_STATUS":"Estado",
   "CONSULTATION_BOARD_LABEL_KEY": "Resumen de Consulta",
   "CONSULTATION_BOARD_LABEL_KEY":"Notas de Consulta",
   "CONSULTATION_PAGE_KEY": "Consulta",
@@ -60,6 +60,7 @@
   "CONDITION_LIST_STATUS": "Estado",
   "CONDITION_LIST_SET_AS_INACTIVE": "Inactivo",
   "CONDITION_LIST_SET_AS_HISTORY_OF": "Historia de",
+  "CONDITION_LIST_FOLLOW_UP": "Seguimiento",
 
   "DASHBOARD_TAB_GENERAL_KEY": "General",
   "DASHBOARD_TAB_PATIENT_DOCUMENTS_KEY": "Documentos",
