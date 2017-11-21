@@ -40,7 +40,7 @@
   "CONDITION_LIST_CONDITION":"Condición",
   "CONDITION_LIST_DATE":"Fecha",
   "CONDITION_LIST_DISPLAY_CONTROL_TITLE":"Condiciones",
-  "CONDITION_LIST_HISTORY_OF":"Historia de",
+  "CONDITION_LIST_HISTORY_OF":"Historial de Condiciones",
   "CONDITION_LIST_NO_CONDITIONS":"No hay Condiciones disponibles",
   "CONDITION_LIST_INACTIVE":"Inactivo",
   "CONDITION_LIST_NO_RETRO_MODE":"Lista de Condiciones",
@@ -59,7 +59,7 @@
   "CONDITION_LIST_NOTES": "Notas",
   "CONDITION_LIST_STATUS": "Estado",
   "CONDITION_LIST_SET_AS_INACTIVE": "Inactivo",
-  "CONDITION_LIST_SET_AS_HISTORY_OF": "Historia de",
+  "CONDITION_LIST_SET_AS_HISTORY_OF": "Historial de Condiciones",
   "CONDITION_LIST_FOLLOW_UP": "Seguimiento",
 
   "DASHBOARD_TAB_GENERAL_KEY": "General",
