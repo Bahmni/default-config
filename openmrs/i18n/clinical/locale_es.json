@@ -28,6 +28,7 @@
   "CLINICAL_TEMPLATE_ADDED_SUCCESS_KEY":"Agregado Exitosamente",
   "CLINICAL_TEMPLATE_REMOVED_SUCCESS_KEY" : "La observación se borro exitosamente",
   "CLINICAL_YEARS_TRANSLATION_KEY": "Año",
+  "CLINICAL_FORM_ERRORS_MESSAGE": "No se pudo salvar el diagnosis.",
 
   "CONCEPT_SET_GROUP_COLLAPSE_ALL_KEY": "Desplegar todo",
   "CONCEPT_SET_GROUP_EXPAND_ALL_KEY": "Expandir todo",
