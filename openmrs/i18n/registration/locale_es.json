@@ -59,6 +59,7 @@
     "REGISTRATION_LABEL_ESTIMATE": "Estimado",
     "REGISTRATION_LABEL_BIRTH_TIME": "Hora de Nacimiento",
     "REGISTRATION_LABEL_ADDRESS_INFO": "Lugar de Residencia",
+    "REGISTRATION_LABEL_ADDRESS_COORDINATE": "Coordenada Geográfica",
     "REGISTRATION_LABEL_OTHER_INFO": "Otra información",
     "REGISTRATION_LABEL_DEATH_INFO": "Información de Muerte",
     "REGISTRATION_LABEL_REASON_FOR_DEATH": "Razón",
