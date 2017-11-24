@@ -24,7 +24,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_PRE-CLINICAL_KEY",
-    "url": "../pre-clinical/index.html#/default/patient/search",
+    "url": "../preClinical/index.html#/default/patient/search",
     "icon": "fa-heartbeat",
     "order": 3,
     "requiredPrivilege": "app:pre-clinical"
