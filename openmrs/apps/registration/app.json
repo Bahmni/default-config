@@ -216,12 +216,13 @@
                         "residenceWork",
                         "houseNoWork",
                         "streetWork",
-                        "blockWork",
                         "cityWork",
                         "municipalityWork",
                         "departmentWork",
                         "countryWork",
-                        "addressWork"
+                        "addressWork",
+                        "latitude",
+                        "longitude"
                     ]
                 },
                 "hidden": {
