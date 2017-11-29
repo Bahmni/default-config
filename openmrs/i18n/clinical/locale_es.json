@@ -27,9 +27,9 @@
   "CLINICAL_SAVE_TRANSLATION_KEY": "<u>S</u>alvar",
   "CLINICAL_TEMPLATE_ADDED_SUCCESS_KEY":"Agregado Exitosamente",
   "CLINICAL_TEMPLATE_REMOVED_SUCCESS_KEY" : "La observación se borro exitosamente",
-  "CLINICAL_YEARS_TRANSLATION_KEY": "Año",
-  "CLINICAL_FORM_ERRORS_MESSAGE": "No se pudo salvar el diagnosis.",
-
+  "CLINICAL_YEARS_TRANSLATION_KEY": "Años",
+  "CLINICAL_FORM_ERRORS_MESSAGE": "No se pudo salvar el diagnóstico.",
+  "CLINICAL_FORM_ERRORS_MESSAGE_KEY": "Por favor ingresar un valor en los campos requeridos para continuar.",
   "CONCEPT_SET_GROUP_COLLAPSE_ALL_KEY": "Desplegar todo",
   "CONCEPT_SET_GROUP_EXPAND_ALL_KEY": "Expandir todo",
   "CONCEPT_SET_GROUP_PIN_UNPIN_KEY":"Anclar/Desanclar",
