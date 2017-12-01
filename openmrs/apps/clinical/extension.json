@@ -161,21 +161,10 @@
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
-      "conceptName": "Vitals",
-      "default": true
-    },
-    "order": 1,
-    "requiredPrivilege": "app:clinical:history"
-  },
-  "bahmniClinicalConceptSetGroupObservationsHistory": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.history",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
-    "type": "config",
-    "extensionParams": {
       "conceptName": "Medical History - Background",
       "default": true
     },
-    "order": 2,
+    "order": 1,
     "requiredPrivilege": "app:clinical:history"
   },
   "bahmniClinicalConceptSetGroupObservationsCurrent": {
@@ -186,7 +175,7 @@
       "default": true,
       "conceptName": "Current History"
     },
-    "order": 3,
+    "order": 2,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsPhysicalExam": {
@@ -197,7 +186,7 @@
       "default": true,
       "conceptName": "Physical Examination"
     },
-    "order": 4,
+    "order": 3,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
@@ -213,7 +202,7 @@
         "return visitTypes.indexOf(visitTypeName) !== -1;"
       ]
     },
-    "order": 3,
+    "order": 4,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsObstetrics": {
@@ -223,7 +212,7 @@
     "extensionParams": {
       "conceptName": "Obstetrics"
     },
-    "order": 4,
+    "order": 5,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsGynaecology": {
@@ -233,7 +222,7 @@
     "extensionParams": {
       "conceptName": "Gynaecology"
     },
-    "order": 5,
+    "order": 6,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsDischargeSummary": {
@@ -243,7 +232,7 @@
     "extensionParams": {
       "conceptName": "Discharge Summary"
     },
-    "order": 6,
+    "order": 7,
     "requiredPrivilege": "Discharge Summary"
   }
 }
