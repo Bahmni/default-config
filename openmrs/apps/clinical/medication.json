@@ -4,96 +4,96 @@
   "tabConfig": {
     "allMedicationTabConfig": {
       "inputOptionsConfig": {
-        "defaultDurationUnit": "Day(s)",
+        "defaultDurationUnit": "Día(s)",
         "hideOrderSet" : false,
-        "defaultInstructions": "As directed",
+        "defaultInstructions": "Como se indica",
         "frequencyDefaultDurationUnitsMap": [
           {
             "minFrequency": "1/7",
             "maxFrequency": 5,
-            "defaultDurationUnit": "Day(s)"
+            "defaultDurationUnit": "Día(s)"
           },
           {
             "minFrequency": "1/30",
             "maxFrequency": "1/7",
-            "defaultDurationUnit": "Week(s)"
+            "defaultDurationUnit": "Semana(s)"
           },
           {
             "minFrequency": null,
             "maxFrequency": "1/30",
-            "defaultDurationUnit": "Month(s)"
+            "defaultDurationUnit": "Mes(es)"
           }
         ],
         "drugFormDefaults": {
-          "Ayurvedic": {
-            "doseUnits": "Teaspoon",
+          "Ayurvédico": {
+            "doseUnits": "Cucharadita",
             "route": "Oral"
           },
-          "Capsule": {
-            "doseUnits": "Capsule(s)",
+          "Cápsula": {
+            "doseUnits": "Cápsula(s)",
             "route": "Oral"
           },
-          "Cream": {
-            "route": "Topical"
+          "Crema": {
+            "route": "Tópico"
           },
-          "Drops": {
-            "doseUnits": "Drop",
-            "route": "Topical"
+          "Gotas": {
+            "doseUnits": "Gota",
+            "route": "Tópico"
           },
-          "Food Supplement": {
-            "doseUnits": "Unit(s)",
+          "Suplemento Alimenticio": {
+            "doseUnits": "Unidad(es)",
             "route": "Oral"
           },
           "Gel": {
-            "route": "Topical"
+            "route": "Tópico"
           },
-          "Granule": {
-            "doseUnits": "Unit(s)",
+          "Gránulo": {
+            "doseUnits": "Unidad(es)",
             "route": "Oral"
           },
-          "Inhaler": {
+          "Inhalador": {
             "doseUnits": "Puff(s)",
-            "route": "Inhalation"
+            "route": "Inhalación"
           },
-          "Injection": {
+          "Inyección": {
             "doseUnits": "mg",
-            "route": "Intravenous"
+            "route": "Intravenosa"
           },
-          "Jelly": {
-            "route": "Topical"
+          "Gelatina": {
+            "route": "Tópico"
           },
-          "Liquid": {
+          "Líquido": {
             "doseUnits": "ml",
             "route": "Oral"
           },
-          "Lotion": {
-            "route": "Topical"
+          "Loción": {
+            "route": "Tópico"
           },
-          "Ointment": {
-            "route": "Topical"
+          "Ungüento": {
+            "route": "Tópico"
           },
-          "Pessary": {
-            "doseUnits": "Unit(s)",
-            "route": "Per Vaginal"
+          "Pesario": {
+            "doseUnits": "Unidad(es)",
+            "route": "Por Vaginal"
           },
-          "Powder": {
+          "Polvo": {
             "doseUnits": "mg",
-            "route": "Topical"
+            "route": "Tópico"
           },
-          "Solution": {
+          "Solución": {
             "doseUnits": "ml",
-            "route": "Topical"
+            "route": "Tópico"
           },
           "Spray": {
             "doseUnits": "Puff(s)",
             "route": "Nasal"
           },
-          "Syrup": {
+          "Jarabe": {
             "doseUnits": "ml",
             "route": "Oral"
           },
-          "Tablet": {
-            "doseUnits": "Tablet(s)",
+          "Tableta": {
+            "doseUnits": "Tableta(s)",
             "route": "Oral"
           }
         }
