@@ -77,14 +77,308 @@
                 "durationRequired": false,
                 "allowAddMore": true
             },
+            "Exploración Física de Reumatología - Piel y Faneras, Patologías" :{
+                "multiSelect" : true
+            },
+            "Exploración Física de Reumatología - Fotosensibilidad" :{
+                "multiSelect" : true
+            },
+            "Exploración Física de Reumatología - Pliegues Cutaneos" :{
+                "multiSelect" : true
+            },
+            "Exploración Física de Reumatología - Mucosas, Mucosas" :{
+                "multiSelect" : true
+            },
+            "Exploración Física de Reumatología - Ojos, Ojos" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Columna, Columna Cervical" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Columna, Columna Dorsal" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Columna, Columna Lumbar" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Columna, Sacroiliacas" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Hombro Derecho, Abducción" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Hombro Derecho, Aducción" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Hombro Derecho, Rotación Externa" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Hombro Derecho, Rotación Interna" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Hombro Izquierdo, Abducción" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Hombro Izquierdo, Aducción" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Hombro Izquierdo, Rotación Externa" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Hombro Izquierdo, Rotación Interna" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Codo Derecho, Flexión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Codo Derecho, Extensión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Codo Izquierdo, Flexión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, MMSS, Codo Izquierdo, Extensión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, Nódulos de Heberden" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, Nódulos de Bouchard" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, Carpo, Flexión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, Carpo, Extensión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, Pinza" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, Agarre" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, MCF, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, MCF, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, MCF, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, MCF, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, MCF, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFP, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFP, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFP, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFP, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFP, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFD, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFD, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFD, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFD, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Derecha, IFD, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, Carpo, Flexión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, Carpo, Extensión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, MCF, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, MCF, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, MCF, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, MCF, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, MCF, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFP, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFP, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFP, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFP, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFP, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFD, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFD, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFD, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFD, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Manos, Mano Izquierda, IFD, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Derecha, Rotación Externa" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Derecha, Rotación Externa Forzada" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Derecha, Rotación Interna" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Derecha, Abducción" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Derecha, Flexión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Derecha, Extensión" :{
+                "multiSelect" : true
+            },
+            "Exploración Física de Reumatología - Músculo Esquelético, Caderas, Cadera Derecha, Referido a" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Izquierda, Rotación Externa" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Izquierda, Rotación Externa Forzada" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Izquierda, Rotación Interna" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Izquierda, Abducción" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Izquierda, Flexión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Caderas, Cadera Izquierda, Extensión" :{
+                "multiSelect" : true
+            },
+            "Exploración Física de Reumatología - Músculo Esquelético, Caderas, Cadera Izquierda, Referido a" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Rodillas, Rodilla Derecha, Flexión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Rodillas, Rodilla Derecha, Extensión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Rodillas, Rodilla Derecha, Inestabilidad Lateral" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Rodillas, Rodilla Izquierda, Flexión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Rodillas, Rodilla Izquierda, Extensión" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Rodillas, Rodilla Izquierda, Inestabilidad Lateral" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, Flexión Dorsal" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, Flexión Plantar" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, Pinza" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, Fase a Plantar" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, MTF, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, MTF, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, MTF, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, MTF, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, MTF, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFP, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFP, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFP, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFP, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFP, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFD, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFD, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFD, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFD, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFD, Quinta" :{
+                "multiSelect" : true
+            },
             "Tuberculosis, Adverse Effects" :{
                 "multiSelect" : true,
                 "autocomplete" : true
             },
             "FP, Family Planning Method" :{
-                "multiSelect" : true
-            },
-            "Exploración Física de Reumatología - Piel y Faneras, Patologías" :{
                 "multiSelect" : true
             },
             "Posture": {
