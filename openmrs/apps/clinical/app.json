@@ -272,9 +272,6 @@
             "Músculo Esquelético, Caderas, Cadera Derecha, Extensión" :{
                 "multiSelect" : true
             },
-            "Exploración Física de Reumatología - Músculo Esquelético, Caderas, Cadera Derecha, Referido a" :{
-                "multiSelect" : true
-            },
             "Músculo Esquelético, Caderas, Cadera Izquierda, Rotación Externa" :{
                 "multiSelect" : true
             },
@@ -291,9 +288,6 @@
                 "multiSelect" : true
             },
             "Músculo Esquelético, Caderas, Cadera Izquierda, Extensión" :{
-                "multiSelect" : true
-            },
-            "Exploración Física de Reumatología - Músculo Esquelético, Caderas, Cadera Izquierda, Referido a" :{
                 "multiSelect" : true
             },
             "Músculo Esquelético, Rodillas, Rodilla Derecha, Flexión" :{
@@ -372,6 +366,66 @@
                 "multiSelect" : true
             },
             "Músculo Esquelético, Tobillos y Pies, Tobillo Derecho, Rotación, IFD, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, Rotación" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, Flexión Dorsal" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, Flexión Plantar" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, Pinza" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, Fase a Plantar" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, MTF, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, MTF, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, MTF, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, MTF, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, MTF, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFP, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFP, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFP, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFP, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFP, Quinta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFD, Primera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFD, Segunda" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFD, Tercera" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFD, Cuarta" :{
+                "multiSelect" : true
+            },
+            "Músculo Esquelético, Tobillos y Pies, Tobillo Izquierdo, IFD, Quinta" :{
                 "multiSelect" : true
             },
             "Tuberculosis, Adverse Effects" :{
