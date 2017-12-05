@@ -26,13 +26,6 @@
                         "identifierDocument"
                     ]
                 },
-                "editPatientType": {
-                    "title": "editPatientType",
-                    "translationKey": "editPatientType",
-                    "attributes": [
-                        "patientType"
-                    ]
-                },
                 "personalInfo": {
                     "title": "personalInfo",
                     "translationKey": "personalInfo",
