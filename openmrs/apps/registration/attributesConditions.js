@@ -296,6 +296,7 @@ var showOrHideServiceInfoSection = function (patient) {
             patient['unidadDependenciasFFAA'] = {};
             patient['retiredPatient'] = false;
             patient['auxiliaryOfficer'] = false;
+            hideAll(returnValues);
             returnValues.hide.push("serviceInfo");
         }
     }else {
@@ -367,6 +368,17 @@ var hideShowGrado = function(patient, returnValues, branchUsed, unitUsed) {
         branchUnit.push(unitUsed);
         returnValues.show = branchUnit;     
     }
+
+    var allSectionsBranch = allGradoSections.concat(allUnitSection);
+    returnValues.hide = allSectionsBranch;
+
+    return returnValues;
+};
+
+var hideAll = function(returnValues){
+    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval', 'gradoSecretariaDefensaNacional', 'gradoDependenciasFFAA'];
+    
+    var allUnitSection = ['unidadFuerzaEjercito', 'unidadFuerzaAerea', 'unidadPoliciaNacional', 'unidadDNI', 'unidadFuerzaNaval', 'unidadSecretariaDefensaNacional', 'unidadDependenciasFFAA'];
 
     var allSectionsBranch = allGradoSections.concat(allUnitSection);
     returnValues.hide = allSectionsBranch;
