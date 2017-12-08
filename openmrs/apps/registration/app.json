@@ -50,7 +50,7 @@
                 },
                 "contactInfo": {
                     "title": "Información de contacto de paciente",
-                    "translationKey": "Información de contacto de paciente",
+                    "translationKey": "Información de Contacto de Paciente",
                     "attributes": [
                         "cellphone",
                         "telephoneHouse",
