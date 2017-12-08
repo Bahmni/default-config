@@ -50,6 +50,7 @@
     "LOGIN_UNSUPPORTED_BROWSER_KEY": "Bahmni es compatible con el navegador Chrome",
     "MODULE_LABEL_REGISTRATION_KEY": "Registro",
     "MODULE_LABEL_PRE-CLINICAL_KEY": "Pre-Clínica",
+    "MODULE_LABEL_POST-CLINICAL_KEY": "Post-Clínica",
     "MODULE_LABEL_CLINICAL_KEY": "Clínico",
     "MODULE_LABEL_INPATIENT_KEY": "Paciente Interno",
     "MODULE_LABEL_RADIOLOGY_UPLOAD_KEY": "Subir Radiografías",
