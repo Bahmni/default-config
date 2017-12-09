@@ -45,7 +45,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_POST-CLINICAL_KEY",
     "url": "../postClinical/index.html#/default/patient/search",
-    "icon": "fa-address-card",
+    "icon": "fa-newspaper-o",
     "order": 5,
     "requiredPrivilege": "app:pre-clinical"
   },
