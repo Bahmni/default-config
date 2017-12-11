@@ -31,7 +31,7 @@ Bahmni.Registration.AttributesConditions.rules = {
                 },
                 "cellphone": {
                     method: function (name, value, personAttributeDetails) {
-                        return value.match(/^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/);
+                        return value.match(/^\+?\(?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/);
                     },
                     errorMessage: "REGISTRATION_CELLPHONE_TEXT_ERROR_KEY"
                 },
@@ -279,6 +279,24 @@ var showOrHideServiceInfoSection = function (patient) {
         if (patientAttribute.conceptUuid === "ab73372f-0148-4f1d-b91b-d4a45dc94117") {
             returnValues.show.push("serviceInfo");
         } else {
+            patient['force'] = {};
+            patient['gradoFuerzaEjercito'] = {};
+            patient['unidadFuerzaEjercito'] = {};
+            patient['gradoFuerzaNaval'] = {};
+            patient['unidadFuerzaNaval'] = {};
+            patient['gradoFuerzaAerea'] = {};
+            patient['unidadFuerzaAerea'] = {};
+            patient['gradoPoliciaNacional'] = {};
+            patient['unidadPoliciaNacional'] = {};
+            patient['gradoDireccionNacionalInvestigacion'] = {};
+            patient['unidadDNI'] = {};
+            patient['gradoSecretariaDefensaNacional'] = {};
+            patient['unidadSecretariaDefensaNacional'] = {};
+            patient['gradoDependenciasFFAA'] = {};
+            patient['unidadDependenciasFFAA'] = {};
+            patient['retiredPatient'] = false;
+            patient['auxiliaryOfficer'] = false;
+            hideAll(returnValues);
             returnValues.hide.push("serviceInfo");
         }
     }else {
@@ -350,6 +368,17 @@ var hideShowGrado = function(patient, returnValues, branchUsed, unitUsed) {
         branchUnit.push(unitUsed);
         returnValues.show = branchUnit;     
     }
+
+    var allSectionsBranch = allGradoSections.concat(allUnitSection);
+    returnValues.hide = allSectionsBranch;
+
+    return returnValues;
+};
+
+var hideAll = function(returnValues){
+    var allGradoSections = ['gradoFuerzaEjercito', 'gradoFuerzaAerea', 'gradoPoliciaNacional', 'gradoDireccionNacionalInvestigacion', 'gradoFuerzaNaval', 'gradoSecretariaDefensaNacional', 'gradoDependenciasFFAA'];
+    
+    var allUnitSection = ['unidadFuerzaEjercito', 'unidadFuerzaAerea', 'unidadPoliciaNacional', 'unidadDNI', 'unidadFuerzaNaval', 'unidadSecretariaDefensaNacional', 'unidadDependenciasFFAA'];
 
     var allSectionsBranch = allGradoSections.concat(allUnitSection);
     returnValues.hide = allSectionsBranch;
