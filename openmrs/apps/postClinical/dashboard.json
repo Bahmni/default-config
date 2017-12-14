@@ -25,7 +25,8 @@
                 "showCertainty":true,
                 "showOrder":true,
                 "showDetailsButton":true,
-                "displayOrder":1
+                "displayOrder":1,
+                "hideEmptyDisplayControl": true
             },
             "navigationLinksControl":{  
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
@@ -44,6 +45,7 @@
                 "title": "Tuberculosis Follow Up",
                 "type": "tuberculosis",
                 "isObservation": true,
+                "hideEmptyDisplayControl": true,
                 "dashboardConfig": {
                     "conceptNames": [
                         "Tuberculosis Followup Template"
