@@ -37,7 +37,7 @@
     "url": "../postClinical/index.html#/default/patient/search",
     "icon": "fa-newspaper-o",
     "order": 4,
-    "requiredPrivilege": "app:pre-clinical"
+    "requiredPrivilege": "app:clinical"
   },
   "programs": {
     "id": "bahmni.programs",
