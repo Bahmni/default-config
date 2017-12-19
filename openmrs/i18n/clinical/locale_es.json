@@ -334,6 +334,9 @@
   "VISIT_TITLE_OBSERVATIONS_KEY": "Observaciones",
   "VISIT_TITLE_PATIENT_FILES_KEY": "Archivos del paciente",
   "VISIT_TITLE_RADIOLOGY_KEY": "Radiología",
-  "VISIT_TITLE_TREATMENTS_KEY": "Tratamientos"
+  "VISIT_TITLE_TREATMENTS_KEY": "Tratamientos",
+  "REGISTRATION_LABEL_CLOSE_VISIT": "Cerrar Visita",
+  "REGISTRATION_VISIT_CANNOT_BE_CLOSED": "Visita del paciente ingresado no se puede cerrar. Dar de alta al paciente y vuelva a intentarlo.",
+  "REGISTRATION_CONFIRM_CLOSE_VISIT": "¿Seguro que desea cerrar esta visita?"
 
   }
