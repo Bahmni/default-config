@@ -198,6 +198,10 @@
                     }
                 }
             },
+            "medicalRecords": {
+                "translationKey": "DASHBOARD_TITLE_MEDICAL_RECORDS_KEY",
+                "type": "medicalRecords"
+            },
             "vitals":{  
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                 "type":"vitals",
