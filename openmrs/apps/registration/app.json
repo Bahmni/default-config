@@ -292,6 +292,9 @@
                 },
                 "defaults":{
                     "FHS": "Present"
+                },
+                "Pulse": {
+                    "required": true
                 }
             },
             "fieldValidation" : {
