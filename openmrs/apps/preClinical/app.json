@@ -1,16 +1,16 @@
 {
-    "id": "bahmni.clinical",
+    "id": "bahmni.preClinical",
     "extensionPoints": [
         {
-            "id": "org.bahmni.clinical.consultation.board",
-            "description": "Bahmni Clinical Consultation Page"
+            "id": "org.bahmni.preClinical.consultation.board",
+            "description": "Bahmni preClinical Consultation Page"
         },
         {
-            "id": "org.bahmni.clinical.conceptSetGroup.*",
+            "id": "org.bahmni.preClinical.conceptSetGroup.*",
             "description": "Define conceptsets part of a conceptset group"
         },
         {
-            "id": "org.bahmni.clinical.orders",
+            "id": "org.bahmni.preClinical.orders",
             "description": "Bahmni Orders Page"
         },
         {
