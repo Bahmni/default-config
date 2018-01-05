@@ -184,6 +184,9 @@
     "REGISTRATION_NAME_THIRD_EMERGENCY_CONTACT_SECOND_NAME_TEXT_KEY": "El campo 'Segundo Nombre' de Contacto de Emergencia Adicional no tiene el formato válido. Debe ser de mínino 2 - 60 caracteres sin números.",
     "REGISTRATION_NAME_THIRD_EMERGENCY_CONTACT_FIRST_LAST_NAME_TEXT_KEY": "El campo 'Primer Apellido' de Contacto de Emergencia Adicional no tiene el formato válido. Debe ser de mínino 2 - 60 caracteres sin números.",
     "REGISTRATION_NAME_THIRD_EMERGENCY_CONTACT_SECOND_LAST_NAME_TEXT_KEY": "El campo 'Segundo Apellido' de Contacto de Emergencia Adicional no tiene el formato válido. Debe ser de mínino 2 - 60 caracteres sin números.",
-    "REGISTRATION_THIRD_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY" : "El campo 'Correo electrónico personal' en contacto de emergencia adicional no tiene el formato válido correo@dominio.com"
+    "REGISTRATION_THIRD_EMAIL_EMERGENCY_CONTACT_TEXT_ERROR_KEY" : "El campo 'Correo electrónico personal' en contacto de emergencia adicional no tiene el formato válido correo@dominio.com",
+
+    "REGISTRATION_ADDRESS_WORK_LATITUDE_TEXT_ERROR_KEY" : "El campo 'Latitud', solamente acepta números y decimales.",
+    "REGISTRATION_ADDRESS_WORK_LONGITUDE_TEXT_ERROR_KEY" : "El campo 'Longitud', solamente acepta números y decimales."
 }
 
