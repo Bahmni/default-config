@@ -115,25 +115,25 @@ Bahmni.Registration.AttributesConditions.rules = {
                 },
                 "address.latitude": {
                     method: function (name, value, personAttributeDetails) {
-                        return value.match(/^-?[1-9]\d{0,5}(\.[1-9]{5})?$/);
+                        return value.match(/^0$|^-?[1-9]\d*(\.\d+)?$/);
                     },
                     errorMessage: "REGISTRATION_ADDRESS_WORK_LATITUDE_TEXT_ERROR_KEY"
                 },
                 "address.longitude": {
                     method: function (name, value, personAttributeDetails) {
-                        return value.match(/^-?[1-9]\d{0,5}(\.[1-9]{5})?$/);
+                        return value.match(/^0$|^-?[1-9]\d*(\.\d+)?$/);
                     },
                     errorMessage: "REGISTRATION_ADDRESS_WORK_LONGITUDE_TEXT_ERROR_KEY"
                 },
                 "latitude": {
                     method: function (name, value, personAttributeDetails) {
-                        return value.match(/^-?[1-9]\d{0,5}(\.[1-9]{5})?$/);
+                        return value.match(/^0$|^-?[1-9]\d*(\.\d+)?$/);
                     },
                     errorMessage: "REGISTRATION_ADDRESS_WORK_LATITUDE_TEXT_ERROR_KEY"
                 },
                 "longitude": {
                     method: function (name, value, personAttributeDetails) {
-                        return value.match(/^-?[1-9]\d{0,5}(\.[1-9]{5})?$/);
+                        return value.match(/^0$|^-?[1-9]\d*(\.\d+)?$/);
                     },
                     errorMessage: "REGISTRATION_ADDRESS_WORK_LONGITUDE_TEXT_ERROR_KEY"
                 },
