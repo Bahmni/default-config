@@ -113,6 +113,18 @@ Bahmni.Registration.AttributesConditions.rules = {
                     },
                     errorMessage: "REGISTRATION_ADDRESS_WORK_TEXT_ERROR_KEY"
                 },
+                "address.latitude": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.match(/^-?\d*\.?\d+$/);
+                    },
+                    errorMessage: "REGISTRATION_ADDRESS_WORK_LATITUDE_TEXT_ERROR_KEY"
+                },
+                "address.longitude": {
+                    method: function (name, value, personAttributeDetails) {
+                        return value.match(/^-?\d*\.?\d+$/);
+                    },
+                    errorMessage: "REGISTRATION_ADDRESS_WORK_LATITUDE_TEXT_ERROR_KEY"
+                },
                 "latitude": {
                     method: function (name, value, personAttributeDetails) {
                         return value.match(/^-?\d*\.?\d+$/);
