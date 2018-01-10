@@ -189,6 +189,17 @@
     "order": 3,
     "requiredPrivilege": "app:clinical"
   },
+  "bahmniClinicalConceptSetGroupObservationsPhysicalExam": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.physical_exam",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Organs, Apparatus and Systems Screening"
+    },
+    "order": 4,
+    "requiredPrivilege": "app:clinical"
+  },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
     "id": "bahmni.clinical.conceptSetGroup.observations.secondVitals",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
