@@ -213,7 +213,7 @@
         "return visitTypes.indexOf(visitTypeName) !== -1;"
       ]
     },
-    "order": 4,
+    "order": 5,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsObstetrics": {
@@ -223,7 +223,7 @@
     "extensionParams": {
       "conceptName": "Obstetrics"
     },
-    "order": 5,
+    "order": 6,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsGynaecology": {
@@ -233,7 +233,7 @@
     "extensionParams": {
       "conceptName": "Gynaecology"
     },
-    "order": 6,
+    "order": 7,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsDischargeSummary": {
@@ -243,7 +243,7 @@
     "extensionParams": {
       "conceptName": "Discharge Summary"
     },
-    "order": 7,
+    "order": 8,
     "requiredPrivilege": "Discharge Summary"
   }
 }
