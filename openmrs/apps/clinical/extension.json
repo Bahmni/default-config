@@ -189,8 +189,8 @@
     "order": 3,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsPhysicalExam": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.physical_exam",
+  "bahmniClinicalConceptSetGroupObservationsIOAS": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.ioas",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
