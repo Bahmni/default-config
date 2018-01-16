@@ -62,7 +62,7 @@
                     "type": "patientInformation",
                     "displayOrder": 3,
                     "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                    "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+                    "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
                 },
                 "admissionDetails":{
                     "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",

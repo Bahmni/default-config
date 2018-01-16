@@ -1,0 +1,48 @@
+[main]
+host = https://www.transifex.com
+minimum_perc = 40
+
+[bahmni.default-customization-of-admin-app]
+file_filter = openmrs/i18n/admin/locale_<lang>.json
+source_file = openmrs/i18n/admin/locale_en.json
+file_filter = translations/bahmni.default-customization-of-admin-app/<lang>.json
+source_lang = en
+type = KEYVALUEJSON
+
+[bahmni.default-customization-of-adt-app]
+file_filter = openmrs/i18n/adt/locale_<lang>.json
+source_file = openmrs/i18n/adt/locale_en.json
+file_filter = translations/bahmni.default-customization-of-adt-app/<lang>.json
+source_lang = en
+type = KEYVALUEJSON
+
+[bahmni.default-customization-of-clinical-app]
+file_filter = openmrs/i18n/clinical/locale_<lang>.json
+source_file = openmrs/i18n/clinical/locale_en.json
+source_lang = en
+type = KEYVALUEJSON
+
+[bahmni.default-customization-of-document-upload-app]
+file_filter = openmrs/i18n/document-upload/locale_<lang>.json
+source_file = openmrs/i18n/document-upload/locale_en.json
+source_lang = en
+type = KEYVALUEJSON
+
+[bahmni.default-customization-of-home-app]
+file_filter = openmrs/i18n/home/locale_<lang>.json
+source_file = openmrs/i18n/home/locale_en.json
+source_lang = en
+type = KEYVALUEJSON
+
+[bahmni.default-customization-of-orders-app]
+file_filter = openmrs/i18n/orders/locale_<lang>.json
+source_file = openmrs/i18n/orders/locale_en.json
+source_lang = en
+type = KEYVALUEJSON
+
+[bahmni.default-customization-of-registration-app]
+file_filter = openmrs/i18n/registration/locale_<lang>.json
+source_file = openmrs/i18n/registration/locale_en.json
+source_lang = en
+type = KEYVALUEJSON
+
