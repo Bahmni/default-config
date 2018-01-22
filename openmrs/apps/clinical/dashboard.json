@@ -397,14 +397,6 @@
                 },
                 "formGroup": [ ],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
-            },
-            "patientAppointments": {
-                "type": "custom",
-                "displayOrder": 22,
-                "config": {
-                    "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
-                    "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
-                }
             }
         }
     },
