@@ -2,8 +2,7 @@
 
 set -eo pipefail
 echo "--- Copying config files from $BUILDKITE_BRANCH" | tee bk-pipeline.log
-if [[ "$BUILDKITE_BRANCH" == "ci-config"  ]]; then
-  echo "entro ci-config"
+if [[ "$BUILDKITE_BRANCH" == "develop"  ]]; then
   sudo scp -i $AWS_PEM_KEY_DEV -r ./openelis $AWS_USER_DEV@$AWS_IP_DEV:$AWS_DESTINATION_PATH_DEV | tee -a bk-pipeline.log
   sudo scp -i $AWS_PEM_KEY_DEV -r ./openmrs $AWS_USER_DEV@$AWS_IP_DEV:$AWS_DESTINATION_PATH_DEV | tee -a bk-pipeline.log
 fi
