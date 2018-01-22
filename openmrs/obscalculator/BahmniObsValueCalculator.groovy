@@ -1,11 +1,13 @@
 import org.apache.commons.lang.StringUtils
 import org.hibernate.Query
-import org.hibernate.SessionFactory
-import org.openmrs.Obs
-import org.openmrs.Patient
+import org.hibernate.SessionFactory;
+import org.openmrs.Obs;
+import org.openmrs.Patient;
+import org.openmrs.Concept;
+import org.openmrs.Encounter;
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniObservation
 import org.openmrs.util.OpenmrsUtil;
-import org.openmrs.api.context.Context
+import org.openmrs.api.context.Context;
 import org.openmrs.module.bahmniemrapi.obscalculator.ObsValueCalculator;
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncounterTransaction
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction;
@@ -61,6 +63,22 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         BahmniObservation parent = null;
 
         if (hasValue(heightObservation) || hasValue(weightObservation)) {
+            def heightObs = null, weightObs = null;
+            Encounter encounter = Context.getEncounterService().getEncounterByUuid(bahmniEncounterTransaction.getEncounterUuid());
+            if (encounter != null) {
+                Set<Obs> latestObsOfEncounter = encounter.getObsAtTopLevel(true);
+                latestObsOfEncounter.each { Obs latestObs ->
+                    for (Obs groupMember : latestObs.groupMembers) {
+                        heightObs = heightObs ? heightObs : (groupMember.concept.getName().name.equalsIgnoreCase("HEIGHT") ? groupMember : null);
+                        weightObs = weightObs ? weightObs : (groupMember.concept.getName().name.equalsIgnoreCase("WEIGHT") ? groupMember : null);
+                    }
+                }
+                if (isSameObs(heightObservation, heightObs) && isSameObs(weightObservation, weightObs)) {
+                    return;
+                }
+            }
+
+
             BahmniObservation bmiDataObservation = find("BMI Data", observations, null)
             BahmniObservation bmiObservation = find("BMI", bmiDataObservation ? [bmiDataObservation] : [], null)
             BahmniObservation bmiAbnormalObservation = find("BMI Abnormal", bmiDataObservation ? [bmiDataObservation]: [], null)
@@ -98,6 +116,11 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 voidObs(bmiStatusObservation)
                 voidObs(bmiAbnormalObservation)
                 return
+            }
+
+            if(encounter != null) {
+                voidPreviousBMIObs(encounter.getObsAtTopLevel(false));
+                voidPreviousBMIObs(encounter.getObs());
             }
 
             bmiDataObservation = bmiDataObservation ?: createObs("BMI Data", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
@@ -172,6 +195,15 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return hasValue(observation) && !observation.voided ? observation.getObservationDateTime() : null;
     }
 
+    private static boolean isSameObs(BahmniObservation observation, Obs editedObs) {
+        if(observation && editedObs) {
+            return  (editedObs.uuid == observation.encounterTransactionObservation.uuid && editedObs.valueNumeric == observation.value);
+        } else if(observation == null && editedObs == null) {
+            return true;
+        }
+        return false;
+    }
+
     private static boolean hasValue(BahmniObservation observation) {
         return observation != null && observation.getValue() != null && !StringUtils.isEmpty(observation.getValue().toString());
     }
@@ -179,6 +211,22 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     private static void voidObs(BahmniObservation bmiObservation) {
         if (hasValue(bmiObservation)) {
             bmiObservation.voided = true
+        }
+    }
+
+    private static void voidPreviousBMIObs(Set<Obs> bmiObs) {
+        if(bmiObs) {
+            bmiObs.each { Obs obs ->
+                Concept concept = Context.getConceptService().getConceptByUuid(obs.getConcept().uuid);
+                if (concept.getName().name.equalsIgnoreCase("BMI Data") || concept.getName().name.equalsIgnoreCase("BMI") ||
+                        concept.getName().name.equalsIgnoreCase("BMI ABNORMAL") || concept.getName().name.equalsIgnoreCase("BMI Status Data")
+                        || concept.getName().name.equalsIgnoreCase("BMI STATUS") || concept.getName().name.equalsIgnoreCase("BMI STATUS ABNORMAL")) {
+
+                    obs.voided = true;
+                    obs.setVoidReason("Replaced with a new one because it was changed");
+                    Context.getObsService().saveObs(obs, "Replaced with a new one because it was changed");
+                }
+            }
         }
     }
 

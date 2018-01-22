@@ -258,6 +258,8 @@
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
+            "showLastName": true,
+            "isLastNameMandatory": true,
             "showBirthTime": true,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [

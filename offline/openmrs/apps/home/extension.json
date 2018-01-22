@@ -1,0 +1,22 @@
+{
+  "registration": {
+    "id": "bahmni.registration",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_REGISTRATION_KEY",
+    "url": "../registration/index.html",
+    "icon": "fa-user",
+    "order": 1,
+    "requiredPrivilege": "app:registration"
+  },
+  "clinical": {
+    "id": "bahmni.clinical",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_CLINICAL_KEY",
+    "url": "../clinical/index.html#/default/patient/search",
+    "icon": "fa-stethoscope",
+    "order": 3,
+    "requiredPrivilege": "app:clinical"
+  }
+}
