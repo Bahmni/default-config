@@ -9,15 +9,15 @@
     "order": 1,
     "requiredPrivilege": "app:registration"
   },
-  "pre-clinical": {
-    "id": "bahmni.pre-clinical",
+  "preClinical": {
+    "id": "bahmni.preClinical",
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_PRE-CLINICAL_KEY",
     "url": "../preClinical/index.html#/default/patient/search",
     "icon": "fa-heartbeat",
     "order": 2,
-    "requiredPrivilege": "app:pre-clinical"
+    "requiredPrivilege": "app:preClinical"
   },
   "clinical": {
     "id": "bahmni.clinical",
@@ -37,7 +37,7 @@
     "url": "../postClinical/index.html#/default/patient/search",
     "icon": "fa-newspaper-o",
     "order": 4,
-    "requiredPrivilege": "app:pre-clinical"
+    "requiredPrivilege": "app:postClinical"
   },
   "programs": {
     "id": "bahmni.programs",
@@ -109,16 +109,6 @@
     "order": 11,
     "requiredPrivilege": "app:reports"
   },
-  "appointments": {
-    "id": "bahmni.appointments",
-    "extensionPointId": "org.bahmni.home.dashboard",
-    "type": "link",
-    "translationKey": "MODULE_LABEL_APOOINTMENTS_KEY",
-    "url": "../../openmrs/appointmentschedulingui/home.page",
-    "icon": "fa fa-calendar",
-    "order": 12,
-    "requiredPrivilege": "App: appointmentschedulingui.home"
-  },
   "implementerInterface": {
     "id": "bahmni.implementer.interface",
     "extensionPointId": "org.bahmni.home.dashboard",
@@ -126,7 +116,7 @@
     "translationKey": "MODULE_LABEL_IMPLEMENTER_INTERFACE_KEY",
     "url": "/implementer-interface",
     "icon": "fa fa-pencil-square-o",
-    "order": 13,
+    "order": 12,
     "requiredPrivilege": "app:implementer-interface"
   },
   "atomfeedConsole": {
@@ -136,17 +126,7 @@
     "translationKey": "MODULE_LABEL_ATOMFEED_CONSOLE_KEY",
     "url": "/atomfeed-console",
     "icon": "fa fa-terminal",
-    "order": 14,
+    "order": 13,
     "requiredPrivilege": "app:admin"
-  },
-  "appointmentScheduling": {
-    "id": "bahmni.appointment.scheduling",
-    "extensionPointId": "org.bahmni.home.dashboard",
-    "type": "link",
-    "translationKey": "MODULE_LABEL_APPOINTMENT_SCHEDULING_KEY",
-    "url": "../appointments",
-    "icon": "fa fa-calendar",
-    "order": 14,
-    "requiredPrivilege": "app:appointments"
   }
 }
