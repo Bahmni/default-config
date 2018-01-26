@@ -297,6 +297,21 @@
                 },
                 "Pulse": {
                     "required": true
+                },
+                "Diastolic": {
+                    "required": true
+                },
+                "Systolic": {
+                    "required": true
+                },
+                "Temperature Data": {
+                    "required": true
+                },
+                "WEIGHT": {
+                    "required": true
+                },
+                "HEIGHT": {
+                    "required": true
                 }
             },
             "fieldValidation" : {
