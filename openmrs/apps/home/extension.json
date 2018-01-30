@@ -119,6 +119,16 @@
     "order": 12,
     "requiredPrivilege": "app:implementer-interface"
   },
+  "appointmentScheduling": {
+    "id": "bahmni.appointment.scheduling",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_APPOINTMENT_SCHEDULING_KEY",
+    "url": "../appointments",
+    "icon": "fa fa-calendar",
+    "order": 13,
+    "requiredPrivilege": "app:appointments"
+},
   "atomfeedConsole": {
     "id": "bahmni.atomfeed.console",
     "extensionPointId": "org.bahmni.home.dashboard",
@@ -126,7 +136,7 @@
     "translationKey": "MODULE_LABEL_ATOMFEED_CONSOLE_KEY",
     "url": "/atomfeed-console",
     "icon": "fa fa-terminal",
-    "order": 13,
+    "order": 14,
     "requiredPrivilege": "app:admin"
   }
 }
