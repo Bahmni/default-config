@@ -45,6 +45,10 @@
     "allowedActionsByStatus": {
       "Scheduled": ["CheckedIn", "Missed", "Cancelled"],
       "CheckedIn": ["Completed", "Missed", "Cancelled"]
+    },
+    "colorsForListView": {
+      "Missed": "#fceab6",
+      "Cancelled": "#fcb6b6"
     }
   }
 }
