@@ -195,7 +195,7 @@
     "type": "config",
     "extensionParams": {
       "default": true,
-      "conceptName": "Organs, Apparatus and Systems Screening"
+      "conceptName": "Organs, Apparatus and Systems Screening Examination"
     },
     "order": 4,
     "requiredPrivilege": "app:clinical"
