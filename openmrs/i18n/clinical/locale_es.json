@@ -221,6 +221,13 @@
   "ON_BEHALF_OF_TRANSLATION_KEY": "De parte de",
   "ORDERS_BOARD_LABEL_KEY":"Estudios y Peticiones",
 
+  "CLINICAL_ORDER_SEARCH_TITLE_KEY": "Buscar",
+  "CLINICAL_ORDER_SELECTED_ORDERS_TITLE_KEY": "Órdenes seleccionadas",
+  "CLINICAL_ORDER_NO_SELECTED_ORDERS_MESSAGE_KEY": "No hay órdenes seleccionadas",
+  "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT": "Necesita impresión para esta órden.",
+  "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT_BUTTON": "Necesita impresión",
+  
+
   "PATIENT_ADT_PAGE_KEY":"Página ADT del Paciente",
   "PATIENT_DOCUMENT_TRANSLATION_KEY": "Documentos del paciente",
   "PATIENT_DOESNT_HAVE_PREVIOUS_PROGRAMS_MESSAGE_KEY": "El paciente no tiene ningún tratamiento previo",
