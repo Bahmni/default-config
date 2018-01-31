@@ -226,7 +226,8 @@
   "CLINICAL_ORDER_NO_SELECTED_ORDERS_MESSAGE_KEY": "No hay órdenes seleccionadas",
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT": "Necesita impresión para esta órden.",
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT_BUTTON": "Necesita impresión",
-  
+  "CLINICAL_ORDER_NOTE_ADD_NOTE_MESSAGE_KEY": "Ingrese notas para",
+  "CLINICAL_ORDER_NOTE_CANT_EDIT_MESSAGE_KEY": "Las notas no pueden ser editadas despues de guardar.",
 
   "PATIENT_ADT_PAGE_KEY":"Página ADT del Paciente",
   "PATIENT_DOCUMENT_TRANSLATION_KEY": "Documentos del paciente",
