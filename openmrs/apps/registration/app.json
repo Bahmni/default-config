@@ -246,11 +246,8 @@
             "mandatoryPersonAttributes": [
                 "patientType",
                 "identifierDocument",
-                "bloodType",
-                "maritalStatus",
-                "nationality",
-                "countryOfResidency",
-                "education"
+                "cellphone",
+                "emailPersonal"
             ],
 
             "autoCompleteFields":["familyName"],
