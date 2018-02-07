@@ -211,6 +211,7 @@
   "NO_DOCUMENTS_MESSAGE": "No hay documentos para este paciente",
   "NO_DRUG_DETAILS_MESSAGE":"No hay detalle del medicamento",
   "NO_LAB_ORDERS_FOR_PATIENT_MESSAGE_KEY": "Este paciente no tiene ordenes para exámenes de laboratorio",
+  "NO_VISITS_FOUND_MESSAGE": "Este paciente no tiene visitas",
   "NO_SPECIMEN_FOUND_MESSAGE":"Ningún espécimen encontrado",
   "NO_TREATMENTS_MESSAGE": "Sin tratamientos para este paciente.",
 
