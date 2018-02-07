@@ -25,6 +25,7 @@
     "config": {
         "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
+        "enableLabOrderOptions":["Urgent", "NeedsPrint"],
         "quickPrints":false,
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
