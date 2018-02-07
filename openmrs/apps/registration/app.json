@@ -246,8 +246,7 @@
             "mandatoryPersonAttributes": [
                 "patientType",
                 "identifierDocument",
-                "cellphone",
-                "emailPersonal"
+                "cellphone"
             ],
 
             "autoCompleteFields":["familyName"],
