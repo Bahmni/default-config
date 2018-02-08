@@ -2,6 +2,7 @@
     "MODULE_LABEL_RADIOLOGY_ORDERS_KEY": "Ordenes de radiología",
     "MODULE_LABEL_PROCEDURE_ORDERS_KEY": "Ordenes de procedimiento",
     "PROCEDURE_ORDER_COMPLETED_LABEL_KEY": "Aplicado",
+    "NO_ORDERS_FOUND_MESSAGE": "No hay órdenes de tipo {{orderType}} para este paciente.",
     "ORDER_NEW_LABEL_KEY": "Nueva",
     "OBS_BOOLEAN_YES_KEY": "Si",
     "OBS_BOOLEAN_NO_KEY": "No"
