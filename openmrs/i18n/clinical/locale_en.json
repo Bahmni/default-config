@@ -41,6 +41,9 @@
   "LAB_INVESTIGATIONS_KEY":"Lab Investigations",
   "PACS_ORDERS_VISIT_PAGE_KEY": "Pacs Orders Visit Page",
   "Radiology Order": "Radiology Order",
+  "Vitals Flowsheet": "Vitals Flowsheet",
+  "ENCOUNTERS_FLOWSHEET_HEADER_GROUP": "Encounter",
+  "VISITS_FLOWSHEET_HEADER_GROUP": "Visit",
 
   "DISCHARGE_SUMMARY_DIAGNOSIS_KEY" :"Diagnosis",
 

@@ -147,6 +147,10 @@
   "LOGOUT_TRANSLATION_KEY": "Cerrar sesión",
   "PACS_ORDERS_VISIT_PAGE_KEY": "Resultados de Imagenología",
   "Radiology Order": "hay órdenes de Radiología",
+  "Vitals Flowsheet": "Resumen Signos Vitales",
+  "ENCOUNTERS_FLOWSHEET_HEADER_GROUP": "Encuentro",
+  "VISITS_FLOWSHEET_HEADER_GROUP": "Visita",
+
   "MEDICATION_ADD_DRUG_FORM_TITLE": "Medicamentos",
   "MEDICATION_ADD_ORDERSET_FORM_TITLE": "Ordenar conjunto de pedidos",
   "MEDICATION_ADDITIONAL_INFORMATION_LABEL": "Información Adicional",
