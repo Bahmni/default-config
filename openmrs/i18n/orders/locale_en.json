@@ -5,5 +5,11 @@
   "NO_ORDERS_FOUND_MESSAGE": "No order of type {{orderType}} for this patient.",
   "ORDER_NEW_LABEL_KEY": "New",
   "OBS_BOOLEAN_YES_KEY": "Yes",
-  "OBS_BOOLEAN_NO_KEY": "No"
+  "OBS_BOOLEAN_NO_KEY": "No",
+  "ORDERS_SAVE_TRANSLATION_KEY": "<u>S</u>ave",
+  "ORDERS_LABEL_SAVED": "Saved",
+  "PATIENT_LIST_NAME_LABEL": "Name",
+  "PATIENT_LIST_IDENTIFIER_LABEL": "Identifier",
+  "Radiology Order": "Radiology Order",
+  "Procedure Order": "Procedure Order"
 }
