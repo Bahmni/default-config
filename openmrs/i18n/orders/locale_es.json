@@ -10,6 +10,6 @@
     "ORDERS_LABEL_SAVED": "Salvado",
     "PATIENT_LIST_NAME_LABEL": "Nombre",
     "PATIENT_LIST_IDENTIFIER_LABEL": "Identificador",
-    "Radiology Order": "hay órdenes de Radiología",
-    "Procedure Order": "hay órdenes de procedimientos"
+    "Radiology Order": "Radiología",
+    "Procedure Order": "procedimientos"
 }
