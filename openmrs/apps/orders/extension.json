@@ -7,7 +7,7 @@
 			"searchHandler": "emrapi.sqlSearch.activePatients",
 			"display": "Radiology Orders",
 			"translationKey": "MODULE_LABEL_RADIOLOGY_ORDERS_KEY",
-			"forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Radiology Order",
+			"forwardUrl": "#/patient/{{patientUuid}}/fulfillment/Radiology%20Order",
 			"forwardButtonTitle": "View",
 			"view": "tabular"
 		},
@@ -23,7 +23,7 @@
 			"searchHandler": "emrapi.sqlSearch.activePatients",
 			"display": "Procedure Orders",
 			"translationKey": "MODULE_LABEL_PROCEDURE_ORDERS_KEY",
-			"forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Procedure Order",
+			"forwardUrl": "#/patient/{{patientUuid}}/fulfillment/Procedure%20Order",
 			"forwardButtonTitle": "View",
 			"view": "tabular"
 		},
