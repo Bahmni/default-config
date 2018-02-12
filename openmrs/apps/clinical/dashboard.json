@@ -4,23 +4,10 @@
         "displayByDefault":true,
         "maxRecentlyViewedPatients":10,
         "sections":{
-            "navigationLinksControl":{  
-                "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                "type":"navigationLinksControl",
-                "displayOrder":0,
-                "showLinks":[  
-                    "home",
-                    "visit",
-                    "registration",
-                    "inpatient",
-                    "enrolment",
-                    "visitAttribute"
-                ]
-            },
             "patientInformation":{  
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type":"patientInformation",
-                "displayOrder":1,
+                "displayOrder":0,
                 "ageLimit":100,
                 "patientAttributes":[],
                 "addressFields":[  
@@ -28,6 +15,19 @@
                     "address2",
                     "cityVillage",
                     "countyDistrict"
+                ]
+            },
+            "navigationLinksControl":{  
+                "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                "type":"navigationLinksControl",
+                "displayOrder":1,
+                "showLinks":[  
+                    "home",
+                    "visit",
+                    "registration",
+                    "inpatient",
+                    "enrolment",
+                    "visitAttribute"
                 ]
             },
             "visits":{  
@@ -163,6 +163,10 @@
                 "expandedViewConfig":{  
                     "numberOfVisits":10
                 }
+            },
+            "medicalRecords": {
+                "translationKey": "DASHBOARD_TITLE_MEDICAL_RECORDS_KEY",
+                "type": "medicalRecords"
             }
         }
     },
