@@ -1,7 +1,7 @@
 {
   "observations": {
-    "id": "bahmni.clinical.consultation.observations",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "id": "bahmni.postClinical.consultation.observations",
+    "extensionPointId": "org.bahmni.postClinical.consultation.board",
     "type": "link",
     "label": "Historia Clínica",
     "translationKey":"OBSERVATIONS_BOARD_LABEL_KEY",
@@ -11,9 +11,9 @@
     "order": 1,
     "requiredPrivilege": "app:clinical:observationTab"
   },
-  "bahmniClinicalConsultationOrders": {
-    "id": "bahmni.clinical.consultation.orders",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
+  "bahmnipostClinicalConsultationOrders": {
+    "id": "bahmni.postClinical.consultation.orders",
+    "extensionPointId": "org.bahmni.postClinical.consultation.board",
     "type": "link",
     "label": "Orders",
     "translationKey":"ORDERS_BOARD_LABEL_KEY",
@@ -22,20 +22,9 @@
     "order": 2,
     "requiredPrivilege": "app:clinical:ordersTab"
   },
-  "diagnosis": {
-    "id": "bahmni.clinical.consultation.diagnosis",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Diagnosis",
-    "translationKey":"DIAGNOSIS_BOARD_LABEL_KEY",
-    "url": "diagnosis",
-    "icon": "fa-user-md",
-    "order": 3,
-    "requiredPrivilege": "app:clinical:diagnosisTab"
-  },
-  "bahmniClinicalBillingTreatment": {
-    "id": "bahmni.clinical.billing.treatment",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
+  "bahmnipostClinicalBillingTreatment": {
+    "id": "bahmni.postClinical.billing.treatment",
+    "extensionPointId": "org.bahmni.postClinical.consultation.board",
     "type": "link",
     "label": "Medications",
     "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
@@ -48,8 +37,8 @@
     "requiredPrivilege": "app:clinical:treatmentTab"
   },
   "consultationSummary": {
-    "id": "bahmni.clinical.consultation.summary",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "id": "bahmni.postClinical.consultation.summary",
+    "extensionPointId": "org.bahmni.postClinical.consultation.board",
     "type": "link",
     "label": "Consultation",
     "translationKey":"CONSULTATION_BOARD_LABEL_KEY",
@@ -59,8 +48,8 @@
     "requiredPrivilege": "app:clinical:consultationTab"
   },
   "disposition": {
-    "id": "bahmni.clinical.consultation.disposition",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "id": "bahmni.postClinical.consultation.disposition",
+    "extensionPointId": "org.bahmni.postClinical.consultation.board",
     "type": "link",
     "label": "Disposition",
     "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
@@ -69,9 +58,9 @@
     "order": 6,
     "requiredPrivilege": "app:clinical:dispositionTab"
   },
-  "bahmniClinicalOrdersPending": {
-    "id": "bahmni.clinical.orders.pending",
-    "extensionPointId": "org.bahmni.clinical.orders",
+  "bahmnipostClinicalOrdersPending": {
+    "id": "bahmni.postClinical.orders.pending",
+    "extensionPointId": "org.bahmni.postClinical.orders",
     "type": "link",
     "label": "Pending Orders",
     "url": "pendingOrders",
@@ -79,8 +68,8 @@
     "order": 5,
     "requiredPrivilege": "app:radiologyOrders"
   },
-  "bahmniClinicalPatientsSearchAllActivePatients": {
-    "id": "bahmni.clinical.patients.search.allActivePatients",
+  "bahmnipostClinicalPatientsSearchAllActivePatients": {
+    "id": "bahmni.postClinical.patients.search.allActivePatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -92,8 +81,8 @@
     "order": 1,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalPatientsSearchActivePatientsForPrograms": {
-    "id": "bahmni.clinical.patients.search.activePatients",
+  "bahmnipostClinicalPatientsSearchActivePatientsForPrograms": {
+    "id": "bahmni.postClinical.patients.search.activePatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -105,8 +94,8 @@
     "order": 1,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalPatientsASearchActivePatientsByProvider": {
-    "id": "bahmni.clinical.patients.search.activePatientsByProvider",
+  "bahmnipostClinicalPatientsASearchActivePatientsByProvider": {
+    "id": "bahmni.postClinical.patients.search.activePatientsByProvider",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -118,8 +107,8 @@
     "order": 2,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalPatientsSearchOPDActivePatientsByProvider": {
-    "id": "bahmni.clinical.patients.search.OPDActivePatientsByProvider",
+  "bahmnipostClinicalPatientsSearchOPDActivePatientsByProvider": {
+    "id": "bahmni.postClinical.patients.search.OPDActivePatientsByProvider",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -132,7 +121,7 @@
     "requiredPrivilege": "app:clinical"
   },
   "activePatientsByLocation": {
-    "id": "bahmni.clinical.patients.search.activePatientsByLocation",
+    "id": "bahmni.postClinical.patients.search.activePatientsByLocation",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -144,8 +133,8 @@
     "order": 4,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalPatientsSearchAllPatients": {
-    "id": "bahmni.clinical.patients.search.allPatients",
+  "bahmnipostClinicalPatientsSearchAllPatients": {
+    "id": "bahmni.postClinical.patients.search.allPatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -156,53 +145,42 @@
     "order": 5,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsHistory": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.history",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+  "bahmnipostClinicalConceptSetGroupObservationsHistory": {
+    "id": "bahmni.postClinical.conceptSetGroup.observations.history",
+    "extensionPointId": "org.bahmni.postClinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "conceptName": "Medical History - Background",
       "default": true
     },
-    "order": 1,
+    "order": 2,
     "requiredPrivilege": "app:clinical:history"
   },
-  "bahmniClinicalConceptSetGroupObservationsCurrent": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.current",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+  "bahmnipostClinicalConceptSetGroupObservationsCurrent": {
+    "id": "bahmni.postClinical.conceptSetGroup.observations.current",
+    "extensionPointId": "org.bahmni.postClinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "default": true,
       "conceptName": "Current History"
     },
-    "order": 2,
+    "order": 3,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsPhysicalExam": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.physical_exam",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+  "bahmnipostClinicalConceptSetGroupObservationsPhysicalExam": {
+    "id": "bahmni.postClinical.conceptSetGroup.observations.physical_exam",
+    "extensionPointId": "org.bahmni.postClinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "default": true,
       "conceptName": "Physical Examination"
     },
-    "order": 3,
-    "requiredPrivilege": "app:clinical"
-  },
-  "bahmniClinicalConceptSetGroupObservationsIOAS": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.ioas",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
-    "type": "config",
-    "extensionParams": {
-      "default": true,
-      "conceptName": "Organs, Apparatus and Systems Screening Examination"
-    },
     "order": 4,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.secondVitals",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+  "bahmnipostClinicalConceptSetGroupObservationsSecondVitals": {
+    "id": "bahmni.postClinical.conceptSetGroup.observations.secondVitals",
+    "extensionPointId": "org.bahmni.postClinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "conceptName": "Second Vitals",
@@ -213,37 +191,37 @@
         "return visitTypes.indexOf(visitTypeName) !== -1;"
       ]
     },
-    "order": 5,
+    "order": 3,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsObstetrics": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.obstetrics",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+  "bahmnipostClinicalConceptSetGroupObservationsObstetrics": {
+    "id": "bahmni.postClinical.conceptSetGroup.observations.obstetrics",
+    "extensionPointId": "org.bahmni.postClinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "conceptName": "Obstetrics"
     },
-    "order": 6,
+    "order": 4,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsGynaecology": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.gynaecology",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+  "bahmnipostClinicalConceptSetGroupObservationsGynaecology": {
+    "id": "bahmni.postClinical.conceptSetGroup.observations.gynaecology",
+    "extensionPointId": "org.bahmni.postClinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "conceptName": "Gynaecology"
     },
-    "order": 7,
+    "order": 5,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsDischargeSummary": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.dischargeSummary",
-    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+  "bahmnipostClinicalConceptSetGroupObservationsDischargeSummary": {
+    "id": "bahmni.postClinical.conceptSetGroup.observations.dischargeSummary",
+    "extensionPointId": "org.bahmni.postClinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "conceptName": "Discharge Summary"
     },
-    "order": 8,
+    "order": 6,
     "requiredPrivilege": "Discharge Summary"
   }
 }

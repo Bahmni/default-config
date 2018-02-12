@@ -28,8 +28,6 @@
   "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY": "Patient Information",
   "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY":"Bacteriology Results",
   "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY":"Forms",
-  "DASHBOARD_TITLE_DIAGNOSIS_CURRENT_KEY": "Current",
-  "DASHBOARD_TITLE_DIAGNOSIS_INITIAL_KEY": "Initial",
 
 
   "DASHBOARD_TAB_GENERAL_KEY": "General",
@@ -40,10 +38,6 @@
 
   "LAB_INVESTIGATIONS_KEY":"Lab Investigations",
   "PACS_ORDERS_VISIT_PAGE_KEY": "Pacs Orders Visit Page",
-  "Radiology Order": "Radiology Order",
-  "Vitals Flowsheet": "Vitals Flowsheet",
-  "ENCOUNTERS_FLOWSHEET_HEADER_GROUP": "Encounter",
-  "VISITS_FLOWSHEET_HEADER_GROUP": "Visit",
 
   "DISCHARGE_SUMMARY_DIAGNOSIS_KEY" :"Diagnosis",
 
@@ -62,13 +56,8 @@
   "DISPOSITION_BOARD_LABEL_KEY":"Disposition",
   "DIAGNOSIS_BOARD_LABEL_KEY":"Diagnosis",
 
-  "CLINICAL_ORDER_SEARCH_TITLE_KEY": "Search",
-  "CLINICAL_ORDER_SELECTED_ORDERS_TITLE_KEY": "Selected Orders",
-  "CLINICAL_ORDER_NO_SELECTED_ORDERS_MESSAGE_KEY": "Selected Orders is empty",
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT": "Need Print for this order.",
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT_BUTTON": "Needs Print",
-  "CLINICAL_ORDER_NOTE_ADD_NOTE_MESSAGE_KEY": "Enter notes for",
-  "CLINICAL_ORDER_NOTE_CANT_EDIT_MESSAGE_KEY": "Can't edit the notes after saving.",
 
   "CONSULTATION_PAGE_KEY" :"Consultation",
   "PROGRAM_MANAGEMENT_PAGE_KEY":"Program Management Page",

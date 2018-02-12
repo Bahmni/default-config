@@ -3,119 +3,28 @@
         "translationKey":"DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault":true,
         "maxRecentlyViewedPatients":10,
-        "sections":{
+        "sections":{  
             "patientInformation":{  
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type":"patientInformation",
                 "displayOrder":0,
+                "displayType": "Full-Page",
                 "ageLimit":100,
-                "patientAttributes":[],
+                "patientAttributes":[  
+
+                ],
                 "addressFields":[  
                     "address1",
                     "address2",
                     "cityVillage",
-                    "countyDistrict"
+                    "countryDistrict"
                 ]
-            },
-            "navigationLinksControl":{  
-                "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                "type":"navigationLinksControl",
-                "displayOrder":1,
-                "showLinks":[  
-                    "home",
-                    "visit",
-                    "registration",
-                    "inpatient",
-                    "enrolment",
-                    "visitAttribute"
-                ]
-            },
-            "visits":{  
-                "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
-                "type":"visits",
-                "displayOrder":2,
-                "dashboardConfig":{  
-                    "title":null,
-                    "maximumNoOfVisits":8,
-                    "groupByVisits":true
-                }
-            },
-            "vitals":{  
-                "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":3,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Vitals"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Vitals"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-                        "numberOfVisits":"10",
-                        "groupBy":"encounters",
-                        "obsConcepts":[  
-                            "Weight",
-                            "Vitals"
-                        ],
-                        "drugConcepts":[  
-
-                        ],
-                        "labConcepts":[  
-
-                        ]
-                    }
-                }
-            },
-            "nutritionalValues":{  
-                "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":4,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "HEIGHT",
-                        "Weight",
-                        "BMI Data",
-                        "BMI Status Data"
-                    ],
-                    "showDetailsButton":true,
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
-                    ],
-                    "numberOfVisits":2,
-                    "scope":"latest",
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "diagnosis":{  
-                "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "type":"diagnosis",
-                "showCertainty":true,
-                "showOrder":true,
-                "showDetailsButton":true,
-                "displayOrder":5
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
-                "displayOrder":6,
+                "displayOrder":1,
+                "displayType": "Full-Page",
                 "dashboardConfig":{  
                     "showFlowSheet":true,
                     "showListView":true,
@@ -135,38 +44,6 @@
                     "showOtherActive":true,
                     "showDetailsButton":true
                 }
-            },
-            "pacs":{  
-                "orderType":"Radiology Order",
-                "type":"pacsOrders",
-                "translationKey":"DASHBOARD_TITLE_PACS_KEY",
-                "displayOrder":7,
-                "dashboardConfig":{  
-                    "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
-                    "numberOfVisits":4
-                }
-            },
-            "labResults":{  
-                "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
-                "type":"labOrders",
-                "displayOrder":8,
-                "dashboardConfig":{  
-                    "title":null,
-                    "numberOfVisits":6,
-                    "showChart":true,
-                    "showTable":false,
-                    "showNormalLabResults": true,
-                    "showCommentsExpanded": true,
-                    "showAccessionNotes": true,
-                    "showDetailsButton":false
-                },
-                "expandedViewConfig":{  
-                    "numberOfVisits":10
-                }
-            },
-            "medicalRecords": {
-                "translationKey": "DASHBOARD_TITLE_MEDICAL_RECORDS_KEY",
-                "type": "medicalRecords"
             }
         }
     },
@@ -193,7 +70,7 @@
                     "address1",
                     "address2",
                     "cityVillage",
-                    "countyDistrict"
+                    "countryDistrict"
                 ],
                 "displayOrder":0
             },

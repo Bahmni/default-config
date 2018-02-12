@@ -1,0 +1,139 @@
+{
+  "bahmniPreClinicalPatientsSearchActivePatientsForPrograms": {
+      "id": "bahmni.preClinical.patients.search.activePatients",
+      "extensionPointId": "org.bahmni.patient.search",
+      "type": "config",
+      "extensionParams": {
+          "searchHandler": "emrapi.sqlSearch.activePatients",
+          "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
+          "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
+      },
+      "label": "Active",
+      "order": 1,
+      "requiredPrivilege": "app:clinical"
+  },
+  "bahmniPreClinicalPatientsSearchAllPatients": {
+      "id": "bahmni.preClinical.patients.search.allPatients",
+      "extensionPointId": "org.bahmni.patient.search",
+      "type": "config",
+      "extensionParams": {
+          "translationKey": "MODULE_LABEL_ALL_KEY",
+          "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
+      },
+      "label": "All",
+      "order": 2,
+      "requiredPrivilege": "app:clinical"
+  },
+  "bahmniPreClinicalConceptSetGroupObservationsHistory": {
+      "id": "bahmni.preClinical.conceptSetGroup.observations.history",
+      "extensionPointId": "org.bahmni.preClinical.conceptSetGroup.observations",
+      "type": "config",
+      "extensionParams": {
+          "conceptName": "History and Examination",
+          "default": true
+      },
+      "order": 1,
+      "requiredPrivilege": "app:clinical:history"
+  },
+  "bahmniPreClinicalConceptSetGroupObservationsVitals": {
+      "id": "bahmni.preClinical.conceptSetGroup.observations.vitals",
+      "extensionPointId": "org.bahmni.preClinical.conceptSetGroup.observations",
+      "type": "config",
+      "extensionParams": {
+          "default": true,
+          "conceptName": "Vitals"
+      },
+      "order": 2,
+      "requiredPrivilege": "app:clinical"
+  },
+  "bahmniPreClinicalConceptSetGroupObservationsSecondVitals": {
+      "id": "bahmni.preClinical.conceptSetGroup.observations.secondVitals",
+      "extensionPointId": "org.bahmni.preClinical.conceptSetGroup.observations",
+      "type": "config",
+      "extensionParams": {
+          "conceptName": "Second Vitals",
+          "showIf": [
+              "var visitTypes = [];",
+              "if(visitTypes.length === 0) return true;",
+              "var visitTypeName = context.visitType ? context.visitType.name : null;",
+              "return visitTypes.indexOf(visitTypeName) !== -1;"
+          ]
+      },
+      "order": 3,
+      "requiredPrivilege": "app:clinical"
+  },
+  "bahmniPreClinicalConceptSetGroupObservationsObstetrics": {
+      "id": "bahmni.preClinical.conceptSetGroup.observations.obstetrics",
+      "extensionPointId": "org.bahmni.preClinical.conceptSetGroup.observations",
+      "type": "config",
+      "extensionParams": {
+          "conceptName": "Obstetrics"
+      },
+      "order": 4,
+      "requiredPrivilege": "app:clinical"
+  },
+  "bahmniPreClinicalConceptSetGroupObservationsGynaecology": {
+      "id": "bahmni.preClinical.conceptSetGroup.observations.gynaecology",
+      "extensionPointId": "org.bahmni.preClinical.conceptSetGroup.observations",
+      "type": "config",
+      "extensionParams": {
+          "conceptName": "Gynaecology"
+      },
+      "order": 5,
+      "requiredPrivilege": "app:clinical"
+  },
+  "bahmniPreClinicalConceptSetGroupObservationsDischargeSummary": {
+      "id": "bahmni.preClinical.conceptSetGroup.observations.dischargeSummary",
+      "extensionPointId": "org.bahmni.preClinical.conceptSetGroup.observations",
+      "type": "config",
+      "extensionParams": {
+          "conceptName": "Discharge Summary"
+      },
+      "order": 6,
+      "requiredPrivilege": "Discharge Summary"
+  },
+  "observations": {
+      "id": "bahmni.preClinical.consultation.observations",
+      "extensionPointId": "org.bahmni.preClinical.consultation.board",
+      "type": "link",
+      "label": "Observations",
+      "translationKey": "OBSERVATIONS_BOARD_LABEL_KEY",
+      "url": "concept-set-group/observations",
+      "default": true,
+      "icon": "fa-user-md",
+      "order": 1,
+      "requiredPrivilege": "app:clinical:observationTab"
+  },
+  "diagnosis": {
+      "id": "bahmni.preClinical.consultation.diagnosis",
+      "extensionPointId": "org.bahmni.preClinical.consultation.board",
+      "type": "link",
+      "label": "Diagnosis",
+      "translationKey": "DIAGNOSIS_BOARD_LABEL_KEY",
+      "url": "diagnosis",
+      "icon": "fa-user-md",
+      "order": 2,
+      "requiredPrivilege": "app:clinical:diagnosisTab"
+  },
+  "disposition": {
+      "id": "bahmni.preClinical.consultation.disposition",
+      "extensionPointId": "org.bahmni.preClinical.consultation.board",
+      "type": "link",
+      "label": "Disposition",
+      "translationKey": "DISPOSITION_BOARD_LABEL_KEY",
+      "url": "disposition",
+      "icon": "fa-user-md",
+      "order": 3,
+      "requiredPrivilege": "app:clinical:dispositionTab"
+  },
+  "consultationSummary": {
+      "id": "bahmni.preClinical.consultation.summary",
+      "extensionPointId": "org.bahmni.preClinical.consultation.board",
+      "type": "link",
+      "label": "Consultation",
+      "url": "consultation",
+      "icon": "fa-user-md",
+      "order": 5,
+      "requiredPrivilege": "app:clinical:consultationTab"
+  }
+}

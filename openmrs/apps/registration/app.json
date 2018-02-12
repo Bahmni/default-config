@@ -18,16 +18,211 @@
         ],
         "config" : {
             "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
+                "patientType": {
+                    "title": "patientType",
+                    "translationKey": "patientType",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
+                        "patientType",
+                        "identifierDocument"
+                    ]
+                },
+                "personalInfo": {
+                    "title": "personalInfo",
+                    "translationKey": "personalInfo",
+                    "attributes": [
+                        "maritalStatus",
+                        "bloodType",
+                        "ethnicGroup",
+                        "education",
+                        "religion",
+                        "countryOfResidency",
+                        "nationality"
+                    ]
+                },
+                "serviceInfo": {
+                    "title": "Información de servicio",
+                    "translationKey": "Información de servicio",
+                    "attributes": [
+                        "retiredPatient",
+                        "auxiliaryOfficer",
+                        "force"
+                    ]
+                },
+                "contactInfo": {
+                    "title": "Información de contacto de paciente",
+                    "translationKey": "Información de Contacto de Paciente",
+                    "attributes": [
+                        "cellphone",
+                        "telephoneHouse",
+                        "telephoneWork",
+                        "emailPersonal",
+                        "emailWork"
+                    ],
+                    "cellphone": {
+                        "placeholder": "meow"
+                    }
+                },
+                "gradoFuerzaEjercito": {
+                    "title": "Grado",
+                    "translationKey": "gradoFuerzaEjercito",
+                    "attributes": [
+                        "gradoFuerzaEjercito"
+                    ]
+                },
+                "gradoFuerzaNaval": {
+                    "title": "Grado",
+                    "translationKey": "gradoFuerzaNaval",
+                    "attributes": [
+                        "gradoFuerzaNaval"
+                    ]
+                },
+                "gradoFuerzaAerea": {
+                    "title": "Grado",
+                    "translationKey": "gradoFuerzaAerea",
+                    "attributes": [
+                        "gradoFuerzaAerea"
+                    ]
+                },
+                "gradoPoliciaNacional": {
+                    "title": "Grado",
+                    "translationKey": "gradoPoliciaNacional",
+                    "attributes": [
+                        "gradoPoliciaNacional"
+                    ]
+                },
+                "gradoDireccionNacionalInvestigacion": {
+                    "title": "Grado",
+                    "translationKey": "gradoDireccionNacionalInvestigacion",
+                    "attributes": [
+                        "gradoDireccionNacionalInvestigacion"
+                    ]
+                },
+                "gradoSecretariaDefensaNacional": {
+                    "title": "Grado",
+                    "translationKey": "gradoSecretariaDefensaNacional",
+                    "attributes": [
+                        "gradoSecretariaDefensaNacional"
+                    ]
+                },
+                "gradoDependenciasFFAA": {
+                    "title": "Grado",
+                    "translationKey": "gradoDependenciasFFAA",
+                    "attributes": [
+                        "gradoDependenciasFFAA"
+                    ]
+                },
+                "unidadSecretariaDefensaNacional": {
+                    "title": "Grado",
+                    "translationKey": "unidadSecretariaDefensaNacional",
+                    "attributes": [
+                        "unidadSecretariaDefensaNacional"
+                    ]
+                },
+                "unidadDependenciasFFAA": {
+                    "title": "Grado",
+                    "translationKey": "unidadDependenciasFFAA",
+                    "attributes": [
+                        "unidadDependenciasFFAA"
+                    ]
+                },
+                "unidadFuerzaEjercito": {
+                    "title": "Grado",
+                    "translationKey": "unidadFuerzaEjercito",
+                    "attributes": [
+                        "unidadFuerzaEjercito"
+                    ]
+                },
+                "unidadFuerzaNaval": {
+                    "title": "Grado",
+                    "translationKey": "unidadFuerzaNaval",
+                    "attributes": [
+                        "unidadFuerzaNaval"
+                    ]
+                },
+                "unidadFuerzaAerea": {
+                    "title": "Grado",
+                    "translationKey": "unidadFuerzaAerea",
+                    "attributes": [
+                        "unidadFuerzaAerea"
+                    ]
+                },
+                "unidadPoliciaNacional": {
+                    "title": "Grado",
+                    "translationKey": "unidadPoliciaNacional",
+                    "attributes": [
+                        "unidadPoliciaNacional"
+                    ]
+                },
+                "unidadDNI": {
+                    "title": "Grado",
+                    "translationKey": "unidadDNI",
+                    "attributes": [
+                        "unidadDNI"
+                    ]
+                },
+                "patientHomeAddress": {
+                    "title": "Domicilio",
+                    "translationKey": "Domicilio"
+                },
+                "emergencyContact":{
+                    "title": "Contacto de Emergencia",
+                    "translationKey": "Contacto de emergencia",
+                    "attributes" :[
+                     "emergencyContactFirstName",
+                     "emergencyContactSecondName",
+                     "emergencyContactFirstLastname",
+                     "emergencyContactSecondLastname",
+                     "emergencyContactPhone1",
+                     "emergencyContactPhone2",
+                     "emergencyContactPhone3",
+                     "emergencyContactKin",
+                     "emergencyContactEmail"  
+                    ]
+                },
+                "secundaryEmergencyContact":{
+                    "title": "Contacto de Emergencia Adicional 1",
+                    "translationKey": "Contacto de Emergencia Adicional",
+                    "attributes" :[
+                     "secundaryEmergencyContactFirstName",
+                     "secundaryEmergencyContactSecondName",
+                     "secundaryEmergencyContactFirstLastname",
+                     "secundaryEmergencyContactSecondLastname",
+                     "secundaryEmergencyContactPhone1",
+                     "secundaryEmergencyContactPhone2",
+                     "secundaryEmergencyContactPhone3",
+                     "secundaryEmergencyContactKin",
+                     "secundaryEmergencyContactEmail"  
+                    ]
+                },
+                "thirdEmergencyContact":{
+                    "title": "Contacto de Emergencia Adicional 2",
+                    "translationKey": "Contacto de Emergencia Adicional",
+                    "attributes" :[
+                     "thirdEmergencyContactFirstName",
+                     "thirdEmergencyContactSecondName",
+                     "thirdEmergencyContactFirstLastname",
+                     "thirdEmergencyContactSecondLastname",
+                     "thirdEmergencyContactPhone1",
+                     "thirdEmergencyContactPhone2",
+                     "thirdEmergencyContactPhone3",
+                     "thirdEmergencyContactKin",
+                     "thirdEmergencyContactEmail"  
+                    ]
+                },
+                "workPlaceAddress": {
+                    "title": "Lugar de Trabajo",
+                    "translationKey": "Lugar de Trabajo",
+                    "attributes": [
+                        "residenceWork",
+                        "houseNoWork",
+                        "streetWork",
+                        "cityWork",
+                        "municipalityWork",
+                        "departmentWork",
+                        "countryWork",
+                        "addressWork",
+                        "latitude",
+                        "longitude"
                     ]
                 },
                 "hidden": {
@@ -42,15 +237,20 @@
             },
             "addressHierarchy": {
                 "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
+                "strictAutocompleteFromLevel": "cityVillage"
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
                 "Parent":"patient"
             },
+            "mandatoryPersonAttributes": [
+                "patientType",
+                "identifierDocument",
+                "cellphone"
+            ],
 
-            "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
+            "autoCompleteFields":["familyName"],
+            "defaultIdentifierPrefix": "ID",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
@@ -90,14 +290,32 @@
                 },
                 "defaults":{
                     "FHS": "Present"
+                },
+                "Pulse": {
+                    "required": true
+                },
+                "Diastolic": {
+                    "required": true
+                },
+                "Systolic": {
+                    "required": true
+                },
+                "Temperature Data": {
+                    "required": true
+                },
+                "WEIGHT": {
+                    "required": true
+                },
+                "HEIGHT": {
+                    "required": true
                 }
             },
             "fieldValidation" : {
                 "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
                 "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
-                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
+                "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Debe contener caracteres de letras No se permiten números"},
+                "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Debe contener caracteres de letras No se permiten números"},
+                "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Debe contener caracteres de letras No se permiten números"},
                 "address1" : {"pattern" : "[a-zA-Z0-9]{3}", "errorMessage" : "Should contain 3 characters"}
             },
             "patientSearch": {
