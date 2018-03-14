@@ -32,4 +32,8 @@
             update organization set is_active='Y' where name='Bahmni';
         </sql>
     </changeSet>
+    <changeSet id="201707031330" author="Santhosh, Maharjun" runOnChange="true">
+        <comment>Adding patient listing queues for patients whose are in scheduled queue</comment>
+        <sqlFile path="operationTheater/patientListingQueueScheduled.sql"/>
+    </changeSet>
 </databaseChangeLog>
