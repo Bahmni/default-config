@@ -57,30 +57,29 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
         setBMI(bahmniEncounterTransaction);
-        setPCQTotal(bahmniEncounterTransaction);
+		setPCQTotal(bahmniEncounterTransaction);
     }
-
-    static def setPCQTotal(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
-        def depressionObservation = find("Depression-PHQ9", observations, null);
-        Integer total = 0;
-        if (depressionObservation == null) {
-            return
-        }
-        for (BahmniObservation observation : depressionObservation.getGroupMembers()) {
-            if ((!"Depression-PHQ9 Total".equalsIgnoreCase(observation.getConcept().getName()))
-                    && (!"Depression-PHQ9 Effect".equalsIgnoreCase(observation.getConcept().getName()))
-                    && (((Map) observation.getValue()).get("name") != null)) {
-                Object observationFullName = ((Map) observation.getValue()).get("name");
-                if (observationFullName instanceof Map) {
-                    observationFullName = ((Map) observationFullName).get("name");
-                }
-                total += depressionPHQ9ValueMap.get(observationFullName);
-            }
-        }
-        def childDepresionTotalObs = find("Depression-PHQ9 Total", depressionObservation.getGroupMembers(), null);
-        childDepresionTotalObs.setValue(total);
-    }
+		
+	static def setPCQTotal(BahmniEncounterTransaction bahmniEncounterTransaction){
+	    Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
+	    def depressionObservation = find("Depression-PHQ9",observations,null);
+		def total = 0;
+		if( depressionObservation == null) return;
+		for (BahmniObservation observation : depressionObservation.getGroupMembers()) {
+			if((!"Depression-PHQ9 Total".equalsIgnoreCase(observation.getConcept().getName()))
+			&& (!"Depression-PHQ9 Effect".equalsIgnoreCase(observation.getConcept().getName()))
+			&& (((Map)observation.getValue()).get("name") != null)){
+			    Object observationFullName = ((Map)observation.getValue()).get("name");
+				if(observationFullName instanceof Map){
+					observationFullName = ((Map)observationFullName).get("name");
+				}
+				total += depressionPHQ9ValueMap.get(observationFullName);
+			}
+		}
+		def childDepresionTotalObs = find("Depression-PHQ9 Total",
+		depressionObservation.getGroupMembers(),null);
+		childDepresionTotalObs.setValue(total);
+	}
 
     static def setBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
         Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
