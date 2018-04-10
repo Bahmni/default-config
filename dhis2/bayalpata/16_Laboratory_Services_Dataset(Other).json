@@ -1,0 +1,45 @@
+{
+  "orgUnit": "Bm39oMfSNir",
+  "reports": { 
+    "Laboratory Services Other DHIS2": {
+      "dataValues": [    	
+		{
+		 "_comment": "Biochemistry-S_Protein",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "n5icJ65j8Q3",
+          "row": 1,
+          "column": 1
+        },
+		{
+		 "_comment": "Biochemistry-other",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "RqSKEolefFR",
+          "row": 1,
+          "column": 2
+        },
+		{
+		 "_comment": "Bacteriology-gm_stain",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "coBAbfppycX",
+          "row": 1,
+          "column": 3
+        },
+		{
+		 "_comment": "Bacteriology-body_fluid_culture",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "xMXbKs6edeu",
+          "row": 1,
+          "column": 4
+        },
+		{
+		 "_comment": "Bacteriology-body_fluid_afb",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "V01YnWJdDp0",
+          "row": 1,
+          "column": 5
+        } 
+      ]
+    }
+	
+  }
+}

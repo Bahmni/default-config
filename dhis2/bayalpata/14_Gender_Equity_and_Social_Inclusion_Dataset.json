@@ -1,0 +1,466 @@
+{
+  "orgUnit": "Bm39oMfSNir",
+  "reports": {
+    "Gender Equity and Social Inclusion": {
+      "dataValues": [    	
+		{
+		"_comment": "Enroll in CBIMCI programme-Female-dalit",
+          "categoryOptionCombo": "Dj0rmsKZiLJ",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 1,
+          "column": 2
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Female-janjati",
+          "categoryOptionCombo": "XsYqOrbvA7e",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 2,
+          "column": 2
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Female-madhesi",
+          "categoryOptionCombo": "m7XVRi1qT1J",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 3,
+          "column": 2
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Female-muslim",
+          "categoryOptionCombo": "EJv9IPWeCTb",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 4,
+          "column": 2
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Female-brahmin/chhetri",
+          "categoryOptionCombo": "fYKzBP3njcE",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 5,
+          "column": 2
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Female-others",
+          "categoryOptionCombo": "GyhEtL13JfA",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 6,
+          "column": 2
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Male-dalit",
+          "categoryOptionCombo": "xS4ElXqiXoA",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 1,
+          "column": 3
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Male-janjati",
+          "categoryOptionCombo": "FxNqmZfHgEO",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 2,
+          "column": 3
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Male-madhesi",
+          "categoryOptionCombo": "vAdaNYgYRX3",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Male-muslim",
+          "categoryOptionCombo": "gsOm9pEBion",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 4,
+          "column": 3
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Male-brahmin/chhetri",
+          "categoryOptionCombo": "zJQ0xbEoQJI",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 5,
+          "column": 3
+        },
+		{
+		"_comment": "Enroll in CBIMCI programme-Male-others",
+          "categoryOptionCombo": "fKYuaCH0OuA",  
+          "dataElement": "HWOXhR9Mhkp",
+          "row": 6,
+          "column": 3
+        },
+		
+		
+		
+		
+		
+		
+		{
+		"_comment": "Underweight Children(<2years)-Female-dalit",
+          "categoryOptionCombo": "Dj0rmsKZiLJ",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 1,
+          "column": 4
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Female-janjati",
+          "categoryOptionCombo": "XsYqOrbvA7e",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 2,
+          "column": 4
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Female-madhesi",
+          "categoryOptionCombo": "m7XVRi1qT1J",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 3,
+          "column": 4
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Female-muslim",
+          "categoryOptionCombo": "EJv9IPWeCTb",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 4,
+          "column": 4
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Female-brahmin/chhetri",
+          "categoryOptionCombo": "fYKzBP3njcE",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 5,
+          "column": 4
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Female-others",
+          "categoryOptionCombo": "GyhEtL13JfA",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 6,
+          "column": 4
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Male-dalit",
+          "categoryOptionCombo": "xS4ElXqiXoA",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 1,
+          "column": 5
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Male-janjati",
+          "categoryOptionCombo": "FxNqmZfHgEO",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 2,
+          "column": 5
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Male-madhesi",
+          "categoryOptionCombo": "vAdaNYgYRX3",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 3,
+          "column": 5
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Male-muslim",
+          "categoryOptionCombo": "gsOm9pEBion",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 4,
+          "column": 5
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Male-brahmin/chhetri",
+          "categoryOptionCombo": "zJQ0xbEoQJI",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 5,
+          "column": 5
+        },
+		{
+		"_comment": "Underweight Children(<2years)-Male-others",
+          "categoryOptionCombo": "fKYuaCH0OuA",  
+          "dataElement": "CwVdkWrutXx",
+          "row": 6,
+          "column": 5
+        },
+		
+		
+		
+		
+		
+		
+		
+		{
+		"_comment": "Institutional Delivery-dalit",
+          "categoryOptionCombo": "L9U3tI7WNAn",  
+          "dataElement": "K007woueuZ8",
+          "row": 1,
+          "column": 6
+        },
+		{
+		"_comment": "Institutional Delivery-janjati",
+          "categoryOptionCombo": "zLIKmL6CLOz",  
+          "dataElement": "K007woueuZ8",
+          "row": 2,
+          "column": 6
+        },
+		{
+		"_comment": "Institutional Delivery-madhesi",
+          "categoryOptionCombo": "axo8zRiLkg8",  
+          "dataElement": "K007woueuZ8",
+          "row": 3,
+          "column": 6
+        },
+		{
+		"_comment": "Institutional Delivery-muslim",
+          "categoryOptionCombo": "aiXiO0KW5kz",  
+          "dataElement": "K007woueuZ8",
+          "row": 4,
+          "column": 6
+        },
+		{
+		"_comment": "Institutional Delivery-brahmin/chhetri",
+          "categoryOptionCombo": "IVNBUxSkGoO",  
+          "dataElement": "K007woueuZ8",
+          "row": 5,
+          "column": 6
+        },
+		{
+		"_comment": "Institutional Delivery-others",
+          "categoryOptionCombo": "H3AfizhoVk2",  
+          "dataElement": "K007woueuZ8",
+          "row": 6,
+          "column": 6
+        },
+		
+		
+		
+		
+		
+		
+		{
+		"_comment": "Abortion Cases-dalit",
+          "categoryOptionCombo": "L9U3tI7WNAn",  
+          "dataElement": "hBHUG15MsYM",
+          "row": 1,
+          "column": 7
+        },
+		{
+		"_comment": "Abortion Cases-janjati",
+          "categoryOptionCombo": "zLIKmL6CLOz",  
+          "dataElement": "hBHUG15MsYM",
+          "row": 2,
+          "column": 7
+        },
+		{
+		"_comment": "Abortion Cases-madhesi",
+          "categoryOptionCombo": "axo8zRiLkg8",  
+          "dataElement": "hBHUG15MsYM",
+          "row": 3,
+          "column": 7
+        },
+		{
+		"_comment": "Abortion Cases-muslim",
+          "categoryOptionCombo": "aiXiO0KW5kz",  
+          "dataElement": "hBHUG15MsYM",
+          "row": 4,
+          "column": 7
+        },
+		{
+		"_comment": "Abortion Cases-brahmin/chhetri",
+          "categoryOptionCombo": "IVNBUxSkGoO",  
+          "dataElement": "hBHUG15MsYM",
+          "row": 5,
+          "column": 7
+        },
+		{
+		"_comment": "Abortion Cases-others",
+          "categoryOptionCombo": "H3AfizhoVk2",  
+          "dataElement": "hBHUG15MsYM",
+          "row": 6,
+          "column": 7
+        },
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+		"_comment": "Out patient cases-Female-dalit",
+          "categoryOptionCombo": "Dj0rmsKZiLJ",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 1,
+          "column": 8
+        },
+		{
+		"_comment": "Out patient cases-Female-janjati",
+          "categoryOptionCombo": "XsYqOrbvA7e",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 2,
+          "column": 8
+        },
+		{
+		"_comment": "Out patient cases-Female-madhesi",
+          "categoryOptionCombo": "m7XVRi1qT1J",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 3,
+          "column": 8
+        },
+		{
+		"_comment": "Out patient cases-Female-muslim",
+          "categoryOptionCombo": "EJv9IPWeCTb",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 4,
+          "column": 8
+        },
+		{
+		"_comment": "Out patient cases-Female-brahmin/chhetri",
+          "categoryOptionCombo": "fYKzBP3njcE",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 5,
+          "column": 8
+        },
+		{
+		"_comment": "Out patient cases-Female-others",
+          "categoryOptionCombo": "GyhEtL13JfA",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 6,
+          "column": 8
+        },
+		{
+		"_comment": "Out patient cases-Male-dalit",
+          "categoryOptionCombo": "xS4ElXqiXoA",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 1,
+          "column": 9
+        },
+		{
+		"_comment": "Out patient cases-Male-janjati",
+          "categoryOptionCombo": "FxNqmZfHgEO",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 2,
+          "column": 9
+        },
+		{
+		"_comment": "Out patient cases-Male-madhesi",
+          "categoryOptionCombo": "vAdaNYgYRX3",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 3,
+          "column": 9
+        },
+		{
+		"_comment": "Out patient cases-Male-muslim",
+          "categoryOptionCombo": "gsOm9pEBion",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 4,
+          "column": 9
+        },
+		{
+		"_comment": "Out patient cases-Male-brahmin/chhetri",
+          "categoryOptionCombo": "zJQ0xbEoQJI",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 5,
+          "column": 9
+        },
+		{
+		"_comment": "Out patient cases-Male-others",
+          "categoryOptionCombo": "fKYuaCH0OuA",  
+          "dataElement": "mvQ46z3S0rq",
+          "row": 6,
+          "column": 9
+        },
+		
+		
+		
+		
+		
+		
+		
+		{
+		"_comment": "In patient cases-Female-dalit",
+          "categoryOptionCombo": "Dj0rmsKZiLJ",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 1,
+          "column": 10
+        },
+		{
+		"_comment": "In patient cases-Female-janjati",
+          "categoryOptionCombo": "XsYqOrbvA7e",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 2,
+          "column": 10
+        },
+		{
+		"_comment": "In patient cases-Female-madhesi",
+          "categoryOptionCombo": "m7XVRi1qT1J",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 3,
+          "column": 10
+        },
+		{
+		"_comment": "In patient cases-Female-muslim",
+          "categoryOptionCombo": "EJv9IPWeCTb",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 4,
+          "column": 10
+        },
+		{
+		"_comment": "In patient cases-Female-brahmin/chhetri",
+          "categoryOptionCombo": "fYKzBP3njcE",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 5,
+          "column": 10
+        },
+		{
+		"_comment": "In patient cases-Female-others",
+          "categoryOptionCombo": "GyhEtL13JfA",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 6,
+          "column": 10
+        },
+		{
+		"_comment": "In patient cases-Male-dalit",
+          "categoryOptionCombo": "xS4ElXqiXoA",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 1,
+          "column": 11
+        },
+		{
+		"_comment": "In patient cases-Male-janjati",
+          "categoryOptionCombo": "FxNqmZfHgEO",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 2,
+          "column": 11
+        },
+		{
+		"_comment": "In patient cases-Male-madhesi",
+          "categoryOptionCombo": "vAdaNYgYRX3",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 3,
+          "column": 11
+        },
+		{
+		"_comment": "In patient cases-Male-muslim",
+          "categoryOptionCombo": "gsOm9pEBion",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 4,
+          "column": 11
+        },
+		{
+		"_comment": "In patient cases-Male-brahmin/chhetri",
+          "categoryOptionCombo": "zJQ0xbEoQJI",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 5,
+          "column": 11
+        },
+		{
+		"_comment": "In patient cases-Male-others",
+          "categoryOptionCombo": "fKYuaCH0OuA",  
+          "dataElement": "ucHb8wpAfiw",
+          "row": 6,
+          "column": 11
+        }
+		
+		
+       ] 
+		
+  }
+}
+}
