@@ -2,22 +2,21 @@ SELECT
     c.concept_full_name as Disease,
     c.icd10_code as 'ICD CODE',
     ifnull(b.Female,0) as Female
-    
 FROM
     (SELECT 
         concept_full_name,icd10_code
     FROM
         diagnosis_concept_view
     WHERE
-        icd10_code IN ('O00','O08','O13','O14','O15.0','O15.1','O15.2','O21','O46','O63','O64‐O66','S37','O72','O73','O75',
+        icd10_code IN ('O00','O08','O13','O14','O15.0','O15.1','O15.2','O21','O46','O63','O64-O66','S37','O72','O73','O75',
  'O85','N73','N81.4','N92','N93','N97','N46')
-    ORDER BY FIELD(icd10_code, 'O00','O08','O13','O14','O15.0','O15.1','O15.2','O21','O46','O63','O64‐O66','S37','O72','O73','O75',
+    ORDER BY FIELD(icd10_code, 'O00','O08','O13','O14','O15.0','O15.1','O15.2','O21','O46','O63','O64-O66','S37','O72','O73','O75',
  'O85','N73','N81.4','N92','N93','N97','N46')) c
         LEFT OUTER JOIN
     (SELECT 
         concept_full_name,
             IF(icd10_code IS NULL, 'R69', icd10_code) AS 'ICD Code',
-            COUNT(DISTINCT IF((gender = 'F' ), person_id, NULL)) AS Female
+            COUNT(DISTINCT IF(((gender = 'F' AND icd10_code != 'N46') OR (gender = 'M' AND icd10_code = 'N46') ), person_id, NULL)) AS Female
             FROM
         (SELECT 
         dcv.concept_full_name,

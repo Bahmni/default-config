@@ -1,5 +1,5 @@
 {
-  "orgUnit": "Bm39oMfSNir",
+  "orgUnit": "as6EmlRFNGM",
   "reports": {
     "Total Registered Cases (2-59)months": {
       "dataValues": [    						 
@@ -204,10 +204,12 @@
           "categoryOptionCombo": "J0QYmZGlEii", 
           "dataElement": "v42lkXexjFS",
           "row": 1,
-          "column": 2
+          "column": 1
         }
       ]
     },
+	
+	
 	"Total death(2-59)":{
       "dataValues": [
         {
@@ -230,6 +232,8 @@
         }
       ]
     },
+	
+	
 	"Childhood Illness Registered(Children aged below 2 months)":{
       "dataValues": [
         {
@@ -247,6 +251,7 @@
 		
       ]
     },
+	
 	"Childhood Illness PSBI LBI Jaundice Breastfed difficuilty feeding or low weight (less than 2 months)":{
       "dataValues": [
         {
@@ -320,13 +325,13 @@
           "categoryOptionCombo": "J0QYmZGlEii",  
           "dataElement": "fK36K8WBX9s",
           "row": 1,
-          "column": 3
+          "column": 2
         },
 		{
           "categoryOptionCombo": "J0QYmZGlEii", 
           "dataElement": "Q5YnsomfHvO",
           "row": 2,
-          "column": 3
+          "column": 2
         }
       ]
     },
