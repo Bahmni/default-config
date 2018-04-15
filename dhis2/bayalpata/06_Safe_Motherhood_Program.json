@@ -406,72 +406,77 @@
         }
       ]
     },
-    "Safe Abortion Service":{
+	  "Safe Abortion Total":{
       "dataValues": [
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "KsMJg5sdGOS",
           "row": 1,
-          "column": 2
+          "column": 1
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "KkSEy2pfgCD",
           "row": 1,
-          "column": 3
-        },
-        {
-          "categoryOptionCombo": "kdsirVNKdhm",
-          "dataElement": "wxIeWrnnZxe",
-          "row": 2,
           "column": 2
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
-          "dataElement": "ymw1agzYyF3",
-          "row": 2,
+          "dataElement": "wxIeWrnnZxe",
+          "row": 1,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
+          "dataElement": "ymw1agzYyF3",
+          "row": 1,
+          "column": 4
+        }
+		]
+	},
+	
+    "Safe Abortion Service":{
+      "dataValues": [
+        {
+          "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "Jz96CS4ZOn7",
-          "row": 3,
+          "row": 1,
           "column": 2
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "CWlOpEYqaC1",
-          "row": 4,
+          "row": 2,
           "column": 2
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "FKPsRSUnnob",
-          "row": 4,
+          "row": 2,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "AP5k6dsqGPI",
-          "row": 5,
+          "row": 3,
           "column": 2
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "WAxqda0KkYt",
-          "row": 5,
+          "row": 3,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "BIjA8u1VMF3",
-          "row": 6,
+          "row": 4,
           "column": 2
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "spH6ZRldV3F",
-          "row": 6,
+          "row": 4,
           "column": 3
         }
       ]
