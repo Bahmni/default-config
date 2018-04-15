@@ -3,52 +3,7 @@ SELECT final.`Safe Abortion Service`,
   sum(final.Medical) AS medical,
   IF(final.Surgical='NA','NA',sum(final.Surgical)) AS surgical
 FROM
-
- (SELECT PAC_Methods.Method AS 'Safe Abortion Service',
-        SUM(IF(PAC_Methods.concept_name LIKE 'Medical abortion%',1, 0)) AS 'Medical',
-        SUM(IF(PAC_Methods.concept_name LIKE 'Surgical Abortion%', 1, 0)) AS 'Surgical'
- FROM
-   (
-     SELECT
-       Abortion_method.Method,
-       PAC_Cause.concept_name
-     FROM
-       (
-         SELECT t1.encounter_id, IF(t2.name IN ('Condoms', 'Pills','Depo Provera'),
-                                    'Post Abortion FP methods:Short term','Post Abortion FP methods:Long term') AS Method
-         FROM obs t1
-           INNER JOIN concept_name t2 ON t1.value_coded = t2.concept_id AND t2.concept_name_type LIKE 'SHORT%'
-           INNER JOIN person t3 ON t1.person_id = t3.person_id
-           INNER JOIN encounter t4 ON t1.encounter_id = t4.encounter_id
-           INNER JOIN visit t5 ON t4.visit_id = t5.visit_id
-         WHERE
-           t1.concept_id IN (SELECT concept_id FROM concept_name WHERE NAME='Accepted Family Planning methods' AND voided = 0)
-           AND
-           (DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
-           AND
-           t1.voided = 0) AS Abortion_method
-       LEFT OUTER JOIN
-       (
-         SELECT t1.encounter_id,
-           t2.name AS concept_name
-         FROM obs t1
-           INNER JOIN concept_name t2 ON t1.value_coded = t2.concept_id AND t2.concept_name_type LIKE 'SHORT%'
-           INNER JOIN person t3 ON t1.person_id = t3.person_id
-           INNER JOIN encounter t4 ON t1.encounter_id = t4.encounter_id
-           INNER JOIN visit t5 ON t4.visit_id = t5.visit_id
-         WHERE
-           t1.value_coded IN (SELECT answer_concept FROM concept_answer
-           WHERE concept_id IN (SELECT concept_id FROM concept_name WHERE NAME IN ('Safe abortion-Surgical procedure','Safe abortion-Medical Procedure') AND voided = 0))
-           AND
-           (DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#')
-           AND
-           t1.voided = 0
-       ) AS PAC_Cause
-         ON Abortion_method.encounter_id = PAC_Cause.encounter_id) AS PAC_Methods
- GROUP BY PAC_Methods.Method
- UNION ALL
-
-  SELECT
+(SELECT
     'Post Abortion Complications' AS 'Safe Abortion Service',
     SUM(IF(PAC_Compilications.Abortion_Name LIKE 'Medical Abortion%',PAC_Compilications.Count, 0)) AS 'Medical',
     SUM(IF(PAC_Compilications.Abortion_Name LIKE 'Surgical Abortion%', PAC_Compilications.Count, 0)) AS 'Surgical'
@@ -89,8 +44,6 @@ FROM
       GROUP BY t2.name) AS PAC_Cause
  UNION ALL SELECT 'Post Abortion Care Service Availed', 0 ,0
  UNION ALL SELECT 'Post Abortion Complications', 0 ,0
- UNION ALL SELECT 'Post Abortion FP methods:Long term', 0 ,0
- UNION ALL SELECT 'Post Abortion FP methods:Short term', 0 ,0
 ) final
 GROUP BY final.`Safe Abortion Service`
 ORDER BY final.`Safe Abortion Service`
