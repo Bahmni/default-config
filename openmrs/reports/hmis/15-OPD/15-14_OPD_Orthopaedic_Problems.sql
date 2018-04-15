@@ -73,7 +73,7 @@ FROM
         AND o.voided = 0
         AND cn.voided = 0
     LEFT JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
-        AND dcv.icd10_code IN ('T14.2' , 'T14.1', 'W19')
+        AND dcv.icd10_code IN ('S02.5','T14.2','S02.6','K03.81','S06.2','S05.9','S09','T14.1', 'W19')
     WHERE
         p.voided = 0
             AND dcv.icd10_code IS NOT NULL

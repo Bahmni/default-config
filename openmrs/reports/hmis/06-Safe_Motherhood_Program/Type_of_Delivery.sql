@@ -37,7 +37,7 @@ T1.obs_group_id = T2.obs_group_id) DeliveryDetails
 GROUP BY DeliveryDetails.TypeofDelivery
 -- ----------------------------------------------
 UNION ALL SELECT 'Caesarean Section',0,0,0
-UNION ALL SELECT 'Forceps or Vaccum Extractor Delivery',0,0,0
+UNION ALL SELECT 'Forceps or Vaccum Extracted Delivery',0,0,0
 UNION ALL SELECT 'Spontaneous Vaginal Delivery',0,0,0) final
 GROUP BY final.TypeofDelivery
 ORDER BY final.TypeofDelivery;

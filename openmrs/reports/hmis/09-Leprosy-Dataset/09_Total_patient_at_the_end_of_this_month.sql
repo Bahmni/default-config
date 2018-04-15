@@ -30,7 +30,7 @@ FROM
         question_concept_name.name IN ('Leprosy, Leprosy Type')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) first_answers
-        INNER JOIN
+        LEFT OUTER JOIN
     (SELECT 
         DISTINCT(o1.person_id),
             cn2.concept_id AS answer,
@@ -52,7 +52,7 @@ FROM
         AND v1.date_stopped IS NOT NULL
     WHERE
         CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
-        INNER JOIN
+        LEFT OUTER JOIN
     (SELECT 
         DISTINCT(o1.person_id),
             cn2.concept_id AS answer,
@@ -76,7 +76,7 @@ FROM
         CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON 
         first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
-        INNER JOIN
+        LEFT OUTER JOIN
     person p ON first_concept.person_id = p.person_id
 GROUP BY  first_answers.answer_name) AS leprosy
 INNER JOIN
@@ -108,7 +108,7 @@ FROM
         question_concept_name.name IN ('Leprosy, Leprosy Type')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) first_answers
-        INNER JOIN
+        LEFT OUTER JOIN
         (SELECT 
         DISTINCT(o1.person_id),
             cn2.concept_id AS answer,
@@ -130,7 +130,7 @@ FROM
         AND v1.date_stopped IS NOT NULL
     WHERE
         CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
-        INNER JOIN
+        LEFT OUTER JOIN
     (SELECT 
         DISTINCT(o1.person_id),
             cn2.concept_id AS answer,
@@ -154,6 +154,6 @@ FROM
         CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON 
         first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
-        INNER JOIN
+        LEFT OUTER JOIN
     person p ON first_concept.person_id = p.person_id
 GROUP BY  first_answers.answer_name) AS deducted ON deducted.type_leprosy = leprosy.type_leprosy

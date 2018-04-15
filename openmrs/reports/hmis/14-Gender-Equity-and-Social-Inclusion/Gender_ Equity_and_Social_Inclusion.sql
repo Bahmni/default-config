@@ -23,7 +23,7 @@ INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id AND person_attribute_type.name = 'Caste'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view ON encounter.encounter_id = obs_view.encounter_id
-	AND obs_view.concept_full_name IN ('Childhood Illness( Children aged below 2 months)', 'Childhood Illness( Children aged 2 months to 5 years)')
+	AND obs_view.concept_full_name IN ('CBIMNCI (<2 months child)', 'CBIMNCI (2 to 59 months child)')
     AND obs_view.voided is FALSE
 RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS cbimci
@@ -43,7 +43,7 @@ INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = 
 	AND person_attribute_type.name = 'Caste'    
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
-	AND coded_obs_view.concept_full_name IN ('Weight condition')
+	AND coded_obs_view.concept_full_name IN ('IMAM, Indicator')
     AND coded_obs_view.value_concept_full_name IN ('Low weight', 'Very low weight')
     AND coded_obs_view.voided is FALSE
 RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
@@ -52,7 +52,7 @@ INNER JOIN
 -- Institiutional Delivery
 (SELECT
 	caste_list.answer_concept_name AS caste_ethnicity,
-	SUM(IF(person.person_id IS NOT NULL, 1, 0)) AS delivery_count
+    IFNULL(COUNT(DISTINCT (person.person_id)), 0) AS delivery_count
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
@@ -60,18 +60,16 @@ INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = 
 	AND person_attribute_type.name = 'Caste'
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN obs_view delivery_date ON encounter.encounter_id = delivery_date.encounter_id
-	AND delivery_date.concept_full_name = 'Delivery Note, Delivery date and time'
-    AND DATE(delivery_date.value_datetime) BETWEEN '#startDate#' AND '#endDate#' AND delivery_date.voided is FALSE
+    AND DATE(encounter.encounter_datetime) BETWEEN '#startDate#' AND '#endDate#' AND delivery_date.voided is FALSE
 INNER JOIN coded_obs_view AS inst_delivery ON inst_delivery.obs_group_id = delivery_date.obs_group_id
-	AND inst_delivery.concept_full_name = 'Delivery Note, Delivery location'
-    AND inst_delivery.value_concept_full_name = 'Delivery Note, This Facility'
+	AND inst_delivery.concept_full_name = 'Delivery Note, Delivery service done by'
 RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS delivery ON delivery.caste_ethnicity = underweight.caste_ethnicity
 INNER JOIN
 -- Abortion cases
 (SELECT
 	caste_list.answer_concept_name AS caste_ethnicity,
-	SUM(IF(person.person_id IS NOT NULL, 1, 0)) AS abortion_count
+        IFNULL(COUNT(DISTINCT (person.person_id)), 0) AS abortion_count
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
 	AND DATE(visit.date_stopped) BETWEEN '#startDate#' AND '#endDate#'
@@ -93,13 +91,15 @@ INNER JOIN
      SUM(IF(person.gender = 'M', 1, 0)) AS op_cases_male
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_stopped) BETWEEN '#startDate#' AND '#endDate#'AND visit.voided is FALSE
+	AND DATE(visit.date_stopped) BETWEEN  '#startDate#' AND '#endDate#'
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
-	AND person_attribute_type.name = 'Caste'
-    INNER JOIN encounter ON visit.visit_id = encounter.visit_id
-INNER JOIN encounter_type ON encounter.encounter_type = encounter_type.encounter_type_id
-	AND encounter_type.name = 'Out Patient Details, Free Health Service Code'
+	AND person_attribute_type.name = 'Caste'    
+INNER JOIN encounter ON visit.visit_id = encounter.visit_id
+INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
+	AND coded_obs_view.concept_full_name IN ('Department Sent To')
+       AND coded_obs_view.value_concept_full_name IN ('8 - OPD (???? ?)')
+    AND coded_obs_view.voided is FALSE
 RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS op_cases ON abortion.caste_ethnicity = op_cases.caste_ethnicity
 INNER JOIN
@@ -109,16 +109,15 @@ INNER JOIN
 	caste_list.answer_concept_name AS caste_ethnicity,
 	SUM(IF(person.gender = 'F', 1, 0)) AS ip_cases_female,
     SUM(IF(person.gender = 'M', 1, 0)) AS ip_cases_male
-
 FROM visit
 INNER JOIN person ON visit.patient_id = person.person_id
-	AND DATE(visit.date_stopped)BETWEEN '#startDate#' AND '#endDate#' AND visit.voided is FALSE
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
-	AND person_attribute_type.name = 'Caste'
+	AND person_attribute_type.name = 'Caste'    
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
-INNER JOIN encounter_type ON encounter.encounter_type = encounter_type.encounter_type_id
-	AND encounter_type.name = 'Discharge note, Inpatient outcome'
+	AND DATE(encounter.encounter_datetime) BETWEEN '#startDate#' AND '#endDate#'
+INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
+	AND coded_obs_view.concept_full_name IN ('Discharge note, Inpatient outcome')
+    AND coded_obs_view.voided is FALSE
 RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS ip_cases ON op_cases.caste_ethnicity = ip_cases.caste_ethnicity;
-
