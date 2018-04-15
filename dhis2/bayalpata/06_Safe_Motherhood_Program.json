@@ -464,12 +464,12 @@
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "AP5k6dsqGPI",
           "row": 1,
-          "column": 2
+          "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "WAxqda0KkYt",
-          "row": 1,
+          "row": 2,
           "column": 3
         },
         {
@@ -481,8 +481,8 @@
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "spH6ZRldV3F",
-          "row": 1,
-          "column": 3
+          "row": 2,
+          "column": 2
         }
       ]
     }
