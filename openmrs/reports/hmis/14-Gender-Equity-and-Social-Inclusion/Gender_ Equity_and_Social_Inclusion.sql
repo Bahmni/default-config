@@ -98,7 +98,7 @@ INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = 
 INNER JOIN encounter ON visit.visit_id = encounter.visit_id
 INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
 	AND coded_obs_view.concept_full_name IN ('Department Sent To')
-       AND coded_obs_view.value_concept_full_name IN ('8 - OPD (???? ?)')
+       AND coded_obs_view.value_concept_full_name IN ('OPD')
     AND coded_obs_view.voided is FALSE
 RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS op_cases ON abortion.caste_ethnicity = op_cases.caste_ethnicity
