@@ -1,7 +1,7 @@
 SELECT 
   first_answers.category AS 'Category',
-    IFNULL(SUM(CASE WHEN second_answers.answer_name IN ('Condoms', 'Pills','Depo Provera') THEN 1 ELSE 0 END),0) AS 'Short-Term',
-    IFNULL(SUM(CASE WHEN second_answers.answer_name IN ('Male sterilization','IUCD','Implant','Female sterilization') THEN 1 ELSE 0 END),0) AS 'Long-Term'
+         IFNULL(SUM(CASE WHEN second_answers.answer_name IN ('Condoms', 'Pills','Depo Provera') and first_concept.person_id is not null THEN 1 ELSE 0 END),0) AS 'Short-Term',
+    IFNULL(SUM(CASE WHEN second_answers.answer_name IN ('Male sterilization','IUCD','Implant','Female sterilization') and first_concept.person_id is not null THEN 1 ELSE 0 END),0) AS 'Long-Term'
 FROM
     (SELECT 
         ca.answer_concept AS answer,
