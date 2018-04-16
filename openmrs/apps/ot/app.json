@@ -7,7 +7,7 @@
       "link": "/bahmni/clinical/#/programs/patient/{{patientUuid}}/dashboard?dateEnrolled={{dateEnrolled}}&programUuid={{programUuid}}&enrollment={{enrollment}}&currentTab=DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
       "errorMessage": "The patient is not enrolled to the program"
     },
-    "primarySurgeonsForOT" : ["Ali Al Ani","Sufyan Al Qasab","Hanna Janho","Ashraf Nabhan","Rasheed Al Sammarraie","Muckhaled Naseef","Ashraf Bustanji","Ghassan S.Abu-Sittah","Other Surgeon","Anaesthetist"],
+    "primarySurgeonsForOT" : ["Yogesh Kumar","Super Man","Unknown Provider","labsystem system","Billing System","automation automation"],
     "printListViewTemplateUrl" : "/bahmni_config/openmrs/apps/ot/printListView.html",
     "procedureSQLGlobalProperty": "emrapi.sqlSearch.plannedProcedureForPatient",
     "calendarView": {
