@@ -1,5 +1,4 @@
 SELECT 
-    first_answers.answer_name AS 'Treatment Outcome',
     gender.gender AS 'Gender',
     SUM(CASE
         WHEN
@@ -41,8 +40,7 @@ FROM
         DISTINCT(o1.person_id),
             cn2.concept_id AS answer,
             cn1.concept_id AS question,
-            v1.visit_id AS visit_id,
-            v1.date_stopped AS datetime
+            v1.visit_id AS visit_id
     FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
@@ -55,16 +53,15 @@ FROM
         AND cn2.voided = 0
     INNER JOIN encounter e1 ON o1.encounter_id = e1.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e1.visit_id
-        AND v1.date_stopped IS NOT NULL
+        AND v1.date_started IS NOT NULL
     WHERE
-        CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
+        CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 12 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 12 MONTH))) first_concept ON first_concept.answer = first_answers.answer
         LEFT OUTER JOIN
     (SELECT 
         DISTINCT(o1.person_id),
             cn2.concept_id AS answer,
             cn1.concept_id AS question,
-            v1.visit_id AS visit_id,
-            v1.date_stopped AS datetime
+            v1.visit_id AS visit_id
     FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
@@ -78,9 +75,9 @@ FROM
         AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
-        AND v1.date_stopped IS NOT NULL
+        AND v1.date_started IS NOT NULL
     WHERE
-        CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON 
+        CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 12 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 12 MONTH)))second_concept ON 
          first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
         LEFT OUTER JOIN
@@ -88,8 +85,7 @@ FROM
         DISTINCT(o1.person_id),
             cn2.concept_id AS answer,
             cn1.concept_id AS question,
-            v1.visit_id AS visit_id,
-            v1.date_stopped AS datetime
+            v1.visit_id AS visit_id
     FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
@@ -103,16 +99,16 @@ FROM
         AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
-        AND v1.date_stopped IS NOT NULL
+        AND v1.date_started IS NOT NULL
     WHERE
-        CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) third_concept ON 
+      CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 12 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 12 MONTH))) third_concept ON 
          second_concept.person_id = third_concept.person_id
         AND second_concept.visit_id = third_concept.visit_id
         LEFT OUTER JOIN
     person p ON first_concept.person_id = p.person_id
         AND p.gender = gender.gender
        
-GROUP BY first_answers.answer_name,gender.gender
+GROUP BY gender.gender
 	   
 	   
 	   
