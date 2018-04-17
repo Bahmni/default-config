@@ -1,10 +1,10 @@
 SELECT 
+    first_answers.answer_name AS 'Diagnosis Category',
     gender.gender AS 'Gender',
     SUM(CASE
         WHEN
             first_concept.answer IS NOT NULL
                 AND second_concept.answer IS NOT NULL
-                AND third_concept.answer IS NOT NULL
                 AND p.gender IS NOT NULL
         THEN
             1
@@ -30,9 +30,10 @@ FROM
         AND answer_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('Tuberculosis, Treatment Outcome')
+        question_concept_name.name IN ('DRTuberculosis, Diagnosis Category')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) first_answers
+      
         INNER JOIN
     (SELECT 'M' AS gender UNION SELECT 'F' AS gender) gender
         LEFT OUTER JOIN
@@ -45,16 +46,16 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'Tuberculosis, Treatment Outcome'
+        AND cn1.name = 'DRTuberculosis, Diagnosis Category'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
         AND cn2.concept_name_type = 'FULLY_SPECIFIED'
         AND cn2.voided = 0
-    INNER JOIN encounter e1 ON o1.encounter_id = e1.encounter_id
-    INNER JOIN visit v1 ON v1.visit_id = e1.visit_id
+    INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
+    INNER JOIN visit v1 ON v1.visit_id = e.visit_id
     WHERE
-        CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 12 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 12 MONTH))) first_concept ON first_concept.answer = first_answers.answer
+        CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 20 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 20 MONTH))) first_concept ON first_concept.answer = first_answers.answer
         LEFT OUTER JOIN
     (SELECT 
         DISTINCT(o1.person_id),
@@ -65,46 +66,19 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'Tuberculosis, Type'
+        AND cn1.name = 'DRTuberculosis, Treatment outcome'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
         AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn2.name = 'Pulmonary BC'
         AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
     WHERE
-        CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 12 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 12 MONTH)))second_concept ON 
-         first_concept.person_id = second_concept.person_id
+        CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 20 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 20 MONTH)))second_concept ON 
+        first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
-        LEFT OUTER JOIN
-    (SELECT 
-        DISTINCT(o1.person_id),
-            cn2.concept_id AS answer,
-            cn1.concept_id AS question,
-            v1.visit_id AS visit_id
-    FROM
-        obs o1
-    INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
-        AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'Tuberculosis, HIV Infection'
-        AND o1.voided = 0
-        AND cn1.voided = 0
-    INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
-        AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn2.name = 'Yes'
-        AND cn2.voided = 0
-    INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
-    INNER JOIN visit v1 ON v1.visit_id = e.visit_id
-    WHERE
-      CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 12 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 12 MONTH))) third_concept ON 
-         second_concept.person_id = third_concept.person_id
-        AND second_concept.visit_id = third_concept.visit_id
         LEFT OUTER JOIN
     person p ON first_concept.person_id = p.person_id
         AND p.gender = gender.gender
-GROUP BY gender.gender
-	   
-	   
-	   
+GROUP BY  first_answers.answer_name, gender.gender;

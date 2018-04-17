@@ -515,6 +515,13 @@
 					}
 				},
 				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PBC Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PBC_Cases_Registered.sql"
+					}
+				},
+				{
 					"name": "Tubercluosis Control Program TreatmentOutcome PBC",
 					"type": "MRSGeneric",
 					"config": {
@@ -522,10 +529,38 @@
 					}
 				},
 				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PBC HIV +ve Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PBC_HIV_+ve_Cases_Registered.sql"
+					}
+				},
+				{
 					"name": "Tubercluosis Control Program TreatmentOutcome PBC HIV +ve",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PBC_HIV_+ve.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP New Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_New_Cases_Registration.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP Others Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_Others_Cases_Registration.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP HIV +ve Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_HIV_+ve_Cases_reg.sql"
 					}
 				},
 				{
@@ -556,12 +591,32 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_Drug_Resistant_(DR)_TB_Case_Registration.sql"
 					}
 				},
-				
+				{
+					"name": "DR Tubercluosis Control Program DR TB Pt. Under Current TreatmentCase Registration",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_DR_TB_Pt_Under_Current_Treatment.sql"
+					}
+				},
 				{
 					"name": "DR Tubercluosis Control Program New Registered DR TB Cases",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_New_Registered_DR_TB_Cases.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program Treatment Outcome Cases Registration",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_Treatment_Outcome_Cases_Registered.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program Treatment Outcome HIV positive Cases Registration",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_Treatment_Outcome_HIV_positive_Cases_Registered.sql"
 					}
 				},
 				{

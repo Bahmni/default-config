@@ -901,6 +901,95 @@
 				}
 			]
 		},
+		"Tubercluosis Control Program TreatmentOutcome PBC Cases Registered": {
+			"dataValues": [
+				{
+					"_comment": "New_F",
+					"categoryOptionCombo": "Uec0VacaHJP",
+					"dataElement": "oQEevgbIWXI",
+					"row": 11,
+					"column": 4
+				},
+				{
+					"_comment": "New_M",
+					"categoryOptionCombo": "vJYN5WJjlYb",
+					"dataElement": "oQEevgbIWXI",
+					"row": 12,
+					"column": 4
+				},
+				{
+					"_comment": "Relapse_F",
+					"categoryOptionCombo": "Uec0VacaHJP",
+					"dataElement": "TX30zq5m4wk",
+					"row": 9,
+					"column": 4
+				},
+				{
+					"_comment": "Relapse_M",
+					"categoryOptionCombo": "vJYN5WJjlYb",
+					"dataElement": "TX30zq5m4wk",
+					"row": 10,
+					"column": 4
+				},
+				{
+					"_comment": "Treatment After Failure_F",
+					"categoryOptionCombo": "Uec0VacaHJP",
+					"dataElement": "WrV2PooqyaV",
+					"row": 7,
+					"column": 4
+				},
+				{
+					"_comment": "Treatment After Failure_M",
+					"categoryOptionCombo": "vJYN5WJjlYb",
+					"dataElement": "WrV2PooqyaV",
+					"row": 8,
+					"column": 4
+				},
+				{
+					"_comment": "Treatment After Lost to Follow-up_F",
+					"categoryOptionCombo": "Uec0VacaHJP",
+					"dataElement": "fAFEAcRRml8",
+					"row": 11,
+					"column": 4
+				},
+				{
+					"_comment": "Treatment After Lost to Follow-up_M",
+					"categoryOptionCombo": "vJYN5WJjlYb",
+					"dataElement": "fAFEAcRRml8",
+					"row": 12,
+					"column": 4
+				},
+				{
+					"_comment": "Others Previously Treated_F",
+					"categoryOptionCombo": "Uec0VacaHJP",
+					"dataElement": "s2eqw4fy7OQ",
+					"row": 9,
+					"column": 4
+				},
+				{
+					"_comment": "Others Previously Treated_M",
+					"categoryOptionCombo": "vJYN5WJjlYb",
+					"dataElement": "s2eqw4fy7OQ",
+					"row": 10,
+					"column": 4
+				},
+				{
+					"_comment": "Previous Treatment History Unknown_F",
+					"categoryOptionCombo": "Uec0VacaHJP",
+					"dataElement": "M5YxTATvWqA",
+					"row": 7,
+					"column": 4
+				},
+				{
+					"_comment": "Previous Treatment History Unknown_M",
+					"categoryOptionCombo": "vJYN5WJjlYb",
+					"dataElement": "M5YxTATvWqA",
+					"row": 8,
+					"column": 4
+				}
+			]
+		},
+		
 		"Tubercluosis Control Program TreatmentOutcome PBC": {
 			"dataValues": [{
 					"_comment": "NEW_Cured_F",
@@ -2109,6 +2198,7 @@
 				}
 			]
 		},
+		
 
 		"DR Tubercluosis Control Program Treatment Outcome": {
 			"dataValues": [{
