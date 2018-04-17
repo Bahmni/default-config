@@ -1520,14 +1520,14 @@
 		"Tubercluosis Control Program TreatmentOutcome PBC HIV +ve Cases Registered": {
 			"dataValues": [
 				{
-					"_comment": "New_F",
+					"_comment": "Female",
 					"categoryOptionCombo": "Uec0VacaHJP",
 					"dataElement": "h8K741BH6PO",
 					"row": 1,
 					"column": 2
 				},
 				{
-					"_comment": "New_M",
+					"_comment": "Male",
 					"categoryOptionCombo": "vJYN5WJjlYb",
 					"dataElement": "h8K741BH6PO",
 					"row": 2,
@@ -1979,14 +1979,14 @@
 		"Tubercluosis Control Program TreatmentOutcome PCD EP HIV +ve Cases Registered": {
 			"dataValues": [
 				{
-					"_comment": "New_F",
+					"_comment": "Female",
 					"categoryOptionCombo": "Uec0VacaHJP",
 					"dataElement": "gNRwaic6lkn",
 					"row": 1,
 					"column": 2
 				},
 				{
-					"_comment": "New_M",
+					"_comment": "Male",
 					"categoryOptionCombo": "vJYN5WJjlYb",
 					"dataElement": "gNRwaic6lkn",
 					"row": 2,
@@ -2187,14 +2187,14 @@
 		"DR Tubercluosis Control Program DR TB Pt. Under Current TreatmentCase Registration": {
 			"dataValues": [
 				{
-					"_comment": "New_F",
+					"_comment": "Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "Yt6oAnvmxQu",
 					"row": 1,
 					"column": 2
 				},
 				{
-					"_comment": "New_M",
+					"_comment": "Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "Yt6oAnvmxQu",
 					"row": 2,
