@@ -2172,14 +2172,14 @@
 					"_comment": "HIV +ve RR-TB/DR-TB cases_F",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "rgRmzZQp0re",
-					"row": 3,
+					"row": 17,
 					"column": 3
 				},
 				{
 					"_comment": "HIV +ve RR-TB/DR-TB cases_M",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "rgRmzZQp0re",
-					"row": 4,
+					"row": 18,
 					"column": 3
 				}
 			]
