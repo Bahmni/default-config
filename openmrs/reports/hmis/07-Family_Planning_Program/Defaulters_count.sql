@@ -1,8 +1,6 @@
 SELECT 
     first_answers.answer_name AS method,
-    COUNT(DISTINCT (first_concept.person_id)) AS defaulters_count,
-    COUNT(DISTINCT (second_concept.person_id)) AS discontinued_count,
-    ABS(COUNT(DISTINCT (first_concept.person_id)) - COUNT(DISTINCT (second_concept.person_id))) as Total_Discontinued_count
+    COUNT(DISTINCT (first_concept.person_id)) AS defaulters_count
 FROM
     (SELECT 
         ca.answer_concept AS answer,
@@ -52,34 +50,6 @@ FROM
            -- AND DATE(ov.value_datetime) BETWEEN DATE('2017-01-01') AND DATE('2017-12-30')) first_concept ON first_concept.answer = first_answers.answer
 			AND DATE(ov.value_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
             
-  -- ==================================================
-  LEFT OUTER JOIN
-        
-    (SELECT 
-        answer, method_name, ov.person_id
-    FROM
-        openmrs.obs_view ov
-    inner JOIN (SELECT 
-        cn2.concept_id AS answer,
-            cn2.name AS method_name,
-            o.encounter_id
-    FROM
-        obs o
-    INNER JOIN concept_name cn ON o.concept_id = cn.concept_id
-        AND cn.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn.name IN ('FRH-Discontinued')
-        AND o.voided = 0
-        AND cn.voided = 0
-    INNER JOIN concept_name cn2 ON o.value_coded = cn2.concept_id
-        AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn2.voided = 0) method_view ON ov.encounter_id = method_view.encounter_id
-        AND ov.voided = 0
-    WHERE
-        ov.concept_full_name = 'FRH-Procedure Follow Up'
-        and    DATE(ov.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
-            AND DATE(ov.value_datetime) > DATE('#endDate#')) second_concept ON second_concept.answer = first_answers.answer
-		-- and    DATE(ov.obs_datetime) BETWEEN DATE('2017-01-01') AND DATE('2017-12-30')
-        -- AND DATE(ov.value_datetime) > DATE('2017-12-30')) second_concept ON second_concept.answer = first_answers.answer
             
 GROUP BY method
 order by method;
