@@ -73,8 +73,8 @@
           "row": 10,
           "column": 3
         },
-		 {
-		 "_comment": "Colorectal (colon with rectum) cancer	-F",
+		{
+		 "_comment": "Colorectal colon with rectum cancer-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "PYQPAx2s3On",
           "row": 11,
@@ -205,7 +205,7 @@
           "column": 4
         },
 		 {
-		 "_comment": "Colorectal (colon with rectum) cancer	-M",
+		 "_comment": "Colorectal colon with rectum cancer-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "PYQPAx2s3On",
           "row": 11,
@@ -884,7 +884,7 @@
           "column": 3
         },
 		{
-		 "_comment": "	Epididymitis/ Orchitis-F",
+		 "_comment": "Epididymitis/ Orchitis-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "so2s568hmR9",
           "row": 20,
@@ -1035,7 +1035,7 @@
           "column": 4
         },
 		{
-		 "_comment": "	Epididymitis/ Orchitis-M",
+		 "_comment": "Epididymitis/ Orchitis-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "so2s568hmR9",
           "row": 20,
