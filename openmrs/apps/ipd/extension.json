@@ -121,7 +121,7 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
       "translationKey": "MODULE_LABEL_TO_DISCHARGE_KEY",
-      "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge"
+      "forwardUrl" : "#/bedManagement/patient/{{patientUuid}}"
     },
     "label": "To Discharge",
     "order": 3,
@@ -133,7 +133,7 @@
     "type": "config",
     "extensionParams": {
       "translationKey": "MODULE_LABEL_ALL_KEY",
-      "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
+      "forwardUrl" : "#/bedManagement/patient/{{patientUuid}}"
     },
     "label": "All",
     "order": 4,
