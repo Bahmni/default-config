@@ -19,7 +19,7 @@ FROM
             dcv.icd10_code,
             o.obs_id,
             p.gender,
-            IF(DATE(p.date_created) = DATE(v.date_started), 'New', 'Returning') AS 'Type'
+            IF(DATE(p.date_created) = DATE(v.date_started) AND DATE(p.date_created)BETWEEN DATE('#startDate#') AND DATE('#endDate#'), 'New', 'Returning') AS 'Type'
     FROM
         person p
     INNER JOIN visit v ON p.person_id = v.patient_id
