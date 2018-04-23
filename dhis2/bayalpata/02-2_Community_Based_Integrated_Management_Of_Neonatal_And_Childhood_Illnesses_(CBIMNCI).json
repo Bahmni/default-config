@@ -13,9 +13,10 @@
       ]
     }
 	,
-    "Childhood Illness (2-59)ARI Classification Dehydration Diarrhoea Refered Out":{
+    "Childhood Illness (2-59)ARI Classification Dehydration Diarrhoea and Refered Out":{
       "dataValues": [
         {
+		"_comment": "ARI",
           "categoryOptionCombo": "J0QYmZGlEii",  
           "dataElement": "GC6lQSFDO5m",
           "row": 1,
@@ -34,6 +35,7 @@
           "column": 3
         },
         {
+		"_comment": "Dehydration",
           "categoryOptionCombo": "J0QYmZGlEii",
           "dataElement": "A2lsvQ94qw5", 
           "row": 5,
@@ -335,7 +337,7 @@
         }
       ]
     },
-	"Childhood Illness less than 2 months Follow up and other antibiotics":{
+	"Childhood Illness (less than 2 months) Follow up and other antibiotics":{
       "dataValues": [
         {
           "categoryOptionCombo": "J0QYmZGlEii",  
@@ -353,7 +355,7 @@
 		
       ]
     },
-	"Childhood Illness less than 2 months treatment":{
+	"Childhood Illness (less than 2 months) treatment":{
       "dataValues": [
 	  {
 		"_comment": "Amoxicillin less than 28",
