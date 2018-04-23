@@ -30,7 +30,8 @@ FROM (SELECT
         JOIN nonVoidedQuestionAnswerObs oVisitType ON e.encounter_id = oVisitType.encounter_id
         JOIN person_address address ON p.person_id = address.person_id
       WHERE !p.voided AND !v.voided AND !e.voided
-           --  AND address.address1 ='10'
+      AND address.city_village = 'Sanfebagar Municipality'
+            AND address.address1 ='7'
             AND DATE(oStatus.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             AND DATE(oVisitType.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             AND TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) <= 24
