@@ -155,112 +155,112 @@
 		"_comment": "RFT-M.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "N097AQezHbX",
-          "row": 1,
+          "row": 9,
           "column": 4
         },
 		 { 
 		"_comment": "RFT-M.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "N097AQezHbX",
-          "row": 2,
+          "row": 10,
           "column": 4
         },
         { 
 		"_comment": "Transfer Out-M.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "aCMvVLEtHKm",
-          "row": 9,
+          "row": 13,
           "column": 4
         },
 		{
 		"_comment": "Transfer Out-M.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "aCMvVLEtHKm",
-          "row": 10,
+          "row": 14,
           "column": 4
         },
         { 
 		"_comment": "Defulter-M.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "SzRGyOFmdjo",
-          "row": 5,
+          "row": 1,
           "column": 4
         },
 		{
 		"_comment": "Defulter-M.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "SzRGyOFmdjo",
-          "row": 6,
+          "row": 2,
           "column": 4
         },
 		 { 
 		"_comment": " Other Deduction-M.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "psRprHTmF2h",
-          "row": 13,
+          "row": 5,
           "column": 4
         },
         { 
 		"_comment": "Other Deduction-M.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "psRprHTmF2h",
-          "row": 14,
+          "row": 6,
           "column": 4
         },
 		{
 		"_comment": "RFT-P.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "qyYAJ76ln2k",
-          "row": 3,
+          "row": 11,
           "column": 4
         },
 		 { 
 		"_comment": "RFT-P.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "qyYAJ76ln2k",
-          "row": 4,
+          "row": 12,
           "column": 4
         },
         { 
 		"_comment": "Transfer Out-P.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "MIabZFoyiNa",
-          "row": 11,
+          "row": 15,
           "column": 4
         },
 		{
 		"_comment": "Transfer Out-P.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "MIabZFoyiNa",
-          "row": 12,
+          "row": 16,
           "column": 4
         },
         { 
 		"_comment": "Defulter-P.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "WPz17LTYpne",
-          "row": 7,
+          "row": 3,
           "column": 4
         },
 		{
 		"_comment": "Defulter-P.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "WPz17LTYpne",
-          "row": 8,
+          "row": 4,
           "column": 4
         },
 		 { 
 		"_comment": "Other Deduction-P.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "USNeEAsWwj9",
-          "row": 15,
+          "row": 7,
           "column": 4
         },
         { 
 		"_comment": "Other Deduction-P.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "USNeEAsWwj9",
-          "row": 16,
+          "row": 8,
           "column": 4
         }     
       ]
@@ -272,28 +272,28 @@
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "D2sfyGW4Ade",
           "row": 1,
-          "column": 6
+          "column": 2
         },
 		 { 
 		"_comment": "M.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "D2sfyGW4Ade",
-          "row": 2,
-          "column": 7
+          "row": 1,
+          "column": 3
         },
         { 
 		"_comment": "P.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "vg1Cmw3Tcim",
-          "row": 1,
-          "column": 6
+          "row": 2,
+          "column": 2
         },
 		{
 		"_comment": "P.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "vg1Cmw3Tcim",
           "row": 2,
-          "column": 7
+          "column": 3
         }
       ]
     },
@@ -336,28 +336,28 @@
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "suBFDHxUSC8",
           "row": 1,
-          "column": 4
+          "column": 3
         },
 		 { 
 		"_comment": "M.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "suBFDHxUSC8",
           "row": 2,
-          "column": 4
+          "column": 3
         },
         { 
 		"_comment": "P.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "jOs9JAeA3Gd",
           "row": 3,
-          "column": 4
+          "column": 3
         },
 		{
 		"_comment": "P.B-M",
           "categoryOptionCombo": "PflKpozpO7b",  
           "dataElement": "jOs9JAeA3Gd",
           "row": 4,
-          "column": 4
+          "column": 3
         }
       ]
     },
