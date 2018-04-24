@@ -375,6 +375,13 @@
 						}
 					},
 					{
+					"name": "Leprosy program total smear cases",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_smear_cases_tested_only.sql"
+					}
+				},
+					{
 					"name": "Leprosy program total positive smear cases",
 					"type": "MRSGeneric",
 					"config": {

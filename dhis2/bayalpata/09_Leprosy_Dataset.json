@@ -302,6 +302,38 @@
         {
 		"_comment": "M.B-F",
           "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "S0oeJ56oWxj",
+          "row": 1,
+          "column": 3
+        },
+		 { 
+		"_comment": "M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "S0oeJ56oWxj",
+          "row": 2,
+          "column": 3
+        },
+        { 
+		"_comment": "P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "ihereZIMhXR",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "ihereZIMhXR",
+          "row": 4,
+          "column": 3
+        }
+      ]
+    },
+		"Leprosy program total smear cases":{
+      "dataValues": [
+        {
+		"_comment": "M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
           "dataElement": "smIZPpDohxD",
           "row": 1,
           "column": 3
