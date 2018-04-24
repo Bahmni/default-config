@@ -1,0 +1,18 @@
+{
+  "id": "bahmni.ot.scheduling",
+  "extensionPoints": [
+  ],
+  "config": {
+    "patientDashboardUrl": {
+      "link": "/bahmni/clinical/#/programs/patient/{{patientUuid}}/dashboard?dateEnrolled={{dateEnrolled}}&programUuid={{programUuid}}&enrollment={{enrollment}}&currentTab=DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
+      "errorMessage": "The patient is not enrolled to the program"
+    },
+    "primarySurgeonsForOT" : ["Yogesh Kumar","Super Man","Unknown Provider","labsystem system","Billing System","automation automation"],
+    "printListViewTemplateUrl" : "/bahmni_config/openmrs/apps/ot/printListView.html",
+    "calendarView": {
+      "dayViewStart": "08:00",
+      "dayViewEnd": "18:00",
+      "dayViewSplit": "60"
+    }
+  }
+}

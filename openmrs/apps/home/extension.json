@@ -89,6 +89,16 @@
     "order": 8,
     "requiredPrivilege": "app:reports"
   },
+  "bahmniOT": {
+    "id": "bahmni.ot",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "Operation Theatre",
+    "url": "../ot/",
+    "icon": "fa-hospital-o",
+    "order": 9,
+    "requiredPrivilege": "app:ot"
+  },
   "appointments": {
     "id": "bahmni.appointments",
     "extensionPointId": "org.bahmni.home.dashboard",
