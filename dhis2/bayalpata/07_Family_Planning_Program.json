@@ -54,6 +54,40 @@
         
       ]
     },
+	"Family Planning Program - Temporary FP method (No of devices used)": {
+      "dataValues": [
+        {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "XcWK8DnxZgE",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "xcM0TtsUYQr",
+          "row": 5,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "KuXdIzVAOZ2",
+          "row": 2,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "oj5Bk35Tqb7",
+          "row": 4,
+          "column": 2
+        },
+		{
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "lAq7cpHVSFT",
+          "row": 3,
+          "column": 2
+        }
+      ]
+    },
     "Family Planning Program - Temporary FP method (Existing users)":{
       "dataValues": [
        {

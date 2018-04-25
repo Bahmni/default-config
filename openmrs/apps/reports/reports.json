@@ -313,6 +313,13 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Defaulters_count.sql"
 					}
 				},
+				{
+					"name": "Family Planning Program - Temporary FP method (No of devices used)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/No_of_devices_used.sql"
+					}
+				},
 
 				{
 					"name": "Family Planning Program - Permanent FP method (New users)",
