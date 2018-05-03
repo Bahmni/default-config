@@ -1,6 +1,6 @@
 SELECT 
-    first_answers.answer_name AS 'ICD name',
-    first_answers.icd10_code AS 'ICD CODE',
+DISTINCT(first_answers.answer_name) AS 'ICD name',
+   first_answers.icd10code AS 'ICD CODE',
     IFNULL(SUM(CASE
                 WHEN
                     second_concept.gender = 'F'
@@ -19,13 +19,20 @@ SELECT
                 ELSE 0
             END),
             0) AS 'MALE PATIENT'
+            
 FROM
     (SELECT 
-        concept_full_name AS answer_name, icd10_code
+    CASE WHEN concept_full_name IN ('Fall','Injury of eye and orbit,unspecified','Other and unspecified injuries of head',
+									'Cracked tooth','Injury of eye and orbit, unspecified','Open wound, unspecified',
+                                    'Diffuse traumatic brain injury','Fracture of tooth','Fracture, unspecified',
+                                    'Fracture of mandible') THEN 'Falls/ injuries/ fractures' ELSE concept_full_name END AS answer_name,
+    CASE WHEN icd10_code IN ('S02.5','T14.2','S06.2','S09','W19','K03.81','S05.9','T14.1','S02.6') THEN 'T14' ELSE icd10_code END AS icd10code,
+         icd10_code
     FROM
         diagnosis_concept_view
     WHERE
-        icd10_code IN ('V89','M06','M13','M19','M54.9')) first_answers
+        icd10_code IN ('V89','M06','M13','M19','M54.9','S02.5','T14.2','S02.6','K03.81','S06.2','S05.9','S09','T14.1', 'W19')) first_answers
+        
         LEFT OUTER JOIN
     (SELECT DISTINCT
         (p.person_id),
@@ -47,7 +54,7 @@ FROM
         AND o.voided = 0
         AND cn.voided = 0
     LEFT JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
-        AND dcv.icd10_code IN ('V89','M06','M13','M19','M54.9')
+        AND dcv.icd10_code IN ('V89','M06','M13','M19','M54.9','S02.5','T14.2','S02.6','K03.81','S06.2','S05.9','S09','T14.1', 'W19')
     WHERE
         p.voided = 0
     GROUP BY dcv.icd10_code) first_concept ON first_concept.icd10_code = first_answers.icd10_code
@@ -73,4 +80,5 @@ FROM
         CAST(obs.obs_datetime AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
 GROUP BY first_answers.icd10_code
-ORDER BY FIELD(first_answers.icd10_code,'V89','M06','M13','M19','M54.9')
+ORDER BY FIELD(first_answers.icd10_code,'V89','M06','M13','M19','M54.9','S02.5','T14.2','S02.6','K03.81','S06.2','S05.9','S09','T14.1', 'W19')
+
