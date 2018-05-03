@@ -52,4 +52,4 @@ FROM
     INNER JOIN person p ON o1.person_id = p.person_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
     WHERE
-        CAST(v1.date_started AS DATE) BETWEEN DATE('2018-04-01') AND DATE('2018-04-17')) first_concept ON first_concept.answer = first_answers.answer
+        CAST(v1.date_started AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
