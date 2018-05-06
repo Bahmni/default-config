@@ -64,6 +64,8 @@
             "address": {
                 "fields" : ["city_village", "address1"]
             }
-        }
+        },
+        "enableNepaliCalendar": true,
+        "displayNepaliDates": true
     }
 }
