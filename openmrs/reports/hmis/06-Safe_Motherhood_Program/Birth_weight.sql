@@ -31,7 +31,7 @@ AND t1.voided = 0 AND (DATE(t1.obs_datetime) BETWEEN '#startDate#' AND '#endDate
 INNER JOIN
 (SELECT t1.encounter_id, CASE
 WHEN t2.name = 'Asphyxiated' THEN 'Asphyxia'
-WHEN t2.name NOT IN ('Normal','Asphyxiated','Stillbirth', 'Jaundice', 'New born status, Hypothermia') THEN 'Defect'
+WHEN t2.name NOT IN ('Disabled') THEN 'Defect'
 ELSE 'Others'
 END
 AS InfantStatus FROM obs t1

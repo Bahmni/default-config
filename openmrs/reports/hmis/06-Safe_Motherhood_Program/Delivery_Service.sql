@@ -1,6 +1,6 @@
 select
   answer.concept_full_name as 'Delivery service done by',
-  sum(result.total_count) as total
+  IFNULL(sum(result.total_count),0) as total
 from
   concept_view AS question
   INNER JOIN concept_answer ON question.concept_id = concept_answer.concept_id AND question.concept_full_name IN ('Delivery Note, Delivery service done by')
@@ -27,7 +27,7 @@ from
       INNER JOIN reporting_age_group on cast(obs.obs_datetime AS DATE) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
                                         AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
                                         AND reporting_age_group.report_group_name = "All Ages"
-    WHERE CAST(visit.date_stopped  as DATE) BETWEEN '#startDate#' AND '#endDate#'
+    WHERE CAST(obs.obs_datetime  as DATE) BETWEEN '#startDate#' AND '#endDate#'
     group by obs.concept_id, obs.value_coded, reporting_age_group.name, person.gender, visit_attribute.value_reference
   ) result on question.concept_id = result.question_concept_id
               and answer.concept_id = result.answer_concept_id
