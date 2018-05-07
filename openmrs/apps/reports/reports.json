@@ -1087,6 +1087,24 @@
 		}
 	},
 	
+	
+	"18-01 Inpatient Morbidity Dataset": {
+		"name": "18-01 Inpatient Morbidity Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [
+				{
+					"name": "31-35 Inpatient Morbidity",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/18-IPD/18_31-35_Inpatient_Morbidity.sql"
+					}
+				}
+			]
+		}
+	},
+	
     
 	"hospital_activities__number_of_clients_served_new_and_total": {
         "name": "Hospital Activities - Number of Clients Served (New and Total)",
