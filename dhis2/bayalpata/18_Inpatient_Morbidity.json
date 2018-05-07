@@ -1,0 +1,38 @@
+{
+  "orgUnit": "as6EmlRFNGM",
+  "reports": {
+    "31-35 Inpatient Morbidity": {
+      "dataValues": [    	
+		{
+		"_comment": "Viral Warts ≤ 28 Days-F",
+          "categoryOptionCombo": "FtkLGfaWm6z",  
+          "dataElement": "M6iIxQ7dWte",
+          "row": 1,
+          "column": 4
+        },
+        {
+		"_comment": "Viral Warts ≤ 28 Days -M",
+          "categoryOptionCombo": "TMrazuZ4Va4", 
+          "dataElement": "M6iIxQ7dWte", 
+          "row": 1,
+          "column": 5
+        },
+        {	
+		"_comment": "Viral Warts 29 Days-1 Yr-F",
+          "categoryOptionCombo": "MQj7sk1V2Wd",  
+          "dataElement": "M6iIxQ7dWte",
+          "row": 2,
+          "column": 4
+        },
+		{	
+		"_comment": "Viral Warts 29 Days-1 Yr-M",
+          "categoryOptionCombo": "QQt2JrzlZbo",  
+          "dataElement": "M6iIxQ7dWte",
+          "row": 2,
+          "column": 5
+        }
+          
+      ]
+    }
+   }  
+}
