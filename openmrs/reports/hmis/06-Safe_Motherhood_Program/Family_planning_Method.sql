@@ -1,8 +1,28 @@
 SELECT DISTINCT
- first_answers.category AS 'Category',
-         IFNULL(SUM(CASE WHEN second_answers.answer_name IN ('Condoms', 'Pills','Depo Provera') and second_concept.person_id is not null THEN 1 ELSE 0 END),0) AS 'Short-Term',
-    IFNULL(SUM(CASE WHEN second_answers.answer_name IN ('Male sterilization','IUCD','Implant','Female sterilization') and second_concept.person_id is not null THEN 1 ELSE 0 END),0) AS 'Long-Term'
-    FROM
+    first_answers.category AS 'Category',
+    IFNULL(SUM(CASE
+                WHEN
+                    second_answers.answer_name IN ('Condoms' , 'Pills', 'Depo Provera')
+                        AND second_concept.person_id IS NOT NULL
+                        
+                THEN
+                    1
+                ELSE 0
+            END),
+            0) AS 'Short-Term',
+    IFNULL(SUM(CASE
+                WHEN
+                    second_answers.answer_name IN ('Male sterilization' , 'IUCD',
+                        'Implant',
+                        'Female sterilization')
+                        AND second_concept.person_id IS NOT NULL
+
+                THEN
+                    1
+                ELSE 0
+            END),
+            0) AS 'Long-Term'
+FROM
     (SELECT 
         ca.answer_concept AS answer,
             IFNULL(answer_concept_short_name.name, answer_concept_fully_specified_name.name) AS answer_name,
@@ -51,8 +71,8 @@ SELECT DISTINCT
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) second_answers
         LEFT OUTER JOIN
-    (SELECT 
-    DISTINCT (o1.person_id),
+    (SELECT DISTINCT
+        (o1.person_id),
             cn2.concept_id AS answer,
             cn1.concept_id AS question,
             v1.visit_id AS visit_id
@@ -70,10 +90,10 @@ SELECT DISTINCT
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
     WHERE
-        CAST(v1.date_started AS DATE)  BETWEEN DATE('#startDate#') AND DATE('#endDate#'))first_concept ON first_concept.answer = first_answers.answer
-         LEFT OUTER JOIN
-    (SELECT 
-        DISTINCT(o1.person_id) ,
+        CAST(v1.date_started AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
+        LEFT OUTER JOIN
+    (SELECT DISTINCT
+        (o1.person_id),
             cn2.concept_id AS answer,
             v1.visit_id AS visit_id
     FROM
@@ -92,4 +112,4 @@ SELECT DISTINCT
         CAST(v1.date_started AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON second_concept.answer = second_answers.answer
         AND first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
-	GROUP BY first_answers.category;
+GROUP BY first_answers.category;
