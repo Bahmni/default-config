@@ -2000,70 +2000,70 @@
 					"_comment": "Completed_F",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "rAVTiJlYx1E",
-					"row": 9,
+					"row": 11,
 					"column": 3
 				},
 				{
 					"_comment": "Completed_M",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "rAVTiJlYx1E",
-					"row": 10,
+					"row": 12,
 					"column": 3
 				},
 				{
 					"_comment": "Failure_F",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "Z7RzDOH264i",
-					"row": 7,
+					"row": 9,
 					"column": 3
 				},
 				{
 					"_comment": "Failure_M",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "Z7RzDOH264i",
-					"row": 8,
+					"row": 10,
 					"column": 3
 				},
 				{
 					"_comment": "Died_F",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "DEjsJ19xSBz",
-					"row": 1,
+					"row": 3,
 					"column": 3
 				},
 				{
 					"_comment": "Died_M",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "DEjsJ19xSBz",
-					"row": 2,
+					"row": 4,
 					"column": 3
 				},
 				{
 					"_comment": "Lost to follow up_F",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "VGFgcKsFGdC",
-					"row": 13,
+					"row": 15,
 					"column": 3
 				},
 				{
 					"_comment": "Lost to follow up_M",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "VGFgcKsFGdC",
-					"row": 14,
+					"row": 16,
 					"column": 3
 				},
 				{
 					"_comment": "Not Evaluated_F",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "snTfWkFEGEd",
-					"row": 3,
+					"row": 5,
 					"column": 3
 				},
 				{
 					"_comment": "Not Evaluated_M",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "snTfWkFEGEd",
-					"row": 4,
+					"row": 6,
 					"column": 3
 				}
 			]

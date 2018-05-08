@@ -1,4 +1,5 @@
 SELECT 
+first_answers.answer_name,
     gender.gender AS 'Gender',
     SUM(CASE
         WHEN
@@ -104,7 +105,7 @@ FROM
         LEFT OUTER JOIN
     person p ON first_concept.person_id = p.person_id
         AND p.gender = gender.gender
-GROUP BY gender.gender
+GROUP BY first_answers.answer_name,gender.gender
 	   
 	   
 	   
