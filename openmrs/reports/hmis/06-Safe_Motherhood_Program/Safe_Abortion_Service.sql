@@ -33,7 +33,7 @@ FROM
       SELECT t2.name AS Cause, COUNT(1) AS 'Count'
       FROM obs t1
         INNER JOIN concept_name t2 ON t1.concept_id = t2.concept_id AND t2.concept_name_type = 'FULLY_SPECIFIED' AND t2.voided = 0 AND t2.name IN
-                                                                                                                                       ('PAC Cause')
+                                                                                                                                       ('PAC Cause','Not Applicable')
         INNER JOIN person t3 ON t1.person_id = t3.person_id
         INNER JOIN encounter t4 ON t1.encounter_id = t4.encounter_id
         INNER JOIN visit t5 ON t4.visit_id = t5.visit_id

@@ -4,7 +4,7 @@ SELECT
                       INNER JOIN concept_name cn1
                         ON o1.concept_id = cn1.concept_id AND
                            cn1.concept_name_type = 'FULLY_SPECIFIED' and 
-                           cn1.name  = 'FRH-Discontinued'
+                           cn1.name  = 'FRH-Procedure Follow Up'
                            AND o1.voided = 0 AND cn1.voided = 0
                       INNER JOIN concept_name cn2
                         ON o1.value_coded = cn2.concept_id
