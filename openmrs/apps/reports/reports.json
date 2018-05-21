@@ -933,6 +933,13 @@
 					}
 				},
 				{
+					"name": "Not mentioned above and others",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_Not_mentioned_above.sql"
+					}
+				},
+				{
 					"name": "OPD Surgical Problems(Total and New OPD)",
 					"type": "MRSGeneric",
 					"config": {
