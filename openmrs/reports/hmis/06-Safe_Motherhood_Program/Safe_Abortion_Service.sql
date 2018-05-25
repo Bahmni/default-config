@@ -9,7 +9,8 @@ FROM
     SUM(IF(PAC_Compilications.Abortion_Name LIKE 'Surgical Abortion%', PAC_Compilications.Count, 0)) AS 'Surgical'
   FROM
     (
-      SELECT t2.name AS Abortion_Name, COUNT(1) AS 'Count'
+      SELECT t2.name AS Abortion_Name, 
+	  COUNT(DISTINCT(t3.person_id)) AS 'Count'
       FROM obs t1
         INNER JOIN concept_name t2 ON t1.concept_id = t2.concept_id AND t2.concept_name_type = 'FULLY_SPECIFIED' AND t2.voided = 0 
 		AND t2.name IN
@@ -31,7 +32,8 @@ FROM
     'NA' AS 'Surgical'
   FROM
     (
-      SELECT t2.name AS Cause, COUNT(1) AS 'Count'
+      SELECT t2.name AS Cause, 
+	  COUNT(DISTINCT(t3.person_id)) AS 'Count'
       FROM obs t1
         INNER JOIN concept_name t2 ON t1.concept_id = t2.concept_id AND t2.concept_name_type = 'FULLY_SPECIFIED' AND t2.voided = 0 AND t2.name IN
                                                                                                                                        ('PAC Cause','Not Applicable')
