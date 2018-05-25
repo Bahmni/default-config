@@ -27,7 +27,7 @@
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
         "quickPrints":false,
-        "ipdButton": {
+        "adtNavigationConfig": {
             "privilege": "app:adt",
             "forwardUrl": "../ipd/#/patient/{{patientUuid}}/visit/{{visitUuid}}/dashboard",
             "title": "Go to IPD dashboard"
