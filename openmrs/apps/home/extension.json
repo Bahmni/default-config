@@ -39,6 +39,17 @@
     "order": 4,
     "requiredPrivilege": "app:adt"
   },
+  "bahmniIpd": {
+    "id": "bahmni.ipd",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_BED_MANAGEMENT_KEY",
+    "label": "InPatient",
+    "url": "../ipd/#/bedManagement",
+    "icon": "fa-bed",
+    "order": 7,
+    "requiredPrivilege": "app:adt"
+  },
   "radiologyDocumentUpload": {
     "id": "bahmni.radiology.document.upload",
     "extensionPointId": "org.bahmni.home.dashboard",
