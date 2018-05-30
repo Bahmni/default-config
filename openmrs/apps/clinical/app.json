@@ -27,6 +27,11 @@
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
         "quickPrints":false,
+        "adtNavigationConfig": {
+            "privilege": "app:adt",
+            "forwardUrl": "../ipd/#/patient/{{patientUuid}}/visit/{{visitUuid}}/dashboard",
+            "title": "Go to IPD dashboard"
+        },
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
             "networkStatusCheckInterval": 20000,
