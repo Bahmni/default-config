@@ -49,6 +49,31 @@
                 );
             </sql>
         </changeSet>
+        <changeSet id="default-201905311115" author="Bindu, Angshuman">
+            <preConditions onFail="MARK_RAN">
+                <sqlCheck expectedResult="0">
+                    SELECT count(*) FROM location where name="OT";
+                </sqlCheck>
+            </preConditions>
+            <comment> Add default location for OT module </comment>
+            <sql>
+                INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('OT', 'Operation Theater', FALSE, uuid(), NOW(), 1);
+            </sql>
+        </changeSet>
+        <changeSet id="default-201905311116" author="Bindu, Angshuman">
+            <preConditions onFail="MARK_RAN">
+                <sqlCheck expectedResult="0">
+                    SELECT count(*) from location_tag_map where location_tag_id IN (SELECT location_tag_id from location_tag where name="Operation Theater");
+                </sqlCheck>
+            </preConditions>
+                <comment> Tag OT location as Operation Theatre </comment>
+                <sql>
+                    SELECT location_tag_id INTO @location_tag_id FROM location_tag WHERE name = "Operation Theater" and description = "Operation Theater";
+                    SELECT location_id INTO @location_id FROM location WHERE location.name="OT" and description = "Operation Theater";
+
+                    INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id, @location_tag_id);
+                </sql>
+        </changeSet>
         <changeSet id="Amman-201703100949450" author="David Oh" runOnChange="true">
             <comment>Updating SQL query for Bed Management List View</comment>
             <sqlFile path="bedManagement/PatientWardDetails.sql"/>
