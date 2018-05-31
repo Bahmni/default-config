@@ -78,7 +78,7 @@
                         {
                             "name": "bedManagement",
                             "translationKey": "PATIENT_BED_MANAGEMENT_PAGE_KE",
-                            "url": "../ipd/#/bedManagement/patient/{{patientUuid}}/visit/{{visitUuid}}"
+                            "url": "../bed-management/#/bedManagement/patient/{{patientUuid}}/visit/{{visitUuid}}"
                         }
                     ]
                 },

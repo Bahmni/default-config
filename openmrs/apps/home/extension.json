@@ -45,7 +45,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_BED_MANAGEMENT_KEY",
     "label": "InPatient",
-    "url": "../ipd/#/bedManagement",
+    "url": "../bed-management/#/bedManagement",
     "icon": "fa-bed",
     "order": 7,
     "requiredPrivilege": "app:adt"
