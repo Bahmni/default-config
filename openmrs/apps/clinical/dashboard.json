@@ -157,8 +157,8 @@
                 "dashboardConfig":{  
                     "title":null,
                     "numberOfVisits":6,
-                    "showChart":true,
-                    "showTable":false,
+                    "showChart":false,
+                    "showTable":true,
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
