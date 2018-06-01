@@ -16,7 +16,7 @@ FROM
 InfantBirthWeights.Weight_Category,
 InfantBirthStatus.InfantStatus
 FROM
-(SELECT distinct t1.encounter_id,CASE
+(SELECT  t1.encounter_id,CASE
 WHEN t1.value_numeric < 1500 THEN 'Very low (< 1.5 kg)'
 WHEN t1.value_numeric >= 1500 AND t1.value_numeric < 2500 THEN 'Low (1.5 to < 2.5 kg)'
 ELSE 'Normal (>= 2.5 kg)'
