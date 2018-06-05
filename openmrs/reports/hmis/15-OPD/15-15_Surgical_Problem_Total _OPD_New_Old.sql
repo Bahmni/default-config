@@ -29,7 +29,7 @@ FROM
         AND o.voided = 0
         AND DATE(o.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
     INNER JOIN concept_name cn ON cn.concept_id = o.concept_id
-        AND cn.name IN ('Coded Diagnosis' , 'Non-coded Diagnosis')
+        AND cn.name IN ('Coded Diagnosis')
     LEFT JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
     WHERE
         p.voided = 0

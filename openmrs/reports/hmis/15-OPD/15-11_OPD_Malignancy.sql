@@ -43,14 +43,13 @@ FROM
         AND DATE(o.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
     INNER JOIN concept_name cn ON o.concept_id = cn.concept_id
         AND cn.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn.name IN ('Non-coded Diagnosis' , 'Coded Diagnosis')
+        AND cn.name IN ('Coded Diagnosis')
         AND o.voided = 0
         AND cn.voided = 0
-    LEFT JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
+     JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
         AND dcv.icd10_code IN ('C50','C53','C34','C15','C16','C73','C22','C25','C79.5','C23','C19','C06','C85','C56','C67','C11','C49.0','C80')
     WHERE
-        p.voided = 0
-    GROUP BY dcv.icd10_code) first_concept ON first_concept.icd10_code = first_answers.icd10_code
+        p.voided = 0) first_concept ON first_concept.icd10_code = first_answers.icd10_code
         LEFT OUTER JOIN
     (SELECT DISTINCT
         (person.person_id) AS person_id,
