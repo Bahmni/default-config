@@ -58,6 +58,7 @@
             "isLastNameMandatory": true,
             "showBirthTime": true,
             "showCasteSameAsLastNameCheckbox": false,
+            "showSimilarsWhenCreatingNewPatient": true,
             "printOptions": [
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
