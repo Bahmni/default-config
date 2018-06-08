@@ -38,13 +38,10 @@ SELECT
   0,COUNT(DISTINCT result.patient),0,0,0
 FROM
   (SELECT
-     ifaTablet.person_id as patient
-   FROM nonVoidedQuestionObs ifaTablet
-     INNER JOIN nonVoidedQuestionAnswerObs ancVisit
-       ON ancVisit.person_id = ifaTablet.person_id AND ancVisit.obs_id <> ifaTablet.obs_id
-   WHERE ifaTablet.question_full_name = 'ANC-Number of Iron Tablets given'
-         AND date(ifaTablet.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
-         AND ancVisit.question_full_name = 'ANC, Completed 4 ANC visits'
+    ancVisit.person_id as patient
+   FROM   nonVoidedQuestionAnswerObs ancVisit
+   WHERE
+          ancVisit.question_full_name = 'ANC, Completed 4 ANC visits'
          AND ancVisit.answer_full_name = 'TRUE'
          AND date(ancVisit.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
   ) AS result

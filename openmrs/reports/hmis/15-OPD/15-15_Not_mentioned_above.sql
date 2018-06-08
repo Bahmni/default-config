@@ -48,7 +48,7 @@ FROM
         AND cn.name IN ('Non-coded Diagnosis' , 'Coded Diagnosis')
         AND o.voided = 0
         AND cn.voided = 0
-    LEFT JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
+    JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
         AND dcv.icd10_code IS NULL
     WHERE
         p.voided = 0) first_concept ON first_concept.icd10_code = first_answers.icd10_code
