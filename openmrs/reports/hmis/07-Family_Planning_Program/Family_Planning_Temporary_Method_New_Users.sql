@@ -80,7 +80,7 @@ FROM
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
     INNER JOIN person p1 ON o1.person_id = p1.person_id
     WHERE
-        -- DATE(e.encounter_datetime) BETWEEN DATE('2017-01-01') AND DATE('2017-12-30') 
-        DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
+        DATE(e.encounter_datetime) BETWEEN DATE('2017-01-01') AND DATE('2017-12-30') 
+        -- DATE(e.encounter_datetime) BETWEEN DATE('2018-04-14') AND DATE('2018-05-14') 
             AND o1.value_coded IS NOT NULL) first_concept ON first_concept.answer = first_answers.answer
 GROUP BY first_answers.answer_name , rag.name;
