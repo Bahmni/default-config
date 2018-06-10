@@ -64,8 +64,73 @@ FROM
         AND question.concept_full_name IN ('Department Sent To')
     INNER JOIN concept_name cn2 ON obs.value_coded = cn2.concept_id
         AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn2.name IN ('OPD')
+SELECT 
+ first_concept.IP,
+ first_concept.gender,
+    first_answers.answer_name AS 'ICD name',
+    first_answers.icd10_code AS 'ICD CODE',
+    second_concept.answer AS department
+   
+           
+FROM
+    ((SELECT 
+        concept_full_name AS answer_name, icd10_code
+    FROM
+        diagnosis_concept_view
+  ) first_answers
+        LEFT OUTER JOIN
+    (SELECT DISTINCT
+        (p.person_id),
+  pi.identifier AS 'IP',
+            dcv.concept_full_name,
+            icd10_code,
+            v.visit_id AS visit_id,
+            p.gender AS gender
+    FROM
+        person p
+    INNER JOIN visit v ON p.person_id = v.patient_id
+        AND v.voided = 0
+         INNER JOIN
+    patient_identifier pi ON p.person_id = pi.patient_id
+    INNER JOIN encounter e ON v.visit_id = e.visit_id AND e.voided = 0
+    INNER JOIN obs o ON e.encounter_id = o.encounter_id
+        AND o.voided = 0
+        AND DATE(o.obs_datetime) BETWEEN '2018-06-07' AND '2018-06-07'
+    INNER JOIN concept_name cn ON o.concept_id = cn.concept_id
+        AND cn.concept_name_type = 'FULLY_SPECIFIED'
+        AND cn.name IN ('Coded Diagnosis')
+        AND o.voided = 0
+        AND cn.voided = 0
+     JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
+    WHERE
+        p.voided = 0
+    ) first_concept ON first_concept.icd10_code = first_answers.icd10_code
+ 
+         JOIN
+    (SELECT DISTINCT
+        (person.person_id) AS person_id,
+            cn2.name AS answer,
+                             pi.identifier AS 'IP',
+            obs.concept_id AS question,
+            obs.obs_datetime AS datetime,
+            visit.visit_id AS visit_id,
+            person.gender AS gender
+    FROM
+        obs
+    INNER JOIN concept_view question ON obs.concept_id = question.concept_id
+        AND question.concept_full_name IN ('Department Sent To')
+    INNER JOIN concept_name cn2 ON obs.value_coded = cn2.concept_id
+        AND cn2.concept_name_type = 'FULLY_SPECIFIED'
+  AND UPPER(cn2.name) NOT Like '%EMERGENCY%'
     INNER JOIN person ON obs.person_id = person.person_id
+      INNER JOIN
+    patient_identifier pi ON person.person_id = pi.patient_id
+    INNER JOIN encounter ON obs.encounter_id = encounter.encounter_id
+    INNER JOIN visit ON encounter.visit_id = visit.visit_id
+    WHERE
+    
+        CAST(obs.obs_datetime AS DATE) BETWEEN '2018-06-07' AND '2018-06-07') second_concept ON first_concept.person_id = second_concept.person_id
+        AND first_concept.visit_id = second_concept.visit_id) where first_concept.IP is not null    INNER JOIN person ON obs.person_id = person.person_id
     INNER JOIN encounter ON obs.encounter_id = encounter.encounter_id
     INNER JOIN visit ON encounter.visit_id = visit.visit_id
     WHERE
