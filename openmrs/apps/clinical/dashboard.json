@@ -109,7 +109,7 @@
                 "orderType":"Radiology Order",
                 "type":"pacsOrders",
                 "translationKey":"DASHBOARD_TITLE_PACS_KEY",
-                "displayOrder":8,
+                "displayOrder":14,
                 "dashboardConfig":{  
                     "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
                     "numberOfVisits":4
@@ -259,7 +259,7 @@
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":14,
+                "displayOrder":8,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
