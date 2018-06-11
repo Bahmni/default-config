@@ -50,7 +50,7 @@
             },
 
             "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
+            "defaultIdentifierPrefix": "GAM",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
@@ -102,14 +102,22 @@
             },
             "patientSearch": {
                 "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
+                    "label": "Street Name",
+                    "placeholder": "Street Name",
+                    "field": "address1"
                 },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "Phone",
+                    "placeholder": "Phone",
+                    "fields": ["phone"]
+                }
+            },
+            "patientSearchResults": {
+                    "address": {
+                    "fields" : ["address1", "address2" , "address3"]
+                },
+                    "personAttributes": {
+                    "fields": ["phone", "education"]
                 }
             }
         }

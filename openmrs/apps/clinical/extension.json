@@ -61,7 +61,8 @@
     "extensionParams": {
       "searchHandler": "emrapi.sqlSearch.activePatients",
       "translationKey": "MODULE_LABEL_ACTIVE_KEY",
-      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard",
+      "view": "tabular"
     },
     "label": "Active",
     "order": 1,
