@@ -3,7 +3,7 @@
   "extensionPoints": [
     {
       "id": "org.bahmni.home.dashboard",
-      "description": "Bahmni Home Page"
+      "description": "Dr. Prabhu Wellness Clinic Home"
     }
   ]
 }
