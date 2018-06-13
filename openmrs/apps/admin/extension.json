@@ -47,14 +47,15 @@
         "order": 1,
         "requiredPrivilege": "app:admin"
     },
-    "ADTAdmin":{
+    "beds":{
         "id": "bahmni.admin.adt",
         "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
         "extensionParams": {
         },
-        "label": "ADT Admin",
+        "label": "Beds",
         "url": "/openmrs/owa/bedmanagement/admissionLocations.html",
+        "icon": "icon-bahmni-inpatient",
         "order": 1,
         "requiredPrivilege": "app:admin"
     }
