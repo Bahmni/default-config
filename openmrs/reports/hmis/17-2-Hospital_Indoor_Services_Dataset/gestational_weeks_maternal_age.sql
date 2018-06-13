@@ -51,7 +51,7 @@ FROM
     WHERE
         (o.value_datetime IS NOT NULL)
             AND DATE(e.encounter_datetime)
-            BETWEEN DATE('2017-01-01') AND DATE('2018-01-01') group by ip) a
+            BETWEEN  DATE('#startDate#') AND DATE('#endDate#') group by ip) a
     GROUP BY a.agegroup) simpler_form ON simpler_form.age_grp = age_years_grp.age_years
 GROUP BY age_years_grp.age_years
 ORDER BY age_years_grp.age_years;

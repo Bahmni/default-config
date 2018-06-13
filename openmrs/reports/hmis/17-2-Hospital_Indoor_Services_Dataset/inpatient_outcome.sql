@@ -27,7 +27,6 @@ from
       INNER JOIN reporting_age_group on cast(obs.obs_datetime AS DATE) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
                                         AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
                                         AND reporting_age_group.report_group_name = "Inpatient"
-   -- WHERE CAST(visit.date_stopped  as DATE) BETWEEN "2016-02-01" and "2017-02-20"
    WHERE CAST(visit.date_stopped  as DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
     group by obs.concept_id, obs.value_coded, reporting_age_group.name, person.gender
   ) result on question.concept_id = result.question_concept_id
