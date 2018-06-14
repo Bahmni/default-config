@@ -65,4 +65,4 @@ FROM
         AND r2.abnormal = FALSE
     GROUP BY testid , test , tid , fid , department) first_concept ON first_concept.test = first_question.ehr_test_name
 GROUP BY first_question.dhis_test_name , first_concept.department , first_concept.test , first_concept.testid , first_question.ehr_test_name
-ORDER BY first_question.dhis_test_name
+ORDER BY first_question.dhis_test_name, first_concept.department
