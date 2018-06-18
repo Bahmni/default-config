@@ -8,12 +8,12 @@ FROM reporting_age_group rag
   (SELECT
      birthdate,
      gender,
-     date_stopped
+     date_started
    FROM person AS p
      JOIN visit
-       ON p.person_id = visit.patient_id AND cast(visit.date_stopped AS DATE) BETWEEN '#startDate#' AND '#endDate#'
+       ON p.person_id = visit.patient_id AND cast(visit.date_started AS DATE) BETWEEN '#startDate#' AND '#endDate#'
      JOIN visit_type vt ON visit.visit_type_id = vt.visit_type_id AND vt.name = 'Emergency') AS person_details
-    ON cast(date_stopped AS DATE) BETWEEN (DATE_ADD(
+    ON cast(date_started AS DATE) BETWEEN (DATE_ADD(
       DATE_ADD(person_details.birthdate, INTERVAL rag.min_years YEAR), INTERVAL rag.min_days
       DAY))
   AND (DATE_ADD(DATE_ADD(person_details.birthdate, INTERVAL rag.max_years YEAR), INTERVAL rag.max_days DAY))

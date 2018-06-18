@@ -62,19 +62,19 @@
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "VdZyJrLrSg5",
-          "row": 1,
+          "row": 3,
           "column": 2
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "rqny3AJuymt",
-          "row": 1,
+          "row": 3,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "c6dLz049UWw",
-          "row": 1,
+          "row": 3,
           "column": 4
         },
         {
@@ -98,19 +98,19 @@
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "BoPXsSKiPVx",
-          "row": 3,
+          "row": 1,
           "column": 2
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "xAulrqfseew",
-          "row": 3,
+          "row": 1,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "zgNUMf4qP2Z",
-          "row": 3,
+          "row": 1,
           "column": 4
         }
       ]
@@ -295,7 +295,7 @@
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "f4ueiBTKF1T",
-          "row": 1,
+          "row": 4,
           "column": 3
         },
         {
@@ -307,73 +307,63 @@
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "JLKFv7K2i7Y",
-          "row": 3,
+          "row": 1,
           "column": 3
         },
-        {
-          "categoryOptionCombo": "kdsirVNKdhm",
-          "dataElement": "v3zKVR5wJt3",
-          "row": 4,
-          "column": 3
-        },
-        {
-          "categoryOptionCombo": "kdsirVNKdhm",
-          "dataElement": "PELChUNfW2C",
-          "row": 5,
-          "column": 3
-        },
+       
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "LIo3j809JrK",
-          "row": 6,
+          "row": 10,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "ueBJTsv0PXr",
-          "row": 7,
+          "row": 3,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "wsncKYDcmqr",
-          "row": 8,
+          "row": 6,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "Dior21jcQCe",
+          "row": 11,
+          "column": 3
+        },
+		
+        {
+          "categoryOptionCombo": "kdsirVNKdhm",
+          "dataElement": "nwQoDUhFR1z",
           "row": 9,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "PGNd6jcxJX4",
-          "row": 10,
+          "row": 5,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "kV3JhKJWMR8",
-          "row": 11,
-          "column": 3
-        },
-        {
-          "categoryOptionCombo": "kdsirVNKdhm",
-          "dataElement": "XAzAbTRbJve",
-          "row": 12,
+          "row": 8,
           "column": 3
         },
         {
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "dHet49ySm06",
-          "row": 13,
+          "row": 7,
           "column": 3
         },
-        {
+		{
           "categoryOptionCombo": "kdsirVNKdhm",
-          "dataElement": "nwQoDUhFR1z",
-          "row": 14,
+          "dataElement": "XAzAbTRbJve",
+          "row": 12,
           "column": 3
         }
       ]

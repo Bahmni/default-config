@@ -805,6 +805,40 @@
 				}
 			]
 		},
+		"Tubercluosis Control Program At the Time of TB Diagnosis Patients Tested for HIV": {
+			"dataValues": [{
+					"_comment": "Female",
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "IHugkBgrKm3",
+					"row": 1,
+					"column": 1
+				},
+				{
+					"_comment": "Male",
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "IHugkBgrKm3",
+					"row": 1,
+					"column": 2
+				}
+			]
+		},
+		"Tubercluosis Control Program At the Time of TB Diagnosis With Known HIV Status": {
+			"dataValues": [{
+					"_comment": "Female",
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "lgh5MRNjlAP",
+					"row": 1,
+					"column": 1
+				},
+				{
+					"_comment": "Male",
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "lgh5MRNjlAP",
+					"row": 1,
+					"column": 2
+				}
+			]
+		},
 		"Tubercluosis Control Program TB-HIV Activities HIV +VE TB Patients This Month": {
 			"dataValues": [{
 					"_comment": "Female",

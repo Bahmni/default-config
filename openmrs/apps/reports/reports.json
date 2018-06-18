@@ -382,6 +382,13 @@
 						}
 					},
 					{
+						"name": "Leprosy program total patient at the end of this month after deduction less than 14",
+						"type": "MRSGeneric",
+						"config": {
+							"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_patient_at_the_end_of_this_month_less than_14years.sql"
+						}
+					},
+					{
 					"name": "Leprosy program total smear cases",
 					"type": "MRSGeneric",
 					"config": {
@@ -498,6 +505,20 @@
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Registration_by_Treatment_Category.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program At the Time of TB Diagnosis Patients Tested for HIV",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_At_the_time_of_TB_Diagnosis_Patients_Tested_for_HIV.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program At the Time of TB Diagnosis With Known HIV Status",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_At_the_time_of_TB_Diagnosis_With_Known_HIV_Status.sql"
 					}
 				},
 				{
@@ -909,6 +930,13 @@
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_OPD_Surgical_Problems.sql"
+					}
+				},
+				{
+					"name": "Not mentioned above and others",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_Not_mentioned_above.sql"
 					}
 				},
 				{

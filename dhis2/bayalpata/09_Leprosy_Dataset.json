@@ -297,6 +297,38 @@
         }
       ]
     },
+	"Leprosy program total patient at the end of this month after deduction less than 14":{
+      "dataValues": [
+        {
+		"_comment": "M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "cSOdzmM0920",
+          "row": 1,
+          "column": 2
+        },
+		 { 
+		"_comment": "M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "cSOdzmM0920",
+          "row": 1,
+          "column": 3
+        },
+        { 
+		"_comment": "P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "KFfj5Sr37F1",
+          "row": 2,
+          "column": 2
+        },
+		{
+		"_comment": "P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "KFfj5Sr37F1",
+          "row": 2,
+          "column": 3
+        }
+      ]
+    },
 	"Leprosy program total positive smear cases":{
       "dataValues": [
         {

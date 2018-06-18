@@ -1,7 +1,7 @@
 
 SELECT 
-	gender.gender              AS gender,
-    count(distinct(a.person_id)) as referred_in_count  
+	gender.gender              AS Gender,
+    count(distinct(a.person_id)) as 'Referred In Patient count'  
     from
     
  (SELECT 'M' AS gender
@@ -22,9 +22,8 @@ SELECT
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
     INNER JOIN person p1 ON o1.person_id = p1.person_id
     WHERE
-    			 
-                DATE(o1.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#') ) a 
-
-    --    DATE(o1.obs_datetime) BETWEEN  DATE('2017-01-01') AND DATE('2017-12-30') ) a 
+	 o1.value_coded = '1'
+     And
+     DATE(o1.obs_datetime) BETWEEN  DATE('#startDate#') AND DATE('#endDate#') ) a 
     on a.gender=gender.gender
     group by gender;

@@ -45,7 +45,7 @@ FROM
      outcome_of_delivery_obs.concept_id = (SELECT concept_id
                                            FROM concept_view
                                            WHERE concept_full_name = 'Delivery Note, Outcome of Delivery')
-     AND DATE(e.encounter_datetime) BETWEEN DATE('2017-01-01') AND DATE('2018-01-01')
+     AND DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
      AND outcome_of_delivery_obs.voided = FALSE group by pi.identifier) a  group by a.parity)  simpler_form ON simpler_form.delivery_outcome = birth.type
 GROUP BY birth.type
 ORDER BY birth.type DESC;

@@ -17,11 +17,11 @@ FROM
   SUM(IF(age >= 12 && status = 'Severe', 1, 0))   AS "12-23 Severe",
   SUM(IF(age >= 12 && status = 'Moderate', 1, 0)) AS "12-23 Moderate"
 FROM (SELECT
+DISTINCT(p.person_id),
         TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) AS age,
         oStatus.answer_full_name                          AS status,
-        IF(oVisitType.answer_full_name = 'Nutrition-More Than 1 Visit In a Month',
-           'Re-visit',
-           oVisitType.answer_full_name)                   AS visitType
+        IF(oVisitType.answer_full_name = 'Re-visit',
+           'Re-visit','New')                   AS visitType
 
       FROM person p
         JOIN visit v ON p.person_id = v.patient_id

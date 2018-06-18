@@ -10,6 +10,7 @@ FROM
 FROM
   (
     (SELECT
+	DISTINCT(t3.person_id),
        t2.name                                                         AS concept_name,
        DATE_FORMAT(FROM_DAYS(DATEDIFF(t1.obs_datetime, t3.birthdate)), '%Y') + 0 AS age
      FROM obs t1
@@ -26,6 +27,7 @@ FROM
        AND t1.voided = 0)
     UNION ALL
     (SELECT
+	DISTINCT(t1.person_id),
        t2.name                                                         AS concept_name,
        DATE_FORMAT(FROM_DAYS(DATEDIFF(t1.obs_datetime, t3.birthdate)), '%Y') + 0 AS age
      FROM obs t1

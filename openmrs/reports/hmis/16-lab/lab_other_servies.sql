@@ -24,7 +24,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2016-09-17'and '2017-09-17' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' and '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('Protein (CSF)','Protein (Pericardial Fluid)','Protein (Pleural Fluid)','Total Protein')

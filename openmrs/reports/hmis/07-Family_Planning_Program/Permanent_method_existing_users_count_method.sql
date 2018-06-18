@@ -32,37 +32,34 @@ FROM
               
               
         LEFT JOIN
-    (SELECT distinct
-        answer, method_name, ov.person_id,
-            p.gender
-    FROM
-        openmrs.obs_view ov
-    LEFT JOIN 
-    
-    (SELECT 
-        cn2.concept_id AS answer,
-            cn2.name AS method_name,
-            o.encounter_id
-    FROM
-        obs o
-    INNER JOIN concept_name cn ON o.concept_id = cn.concept_id
+    (SELECT DISTINCT
+    cn2.concept_id AS answer,
+    cn2.name AS method_name,
+    o.person_id,
+	p1.gender
+FROM
+    obs o
+        INNER JOIN
+    concept_name cn ON o.concept_id = cn.concept_id
         AND cn.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn.name IN ('FRH-short acting method provided' , 'FRH-Long acting and permanent method', 'FRH-New method chosen', 'FRH-Existing continued')
+        AND cn.name IN ('FRH-short acting method provided' , 'FRH-Long acting and permanent method',
+        'FRH-New method chosen',
+        'FRH-Existing continued')
         AND o.voided = 0
         AND cn.voided = 0
-    INNER JOIN concept_name cn2 ON o.value_coded = cn2.concept_id
+        INNER JOIN
+    concept_name cn2 ON o.value_coded = cn2.concept_id
         AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-         And cn2.name in ('Vasectomy','Mini-lap')
+        AND cn2.name IN ('Vasectomy' , 'Mini-lap')
         AND cn2.voided = 0
-        )
-	method_view ON ov.encounter_id = method_view.encounter_id
-        AND ov.voided = 0
-	INNER JOIN
-    person p ON ov.person_id = p.person_id
-    WHERE
-        ov.concept_full_name = 'FRH-Procedure Follow Up'
-		AND DATE(ov.value_datetime) > DATE('#endDate#')) first_concept 
-            -- AND DATE(ov.value_datetime) > DATE('2017-01-30')) first_concept 
+        INNER JOIN
+    encounter e ON o.encounter_id = e.encounter_id
+        INNER JOIN
+    visit v1 ON v1.visit_id = e.visit_id
+        INNER JOIN
+    person p1 ON o.person_id = p1.person_id
+WHERE
+    o.obs_datetime <= DATE('#endDate#')) first_concept 
             ON first_concept.answer = first_answers.answer
             and first_concept.gender = gender.gender
 GROUP BY gender

@@ -43,14 +43,13 @@ FROM
         AND DATE(o.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
     INNER JOIN concept_name cn ON o.concept_id = cn.concept_id
         AND cn.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn.name IN ('Non-coded Diagnosis' , 'Coded Diagnosis')
+        AND cn.name IN ('Coded Diagnosis')
         AND o.voided = 0
         AND cn.voided = 0
-    LEFT JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
+    JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
         AND dcv.icd10_code IN ('L70' , 'B07', 'L81.1', 'L50', 'L30.9', 'L65', 'L80','E70.3','B00','B02','L53.9','L01.0','L02','L02.0','L02.9','L43','B86','L81.5','L40','L04')
     WHERE
-        p.voided = 0
-    GROUP BY dcv.icd10_code) first_concept ON first_concept.icd10_code = first_answers.icd10_code
+        p.voided = 0) first_concept ON first_concept.icd10_code = first_answers.icd10_code
         LEFT OUTER JOIN
     (SELECT DISTINCT
         (person.person_id) AS person_id,
@@ -65,7 +64,7 @@ FROM
         AND question.concept_full_name IN ('Department Sent To')
     INNER JOIN concept_name cn2 ON obs.value_coded = cn2.concept_id
         AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn2.name IN ('OPD')
+  AND UPPER(cn2.name) NOT Like '%EMERGENCY%'
     INNER JOIN person ON obs.person_id = person.person_id
     INNER JOIN encounter ON obs.encounter_id = encounter.encounter_id
     INNER JOIN visit ON encounter.visit_id = visit.visit_id

@@ -45,7 +45,6 @@ FROM
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN person p1 ON o1.person_id = p1.person_id
     WHERE
-		-- DATE(e.encounter_datetime) BETWEEN DATE('2016-6-16') AND DATE('2017-7-16')
 
         DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             AND o1.value_coded IS NOT NULL) first_concept ON first_concept.answer = first_answers.answer

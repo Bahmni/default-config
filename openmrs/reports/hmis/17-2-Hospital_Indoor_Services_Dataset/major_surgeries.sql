@@ -22,6 +22,5 @@ FROM
         AND pi.voided = '0'
     WHERE
          (o.value_coded IS NOT NULL)
-        -- AND DATE(e.encounter_datetime) BETWEEN @dt1 AND @dt2) a ON a.gender = gender.gender
         AND DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) a ON a.gender = gender.gender
 GROUP BY gender.gender order by gender.gender;
