@@ -57,7 +57,7 @@ FROM
     INNER JOIN encounter e ON v.visit_id = e.visit_id AND e.voided = 0
     INNER JOIN obs o ON e.encounter_id = o.encounter_id
         AND o.voided = 0
-        AND o.obs_datetime BETWEEN DATE('#startDate#') AND DATE('#endDate#')
+        AND CAST(o.obs_datetime AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
     INNER JOIN concept_name cn ON o.concept_id = cn.concept_id
         AND cn.concept_name_type = 'FULLY_SPECIFIED'
         AND cn.name = 'Coded Diagnosis'
@@ -86,7 +86,7 @@ FROM
                      DATE_ADD(person.birthdate, INTERVAL rag.min_years YEAR), INTERVAL rag.min_days DAY)) AND (DATE_ADD(
                      DATE_ADD(person.birthdate, INTERVAL rag.max_years YEAR), INTERVAL rag.max_days DAY))
                                                        AND rag.report_group_name = 'Inpatient'
-            WHERE obs.obs_datetime
+            WHERE CAST(obs.obs_datetime AS DATE)
             BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept 
             ON first_concept.person_id = second_concept.person_id
 GROUP BY first_answers.icd10_code, first_answers.answer_name, combo_id
