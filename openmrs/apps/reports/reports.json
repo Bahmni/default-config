@@ -1120,6 +1120,7 @@
 		"name": "18-01 Inpatient Morbidity Dataset",
 		"DHISProgram": true,
 		"type": "concatenated",
+		"attribute":true,
 		"config": {
 			"reports": [
 				{
