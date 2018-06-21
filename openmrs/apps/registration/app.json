@@ -56,7 +56,7 @@
             "showMiddleName": true,
             "showLastName": true,
             "isLastNameMandatory": true,
-            "showSaveConfirmDialog": true,
+            "showSaveConfirmDialog": false,
             "showBirthTime": true,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
