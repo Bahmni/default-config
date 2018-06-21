@@ -820,10 +820,10 @@
 					}
 				},
 				{
-					"name": "OPD Other Communicable Infactions Diseases",
+					"name": "OPD Other Communicable Infections Diseases",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-03_ OPD_Other_Communicable_Infactions_Diseases.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-03_ OPD_Other_Communicable_Infections_Diseases.sql"
 					}
 				},
 				{
