@@ -16,7 +16,7 @@ FROM
         AND question_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('Childhood Illness, Follow up result' )
+        question_concept_name.name IN ('Childhood Illness-2 months-Follow up result')
     ORDER BY answer_name DESC) first_question
         LEFT OUTER JOIN
     (SELECT DISTINCT
