@@ -428,10 +428,9 @@
         }
 		]
 	},
+		
 	
-	
-	
-	"OPD Other Communicable Infactions Diseases": {
+	"OPD Other Communicable Infections Diseases": {
       "dataValues": [    						 
         {
 		"_comment": "Leprosy-F",
