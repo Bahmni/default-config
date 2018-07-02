@@ -4,7 +4,7 @@
   ],
   "config": {
     "patientDashboardUrl": {
-      "link": "/bahmni/clinical/#/programs/patient/{{patientUuid}}/dashboard?dateEnrolled={{dateEnrolled}}&programUuid={{programUuid}}&enrollment={{enrollment}}&currentTab=DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
+      "link": "/bahmni/clinical/#/default/patient/{{patientUuid}}/dashboard",
       "errorMessage": "The patient is not enrolled to the program"
     },
     "primarySurgeonsForOT" : ["Yogesh Kumar","Super Man","Unknown Provider","labsystem system","Billing System","automation automation"],
