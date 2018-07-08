@@ -1,6 +1,6 @@
 SELECT 
     first_answers.answer_name AS 'Temporary Methods',
-    COUNT(first_concept.person_id) AS 'Total Patient'
+    ifnull(sum(second_concept.device_used),0) AS 'Device used'
   
 FROM
     (SELECT 
@@ -65,14 +65,16 @@ FROM
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
         AND v1.date_started IS NOT NULL
     WHERE
-        CAST(v1.date_started AS DATE)  BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
-        LEFT OUTER JOIN
+        CAST(v1.date_started AS DATE)  BETWEEN  '#startDate#' AND '#endDate#'
+		
+		) first_concept ON first_concept.answer = first_answers.answer
+      left JOIN
     (SELECT 
         DISTINCT(o1.person_id),
-            cn2.concept_id AS answer,
             cn1.concept_id AS question,
             v1.visit_id AS visit_id,
-            v1.date_stopped AS datetime
+            v1.date_started AS datetime,
+            o1.value_numeric as device_used
     FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
@@ -80,14 +82,11 @@ FROM
         AND cn1.name = 'FRH-Units provided'
         AND o1.voided = 0
         AND cn1.voided = 0
-    INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
-        AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
         AND v1.date_started IS NOT NULL
     WHERE
-        CAST(v1.date_started AS DATE)  BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON 
+        CAST(v1.date_started AS DATE)  BETWEEN  '#startDate#' AND '#endDate#') second_concept ON 
          first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
       
