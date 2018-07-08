@@ -3,7 +3,8 @@ FROM obs obs
   INNER JOIN concept_name cn ON obs.concept_id = cn.concept_id AND obs.voided = 0 and cn.name in ('ANC, HIV Counseling','ANC, HIV Result Received') and cn.concept_name_type = 'FULLY_SPECIFIED'
   INNER JOIN concept_name trueConcept
     ON obs.value_coded = trueConcept.concept_id AND trueConcept.concept_name_type = 'FULLY_SPECIFIED' and trueConcept.name = 'True'
-WHERE DATE(obs.obs_datetime) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#endDate#' AS DATE)
+WHERE obs.value_coded = '1'
+AND DATE(obs.obs_datetime) BETWEEN CAST('#startDate#' AS DATE) AND CAST('#endDate#' AS DATE)
 GROUP BY Report
 UNION
 SELECT 'Pregnancy - Positive' as Report, count(distinct person_id) AS No_of_patients
