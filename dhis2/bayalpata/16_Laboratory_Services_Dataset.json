@@ -167,21 +167,6 @@
           "column": 5
         },
 		
-		{
-		"_comment": "Immunology-RA-factor",
-          "categoryOptionCombo": "kdsirVNKdhm",  
-          "dataElement": "NHUktqhJjbE",
-          "row": 131,
-          "column": 5
-        },
-		
-		{
-		"_comment": "Immunology-TPHA",
-          "categoryOptionCombo": "A0ezJDD4TfL",  
-          "dataElement": "KQGrcNYhocs",
-          "row": 158,
-          "column": 5
-        },
 		
 		{
 		"_comment": "Immunology-ANA",
