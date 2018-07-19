@@ -37,7 +37,43 @@
           "dataElement": "V01YnWJdDp0",
           "row": 1,
           "column": 5
-        } 
+        },
+		{
+		"_comment": "Immunology-TPHA",
+          "categoryOptionCombo": "wCvNkhhbSbl",  
+          "dataElement": "KQGrcNYhocs",
+          "row": 1,
+          "column": 6
+        },
+		{
+		"_comment": "Immunology-RPR/VDRL",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "llvGO9epm7O",
+          "row": 1,
+          "column": 6
+        },
+		{
+		"_comment": "Biochemistry-Sugar-F",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "GYgsh4jyQhD",
+          "row": 1,
+          "column": 7
+        },
+		{
+		"_comment": "Biochemistry-Sugar-PP",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "icbE4llLraf",
+          "row": 1,
+          "column": 8
+        },
+		{
+		"_comment": "Biochemistry-Sugar-R",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "jp5y3JXmVEx",
+          "row": 1,
+          "column": 9
+        }
+		
       ]
     }
 	
