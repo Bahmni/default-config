@@ -1,4 +1,3 @@
-<<<<<<< HEAD:openmrs/reports/hmis/02_2_CBIMNCI_less than_2_months/LessThan_2Mnth_followup_other_abtibiotics_Count_chd.sql
 SELECT 
     first_question.answer_name AS 'Category',
     COUNT(DISTINCT (first_concept.person_id)) AS 'Total Patient'
