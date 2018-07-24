@@ -433,7 +433,7 @@
             },
             "growthChart":{  
                 "type":"observationGraph",
-                "title":"Growth Chart",
+                "translationKey": "DASHBOARD_TITLE_GROWTH_CHART",
                 "config":{  
                     "yAxisConcepts":[  
                         "Weight"
@@ -445,7 +445,7 @@
             },
             "BP":{  
                 "type":"observationGraph",
-                "title":"BP",
+                "translationKey": "DASHBOARD_TITLE_BLOOD_PRESSURE",
                 "config":{  
                     "yAxisConcepts":[  
                         "Systolic Data",
@@ -458,7 +458,7 @@
             },
             "weight/BMI":{  
                 "type":"observationGraph",
-                "title":"Weight/BMI",
+                "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
                 "config":{  
                     "yAxisConcepts":[  
                         "Weight",
@@ -471,7 +471,7 @@
             },
             "diabetes/BloodSugar":{  
                 "type":"observationGraph",
-                "title":"Diabetes/Blood Sugar",
+                "translationKey": "DASHBOARD_TITLE_DIABETES_BLOOD_SUGAR",
                 "config":{  
                     "yAxisConcepts":[  
                         "Blood Sugar Fasting",
@@ -484,7 +484,7 @@
             },
             "observationGraph":{  
                 "type":"observationGraph",
-                "title":"Pulse",
+                "translationKey": "DASHBOARD_TITLE_PULSE",
                 "config":{  
                     "yAxisConcepts":[  
                         "Pulse Data"
