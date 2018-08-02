@@ -331,8 +331,8 @@
 				},
 				{
 					"_comment": "Immunology-Ca 15.3",
-					"categoryOptionCombo": "wt7S2uqK6K1",
-					"dataElement": "nkd4WEiWYpm",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "wt7S2uqK6K1",
 					"row": 47,
 					"column": 6
 				},
@@ -352,7 +352,7 @@
 				},
 				{
 					"_comment": "Immunology-RUBELLA-IGG",
-					"categoryOptionCombo": "wt7S2uqK6K1",
+					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "RBHRqI1plDF",
 					"row": 50,
 					"column": 6
@@ -380,7 +380,7 @@
 				},
 				{
 					"_comment": "Immunology-Ferri-tine",
-					"categoryOptionCombo": "wt7S2uqK6K1",
+					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "ZD0rMCtnrmu",
 					"row": 54,
 					"column": 6
