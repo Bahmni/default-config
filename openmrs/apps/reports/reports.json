@@ -1071,10 +1071,17 @@
 
 
 				{
-					"name": "FreeHealthServices Outpatient and ER",
+					"name": "FreeHealthServices Outpatient",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_Outpatient_ER.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_Outpatient.sql"
+					}
+				},
+				{
+					"name": "FreeHealthServices ER",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_ER.sql"
 					}
 				},
 
