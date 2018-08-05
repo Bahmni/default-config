@@ -141,44 +141,57 @@
 		}
 	},
 
-	"03-1 Nutrition Dataset Newly Registered And 03-2 Acute Malnutrition": {
-		"name": "03-1 Nutrition Dataset Newly Registered And 03-2 Acute Malnutrition",
+	"03-1 Nutrition Dataset Newly Registered": {
+		"name": "03-1 Nutrition Dataset Newly Registered",
 		"type": "concatenated",
 		"DHISProgram": true,
 		"config": {
-			"reports": [{
+			"reports": [
+			{
 					"name": "Nutrition status of registered children (new and old)",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1-2-Nutrition_Program/Nutrition_status_of_registered_children.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1_Nutrition_Dataset_Newly_Registered/Nutrition_status_of_registered_children.sql"
 					}
 				},
 				{
 					"name": "Pregnant women receiving",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1-2-Nutrition_Program/Pregnant_women_receiving.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1_Nutrition_Dataset_Newly_Registered/Pregnant_women_receiving.sql"
 					}
 				},
 				{
 					"name": "Less then 5 yrs Children receiving (Bi annual)",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1-2-Nutrition_Program/Under_5_yrs_Children_receiving.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1_Nutrition_Dataset_Newly_Registered/Under_5_yrs_Children_receiving.sql"
 					}
-				},
+				}
+				
+			]
+		}
+	},
+
+	"03-2 Nutrition Acute Malnutrition": {
+		"name": "03-2 Nutrition Acute Malnutrition",
+		"type": "concatenated",
+		"DHISProgram": true,
+		"config": {
+			"reports": [
+			
 				{
 					"name": "Integrated Management of Acute Malnutrition (IMAM) Program",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1-2-Nutrition_Program/Integrated_Management_of_Acute_Malnutrition_IMAM_Program.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-2_Nutrition_Acute_Malnutrition/Integrated_Management_of_Acute_Malnutrition_IMAM_Program.sql"
 					}
 				},
 				{
 					"name": "Infant and Young Child Feeding",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1-2-Nutrition_Program/Infant_Young_Child_Feeding.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-2_Nutrition_Acute_Malnutrition/Infant_Young_Child_Feeding.sql"
 					}
 				}
 			]

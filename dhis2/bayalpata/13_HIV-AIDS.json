@@ -644,6 +644,13 @@
 					"column": 2
 				},
 				{
+					"_comment": "HIV+ve Women Male Partner who know their status",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Lc9CJmuevxy",
+					"row": 1,
+					"column": 4
+				},
+				{
 					"_comment": "HIV+ve Women (Delivered)",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "Cw2C5u7qXog",
@@ -1652,21 +1659,21 @@
 				{
 					"_comment": "Diarrhoea-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
-					"dataElement": "f4MuUH3PlIQ",
+					"dataElement": "ES4G3Zkpdxb",
 					"row": 14,
 					"column": 3
 				},
 				{
 					"_comment": "Diarrhoea-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
-					"dataElement": "f4MuUH3PlIQ",
+					"dataElement": "ES4G3Zkpdxb",
 					"row": 13,
 					"column": 3
 				},
 				{
 					"_comment": "Diarrhoea-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
-					"dataElement": "f4MuUH3PlIQ",
+					"dataElement": "ES4G3Zkpdxb",
 					"row": 15,
 					"column": 3
 				},
