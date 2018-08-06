@@ -1,6 +1,6 @@
 SELECT
-  first_answers.answer_name  AS 'Risk Groups/ Key Population Group',
   second_answers.answer_name AS 'Syndromes',
+	first_answers.answer_name  AS 'Risk Groups/ Key Population Group',
   sum(CASE WHEN first_concept.answer IS NOT NULL AND second_concept.answer IS NOT NULL THEN 1
       ELSE 0 END)            AS 'Total Count'
 FROM
@@ -132,4 +132,4 @@ FROM
     DATE_ADD(p.birthdate, INTERVAL rag.min_years YEAR), INTERVAL rag.min_days
     DAY)) AND (DATE_ADD(DATE_ADD(p.birthdate, INTERVAL rag.max_years YEAR), INTERVAL
                         rag.max_days DAY))
-GROUP BY first_answers.answer_name, second_answers.answer_name,  rag.name, rag.sort_order;
+GROUP BY second_answers.answer_name,first_answers.answer_name,   rag.name, rag.sort_order;
