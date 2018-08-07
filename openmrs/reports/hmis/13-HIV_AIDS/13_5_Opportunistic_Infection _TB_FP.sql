@@ -7,10 +7,9 @@ SELECT
     COUNT(DISTINCT IF((patients.gender = 'M'),
             patients.person_id,
             NULL)) AS Male,
-	COUNT(DISTINCT IF((patients.gender = 'O'),
+    COUNT(DISTINCT IF((patients.gender = 'O'),
             patients.person_id,
             NULL)) AS Others
-            
 FROM
     (SELECT 
         question_concept_name.concept_id AS question,
@@ -26,13 +25,15 @@ FROM
         AND question_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('HIV Treatment and Care Progress Template' , 
-        'HIVTC, FP methods used by the patient', 
-        'HIVTC, HIV care IPT started', 
-        'HIVTC, Need Family Planning assessment', 
-        'HIVTC-Progress Refer for FP',
+        question_concept_name.name IN ('HIVTC, Any OI in past 3 months?' , 
+        'HIVTC, Opportunistic Infection Diagnosis',
+        'HIVTC, HIV care IPT started',
         'HIVTC, TB Screened',
-        'STI, STI Diagnosis Syndrome')
+        'HIVTC, TB Treatment start date',
+        'HIVTC, Need Family Planning assessment',
+        'HIVTC, FP methods used by the patient',
+        'HIVTC-Progress Refer for FP'
+        )
     ORDER BY answer_name DESC) first_question
         INNER JOIN
     (SELECT 
@@ -65,13 +66,15 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name IN ('HIV Treatment and Care Progress Template' , 
-        'HIVTC, FP methods used by the patient', 
+        AND cn1.name IN ('HIVTC, Any OI in past 3 months?' ,
+        'HIVTC, Opportunistic Infection Diagnosis',
         'HIVTC, HIV care IPT started', 
-        'HIVTC, Need Family Planning assessment'
-        , 'HIVTC-Progress Refer for FP',
-        'HIVTC, TB Screened',
-        'STI, STI Diagnosis Syndrome')
+         'HIVTC, TB Screened',
+        'HIVTC, TB Treatment start date',
+        'HIVTC, Need Family Planning assessment', 
+        'HIVTC, FP methods used by the patient',
+        'HIVTC-Progress Refer for FP'
+     )
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
