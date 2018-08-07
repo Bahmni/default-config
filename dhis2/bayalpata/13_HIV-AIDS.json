@@ -1245,7 +1245,7 @@
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "v0Ppx8uBJsI",
 					"row": 52,
-					"column": 7
+					"column": 3
 				},
 				
 				
@@ -2349,63 +2349,63 @@
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "nCex1XJPFYj",
-					"row": 5,
+					"row": 17,
 					"column": 3
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 4,
+					"row": 16,
 					"column": 3
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "u3U9eIOsEvv",
-					"row": 6,
+					"row": 18,
 					"column": 3
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "nCex1XJPFYj",
-					"row": 5,
+					"row": 17,
 					"column": 4
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 4,
+					"row": 16,
 					"column": 4
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "u3U9eIOsEvv",
-					"row": 6,
+					"row": 18,
 					"column": 4
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "nCex1XJPFYj",
-					"row": 5,
+					"row": 17,
 					"column": 5
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 4,
+					"row": 16,
 					"column": 5
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "u3U9eIOsEvv",
-					"row": 6,
+					"row": 18,
 					"column": 5
 				},
 				
@@ -2417,63 +2417,63 @@
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "z9I5hGSrWej",
-					"row": 17,
+					"row": 11,
 					"column": 3
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "qFEUUI51eil",
-					"row": 16,
+					"row": 10,
 					"column": 3
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "b59G70maDeN",
-					"row": 18,
+					"row": 12,
 					"column": 3
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "z9I5hGSrWej",
-					"row": 17,
+					"row": 11,
 					"column": 4
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "qFEUUI51eil",
-					"row": 16,
+					"row": 10,
 					"column": 4
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "b59G70maDeN",
-					"row": 18,
+					"row": 12,
 					"column": 4
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "z9I5hGSrWej",
-					"row": 17,
+					"row": 11,
 					"column": 5
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "qFEUUI51eil",
-					"row": 16,
+					"row": 10,
 					"column": 5
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "b59G70maDeN",
-					"row": 18,
+					"row": 12,
 					"column": 5
 				},	
 				
@@ -2525,7 +2525,7 @@
 					"_comment": "Assessed for TB this month < 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "RbaLxS0Wc0v",
-					"row": 21,
+					"row": 20,
 					"column": 5
 				},
 				{
@@ -2553,63 +2553,63 @@
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 8,
+					"row": 5,
 					"column": 3
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "eWA0r7teWoX",
-					"row": 7,
+					"row": 4,
 					"column": 3
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "S65XqzNvhKC",
-					"row": 9,
+					"row": 6,
 					"column": 3
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 8,
+					"row": 5,
 					"column": 4
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "eWA0r7teWoX",
-					"row": 7,
+					"row": 4,
 					"column": 4
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "S65XqzNvhKC",
-					"row": 9,
+					"row": 6,
 					"column": 4
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 8,
+					"row": 5,
 					"column": 5
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "eWA0r7teWoX",
-					"row": 7,
+					"row": 4,
 					"column": 5
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "S65XqzNvhKC",
-					"row": 9,
+					"row": 6,
 					"column": 5
 				},
 				
@@ -2620,63 +2620,63 @@
 					"_comment": "PLHIV screened for FP need< 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "QLN1lKYCwHJ",
-					"row": 11,
+					"row": 8,
 					"column": 3
 				},
 				{
 					"_comment": "PLHIV screened for FP need5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "ZWi6JUddoHH",
-					"row": 10,
+					"row": 7,
 					"column": 3
 				},
 				{
 					"_comment": "PLHIV screened for FP need≥ 15 Years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "dFa6uTfAwWC",
-					"row": 12,
+					"row": 9,
 					"column": 3
 				},
 				{
 					"_comment": "PLHIV screened for FP need< 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "QLN1lKYCwHJ",
-					"row": 11,
+					"row": 8,
 					"column": 4
 				},
 				{
 					"_comment": "PLHIV screened for FP need5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "ZWi6JUddoHH",
-					"row": 10,
+					"row": 7,
 					"column": 4
 				},
 				{
 					"_comment": "PLHIV screened for FP need≥ 15 Years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "dFa6uTfAwWC",
-					"row": 12,
+					"row": 9,
 					"column": 4
 				},
 				{
 					"_comment": "PLHIV screened for FP need< 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "QLN1lKYCwHJ",
-					"row": 11,
+					"row": 8,
 					"column": 5
 				},
 				{
 					"_comment": "PLHIV screened for FP need5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "ZWi6JUddoHH",
-					"row": 10,
+					"row": 7,
 					"column": 5
 				},
 				{
 					"_comment": "PLHIV screened for FP need≥ 15 Years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "dFa6uTfAwWC",
-					"row": 12,
+					"row": 9,
 					"column": 5
 				},
 				
