@@ -84,24 +84,23 @@ INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_i
 RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS abortion ON abortion.caste_ethnicity = delivery.caste_ethnicity
 INNER JOIN
+
 -- Out patient cases
-(SELECT
-	 caste_list.answer_concept_name AS caste_ethnicity,
+(select	 caste_list.answer_concept_name AS caste_ethnicity,
 	 SUM(IF(person.gender = 'M', 1, 0)) as op_cases_male,
 	 SUM(IF(person.gender = 'F', 1, 0)) as op_cases_female
+	from
+(SELECT
+	 distinct person.person_id,
+     person.gender as gender
 
 FROM visit
     INNER JOIN person ON visit.patient_id = person.person_id
 	AND DATE(person.date_created) BETWEEN '#startDate#' AND '#endDate#'
-    AND TIMESTAMPDIFF(YEAR, person.birthdate, visit.date_started) > 5
+JOIN visit_type vt ON visit.visit_type_id = vt.visit_type_id AND vt.name = 'General') person
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
 	AND person_attribute_type.name = 'Caste'    
-INNER JOIN encounter ON visit.visit_id = encounter.visit_id
-INNER JOIN coded_obs_view ON encounter.encounter_id = coded_obs_view.encounter_id
-	AND coded_obs_view.concept_full_name IN ('Department Sent To')
-       AND upper(coded_obs_view.value_concept_full_name) NOT Like '%EMERGENCY%'
-    AND coded_obs_view.voided is FALSE
 RIGHT OUTER JOIN (SELECT answer_concept_name, answer_concept_id FROM concept_answer_view WHERE question_concept_name = 'Caste' ) AS caste_list ON caste_list.answer_concept_id = person_attribute.value
 GROUP BY caste_list.answer_concept_name) AS op_cases ON abortion.caste_ethnicity = op_cases.caste_ethnicity
 INNER JOIN
