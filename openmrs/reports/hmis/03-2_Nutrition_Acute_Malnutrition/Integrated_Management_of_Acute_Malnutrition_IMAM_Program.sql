@@ -1,7 +1,13 @@
 SELECT
     final.`Age Group` AS 'Age Group',
     final.`Sex` AS 'Sex',
-    final.`Children at End of Last Month` AS 'Children at End of Last Month',
+    (CASE
+        WHEN final.`Age Group` = '< 6 month' AND final.`Sex` = 'F' THEN im1.female_less_than_six
+        WHEN final.`Age Group` = '< 6 month' AND final.`Sex` = 'M' THEN im1.male_less_than_six
+        WHEN final.`Age Group` = '6-59 month' AND final.`Sex` = 'F' THEN im1.female_more_than_six
+        WHEN final.`Age Group` = '6-59 month' AND final.`Sex` = 'M' THEN im1.male_more_than_six
+        ELSE 0
+    END) AS 'Children at End of Last Month',
     SUM(final.`New Admission`) AS 'New Admission',
     SUM(final.`Re-admission`) AS 'Re-admission',
     SUM(final.`Transfer In`) AS 'Transfer In',
@@ -11,7 +17,13 @@ SELECT
     SUM(final.`Discharge - Not Improved`) AS 'Discharge - Not Improved',
     SUM(final.`Discharge - Refer to Hospital`) AS 'Discharge - Refer to Hospital',
     SUM(final.`Transfer Out`) AS 'Transfer Out',
-    (SUM(final.`Children at End of Last Month`) + SUM(final.`New Admission`) + SUM(final.`Re-admission`) + SUM(final.`Transfer In`) - SUM(final.`Discharge - Recovered`) - SUM(final.`Discharge - Death`) - SUM(final.`Discharge - Defaulter`) - SUM(final.`Discharge - Not Improved`) - SUM(final.`Discharge - Refer to Hospital`) - SUM(final.`Transfer Out`)) AS 'Children at End of This Month'
+    (CASE
+        WHEN final.`Age Group` = '< 6 month' AND final.`Sex` = 'F' THEN im1.female_less_than_six
+        WHEN final.`Age Group` = '< 6 month' AND final.`Sex` = 'M' THEN im1.male_less_than_six
+        WHEN final.`Age Group` = '6-59 month' AND final.`Sex` = 'F' THEN im1.female_more_than_six
+        WHEN final.`Age Group` = '6-59 month' AND final.`Sex` = 'M' THEN im1.male_more_than_six
+        ELSE 0
+    END) + SUM(final.`New Admission`) + SUM(final.`Re-admission`) + SUM(final.`Transfer In`) - SUM(final.`Discharge - Recovered`) - SUM(final.`Discharge - Death`) - SUM(final.`Discharge - Defaulter`) - SUM(final.`Discharge - Not Improved`) - SUM(final.`Discharge - Refer to Hospital`) - SUM(final.`Transfer Out`) AS 'Children at End of This Month'
     FROM
         (SELECT 
             withoutDefaulters.*,
@@ -20,15 +32,9 @@ SELECT
             (SELECT
             IF(age < 6, '< 6 month', '6-59 month') AS 'Age Group',
                 gender AS 'Sex',
-                (CASE
-                    WHEN age < 6 AND gender = 'F' THEN femaleLessThanSix
-                    WHEN age < 6 AND gender = 'M' THEN maleLessThanSix
-                    WHEN age > 6 AND gender = 'F' THEN femaleMoreThanSix
-                    WHEN age > 6 AND gender = 'M' THEN maleMoreThanSix
-                    ELSE 0
-                END) AS 'Children at End of Last Month',
+                0 AS 'Children at End of Last Month',
                 SUM(IF(adtType = 'NEW', 1, 0)) AS 'New Admission',
-                SUM(IF(adtType = 'Defaulter – DF', 1, 0)) AS 'Re-admission',
+                SUM(IF(adtType = 'Defaulter ? DF', 1, 0)) AS 'Re-admission',
                 SUM(IF(adtType = 'Transfer In', 1, 0)) AS 'Transfer In',
                 SUM(IF(adtType = 'Recovered', 1, 0)) AS 'Discharge - Recovered',
                 SUM(IF(adtType = 'Death', 1, 0)) AS 'Discharge - Death',
@@ -41,18 +47,14 @@ SELECT
             TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) AS age,
                 oAdtType.answer_full_name AS adtType,
                 p.gender AS gender,
-                im.female_less_than_six AS femaleLessThanSix,
-                im.male_less_than_six AS maleLessThanSix,
-                im.female_more_than_six AS femaleMoreThanSix,
-                im.male_more_than_six AS maleMoreThanSix,
                 IF(oAdtType.obs_datetime >= DATE('#startDate#'), p.person_id, NULL) thisMonthPatient,
                 IF(oAdtType.obs_datetime < DATE('#startDate#'), p.person_id, NULL) lastMonthPatient
         FROM
             person p
+        
         JOIN visit v ON p.person_id = v.patient_id
         JOIN encounter e ON v.visit_id = e.visit_id
         JOIN nonVoidedQuestionAnswerObs oAdtType ON e.encounter_id = oAdtType.encounter_id
-        INNER JOIN imam im ON 1 = 1
         WHERE
             ! p.voided AND ! v.voided AND ! e.voided
                 AND DATE(oAdtType.obs_datetime) BETWEEN DATE_SUB(DATE('#startDate#'), INTERVAL 1 MONTH) AND DATE('#endDate#')
@@ -87,12 +89,13 @@ SELECT
                 AND prevObs.question_full_name = 'Admission Type'
                 AND TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) < 60
         GROUP BY `Age Group` , `Sex`) AS defaultersCount ON defaultersCount.Sex = withoutDefaulters.Sex
-            AND withoutDefaulters.`Age Group` = defaultersCount.`Age Group` 
+            AND withoutDefaulters.`Age Group` = defaultersCount.`Age Group`
             UNION ALL SELECT '< 6 month', 'F', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
             UNION ALL SELECT '< 6 month', 'M', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
             UNION ALL SELECT '< 6 month', 'O', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
             UNION ALL SELECT '6-59 month', 'F', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
             UNION ALL SELECT '6-59 month', 'M', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
             UNION ALL SELECT '6-59 month', 'O', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) final
+            LEFT JOIN imam im1 on 1=1
     GROUP BY final.`Age Group` , final.`Sex`
     ORDER BY final.`Age Group` DESC;
