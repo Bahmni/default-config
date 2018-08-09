@@ -1,38 +1,52 @@
-select
-  answer.concept_full_name as 'Delivery service done by',
-  IFNULL(sum(result.total_count),0) as total
-from
-  concept_view AS question
-  INNER JOIN concept_answer ON question.concept_id = concept_answer.concept_id AND question.concept_full_name IN ('Delivery Note, Delivery service done by')
-  INNER JOIN concept_view AS answer ON answer.concept_id = concept_answer.answer_concept
-  INNER JOIN (SELECT DISTINCT value_reference AS type FROM visit_attribute) visit_type 
-  INNER JOIN reporting_age_group ON reporting_age_group.report_group_name = 'All Ages'
-  INNER JOIN (SELECT 'M' as gender UNION SELECT 'F' AS gender UNION SELECT 'O' AS gender) as gender
-  LEFT OUTER JOIN (
-    SELECT
-      obs.value_coded as answer_concept_id,
-      obs.concept_id as question_concept_id,
-      person.gender as gender,
-      visit_attribute.value_reference as visit_type,
-      reporting_age_group.name as age_group,
-      count(*) as total_count
+
+SELECT 
+    first_answers.answer_name AS 'Categories',
+    COUNT(DISTINCT (first_concept.person_id)) AS 'Total Patietnt'
+FROM
+    (SELECT 
+        ca.answer_concept AS answer,
+            IFNULL(answer_concept_short_name.name, answer_concept_fully_specified_name.name) AS answer_name,
+            question_concept_name.name AS category
     FROM
-      obs
-      INNER JOIN concept_view question on obs.concept_id = question.concept_id and question.concept_full_name IN ('Delivery Note, Delivery service done by')
-      INNER JOIN person on obs.person_id = person.person_id
-      INNER JOIN encounter on obs.encounter_id = encounter.encounter_id
-      INNER  JOIN visit on encounter.visit_id = visit.visit_id
-      INNER JOIN visit_attribute on visit.visit_id = visit_attribute.visit_id
-      INNER JOIN visit_attribute_type on visit_attribute_type.visit_attribute_type_id = visit_attribute.attribute_type_id and visit_attribute_type.name = "Visit Status"
-      INNER JOIN reporting_age_group on cast(obs.obs_datetime AS DATE) BETWEEN (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.min_years YEAR), INTERVAL reporting_age_group.min_days DAY))
-                                        AND (DATE_ADD(DATE_ADD(person.birthdate, INTERVAL reporting_age_group.max_years YEAR), INTERVAL reporting_age_group.max_days DAY))
-                                        AND reporting_age_group.report_group_name = "All Ages"
-    WHERE CAST(obs.obs_datetime  as DATE) BETWEEN '#startDate#' AND '#endDate#'
-    group by obs.concept_id, obs.value_coded, reporting_age_group.name, person.gender, visit_attribute.value_reference
-  ) result on question.concept_id = result.question_concept_id
-              and answer.concept_id = result.answer_concept_id
-              and gender.gender = result.gender
-              and visit_type.type = result.visit_type
-              and result.age_group = reporting_age_group.name
-GROUP BY question.concept_full_name, answer.concept_full_name
-ORDER BY reporting_age_group.sort_order;
+        concept c
+    INNER JOIN concept_datatype cd ON c.datatype_id = cd.concept_datatype_id
+    INNER JOIN concept_name question_concept_name ON c.concept_id = question_concept_name.concept_id
+        AND question_concept_name.concept_name_type = 'FULLY_SPECIFIED'
+        AND question_concept_name.voided IS FALSE
+    INNER JOIN concept_answer ca ON c.concept_id = ca.concept_id
+    INNER JOIN concept_name answer_concept_fully_specified_name ON ca.answer_concept = answer_concept_fully_specified_name.concept_id
+        AND answer_concept_fully_specified_name.concept_name_type = 'FULLY_SPECIFIED'
+        AND answer_concept_fully_specified_name.voided
+        IS FALSE
+    LEFT JOIN concept_name answer_concept_short_name ON ca.answer_concept = answer_concept_short_name.concept_id
+        AND answer_concept_short_name.concept_name_type = 'SHORT'
+        AND answer_concept_short_name.voided
+        IS FALSE
+    WHERE
+        question_concept_name.name IN ('Delivery Note, Delivery service done by')
+            AND cd.name = 'Coded'
+    ORDER BY answer_name DESC) first_answers
+        LEFT OUTER JOIN
+    (SELECT DISTINCT
+        o1.person_id,
+            cn2.concept_id AS answer,
+            cn1.concept_id AS question
+    FROM
+        obs o1
+    INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
+        AND cn1.concept_name_type = 'FULLY_SPECIFIED'
+        AND cn1.name IN ('Delivery Note, Delivery service done by')
+        AND o1.voided = 0
+        AND cn1.voided = 0
+    INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
+        AND cn2.concept_name_type = 'FULLY_SPECIFIED'
+        AND cn2.voided = 0
+    INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
+    INNER JOIN person p1 ON o1.person_id = p1.person_id
+      INNER JOIN visit v ON v.visit_id = e.visit_id
+    WHERE
+   
+        DATE(o1.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
+           ) first_concept ON first_concept.answer = first_answers.answer
+GROUP BY first_answers.answer_name
+ORDER BY first_answers.answer_name DESC
