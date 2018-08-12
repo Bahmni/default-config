@@ -43,7 +43,7 @@ SELECT
                 SUM(IF(adtType = 'Transfer Out - TO', 1, 0)) AS 'Transfer Out',
                 0 AS 'Children at End of This Month'
         FROM
-            (SELECT
+            (SELECT DISTINCT
             TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) AS age,
                 oAdtType.answer_full_name AS adtType,
                 p.gender AS gender,
