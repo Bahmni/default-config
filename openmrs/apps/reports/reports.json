@@ -1127,6 +1127,22 @@
 					}
 				},
 				{
+					"name": "FreeHealthServices IPD",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_IPD.sql"
+					}
+				},
+				
+				
+				{
+					"name": "FreeHealthServices ReferredOut",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_referredout.sql"
+					}
+				},
+				{
 					"name": "FreeHealthServices ER",
 					"type": "MRSGeneric",
 					"config": {
