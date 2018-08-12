@@ -50,4 +50,3 @@ FROM
             AND o1.value_coded IS NOT NULL
            ) first_concept ON first_concept.answer = first_answers.answer
 GROUP BY first_answers.answer_name
-ORDER BY category;
