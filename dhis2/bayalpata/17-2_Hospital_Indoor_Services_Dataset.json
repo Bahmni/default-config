@@ -1129,43 +1129,135 @@
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "fMgY7buyPgJ",
 					"row": 8,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "TQchxgpT1Mg",
 					"row": 4,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "U0aYCzqSIrV",
 					"row": 1,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "pGKBCQ2y96V",
 					"row": 7,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "SIODC3GmBPx",
 					"row": 2,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "d5xARcg2y1L",
 					"row": 3,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "xD4PTWeBft4",
 					"row": 6,
-					"column": 3
+					"column": 2
+				}
+
+			]
+		},
+		"FreeHealthServices IPD": {
+			"dataValues": [{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "blQafu930Fk",
+					"row": 8,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "K2QvU18Cy9V",
+					"row": 4,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "oLHqNDw8P0e",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "FpFz27OnLjo",
+					"row": 7,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "brA0o59G66l",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "WYnBzcM4iwO",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "JT6R8JDcdm7",
+					"row": 6,
+					"column": 2
+				}
+
+			]
+		},
+		"FreeHealthServices ReferredOut": {
+			"dataValues": [{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "yeGkme7Wda5",
+					"row": 8,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "zrx6bskmDpn",
+					"row": 4,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "NoJQulKOcgB",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "riAMS7MJ8Kz",
+					"row": 7,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "pF1Mv020yUl",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "GnYEgVNXJ0K",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "r46z953ZAdI",
+					"row": 6,
+					"column": 2
 				}
 
 			]
@@ -1175,43 +1267,43 @@
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "sboNx8FiP4d",
 					"row": 8,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "B9svAWSTFQt",
 					"row": 4,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "xkfNycS7hEG",
 					"row": 1,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "wYwdmBDhBNu",
 					"row": 7,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "YLBxlWQ2Ji5",
 					"row": 2,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "qLLnISVBthc",
 					"row": 3,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "sSIsC8lbPDs",
 					"row": 6,
-					"column": 3
+					"column": 2
 				}
 
 			]

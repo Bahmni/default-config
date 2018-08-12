@@ -1460,7 +1460,7 @@
 					"_comment": "Vaginitis-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 75,
+					"row": 65,
 					"column": 3
 				},
 				{
@@ -2276,7 +2276,7 @@
 				}
 			]
 		},
-		"HIV-AIDS Program Opportunistic Infection - TB and FP(HIV Patients received CPT)": {
+		"HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)": {
 			"dataValues": [
 				{
 					"_comment": "< 5 years-F",
@@ -2343,7 +2343,7 @@
 				}
 				]
 			},
-			"HIV-AIDS Program Opportunistic Infection - TB and FP": {
+			"HIV-AIDS Program Opportunistic Infection TB and FP": {
 			"dataValues": [
 			{
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-F",

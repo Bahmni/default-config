@@ -567,6 +567,20 @@
 					}
 				},
 				{
+					"name": "Tubercluosis Control Program Sptum Conversion Total",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_Control_Program_Sptum_Conversion_total.sql.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Sptum Conversion",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_Control_Program_Sptum_Conversion.sql"
+					}
+				},
+				{
 					"name": "Tubercluosis Control Program TreatmentOutcome PBC Cases Registered",
 					"type": "MRSGeneric",
 					"config": {
@@ -799,7 +813,7 @@
 					}
 				},
 				{
-					"name": " HIV-AIDS Program Opportunistic Infection - TB and FP",
+					"name": "HIV-AIDS Program Opportunistic Infection TB and FP",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection _TB_FP.sql"
@@ -807,7 +821,7 @@
 				},
 
 				{
-					"name": " HIV-AIDS Program Opportunistic Infection - TB and FP(HIV Patients received CPT)",
+					"name": "HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection_TB_FP_HIV_Patients_Received_CPT.sql"
@@ -1110,6 +1124,22 @@
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_Outpatient.sql"
+					}
+				},
+				{
+					"name": "FreeHealthServices IPD",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_IPD.sql"
+					}
+				},
+				
+				
+				{
+					"name": "FreeHealthServices ReferredOut",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_referredout.sql"
 					}
 				},
 				{
