@@ -155,4 +155,3 @@ WHERE
         TIMESTAMPDIFF(Day,p1.birthdate,v.date_started) < 60
         AND DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#');
 
->>>>>>> 5f8bd162ab3e1719b46ad1099f67f1bf2d5731bd:openmrs/reports/hmis/02-2-CBIMNCI/LessThan_2Mnth_followup_other_abtibiotics_Count_chd.sql

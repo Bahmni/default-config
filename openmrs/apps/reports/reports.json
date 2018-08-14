@@ -1167,10 +1167,26 @@
 				},
 
 				{
-					"name": "Summary of Indoor Services Death (Maternal and Post Operative)",
+					"name": "Summary of Indoor Services Death Maternal",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_maternal_post_operative.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_maternal_all.sql"
+					}
+				},
+				
+				{
+					"name": "Summary of Indoor Services Death Post Operative",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_post_operative.sql"
+					}
+				},
+				
+				{
+					"name": "Summary of Indoor Services Death Early and Late Neonatal",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_early_late_neonatal.sql"
 					}
 				},
 				{
