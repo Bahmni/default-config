@@ -71,7 +71,7 @@ FROM
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
         AND v1.date_stopped IS NOT NULL
     WHERE
-        DATE(e.encounter_datetime) BETWEEN DATE('2015-01-01') AND DATE('2018-01-01')) first_concept ON first_concept.answer = first_answers.answer
+        DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
         LEFT OUTER JOIN
     person p ON first_concept.person_id = p.person_id
         AND p.gender = gender.gender
