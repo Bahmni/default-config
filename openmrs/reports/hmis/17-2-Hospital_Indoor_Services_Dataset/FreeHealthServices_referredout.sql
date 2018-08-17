@@ -1,6 +1,6 @@
 SELECT 
     first_answers.answer_name AS 'Categories',
-        COUNT(DISTINCT (first_concept.person_id)) AS 'Total Patietnt'
+        COUNT(DISTINCT (second_concept.person_id)) AS 'Total Patietnt'
 
 FROM
     (SELECT 
