@@ -214,7 +214,7 @@
 					"name": "Delivery Service",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Delivery_Service - Copy.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Delivery_Service.sql"
 					}
 				},
 				{
