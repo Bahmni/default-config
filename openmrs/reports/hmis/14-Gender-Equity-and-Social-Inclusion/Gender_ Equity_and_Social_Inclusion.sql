@@ -97,6 +97,7 @@ INNER JOIN
 FROM visit
     INNER JOIN person ON visit.patient_id = person.person_id
 	AND DATE(person.date_created) BETWEEN '#startDate#' AND '#endDate#'
+	AND TIMESTAMPDIFF(YEAR, person.birthdate, visit.date_started) > 5
 JOIN visit_type vt ON visit.visit_type_id = vt.visit_type_id AND vt.name = 'General') person
 INNER JOIN person_attribute ON person_attribute.person_id = person.person_id
 INNER JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id
