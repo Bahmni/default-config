@@ -34,7 +34,7 @@ FROM
     INNER JOIN person p ON o.person_id = p.person_id
         AND p.voided = 0
     WHERE
-        cn1.name IN ('Childhood Illness, Follow up result' )
+        cn1.name IN ('Childhood Illness-2 months-Follow up result' )
             AND TIMESTAMPDIFF(DAY, p.birthdate, v.date_started) < 60
 			And DATE(o.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             -- AND DATE(o.obs_datetime) BETWEEN DATE('2017-01-01') AND DATE('2017-12-30')
