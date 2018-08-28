@@ -19,6 +19,8 @@
 	"contextModel": ["patientUuid",
 	"visitUuid"],
 	"config": {
+		"enableNepaliCalendar": true,
+		"displayNepaliDates":true,
 		"defaultVisitType": "General",
 		"visitTypeForRetrospectiveEntries": "General",
 		"obsIgnoreList": ["Patient file"],

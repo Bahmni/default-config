@@ -24,6 +24,8 @@
         "visitUuid"
     ],
     "config": {
+	"enableNepaliCalendar": true,
+	"displayNepaliDates": true,
         "patientConfig":{
             "showMiddleNameOn" : ["patient-profile","patient-context"]
         },

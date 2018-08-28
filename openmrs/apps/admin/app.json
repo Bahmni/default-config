@@ -5,5 +5,9 @@
             "id": "org.bahmni.admin.dashboard",
             "description": "Bahmni Admin Page"
         }
-    ]
+    ],
+    "config": {	
+        "enableNepaliCalendar": true,
+	"displayNepaliDates": true
+    }
 }

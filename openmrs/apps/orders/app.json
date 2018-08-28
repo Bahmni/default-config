@@ -7,6 +7,8 @@
         }
     ],
     "config": {
+	"enableNepaliCalendar": true,
+	"displayNepaliDates": true,
         "maxConceptSetLevels": 3,
         "conceptSetUI": {
             "Grid1": {
