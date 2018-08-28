@@ -1103,23 +1103,54 @@
 				}
 			]
 		},
-		"Summary of Indoor Services Death (Maternal and Post Operative)": {
+		"Summary of Indoor Services Death Maternal": {
+			"dataValues": [{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "OWZvJevMlQd",
+					"row": 1,
+					"column": 3
+				}
+			]
+		},
+		"Summary of Indoor Services Death Post Operative": {
 			"dataValues": [{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "HUtoMj9IIHY",
 					"row": 1,
-					"column": 3
+					"column": 2
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "HUtoMj9IIHY",
 					"row": 2,
+					"column": 2
+				}
+				
+			]
+		},
+		"Summary of Indoor Services Death Early and Late Neonatal": {
+			"dataValues": [{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "wE8Ua9fF57W",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "wE8Ua9fF57W",
+					"row": 2,
 					"column": 3
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "OWZvJevMlQd",
+					"dataElement": "i9Fd6Sg4Xvz",
 					"row": 3,
+					"column": 3
+				},
+					{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "i9Fd6Sg4Xvz",
+					"row": 4,
 					"column": 3
 				}
 			]

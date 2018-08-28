@@ -2,7 +2,7 @@
 SELECT 
 	first_answers.category AS 'Category',
     first_answers.answer_name AS 'Diseases',
-    COUNT(DISTINCT (first_concept.person_id)) AS 'Total Patietnt'
+    COUNT(DISTINCT (first_concept.person_id)) AS 'Total Patient'
 FROM
     (SELECT 
         ca.answer_concept AS answer,
@@ -51,4 +51,4 @@ FROM
        AND DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             AND o1.value_coded IS NOT NULL) first_concept ON first_concept.answer = first_answers.answer
 GROUP BY first_answers.answer_name
-ORDER BY category;
+ORDER BY first_answers.category, first_answers.answer_name;
