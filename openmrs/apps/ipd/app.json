@@ -77,8 +77,8 @@
                     "customLinks": [
                         {
                             "name": "bedManagement",
-                            "translationKey": "PATIENT_BED_MANAGEMENT_PAGE_KE",
-                            "url": "../bedmanagement/#/bedManagement/patient/{{patientUuid}}/visit/{{visitUuid}}"
+                            "translationKey": "PATIENT_BED_MANAGEMENT_PAGE_KEY",
+                            "url": "../bedmanagement/#/bedManagement/patient/{{patientUuid}}"
                         }
                     ]
                 },
