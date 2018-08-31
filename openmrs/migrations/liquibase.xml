@@ -49,10 +49,6 @@
                 );
             </sql>
         </changeSet>
-        <changeSet id="Amman-201703100949450" author="David Oh" runOnChange="true">
-            <comment>Updating SQL query for Bed Management List View</comment>
-            <sqlFile path="bedManagement/PatientWardDetails.sql"/>
-        </changeSet>
     <changeSet id="default-201905311115" author="Bindu, Angshuman">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
