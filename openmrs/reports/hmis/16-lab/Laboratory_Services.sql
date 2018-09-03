@@ -9,9 +9,11 @@ SELECT
     CASE
         WHEN
             first_concept.testid IN (SELECT 
-                    first_concept.testid
+                    ts.test_id
                 FROM
-                    clinlims.test_result
+                    clinlims.test_result ts
+                    INNER JOIN clinlims.dictionary d ON d.ID = CAST(ts.value AS INTEGER)
+                    WHERE ts.tst_rslt_type='D' AND d.dict_entry IN ('Positive', 'Negative')
                )
         THEN
             COUNT(first_concept.tid)
@@ -20,9 +22,11 @@ SELECT
     CASE
         WHEN
             first_concept.testid IN (SELECT 
-                    first_concept.testid
+                    ts.test_id
                 FROM
-                    clinlims.test_result
+                    clinlims.test_result ts
+                    INNER JOIN clinlims.dictionary d ON d.ID = CAST(ts.value AS INTEGER)
+                    WHERE ts.tst_rslt_type='D' AND d.dict_entry IN ('Positive', 'Negative')
                )
         THEN
             COUNT(first_concept.fid)
