@@ -570,7 +570,7 @@
 					"name": "Tubercluosis Control Program Sptum Conversion Total",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_Control_Program_Sptum_Conversion_total.sql.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_Control_Program_Sptum_Conversion_total.sql"
 					}
 				},
 				{
