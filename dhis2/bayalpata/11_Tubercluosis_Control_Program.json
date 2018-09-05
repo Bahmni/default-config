@@ -954,70 +954,70 @@
 					"_comment": "No of Cases Registered-Relapse-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "p1f2Ij3cdBF",
-					"row": 3,
+					"row": 7,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered-Relapse-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "p1f2Ij3cdBF",
-					"row": 4,
+					"row": 8,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered_Treatment After Failure-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "JvI9U3Avfwe",
-					"row": 1,
+					"row": 11,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered-Treatment After Failure-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "JvI9U3Avfwe",
-					"row": 2,
+					"row": 12,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered-Treatment After Lost to Follow-up-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "ual1mXMswzb",
-					"row": 3,
+					"row": 13,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered-Treatment After Lost to Follow-up-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "ual1mXMswzb",
-					"row": 4,
+					"row": 14,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered-Others Previously Treated-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "DCAs9A8ux4N",
-					"row": 1,
+					"row": 3,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered-Others Previously Treated-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "DCAs9A8ux4N",
-					"row": 2,
+					"row": 4,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered-Previous Treatment History Unknown-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "veC4yL4Kd1o",
-					"row": 3,
+					"row": 5,
 					"column": 3
 				},
 				{
 					"_comment": "No of Cases Registered-Previous Treatment History Unknown-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "veC4yL4Kd1o",
-					"row": 4,
+					"row": 6,
 					"column": 3
 				}
 			]
@@ -1028,421 +1028,428 @@
 					"_comment": "Negative_New-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "HrehcpHmG9L",
-					"row": 1,
-					"column": 3
+					"row": 29,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-New-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "HrehcpHmG9L",
-					"row": 2,
-					"column": 3
+					"row": 30,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Relapse-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "w7GRg3JPemY",
-					"row": 3,
-					"column": 3
+					"row": 35,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Relapse-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "w7GRg3JPemY",
-					"row": 4,
-					"column": 3
+					"row": 36,
+					"column": 4
 				},
 				{
 					"_comment": "Negative_Treatment After Failure-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "gNHc6Z67QdS",
-					"row": 1,
-					"column": 3
+					"row": 39,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Treatment After Failure-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "gNHc6Z67QdS",
-					"row": 2,
-					"column": 3
+					"row": 40,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Treatment After Lost to Follow-up-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "YuYD6F6r1Gr",
-					"row": 3,
-					"column": 3
+					"row": 41,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Treatment After Lost to Follow-up-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "YuYD6F6r1Gr",
-					"row": 4,
-					"column": 3
+					"row": 42,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Others Previously Treated-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "phxNJp8Chku",
-					"row": 1,
-					"column": 3
+					"row": 31,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Others Previously Treated-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "phxNJp8Chku",
-					"row": 2,
-					"column": 3
+					"row": 32,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Previous Treatment History Unknown-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "vCVBfyedAnt",
-					"row": 3,
-					"column": 3
+					"row": 33,
+					"column": 4
 				},
 				{
 					"_comment": "Negative-Previous Treatment History Unknown-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "vCVBfyedAnt",
-					"row": 4,
-					"column": 3
+					"row": 34,
+					"column": 4
 				},
+				
+				
+				
 				{
 					"_comment": "Positive_New-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "CBXWvYttEnA",
-					"row": 1,
-					"column": 3
+					"row": 57,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-New-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "CBXWvYttEnA",
-					"row": 2,
-					"column": 3
+					"row": 58,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Relapse-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "o21VfCEp0HC",
-					"row": 3,
-					"column": 3
+					"row": 63,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Relapse-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "o21VfCEp0HC",
-					"row": 4,
-					"column": 3
+					"row": 64,
+					"column": 4
 				},
 				{
 					"_comment": "Positive_Treatment After Failure-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "u8eEO25Kng1",
-					"row": 1,
-					"column": 3
+					"row": 67,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Treatment After Failure-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "u8eEO25Kng1",
-					"row": 2,
-					"column": 3
+					"row": 68,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Treatment After Lost to Follow-up-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "n6xh2AJqQ0V",
-					"row": 3,
-					"column": 3
+					"row": 69,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Treatment After Lost to Follow-up-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "n6xh2AJqQ0V",
-					"row": 4,
-					"column": 3
+					"row": 70,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Others Previously Treated-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "SKscNcwbOzq",
-					"row": 1,
-					"column": 3
+					"row": 59,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Others Previously Treated-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "SKscNcwbOzq",
-					"row": 2,
-					"column": 3
+					"row": 60,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Previous Treatment History Unknown-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "pkzzuxRvxsg",
-					"row": 3,
-					"column": 3
+					"row": 61,
+					"column": 4
 				},
 				{
 					"_comment": "Positive-Previous Treatment History Unknown-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "pkzzuxRvxsg",
-					"row": 4,
-					"column": 3
+					"row": 62,
+					"column": 4
 				},
+				
+				
+				
+				
 				{
 					"_comment": "Died_New-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "WMrbpYZlMS3",
 					"row": 1,
-					"column": 3
+					"column": 4
 				},
 				{
 					"_comment": "Died-New-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "WMrbpYZlMS3",
 					"row": 2,
-					"column": 3
+					"column": 4
 				},
 				{
 					"_comment": "Died-Relapse-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "Nx6TjN3tMH3",
-					"row": 3,
-					"column": 3
+					"row": 7,
+					"column": 4
 				},
 				{
 					"_comment": "Died-Relapse-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "Nx6TjN3tMH3",
-					"row": 4,
-					"column": 3
+					"row": 8,
+					"column": 4
 				},
 				{
 					"_comment": "Died_Treatment After Failure-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "qTkuHQLUL4s",
-					"row": 1,
-					"column": 3
+					"row": 11,
+					"column": 4
 				},
 				{
 					"_comment": "Died-Treatment After Failure-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "qTkuHQLUL4s",
-					"row": 2,
-					"column": 3
+					"row": 12,
+					"column": 4
 				},
 				{
 					"_comment": "Died-Treatment After Lost to Follow-up-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "IIo9AHznuqQ",
-					"row": 3,
-					"column": 3
+					"row": 13,
+					"column": 4
 				},
 				{
 					"_comment": "Died-Treatment After Lost to Follow-up-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "IIo9AHznuqQ",
-					"row": 4,
-					"column": 3
+					"row": 14,
+					"column": 4
 				},
 				{
 					"_comment": "Died-Others Previously Treated-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "G4A0hh7bpSk",
-					"row": 1,
-					"column": 3
+					"row": 3,
+					"column": 4
 				},
 				{
 					"_comment": "Died-Others Previously Treated-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "G4A0hh7bpSk",
-					"row": 2,
-					"column": 3
+					"row": 4,
+					"column": 4
 				},
 				{
 					"_comment": "Died-Previous Treatment History Unknown-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "lSLLMBT7264",
-					"row": 3,
-					"column": 3
+					"row": 6,
+					"column": 4
 				},
 				{
 					"_comment": "Died-Previous Treatment History Unknown-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "lSLLMBT7264",
-					"row": 4,
-					"column": 3
+					"row": 7,
+					"column": 4
 				},
 				{
-					"_comment": "Lost to Follow Up_New-Female",
+					"_comment": "Lost to Follow Up-New-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "JyIuKj4m4wm",
-					"row": 1,
-					"column": 3
+					"row": 15,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-New-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "JyIuKj4m4wm",
-					"row": 2,
-					"column": 3
+					"row": 16,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Relapse-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "mk7QFnpZwOU",
-					"row": 3,
-					"column": 3
+					"row": 21,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Relapse-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "mk7QFnpZwOU",
-					"row": 4,
-					"column": 3
+					"row": 22,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up_Treatment After Failure-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "exY8dRRKrPF",
-					"row": 1,
-					"column": 3
+					"row": 25,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Treatment After Failure-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "exY8dRRKrPF",
-					"row": 2,
-					"column": 3
+					"row": 26,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Treatment After Lost to Follow-up-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "oPliB3cHuiI",
-					"row": 3,
-					"column": 3
+					"row": 27,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Treatment After Lost to Follow-up-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "oPliB3cHuiI",
-					"row": 4,
-					"column": 3
+					"row": 28,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Others Previously Treated-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "hxPzMoIlGnO",
-					"row": 1,
-					"column": 3
+					"row": 18,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Others Previously Treated-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "hxPzMoIlGnO",
-					"row": 2,
-					"column": 3
+					"row": 19,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Previous Treatment History Unknown-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "ZImzJRufyoB",
-					"row": 3,
-					"column": 3
+					"row": 20,
+					"column": 4
 				},
 				{
 					"_comment": "Lost to Follow Up-Previous Treatment History Unknown-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "ZImzJRufyoB",
-					"row": 4,
-					"column": 3
+					"row": 21,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated_New-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "PymRiOwXluA",
-					"row": 1,
-					"column": 3
+					"row": 43,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-New-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "PymRiOwXluA",
-					"row": 2,
-					"column": 3
+					"row": 44,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Relapse-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "u27thi7UidL",
-					"row": 3,
-					"column": 3
+					"row": 49,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Relapse-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "u27thi7UidL",
-					"row": 4,
-					"column": 3
+					"row": 50,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated_Treatment After Failure-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "tLiw7FQyOgt",
-					"row": 1,
-					"column": 3
+					"row": 53,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Treatment After Failure-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "tLiw7FQyOgt",
-					"row": 2,
-					"column": 3
+					"row": 54,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Treatment After Lost to Follow-up-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "YF5NetnZPsY",
-					"row": 3,
-					"column": 3
+					"row": 55,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Treatment After Lost to Follow-up-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "YF5NetnZPsY",
-					"row": 4,
-					"column": 3
+					"row": 56,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Others Previously Treated-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "ni3BKG2w8XX",
-					"row": 1,
-					"column": 3
+					"row": 45,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Others Previously Treated-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "ni3BKG2w8XX",
-					"row": 2,
-					"column": 3
+					"row": 46,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Previous Treatment History Unknown-Female",
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "maFskT4J6t7",
-					"row": 3,
-					"column": 3
+					"row": 47,
+					"column": 4
 				},
 				{
 					"_comment": "Not Evaluated-Previous Treatment History Unknown-Male",
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "maFskT4J6t7",
-					"row": 4,
-					"column": 3
+					"row": 48,
+					"column": 4
 				}
 			]
 		},
