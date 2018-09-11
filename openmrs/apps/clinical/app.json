@@ -1792,6 +1792,18 @@
                         "Psychosis_FU-Current symptoms": {
                                 "required": true,
 								"multiSelect": true
+						},
+                        "DRTB F/U, Test order": {
+                                "multiSelect": true
+						},
+                        "DRTB F/U, Monthly Baseline Test Performed ?": {
+                                "required": true
+						},
+                        "DRTB F/U, Treatment Category": {
+                                "required": true
+						},
+                        "Discharge Note-Post op surgery complications": {
+                                "multiSelect": true
 						}																													
 
 		}
