@@ -23,6 +23,22 @@
 			]
 		}
 	},
+	
+	"02-1 Immunization Dataset": {
+		"name": "02-1 Immunization Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Immunized children count",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02-1_Immunization_Dataset/Immunized_children_count.sql"
+					}
+				}
+			]
+		}
+	},
 
 	"02-2 Community Based Integrated Management Of Neonatal And Childhood Illnesses (CBIMNCI) 2-59 months": {
 		"name": "02-2 Community Based Integrated Management Of Neonatal And Childhood Illnesses (CBIMNCI) 2-59 months",
