@@ -1804,8 +1804,13 @@
 						},
                         "Discharge Note-Post op surgery complications": {
                                 "multiSelect": true
-						}																													
-
+						},
+						"IMAM, Visit Type": {
+								"required": true
+						},
+						"Mental health-Consent for household visit": {
+								"required": true
+						}
 		}
 	}
 }

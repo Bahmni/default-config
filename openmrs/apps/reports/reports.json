@@ -35,8 +35,7 @@
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02-1_Immunization_Dataset/Immunized_children_count.sql"
 					}
-				}
-			]
+				}]
 		}
 	},
 
