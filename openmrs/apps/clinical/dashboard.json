@@ -116,13 +116,13 @@
                 "type": "labOrders",
                 "dashboardConfig": {
                     "title": null,
-                    "numberOfVisits": 1,
+                    "numberOfVisits": 2,
                     "showChart": false,
                     "showTable": true,
                     "showDetailsButton": false
                 },
                 "expandedViewConfig": {
-                    "numberOfVisits": 3
+                    "numberOfVisits": 20
                 },
                 "displayOrder": 5
             },
