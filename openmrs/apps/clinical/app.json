@@ -21,6 +21,7 @@
 	"config": {
 		"enableNepaliCalendar": true,
 		"displayNepaliDates":true,
+		"filterObservationTemplates":true,
 		"defaultVisitType": "General",
 		"visitTypeForRetrospectiveEntries": "General",
 		"obsIgnoreList": ["Patient file"],
