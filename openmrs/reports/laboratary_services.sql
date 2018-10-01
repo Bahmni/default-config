@@ -1,6 +1,6 @@
 -- Parameters
-SET @start_date = '2014-05-01';
-SET @end_date = '2014-06-01';
+SET @start_date = '#startDate#';
+SET @end_date = '#endDate#';
 SET @lab_test_order_type = '3';
 
 -- Query

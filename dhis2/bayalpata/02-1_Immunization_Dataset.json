@@ -7,35 +7,35 @@
 		"_comment": "Vaccine-BCG Vaccine",
           "categoryOptionCombo": "kdsirVNKdhm",  
           "dataElement": "w84aFW1LESM",
-          "row": 16,
+          "row": 4,
           "column": 3
         },
         { 
 		"_comment": "Vaccine-DPT-HepB-Hib-first",
           "categoryOptionCombo": "kdsirVNKdhm",  
           "dataElement": "S4NHzUtxuFr",
-          "row": 13,
+          "row": 5,
           "column": 3
         },
 		{
 		"_comment": "Vaccine-DPT-HepB-Hib-second",
           "categoryOptionCombo": "kdsirVNKdhm", 
           "dataElement": "EWloIcvmV6J",
-          "row": 14,
+          "row": 6,
           "column": 3
         },
         {
 		"_comment": "Vaccine-DPT-HepB-Hib-third",
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "BKLqlVqwTX9", 
-          "row": 15,
+          "row": 7,
           "column": 3
         },
         {
 		"_comment": "Vaccine-OPV-First",
           "categoryOptionCombo": "kdsirVNKdhm",  
           "dataElement": "j0Bqqi6vw0a",
-          "row": 4,
+          "row": 12,
           "column": 3
         }
 		,
@@ -43,56 +43,56 @@
 		"_comment": "Vaccine-OPV-second",
           "categoryOptionCombo": "kdsirVNKdhm",  
           "dataElement": "iIBI3R4j7rR",
-          "row": 5,
+          "row": 13,
           "column": 3
         },
         {
 		"_comment": "Vaccine-OPV-third",
           "categoryOptionCombo": "kdsirVNKdhm", 
           "dataElement": "SZXbOZ7nCcT", 
-          "row": 6,
+          "row": 14,
           "column": 3
         },
         {
 		"_comment": "Vaccine-PCV-first",
           "categoryOptionCombo": "kdsirVNKdhm",   
           "dataElement": "F3fBb33oh1c",
-          "row": 1,
+          "row": 15,
           "column": 3
         },
 		{
 		"_comment": "Vaccine-PCV-second",
           "categoryOptionCombo": "kdsirVNKdhm", 
           "dataElement": "TkfynUxlyEA",
-          "row": 2,
+          "row": 16,
           "column": 3
         },
         { 
 		"_comment": "Vaccine-PCV-third",
           "categoryOptionCombo": "kdsirVNKdhm",  
 		  "dataElement": "PZet2gxoVk4",
-          "row": 3,
+          "row": 17,
           "column": 3
         },
 		{
 		"_comment": "Vaccine-IPV",
           "categoryOptionCombo": "kdsirVNKdhm", 
           "dataElement": "c4iPru9xZxi",
-          "row": 2,
+          "row": 8,
           "column": 3
         },
         {
 		"_comment": "Vaccine-Measles/rubella-first",
           "categoryOptionCombo": "kdsirVNKdhm",
           "dataElement": "ZOssey90Zzq", 
-          "row": 7,
+          "row": 10,
           "column": 3
         },
         {
 		"_comment": "Vaccine-Measles/rubella-second",
           "categoryOptionCombo": "kdsirVNKdhm",  
           "dataElement": "LLqzacIY1IW",
-          "row": 8,
+          "row": 11,
           "column": 3
         }
 		,
@@ -107,14 +107,14 @@
 		"_comment": "ANC, TD Given-first",
           "categoryOptionCombo": "kdsirVNKdhm", 
           "dataElement": "vvjFCmI0DBV", 
-          "row": 17,
+          "row": 1,
           "column": 3
         },
         {
 		"_comment": "ANC, TD Given-second",
           "categoryOptionCombo": "kdsirVNKdhm",  
           "dataElement": "T6HLuCqpOMn",
-          "row": 18,
+          "row": 2,
           "column": 3
         }
 		,
@@ -122,7 +122,7 @@
 		"_comment": "ANC, TD Given-seond plus",
           "categoryOptionCombo": "kdsirVNKdhm",  
           "dataElement": "q0XkNvBOqZc",
-          "row": 19,
+          "row": 3,
           "column": 3
         }
           
