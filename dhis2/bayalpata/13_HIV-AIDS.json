@@ -644,13 +644,6 @@
 					"column": 2
 				},
 				{
-					"_comment": "HIV+ve Women Male Partner who know their status",
-					"categoryOptionCombo": "kdsirVNKdhm",
-					"dataElement": "Lc9CJmuevxy",
-					"row": 1,
-					"column": 4
-				},
-				{
 					"_comment": "HIV+ve Women (Delivered)",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "Cw2C5u7qXog",
@@ -663,21 +656,6 @@
 					"dataElement": "yG1UG5VQ4J7",
 					"row": 1,
 					"column": 5
-				},
-				{
-					"_comment": "Counseling and Testing-Antenatal(ANC)-counsled",
-					"categoryOptionCombo": "kdsirVNKdhm",
-					"dataElement": "I5mm6lCVOke",
-					"row": 1,
-					"column": 3
-				},
-
-				{
-					"_comment": "ANC count",
-					"categoryOptionCombo": "kdsirVNKdhm",
-					"dataElement": "HWpJE2sEu3z",
-					"row": 1,
-					"column": 3
 				}
 				
 			]
@@ -749,62 +727,75 @@
 		},
 		"HIV Prevention of Mother-To-Child Transmission (PMTCT) Dataset(Labour & Delivery and Postnatal)": {
 			"dataValues": [
-
+				{
+					"_comment": "ANC count",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "HWpJE2sEu3z",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "Counseling and Testing-Antenatal(ANC)-counsled",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "I5mm6lCVOke",
+					"row": 2,
+					"column": 2
+				},
 				
 				{
 					"_comment": "Counseling and Testing-Antenatal(ANC)-tested",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "kcPJTbYhsSJ",
-					"row": 2,
+					"row": 3,
 					"column": 2
 				},
 				{
 					"_comment": "Counseling and Testing-Antenatal(ANC)-positive",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "Z2kMarZqg5U",
-					"row": 3,
+					"row": 4,
 					"column": 2
 				},
 				{
 					"_comment": "Counseling and Testing-Labour & Delivery-counsled",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "LF4AyH3ld79",
-					"row": 1,
+					"row": 5,
 					"column": 2
 				},
 				{
 					"_comment": "Counseling and Testing-Labour & Delivery-tested",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "l6LYnh4LA0o",
-					"row": 5,
+					"row": 6,
 					"column": 2
 				},
 				{
 					"_comment": "Counseling and Testing-Labour & Delivery-positive",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "waO7EMzRFMO",
-					"row": 6,
+					"row": 7,
 					"column": 2
 				},
 				{
 					"_comment": "Counseling and Testing-Postnatal-counsled",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "PNeH6e8Zk5C",
-					"row": 4,
+					"row": 8,
 					"column": 2
 				},
 				{
 					"_comment": "Counseling and Testing-Postnatal-tested",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "GIQUNR2DiVC",
-					"row": 2,
+					"row": 9,
 					"column": 2
 				},
 				{
 					"_comment": "Counseling and Testing-Postnatal-positive",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "mfYORJjZo4q",
-					"row": 3,
+					"row": 10,
 					"column": 2
 				}
 			]
@@ -907,63 +898,63 @@
 					"_comment": "Urethral Discharge-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "kWwchBgaKrL",
-					"row": 76,
+					"row": 88,
 					"column": 3
 				},
 				{
 					"_comment": "Urethral Discharge-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "kWwchBgaKrL",
-					"row": 74,
+					"row": 68,
 					"column": 3
 				},
 				{
 					"_comment": "Urethral Discharge-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "kWwchBgaKrL",
-					"row": 70,
+					"row": 38,
 					"column": 3
 				},
 				{
 					"_comment": "Urethral Discharge-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "kWwchBgaKrL",
-					"row": 68,
+					"row": 18,
 					"column": 3
 				},
 				{
 					"_comment": "Urethral Discharge-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "kWwchBgaKrL",
-					"row": 69,
+					"row": 28,
 					"column": 3
 				},
 				{
 					"_comment": "Urethral Discharge-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "kWwchBgaKrL",
-					"row": 77,
+					"row": 98,
 					"column": 3
 				},
 				{
 					"_comment": "Urethral Discharge-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "kWwchBgaKrL",
-					"row": 75,
+					"row": 78,
 					"column": 3
 				},
 				{
 					"_comment": "Urethral Discharge-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "kWwchBgaKrL",
-					"row": 71,
+					"row": 48,
 					"column": 3
 				},
 				{
 					"_comment": "Urethral Discharge-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "kWwchBgaKrL",
-					"row": 73,
+					"row": 58,
 					"column": 3
 				},
 				
@@ -978,63 +969,63 @@
 					"_comment": "Scortal Swelling-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 65,
+					"row": 87,
 					"column": 3
 				},
 				{
 					"_comment": "Scortal Swelling-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 63,
+					"row": 67,
 					"column": 3
 				},
 				{
 					"_comment": "Scortal Swelling-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 59,
+					"row": 37,
 					"column": 3
 				},
 				{
 					"_comment": "Scortal Swelling-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 57,
+					"row": 17,
 					"column": 3
 				},
 				{
 					"_comment": "Scortal Swelling-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 58,
+					"row": 27,
 					"column": 3
 				},
 				{
 					"_comment": "Scortal Swelling-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 66,
+					"row": 97,
 					"column": 3
 				},
 				{
 					"_comment": "Scortal Swelling-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 64,
+					"row": 77,
 					"column": 3
 				},
 				{
 					"_comment": "Scortal Swelling-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 60,
+					"row": 47,
 					"column": 3
 				},
 				{
 					"_comment": "Scortal Swelling-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "v7eFXSLMbLX",
-					"row": 62,
+					"row": 57,
 					"column": 3
 				},
 				
@@ -1046,63 +1037,63 @@
 					"_comment": "Vaginal Discharge-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 87,
+					"row": 90,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginal Discharge-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 85,
+					"row": 70,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginal Discharge-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 81,
+					"row": 40,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginal Discharge-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 79,
+					"row": 20,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginal Discharge-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 80,
+					"row": 30,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginal Discharge-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 77,
+					"row": 100,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginal Discharge-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 86,
+					"row": 80,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginal Discharge-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 82,
+					"row": 50,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginal Discharge-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "OfzHjFWLoZD",
-					"row": 84,
+					"row": 60,
 					"column": 3
 				},
 				
@@ -1116,63 +1107,63 @@
 					"_comment": "Lower Abdominal Pain-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 32,
+					"row": 85,
 					"column": 3
 				},
 				{
 					"_comment": "Lower Abdominal Pain-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 30,
+					"row": 65,
 					"column": 3
 				},
 				{
 					"_comment": "Lower Abdominal Pain-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 26,
+					"row": 35,
 					"column": 3
 				},
 				{
 					"_comment": "Lower Abdominal Pain-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 26,
+					"row": 15,
 					"column": 3
 				},
 				{
 					"_comment": "Lower Abdominal Pain-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 27,
+					"row": 25,
 					"column": 3
 				},
 				{
 					"_comment": "Lower Abdominal Pain-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 33,
+					"row": 95,
 					"column": 3
 				},
 				{
 					"_comment": "Lower Abdominal Pain-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 31,
+					"row": 75,
 					"column": 3
 				},
 				{
 					"_comment": "Lower Abdominal Pain-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 27,
+					"row": 45,
 					"column": 3
 				},
 				{
 					"_comment": "Lower Abdominal Pain-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "B3v4Tv4VWG9",
-					"row": 29,
+					"row": 55,
 					"column": 3
 				},
 				
@@ -1188,56 +1179,56 @@
 					"_comment": "Genital Ulcer Disease-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "v0Ppx8uBJsI",
-					"row": 10,
+					"row": 82,
 					"column": 3
 				},
 				{
 					"_comment": "Genital Ulcer Disease-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "v0Ppx8uBJsI",
-					"row": 8,
+					"row": 62,
 					"column": 3
 				},
 				{
 					"_comment": "Genital Ulcer Disease-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "v0Ppx8uBJsI",
-					"row": 4,
+					"row": 32,
 					"column": 3
 				},
 				{
 					"_comment": "Genital Ulcer Disease-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "v0Ppx8uBJsI",
-					"row": 2,
+					"row": 12,
 					"column": 3
 				},
 				{
 					"_comment": "Genital Ulcer Disease-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "v0Ppx8uBJsI",
-					"row": 3,
+					"row": 22,
 					"column": 3
 				},
 				{
 					"_comment": "Genital Ulcer Disease-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "v0Ppx8uBJsI",
-					"row": 11,
+					"row": 92,
 					"column": 3
 				},
 				{
 					"_comment": "Genital Ulcer Disease-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "v0Ppx8uBJsI",
-					"row": 9,
+					"row": 72,
 					"column": 3
 				},
 				{
 					"_comment": "Genital Ulcer Disease-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "v0Ppx8uBJsI",
-					"row": 5,
+					"row": 42,
 					"column": 3
 				},
 				{
@@ -1256,63 +1247,63 @@
 					"_comment": "Inguinal Bubo-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "juq1j1dHkr0",
-					"row": 21,
+					"row": 84,
 					"column": 3
 				},
 				{
 					"_comment": "Inguinal Bubo-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "juq1j1dHkr0",
-					"row": 19,
+					"row": 64,
 					"column": 3
 				},
 				{
 					"_comment": "Inguinal Bubo-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "juq1j1dHkr0",
-					"row": 15,
+					"row": 34,
 					"column": 3
 				},
 				{
 					"_comment": "Inguinal Bubo-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "juq1j1dHkr0",
-					"row": 13,
+					"row": 14,
 					"column": 3
 				},
 				{
 					"_comment": "Inguinal Bubo-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "juq1j1dHkr0",
-					"row": 14,
+					"row": 24,
 					"column": 3
 				},
 				{
 					"_comment": "Inguinal Bubo-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "juq1j1dHkr0",
-					"row": 22,
+					"row": 94,
 					"column": 3
 				},
 				{
 					"_comment": "Inguinal Bubo-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "juq1j1dHkr0",
-					"row": 20,
+					"row": 74,
 					"column": 3
 				},
 				{
 					"_comment": "Inguinal Bubo-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "juq1j1dHkr0",
-					"row": 16,
+					"row": 44,
 					"column": 3
 				},
 				{
 					"_comment": "Inguinal Bubo-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "juq1j1dHkr0",
-					"row": 18,
+					"row": 54,
 					"column": 3
 				},
 				
@@ -1324,131 +1315,132 @@
 					"_comment": "Others-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "liT7BHNWQwm",
-					"row": 54,
+					"row": 86,
 					"column": 3
 				},
 				{
 					"_comment": "Others-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "liT7BHNWQwm",
-					"row": 52,
+					"row": 66,
 					"column": 3
 				},
 				{
 					"_comment": "Others-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "liT7BHNWQwm",
-					"row": 48,
+					"row": 36,
 					"column": 3
 				},
 				{
 					"_comment": "Others-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "liT7BHNWQwm",
-					"row": 46,
+					"row": 16,
 					"column": 3
 				},
 				{
 					"_comment": "Others-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "liT7BHNWQwm",
-					"row": 47,
+					"row": 26,
 					"column": 3
 				},
 				{
 					"_comment": "Others-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "liT7BHNWQwm",
-					"row": 55,
+					"row": 96,
 					"column": 3
 				},
 				{
 					"_comment": "Others-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "liT7BHNWQwm",
-					"row": 53,
+					"row": 76,
 					"column": 3
 				},
 				{
 					"_comment": "Others-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "liT7BHNWQwm",
-					"row": 49,
+					"row": 46,
 					"column": 3
 				},
 				{
 					"_comment": "Others-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "liT7BHNWQwm",
-					"row": 51,
+					"row": 56,
 					"column": 3
-				}
-					]
-		},
-		
-		"STI Cases-by Etiology": {
-			"dataValues": [
+				},
+				
+				
+				
+				
+				
+				
 				{
 					"_comment": "Cervicitis-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 10,
+					"row": 81,
 					"column": 3
 				},
 				{
 					"_comment": "Cervicitis-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 8,
+					"row": 61,
 					"column": 3
 				},
 				{
 					"_comment": "Cervicitis-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 4,
+					"row": 31,
 					"column": 3
 				},
 				{
 					"_comment": "Cervicitis-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 2,
+					"row": 11,
 					"column": 3
 				},
 				{
 					"_comment": "Cervicitis-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 3,
+					"row": 21,
 					"column": 3
 				},
 				{
 					"_comment": "Cervicitis-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 11,
+					"row": 91,
 					"column": 3
 				},
 				{
 					"_comment": "Cervicitis-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 9,
+					"row": 71,
 					"column": 3
 				},
 				{
 					"_comment": "Cervicitis-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 5,
+					"row": 41,
 					"column": 3
 				},
 				{
 					"_comment": "Cervicitis-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "YkjB6ddFhMt",
-					"row": 7,
+					"row": 51,
 					"column": 3
 				},
 				
@@ -1460,63 +1452,63 @@
 					"_comment": "Vaginitis-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 65,
+					"row": 89,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginitis-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 63,
+					"row": 69,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginitis-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 59,
+					"row": 39,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginitis-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 57,
+					"row": 19,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginitis-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 58,
+					"row": 29,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginitis-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 66,
+					"row": 99,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginitis-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 64,
+					"row": 79,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginitis-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 60,
+					"row": 49,
 					"column": 3
 				},
 				{
 					"_comment": "Vaginitis-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "ZUe8gWgC2a4",
-					"row": 62,
+					"row": 59,
 					"column": 3
 				},
 				
@@ -1529,274 +1521,64 @@
 					"_comment": "Herpes genitalis-Female Sex Workers (FSWs)",
 					"categoryOptionCombo": "N8obptCXv0k",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 32,
+					"row": 83,
 					"column": 3
 				},
 				{
 					"_comment": "Herpes genitalis-People who Inject Drugs (PWIDs)",
 					"categoryOptionCombo": "q6yhZEWMtwK",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 30,
+					"row": 63,
 					"column": 3
 				},
 				{
 					"_comment": "Herpes genitalis-MSM and TG",
 					"categoryOptionCombo": "xasNlF5QEKb",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 26,
+					"row": 33,
 					"column": 3
 				},
 				{
 					"_comment": "Herpes genitalis-Clients of FSWs",
 					"categoryOptionCombo": "fDxbHpWBa7v",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 24,
+					"row": 13,
 					"column": 3
 				},
 				{
 					"_comment": "Herpes genitalis-Male migrants",
 					"categoryOptionCombo": "yjn333AYmLn",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 25,
+					"row": 23,
 					"column": 3
 				},
 				{
 					"_comment": "Herpes genitalis-Spouses of male migrants",
 					"categoryOptionCombo": "jAmZ5bhMNJy",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 33,
+					"row": 93,
 					"column": 3
 				},
 				{
 					"_comment": "Herpes genitalis-Pregnant women",
 					"categoryOptionCombo": "Ojl2zVYZIvd",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 31,
+					"row": 73,
 					"column": 3
 				},
 				{
 					"_comment": "Herpes genitalis-Neonates",
 					"categoryOptionCombo": "w8kP6ZjPm9x",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 27,
+					"row": 43,
 					"column": 3
 				},
 				{
 					"_comment": "Herpes genitalis-Others",
 					"categoryOptionCombo": "Zw5NZF6dX2E",
 					"dataElement": "NO4Q1cqiuAj",
-					"row": 29,
-					"column": 3
-				},
-				
-				
-				
-				
-				
-					{
-					"_comment": "Gm Stain-Female Sex Workers (FSWs)",
-					"categoryOptionCombo": "N8obptCXv0k",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 21,
-					"column": 3
-				},
-				{
-					"_comment": "Gm Stain-People who Inject Drugs (PWIDs)",
-					"categoryOptionCombo": "q6yhZEWMtwK",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 19,
-					"column": 3
-				},
-				{
-					"_comment": "Gm Stain-MSM and TG",
-					"categoryOptionCombo": "xasNlF5QEKb",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 15,
-					"column": 3
-				},
-				{
-					"_comment": "Gm Stain-Clients of FSWs",
-					"categoryOptionCombo": "fDxbHpWBa7v",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 13,
-					"column": 3
-				},
-				{
-					"_comment": "Gm Stain-Male migrants",
-					"categoryOptionCombo": "yjn333AYmLn",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 14,
-					"column": 3
-				},
-				{
-					"_comment": "Gm Stain-Spouses of male migrants",
-					"categoryOptionCombo": "jAmZ5bhMNJy",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 22,
-					"column": 3
-				},
-				{
-					"_comment": "Gm Stain-Pregnant women",
-					"categoryOptionCombo": "Ojl2zVYZIvd",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 20,
-					"column": 3
-				},
-				{
-					"_comment": "Gm Stain-Neonates",
-					"categoryOptionCombo": "w8kP6ZjPm9x",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 16,
-					"column": 3
-				},
-				{
-					"_comment": "Gm Stain-Others",
-					"categoryOptionCombo": "Zw5NZF6dX2E",
-					"dataElement": "iWbV0HzlWsL",
-					"row": 18,
-					"column": 3
-				},
-				
-				
-				
-				
-				
-				
-				{
-					"_comment": "Syphilis -Female Sex Workers (FSWs)",
-					"categoryOptionCombo": "N8obptCXv0k",
-					"dataElement": "gLvteKd7Kwe",
-					"row": 54,
-					"column": 3
-				},
-				{
-					"_comment": "Syphilis -People who Inject Drugs (PWIDs)",
-					"categoryOptionCombo": "q6yhZEWMtwK",
-					"dataElement": "gLvteKd7Kwe",
-					"row": 52,
-					"column": 3
-				},
-				{
-					"_comment": "Syphilis -MSM and TG",
-					"categoryOptionCombo": "xasNlF5QEKb",
-					"dataElement": "gLvteKd7Kwe",
-					"row": 48,
-					"column": 3
-				},
-				{
-					"_comment": "Syphilis -Clients of FSWs",
-					"categoryOptionCombo": "fDxbHpWBa7v",
-					"dataElement": "gLvteKd7Kwe",
-					"row": 46,
-					"column": 3
-				},
-				{
-					"_comment": "Syphilis -Male migrants",
-					"categoryOptionCombo": "yjn333AYmLn",
-					"dataElement": "gLvteKd7Kwe",
-					"row": 47,
-					"column": 3
-				},
-				{
-					"_comment": "Syphilis -Spouses of male migrants",
-					"categoryOptionCombo": "jAmZ5bhMNJy",
-					"dataElement": "gLvteKd7Kwe",
-					"row": 55,
-					"column": 3
-				},
-				{
-					"_comment": "Syphilis -Pregnant women",
-					"categoryOptionCombo": "Ojl2zVYZIvd",
-					"dataElement": "gLvteKd7Kwe",
 					"row": 53,
 					"column": 3
-				},
-				{
-					"_comment": "Syphilis -Neonates",
-					"categoryOptionCombo": "w8kP6ZjPm9x",
-					"dataElement": "gLvteKd7Kwe",
-					"row": 49,
-					"column": 3
-				},
-				{
-					"_comment": "Syphilis -Others",
-					"categoryOptionCombo": "Zw5NZF6dX2E",
-					"dataElement": "gLvteKd7Kwe",
-					"row": 51,
-					"column": 3
-				}
-			]
-		},
-		
-		"STI Cases-by Sex Screened": {
-			"dataValues": [
-				{
-					"_comment": "Female",
-					"categoryOptionCombo": "YwjOaHAvG6m",
-					"dataElement": "Sy1XmU4XMVa",
-					"row": 1,
-					"column": 2
-				},
-					{
-					"_comment": "Male",
-					"categoryOptionCombo": "zbfeiEeiC34",
-					"dataElement": "Sy1XmU4XMVa",
-					"row": 2,
-					"column": 2
-				},
-					{
-					"_comment": "TG",
-					"categoryOptionCombo": "DVzC42inPjR",
-					"dataElement": "Sy1XmU4XMVa",
-					"row": 3,
-					"column": 2
-				}
-			]
-		},
-			
-		"STI Cases-by Sex Treated": {
-			"dataValues": [
-				{
-					"_comment": "Diagnosed-F",
-					"categoryOptionCombo": "YwjOaHAvG6m",
-					"dataElement": "JKHd2Bcxixf",
-					"row": 1,
-					"column": 2
-				},
-					{
-					"_comment": "Diagnosed-M",
-					"categoryOptionCombo": "zbfeiEeiC34",
-					"dataElement": "JKHd2Bcxixf",
-					"row": 2,
-					"column": 2
-				},
-					{
-					"_comment": "Diagnosed-TG",
-					"categoryOptionCombo": "DVzC42inPjR",
-					"dataElement": "JKHd2Bcxixf",
-					"row": 3,
-					"column": 2
-				},
-				{
-					"_comment": "Treated-F",
-					"categoryOptionCombo": "YwjOaHAvG6m",
-					"dataElement": "rIHzObrYaia",
-					"row": 1,
-					"column": 2
-				},
-					{
-					"_comment": "Treated-M",
-					"categoryOptionCombo": "zbfeiEeiC34",
-					"dataElement": "rIHzObrYaia",
-					"row": 2,
-					"column": 2
-				},
-					{
-					"_comment": "Treated-TG",
-					"categoryOptionCombo": "DVzC42inPjR",
-					"dataElement": "rIHzObrYaia",
-					"row": 3,
-					"column": 2
 				}
 			]
 		},
@@ -1868,21 +1650,21 @@
 				{
 					"_comment": "Diarrhoea-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
-					"dataElement": "ES4G3Zkpdxb",
+					"dataElement": "f4MuUH3PlIQ",
 					"row": 14,
 					"column": 3
 				},
 				{
 					"_comment": "Diarrhoea-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
-					"dataElement": "ES4G3Zkpdxb",
+					"dataElement": "f4MuUH3PlIQ",
 					"row": 13,
 					"column": 3
 				},
 				{
 					"_comment": "Diarrhoea-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
-					"dataElement": "ES4G3Zkpdxb",
+					"dataElement": "f4MuUH3PlIQ",
 					"row": 15,
 					"column": 3
 				},
@@ -2276,7 +2058,7 @@
 				}
 			]
 		},
-		"HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)": {
+		"HIV-AIDS Program Opportunistic Infection - TB and FP(HIV Patients received CPT)": {
 			"dataValues": [
 				{
 					"_comment": "< 5 years-F",
@@ -2343,69 +2125,69 @@
 				}
 				]
 			},
-			"HIV-AIDS Program Opportunistic Infection TB and FP": {
+			"HIV-AIDS Program Opportunistic Infection - TB and FP": {
 			"dataValues": [
 			{
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "nCex1XJPFYj",
-					"row": 17,
+					"row": 5,
 					"column": 3
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 16,
+					"row": 4,
 					"column": 3
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "u3U9eIOsEvv",
-					"row": 18,
+					"row": 6,
 					"column": 3
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "nCex1XJPFYj",
-					"row": 17,
+					"row": 5,
 					"column": 4
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 16,
+					"row": 4,
 					"column": 4
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "u3U9eIOsEvv",
-					"row": 18,
+					"row": 6,
 					"column": 4
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "nCex1XJPFYj",
-					"row": 17,
+					"row": 5,
 					"column": 5
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 16,
+					"row": 4,
 					"column": 5
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "u3U9eIOsEvv",
-					"row": 18,
+					"row": 6,
 					"column": 5
 				},
 				
@@ -2417,63 +2199,63 @@
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "z9I5hGSrWej",
-					"row": 11,
+					"row": 17,
 					"column": 3
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "qFEUUI51eil",
-					"row": 10,
+					"row": 16,
 					"column": 3
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "b59G70maDeN",
-					"row": 12,
+					"row": 18,
 					"column": 3
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "z9I5hGSrWej",
-					"row": 11,
+					"row": 17,
 					"column": 4
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "qFEUUI51eil",
-					"row": 10,
+					"row": 16,
 					"column": 4
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "b59G70maDeN",
-					"row": 12,
+					"row": 18,
 					"column": 4
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "z9I5hGSrWej",
-					"row": 11,
+					"row": 17,
 					"column": 5
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "qFEUUI51eil",
-					"row": 10,
+					"row": 16,
 					"column": 5
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "b59G70maDeN",
-					"row": 12,
+					"row": 18,
 					"column": 5
 				},	
 				
@@ -2525,7 +2307,7 @@
 					"_comment": "Assessed for TB this month < 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "RbaLxS0Wc0v",
-					"row": 20,
+					"row": 21,
 					"column": 5
 				},
 				{
@@ -2553,63 +2335,63 @@
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 5,
+					"row": 8,
 					"column": 3
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "eWA0r7teWoX",
-					"row": 4,
+					"row": 7,
 					"column": 3
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "S65XqzNvhKC",
-					"row": 6,
+					"row": 9,
 					"column": 3
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 5,
+					"row": 8,
 					"column": 4
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "eWA0r7teWoX",
-					"row": 4,
+					"row": 7,
 					"column": 4
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "S65XqzNvhKC",
-					"row": 6,
+					"row": 9,
 					"column": 4
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 5,
+					"row": 8,
 					"column": 5
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "eWA0r7teWoX",
-					"row": 4,
+					"row": 7,
 					"column": 5
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "S65XqzNvhKC",
-					"row": 6,
+					"row": 9,
 					"column": 5
 				},
 				
@@ -2620,63 +2402,63 @@
 					"_comment": "PLHIV screened for FP need< 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "QLN1lKYCwHJ",
-					"row": 8,
+					"row": 11,
 					"column": 3
 				},
 				{
 					"_comment": "PLHIV screened for FP need5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "ZWi6JUddoHH",
-					"row": 7,
+					"row": 10,
 					"column": 3
 				},
 				{
 					"_comment": "PLHIV screened for FP need≥ 15 Years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "dFa6uTfAwWC",
-					"row": 9,
+					"row": 12,
 					"column": 3
 				},
 				{
 					"_comment": "PLHIV screened for FP need< 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "QLN1lKYCwHJ",
-					"row": 8,
+					"row": 11,
 					"column": 4
 				},
 				{
 					"_comment": "PLHIV screened for FP need5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "ZWi6JUddoHH",
-					"row": 7,
+					"row": 10,
 					"column": 4
 				},
 				{
 					"_comment": "PLHIV screened for FP need≥ 15 Years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "dFa6uTfAwWC",
-					"row": 9,
+					"row": 12,
 					"column": 4
 				},
 				{
 					"_comment": "PLHIV screened for FP need< 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "QLN1lKYCwHJ",
-					"row": 8,
+					"row": 11,
 					"column": 5
 				},
 				{
 					"_comment": "PLHIV screened for FP need5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "ZWi6JUddoHH",
-					"row": 7,
+					"row": 10,
 					"column": 5
 				},
 				{
 					"_comment": "PLHIV screened for FP need≥ 15 Years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "dFa6uTfAwWC",
-					"row": 9,
+					"row": 12,
 					"column": 5
 				},
 				
