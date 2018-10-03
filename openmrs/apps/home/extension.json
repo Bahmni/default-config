@@ -109,17 +109,7 @@
     "icon": "fa-hospital-o",
     "order": 9,
     "requiredPrivilege": "app:ot"
-  },
-  "appointments": {
-    "id": "bahmni.appointments",
-    "extensionPointId": "org.bahmni.home.dashboard",
-    "type": "link",
-    "translationKey": "MODULE_LABEL_APOOINTMENTS_KEY",
-    "url": "../../openmrs/appointmentschedulingui/home.page",
-    "icon": "fa fa-calendar",
-    "order": 11,
-    "requiredPrivilege": "App: appointmentschedulingui.home"
-  },
+  }, 
   "implementerInterface": {
     "id": "bahmni.implementer.interface",
     "extensionPointId": "org.bahmni.home.dashboard",
