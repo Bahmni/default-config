@@ -1,5 +1,5 @@
 SELECT 
-    COUNT(DISTINCT o1.person_id) AS 'Total Patient (2-59) months'
+    COUNT(o1.person_id) AS 'Total Patient (2-59) months'
 FROM
     obs o1
         INNER JOIN

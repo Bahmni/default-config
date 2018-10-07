@@ -1039,7 +1039,7 @@
 		"type": "concatenated",
 		"config": {
 			"reports": [{
-					"name": "Hospital Services - Outpatient Services",
+					"name": "Hospital Services - Total Client Served",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/outpatientServices.sql"
@@ -1103,7 +1103,15 @@
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
-			"reports": [{
+			"reports": [
+				{
+					"name": "Summary of Indoor Services Inpatient Outcome",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_outcome.sql"
+					}
+				},
+				{
 					"name": "Summary of Indoor Services Gestational weeks(Neonate Form)",
 					"type": "MRSGeneric",
 					"config": {
@@ -1118,13 +1126,6 @@
 					}
 				},
 
-				{
-					"name": "Summary of Indoor Services Inpatient Outcome",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_outcome.sql"
-					}
-				},
 				{
 					"name": "Summary of Indoor Services Inpatient Outcome Referred Out",
 					"type": "MRSGeneric",

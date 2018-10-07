@@ -1,9 +1,9 @@
 SELECT
     first_question.id,
     first_question.test_name AS dhisname,
-    first_concept.department AS department,
-    first_concept.test AS ehrname,
-    first_concept.testid as ehr_id,
+    testsec.name AS department,
+    test.name AS ehrname,
+    test.id as ehr_id,
 	COUNT(first_concept.rid),
             
     CASE
@@ -35,11 +35,12 @@ SELECT
 FROM
     (SELECT * FROM clinlims.dhis2_test) first_question
         LEFT JOIN clinlims.dhis2_lab_test second_question ON second_question.dhis_test_id = first_question.id
+		    LEFT JOIN clinlims.test test ON second_question.ehr_test_id= test.id
+
+		LEFT JOIN clinlims.test_section testsec ON testsec.id = test.test_section_id
         LEFT JOIN
     (SELECT DISTINCT
-        t.name AS test,
-            ts.name AS department,
-            t.id AS testid,
+          t.id AS testid,
             count(r.id) AS rid,
 	    (CASE WHEN r.value != '' AND r.abnormal = TRUE THEN r.id ELSE NULL END) AS tid,
 	(CASE WHEN r.value != '' AND r.abnormal = FALSE THEN r.id ELSE NULL END) AS fid
@@ -52,6 +53,6 @@ FROM
     inner  JOIN clinlims.result r ON a.id = r.analysis_id
         AND CAST(r.lastupdated AS DATE) BETWEEN '#startDate#' AND '#endDate#'
         AND r.value != ''
-    GROUP BY testid , test , tid , fid , department) first_concept ON first_concept.testid = second_question.ehr_test_id
-GROUP BY first_question.id ,first_question.test_name , first_concept.department , first_concept.test , first_concept.testid , first_question.test_name,second_question.ehr_test_id
-ORDER BY first_question.id ,first_question.test_name , first_concept.department , first_concept.test , first_concept.testid , first_question.test_name
+    GROUP BY testid,tid , fid ) first_concept ON first_concept.testid = second_question.ehr_test_id
+GROUP BY first_question.id ,first_question.test_name , testsec.name , test.name , test.id , first_concept.testid, first_question.test_name,second_question.ehr_test_id
+ORDER BY first_question.id ,first_question.test_name , testsec.name , test.name , test.id ,  first_concept.testid,first_question.test_name

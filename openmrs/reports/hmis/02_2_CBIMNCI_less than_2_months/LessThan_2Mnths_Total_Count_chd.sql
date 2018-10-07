@@ -8,7 +8,7 @@ SELECT
         ELSE 0
     END),0) AS 'Total children between 29-59 days'
 FROM
-    (SELECT DISTINCT
+    (SELECT 
         p.person_id,
             TIMESTAMPDIFF(DAY, p.birthdate, v.date_started) AS age_days
     FROM
@@ -23,5 +23,4 @@ FROM
     INNER JOIN visit v ON v.visit_id = e.visit_id
         
     WHERE
-        -- DATE(e.encounter_datetime) BETWEEN DATE('2017-03-01') AND DATE('2017-03-01')) a;
          DATE(o.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#') ) a ; 
