@@ -19,7 +19,7 @@ FROM
         question_concept_name.name IN ('Childhood Illness (2-59)-Malaria Free Zone-Measles' , 'Childhood Illness (2-59)-Malaria Risk Zone-Falciparum Malaria', 'Childhood Illness (2-59)-Malaria Risk Zone-Non Falciparum Malaria', 'Childhood Illness (2-59)-Malaria Risk Zone-Complicated Malaria', 'Childhood Illness, Fever present', 'CBIMNCI-Anaemia', 'Childhood Illness-Nutrition status-Other diagnosis')
     ORDER BY answer_name DESC) first_question
         LEFT OUTER JOIN
-    (SELECT DISTINCT
+    (SELECT 
         o1.person_id, cn1.concept_id AS question,
         (select name from concept_name where concept_id = o1.value_coded AND
 			o1.voided IS FALSE and concept_name_type = 'FULLY_SPECIFIED' and voided = '0') as Diag
