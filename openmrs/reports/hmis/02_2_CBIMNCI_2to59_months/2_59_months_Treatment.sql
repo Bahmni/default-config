@@ -75,58 +75,78 @@ WHERE
         
  union all 
         
-select person_id,drug_group
-from 
-(SELECT DISTINCT
-    (o1.person_id),
-    CASE
-        WHEN
-            (GROUP_CONCAT(DISTINCT (SELECT 
-                        name
-                    FROM
-                        drug
-                    WHERE
-                        drug_id = dord.drug_inventory_id)
-                SEPARATOR '||')) LIKE '%zinc%'
-                AND (GROUP_CONCAT(DISTINCT (SELECT 
-                        name
-                    FROM
-                        drug
-                    WHERE
-                        drug_id = dord.drug_inventory_id)
-                SEPARATOR '||')) LIKE '%oral rehydration solution%'
-        THEN
-            'ORS and Zinc'
-    END AS drug_group
+SELECT 
+    zin_ors_childs.person_id, zin_ors_childs.drug_group
 FROM
-    obs o1
-        INNER JOIN
-   concept_name cn1 ON o1.concept_id = cn1.concept_id
+    (SELECT 
+        person_id, drug_group
+    FROM
+        (SELECT DISTINCT
+        (o1.person_id),
+            CASE
+                WHEN
+                    (GROUP_CONCAT(DISTINCT (SELECT 
+                            name
+                        FROM
+                            drug
+                        WHERE
+                            drug_id = dord.drug_inventory_id)
+                        SEPARATOR '||')) LIKE '%zinc%'
+                        AND (GROUP_CONCAT(DISTINCT (SELECT 
+                            name
+                        FROM
+                            drug
+                        WHERE
+                            drug_id = dord.drug_inventory_id)
+                        SEPARATOR '||')) LIKE '%oral rehydration solution%'
+                THEN
+                    'ORS and Zinc'
+            END AS drug_group
+    FROM
+        obs o1
+    INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
         AND cn1.name = 'CBIMNCI (2 to 59 months child)'
         AND o1.voided = 0
         AND cn1.voided = 0
-        INNER JOIN
-    encounter e ON o1.encounter_id = e.encounter_id
-        INNER JOIN
-        person p1 ON o1.person_id = p1.person_id
-        INNER JOIN
-    visit v ON v.visit_id = e.visit_id
-        LEFT JOIN
-    orders ord ON ord.patient_id = o1.person_id
+    INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
+    INNER JOIN person p1 ON o1.person_id = p1.person_id
+    INNER JOIN visit v ON v.visit_id = e.visit_id
+    LEFT JOIN orders ord ON ord.patient_id = o1.person_id
         AND ord.order_type_id = 2
         AND ord.voided = 0
-        INNER JOIN
-    drug_order dord ON dord.order_id = ord.order_id
-WHERE
-    TIMESTAMPDIFF(MONTH,
-        p1.birthdate,
-        v.date_started) > 1
-        AND TIMESTAMPDIFF(MONTH,
-        p1.birthdate,
-        v.date_started) < 60
-        AND DATE(e.encounter_datetime) BETWEEN  DATE('#startDate#') AND DATE('#endDate#')
-        GROUP BY person_id) a  where drug_group is not null
+    INNER JOIN drug_order dord ON dord.order_id = ord.order_id
+    WHERE
+        TIMESTAMPDIFF(MONTH, p1.birthdate, v.date_started) > 1
+            AND TIMESTAMPDIFF(MONTH, p1.birthdate, v.date_started) < 60
+            AND DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
+    GROUP BY person_id) a
+    WHERE
+        drug_group IS NOT NULL) zin_ors_childs
+        JOIN
+    (SELECT DISTINCT
+        o1.person_id,
+            cn2.concept_id AS answer,
+            cn1.concept_id AS question
+    FROM
+        obs o1
+    INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
+        AND cn1.concept_name_type = 'FULLY_SPECIFIED'
+        AND cn1.name IN ('Childhood Illness, Dehydration Status')
+        AND o1.voided = 0
+        AND cn1.voided = 0
+    INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
+        AND cn2.concept_name_type = 'FULLY_SPECIFIED'
+        AND cn2.name IN ('No Dehydration' , 'Severe Dehydration', 'Some Dehydration')
+        AND cn2.voided = 0
+    INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
+    INNER JOIN person p1 ON o1.person_id = p1.person_id
+    INNER JOIN visit v ON v.visit_id = e.visit_id
+    WHERE
+        TIMESTAMPDIFF(MONTH, p1.birthdate, v.date_started) > 1
+            AND TIMESTAMPDIFF(MONTH, p1.birthdate, v.date_started) < 60
+            AND DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
+            AND o1.value_coded IS NOT NULL) dehydration_childs ON zin_ors_childs.person_id = dehydration_childs.person_id
 
 union all 
 
