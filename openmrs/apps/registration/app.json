@@ -103,9 +103,9 @@
             },
             "patientSearch": {
                 "address": {
-                     "label": "Tehsil",
-                    "placeholder": "Enter Tehsil",
-                    "field": "address3"
+                    "label": "Rural Ward",
+                    "placeholder": "Enter ward",
+                    "field": "address2"
                 },
                 "customAttributes": { }
             }
