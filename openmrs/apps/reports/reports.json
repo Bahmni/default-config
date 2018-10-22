@@ -1053,10 +1053,10 @@
 					}
 				},
 				{
-					"name": "Hospital Services - Total Patients Admitted",
+					"name": "Hospital Services - Total Patients Admitted and Total Beds",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/totalAdmittedPatients.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/totalAdmittedPatients_and_totalbeds.sql"
 					}
 				},
 				{
