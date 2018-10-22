@@ -161,13 +161,25 @@
       ]
     },
 	
-	"Hospital Services - Total Patients Admitted":{
+	"Hospital Services - Total Patients Admitted and Total Beds":{
       "dataValues": [
         {
           "categoryOptionCombo": "kdsirVNKdhm", 
           "dataElement": "e7awSzM03vh",
           "row": 1,
-          "column": 1
+          "column": 2
+        },
+		 {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "hE0Kl0AKRKj",
+          "row": 2,
+          "column": 2
+        },
+		 {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "XSzX9nccK7m",
+          "row": 2,
+          "column": 2
         }
       ]
     },
