@@ -57,9 +57,9 @@ SELECT
         JOIN nonVoidedQuestionAnswerObs oAdtType ON e.encounter_id = oAdtType.encounter_id
         WHERE
             ! p.voided AND ! v.voided AND ! e.voided
-                AND DATE(oAdtType.obs_datetime) BETWEEN DATE_SUB(DATE('#startDate#'), INTERVAL 1 MONTH) AND DATE('#endDate#')
+                AND DATE(oAdtType.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
                 AND TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) < 60
-                AND oAdtType.question_full_name IN ('Visit Type' , 'Status At Discharge')
+                AND oAdtType.question_full_name IN ('Admission Type' , 'Status At Discharge')
                 ) IMAM
         GROUP BY `Age Group` , `Sex`
         ) AS withoutDefaulters
