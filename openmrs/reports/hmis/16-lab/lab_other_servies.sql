@@ -31,7 +31,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('Protein (CSF)','Protein (Pericardial Fluid)','Protein (Pleural Fluid)','Total Protein')
@@ -53,7 +53,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('ADA (Pleural_Fluid)','ADA (Peritoneal_Fluid)','ADA (Pericardial_Fluid)','ADA (Serum)','ADA (CSF)')
@@ -75,7 +75,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('Gram Stain (Blood)','Gram Stain (CSF)','Gram Stain (Pericardial Fluid)','Gram Stain (Pleural Fluid)','Gram Stain (Pus)',
@@ -98,7 +98,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('Culture (Pericardial Fluid)','Culture (Peritoneal Fluid)','Culture (Pleural Fluid)','Culture (Synovial Fluid)')
@@ -120,7 +120,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('AFB Stain (Blood)','AFB Stain (CSF)','AFB Stain (Pericardial Fluid)','AFB Stain (Pleural Fluid)','AFB Stain (Pus)',
@@ -143,7 +143,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('VDRL(TPHA) (Blood)','VDRL(TPHA) (Serum)')
@@ -165,7 +165,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('Blood Sugar Fasting','Glucose(F)')
@@ -187,7 +187,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('Blood Sugar P.P','Glucose(P.P)')
@@ -209,7 +209,7 @@ FROM
 FROM clinlims.test_section ts
   INNER JOIN clinlims.test t ON ts.id = t.test_section_id AND t.is_active = 'Y'
   LEFT OUTER JOIN clinlims.analysis a ON t.id = a.test_id
-  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '2017-01-01' and '2018-01-10' and r.value != ''
+  LEFT OUTER JOIN clinlims.result r ON a.id = r.analysis_id and cast(r.lastupdated as date) BETWEEN '#startDate#' AND '#endDate#' and r.value != ''
   LEFT OUTER JOIN clinlims.result r1 ON r1.result_type = 'D' and r1.value != '' and r.id=r1.id and r1.abnormal=true
   LEFT OUTER JOIN clinlims.result r2 on r2.result_type = 'D' and r2.value != '' and r.id=r2.id and r2.abnormal=false
   WHERE t.name IN ('Blood Sugar Random','Glucose(R)')
