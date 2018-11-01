@@ -75,10 +75,10 @@
             "Safe Abortion"
         ],
         "lessThanTwoMonths":[
-            "CBIMNCI (<2 months child)"
+            "CBIMNCI (<2 months child)",
+	    "Newborn admission Note"
         ],
         "infant": [
-	    "Newborn admission Note"
         ],
         "toddler": [
         ],
