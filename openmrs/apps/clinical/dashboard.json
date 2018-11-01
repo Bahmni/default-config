@@ -390,6 +390,21 @@
                     "showOnly": [],
                     "showDetailsButton": true
                 }
+            },
+			"anesthesia": {
+                "title": "Anesthesia Note",
+                "templateName": "Pre Anesthesia Check up",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
             }
         }
     },
