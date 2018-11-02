@@ -23,19 +23,19 @@
 			]
 		}
 	},
-	
+
 	"02-1 Immunization Dataset": {
 		"name": "02-1 Immunization Dataset",
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
 			"reports": [{
-					"name": "Immunized children count",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02-1_Immunization_Dataset/Immunized_children_count.sql"
-					}
-				}]
+				"name": "Immunized children count",
+				"type": "MRSGeneric",
+				"config": {
+					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02-1_Immunization_Dataset/Immunized_children_count.sql"
+				}
+			}]
 		}
 	},
 
@@ -161,8 +161,7 @@
 		"type": "concatenated",
 		"DHISProgram": true,
 		"config": {
-			"reports": [
-			{
+			"reports": [{
 					"name": "Nutrition status of registered children (new and old)",
 					"type": "MRSGeneric",
 					"config": {
@@ -183,7 +182,7 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1_Nutrition_Dataset_Newly_Registered/Under_5_yrs_Children_receiving.sql"
 					}
 				}
-				
+
 			]
 		}
 	},
@@ -194,7 +193,7 @@
 		"DHISProgram": true,
 		"config": {
 			"reports": [
-			
+
 				{
 					"name": "Integrated Management of Acute Malnutrition (IMAM) Program",
 					"type": "MRSGeneric",
@@ -774,7 +773,13 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_HIV_Early_Infant_Diagnosis.sql"
 					}
 				},
-
+				{
+					"name": "Total Clients Assessed STI",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_Total_Clients_Assessed_STI.sql"
+					}
+				},
 
 				{
 					"name": "STI Cases-by Syndromes",
@@ -804,7 +809,7 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Treated.sql"
 					}
 				},
-				
+
 				{
 					"name": "Asymptomatic Partners Treated",
 					"type": "MRSGeneric",
@@ -1103,8 +1108,7 @@
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
-			"reports": [
-				{
+			"reports": [{
 					"name": "Summary of Indoor Services Inpatient Outcome",
 					"type": "MRSGeneric",
 					"config": {
@@ -1149,8 +1153,8 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_IPD.sql"
 					}
 				},
-				
-				
+
+
 				{
 					"name": "FreeHealthServices ReferredOut",
 					"type": "MRSGeneric",
@@ -1189,7 +1193,7 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_maternal_all.sql"
 					}
 				},
-				
+
 				{
 					"name": "Summary of Indoor Services Death Post Operative",
 					"type": "MRSGeneric",
@@ -1197,7 +1201,7 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_post_operative.sql"
 					}
 				},
-				
+
 				{
 					"name": "Summary of Indoor Services Death Early and Late Neonatal",
 					"type": "MRSGeneric",
@@ -1221,7 +1225,7 @@
 		"name": "18-01 Inpatient Morbidity Dataset",
 		"DHISProgram": true,
 		"type": "concatenated",
-		"attribute":true,
+		"attribute": true,
 		"config": {
 			"reports": [{
 				"name": "31-35 Inpatient Morbidity",
