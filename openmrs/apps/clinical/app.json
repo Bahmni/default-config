@@ -1811,6 +1811,9 @@
 						},
 						"Mental health-Consent for household visit": {
 								"required": true
+						},
+						"NBA-Sepsis risk factor": {
+								"multiSelect": true
 						}
 		}
 	}
