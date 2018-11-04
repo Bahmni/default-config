@@ -1710,6 +1710,78 @@
 
 			]
 		},
+		"STI Cases-by Sex Screened": {
+			"dataValues": [
+				{
+					"_comment": "Female",
+					"categoryOptionCombo": "YwjOaHAvG6m",
+					"dataElement": "Sy1XmU4XMVa",
+					"row": 1,
+					"column": 2
+				},
+					{
+					"_comment": "Male",
+					"categoryOptionCombo": "zbfeiEeiC34",
+					"dataElement": "Sy1XmU4XMVa",
+					"row": 2,
+					"column": 2
+				},
+					{
+					"_comment": "TG",
+					"categoryOptionCombo": "DVzC42inPjR",
+					"dataElement": "Sy1XmU4XMVa",
+					"row": 3,
+					"column": 2
+				}
+			]
+		},
+			
+		"STI Cases-by Sex Treated": {
+			"dataValues": [
+				{
+					"_comment": "Diagnosed-F",
+					"categoryOptionCombo": "YwjOaHAvG6m",
+					"dataElement": "JKHd2Bcxixf",
+					"row": 1,
+					"column": 2
+				},
+					{
+					"_comment": "Diagnosed-M",
+					"categoryOptionCombo": "zbfeiEeiC34",
+					"dataElement": "JKHd2Bcxixf",
+					"row": 2,
+					"column": 2
+				},
+					{
+					"_comment": "Diagnosed-TG",
+					"categoryOptionCombo": "DVzC42inPjR",
+					"dataElement": "JKHd2Bcxixf",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"_comment": "Treated-F",
+					"categoryOptionCombo": "YwjOaHAvG6m",
+					"dataElement": "rIHzObrYaia",
+					"row": 1,
+					"column": 2
+				},
+					{
+					"_comment": "Treated-M",
+					"categoryOptionCombo": "zbfeiEeiC34",
+					"dataElement": "rIHzObrYaia",
+					"row": 2,
+					"column": 2
+				},
+					{
+					"_comment": "Treated-TG",
+					"categoryOptionCombo": "DVzC42inPjR",
+					"dataElement": "rIHzObrYaia",
+					"row": 3,
+					"column": 2
+				}
+			]
+		},
 		"HIV-AIDS Program Opportunistic Infections diagnosed": {
 			"dataValues": [{
 					"_comment": "Bacterial Pneumonia-M",
