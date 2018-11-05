@@ -404,6 +404,21 @@
                 "expandedViewConfig": {
                     "showOnly": [],
                     "showDetailsButton": true
+				}
+            },
+			"newborn": {
+                "title": "Newborn Admission Note",
+                "templateName": "Newborn admission (NBA) note",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
                 }
             }
         }
