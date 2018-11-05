@@ -864,7 +864,15 @@
 				"config": {
 					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/14-Gender-Equity-and-Social-Inclusion/Gender_ Equity_and_Social_Inclusion.sql"
 				}
-			}]
+			},
+			{
+				"name": "Gender Equity and Social Inclusion HIV AIDS",
+				"type": "MRSGeneric",
+				"config": {
+					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/14-Gender-Equity-and-Social-Inclusion/Gender_ Equity_and_Social_Inclusion_HIV.sql"
+				}
+			}
+			]
 		}
 	},
 
