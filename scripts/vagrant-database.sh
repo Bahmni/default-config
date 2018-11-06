@@ -2,7 +2,7 @@
 PATH_OF_CURRENT_SCRIPT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $PATH_OF_CURRENT_SCRIPT/vagrant/vagrant_functions.sh
 
-IMPLEMENTATION_NAME=possible
+IMPLEMENTATION_NAME=default
 APP_NAME=${1:-openmrs}
 MIGRATIONS_DIR="/packages/build/${IMPLEMENTATION_NAME}_config/${APP_NAME}/migrations"
 SRC_MIGRATIONS_DIR="/bahmni/${IMPLEMENTATION_NAME}-config/${APP_NAME}/migrations"

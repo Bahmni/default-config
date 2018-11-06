@@ -10,7 +10,7 @@
         }
     },
     "discharge_summary": {
-        "title": "Discharge Summary",
+        "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "Discharge Summary",
@@ -56,7 +56,7 @@
                         "Discharge Note, Medications on Discharged",
                         "Discharge Note, Followup Instructions"
                     ],
-                    "title":"Discharge Notes"
+                    "title": "Discharge Notes"
                 },
                 "displayOrder": 2
             },
@@ -73,46 +73,48 @@
                 "type": "admissionDetails",
                 "config": {
                     "showDetailsButton": true,
-                    "title": "Admission Details"
+                    "translationKey": "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY"
                 },
                 "displayOrder": 4
             },
             "investigationresult": {
                 "type": "investigationResult",
                 "config": {
-                    "title": "Lab Investigations",
+                    "translationKey":"LAB_INVESTIGATION",
                     "showChart": true,
                     "showTable": true,
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
-                    "numberOfVisits": 10
+                    "numberOfVisits": 10,
+                    "initialAccessionCount": 1,
+                    "latestAccessionCount": 1
                 },
                 "displayOrder": 5
             },
             "treatment": {
                 "type": "treatment",
                 "config": {
-                    "title": "Treatments",
-                    "translationKey": "Treatments",
+                    "translationKey": "VISIT_TITLE_TREATMENTS_KEY",
                     "showFlowSheet": true,
                     "showListView": true,
                     "showOtherActive": false,
                     "showDetailsButton": true,
                     "showRoute": true,
-                    "showDrugForm": true
+                    "showDrugForm": true,
+                    "showProvider":false
                 },
                 "displayOrder": 6
             }
         }
     },
-    "opd_summary": {
+    "opdSummary": {
         "title": "OPD Summary",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "OPD Summary",
             "logo": "../images/nhn-logo.png",
-		"showNameAndImage": true
+            "showNameAndImage": true
         },
         "sections": {
             "patientinformation": {
@@ -130,7 +132,7 @@
             "diagnosis": {
                 "type": "diagnosis",
                 "config": {
-                    "title": "Diagnoses",
+                    "translationKey" : "DISCHARGE_SUMMARY_DIAGNOSIS_KEY",
                     "showCertainty": true,
                     "showOrder": true,
                     "showDetailsButton": true
@@ -169,7 +171,7 @@
                 },
                 "displayOrder": 3
             },
-            "investigationresult": {
+            "investigationResult": {
                 "type": "investigationResult",
                 "config": {
                     "title": "Lab Investigations",
@@ -197,14 +199,14 @@
                 "displayOrder": 5
             }
         }
-},
-    "test_summary": {
+    },
+    "testSummary": {
         "title": "OPD One Pager",
         "printing": {
             "title": "Bayalpata Hospital",
             "header": "OPD One Pager",
             "logo": "../images/nhn-logo.png",
-                "showNameAndImage": true
+            "showNameAndImage": true
         },
         "sections": {
             "patientinformation": {
@@ -281,9 +283,9 @@
                 },
                 "displayOrder": 5
             }
-        }   
+        }
 
- },
+    },
     "birthCertificate": {
         "title": "Birth Certificate",
         "printing": {

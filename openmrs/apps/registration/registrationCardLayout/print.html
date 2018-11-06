@@ -7,28 +7,28 @@
                 <tr>
 
                     <td>
-                        <h3 class="print-table-header">सूचना</h3>
+                        <h3 class="print-table-header">Notice</h3>
                         <ul class="print-table-left-body">
                             <li>
-                                स्वास्थ्य केन्द्र में पुनः आने के समय यह कार्ड लाना अति आवश्यक है ।
+                                {{ "REGISTRATION_BRING_CARD_TEXT_KEY" | translate }}
                             </li>
                             <li>
-                                दवा डाक्टर के निर्देशानुसार ही लें ।
+                                {{ "REGISTRATION_TAKE_MEDICINES_TEXT_KEY" | translate}}
                             </li>
                             <li>
-                                केन्द्र में पंजीयन का समय - प्रातः 8:30 से  दोपहर 12:00 बजे तक ।
+                                {{ "REGISTRATION_TIMINGS_TEXT_KEY" | translate }}
                             </li>
                             <li>
-                                ओ.पी.डी. के दिन - सोम, बुध, शुक्र ।
+                               {{ "REGISTRATION_OPD_DAYS_TEXT_KEY" | translate }}
                             </li>
                             <li>
-                                साप्ताहिक अवकाश - रविवार ।
+                                {{ "REGISTRATION_SUNDAYS_HOLIDAY_TEXT_KEY" | translate }}
                             </li>
                         </ul>
                         <div class="caution">
-                            <h3 class="print-table-header">सावधान</h3>
+                            <h3 class="print-table-header">Caution</h3>
                             <p>
-                                बीडी, तम्बाकू, गुटका से केंसर, ह्रदय रोग और दमा हो सकते हैं ।
+                                {{ "REGISTRATION_SMOKING_INJURIOUS_TEXT_KEY" | translate }}
                             </p>
                         </div>
                     </td>
@@ -44,10 +44,10 @@
                         </p>
                     </td>
                     <td class="print-table-right-header">
-                            <h3>
-                                जन&nbsp;स्वास्थ्य&nbsp;सहयोग  
-                            </h3>
-                            <h3 class="print-center">(पंजीकृत)</h3>
+                        <h3>
+                        {{ "REGISTRATION_INSTITUTE_NAME_TEXT_KEY" | translate }}
+                        </h3>
+                        <h3 class="print-center">{{ "REGISTRATION_INSTITUTE_REGISTERED_TEXT_KEY" |  translate }}</h3>
                     </td>
                     <td class="registrationCard-photo">
                         <img ng-src="{{patient.image}}" style="width: 20mm; height: 20mm; "
@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <td colspan="3" class="print-center registrationCard-location">
-                        गनियारी, जिला - बिलासपुर
+                    {{ "REGISTRATION_INSTITUTE_ADDRESS" | translate }}
                     </td>
                 </tr>
             </table>
@@ -64,21 +64,21 @@
                 <tbody>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">दिनाँक</span>
+                        <span class="hindi-text">Dated</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.registrationDate | date:'dd/MM/yyyy'}} </td>
+                    <td>{{patient.registrationDate | bahmniDate}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">रजिस्ट्रेशन</span>
+                        <span class="hindi-text">Registration</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
- 		    <td>{{patient.primaryIdentifier.identifier}} </td>
+                    <td>{{patient.primaryIdentifier.identifier}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">नाम</span>
+                        <span class="hindi-text">Name</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>
@@ -87,35 +87,35 @@
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">उम्र</span>
+                        <span class="hindi-text">Age</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.age | age}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">लिंग</span>
+                        <span class="hindi-text">Gender</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.gender}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">पिता/पति</span>
+                        <span class="hindi-text">Address</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.primaryRelative}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">गाँव</span>
+                        <span class="hindi-text">Village</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.address.cityVillage}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">तहसील</span>
+                        <span class="hindi-text">Tehsil</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.address.address3}} </td>

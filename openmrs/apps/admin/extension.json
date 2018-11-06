@@ -1,5 +1,5 @@
 {
-    "csv_upload": {
+    "csvUpload": {
         "id": "bahmni.admin.csv",
         "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
@@ -10,9 +10,9 @@
         "url": "#/csv",
         "icon": "fa-upload",
         "order": 1,
-        "requiredPrivilege": "app:registration"
+        "requiredPrivilege": "app:admin"
     },
-    "csv_export": {
+    "csvExport": {
         "id": "bahmni.admin.csvExport",
         "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
@@ -23,29 +23,27 @@
         "url": "#/csvExport",
         "icon": "fa-download",
         "order": 1,
-        "requiredPrivilege": "app:registration"
+        "requiredPrivilege": "app:admin"
     },
-    "orderSet":{
-        "id": "bahmni.admin.orderSet",
-        "extensionPointId": "org.bahmni.admin.dashboard",
-        "type": "link",
-        "extensionParams": {
-        },
-        "label": "Order Set",
-        "url": "#/ordersetdashboard",
-        "icon": "fa-upload",
-        "order": 1,
-        "requiredPrivilege": "app:registration"
-    },
-    "auditLog":{
+    "auditLog": {
         "id": "bahmni.admin.auditLog",
         "extensionPointId": "org.bahmni.admin.dashboard",
         "type": "link",
-        "extensionParams": {
-        },
+        "extensionParams": {},
         "label": "Audit Log",
         "url": "#/auditLog",
         "icon": "fa-eye",
+        "order": 1,
+        "requiredPrivilege": "app:admin"
+    },
+    "orderSet": {
+        "id": "bahmni.admin.orderSet",
+        "extensionPointId": "org.bahmni.admin.dashboard",
+        "type": "link",
+        "extensionParams": {},
+        "label": "Order Set",
+        "url": "#/ordersetdashboard",
+        "icon": "fa-upload",
         "order": 1,
         "requiredPrivilege": "app:admin"
     }

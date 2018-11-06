@@ -6,3 +6,5 @@ target/
 logs/*
 playbooks/**/all.retry
 migration-run-log.txt
+.tmp
+target

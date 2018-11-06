@@ -1,14 +1,12 @@
 {
     "id": "bahmni.adt.admission",
-    "extensionPoints": [
-        {
-            "id": "org.bahmni.patient.search",
-            "description": "Bahmni patient search, lookup Page"
-        }
-    ],
+    "extensionPoints": [{
+        "id": "org.bahmni.patient.search",
+        "description": "Bahmni patient search, lookup Page"
+    }],
     "contextModel": [],
-    "config": {	
-	"enableNepaliCalendar": true,
-	"displayNepaliDates": true
+    "config": {
+        "enableNepaliCalendar": true,
+        "displayNepaliDates": true
     }
 }

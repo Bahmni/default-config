@@ -1,14 +1,12 @@
 {
     "id": "bahmni.orders",
-    "extensionPoints": [
-        {
-            "id": "org.bahmni.orders.search",
-            "description": "Orders Dashboard"
-        }
-    ],
+    "extensionPoints": [{
+        "id": "org.bahmni.orders.search",
+        "description": "Orders Dashboard"
+    }],
     "config": {
-	"enableNepaliCalendar": true,
-	"displayNepaliDates": true,
+        "enableNepaliCalendar": true,
+        "displayNepaliDates": true,
         "maxConceptSetLevels": 3,
         "conceptSetUI": {
             "Grid1": {
