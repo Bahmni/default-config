@@ -26,6 +26,14 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static Double BMI_SEVERELY_OBESE = 40.0;
     static Double ZERO = 0.0;
     static Map<BahmniObservation, BahmniObservation> obsParentMap = new HashMap<BahmniObservation, BahmniObservation>();
+    static Map<String, Integer> depressionPHQ9ValueMap = new HashMap<String, Integer>();
+
+    static {
+        depressionPHQ9ValueMap.put("0, Not at all", 0);
+        depressionPHQ9ValueMap.put("1, Sometimes", 1);
+        depressionPHQ9ValueMap.put("2, More than half the days", 2);
+        depressionPHQ9ValueMap.put("3, Everyday", 3);
+    }
 
     public static enum BmiStatus {
         VERY_SEVERELY_UNDERWEIGHT("Very Severely Underweight"),
@@ -51,7 +59,30 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        calculateAndAdd(bahmniEncounterTransaction);
+        setBMI(bahmniEncounterTransaction);
+        setPCQTotal(bahmniEncounterTransaction);
+    }
+
+    static def setPCQTotal(BahmniEncounterTransaction bahmniEncounterTransaction) {
+        Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
+        def depressionObservation = find("Depression-PHQ9", observations, null);
+        Integer total = 0;
+        if (depressionObservation == null) {
+            return
+        }
+        for (BahmniObservation observation : depressionObservation.getGroupMembers()) {
+            if ((!"Depression-PHQ9 Total".equalsIgnoreCase(observation.getConcept().getName()))
+                    && (!"Depression-PHQ9 Effect".equalsIgnoreCase(observation.getConcept().getName()))
+                    && (((Map) observation.getValue()).get("name") != null)) {
+                Object observationFullName = ((Map) observation.getValue()).get("name");
+                if (observationFullName instanceof Map) {
+                    observationFullName = ((Map) observationFullName).get("name");
+                }
+                total += depressionPHQ9ValueMap.get(observationFullName);
+            }
+        }
+        def childDepresionTotalObs = find("Depression-PHQ9 Total", depressionObservation.getGroupMembers(), null);
+        childDepresionTotalObs.setValue(total);
     }
 
     static def calculateAndAdd(BahmniEncounterTransaction bahmniEncounterTransaction) {
