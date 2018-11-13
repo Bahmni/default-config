@@ -456,11 +456,317 @@
           "dataElement": "ucHb8wpAfiw",
           "row": 6,
           "column": 11
+        },
+		
+		
+		{
+		"_comment": "TB-Female-dalit",
+          "categoryOptionCombo": "Dj0rmsKZiLJ",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 1,
+          "column": 12
+        },
+		{
+		"_comment": "TB-Female-janjati",
+          "categoryOptionCombo": "XsYqOrbvA7e",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 2,
+          "column": 12
+        },
+		{
+		"_comment": "TB-Female-madhesi",
+          "categoryOptionCombo": "m7XVRi1qT1J",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 3,
+          "column": 12
+        },
+		{
+		"_comment": "TB-Female-muslim",
+          "categoryOptionCombo": "EJv9IPWeCTb",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 4,
+          "column": 12
+        },
+		{
+		"_comment": "TB-Female-brahmin/chhetri",
+          "categoryOptionCombo": "fYKzBP3njcE",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 5,
+          "column": 12
+        },
+		{
+		"_comment": "TB-Female-others",
+          "categoryOptionCombo": "GyhEtL13JfA",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 6,
+          "column": 12
+        },
+		{
+		"_comment": "TB-Male-dalit",
+          "categoryOptionCombo": "xS4ElXqiXoA",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 1,
+          "column": 13
+        },
+		{
+		"_comment": "TB-Male-janjati",
+          "categoryOptionCombo": "FxNqmZfHgEO",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 2,
+          "column": 13
+        },
+		{
+		"_comment": "TB-Male-madhesi",
+          "categoryOptionCombo": "vAdaNYgYRX3",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 3,
+          "column": 13
+        },
+		{
+		"_comment": "TB-Male-muslim",
+          "categoryOptionCombo": "gsOm9pEBion",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 4,
+          "column": 13
+        },
+		{
+		"_comment": "TB-Male-brahmin/chhetri",
+          "categoryOptionCombo": "zJQ0xbEoQJI",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 5,
+          "column": 13
+        },
+		{
+		"_comment": "TB-Male-others",
+          "categoryOptionCombo": "fKYuaCH0OuA",  
+          "dataElement": "FoD4v6iwBwo",
+          "row": 6,
+          "column": 13
+        },
+		
+		
+		{
+		"_comment": "Leprosy-Female-dalit",
+          "categoryOptionCombo": "Dj0rmsKZiLJ",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 1,
+          "column": 14
+        },
+		{
+		"_comment": "Leprosy-Female-janjati",
+          "categoryOptionCombo": "XsYqOrbvA7e",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 2,
+          "column": 14
+        },
+		{
+		"_comment": "Leprosy-Female-madhesi",
+          "categoryOptionCombo": "m7XVRi1qT1J",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 3,
+          "column": 14
+        },
+		{
+		"_comment": "Leprosy-Female-muslim",
+          "categoryOptionCombo": "EJv9IPWeCTb",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 4,
+          "column": 14
+        },
+		{
+		"_comment": "Leprosy-Female-brahmin/chhetri",
+          "categoryOptionCombo": "fYKzBP3njcE",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 5,
+          "column": 14
+        },
+		{
+		"_comment": "Leprosy-Female-others",
+          "categoryOptionCombo": "GyhEtL13JfA",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 6,
+          "column": 14
+        },
+		{
+		"_comment": "Leprosy-Male-dalit",
+          "categoryOptionCombo": "xS4ElXqiXoA",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 1,
+          "column": 15
+        },
+		{
+		"_comment": "Leprosy-Male-janjati",
+          "categoryOptionCombo": "FxNqmZfHgEO",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 2,
+          "column": 15
+        },
+		{
+		"_comment": "Leprosy-Male-madhesi",
+          "categoryOptionCombo": "vAdaNYgYRX3",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 3,
+          "column": 15
+        },
+		{
+		"_comment": "Leprosy-Male-muslim",
+          "categoryOptionCombo": "gsOm9pEBion",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 4,
+          "column": 15
+        },
+		{
+		"_comment": "Leprosy-Male-brahmin/chhetri",
+          "categoryOptionCombo": "zJQ0xbEoQJI",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 5,
+          "column": 15
+        },
+		{
+		"_comment": "Leprosy-Male-others",
+          "categoryOptionCombo": "fKYuaCH0OuA",  
+          "dataElement": "zvWNCbZkl2c",
+          "row": 6,
+          "column": 15
         }
 		
-		
        ] 
+		 },
+		 
 		
-  }
+
+
+		
+		 "Gender Equity and Social Inclusion HIV AIDS": {
+			"dataValues": [
+		{
+		"_comment": "NEW HIV AIDS-Female-dalit",
+          "categoryOptionCombo": "Dj0rmsKZiLJ",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 1,
+          "column": 3
+        },
+		{
+		"_comment": "NEW HIV AIDS-Female-janjati",
+          "categoryOptionCombo": "XsYqOrbvA7e",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 2,
+          "column": 3
+        },
+		{
+		"_comment": "NEW HIV AIDS-Female-madhesi",
+          "categoryOptionCombo": "m7XVRi1qT1J",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "NEW HIV AIDS-Female-muslim",
+          "categoryOptionCombo": "EJv9IPWeCTb",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 4,
+          "column": 3
+        },
+		{
+		"_comment": "New HIV AIDS-Female-brahmin/chhetri",
+          "categoryOptionCombo": "fYKzBP3njcE",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 5,
+          "column": 3
+        },
+		{
+		"_comment": "New HIV AIDS-Female-others",
+          "categoryOptionCombo": "GyhEtL13JfA",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 6,
+          "column": 3
+        },
+		{
+		"_comment": "New HIV AIDS-Male-dalit",
+          "categoryOptionCombo": "xS4ElXqiXoA",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 1,
+          "column": 2
+        },
+		{
+		"_comment": "New HIV AIDS-Male-janjati",
+          "categoryOptionCombo": "FxNqmZfHgEO",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 2,
+          "column": 2
+        },
+		{
+		"_comment": "New HIV AIDS-Male-madhesi",
+          "categoryOptionCombo": "vAdaNYgYRX3",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 3,
+          "column": 2
+        },
+		{
+		"_comment": "NEW HIV AIDS-Male-muslim",
+          "categoryOptionCombo": "gsOm9pEBion",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 4,
+          "column": 2
+        },
+		{
+		"_comment": "New HIV AIDS-Male-brahmin/chhetri",
+          "categoryOptionCombo": "zJQ0xbEoQJI",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 5,
+          "column": 2
+        },
+		{
+		"_comment": "New HIV AIDS-Male-others",
+          "categoryOptionCombo": "fKYuaCH0OuA",  
+          "dataElement": "L1zynH1cgD4",
+          "row": 6,
+          "column": 2
+        },
+		{
+		"_comment": "New HIV AIDS-TG-dalit",
+          "categoryOptionCombo": "L9U3tI7WNAn",  
+          "dataElement": "hxCOyRJmMM7",
+          "row": 1,
+          "column": 4
+        },
+		{
+		"_comment": "New HIV AIDS-TG-janjati",
+          "categoryOptionCombo": "zLIKmL6CLOz",  
+          "dataElement": "hxCOyRJmMM7",
+          "row": 2,
+          "column": 4
+        },
+		{
+		"_comment": "New HIV AIDS-TG-madhesi",
+          "categoryOptionCombo": "axo8zRiLkg8",  
+          "dataElement": "hxCOyRJmMM7",
+          "row": 3,
+          "column": 4
+        },
+		{
+		"_comment": "NEW HIV AIDS-TG-muslim",
+          "categoryOptionCombo": "aiXiO0KW5kz",  
+          "dataElement": "hxCOyRJmMM7",
+          "row": 4,
+          "column": 4
+        },
+		{
+		"_comment": "New HIV AIDS-TG-brahmin/chhetri",
+          "categoryOptionCombo": "IVNBUxSkGoO",  
+          "dataElement": "hxCOyRJmMM7",
+          "row": 5,
+          "column": 4
+        },
+		{
+		"_comment": "New HIV AIDS-TG-others",
+          "categoryOptionCombo": "H3AfizhoVk2",  
+          "dataElement": "hxCOyRJmMM7",
+          "row": 6,
+          "column": 4
+        }
+		
+			]
+		}
 }
 }

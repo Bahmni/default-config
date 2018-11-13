@@ -1200,9 +1200,6 @@
 			"Discharge Note-Major surgery this admission": {
 				"required": true
 			},
-			"Discharge Note-Post op surgery complications": {
-				"required": true
-			},
 			"Diabetes-Diabetes in control per last lab value": {
 				"required": true
 			},
@@ -1790,11 +1787,17 @@
 			"DRTB F/U, Treatment Category": {
 				"required": true
 			},
+			"Discharge Note-Post op surgery complications": {
+				"multiSelect": true
+			},
 			"IMAM, Visit Type": {
 				"required": true
 			},
 			"Mental health-Consent for household visit": {
 				"required": true
+			},
+			"NBA-Sepsis risk factor": {
+				"multiSelect": true
 			},
 			"defaults": {
 				"Number of living children": 1,

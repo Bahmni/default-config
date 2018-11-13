@@ -101,4 +101,4 @@ FROM
         AND first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
      
-GROUP BY first_answers.answer_name ;
+GROUP BY first_answers.answer_name Order By first_answers.answer_name;

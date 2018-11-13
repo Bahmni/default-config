@@ -773,7 +773,13 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_HIV_Early_Infant_Diagnosis.sql"
 					}
 				},
-
+				{
+					"name": "Total Clients Assessed STI",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_Total_Clients_Assessed_STI.sql"
+					}
+				},
 
 				{
 					"name": "STI Cases-by Syndromes",
@@ -858,7 +864,15 @@
 				"config": {
 					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/14-Gender-Equity-and-Social-Inclusion/Gender_ Equity_and_Social_Inclusion.sql"
 				}
-			}]
+			},
+			{
+				"name": "Gender Equity and Social Inclusion HIV AIDS",
+				"type": "MRSGeneric",
+				"config": {
+					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/14-Gender-Equity-and-Social-Inclusion/Gender_ Equity_and_Social_Inclusion_HIV.sql"
+				}
+			}
+			]
 		}
 	},
 

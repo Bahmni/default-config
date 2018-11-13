@@ -407,6 +407,36 @@
                     "translationKey": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
                 }
+            },
+            "anesthesia": {
+                "title": "Anesthesia Note",
+                "templateName": "Pre Anesthesia Check up",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "newborn": {
+                "title": "Newborn Admission Note",
+                "templateName": "Newborn admission (NBA) note",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
             }
         }
     },
