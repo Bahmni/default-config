@@ -2,6 +2,9 @@
 
 
 SELECT entries.name AS 'HTC Programme-Positive',	
+SUM(IF(entries.tested = 1 && entries.risk_group = 'Sex Worker' && entries.gender = 'M',1,0)) AS 'Sex Worker',
+		SUM(IF(entries.tested = 1 && entries.risk_group = 'Sex Worker' && entries.gender = 'F',1,0)) AS 'Sex Worker',		
+        SUM(IF(entries.tested = 1 && entries.risk_group = 'Sex Worker' && entries.gender = 'O',1,0)) AS 'Sex Worker',
         SUM(IF(entries.tested = 1 && entries.risk_group = 'People Who Inject Drugs' && entries.gender = 'M',1,0)) AS 'Who Inject Drugs-M',
 		SUM(IF(entries.tested = 1 && entries.risk_group = 'People Who Inject Drugs' && entries.gender = 'F',1,0)) AS 'Who Inject Drugs-F',		
         SUM(IF(entries.tested = 1 && entries.risk_group = 'People Who Inject Drugs' && entries.gender = 'O',1,0)) AS 'Who Inject Drugs-TG',		
@@ -10,7 +13,10 @@ SELECT entries.name AS 'HTC Programme-Positive',
 		SUM(IF(entries.tested = 1 && entries.risk_group = 'MSM and Transgenders' && entries.gender = 'O',1,0)) AS 'MSM and Transgenders-TG',
 		SUM(IF(entries.tested = 1 && entries.risk_group = 'Blood or Organ Recipient' && entries.gender = 'M',1,0)) AS 'Blood/Organ Recipient-M',
 		SUM(IF(entries.tested = 1 && entries.risk_group = 'Blood or Organ Recipient' && entries.gender = 'F',1,0)) AS 'Blood/Organ Recipient-F',		
-        SUM(IF(entries.tested = 1 && entries.risk_group = 'Blood or Organ Recipient' && entries.gender = 'O',1,0)) AS 'Blood/Organ Recipient-TG',		
+        SUM(IF(entries.tested = 1 && entries.risk_group = 'Blood or Organ Recipient' && entries.gender = 'O',1,0)) AS 'Blood/Organ Recipient-TG',
+		SUM(IF(entries.tested = 1 && entries.risk_group = 'Client of Sex Worker' && entries.gender = 'M',1,0)) AS 'Client of Sex Worker',
+		SUM(IF(entries.tested = 1 && entries.risk_group = 'Client of Sex Worker' && entries.gender = 'F',1,0)) AS 'Client of Sex Worker',		
+        SUM(IF(entries.tested = 1 && entries.risk_group = 'Client of Sex Worker' && entries.gender = 'O',1,0)) AS 'Client of Sex Worker',		
         SUM(IF(entries.tested = 1 && entries.risk_group = 'Migrant' && entries.gender = 'M',1,0)) AS 'Migrant- M',
 		SUM(IF(entries.tested = 1 && entries.risk_group = 'Migrant' && entries.gender = 'F',1,0)) AS 'Migrant- F',
         SUM(IF(entries.tested = 1 && entries.risk_group = 'Migrant' && entries.gender = 'O',1,0)) AS 'Migrant- TG',
@@ -19,7 +25,7 @@ SELECT entries.name AS 'HTC Programme-Positive',
         SUM(IF(entries.tested = 1 && entries.risk_group = 'Spouse/Partner of Migrant' && entries.gender = 'O',1,0)) AS 'Spouse of Migrant- TG',
         SUM(IF(entries.tested = 1 && entries.risk_group = 'Others' && entries.gender = 'M',1,0)) AS 'Others-M',
 		SUM(IF(entries.tested = 1 && entries.risk_group = 'Others' && entries.gender = 'F',1,0)) AS 'Others-F',		        
-        SUM(IF(entries.tested = 1 && entries.risk_group = 'Others' && entries.gender = 'O',1,0)) AS 'Others-TG'	
+        SUM(IF(entries.tested = 1 && entries.risk_group = 'Others' && entries.gender = 'O',1,0)) AS 'Others-TG'
 FROM
 (SELECT 	
 	 patients.person_id,
