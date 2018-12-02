@@ -1814,6 +1814,9 @@
 						},
 						"NBA-Sepsis risk factor": {
 								"multiSelect": true
+						},
+						"Delivery Note-Complication Present": {
+								"multiSelect": true
 						}
 		}
 	}
