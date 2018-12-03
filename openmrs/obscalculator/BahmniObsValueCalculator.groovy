@@ -51,7 +51,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        setBMI(bahmniEncounterTransaction);
+        calculateAndAdd(bahmniEncounterTransaction);
     }
 
     static def calculateAndAdd(BahmniEncounterTransaction bahmniEncounterTransaction) {
