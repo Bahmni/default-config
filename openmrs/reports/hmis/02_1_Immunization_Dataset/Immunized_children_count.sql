@@ -23,7 +23,7 @@ FROM
         AND answer_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('ANC, TD Given','Vaccine-BCG Vaccine','Vaccine-DPT-HepB-Hib','Vaccine-OPV','Vaccine-IPV','Vaccine-Measles/rubella','Vaccine-JE','Vaccine-PCV')
+        question_concept_name.name IN ('ANC, TD Given','Vaccine-BCG Vaccine','Vaccine-DPT-HepB-Hib','Vaccine-OPV','Vaccine-PCV','Vaccine-FIPV','Vaccine-Rota','Vaccine-Measles/rubella','Vaccine-JE')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) first_answers
         LEFT OUTER JOIN
@@ -36,7 +36,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name IN ('ANC, TD Given','Vaccine-BCG Vaccine','Vaccine-DPT-HepB-Hib','Vaccine-OPV','Vaccine-IPV','Vaccine-Measles/rubella','Vaccine-JE','Vaccine-PCV')
+        AND cn1.name IN ('ANC, TD Given','Vaccine-BCG Vaccine','Vaccine-DPT-HepB-Hib','Vaccine-OPV','Vaccine-PCV','Vaccine-FIPV','Vaccine-Rota','Vaccine-Measles/rubella','Vaccine-JE')
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
