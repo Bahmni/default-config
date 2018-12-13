@@ -9,7 +9,7 @@ SUM(final.c7) as Sugar_F,
 SUM(final.c8) as Sugar_PP,
 SUM(final.c9) as Sugar_R,
 SUM(final.c10) as HIV,
-SUM(final.c11) as PT-INR
+SUM(final.c11) as PT_INR
 FROM
 -- --------------------------- all protein--------------------------
 (SELECT
@@ -263,5 +263,5 @@ FROM clinlims.test_section ts
   WHERE t.name IN ('PT','INR')
 
 GROUP BY ts.name, t.name, t.id
-order by ts.name) as PT-INR
+order by ts.name) as PT_INR
 ) final
