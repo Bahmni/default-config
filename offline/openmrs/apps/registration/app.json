@@ -51,7 +51,7 @@
 
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
-            "defaultVisitType": "OPD",
+            "defaultVisitType": "General",
             "showLastName": true,
             "isLastNameMandatory": true,
             "disablePhotoCapture": true,
