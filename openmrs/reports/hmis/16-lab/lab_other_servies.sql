@@ -140,7 +140,7 @@ FROM
 (SELECT DISTINCT
 
   ts.name       AS department,
-  t.name        AS test5,
+  t.name        AS test6,
   count(r.id)   AS total_count6,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r1.id) ELSE NULL END AS positive,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r2.id) ELSE NULL END AS negative
@@ -162,7 +162,7 @@ FROM
 (SELECT DISTINCT
 
   ts.name       AS department,
-  t.name        AS test5,
+  t.name        AS test7,
   count(r.id)   AS total_count7,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r1.id) ELSE NULL END AS positive,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r2.id) ELSE NULL END AS negative
@@ -184,7 +184,7 @@ FROM
 (SELECT DISTINCT
 
   ts.name       AS department,
-  t.name        AS test5,
+  t.name        AS test8,
   count(r.id)   AS total_count8,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r1.id) ELSE NULL END AS positive,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r2.id) ELSE NULL END AS negative
@@ -206,7 +206,7 @@ FROM
 (SELECT DISTINCT
 
   ts.name       AS department,
-  t.name        AS test5,
+  t.name        AS test9,
   count(r.id)   AS total_count9,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r1.id) ELSE NULL END AS positive,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r2.id) ELSE NULL END AS negative
@@ -228,8 +228,8 @@ FROM
 (SELECT DISTINCT
 
   ts.name       AS department,
-  t.name        AS test5,
-  count(r.id)   AS total_count9,
+  t.name        AS test10,
+  count(r.id)   AS total_count10,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r1.id) ELSE NULL END AS positive,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r2.id) ELSE NULL END AS negative
 FROM clinlims.test_section ts
@@ -250,8 +250,8 @@ FROM
 (SELECT DISTINCT
 
   ts.name       AS department,
-  t.name        AS test5,
-  count(r.id)   AS total_count9,
+  t.name        AS test11,
+  count(r.id)   AS total_count11,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r1.id) ELSE NULL END AS positive,
   CASE WHEN t.id IN (SELECT test_id FROM clinlims.test_result WHERE tst_rslt_type = 'D') THEN count(r2.id) ELSE NULL END AS negative
 FROM clinlims.test_section ts
