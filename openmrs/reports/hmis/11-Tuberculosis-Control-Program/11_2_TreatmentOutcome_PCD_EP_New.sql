@@ -127,9 +127,8 @@ FROM
         AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
-        AND v1.date_stopped IS NOT NULL
     WHERE
-        CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) third_concept ON 
+        CAST(e.encounter_datetime AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) third_concept ON 
          second_concept.person_id = third_concept.person_id
         AND second_concept.visit_id = third_concept.visit_id
         LEFT OUTER JOIN
