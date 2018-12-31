@@ -64,7 +64,7 @@
         "url": "treatment",
         "icon": "fa-user-md",
         "order": 4,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:clinical:treatmentTab"
     },
     "bahmni_clinical_orders_pending_pending_orders_app_radiologyorders": {
         "id": "bahmni.clinical.orders.pending",
