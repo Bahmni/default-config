@@ -108,3 +108,4 @@ FROM
         CAST(v1.date_started AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON second_concept.answer = second_answers.answer
         AND first_concept.person_id = second_concept.person_id
 GROUP BY first_answers.category;
+

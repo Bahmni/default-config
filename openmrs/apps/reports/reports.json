@@ -319,31 +319,17 @@
 		}
 	},
 
-	"07 Family Planning Program": {
+		"07 Family Planning Program": {
 		"name": "07 Family Planning Program",
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
-			"reports": [{
-					"name": "Family Planning Program - Temporary FP methods (new users)",
+			"reports": [
+			{
+					"name": "Family Planning Program all temporary methods",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Family_Planning_Temporary_Method_New_Users.sql"
-					}
-				},
-				{
-					"name": "Family Planning Program - Temporary FP method (Existing users)",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Temporary_method_Existing_users_count.sql"
-					}
-				},
-
-				{
-					"name": "Family Planning Program - Temporary FP method (Defaulters)",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Defaulters_count.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Family_Planning_All_Temporary.sql"
 					}
 				},
 				{
@@ -353,7 +339,6 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/No_of_devices_used.sql"
 					}
 				},
-
 				{
 					"name": "Family Planning Program - Permanent FP method (New users)",
 					"type": "MRSGeneric",
