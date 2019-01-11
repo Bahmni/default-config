@@ -17,6 +17,13 @@
             "activeVisitUuid"
         ],
         "config" : {
+             "forwardUrlsForVisitTypes": [
+               {
+                   "visitType": "OPD",
+                   "forwardUrl": "../appointments/#/home/manage/summary",
+                   "translationKey": "Start OPD Visit",
+                   "shortcutKey": "c"
+               }],
             "patientInformation": {
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
