@@ -109,7 +109,7 @@
                 "Phone number 1" : {"pattern" : "[0-9]{8}", "errorMessage" : "Should be 12 characters"},
                 "Phone number 2" : {"pattern" : "[0-9]{8}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
                 "Phone number" : {"pattern" : "[0-9]{8}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
-                "Legacy ID" : {"pattern" : "[0-9]{6}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
+                "Legacy ID" : {"pattern" : "[0-9]{6}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"}
             },
             "patientSearch": {
                 "address": {
