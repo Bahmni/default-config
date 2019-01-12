@@ -25,16 +25,21 @@
                    "shortcutKey": "c"
                }],
             "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
+                "caretakerDetails": {
+                    "title": "Caretaker details",
+                    "translationKey": "CARETAKER_DETAILS",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
+                        "Full name",
+                        "Phone number",
+                        "Relationship with the patient"
+                    ]
+                },
+                "patientContactDetails" : {
+                    "title": "Patient Contact details",
+                    "translationKey": "PATIENT_CONTACT_DETAILS",
+                    "attributes": [
+                        "Phone number 1",
+                        "Phone number 2"
                     ]
                 },
                 "hidden": {
