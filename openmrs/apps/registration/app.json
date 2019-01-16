@@ -106,10 +106,10 @@
                 }
             },
             "fieldValidation" : {
-                "Phone number 1" : {"pattern" : "[0-9]{8}", "errorMessage" : "Should be 12 characters"},
-                "Phone number 2" : {"pattern" : "[0-9]{8}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
-                "Phone number" : {"pattern" : "[0-9]{8}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
-                "Legacy ID" : {"pattern" : "[0-9]{6}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"}
+                "Phone number 1" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
+                "Phone number 2" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
+                "Phone number" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
+                "Legacy ID" : {"pattern" : "[0-9]{6}", "errorMessage" : "Devrait avoir 6 caractères"}
             },
             "patientSearch": {
                 "address": {
