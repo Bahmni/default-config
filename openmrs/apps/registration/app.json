@@ -17,6 +17,8 @@
             "activeVisitUuid"
         ],
         "config" : {
+	 
+	     "disablePhotoCapture": true,
              "forwardUrlsForVisitTypes": [
                {
                    "visitType": "OPD",
@@ -69,7 +71,7 @@
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
-            "showBirthTime": true,
+            "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
