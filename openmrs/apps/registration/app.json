@@ -114,16 +114,17 @@
                 "Legacy ID" : {"pattern" : "[0-9]{6}", "errorMessage" : "Devrait avoir 6 caractères"}
             },
             "patientSearch": {
-                "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "Legacy ID",
+                    "placeholder": "Legacy ID",
+                    "fields": ["Legacy ID"]
                 }
+            },
+            "patientSearchResults": {
+                "address": {
+                    "fields" : ["address3"]
+                }
+
             }
         }
 }
