@@ -115,8 +115,8 @@
             },
             "patientSearch": {
                 "customAttributes": {
-                    "label": "Legacy ID",
-                    "placeholder": "Legacy ID",
+                    "label": "Ancien No de dossier",
+                    "placeholder": "Ancien No de dossier",
                     "fields": ["Legacy ID"]
                 }
             },
