@@ -1,0 +1,1439 @@
+{
+
+	"01 Reporting Status Dataset": {
+		"name": "01 Reporting Status Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Reporting Status(New and Existing Clients)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/01-Reporting_Status/new_and_existing_clients.sql"
+					}
+				},
+
+				{
+					"name": "Reporting Status (Referred Out Patients)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/01-Reporting_Status/referred_out_patients_age_grp.sql"
+					}
+				}
+			]
+		}
+	},
+
+	"02-1 Immunization Dataset": {
+		"name": "02-1 Immunization Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+				"name": "Immunized children count",
+				"type": "MRSGeneric",
+				"config": {
+					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_1_Immunization_Dataset/Immunized_children_count.sql"
+				}
+			}]
+		}
+	},
+
+	"02-2 Community Based Integrated Management Of Neonatal And Childhood Illnesses (CBIMNCI) 2-59 months": {
+		"name": "02-2 Community Based Integrated Management Of Neonatal And Childhood Illnesses (CBIMNCI) 2-59 months",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Total Registered Cases (2-59)months",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_2to59_months/2_59_months_total_new_and_followup.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness (2-59)ARI Classification Dehydration Diarrhoea and Refered Out",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_2to59_months/2_59_months_total_diseases_valuecoded.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness (2-59)Measles Falciparum Malaria Non Falciparum Malaria Complicated Malaria Fever Anaemia Other",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_2to59_months/2_59_months_total_disease.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness(2-59) total Follow up",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_2to59_months/2_59_months_followup.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness(2-59) total treatment",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_2to59_months/2_59_months_Treatment.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness (2-59) total Ear Infection cases",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_2to59_months/2_59_months_ear_infection.sql"
+					}
+				},
+				{
+					"name": "Total malnutrition(2-59) cases",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_2to59_months/2_59_months_Severe_malnutrition.sql"
+					}
+				},
+				{
+					"name": "Total death(2-59)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_2to59_months/2_59_months_death.sql"
+					}
+				}
+			]
+		}
+	},
+	"02-2 Community Based Integrated Management Of Neonatal And Childhood Illnesses (CBIMNCI) less than 2 months": {
+		"name": "02-2 Community Based Integrated Management Of Neonatal And Childhood Illnesses (CBIMNCI) less than 2 months",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Childhood Illness Registered(Children aged below 2 months)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_less than_2_months/LessThan_2Mnths_Total_Count_chd.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness (less than 2 months) Follow up and other antibiotics",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_less than_2_months/LessThan_2Mnth_followup_other_abtibiotics_Count_chd.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness (less than 2 months) treatment",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_less than_2_months/Less_than_2_months_Treatment.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness Treatment Gentamycin 1st dose and Complete Dose(less than 2 months)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_less than_2_months/LessThan_2Mnth_Gentamycin_dose_count.sql"
+					}
+				},
+				{
+					"name": "Childhood Illness PSBI LBI Jaundice Breastfed difficuilty feeding or low weight (less than 2 months)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_less than_2_months/LessThan_2Mnths_ALL_other_Categories_Count_chd.sql"
+					}
+				},
+				{
+					"name": "Total death less than 2 months",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/02_2_CBIMNCI_less than_2_months/LessThan_2Mnth_death_Count_chd.sql"
+					}
+				}
+
+
+			]
+		}
+	},
+
+	"03-1 Nutrition Dataset Newly Registered": {
+		"name": "03-1 Nutrition Dataset Newly Registered",
+		"type": "concatenated",
+		"DHISProgram": true,
+		"config": {
+			"reports": [{
+					"name": "Nutrition status of registered children (new and old)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1_Nutrition_Dataset_Newly_Registered/Nutrition_status_of_registered_children.sql"
+					}
+				},
+				{
+					"name": "Pregnant women receiving",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1_Nutrition_Dataset_Newly_Registered/Pregnant_women_receiving.sql"
+					}
+				},
+				{
+					"name": "Less then 5 yrs Children receiving (Bi annual)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-1_Nutrition_Dataset_Newly_Registered/Under_5_yrs_Children_receiving.sql"
+					}
+				}
+
+			]
+		}
+	},
+
+	"03-2 Nutrition Acute Malnutrition": {
+		"name": "03-2 Nutrition Acute Malnutrition",
+		"type": "concatenated",
+		"DHISProgram": true,
+		"config": {
+			"reports": [
+
+				{
+					"name": "Integrated Management of Acute Malnutrition (IMAM) Program",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-2_Nutrition_Acute_Malnutrition/Integrated_Management_of_Acute_Malnutrition_IMAM_Program.sql"
+					}
+				},
+				{
+					"name": "Infant and Young Child Feeding",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/03-2_Nutrition_Acute_Malnutrition/Infant_Young_Child_Feeding.sql"
+					}
+				}
+			]
+		}
+	},
+
+	"06 Safe Motherhood Program": {
+		"name": "06 Safe Motherhood Program",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Antenatal Checkup",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Antenatal_Checkup.sql"
+					}
+				},
+				{
+					"name": "Delivery Service",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Delivery_Service.sql"
+					}
+				},
+				{
+					"name": "Type of Delivery",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Type_of_Delivery.sql"
+					}
+				},
+				{
+					"name": "Delivery Outcome",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Delivery_Outcome.sql"
+					}
+				},
+				{
+					"name": "Birth weight",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Birth_weight.sql"
+					}
+				},
+				{
+					"name": "No of still births",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/No_of_still_births.sql"
+					}
+				},
+				{
+					"name": "CHX applied in cord",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/CHX_applied_in_cord.sql"
+					}
+				},
+				{
+					"name": "Blood transfusion",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Blood_transfusion.sql"
+					}
+				},
+				{
+					"name": "PNC Visit",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/PNC_Visit.sql"
+					}
+				},
+				{
+					"name": "Obstetric Complications",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Obstetric_Complications.sql"
+					}
+				},
+				{
+					"name": "Maternal Death",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Maternal_Death.sql"
+					}
+				},
+				{
+					"name": "Safe Abortion Service",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Safe_Abortion_Service.sql"
+					}
+				},
+				{
+					"name": "Safe Abortion Family Planning",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Family_planning_Method.sql"
+					}
+				},
+				{
+					"name": "Safe Abortion Total",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/06-Safe_Motherhood_Program/Safe_Abortion_Total.sql"
+					}
+				}
+			]
+		}
+	},
+
+	"07 Family Planning Program": {
+		"name": "07 Family Planning Program",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Family Planning Program - Temporary FP methods (new users)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Family_Planning_Temporary_Method_New_Users.sql"
+					}
+				},
+				{
+					"name": "Family Planning Program - Temporary FP method (Existing users)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Temporary_method_Existing_users_count.sql"
+					}
+				},
+
+				{
+					"name": "Family Planning Program - Temporary FP method (Defaulters)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Defaulters_count.sql"
+					}
+				},
+				{
+					"name": "Family Planning Program - Temporary FP method (No of devices used)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/No_of_devices_used.sql"
+					}
+				},
+
+				{
+					"name": "Family Planning Program - Permanent FP method (New users)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Family_Planning_Program_Permanent_Method_New_User_Count.sql"
+					}
+				},
+				{
+					"name": "Family Planning Program - Permanent FP method (Existing users)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Permanent_method_existing_users_count_method.sql"
+					}
+				},
+				{
+					"name": "Family Planning Program - Postpartum FP Acceptors",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Family_Planning_Program_Postpartum_Within_48hrs_Count.sql"
+					}
+				}
+			]
+		}
+	},
+	"09 Leprosy Dataset": {
+		"name": "09 Leprosy Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Leprosy program total patient count",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_patient_Count.sql"
+					}
+				},
+
+				{
+					"name": "Leprosy program total patient in this month",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_treatment_received_in_reporting_month.sql"
+					}
+				},
+				{
+					"name": "Leprosy program total deducted",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_patient_Deducted.sql"
+					}
+				},
+
+				{
+					"name": "Leprosy program total patient at the end of this month after deduction",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_patient_at_the_end_of_this_month.sql"
+					}
+				},
+				{
+					"name": "Leprosy program total patient at the end of this month after deduction less than 14",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_patient_at_the_end_of_this_month_less than_14years.sql"
+					}
+				},
+				{
+					"name": "Leprosy program total smear cases",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_smear_cases_tested_only.sql"
+					}
+				},
+				{
+					"name": "Leprosy program total positive smear cases",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_positive_smear_cases.sql"
+					}
+				},
+
+				{
+					"name": "Leprosy program total new cases less than 14 years",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_New_Cases_less_than_14years.sql"
+					}
+				},
+				{
+					"name": "Leprosy program total deformity status count",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_deformity_status_count.sql"
+					}
+				},
+
+				{
+					"name": "Leprosy program total deformity status less than 14 years",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_deformity_status_less_than_14years.sql"
+					}
+				},
+				{
+					"name": "Leprosy program total deformity status RFT count",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Total_deformity_status_RFT_count.sql"
+					}
+				},
+				{
+					"name": "Leprosy program Cohort of new registered patients",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/09-Leprosy-Dataset/09_Cohort_of_new_registered_patients.sql"
+					}
+				}
+			]
+		}
+	},
+
+
+	"11 Tubercluosis Control Program": {
+		"name": "11 Tubercluosis Control Program",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Tubercluosis Control Program Case Registration",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_Case_Registration.sql"
+					}
+				},
+
+				{
+					"name": "Tubercluosis Control Program Registration (BC or CD) all new ",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_BC_or_CD_Registration_allnew.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Registration (BC or CD) all relapse",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_BC_or_CD_Registration_allrelapse.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Private Community Involvement Referral PBC New",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Private_Community_Involvement_Referral_PBC_New.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Private Community Involvement Referral PBC Relapse",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Private_Community_Involvement_Referral_PBC_Relapse.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Private Community Involvement Referral PBC Except New and Relapse",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Private_Community_Involvement_Referral_PBC_except_new_and_relapase.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Private Community Involvement Referral PCD and EP all",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Private_Community_Involvement_Referral_PCD_EP_all.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Registration by Treatment Category",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Registration_by_Treatment_Category.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program At the Time of TB Diagnosis Patients Tested for HIV",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_At_the_time_of_TB_Diagnosis_Patients_Tested_for_HIV.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program At the Time of TB Diagnosis With Known HIV Status",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_At_the_time_of_TB_Diagnosis_With_Known_HIV_Status.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TB-HIV Activities HIV +VE TB Patients This Month",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_HIV_+VE_TB_Patients_This_Month.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TB-HIV Activities HIV +VE TB Patients Till Date",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_HIV_+VE_TB_Patients_Till_Date.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TB-HIV Activities HIV +VE TB Patients ART CPT This Month",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_HIV_+VE_TB_Patients_ART_CPT_This_Month.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TB-HIV Activities HIV +VE TB Patients ART CPT Till Date",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_HIV_+VE_TB_Patients_ART_CPT_Till_Date.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Sptum Conversion Total",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_Control_Program_Sptum_Conversion_total.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program Sptum Conversion",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_1_Tubercluosis_Control_Program_Sptum_Conversion.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PBC Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PBC_Cases_Registered.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PBC",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PBC.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PBC HIV +ve Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PBC_HIV_+ve_Cases_Registered.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PBC HIV +ve",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PBC_HIV_+ve.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP New Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_New_Cases_Registration.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP Others Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_Others_Cases_Registration.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP HIV +ve Cases Registered",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_HIV_+ve_Cases_reg.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP New",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_New.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP Others",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_Others.sql"
+					}
+				},
+				{
+					"name": "Tubercluosis Control Program TreatmentOutcome PCD EP HIV +ve",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_2_TreatmentOutcome_PCD_EP_HIV_+ve.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program Drug Resistant (DR) TB Case Registration",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_Drug_Resistant_(DR)_TB_Case_Registration.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program DR TB Pt. Under Current TreatmentCase Registration",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_DR_TB_Pt_Under_Current_Treatment.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program New Registered DR TB Cases",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_New_Registered_DR_TB_Cases.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program Treatment Outcome Cases Registration",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_Treatment_Outcome_Cases_Registered.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program Treatment Outcome HIV positive Cases Registration",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_Treatment_Outcome_HIV_positive_Cases_Registered.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program Treatment Outcome",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_Treatment_Outcome.sql"
+					}
+				},
+				{
+					"name": "DR Tubercluosis Control Program Treatment Outcome HIV positive",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/11-Tuberculosis-Control-Program/11_4_Treatment_Outcome_HIV_positive.sql"
+					}
+				}
+
+
+
+
+
+
+			]
+		}
+	},
+
+
+	"13 HIV-AIDS": {
+		"name": "13 HIV-AIDS",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "HIV Testing And Counseling (TESTED)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_1_HIV_Testing_And_Counseling_Tested.sql"
+					}
+				},
+				{
+					"name": "HIV Testing And Counseling (POSITIVE)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_1_HIV_Testing_And_Counseling_Positive.sql"
+					}
+				},
+
+				{
+					"name": "HIV Prevention of Mother-To-Child Transmission (PMTCT) Dataset(Labour & Delivery and Postnatal)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_PMTCT_Counseling_And_Testing_Labour_Postnatal.sql"
+					}
+				},
+				{
+					"name": "PMTCT of HIV ART Started,HIV Positive Women,Male Partner,Breast Feeding status",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_PMTCT_of_HIV_ART_Started_HIV_Positive_Women_Male_Partner_Breast_Feeding_status.sql"
+					}
+				},
+				{
+					"name": "Exposed baby live births ARV Prophylaxis ANC visit HIV Positive delivered Postnatal women received FP",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_Exposed_baby_live_births_ARV_Prophylaxis_ANC_visit_HIV_Positive_delivered_Postnatal_women_received_FP.sql"
+					}
+				},
+
+				{
+					"name": "HIV Exposed Baby- Early Infant Diagnosis (EID)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_HIV_Early_Infant_Diagnosis.sql"
+					}
+				},
+				{
+					"name": "Total Clients Assessed STI",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_Total_Clients_Assessed_STI.sql"
+					}
+				},
+
+				{
+					"name": "STI Cases-by Syndromes",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Syndromes.sql"
+					}
+				},
+				{
+					"name": "STI Cases-by Etiology",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Etiology.sql"
+					}
+				},
+				{
+					"name": "STI Cases-by Sex Screened",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Screened.sql"
+					}
+				},
+				{
+					"name": "STI Cases-by Sex Treated",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Treated.sql"
+					}
+				},
+
+				{
+					"name": "Asymptomatic Partners Treated",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_Asymptomatic_Partners_Treated.sql"
+					}
+				},
+
+				{
+					"name": "HIV-AIDS Program Opportunistic Infections diagnosed",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Oppurtunistic_Infection_Diagonized.sql"
+					}
+				},
+				{
+					"name": "HIV-AIDS Program Opportunistic Infections treated",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Oppurtunistic_Infection_Treated.sql"
+					}
+				},
+				{
+					"name": "HIV-AIDS Program Opportunistic Infection TB and FP",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection _TB_FP.sql"
+					}
+				},
+
+				{
+					"name": "HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection_TB_FP_HIV_Patients_Received_CPT.sql"
+					}
+				}
+
+
+			]
+		}
+	},
+
+	"14 Gender Equity and Social Inclusion Dataset": {
+		"name": "14 Gender Equity and Social Inclusion Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+				"name": "Gender Equity and Social Inclusion",
+				"type": "MRSGeneric",
+				"config": {
+					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/14-Gender-Equity-and-Social-Inclusion/Gender_ Equity_and_Social_Inclusion.sql"
+				}
+			},
+			{
+				"name": "Gender Equity and Social Inclusion HIV AIDS",
+				"type": "MRSGeneric",
+				"config": {
+					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/14-Gender-Equity-and-Social-Inclusion/Gender_ Equity_and_Social_Inclusion_HIV.sql"
+				}
+			}
+			]
+		}
+	},
+
+	"15 OPD Programs(1-5)": {
+		"name": "15 OPD Programs(1-5)",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "OPD Communicable Immunizable",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15_01_OPD_Communicable_Immunizable.sql"
+					}
+				},
+
+				{
+					"name": "OPD Communicable, Vector-Water Borne",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-02_OPD_Communicable_VectorWater_Borne.sql"
+					}
+				},
+				{
+					"name": "OPD Other Communicable Infections Diseases",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-03_ OPD_Other_Communicable_Infections_Diseases.sql"
+					}
+				},
+				{
+					"name": "OPD Nutritional and Metabolic Disorder",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-04_OPD_Nutritional_Metabolic_Disorder.sql"
+					}
+				},
+				{
+					"name": "OPD Skin Diseases",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-05_OPD_Skin_Diseases.sql"
+					}
+				}
+			]
+		}
+	},
+
+	"15 OPD Programs(6-10)": {
+		"name": "15 OPD Programs(6-10)",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "OPD Ear Nose and Throat Infection",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-06_OPD_Ear_Nose_and_Throat_Infection.sql"
+					}
+				},
+
+				{
+					"name": "OPD Oral Health Related Problems",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-07_OPD_Oral_Health_Related_Problems.sql"
+					}
+				},
+				{
+					"name": "OPD Eye Problems",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-08_OPD_Eye_Problems.sql"
+					}
+				},
+				{
+					"name": "OPD Obstetrics Complications Gyne Problems",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-09_OPD_Obstetrics_ComplicationsGyne_Problems.sql"
+					}
+				},
+				{
+					"name": "OPD Mental Health related problems",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-10_OPD_Mental_Health_related_Problems.sql"
+					}
+				}
+			]
+		}
+	},
+
+	"15 OPD Programs(11-15)": {
+		"name": "15 OPD Programs(11-15)",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "OPD Malignancy",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-11_OPD_Malignancy.sql"
+					}
+				},
+
+				{
+					"name": "OPD Cardiovascular Respiratory Related Problems",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-12_OPD_Cardiovascular_Respiratory_Related_Problems.sql"
+					}
+				},
+				{
+					"name": "OPD Other Diseases Injuries",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-13_OPD_Other_Diseases_Injuries.sql"
+					}
+				},
+				{
+					"name": "OPD Orthopaedic Problems",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-14_OPD_Orthopaedic_Problems.sql"
+					}
+				},
+				{
+					"name": "OPD Surgical Problems",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_OPD_Surgical_Problems.sql"
+					}
+				},
+				{
+					"name": "Not mentioned above and others",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_Not_mentioned_above.sql"
+					}
+				},
+				{
+					"name": "OPD Surgical Problems(Total and New OPD)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_Surgical_Problem_Total _OPD_New_Old.sql"
+					}
+				}
+			]
+		}
+	},
+
+
+	"16 Laboratory Services Dataset": {
+		"name": "16 Laboratory Services Dataset",
+		"type": "ElisGeneric",
+		"DHISProgram": true,
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/16-lab/Laboratory_Services.sql"
+		}
+	},
+
+	"16 Laboratory Services Dataset(Other)": {
+		"name": "16 Laboratory Services Dataset(Other)",
+		"type": "ElisGeneric",
+		"DHISProgram": true,
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/16-lab/lab_other_servies.sql"
+		}
+	},
+
+
+
+	"17-1 Hospital Summary Dataset": {
+		"name": "17-1 Hospital Summary Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Hospital Services - Total Client Served",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/number_of_clients.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Emergency Services",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/emergencyServices.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Total Patients Admitted and Total Beds",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/totalAdmittedPatients_and_totalbeds.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Total Inpatient Days",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/total_inpatient_days.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Referred In patient",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_in.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Referred out patient(OPD,IPD)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_out_ipd_opd.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Referred out patient(ER)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_out_er.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Diagnostic Services (USG, ECG)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/usg_ecg_count.sql"
+					}
+				}
+			]
+		}
+	},
+
+	"17-2 Hospital Indoor Services Dataset": {
+		"name": "17-2 Hospital Indoor Services Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+			"reports": [{
+					"name": "Summary of Indoor Services Inpatient Outcome",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_outcome.sql"
+					}
+				},
+				{
+					"name": "Summary of Indoor Services Gestational weeks(Neonate Form)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/gestational_weeks_neonate_form.sql"
+					}
+				},
+				{
+					"name": "Summary of Indoor Services Gestational weeks(Maternal Age)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/gestational_weeks_maternal_age.sql"
+					}
+				},
+
+				{
+					"name": "Summary of Indoor Services Inpatient Outcome Referred Out",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_referredout.sql"
+					}
+				},
+
+
+				{
+					"name": "FreeHealthServices Outpatient",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_Outpatient.sql"
+					}
+				},
+				{
+					"name": "FreeHealthServices IPD",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_IPD.sql"
+					}
+				},
+
+
+				{
+					"name": "FreeHealthServices ReferredOut",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_referredout.sql"
+					}
+				},
+				{
+					"name": "FreeHealthServices ER",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/FreeHealthServices_ER.sql"
+					}
+				},
+
+				{
+					"name": "Summary of Indoor Services Major Surgeries",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/major_surgeries.sql"
+					}
+				},
+
+				{
+					"name": "Summary of Indoor Services Minor Surgeries",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/minor_surgeries.sql"
+					}
+				},
+
+				{
+					"name": "Summary of Indoor Services Death Maternal",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_maternal_all.sql"
+					}
+				},
+
+				{
+					"name": "Summary of Indoor Services Death Post Operative",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_post_operative.sql"
+					}
+				},
+
+				{
+					"name": "Summary of Indoor Services Death Early and Late Neonatal",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/death_early_late_neonatal.sql"
+					}
+				},
+				{
+					"name": "Summary of Indoor Services Hospital Summary Plaster",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/Hospital_Summary_Plaster.sql"
+					}
+				}
+			]
+		}
+	},
+
+
+	"18-01 Inpatient Morbidity Dataset": {
+		"name": "18-01 Inpatient Morbidity Dataset",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"attribute": true,
+		"config": {
+			"reports": [{
+				"name": "31-35 Inpatient Morbidity",
+				"type": "MRSGeneric",
+				"config": {
+					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/18-IPD/18_31-35_Inpatient_Morbidity.sql"
+				}
+			}]
+		}
+	},
+
+
+	"hospital_activities__number_of_clients_served_new_and_total": {
+		"name": "Hospital Activities - Number of Clients Served (New and Total)",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/number_of_clients.sql"
+		}
+	},
+	"hospital_activities__number_of_clients_served_referred_check_for_only_referred_grid": {
+		"name": "Hospital Activities - Number of Clients Served (Referred) [Check for only 'Referred' grid]",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "Client Service Reports",
+			"conceptNames": [
+				"Disposition"
+			]
+		}
+	},
+	"disaggregation_by_sex_and_casteethnicity_part_1_except_fully_immunized_children": {
+		"name": "Disaggregation by Sex and Caste/Ethnicity Part 1 (Except Fully Immunized Children)",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/disaggregation_caste_part1.sql"
+		}
+	},
+	"disaggregation_by_sex_and_casteethnicity_part_2_except_fully_immunized_children": {
+		"name": "Disaggregation by Sex and Caste/Ethnicity Part 2 (Except Fully Immunized Children)",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/disaggregation_caste_part2.sql"
+		}
+	},
+	"outpatient_morbidity": {
+		"name": "Outpatient Morbidity",
+		"type": "diagnosisCount",
+		"config": {
+			"visitTypes": [
+				"OPD"
+			],
+			"icd10ConceptSource": "ICD-10-WHO"
+		}
+	},
+	"laboratory_services": {
+		"name": "Laboratory Services",
+		"type": "TestCount"
+	},
+	"hospital_services__outpatient_services": {
+		"name": "Hospital Services - Outpatient Services",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/outpatientServices.sql"
+		}
+	},
+	"hospital_services__emergency_services": {
+		"name": "Hospital Services - Emergency Services",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/emergencyServices.sql"
+		}
+	},
+	"hospital_services__total_patients_admitted": {
+		"name": "Hospital Services - Total Patients Admitted",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/totalAdmittedPatients.sql"
+		}
+	},
+	"hospital_services__diagnostic_services_usg_ecg": {
+		"name": "Hospital Services - Diagnostic Services (USG, ECG)",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "All Ages",
+			"conceptNames": [
+				"USG Notes",
+				"ECG Notes"
+			]
+		}
+	},
+
+	"number_of_deliveries": {
+		"name": "Number of Deliveries",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "All Ages",
+			"conceptNames": [
+				"Delivery Note"
+			]
+		}
+	},
+	"number_of_cac": {
+		"name": "Number of CAC",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "All Ages",
+			"conceptNames": [
+				"Abortion procedure"
+			]
+		}
+	},
+	"number_of_pac": {
+		"name": "Number of PAC",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "All Ages",
+			"conceptNames": [
+				"Safe Abortion, Post Abortion Care"
+			]
+		}
+	},
+	"number_of_ecg": {
+		"name": "Number of ECG",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "All Ages",
+			"conceptNames": [
+				"ECG Notes"
+			]
+		}
+	},
+	"number_of_usg": {
+		"name": "Number of USG",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "All Ages",
+			"conceptNames": [
+				"USG Notes"
+			]
+		}
+	},
+	"number_of_anc_visits": {
+		"name": "Number of ANC Visits",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "All Ages",
+			"conceptNames": [
+				"ANC"
+			]
+		}
+	},
+	"number_of_children_screened_for_malnutrition": {
+		"name": "Number of Children screened for Malnutrition",
+		"type": "obsCount",
+		"config": {
+			"ageGroupName": "IMAM",
+			"conceptNames": [
+				"Nutrition, Nutritional Status"
+			]
+		}
+	},
+	"daily_labtest": {
+		"name": "Lab tests and results",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/labresult.sql"
+		}
+	},
+	"mental_health_registry": {
+		"name": "Mental Health Registry",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/mental_health_registry.sql"
+		}
+	},
+	"Mental_Health_Screener": {
+		"name": "Mental Health Screener",
+		"type": "obsTemplate",
+		"config": {
+			"templateName": "Mental Health Screener"
+		}
+	},
+	"Psychosis_Intake_Note": {
+		"name": "Psychosis Intake Note",
+		"type": "obsTemplate",
+		"config": {
+			"templateName": "Psychosis Intake Note"
+		}
+	},
+	"Psychosis_Followup_Note": {
+		"name": "Psychosis Followup Note",
+		"type": "obsTemplate",
+		"config": {
+			"templateName": "Psychosis Followup Note"
+		}
+	},
+	"Defaulters list": {
+		"name": "Defaulters List",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/defaultersList.sql"
+		}
+	}
+}

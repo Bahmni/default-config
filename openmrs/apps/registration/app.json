@@ -1,0 +1,99 @@
+{
+    "id": "bahmni.registration",
+    "instanceOf": "bahmni.template.registration",
+    "description": "Bahmni Patient Registration App",
+    "extensionPoints": [{
+            "id": "org.bahmni.registration.patient.search.result.action",
+            "description": "Bahmni Patient Search Result Action"
+        },
+        {
+            "id": "org.bahmni.registration.patient.next",
+            "description": "After Bahmni Patient Registration, forward url configuration"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "activeVisitUuid"
+    ],
+    "config": {
+        "mandatoryPersonAttributes": [
+            "Caste"
+        ],
+        "autoCompleteFields": [
+            "familyName"
+        ],
+        "printOptions": [{
+            "label": "Print Label",
+            "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+            "shortcutKey": "r"
+        }],
+        "showMiddleName": true,
+        "showLastName": true,
+        "defaultVisitType": "General",
+        "conceptSetUI": {
+            "Department Sent To": {
+                "required": false,
+                "dropdown": true
+            },
+            "Hospitals, Referred by, Data": {
+                "autocomplete": true,
+                "nonCodedConceptName": "Hospitals, Referred by, Non coded",
+                "codedConceptName": "Hospitals, Referred by, Answers"
+            },
+            "Hospitals, Referred by": {
+                "answersConceptName": "Hospitals, Referred by, Answers",
+                "required": false,
+                "autocomplete": true
+            },
+            "Hospitals, Referred by, Non coded": {
+                "answersConceptName": "Hospitals, Referred by, Answers",
+                "required": false,
+                "autocomplete": true
+            }
+        },
+        "fieldValidation": {
+            "primaryContact": {
+                "pattern": "[0-9]{8,10}",
+                "errorMessage": "Should be 12 characters starting with 91 (country code)"
+            },
+            "landHolding": {
+                "pattern": "[0-9]{0,3}",
+                "errorMessage": "Should be between 1 to 999 acres"
+            },
+            "familyName": {
+                "pattern": "[a-zA-Z]{0,}",
+                "errorMessage": "Should contain characters"
+            },
+            "givenName": {
+                "pattern": "[a-zA-Z]{0,}",
+                "errorMessage": "Should contain characters"
+            },
+            "middleName": {
+                "pattern": "[a-zA-Z]{0,}",
+                "errorMessage": "Should contain characters"
+            },
+            "address1": {
+                "pattern": "^(0?[1-9]|[1-9][0-9])$",
+                "errorMessage": "Should be between 1 to 99"
+            },
+            "Contact Number" :{
+                "pattern": "[0-9]{0,}",
+                "errorMessage": "Should contain only numbers"
+            }
+        },
+        "patientSearch": {
+            "address": {
+                "label": "VDC/Municipality",
+                "placeholder": "Enter VDC/Municipality",
+                "field": "city_village"
+            }
+        },
+        "patientSearchResults": {
+            "address": {
+                "fields": ["city_village", "address1"]
+            }
+        },
+        "enableNepaliCalendar": true,
+        "displayNepaliDates": true
+    }
+}

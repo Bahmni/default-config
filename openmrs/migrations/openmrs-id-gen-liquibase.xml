@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- This Liquibase file is meant to contain changesets for ID gen -->
+    <changeSet id="POSSIBLE-IMPL-OMRS-IDGEN-BAH" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from idgen_identifier_source where name = 'BAH';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add id gen sources</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+
+            SELECT patient_identifier_type_id from patient_identifier_type where name = 'Bahmni Id' into @patient_identifier;
+
+            INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created)
+            VALUES (@uuid, 'BAH', 'ID sequence source for patients whose primary health center is Bayalapatta', @patient_identifier, 1, @currdate);
+            SET @source_id := LAST_INSERT_ID();
+            INSERT INTO idgen_seq_id_gen (id, next_sequence_value, base_character_set, first_identifier_base, prefix, suffix, min_length, max_length)
+            VALUES (@source_id, 200000, '0123456789','200000', 'BAH', '', 4, 9);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-LOCATION-ATTRIBUTE-TYPE-IdentifierSourceName" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_attribute_type where name = 'IdentifierSourceName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding location attribute type IdentifierSourceName</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_attribute_type (name, description, datatype, min_occurs, max_occurs, creator, date_created, uuid)
+            VALUES ('IdentifierSourceName', 'Identifier source name of the source that needs to be used for patients coming from this location',
+            'org.openmrs.customdatatype.datatype.FreeTextDatatype', 0, 1, 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-LOCATION-BAYALAPATTA" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Bayalapatta';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Location Bayalapatta</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location (name, description, creator, date_created, uuid)
+            VALUES ('Bayalapatta', 'Bayalapatta hospital', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-LOCATION-ATTRIBUTE-TYPE-FOR-BAH" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_attribute where location_id = (select location_id from location where name = 'Bayalapatta') and value_reference='BAH';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Location attribute for BAH</comment>
+        <sql>
+            select location_id into @bayalapatta_location_id from location where name = 'Bayalapatta';
+            select now() into @currdate;
+
+            INSERT INTO location_attribute (location_id, attribute_type_id, value_reference, uuid, creator, date_created)
+            (SELECT @bayalapatta_location_id, location_attribute_type_id, 'BAH', uuid, 1, @currdate
+                FROM location_attribute_type
+                WHERE name = 'IdentifierSourceName');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

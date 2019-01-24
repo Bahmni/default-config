@@ -1,0 +1,66 @@
+uuid,name,description,class,shortname,datatype,units,High Normal,Low Normal,synonym.1,synonym.2,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,reference-term-source,reference-term-code,reference-term-relationship,reference-term-source,reference-term-code,reference-term-relationship
+,"ER General Notes, Chief Complaint",,Misc,Chief Complaint,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Location",,Misc,Location,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Quality",,Misc,Quality,Coded,,,,,,Sharp,Burning,Radiating,Crampy,Tingling,Pressure,,,,,,,,,,,,
+,"ER General Notes, Severity",,Misc,Severity,Numeric,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Duration",When did it Start,Misc,Duration,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Timing","Constant / Intermittent, how long dies it last",Misc,Timing,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Context",What were you doing when it started,Misc,Context,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Modifying Factors",Anything make it better or worse,Misc,Modifying Factors,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Associated Signs or Symptoms",,Misc,Associated signs or symptoms,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Constitutional",,Misc,Constitutional,Coded,,,,,,Weight Loss,Night Sweats,Fatigue,Fever,Chills,,,,,,,,,,,,,
+,"ER General Notes, Eyes",,Misc,Eyes,Coded,,,,,,Visual Changes,Eye Pain,Floaters,,,,,,,,,,,,,,,
+,"ER General Notes, ENT",,Misc,ENT,Coded,,,,,,Congestion,Epistaxis,Tinnitus,Sore Throat,,,,,,,,,,,,,,
+,"ER General Notes, CV",,Misc,CV,Coded,,,,,,Chest Pain,Shortness of Breath,Reduced Exercise Tolerance,PND,Orthopnea,Edema,Palpitations,,,,,,,,,,,
+,"ER General Notes, Respair",,Misc,Respair,Coded,,,,,,Cough,Sputum,Wheeze,Hemoptysis,SOB,,,,,,,,,,,,,
+,"ER General Notes, GI",,Misc,GI,Coded,,,,,,Abdominal Pain,Trouble Swallowing,Indigestion,Bloating,Cramping,N/V/D/C,BRBPR,Melena,Tenesmus,,,,,,,,,
+,"ER General Notes, Urinary",,Misc,Urinary,Coded,,,,,,Dysuria,Incontinence,Nocturia,Polyuria,Decreased Stream,,,,,,,,,,,,,
+,"ER General Notes, Genital",,Misc,Genital,Coded,,,,,,Vaginal / Penile Discharge,Ulcers,,,,,,,,,,,,,,,,
+,"ER General Notes, Date of LMP",,Misc,Date of LMP,Date,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Frequency",,Misc,Frequency,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Regularity",,Misc,Regularity,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Heavy / Light",,Misc,Heavy / Light,Coded,,,,,,Heavy,Light,,,,,,,,,,,,,,,,
+,"ER General Notes, Contraception",,Misc,Contraception,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, MSK",,Misc,MSK,Coded,,,,,,Pain,Stiffness,Joint Swelling,ROM,Functional Deficits,,,,,,,,,,,,,
+,"ER General Notes, Skin / Breast",,Misc,Skin / Breast,Coded,,,,,,Pruritus,General rash,Wound,Nodules,Tumors,Dryness,Lumps,Nipple Discharge,,,,,,,,,,
+,"ER General Notes, Neuro",,Misc,Neuro,Coded,,,,,,Change in Shight,Change in Smell,Change in Hearing,Change in Taste,Seizures,Faints,Parasthesias,Numbness,Weakness,Balance,Change in Speech,,,,,,,
+,"ER General Notes, Psych",,Misc,Psych,Coded,,,,,,Depression,Sleep Changes,Anxiety,Performance,Paranoia,Lack of Energy,Mania,,,,,,,,,,,
+,"ER General Notes, Endocrine",,Misc,Endocrine,Coded,,,,,,Heat / Cold Intolerence,Polyuria,Polydypsia,Darkening of Skin,,,,,,,,,,,,,,
+,"ER General Notes, Heme / Lymph",,Misc,Heme / Lymph,Coded,,,,,,Purpura,Petechial,Excessive Bleeding,,,,,,,,,,,,,,,
+,"ER General Notes, Allergic / Immunologic",,Misc,Allergic / Immunologic,Coded,,,,,,Swelling,Choking,,,,,,,,,,,,,,,,
+,"ER General Notes, Current Home Medications",,Misc,Current Home Medications,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Non Compliance",,Misc,Non Compliance,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Non Compliance Reason",,Misc,Non Compliance reason,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Allergies",,Misc,Allergies,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Medical / Surgical History",,Misc,Past medical or surgical history,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Family History",,Misc,Family History,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Lives Where",,Misc,Lives where,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Lives With",,Misc,Lives with,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Work",,Misc,Work,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Cigarette Smoker",Cigarettes/day or Packs/day? Years?,Misc,Cigaratte Smoker,Coded,,,,,,Current Smoker,Non-smoker,Former Smoker,,,,,,,,,,,,,,,
+,"ER General Notes, Other Forms of Tobacco",,Misc,Other Forms of Tobacco,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Alcohol use","Drinks/day, Type of Alcohol",Misc,Alcohol use,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Evidence of Alcohol abuse","CAGE Questionnaire<br>
+Have you ever felt you needed to Cut down on your drinking?<br>
+Have people Annoyed you by criticizing your drinking?<br>
+Have you ever felt Guilty about drinking?<br>
+Have you ever felt you needed a drink first thing in the morning (Eye-opener) to steady your nerves or to get rid of a hangover?",Misc,Evidence of Alcohol abuse,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Illicit drug use",,Misc,Illicit drug use,Boolean,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Physical Examination Details","General <br>
+HEENT<br>
+CV<br>
+Lungs<br>
+Abdomen<br>
+MSK<br>
+Skin<br>
+Neuro <br>
+Psych<br>",Misc,Physical Examination Details,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Lab Studies",,Misc,Lab Studies,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Radiology",,Misc,Radiology,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, EKG",,Misc,EKG,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Microbiology",,Misc,Microbiology,Text,,,,,,,,,,,,,,,,,,,,,,,
+,"ER General Notes, Problem","Most likely diagnosis and other differential diagnosis (space for 2-3 others)<br>
+Stable, unstable, improved / worse / same<br>
+Patient counseling and education on ____<br>
+Diagnostic plan and orders<br>
+Medication plan and prescription<br>",Misc,Problem,Text,,,,,,,,,,,,,,,,,,,,,,,

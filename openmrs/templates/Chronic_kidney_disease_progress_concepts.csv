@@ -1,0 +1,5 @@
+uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
+,"Chronic Kidney Disease, Evidence of Volume Overload Today",Misc,Boolean,"Does patient have evidence of volume overload today (Edema, Crackles, Dyspnea)","If yes, start furosemide 20mg po bid after confirming there is no hypokalemia (low K)<br>",,,,,,,,,,,,
+,"Chronic Kidney Disease, Patient on Enalapril",Misc,Boolean,Is patient on Enalapril,Enalapril 5mg po daily for stage 2 CKD or worse<br>,,,,,,,,,,,,
+,"Chronic Kidney Disease, Last i0stat Checked Date",Misc,Date,When was last I-stat checked,,,,,,,,,,,,,
+,"Chronic Kidney Disease, Any Abnormalities",Misc,Text,Any abnormalities (what is the trend of Cr and K),Should check istat q3months if on diuretics and if not on diuretics q6 months to trend Cr<br>,,,,,,,,,,,,

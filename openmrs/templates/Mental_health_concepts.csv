@@ -1,0 +1,8 @@
+uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
+,"Mental Health, Chief Complaint",,Misc,Text,Chief Complaint,,,,,,,,,,,,
+,"Mental Health, Diagnosis",,Misc,Text,Diagnosis,,,,,,,,,,,,
+,"Mental Health, Drugs Provided",,Misc,Text,Drug provided,,,,,,,,,,,,
+,"Mental Health, Psychosocial Counseling",,Misc,Text,Psychosocial counseling,,,,,,,,,,,,
+,"Mental Health, Disposition",,Misc,Coded,Disposition,,,,,Treatment complete,Referred out,,,,,,
+,"Mental Health, Reason for Referral",,Misc,Text,Referred reason,,,,,,,,,,,,
+,"Mental Health, Remarks",,Misc,Text,Remarks,,,,,,,,,,,,

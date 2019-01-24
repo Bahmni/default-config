@@ -1,0 +1,14 @@
+- hosts: bahmni-erp
+  become: yes
+  roles:
+    - { role: possible-erp-batch }
+
+- hosts: bahmni-emr
+  become: yes
+  roles:
+    - { role: possible-mrs-batch }
+
+- hosts: bahmni-lab
+  become: yes
+  roles:
+    - { role: possible-lab-batch }

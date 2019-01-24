@@ -1,0 +1,7 @@
+uuid,name,shortname,description,class,reference-term-source,reference-term-code,reference-term-relationship,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.15,child.16,child.17,child.18,child.19,child.20,child.21,child.22,child.23,child.24,child.25,child.26
+,Long term family planning methods,,,Misc,,,,Condom,Pills,Depo Provera,,,,,,,,,,,,,,,,,,,,
+,Short term family planning methods,,,Misc,,,,Female sterilization,Male sterilization,Implant,Intra Uterine Contraceptive Device,,,,,,,,,,,,,,,,,,,
+,Surgical Abortion,Surgical Abortion,,Misc,,,,"Surgical Abortion, Immediate complications","Surgical Abortion, Late complications",,,,,,,,,,,,,,,,,,,,,
+,Medical Abortion follow up,Medical Abortion,,Misc,,,,Medical Abortion complications,Medical Abortion follow up status,,,,,,,,,,,,,,,,,,,,,
+,Post Abortion Care,Post Abortion Care,,Misc,,,,PAC Cause,PAC Diagnosis,,,,,,,,,,,,,,,,,,,,,
+,Safe Abortion,Safe Abortion,,Misc,,,,Number of living children,Weeks of current gestation by LMP method,Weeks of current gestation by examination,Abortion procedure,Pain management given,Surgical Abortion,Medical Abortion follow up,Post Abortion Care,Accepted Family Planning methods,Outcome of CAC/PAC,,,,,,,,,,,,,

@@ -1,0 +1,7 @@
+uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14
+,"Seizure Disorder, Last Seizure Date",Misc,Date,Date of last seizure,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Average Seizures per Month in Last 12 Months",Misc,Numeric,"On average, in last 12 months, how many seizures does patient have / month",,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Takes Medicines Everyday",Misc,Boolean,Patient takes medicines everyday,,,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, If patient doesn’t take medicines, why not",Misc,Text,"If patient doesn’t take medicines, why not","Ask about side effects, forgetfulness, doesn’t believe needs, other",,,,,,,,,,,,,,,,,,
+,"Seizure Disorder, Pregnant or Planning on Getting Pregnant",Misc,Boolean,Is patient pregnant or planning to get pregnant,"if patient is planning on getting pregnant,<br>
+please discuss case with MBBS, MDGP, or specialist<br>",,,,,,,,,,,,,,,,,,

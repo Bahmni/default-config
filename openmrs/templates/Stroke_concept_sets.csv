@@ -1,0 +1,5 @@
+uuid,name,class,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13
+,"Stroke, Systolic data",Concept Details,Systolic data,,,,,"Stroke, Systolic","Stroke, Systolic Abnormal",,,,,,,,,,,
+,"Stroke, Diastolic Data",Concept Details,Diastolic data,,,,,"Stroke, Diastolic","Stroke, Diastolic Abnormal",,,,,,,,,,,
+,"Stroke, Blood Pressure",ConvSet,Blood pressure,"if BP greater than 120/70, patient should be on anti-hypertensive therapy<br>",,,,"Stroke, Systolic data","Stroke, Diastolic Data",,,,,,,,,,,
+,Stroke OPD,Misc,Stroke OPD,,,,,"Stroke, Blood Pressure","Stroke, LDL","Stroke, Last LDL Date","Stroke, Qualifies for Atorvastatin","Stroke, Patient is Diabetic","Stroke, Is Diabetes Controlled","Stroke, A1c","Stroke, Last A1c Date","Stroke, Patient on low-dose aspirin for secondary stroke prevention","Stroke, Smoker",,,

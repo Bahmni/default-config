@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/css/print.css"/>
+<div>
+    <style>
+    </style>
+    <div class="row fontForSticker">
+        <div class="left">
+
+            <div class="row">
+                <span><b>{{patient.primaryIdentifier.identifier}}</b></span>
+            </div>
+
+            <div class="row">
+                <span>{{patient.fullNameLocal()}}</span>
+            </div>
+
+            <div ng-switch on="patient.gender" class="row">
+                <span>
+                    ({{patient.age.years}},
+                </span>
+                <span ng-switch-when="M">
+                    Male)
+                </span>
+                <span ng-switch-when="F">
+                    Female)
+                </span>
+            </div>
+
+            <div class="row">
+                <span>{{patient.registrationDate | date:'dd/MM/yyyy hh:mm:ss a'}}</span>
+            </div>
+
+            <div class="row">
+                <span>{{patient.address.cityVillage}}</span>
+                <span>{{patient.address.address1}}</span>
+                <span>{{patient.address.countyDistrict}}</span>
+            </div>
+
+            <div class="row dept">
+                <span>{{obs['Department Sent To'][0].value}}</span>
+            </div>
+        </div>
+    </div>
+</div>

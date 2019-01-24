@@ -1,0 +1,12 @@
+uuid,name,description,class,datatype,shortname,synonym.1,synonym.2,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
+,"Diabetes, Systolic",,Misc,Numeric,Systolic,,,,,,,,,,,,,
+,"Diabetes, Systolic Abnormal",,Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,
+,"Diabetes, Diastolic",,Misc,Numeric,Diastolic,,,,,,,,,,,,,
+,"Diabetes, Diastolic Abnormal",,Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,
+,"Diabetes, A1C","Goal less than 6.5, do NOT order more than every 3 months",Misc,Text,Last A1C,,,,,,,,,,,,,
+,"Diabetes, Last A1C Date",,Misc,Date,Last A1C date,,,,,,,,,,,,,
+,"Diabetes, Patient on Enalapril","patients with DM need renoprotection with ACEi, check Cr and urine protein",Misc,Boolean,Is Patient on enalapril ,,,,,,,,,,,,,
+,"Diabetes, LDL",patients with DM should be on at least atorvastatin 20mg given daily increased risk of CAD,Misc,Text,Last LDL,,,,,,,,,,,,,
+,"Diabetes, Last LDL Date",should check LDL at least yearly,Misc,Date,last LDL date,,,,,,,,,,,,,
+,"Diabetes, Ulcers on Feet",Examine feet for diabetic foot ulcers at every visit to prevent risk of amputation,Misc,Boolean,Ulcers present on feet,,,,,,,,,,,,,
+,"Diabetes, Last Eye Exam Date",Patient should have eye exam yearly,Misc,Date,Last eye exam date,,,,,,,,,,,,,

@@ -1,0 +1,93 @@
+{
+    "id": "bahmni.adt.admission",
+    "extensionPoints": [{
+            "id": "org.bahmni.adt.admit.action",
+            "description": "Bahmni Patient Admission Action"
+        },
+        {
+            "id": "org.bahmni.adt.transfer.action",
+            "description": "Bahmni Patient Transfer Action"
+        },
+        {
+            "id": "org.bahmni.adt.discharge.action",
+            "description": "Bahmni Patient Discharge Action"
+        },
+        {
+            "id": "org.bahmni.patient.search",
+            "description": "Bahmni patient search, lookup Page"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "encounterUuid",
+        "visitUuid"
+    ],
+    "config": {
+        "enableNepaliCalendar": true,
+        "displayNepaliDates": true,
+        "patientConfig": {
+            "showMiddleNameOn": ["patient-profile", "patient-context"]
+        },
+        "diagnosisStatus": "Inactive",
+        "onAdmissionForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
+        "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
+        "onDischargeForwardTo": "#/patient/search",
+        "defaultVisitType": "General",
+        "maxPatientsPerBed": 2,
+        "dashboard": {
+            "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+            "conceptName": "Adt Notes",
+            "sections": {
+                "patientInformation": {
+                    "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                    "type": "patientInformation",
+                    "displayOrder": 0,
+                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster", "RationCard", "familyIncome"],
+                    "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
+                },
+                "vitals": {
+                    "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
+                    "type": "vitals",
+                    "displayOrder": 1,
+                    "isObservation": true,
+                    "dashboardConfig": {
+                        "conceptNames": ["Vitals"],
+                        "numberOfVisits": 2
+                    }
+                },
+                "admissionDetails": {
+                    "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
+                    "type": "admissionDetails",
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true,
+                    "displayOrder": 2
+                },
+                "disposition": {
+                    "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
+                    "type": "disposition",
+                    "numberOfVisits": 2,
+                    "displayOrder": 3
+                },
+                "diagnosis": {
+                    "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                    "type": "diagnosis",
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "displayOrder": 4
+                },
+                "navigationLinksControl": {
+                    "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                    "type": "navigationLinksControl",
+                    "displayOrder": 5,
+                    "showLinks": ["home", "visit", "registration", "inpatient", "enrolment", "visitAttribute"]
+                },
+                "conditions": {
+                    "translationKey": "CONDITION_LIST_DISPLAY_CONTROL_TITLE",
+                    "type": "conditionsList",
+                    "displayOrder": 6
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,10 @@
+uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2
+,"Inpatient Progress Note, Details",Misc,Text,Brief One liner,"(patient age, gender, presenting symptoms and presumed diagnosis):<br>
+provide small free text box<br>",,,,,,
+,"Inpatient Progress Note, Events in 24 Hours",Misc,Text,Events in last 24 hours,,,,,,,
+,"Inpatient Progress Note, Patient Subjective / Concerns",Misc,Text,Patient Subjective / Concerns,,,,,,,
+,"Inpatient Progress Note, Physical Examination Details",Misc,Text,Physical Examination Details,,,,,,,
+,"Inpatient Progress Note, Other Imaging / Microbiology",Misc,Text,Other Imaging / Microbiology,,,,,,,
+,"Inpatient Progress Note, Assessment and Plan",Misc,Text,Assessment and Plan,,,,,,,
+,"Inpatient Progress Note, Assessment and Plan Reviewed",Misc,Boolean,Assessment and Plan reviewed,,,,,,,
+,"Inpatient Progress Note, Provider Name",Misc,Text,Provider Name,,,,,,,

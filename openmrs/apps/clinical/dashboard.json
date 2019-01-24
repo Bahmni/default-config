@@ -1,0 +1,637 @@
+{
+    "general": {
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 10,
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "General Summary",
+            "logo": "../images/nhn-logo.png"
+        },
+        "sections": {
+            "patientInformation": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "patientAttributes": [],
+                "addressFields": [
+                    "cityVillage",
+                    "address1",
+                    "countyDistrict"
+                ],
+                "displayOrder": 0,
+                "ageLimit": 100
+            },
+            "pacs": {
+                "orderType": "Radiology Order",
+                "type": "pacsOrders",
+                "translationKey": "DASHBOARD_TITLE_PACS_KEY",
+                "displayOrder": 8,
+                "dashboardConfig": {
+                    "pacsImageUrl": "/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}&serverName=dcm4chee",
+                    "numberOfVisits": 4
+                }
+            },
+            "visits": {
+                "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
+                "type": "visits",
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 4,
+                    "groupByVisits": true
+                },
+                "displayOrder": 1
+            },
+            "diagnosis": {
+                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                "type": "diagnosis",
+                "showCertainty": true,
+                "showOrder": true,
+                "showDetailsButton": true,
+                "displayOrder": 2
+            },
+            "conditions": {
+                "translationKey": "CONDITION_LIST_DISPLAY_CONTROL_TITLE",
+                "type": "conditionsList",
+                "displayOrder": 3
+            },
+            "formDisplaySummary": {
+                "translationKey": "DASHBOARD_TITLE_ACTIVE_VISIT_NOTES_KEY",
+                "type": "forms",
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 1
+                },
+                "formGroup": ["Patient Vitals", "Acute OPD visit", "Acute Abdominal Complaint", "Acute HEENT Complaint",
+                    "Acute MSK Complaint", "Acute Skin Complaint", "Acute GU Complaint", "ANC", "Asthma, Progress", "Childhood Illness (Children aged below 2 months)",
+                    "Childhood Illness( Children aged 2 months to 5 years)", "CHP Antenatal Care", "CHP Chronic Disease Counseling", "CHP Registration",
+                    "Chronic Kidney Disease, Progress", "COPD, Progress", "Congestive Heart Failure, Progress", "Death Note", "Delivery note", "Dental", "Dental Note",
+                    "Depression Note", "Depression-Followup Visit", "Depression-Initial Visit", "PTSD-PCL Initial Note", "Diabetes, Progress", "Discharge Note", "DRTuberculosis, Intake", "ECG Notes", "ER General Notes", "Family Planning Template",
+                    "HIV Testing and Counseling Intake Template", "HIV Treatment and Care Intake Template", "HIV Treatment and Care Progress Template", "Hypertension, Progress",
+                    "IMAM Program", "Kalaazar, Template", "Leprosy, Template", "Mental Health", "Mental Health Screener", "Malaria", "Nutrition", "Operative Notes",
+                    "Opioid Substitution Therapy Intake Template", "Opioid Substitution Therapy Intake Template", "Opportunistic Infection Template", "Orthopaedic Examination",
+                    "PNC Note", "Post Delivery Family Planning Checklist", "Prevention of Mother-to-Child Transmission Intake Template", "Procedure Notes", "Psychiatrist's Recommendation",
+                    "Psychosis Followup Note", "PTSD-PCL Follow Up", "Psychosis Intake Note", "Rheumatoid Arthritis, Progress", "Rheumatic Heart Disease, Progress", "Safe Abortion", "Seizure Disorder, Progress",
+                    "Sextually Transmitted Infections Intake Template", "Stroke OPD", "Trauma Notes", "Tuberculosis, Intake", "USG Notes", "TEST TEMPLATE (टेस्ट टेम्प्लेट)"
+                ],
+                "displayOrder": 3
+            },
+            "deathNote": {
+                "translationKey": "DASHBOARD_TITLE_DEATH_NOTE_KEY",
+                "templateName": "Death Note Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 3
+            },
+            "treatments": {
+                "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                "type": "treatment",
+                "dashboardConfig": {
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showRoute": false,
+                    "showDrugForm": false,
+                    "numberOfVisits": 1,
+                    "showOtherActive": true,
+                    "showDetailsButton": false
+                },
+                "expandedViewConfig": {
+                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "numberOfVisits": 10,
+                    "showOtherActive": true,
+                    "showDetailsButton": false
+                },
+                "displayOrder": 4
+            },
+            "labResults": {
+                "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                "type": "labOrders",
+                "dashboardConfig": {
+                    "title": null,
+                    "numberOfVisits": 2,
+                    "showChart": false,
+                    "showTable": true,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "showDetailsButton": false
+                },
+                "expandedViewConfig": {
+                    "numberOfVisits": 20
+                },
+                "displayOrder": 5
+            },
+            "otherdiagnosticOrderControl": {
+                "translationKey": "DASHBOARD_TITLE_OTHER_DIAGNOSTICS_KEY",
+                "type": "ordersControl",
+                "orderType": "USG Order",
+                "dashboardConfig": {
+                    "numberOfVisits": "1",
+                    "showHeader": true,
+                    "conceptNames": ["USG Order fulfillment Notes, Findings", "USG Order fulfillment, Clinician", "USG Order fulfillment, Remarks"]
+                },
+                "expandedViewConfig": {
+                    "showHeader": true,
+                    "conceptNames": ["USG Order fulfillment Notes, Findings", "USG Order fulfillment, Clinician", "USG Order fulfillment, Remarks"]
+                },
+                "displayOrder": 6
+            },
+            "vitals": {
+                "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
+                "type": "vitals",
+                "isObservation": true,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "Vitals"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Vitals"
+                    ],
+                    "numberOfVisits": 2,
+
+                    "pivotTable": {
+                        "numberOfVisits": "4",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "Systolic",
+                            "Diastolic",
+                            "Temperature",
+                            "Heart Rate",
+                            "Respiratory Rate",
+                            "Oxygen Saturation",
+                            "Weight"
+                        ],
+                        "drugConcepts": "",
+                        "labConcepts": ""
+                    }
+                },
+                "displayOrder": 7
+            },
+            "generalConsultation": {
+                "translationKey": "DASHBOARD_TITLE_GENERAL_CONSULTATION_KEY",
+                "templateName": "General Consultation",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 8
+            },
+            "operationsAndProcedures": {
+                "translationKey": "DASHBOARD_TITLE_OPERATIONS_AND_PROCEDURES_KEY",
+                "templateName": "Disease template, Orthopaedic",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 9
+            },
+            "disposition": {
+                "translationKey": "DISPOSITION_BOARD_LABEL_KEY",
+                "type": "disposition",
+                "numberOfVisits": 1,
+                "showDetailsButton": true,
+                "displayOrder": 10
+            },
+            "programs": {
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "type": "programs",
+                "displayOrder": 11
+            },
+            "chronicDiseases": {
+                "translationKey": "DASHBOARD_TITLE_CHRONIC_DISEASES_KEY",
+                "templateName": "Chronic Diseases",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 12
+            },
+            "childhoodTemplates": {
+                "translationKey": "DASHBOARD_TITLE_CHILDHOOD_TEMPLATES_KEY",
+                "templateName": "Childhood Templates",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 13,
+                "scope": "latest"
+            },
+            "motherhood": {
+                "translationKey": "DASHBOARD_TITLE_MOTHERHOOD_KEY",
+                "templateName": "Motherhood templates",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 14
+            },
+            "dischargeNote": {
+                "translationKey": "DASHBOARD_TITLE_DISCHARE_NOTE_KEY",
+                "templateName": "Discharge Note Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 15,
+                "scope": "latest"
+            },
+            "mentalHealth": {
+                "translationKey": "DASHBOARD_TITLE_MENTAL_HEALTH_KEY",
+                "templateName": "Mental Health Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 16
+            },
+            "hiv": {
+                "translationKey": "DASHBOARD_TITLE_HIV_KEY",
+                "templateName": "HIV Profile",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 17
+            },
+            "communityHealth": {
+                "translationKey": "DASHBOARD_TITLE_COMMUNITY_HEALTH_KEY",
+                "templateName": "Community Health Program Templates",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "tuberculosis": {
+                "translationKey": "DASHBOARD_TITLE_TUBERCULOSIS_KEY",
+                "templateName": "Tuberculosis Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "kalaazar": {
+                "translationKey": "DASHBOARD_TITLE_KALAAZAR_KEY",
+                "templateName": "Kalaazar Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "malaria": {
+                "translationKey": "DASHBOARD_TITLE_MALARIA_KEY",
+                "templateName": "Malaria Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "leprosy": {
+                "translationKey": "DASHBOARD_TITLE_LEPROSY_KEY",
+                "templateName": "Leprosy Disease Template",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "patientAppointments": {
+                "type": "custom",
+                "displayOrder": 22,
+                "config": {
+                    "translationKey": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
+                    "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
+                }
+            },
+            "anesthesia": {
+                "title": "Anesthesia Note",
+                "templateName": "Pre Anesthesia Check up",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            },
+            "newborn": {
+                "title": "Newborn Admission Note",
+                "templateName": "Newborn admission (NBA) note",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            }
+        }
+    },
+    "hiv": {
+        "dashboardName": "HIV",
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "HIV Summary",
+            "logo": "../images/nhn-logo.png"
+        },
+        "sections": {
+            "patientInformation": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "patientAttributes": [],
+                "addressFields": [
+                    "cityVillage",
+                    "address1",
+                    "countyDistrict"
+                ],
+                "displayOrder": 0
+            },
+            "hiv": {
+                "translationKey": "DASHBOARD_TITLE_HIV_KEY",
+                "templateName": "HIV Profile",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 1
+            },
+            "hivAll": {
+                "translationKey": "DASHBOARD_TITLE_HIV_NOTES_KEY",
+                "type": "forms",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 10000
+                },
+                "formGroup": ["HIV Testing and Counseling Intake Template", "HIV Treatment and Care Intake Template", "HIV Treatment and Care Progress Template", "Opportunistic Infection Template"]
+            }
+        }
+    },
+    "motherhood": {
+        "dashboardName": "Motherhood",
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "Motherhood Summary",
+            "logo": "../images/nhn-logo.png"
+        },
+        "sections": {
+            "patientInformation": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "patientAttributes": [],
+                "addressFields": [
+                    "cityVillage",
+                    "address1",
+                    "countyDistrict"
+                ],
+                "displayOrder": 0
+            },
+            "motherhood": {
+                "translationKey": "DASHBOARD_TITLE_MOTHERHOOD_KEY",
+                "templateName": "Motherhood templates",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 1
+            }
+        }
+    },
+    "operationsAndProcedures": {
+        "dashboardName": "Operations and Procedures",
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "Operations and Procedures Summary",
+            "logo": "../images/nhn-logo.png"
+        },
+        "sections": {
+            "patientInformation": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "patientAttributes": [],
+                "addressFields": [
+                    "cityVillage",
+                    "address1",
+                    "countyDistrict"
+                ],
+                "displayOrder": 0
+            },
+            "operationsAndProcedures": {
+                "translationKey": "DASHBOARD_TITLE_OPERATIONS_AND_PROCEDURES_KEY",
+                "templateName": "Disease template, Orthopaedic",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 1
+            }
+        }
+    },
+    "imam": {
+        "dashboardName": "IMAM",
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "IMAM Summary",
+            "logo": "../images/nhn-logo.png"
+        },
+        "sections": {
+            "patient_information": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "patientAttributes": [],
+                "addressFields": [
+                    "cityVillage",
+                    "address1",
+                    "countyDistrict"
+                ],
+                "displayOrder": 0
+            },
+            "imam": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "templateName": "Childhood Templates",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "displayOrder": 1
+            }
+        }
+    },
+    "communityHealth": {
+        "dashboardName": "Community Health",
+        "printing": {
+            "title": "Bayalpata Hospital",
+            "header": "Community Health Summary",
+            "logo": "../images/nhn-logo.png"
+        },
+        "sections": {
+            "Patient Information": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "patientAttributes": [],
+                "addressFields": [
+                    "cityVillage",
+                    "address1",
+                    "countyDistrict"
+                ]
+            },
+            "communityHealth": {
+                "translationKey": "DASHBOARD_TITLE_COMMUNITY_HEALTH_KEY",
+                "templateName": "Community Health Program Templates",
+                "type": "diseaseTemplate",
+                "showOnly": [],
+                "showDetailsButton": true,
+                "dashboardConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                },
+                "expandedViewConfig": {
+                    "showOnly": [],
+                    "showDetailsButton": true
+                }
+            }
+        }
+    }
+}

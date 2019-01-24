@@ -1,0 +1,10 @@
+uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14
+,"Congestive Heart Failure, Exacerbation Hospitalizations in 12 Months",Misc,Numeric,Hospitalized due to CHF exacerbation in last 12 months,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Is patient on diuretics",Misc,Boolean,Is patient on diuretics,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, If yes, does patient take everyday as prescribed",Misc,Boolean,"If yes, does patient take everyday as prescribed",,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Other Chronic Medical Problems",Misc,Boolean,Are there other chronic medical problems,,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Details of Other Chronic Medical Problems",Misc,Text,Details of other chronic medical problems,Are the other medical problems controlled,,,,,,,,,,,,,,,,,,,
+,"Congestive Heart Failure, Severity classification NYHA",Misc,Coded,Severity classification NYHA,"<b>Class I</b> - symptoms of HEART FAILURE only at activity levels that would limit normal individuals<br/>
+<b>Class II</b> - symptoms of HEART FAILURE with ordinary exertion<br/>
+<b>Class III</b> - symptoms of HEART FAILURE with less than ordinary exertion<br/>
+<b>Class IV</b> - symptoms of HEART FAILURE at rest",,,,,,Severity classification NYHA - Class I,Severity classification NYHA - Class II,Severity classification NYHA - Class III,Severity classification NYHA - Class VI,,,,,,,,,,

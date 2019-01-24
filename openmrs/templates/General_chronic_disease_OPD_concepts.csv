@@ -1,0 +1,28 @@
+uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11
+,"General Chronic Disease OPD, Chief Complaint",,Misc,Text,Chief Complaint,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Chronic Disease Diagnosis","for example, if diabetes then note: Type I or Type II diabetes,<br> 
+when diagnosed, or suspected diagnosis<br>",Misc,Text,Specifics of Chronic disease diagnosis,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, History of Present Illness",,Misc,Text,History of Present Illness,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Past Medical History / Past Surgical History",Eg. Other Chronic diseases or surgeries<br>,Misc,Text,Past Medical History / Past Surgical History,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Social History","Alcohol, Tobacco, Work, Living Situation<br>",Misc,Text,Social History,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Medications",,Misc,Text,Medications,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Allergies",,Misc,Text,Allergies,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Systolic",,Misc,Numeric,Systolic,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Systolic Abnormal",,Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Diastolic",,Misc,Numeric,Diastolic,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Diastolic Abnormal",,Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Pulse",,Misc,Numeric,Pulse,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Pulse Abnormal",,Abnormal,Boolean,Pulse Abnormal,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, RR",,Misc,Numeric,RR,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, RR Abnormal",,Abnormal,Boolean,RR Abnormal,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, SAT",,Misc,Numeric,SAT,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, SAT Abnormal",,Abnormal,Boolean,SAT Abnormal,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Temperature",,Misc,Numeric,Temperature,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Temperature Abnormal",,Abnormal,Boolean,Temperature Abnormal,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Physical Examination Details",,Misc,Text,Physical Examination Details,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Investigations","for PRIOR investigations, include those most relevant to diseases <br>
+and include date of test<br>",Misc,Text,Investigations,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Assessment / Plan","please list patient problem list with plan<br>
+(i.e. medicines, investigations, counseling) for each problem<br>",Misc,Text,Assessment / Plan,,,,,,,,,,,,,,,
+,"General Chronic Disease OPD, Counseling",,Misc,Coded,Counseling,,,,,Diet,Quit Smoking,Quit Alcohol,Medication Compliance,,,,,,,
+,"General Chronic Disease OPD, Followup",,Misc,Coded,Followup,,,,,1 - 2 Weeks,1 Month,3 months,6 Months,12 Months,,,,,,

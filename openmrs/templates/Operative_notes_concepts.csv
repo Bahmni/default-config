@@ -1,0 +1,18 @@
+uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8
+,"Operative Notes, Reason for Surgery",,Misc,Text,Reason for surgery,,,,,,,,,,,,
+,"Operative Notes, Surgeons",,Misc,Text,Surgeons,,,,,,,,,,,,
+,"Operative Notes, Anesthetist",,Misc,Text,Anesthetist,,,,,,,,,,,,
+,"Operative Notes, Procedure",,Misc,Coded,Procedure,,,,,Suturing,Wound Care,Fracture management,,,,,
+,"Operative Notes, Specific Intervention",,Misc,Text,Specific intervention,,,,,,,,,,,,
+,"Operative Notes, Anesthesia",,Misc,Text,Anesthesia,,,,,,,,,,,,
+,"Operative Notes, Fluid Administered",,Misc,Text,Fluid administered,,,,,,,,,,,,
+,"Operative Notes, Fluid Amount",,Misc,Numeric,Fluid amount,,,,,,,,,,,,
+,"Operative Notes, Fluid Unit",,Misc,Text,Fluid unit,,,,,,,,,,,,
+,"Operative Notes, Estimated Blood Loss in CC",,Misc,Numeric,Estimated blood loss (in cc),,,,,,,,,,,,
+,"Operative Notes, Findings",,Misc,Text,Findings,,,,,,,,,,,,
+,"Operative Notes, Intra-OP Investigations Ordered",,Misc,Text,Intra-OP investigations ordered,,,,,,,,,,,,
+,"Operative Notes, Specimens","(type sent to pathology (gallbladder and cystic duct, etc.).<br>
+DRAINS (T-tube in RUQ, etc.)<br>",Misc,Text,Specimens,,,,,,,,,,,,
+,"Operative Notes, Complications",,Misc,Text,Complications,,,,,,,,,,,,
+,"Operative Notes, Condition",,Misc,Coded,Condition,,,,,Stable,Extubated,Transferred to recovery room,,,,,
+,"Operative Notes, Post OP Infection",,Misc,Boolean,Post OP infection,,,,,,,,,,,,

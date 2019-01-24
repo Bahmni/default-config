@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="POSSIBLE-VIEWS-PATIENT-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view patient_view as
+            select
+            patient_identifier.identifier as identifier,
+            concat(person_name.given_name, ' ', person_name.family_name) as name,
+            person.date_created as registration_date,
+            person.birthdate as birthdate,
+            person.gender as gender,
+            person.dead as dead,
+            patient.patient_id as patient_id
+            from patient, person, patient_identifier, person_name
+            where
+            patient.patient_id = person.person_id and
+            patient_identifier.patient_id = patient.patient_id and
+            person_name.person_id = patient.patient_id;
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-VISIT-VIEW" author="tw" runOnChange="true">
+        <sql>
+            CREATE OR REPLACE VIEW visit_view AS
+            SELECT
+            visit.*,
+            visit_type.name visit_type_name
+            FROM visit
+            JOIN visit_type ON visit.visit_type_id = visit_type.visit_type_id;
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-CONCEPT-REFERENCE-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view concept_reference_view as
+            select
+            concept_reference_term.concept_reference_term_id as concept_reference_term_id,
+            concept_reference_term.name as concept_reference_term_name,
+            concept_reference_term.code as concept_reference_term_code,
+            concept_reference_source.name as concept_reference_source_name
+            from concept_reference_term, concept_reference_source
+            where
+            concept_reference_term.concept_source_id = concept_reference_source.concept_source_id;
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-CONCEPT-CHILDREN-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view concept_children_view as
+            select
+            parent.concept_id as parent_concept_id,
+            parent.concept_class_name as parent_concept_class_name,
+            parent.concept_full_name as parent_concept_name,
+            child.concept_id as child_concept_id,
+            child.concept_class_name as child_concept_class_name,
+            child.concept_full_name as child_concept_name
+            from concept_view parent
+            LEFT OUTER JOIN concept_set ON parent.concept_id = concept_set.concept_set
+            LEFT OUTER JOIN concept_view child ON child.concept_id = concept_set.concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-LABTEST-PANEL-DEPARTMENT-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view labtest_panel_department_view as
+            select
+            concept_view.concept_full_name as test_concept_name,
+            concept_view.concept_id as test_concept_id,
+            panel.parent_concept_name as panel_concept_name,
+            panel.parent_concept_id as panel_concept_id,
+            department.parent_concept_name as department_concept_name,
+            department.parent_concept_id as department_concept_id
+            from concept_view
+            left outer join concept_children_view panel
+            on concept_view.concept_id = panel.child_concept_id AND panel.parent_concept_class_name='Labset'
+            inner join concept_children_view department
+            on concept_view.concept_id = department.child_concept_id AND department.parent_concept_class_name='Department'
+            where concept_view.concept_class_name='Test';
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-CONCEPT-ANSWER-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view concept_answer_view as
+            select
+            question_concept_view.concept_id as question_concept_id,
+            question_concept_view.concept_class_name as question_concept_class_name,
+            question_concept_view.concept_full_name as question_concept_name,
+            answer_concept_view.concept_id as answer_concept_id,
+            answer_concept_view.concept_class_name as answer_concept_class_name,
+            answer_concept_view.concept_full_name as answer_concept_name
+            from concept_view question_concept_view, concept_view answer_concept_view, concept_answer
+            where
+            question_concept_view.concept_id = concept_answer.concept_id
+            and answer_concept_view.concept_id = concept_answer.answer_concept;
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-OBS-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view obs_view as
+            select
+            concept_view.*,
+            obs.obs_id as obs_id,
+            obs.value_text as value_text,
+            obs.value_datetime as value_datetime,
+            obs.value_numeric as value_numeric,
+            obs.value_coded as value_coded,
+            obs.value_boolean as value_boolean,
+            obs.obs_group_id as obs_group_id,
+            obs.person_id as person_id,
+            obs.encounter_id as encounter_id,
+            obs.obs_datetime as obs_datetime,
+            obs.voided as voided
+            from obs, concept_view
+            where
+            obs.concept_id = concept_view.concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-RADIOLOGY-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view radiology_view as
+            select
+            concept_children_view.child_concept_id as concept_id,
+            concept_children_view.child_concept_name as name
+            from concept_children_view
+            where parent_concept_name = 'Radiology';
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-RADIOLOGY-RESULT-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view radiology_result_view as
+            select
+            file_obs.person_id as person_id,
+            radiology_view.name as name,
+            file_obs.value_text as file_name
+            from obs_view file_obs, obs_view radiology_obs, radiology_view
+            where
+            file_obs.concept_full_name = 'Document' and
+            file_obs.obs_group_id = radiology_obs.obs_id and
+            radiology_obs.concept_id = radiology_view.concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-PERSON-IDS-VIEW" author="tw" runOnChange="true">
+        <sql>
+            create or replace view person_ids as
+            (select o.person_id,
+            o.concept_full_name as concept_full_name,
+            o.value_concept_full_name as value_concept_full_name,
+            p.gender as gender,
+            o.obs_datetime as obs_datetime
+            from valid_coded_obs_view o
+            inner join person p on o.person_id = p.person_id);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-nonVoidedConceptFullName" author="tw" runOnChange="true">
+        <sql>
+            CREATE OR REPLACE VIEW nonVoidedConceptFullName AS
+            SELECT *
+            FROM concept_name
+            WHERE !voided AND concept_name_type = 'FULLY_SPECIFIED';
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-nonVoidedQuestionAnswerObs" author="tw" runOnChange="true">
+        <sql>
+            CREATE OR REPLACE VIEW nonVoidedQuestionAnswerObs AS
+            SELECT
+            observation.obs_id,
+            observation.concept_id,
+            observation.person_id,
+            observation.value_coded,
+            observation.obs_group_id,
+            observation.obs_datetime,
+            observation.encounter_id,
+            observation.creator,
+            question_concept.name       question_full_name,
+            question_concept.concept_id question_id,
+            value_concept.name          answer_full_name,
+            value_concept.concept_id    answer_id
+            FROM obs observation
+            JOIN nonVoidedConceptFullName question_concept ON observation.concept_id = question_concept.concept_id
+            JOIN nonVoidedConceptFullName value_concept ON observation.value_coded = value_concept.concept_id
+            WHERE !observation.voided;
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-VIEWS-nonVoidedQuestionObs" author="tw" runOnChange="true">
+        <sql>
+            CREATE OR REPLACE VIEW nonVoidedQuestionObs AS
+            SELECT
+            observation.*,
+            question_concept.name       question_full_name,
+            question_concept.concept_id question_id
+            FROM obs observation
+            JOIN nonVoidedConceptFullName question_concept ON observation.concept_id = question_concept.concept_id
+            WHERE !observation.voided;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

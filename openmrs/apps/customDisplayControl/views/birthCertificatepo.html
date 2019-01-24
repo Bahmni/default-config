@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/display/birth-cer-display.css" />
+    <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/print/birth-cer-print.css" media="print" />
+</head>
+
+<body>
+<div class="container birth-certificate">
+    <div ng-repeat="birthCertificate in birthCertificates" class="birth-certificate-wrapper">
+        <div class="cer_content">
+            <div class="birth-certificate-top">
+                <div class="issued_content-1 col-2 fl">
+                    Fiscal Year:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+                </div>
+                <div class="issued_content-1 col-2 fr" >
+                    Birth Certificate No:
+                </div>
+            </div>
+            <h1 class="page-title"><center><u>Birth Report</u></center></h1><br>
+            This is to certifiy that a live <u class="gender">{{birthCertificate["Infant gender"]}}</u>
+            baby was born on BS <u class="deliverydate">{{birthCertificate["Delivery date and time"] | bahmniDate}}</u> (AD .../.../.... DD/MM/YYYY)
+            at <u class="deliverytime">{{birthCertificate["Delivery date and time"] | bahmniTime}}</u> (24 hours )with birth weight <u class="deliveryweight">{{birthCertificate["Infant weight"]}}</u>  grams. The type of
+            birth was  <u class="deliveryoutcome">{{birthCertificate["Delivery outcome"]}}</u>  by <u class="deliverymethod">{{birthCertificate["Delivery method"]}}</u>.
+            <br>According to, hospital/facility record the name of mother is Ms<u class="patientname">{{patient.name}}</u> and father is Mr <u class="fathername">{{birthCertificate["Father's Name"]}}</u> resident of Country
+            <u>Nepal</u> district <u>{{patient.address.countyDistrict}}</u>  village /muncipality <u>{{patient.address.cityVillage}}</u>
+            ward number <u>{{patient.address.address1}}</u> tole
+        </div>
+        <div class="clearfix birth-certificate-bottom">
+            <div class="issued_content col-2 fl">
+                <div>
+                    <span class="color-change">Issued by :</span>
+                    <span>Signature :</span>
+                    <span>Name :</span>
+                    <span> Designation:</span>
+                </div>
+                <div>
+                    <span class="color-change">Certified by Signature</span>
+                    <span>Name </span>
+                    <span>Designation</span>
+                    <span class="color-change">Certificate Issued Date </span>
+                </div>
+            </div>
+            <div class="issued_content-2 col-2 fr">
+                <div>
+                    <span class="color-change">Hospital/Health Facility</span>
+                    <span>Name :</span>
+                    <span>Address :</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br> [Please register this birth at Local Register Office within 35 days of birth]
+        <br>
+        <br>
+        <br>
+        </div>
+        </div>
+</body>
+
+</html>

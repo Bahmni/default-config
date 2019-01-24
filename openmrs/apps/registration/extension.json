@@ -1,0 +1,57 @@
+{
+    "search": {
+        "id": "bahmni.registration.navigation.patient.search",
+        "extensionPointId": "org.bahmni.registration.navigation",
+        "type": "link",
+        "translationKey": "REGISTRATION_SEARCH_CONFIG_KEY",
+        "url": "/search",
+        "shortcutKey": "REGISTRATION_SEARCH_CONFIG_ACCESS_KEY",
+        "icon": "fa-search",
+        "order": 1,
+        "requiredPrivilege": "View Patients"
+    },
+    "createNew": {
+        "id": "bahmni.registration.navigation.patient.create",
+        "extensionPointId": "org.bahmni.registration.navigation",
+        "type": "link",
+        "translationKey": "REGISTRATION_CREATE_NEW_CONFIG_KEY",
+        "url": "/patient/new",
+        "icon": "fa-plus",
+        "shortcutKey": "REGISTRATION_CREATE_NEW_CONFIG_ACCESS_KEY",
+        "order": 2,
+        "requiredPrivilege": "Add Patients"
+    },
+    "view": {
+        "id": "bahmni.patient.search.result.action.edit",
+        "extensionPointId": "org.bahmni.registration.patient.search.result.action",
+        "type": "link",
+        "translationKey": "REGISTRATION_VIEW_CONFIG_KEY",
+        "url": "/patient/{{patientUuid}}",
+        "icon": "fa-patient-edit",
+        "order": 1,
+        "requiredPrivilege": "View Patients"
+    },
+    "bahmni_patient_registration_next": {
+        "id": "bahmni.patient.registration.next",
+        "extensionPointId": "org.bahmni.registration.patient.next",
+        "type": "config",
+        "extensionParams": {
+            "display": "Enter <u>C</u>onsultation",
+            "shortcutKey": "c",
+            "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
+        },
+        "order": 1,
+        "requiredPrivilege": "RegisterAndConsult"
+    },
+    "bahmni_registration_conceptsetgroup_visitdetails": {
+        "id": "bahmni.registration.conceptSetGroup.visitDetails",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Visit Details",
+            "required": true
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
+    }
+}

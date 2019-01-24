@@ -1,0 +1,31 @@
+erp_custom_modules_url: "https://github.com/Possiblehealth/possible-erp-custom/archive/master.zip"
+erp_modules_url: "https://github.com/Possiblehealth/possible-artifacts/raw/master/89-artifacts/openerp-modules.zip"
+modules:
+ - asset
+ - bahmni_custom
+ - web_d3_chart
+modules_erp:
+ - bahmni_atom_feed
+ - bahmni_customer_payment
+ - bahmni_dhis2_export
+ - bahmni_internal_stock_move
+ - bahmni_lab_seed_setup
+ - bahmni_logger
+ - bahmni_module_install
+ - bahmni_pharmacy_product
+ - bahmni_print_bill
+ - bahmni_purchase_extension
+ - bahmni_sale_discount
+ - bahmni_seed_setup
+ - bahmni_stock_batch_sale_price
+ - bahmni_stock_fix
+ - bahmni_web_extensions
+ - print_receipt
+ - sale_stock
+ - search_customizations
+ - search_seed_data 
+bahmni_erp_temp_files:
+ - possible-erp-custom-master.zip
+ - possible-erp-custom-master
+ - possible-erp-master.zip
+ - possible-erp-master

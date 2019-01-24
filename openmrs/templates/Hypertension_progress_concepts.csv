@@ -1,0 +1,9 @@
+uuid,name,description,class,datatype,shortname,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10
+,"Hypertension, Systolic",,Misc,Numeric,Systolic,,,,,,,,,,,,,,
+,"Hypertension, Systolic Abnormal",,Abnormal,Boolean,Systolic Abnormal,,,,,,,,,,,,,,
+,"Hypertension, Diastolic",,Misc,Numeric,Diastolic,,,,,,,,,,,,,,
+,"Hypertension, Diastolic Abnormal",,Abnormal,Boolean,Diastolic Abnormal,,,,,,,,,,,,,,
+,"Hypertension, Last Cr",Check at least once yearly with urine protein to assess for kidney damage,Misc,Text,Last CR,,,,,,,,,,,,,,
+,"Hypertension, Last Cr Date",,Misc,Date,Last CR date,,,,,,,,,,,,,,
+,"Hypertension, Last LDL",Goal is less than 130,Misc,Text,Last LDL,,,,,,,,,,,,,,
+,"Hypertension, Last LDL Date",Do not check more than once yearly,Misc,Date,Last LDL date,,,,,,,,,,,,,,

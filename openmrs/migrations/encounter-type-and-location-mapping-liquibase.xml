@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="POSSIBLE-ENCOUTER-TYPE-EMERGENCY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from encounter_type where name = 'Emergency';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create encounter type Emergency</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO encounter_type (name, description, creator, date_created, uuid)
+            VALUES ('Emergency', 'Emergency encounter', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-ENCOUTER-TYPE-SURGERY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from encounter_type where name = 'Surgery';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create encounter type Surgery</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO encounter_type (name, description, creator, date_created, uuid)
+            VALUES ('Surgery', 'Surgery encounter', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-ENCOUTER-TYPE-PHARMACY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from encounter_type where name = 'Pharmacy';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create encounter type Pharmacy</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO encounter_type (name, description, creator, date_created, uuid)
+            VALUES ('Pharmacy', 'Pharmacy encounter', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-REGISTRATION" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Registration';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location registration</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Registration', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ER" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'ER';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location ER</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('ER', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-GENERAL-OPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'General OPD';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location General OPD</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('General OPD', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-CHRONIC-DISEASE-OPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Chronic Disease OPD';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location Chronic Disease OPD</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Chronic Disease OPD', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-CHRONIC-DISEASE-OPD2" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Chronic Disease OPD2';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location Chronic Disease OPD2</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Chronic Disease OPD2', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ANC" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'ANC';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location ANC</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('ANC', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-CMAM" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'CMAM';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location CMAM</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('CMAM', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ART" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'ART';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location ART</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('ART', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-PEDIATRICS" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Pediatrics';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location Pediatrics</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Pediatrics', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-GYNAE-ADOLSCENT-HEALTH-TB-LEPROSY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Gynae/Obs / Adolescent Health / TB / Leprosy';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location Gynae/Obs / Adolescent Health / TB / Leprosy</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Gynae/Obs / Adolescent Health / TB / Leprosy', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-IPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'IPD';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location IPD</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('IPD', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-LAB" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Lab';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location Lab</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Lab', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-X-RAY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'X-Ray';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location X-Ray</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('X-Ray', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-DENTAL" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Dental';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location Dental</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Dental', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-OT" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'OT';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location OT</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('OT', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-PHARMACY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location where name = 'Pharmacy';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location Pharmacy</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Pharmacy', 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-REGISTRATION" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='Registration');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for Registration</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Registration'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-ER" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='ER');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for ER</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='ER'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-GENERAL-OPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='General OPD');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for General OPD</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='General OPD'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-CHRONIC-DISEASE-OPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='Chronic Disease OPD');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for Chronic Disease OPD</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Chronic Disease OPD'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-CHRONIC-DISEASE-OPD2" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='Chronic Disease OPD2');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for Chronic Disease OPD2</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Chronic Disease OPD2'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-ANC" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='ANC');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for ANC</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='ANC'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-CMAM" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='CMAM');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for CMAM</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='CMAM'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-ART" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='ART');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for ART</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='ART'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-PEDIATRICS" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='Pediatrics');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for Pediatrics</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Pediatrics'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-GYNAE" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where
+                name='Gynae/Obs / Adolescent Health / TB / Leprosy');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for Gynae/Obs / Adolescent Health / TB / Leprosy</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Gynae/Obs / Adolescent Health / TB / Leprosy'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-IPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='IPD');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for IPD</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='IPD'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-LAB" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='Lab');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for Lab</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Lab'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-X-RAY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='X-Ray');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for X-Ray</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='X-Ray'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-DENTAL" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='Dental');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for Dental</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Dental'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-OT" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='OT');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for OT</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='OT'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOGIN-LOCATION-TAG-PHARMACY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_tag_map where location_id = (Select location_id from location where name='Pharmacy');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create login location for Pharmacy</comment>
+        <sql>
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Pharmacy'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-REGISTRATION" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='Registration');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for Registration</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            Select location_id from location where name ='Registration' into @reg_location_id;
+            Select encounter_type_id from encounter_type where name ='REG' into @reg_encounter_id;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES(@reg_location_id, @reg_encounter_id, 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-ER" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='ER');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for ER</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='ER'),
+            (Select encounter_type_id from encounter_type where name ='Emergency'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-GENERAL-OPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location
+                where name ='General OPD');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for General OPD</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='General OPD'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-CHRONIC-DISEASE-OPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='Chronic Disease OPD');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for Chronic Disease OPD</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Chronic Disease OPD'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-CHRONIC-DISEASE-OPD2" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='Chronic Disease OPD2');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for Chronic Disease OPD2</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Chronic Disease OPD2'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-ANC" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='ANC');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for ANC</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='ANC'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-CMAM" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='CMAM');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for CMAM</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='CMAM'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-ART" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location
+                where name ='ART');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for ART</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='ART'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-PEDIATRICS" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='Pediatrics');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for Pediatrics</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Pediatrics'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-GYNAE" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location
+                where name ='Gynae/Obs / Adolescent Health / TB / Leprosy');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for Gynae/Obs / Adolescent Health / TB / Leprosy</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Gynae/Obs / Adolescent Health / TB / Leprosy'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-IPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location
+                where name ='IPD');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for IPD</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='IPD'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-LAB" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='Lab');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for Lab</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Lab'),
+            (Select encounter_type_id from encounter_type where name ='Investigation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-X-RAY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='X-Ray');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for X-Ray</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='X-Ray'),
+            (Select encounter_type_id from encounter_type where name ='Radiology'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-DENTAL" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='Dental');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for Dental</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Dental'),
+            (Select encounter_type_id from encounter_type where name ='Consultation'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-OT" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='OT');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for OT</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='OT'),
+            (Select encounter_type_id from encounter_type where name ='Surgery'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-LOCATION-ENCOUNTER-TYPE-MAPPING-PHARMACY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from location_encounter_type_map where location_id = (Select location_id from location where name ='Pharmacy');
+            </sqlCheck>
+        </preConditions>
+        <comment>Create location and encounter type mapping for Pharmacy</comment>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Pharmacy'),
+            (Select encounter_type_id from encounter_type where name ='Pharmacy'), 1, @currdate, @uuid);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

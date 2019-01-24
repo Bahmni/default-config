@@ -1,0 +1,6 @@
+program_auto_enrolment_properties_url: "https://raw.githubusercontent.com/Possiblehealth/possible-config/master/properties/programautoenrolment.properties"
+possiblemodule_omod_url: "https://github.com/Possiblehealth/possible-artifacts/raw/master/90-artifacts/possiblemodule-1.0-SNAPSHOT.omod"
+bahmniapps_url: "https://github.com/Possiblehealth/possible-artifacts/raw/master/90-artifacts/bahmniapps.zip"
+bahmni_omod_url: "https://github.com/Possiblehealth/possible-artifacts/raw/master/90-artifacts/bahmnicore-omod-0.90-SNAPSHOT.omod"
+bahmni_user: bahmni
+bahmni_group: bahmni

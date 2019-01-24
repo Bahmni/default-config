@@ -1,0 +1,18 @@
+bahmnilab_url: "https://github.com/Possiblehealth/possible-artifacts/raw/master/90-artifacts/openelis.war"
+bahmni_lab_temp_files:
+  - bahmni-lab.war
+  - possible-bahmni-lab
+possible_lab:
+  - config.rb
+  - css
+  - documentation
+  - fonts
+  - images
+  - index.jsp
+  - LICENSE
+  - media
+  - META-INF
+  - pages
+  - scripts
+  - tree_images
+  - WEB-INF

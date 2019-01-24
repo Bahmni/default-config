@@ -1,0 +1,20 @@
+{
+    "id": "bahmni.orders",
+    "extensionPoints": [{
+        "id": "org.bahmni.orders.search",
+        "description": "Orders Dashboard"
+    }],
+    "config": {
+        "enableNepaliCalendar": true,
+        "displayNepaliDates": true,
+        "maxConceptSetLevels": 3,
+        "conceptSetUI": {
+            "Grid1": {
+                "grid": true
+            },
+            "Coded3": {
+                "multiSelect": true
+            }
+        }
+    }
+}

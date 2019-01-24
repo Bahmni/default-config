@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="POSSIBLE-IMPL-DIAGNOSIS-TO-CONDITIONS" author="tw">
+        <sql>
+            INSERT INTO conditions (patient_id, status, concept_id, onset_date, creator, date_created, voided, uuid)
+            SELECT
+            o.person_id               AS personId,
+            'ACTIVE'                  AS status,
+            o.value_coded             AS diagnosisConcept,
+            Min(DATE(o.obs_datetime)) AS startDate,
+            o.creator                 AS creator,
+            now()                     AS dateCreated,
+            0                         AS voided,
+            uuid()
+            FROM obs o
+            JOIN concept_name codedDiagnosis ON o.concept_id = codedDiagnosis.concept_id
+            JOIN concept_name diagnosisCodedValue ON o.value_coded = diagnosisCodedValue.concept_id
+            JOIN obs confirmedObs ON o.obs_group_id = confirmedObs.obs_group_id
+            JOIN concept_name confirmed ON confirmedObs.value_coded = confirmed.concept_id
+            WHERE codedDiagnosis.concept_name_type = 'FULLY_SPECIFIED' AND codedDiagnosis.name = 'Coded Diagnosis'
+            AND confirmed.concept_name_type = 'FULLY_SPECIFIED' AND confirmed.name = 'Confirmed'
+            AND diagnosisCodedValue.concept_name_type = 'FULLY_SPECIFIED' AND
+            diagnosisCodedValue.name IN ('HIV Infection', 'Diabetes Mellitus',
+            'Hypertension', 'Rheumatoid Arthritis',
+            'Bronchial Asthma', 'Chronic Obstructive Pulmonary Disease')
+            AND !confirmedObs.voided AND !o.voided
+            GROUP BY diagnosisConcept, personId;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

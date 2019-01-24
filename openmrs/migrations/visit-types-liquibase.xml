@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="POSSIBLE-IMPL-VISIT-TYPE-GENERAL" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from visit_type where name = 'General';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+
+            INSERT INTO visit_type (name, description, creator, uuid, date_created) VALUES ('General', '', 1, @uuid, @currdate);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-VISIT-TYPE-LAB" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from visit_type where name = 'Lab';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+
+            INSERT INTO visit_type (name, description, creator, uuid, date_created) VALUES ('Lab', '', 1, @uuid, @currdate);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-VISIT-TYPE-EMERGENCY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from visit_type where name = 'Emergency';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+
+            INSERT INTO visit_type (name, description, creator, uuid, date_created) VALUES ('Emergency', '', 1, @uuid, @currdate);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-VISIT-TYPE-PHARMACY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from visit_type where name = 'Pharmacy';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            select uuid() into @uuid;
+            select now() into @currdate;
+
+            INSERT INTO visit_type (name, description, creator, uuid, date_created) VALUES ('Pharmacy', '', 1, @uuid, @currdate);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

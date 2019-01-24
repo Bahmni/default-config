@@ -1,0 +1,46 @@
+uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3
+,"Rheumatoid Arthritis, Last Visit Date",Misc,Date,Last Visit Date,,,,,,,,
+,"Rheumatoid Arthritis, Previous followup location",Misc,Text,Previous followup location,,,,,,,,
+,"Rheumatoid Arthritis, Diagnosis Status",Misc,Coded,Diagnosis Status,,,,,,No Previous Diagnosis,Confirmed Elsewhere,
+,"Rheumatoid Arthritis, Date Confirmed",Misc,Date,Date Confirmed,,,,,,,,
+,"Rheumatoid Arthritis, Diagnosis Location",Misc,Text,Diagnosis Location,,,,,,,,
+,"Rheumatoid Arthritis, Arthritis Type",Misc,Coded,Type of Arthritis,,,,,,RF Positive,RF Negative,
+,"Rheumatoid Arthritis, Meets All 5 Diagnostic Criteria",Misc,Boolean,Meets all 5 diagnostic criteria,"Meet all 5 of the following<br>
+- Inflammatory arthritis involving three or more joints<br>
+- Duration of symptoms is more than six weeks.<br>
+- Positive rheumatoid factor (RF)<br>
+- Elevated levels of C-reactive protein (CRP) or the erythrocyte sedimentation rate (ESR)<br>
+- Diseases with similar clinical features have been excluded (crystal dz, lupus, psoriatic)<br>",,,,,,,
+,"Rheumatoid Arthritis, Meets All 3 Diagnostic Criteria",Misc,Boolean,Meets all 3 diagnostic criteria,"Meet all 3 of the below<br>
+- Presence of inflammation in at least one joint<br>
+- The absence of an alternative diagnosis that better explains the joint inflammation<br>
+- Achievement of a total score of at least 6<br>",,,,,,,
+,"Rheumatoid Arthritis, Number And Site Score",Misc,Numeric,Number and Site of involved joint,"1 Point  - 2 to 10 large joints <br>
+from among shoulders, elbows, hips, knees, and ankles)<br>
+2 Points - 1 to 3 small joints <br>
+(from among the metacarpophalangeal joints, proximal interphalangeal<br>
+ joints, second through fifth metatarsophalangeal joints, thumb <br>
+interphalangeal joints, and wrists<br>
+3 Points - 4 to 10 small joints<br>
+5 Points - Greater than 10 joints (including at least 1 small joint)<br>",,,,,,,
+,"Rheumatoid Arthritis, Serological Abnormality Score",Misc,Numeric,Serological abnormality,"Serological abnormality (rheumatoid factor)<br>
+0 Point  – If Negative<br>
+3 Points – If Positive<br>",,,,,,,
+,"Rheumatoid Arthritis, Elevated Acute Phase Response Score",Misc,Numeric,Elevated acute phase response,"Elevated acute phase response (erythrocyte sedimentation rate [ESR]<br>
+or C-reactive protein [CRP]) above the ULN<br>
+0 Point – Both Not Raised
+1 Point – At Least One Raised ",,,,,,,
+,"Rheumatoid Arthritis, Symptom Duration Score",Misc,Numeric,Symptom duration,"Symptom Duration<br>
+0 Point – Less than 6 Weeks<br>
+1 Point – Greater than equal to 6 Weeks<br>",,,,,,,
+,"Rheumatoid Arthritis, Smoking History",Misc,Boolean,Smoking History,,,,,,,,
+,"Rheumatoid Arthritis, Packs per day",Misc,Numeric,Packs per day,,,,,,,,
+,"Rheumatoid Arthritis, Number of years",Misc,Numeric,Number of years,,,,,,,,
+,"Rheumatoid Arthritis, Alcohol Abuse",Misc,Boolean,Alcohol Abuse,,,,,,,,
+,"Rheumatoid Arthritis, Currently Exposed to Alcohol",Misc,Boolean,Currently Exposed to Alcohol,,,,,,,,
+,"Rheumatoid Arthritis, Alcohol Abuse Details",Misc,Text,Alcohol Abuse Details,,,,,,,,
+,"Rheumatoid Arthritis, Current Home Medications",Misc,Coded,Current home medications,,,,,,NSAID,Methotrexade,Steroid
+,"Rheumatoid Arthritis, Details of Current Home Medications",Misc,Text,Details of current home medications,,,,,,,,
+,"Rheumatoid Arthritis, Other Current Home Medications",Misc,Text,Other current home medications,,,,,,,,
+,"Rheumatoid Arthritis, Non Compliance",Misc,Boolean,Non Compliance,,,,,,,,
+,"Rheumatoid Arthritis, Non Compliance Reason",Misc,Text,Non Compliance reason,,,,,,,,

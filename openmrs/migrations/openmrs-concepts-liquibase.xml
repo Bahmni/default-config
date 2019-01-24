@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!-- This Liquibase file is meant to contain CONCEPTS and CONCEPT SETS -->
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-VISIT-DETAILS" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Visit Details';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept visit details for registration page</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Visit Details', 'Visit
+            Details', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Visit', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Details', 1);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-DEPARTMENT-SENT-TO" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Department Sent To';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept Department Sent To for registration page</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Department Sent To',
+            'Department Sent To', 'N/A', 'Misc', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Department', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Sent', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'To', 1);
+
+            select concept_id into @visit_details_concept_id from concept_name where name = 'Visit Details' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@visit_details_concept_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-EMERGENCY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Emergency';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member Emergency for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Emergency', 'Emergency', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Emergency', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-GYNAECOLOGY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Gynaecology';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member Gynaecology for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Gynaecology', 'Gynae', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Gynaecology', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-IMAM" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'IMAM';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member IMAM for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'IMAM', 'IMAM', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'IMAM', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-ART" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'ART';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member ART for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'ART', 'ART', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'ART', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-GENERAL-OPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'General OPD';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member General OPD for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'General OPD', 'Gen OPD', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'General', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'OPD', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-CHRONIC-OPD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Chronic OPD';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member Chronic OPD for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chronic OPD', 'Chronic OPD', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chronic', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'OPD', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-DENTAL" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Dental';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member Dental for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Dental', 'Dental', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Dental', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-OPERATION-THEATRE" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Operation Theatre';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member Operation Theatre for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Operation Theatre', 'OT', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Operation', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Theatre', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-LAB" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Lab';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept set member Lab for Department Sent To</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Lab', 'Lab', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Lab', 1);
+
+            select concept_id into @department_sent_to_concept_id from concept_name where name = 'Department Sent To' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@department_sent_to_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-REFERRED-BY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Referred By';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add concept Referred By for registration page</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Referred By', 'Referred By', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Referred', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'By', 1);
+
+            select concept_id into @visit_details_concept_id from concept_name where name = 'Visit Details' and concept_name_type ='FULLY_SPECIFIED';
+            call add_concept_set_members(@visit_details_concept_id, @concept_id,0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-CASTE" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = 'Caste';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding concept Caste</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Caste', 'Caste', 'Coded',
+            'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Caste', 1);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-1-DALIT" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = '1 - Dalit';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding concept 1 - Dalit to caste</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            select concept_id into @caste_concept_id from concept_name where name = 'Caste' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '1 - Dalit', '1 - Dalit', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, '1', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, '-', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Dalit', 1);
+            call add_concept_answer(@caste_concept_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-2-JANAJATI" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = '2 - Janajati';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding concept 2 - Janajati to caste</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            select concept_id into @caste_concept_id from concept_name where name = 'Caste' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '2 - Janajati', '2 - Janajati', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, '2', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, '-', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Janajati', 1);
+            call add_concept_answer(@caste_concept_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-3-MADHESI" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = '3 - Madhesi';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding concept 3 - Madhesi to Caste</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            select concept_id into @caste_concept_id from concept_name where name = 'Caste' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '3 - Madhesi', '3 - Madhesi', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, '3', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, '-', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Madhesi', 1);
+            call add_concept_answer(@caste_concept_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-4-MUSLIM" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = '4 - Muslim';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding concept 4 - Muslim to Caste</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            select concept_id into @caste_concept_id from concept_name where name = 'Caste' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '4 - Muslim', '4 - Muslim', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, '4', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, '-', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Muslim', 1);
+            call add_concept_answer(@caste_concept_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-5-BRAHMAN-CHHETRI" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = '5 - Brahman/Chhetri';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding concept 5 - Brahman/Chhetri to Caste</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            select concept_id into @caste_concept_id from concept_name where name = 'Caste' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '5 - Brahman/Chhetri', '5 - Brahman/Chhetri', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, '5', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, '-', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Brahman/Chhetri', 1);
+            call add_concept_answer(@caste_concept_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-6-OTHERS" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from concept_name where name = '6 - Others';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding concept 6 - Others to Caste</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            select concept_id into @caste_concept_id from concept_name where name = 'Caste' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, '6 - Others', '6 - Others', 'N/A', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, '6', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, '-', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Other', 1);
+            call add_concept_answer(@caste_concept_id, @concept_id, 0);
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-CONCEPT-CHANGE-REFERRED-BY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT count(*) from concept_name where name = 'Referred By' and concept_name_type='FULLY_SPECIFIED';
+            </sqlCheck>
+        </preConditions>
+        <comment>Changing concept name Referred By to Hospitals, Referred By</comment>
+        <sql>
+            set @concept_name_short_id = 0;
+            select concept_id into @referred_by_id from concept_name where name = 'Referred By' and concept_name_type='FULLY_SPECIFIED';
+
+            UPDATE concept_name set name = 'Hospitals, Referred By' where concept_id = @referred_by_id and concept_name_type='FULLY_SPECIFIED';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

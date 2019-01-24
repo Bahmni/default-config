@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="POSSIBLE-ELIS-1" author="Rohan, Vikash">
+		<preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM organization where name='Possible';
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Possible Organization</comment>
+        <sql>
+            INSERT INTO organization (id, name, city, is_active) VALUES ((select max(id)+1 from organization),'Possible','Achham','Y');
+        </sql>
+    </changeSet>
+    
+    <changeSet id="POSSIBLE-ELIS-4" author="Preethi,Hanisha">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+            select count(*) from site_information where name='defaultOrganizationName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add default organization name for openelis</comment>
+        <sql>
+            INSERT INTO site_information(id, name, lastupdated, description, value, encrypted, value_type)  VALUES ( nextVal( 'site_information_seq' ) , 'defaultOrganizationName', now(), 'Default organization name for department to be synced from openmrs',  'Possible', 'f', 'text' );
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-ELIS-5" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from site_information where name='showMiddleNameOnReportPrint';
+            </sqlCheck>
+        </preConditions>
+        <comment>Show middle name of patient on print</comment>
+        <sql>
+            INSERT INTO site_information(id, name, description, value, encrypted, value_type, domain_id)
+            VALUES (nextVal('site_information_seq') , 'showMiddleNameOnReportPrint', 'Show Middle name on report print for Elis',  'true', 'f', 'text',
+            (select id from site_information_domain where name = 'printedReportsConfig'));
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

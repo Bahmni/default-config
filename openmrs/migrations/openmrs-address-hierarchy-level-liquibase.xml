@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+    This Liquibase file is meant to contain changesets for Address Hierarchy (Village/Town/Taluka/Center/etc)
+    and location information only.
+    -->
+    <changeSet id="POSSIBLE-IMPL-ADDRESS-HIERARCHY-COUNTRY" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from address_hierarchy_level where name='Country';
+            </sqlCheck>
+        </preConditions>
+        <comment>Set up Address Hierarchy Country</comment>
+        <sql>
+            call introduce_new_address_level(NULL, 'Country', 'COUNTRY');
+            UPDATE address_hierarchy_level set required = true where name = 'Country';
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-ADDRESS-HIERARCHY-DISTRICT" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from address_hierarchy_level where name='District';
+            </sqlCheck>
+        </preConditions>
+        <comment>Set up Address Hierarchy District</comment>
+        <sql>
+            call introduce_new_address_level('Country', 'District', 'COUNTY_DISTRICT');
+            UPDATE address_hierarchy_level set required = true where name = 'District';
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-ADDRESS-HIERARCHY-VDC-VILLAGE" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from address_hierarchy_level where name='VDC/Village';
+            </sqlCheck>
+        </preConditions>
+        <comment>Set up Address Hierarchy VDC/Village</comment>
+        <sql>
+            call introduce_new_address_level('District', 'VDC/Village', 'CITY_VILLAGE');
+            UPDATE address_hierarchy_level set required = true where name = 'VDC/Village';
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-ADDRESS-HIERARCHY-WARD" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from address_hierarchy_level where name='Ward';
+            </sqlCheck>
+        </preConditions>
+        <comment>Set up Address Hierarchy Ward</comment>
+        <sql>
+            call introduce_new_address_level('VDC/Village', 'Ward', 'ADDRESS_1');
+            UPDATE address_hierarchy_level set required = true where name = 'Ward';
+        </sql>
+    </changeSet>
+    <changeSet id="POSSIBLE-IMPL-ADDRESS-HIERARCHY-HID" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from address_hierarchy_level where name='Household ID';
+            </sqlCheck>
+        </preConditions>
+        <comment>Set up Household ID</comment>
+        <sql>
+            call introduce_new_address_level('Ward','Household ID', 'ADDRESS_2');
+        </sql>
+    </changeSet>
+</databaseChangeLog>
