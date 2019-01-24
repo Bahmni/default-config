@@ -1,9 +1,0 @@
-uuid,name,class,datatype,shortname,description,reference-term-code,reference-term-relationship,reference-term-source,synonym.1,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9
-,"Asthma, Personal Best/Target Peak Flow",Misc,Numeric,Personal best / target peak flow,,,,,,,,,,,,,,
-,"Asthma, Measured Peak flow Today",Misc,Text,Measured peak flow today,goal should be Greater than 80% of personal best,,,,,,,,,,,,,
-,"Asthma, Exacerbations in last 3 Months",Misc,Numeric,Exacerbations in last 3 months,,,,,,,,,,,,,,
-,"Asthma, Hospitalizations in last 3 Months",Misc,Numeric,Hospitalizations in last 3 months,If more than 2 consider step-up current therapy to next level of treatment,,,,,,,,,,,,,
-,"Asthma, Weekly Usage of Rescue Inhaler",Misc,Numeric,How many times per week does patient utilize rescue inhaler,"If patient using more than  2 days / week, consider step-up therapy to next level of treatment",,,,,,,,,,,,,
-,"Asthma, Weekly Nighttime Awakenings",Misc,Numeric,Times per week does patient have nighttime awakenings secondary to shortness of breath,If 1-3x/ week consider step-up therapy to next level of treatment,,,,,,,,,,,,,
-,"Asthma, Does Patient Take Inhaler as prescribed",Misc,Boolean,Does patient take inhaler as prescribed,,,,,,,,,,,,,,
-,"Asthma, Does Patient demonstrate Proper Inhaler Technique",Misc,Boolean,Does patient demonstrate proper inhaler technique,,,,,,,,,,,,,,

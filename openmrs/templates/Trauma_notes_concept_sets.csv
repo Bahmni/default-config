@@ -1,5 +1,0 @@
-uuid,name,shortname,description,class,reference-term-source,reference-term-code,reference-term-relationship,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13,child.14,child.15,child.16
-,"Trauma Notes, Admission GCS",Admission GCS,,Misc,,,,"Trauma Notes, Eye Response","Trauma Notes, Verbal Response","Trauma Notes, Motor Response","Trauma Notes, GCS Score",,,,,,,,,,,,
-,"Trauma Notes, Physical Assessment",Physical Assessment,,Misc,,,,Vitals,"Trauma Notes, Physical Examination Details",,,,,,,,,,,,,,
-,"Trauma Notes, Radiological Findings",Radiological findings,,Misc,,,,"Trauma Notes, Chest X Ray","Trauma Notes, Pelvis","Trauma Notes, C Spine","Trauma Notes, T/L/S Spine","Trauma Notes, Other","Trauma Notes, Extremity",,,,,,,,,,
-,Trauma Notes,Trauma Notes,,Misc,,,,"Trauma Notes, History of Present Illness","Trauma Notes, Past Medical History","Trauma Notes, Past Surgical History","Trauma Notes, Social History","Trauma Notes, Physical Assessment","Trauma Notes, List of Injuries to Date","Trauma Notes, Radiological Findings","Trauma Notes, Lab Trends","Trauma Notes, Free Health Service Code",,,,,,,

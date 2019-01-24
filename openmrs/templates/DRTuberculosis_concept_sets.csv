@@ -1,3 +1,0 @@
-uuid,name,shortname,description,class,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10
-,"DRTuberculosis, HIV Activities",HIV Activities,,Misc,"DRTuberculosis, HIV Infection","DRTuberculosis, Is patient on ART","DRTuberculosis, Is patient on CPT",,,,,,,
-,"DRTuberculosis, Intake",Drug Resistant Tuberculosis,,Misc,"DRTuberculosis, Diagnosis Category","DRTuberculosis, Second line drugs received previously","DRTuberculosis, HIV Activities","DRTuberculosis, Date of Sample taken for DST","DRTuberculosis, Reasons for entering in second-line TB treatment register","DRTuberculosis, Drug Regimen","DRTuberculosis, Regimen start date","DRTuberculosis, Tests ordered","DRTuberculosis, Treatment outcome","DRTuberculosis, Remarks"
