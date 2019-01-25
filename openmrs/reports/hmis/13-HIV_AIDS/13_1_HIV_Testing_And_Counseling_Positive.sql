@@ -48,41 +48,41 @@ SUM(IF(report.tested =  1 && report.risk_group = 'Sex Worker' && report.gender =
         SUM(IF(report.tested =  1 && report.risk_group = 'Spouse/Partner of Migrant' && report.gender = 'M',1,0)) AS 'Spouse of Migrant- M',
 		SUM(IF(report.tested =  1 && report.risk_group = 'Spouse/Partner of Migrant' && report.gender = 'F',1,0)) AS 'Spouse of Migrant- F',
         SUM(IF(report.tested =  1 && report.risk_group = 'Spouse/Partner of Migrant' && report.gender = 'O',1,0)) AS 'Spouse of Migrant- TG',
-        SUM(IF(report.tested =  1 && report.gender = 'M' && labCheck = 0 || report .risk_group='Others' ,1,0)) AS 'Others-M',
-		SUM(IF(report.tested =  1 && report.gender = 'F' && labCheck = 0 || report .risk_group = 'Others' ,1,0)) AS 'Others-F',		        
-        SUM(IF(report.tested =  1 && report.gender = 'O' && labCheck = 0 || report .risk_group = 'Others' ,1,0)) AS 'Others-TG'
+        SUM(IF(report.tested =  1 && report.gender = 'M' && (report.labCheck = 0 || report.risk_group='Others')  ,1,0)) AS 'Others-M',
+		SUM(IF(report.tested =  1 && report.gender = 'F' && (report.labCheck = 0 || report.risk_group='Others') ,1,0)) AS 'Others-F',		        
+        SUM(IF(report.tested =  1 && report.gender = 'O' && (report.labCheck = 0 || report.risk_group='Others') ,1,0)) AS 'Others-TG'
 FROM
 (SELECT 
+       DISTINCT
         patients.pid as ppid,
         tested_now.tid as ttid,
-        tested_now.gender,
-        patients.risk_group,
-		IF(tested_now.tid = patients.pid,1,0) AS labCheck,
-        IF(tested_now.test_result = 'Positive' || tested_before.previous_test_result = 'Positive', 1, 0) AS tested,
-        IF(TIMESTAMPDIFF(YEAR, patients.birthdate, tested_now.startdate) <= 14,'≤ 14 Years','> 15 years')  as age
+            tested_now.gend as gender,
+            patients.risk_group,
+            IF(tested_now.tid = patients.pid,1,0) AS labCheck,
+             IF(tested_now.test_result = 'Positive' || tested_before.previous_test_result = 'Positive', 1, 0) AS tested,
+            IF(TIMESTAMPDIFF(YEAR, tested_now.birthdate, tested_now.startdate) <= 14, '≤ 14 Years', '> 15 years') AS age
 
     FROM
-      
-   (SELECT 
+  (SELECT DISTINCT
         person.person_id as tid,
+		person.birthdate,
         test_result.value_text AS test_result,
         visit.date_started as startdate,
-        person.gender as gender
+        person.gender as gend
     FROM
         visit
     JOIN encounter ON visit.visit_id = encounter.visit_id
         AND DATE(visit.date_started) BETWEEN '#startDate#' AND '#endDate#'
     INNER JOIN obs AS test_result ON test_result.encounter_id = encounter.encounter_id
         AND test_result.voided = 0
+                AND test_result.value_text IS NOT NULL
     INNER JOIN concept_view test_concept ON test_result.concept_id = test_concept.concept_id
         AND test_concept.concept_full_name IN ('HIV (Blood)' , 'HIV (Serum)')
-    INNER JOIN person ON test_result.person_id = person.person_id) AS tested_now 
+    INNER JOIN person ON test_result.person_id = person.person_id  group by person.person_id) AS tested_now 
      
     LEFT JOIN
       (SELECT 
         person.person_id as pid,
-            person.gender,
-            person.birthdate,
             risk_group_values.concept_full_name AS risk_group,
             visit.date_started
     FROM
@@ -108,9 +108,11 @@ FROM
         AND previously_tested_concept.concept_full_name = 'HTC, Result if tested'
     INNER JOIN concept_view AS value_tested ON value_tested.concept_id = previously_tested.value_coded
     INNER JOIN person ON previously_tested.person_id = person.person_id) AS tested_before ON patients.pid = tested_before.person_id
-      )AS report 
+  )AS report 
    group by report .age
    UNION ALL SELECT '≤ 14 Years',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 UNION ALL SELECT '> 15 years',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 )entries
-Group BY entries .age desc;
+Group BY entries .age desc
+
+;
