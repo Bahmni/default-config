@@ -815,14 +815,6 @@
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection _TB_FP.sql"
 					}
-				},
-
-				{
-					"name": "HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection_TB_FP_HIV_Patients_Received_CPT.sql"
-					}
 				}
 
 
