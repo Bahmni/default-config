@@ -24,7 +24,7 @@ FROM
         AND question_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT')
+        question_concept_name.name IN ('TB Intake-Is patient on art','TB Intake-Is patient on cpt')
     ORDER BY answer_name DESC) first_answers
         INNER JOIN
     (SELECT 'M' AS gender UNION SELECT 'F' AS gender) gender
@@ -40,7 +40,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name IN ('Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT')
+        AND cn1.name IN ('TB Intake-Is patient on art','TB Intake-Is patient on cpt')
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
@@ -49,9 +49,8 @@ FROM
         AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
-        AND v1.date_stopped IS NOT NULL
     WHERE
-        CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.question = first_answers.question
+        CAST(e.encounter_datetime AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.question = first_answers.question
         LEFT OUTER JOIN
     person p ON first_concept.person_id = p.person_id
         AND p.gender = gender.gender

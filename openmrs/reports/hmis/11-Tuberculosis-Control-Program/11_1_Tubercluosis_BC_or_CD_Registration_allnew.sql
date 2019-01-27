@@ -45,7 +45,7 @@ FROM
             cn2.concept_id AS answer,
             cn1.concept_id AS question,
             v1.visit_id AS visit_id,
-            v1.date_stopped AS datetime
+            e.encounter_datetime AS datetime
     FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
@@ -59,16 +59,15 @@ FROM
         AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
-        AND v1.date_stopped IS NOT NULL
     WHERE
-        CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
+        CAST(e.encounter_datetime AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) first_concept ON first_concept.answer = first_answers.answer
         LEFT OUTER JOIN
     (SELECT DISTINCT
         DISTINCT(o1.person_id),
             cn2.concept_id AS answer,
             cn1.concept_id AS question,
             v1.visit_id AS visit_id,
-            v1.date_stopped AS datetime
+            e.encounter_datetime AS datetime
     FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
@@ -82,9 +81,8 @@ FROM
         AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
-        AND v1.date_stopped IS NOT NULL
     WHERE
-        CAST(v1.date_stopped AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON 
+        CAST(e.encounter_datetime AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON 
          first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
         LEFT OUTER JOIN

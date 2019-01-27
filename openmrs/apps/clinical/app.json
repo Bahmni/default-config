@@ -1367,18 +1367,9 @@
                         "Safe abortion-Visit Type": {
                                 "required": true
                         },
-                        "Safe abortion-Surgical procedure": {
-                                "required": true
-                        },
                         "Surgical Abortion, Immediate complications": {
                                 "multiSelect": true
 						},
-                        "Safe abortion-Medical Procedure": {
-                                "required": true
-                        },
-                        "PAC Cause": {
-                                "required": true
-                        },
 						"PTSD-Follow Up": {
 								"allowFutureDates": true
 						},
@@ -1813,6 +1804,9 @@
 								"required": true
 						},
 						"NBA-Sepsis risk factor": {
+								"multiSelect": true
+						},
+						"Delivery Note-Complication Present": {
 								"multiSelect": true
 						}
 		}

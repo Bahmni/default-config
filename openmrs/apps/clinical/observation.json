@@ -50,7 +50,7 @@
             "Rheumatoid Arthritis, Progress",
             "Rheumatic Heart Disease, Progress",
             "Seizure Disorder, Progress",
-            "Sextually Transmitted Infections Intake Template",
+            "Sexually Transmitted Infections",
             "Stroke OPD",
             "Trauma Notes",
             "Tuberculosis, Intake",
@@ -60,7 +60,9 @@
             "TEST TEMPLATE (टेस्ट टेम्प्लेट)",
             "Zoonotic Disease",
 	    "Family Planning Template",
-            "Family Planning and Reproductive Health Template"
+            "Family Planning and Reproductive Health Template",
+	    "Osteoarthritis QI note",
+	    "Safe abortion QI note"
         ],
         "male": [],
         "female": [

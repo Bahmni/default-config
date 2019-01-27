@@ -18,29 +18,19 @@ SELECT
             END),
             0) AS 'MALE PATIENT'
 FROM
-    (SELECT 
-        concept_full_name AS answer_name, icd10_code
-    FROM
-        diagnosis_concept_view
-    WHERE
-        icd10_code IS NULL) first_answers
-        LEFT OUTER JOIN
     (SELECT DISTINCT
         (p.person_id),
             dcv.concept_full_name,
             icd10_code,
             v.visit_id AS visit_id,
             p.gender AS gender,
-            o.value_text,
-            o.value_coded
+            o.value_text
     FROM
         person p
     INNER JOIN visit v ON p.person_id = v.patient_id
         AND v.voided = 0
     INNER JOIN encounter e ON v.visit_id = e.visit_id AND e.voided = 0
     INNER JOIN obs o ON e.encounter_id = o.encounter_id
-        AND o.value_coded IS NULL
-        AND o.value_text IS NOT NULL
         AND o.voided = 0
         AND DATE(o.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
     INNER JOIN concept_name cn ON o.concept_id = cn.concept_id
@@ -48,10 +38,9 @@ FROM
         AND cn.name IN ('Non-coded Diagnosis' , 'Coded Diagnosis')
         AND o.voided = 0
         AND cn.voided = 0
-    JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
-        AND dcv.icd10_code IS NULL
+    LEFT JOIN diagnosis_concept_view dcv ON dcv.concept_id = o.value_coded
     WHERE
-        p.voided = 0) first_concept ON first_concept.icd10_code = first_answers.icd10_code
+        p.voided = 0 AND icd10_code IS NULL) first_concept
         LEFT OUTER JOIN
     (SELECT DISTINCT
         (person.person_id) AS person_id,
@@ -66,11 +55,11 @@ FROM
         AND question.concept_full_name IN ('Department Sent To')
     INNER JOIN concept_name cn2 ON obs.value_coded = cn2.concept_id
         AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-  AND UPPER(cn2.name) NOT Like '%EMERGENCY%'
+        AND UPPER(cn2.name) NOT LIKE '%EMERGENCY%'
     INNER JOIN person ON obs.person_id = person.person_id
     INNER JOIN encounter ON obs.encounter_id = encounter.encounter_id
     INNER JOIN visit ON encounter.visit_id = visit.visit_id
     WHERE
-        CAST(obs.obs_datetime AS DATE) BETWEEN DATE('#startDate#') AND DATE('#endDate#')) second_concept ON first_concept.person_id = second_concept.person_id
+        DATE(obs.obs_datetime) BETWEEN '#startDate#' AND '#endDate#') second_concept ON first_concept.person_id = second_concept.person_id
         AND first_concept.visit_id = second_concept.visit_id
-GROUP BY first_answers.icd10_code
+        AND first_concept.gender = second_concept.gender
