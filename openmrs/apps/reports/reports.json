@@ -765,14 +765,6 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_Total_Clients_Assessed_STI.sql"
 					}
 				},
-
-				{
-					"name": "STI Cases-by Syndromes",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Syndromes.sql"
-					}
-				},
 				{
 					"name": "STI Cases-by Etiology",
 					"type": "MRSGeneric",
