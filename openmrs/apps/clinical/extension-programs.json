@@ -1,15 +1,43 @@
 {
+   
     "bahmniClinicalPatientsSearchActivePatientsForPrograms": {
-        "id": "bahmni.clinical.patients.search.activePatients",
+        "id": "bahmni.clinical.patients.search.activePatientsforprograms",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.activePatients",
-            "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
+            "searchHandler": "emrapi.sqlSearch.activePatientsallprogram",
+            "translationKey": "MODULE_LABEL_ALL_PROGRAMS_KEY",
             "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
         },
-        "label": "Active",
+        "label": "ALL Program",
         "order": 1,
+        "requiredPrivilege": "app:clinical"
+    },   
+  
+   "bahmniClinicalPatientsSearchActivePatientsForartPrograms": {
+        "id": "bahmni.clinical.patients.search.activePatientsartprogram",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatientsartprogram",
+            "translationKey": "MODULE_LABEL_ART_PROGRAMS_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
+        },
+        "label": "ART Program",
+        "order": 12,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalPatientsSearchActivePatientsFortbPrograms": {
+        "id": "bahmni.clinical.patients.search.activePatientstbprogram",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatientstbprogram",
+            "translationKey": "MODULE_LABEL_TB_PROGRAMS_KEY",
+            "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
+        },
+        "label": "TB Program",
+        "order": 13,
         "requiredPrivilege": "app:clinical"
     },
     "bahmniClinicalPatientsSearchAllPatients": {
@@ -21,7 +49,7 @@
             "forwardUrl": "#/programs/patient/{{patientUuid}}/consultationContext"
         },
         "label": "All",
-        "order": 2,
+        "order": 22,
         "requiredPrivilege": "app:clinical"
     },
     "bahmniClinicalConceptSetGroupObservationsHistory": {
@@ -62,6 +90,7 @@
         "order": 3,
         "requiredPrivilege": "app:clinical"
     },
+
     "bahmniClinicalConceptSetGroupObservationsObstetrics": {
         "id": "bahmni.clinical.conceptSetGroup.observations.obstetrics",
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
@@ -104,6 +133,11 @@
         "order": 1,
         "requiredPrivilege": "app:clinical:observationTab"
     },
+
+    
+
+
+
     "diagnosis": {
         "id": "bahmni.clinical.consultation.diagnosis",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
