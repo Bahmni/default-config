@@ -2,10 +2,6 @@
     "id": "bahmni.clinical",
     "extensionPoints": [
         {
-            "id": "org.bahmni.clinical.consultation.board",
-            "description": "Bahmni Clinical Consultation Page"
-        },
-        {
             "id": "org.bahmni.clinical.conceptSetGroup.*",
             "description": "Define conceptsets part of a conceptset group"
         },
@@ -44,11 +40,8 @@
                 "ID_Number": {
                     "required" : true
                 },
-                "Co-morbidites": {
-                    "excludeFrom": ["HIV Program"]
-                },
-                "Doctor": {
-                    "excludeFrom": ["TB Program"]
+                "Stage": {
+                    "excludeFrom": ["ART","TB Program","PTV program"]
                 }
             },
             "patientContext": {
@@ -112,6 +105,10 @@
             },
             "Set1": {
                 "allowAddMore": true
+            },
+            "Home equipment": {
+                "dropdown": true,
+                "disableAddNotes": true
             },
             "Set2": {
                 "allowAddMore": true

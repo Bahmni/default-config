@@ -2,6 +2,18 @@
     "id": "bahmni.ipd.admission",
     "extensionPoints": [
         {
+            "id": "org.bahmni.ipd.admit.action",
+            "description": "Bahmni Patient Admission Action"
+        },
+        {
+            "id": "org.bahmni.ipd.transfer.action",
+            "description": "Bahmni Patient Transfer Action"
+        },
+        {
+            "id": "org.bahmni.ipd.discharge.action",
+            "description": "Bahmni Patient Discharge Action"
+        },
+        {
             "id": "org.bahmni.patient.search",
             "description": "Bahmni patient search, lookup Page"
         }
@@ -14,18 +26,18 @@
     "config": {
         "wardListSqlSearchHandler": "bedManagement.sqlGet.patientListForAdmissionLocation",
         "diagnosisStatus": "Inactive",
-        "onAdmissionForwardTo": "#",
-        "onTransferForwardTo": "#",
-        "onDischargeForwardTo": "#",
+        "onAdmissionForwardTo": "#/bedManagement/patient/{{patientUuid}}/visit/{{visitUuid}}",
+        "onTransferForwardTo": "#/bedManagement/patient/{{patientUuid}}/visit/{{visitUuid}}",
+        "onDischargeForwardTo": "#/bedManagement/bed/{{bedId}}",
         "defaultVisitType": "IPD",
         "expectedDateOfDischarge": "",
+        "maxPatientsPerBed": 2,
         "conceptSetUI": {
             "Expected Date of Discharge": {
                 "disableAddNotes": true,
                 "allowFutureDates": true
             }
         },
-        "hideStartNewVisitPopUp": false,
         "dashboard": {
             "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
             "conceptName": "Adt Notes",
@@ -297,8 +309,27 @@
                         "showDetailsButton": true,
                         "pivotTable": {}
                     }
+                },
+                "surgicalHistory": {
+                    "type": "custom",
+                    "displayOrder": 7,
+                    "displayType": "Full-Page",
+                    "config": {
+                        "title": "DASHBOARD_TITLE_SURGICAL_APPOINTMENTS_KEY",
+                        "template": "<surgical-history section='section' patient='patient'></surgical-history>"
+                    }
+                },
+                "patientMovementHistory": {
+                    "type": "custom",
+                    "displayType": "Full-Page",
+                    "displayOrder": 20,
+                    "config": {
+                        "title": "DASHBOARD_TITLE_PATIENT_MOVEMENT_HISTORY_KEY",
+                        "template": "<patient-movement-history section='section' patient='patient' visitUuid='visitUuid'></patient-movement-history>"
+                    }
                 }
             }
-        }
+        },
+        "hideStartNewVisitPopUp": false
     }
 }
