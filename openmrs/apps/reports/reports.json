@@ -1107,14 +1107,6 @@
 					}
 				},
 
-				{
-					"name": "Summary of Indoor Services Inpatient Outcome Referred Out",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_referredout.sql"
-					}
-				},
-
 
 				{
 					"name": "FreeHealthServices Outpatient",
