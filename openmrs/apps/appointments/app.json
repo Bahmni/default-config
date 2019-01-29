@@ -20,7 +20,7 @@
     "enableServiceTypes": false,
     "enableCalendarView": true,
     "isServiceOnAppointmentEditable": false,
-    "collapseServiceFilter": true,
+    "collapseServiceFilter": false,
     "colorsForAppointmentService": [
       "#006400",
       "#DC143C",
