@@ -319,31 +319,17 @@
 		}
 	},
 
-	"07 Family Planning Program": {
+		"07 Family Planning Program": {
 		"name": "07 Family Planning Program",
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
-			"reports": [{
-					"name": "Family Planning Program - Temporary FP methods (new users)",
+			"reports": [
+			{
+					"name": "Family Planning Program all temporary methods",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Family_Planning_Temporary_Method_New_Users.sql"
-					}
-				},
-				{
-					"name": "Family Planning Program - Temporary FP method (Existing users)",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Temporary_method_Existing_users_count.sql"
-					}
-				},
-
-				{
-					"name": "Family Planning Program - Temporary FP method (Defaulters)",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Defaulters_count.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/Family_Planning_All_Temporary.sql"
 					}
 				},
 				{
@@ -353,7 +339,6 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/No_of_devices_used.sql"
 					}
 				},
-
 				{
 					"name": "Family Planning Program - Permanent FP method (New users)",
 					"type": "MRSGeneric",
@@ -780,33 +765,25 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_Total_Clients_Assessed_STI.sql"
 					}
 				},
-
-				{
-					"name": "STI Cases-by Syndromes",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Syndromes.sql"
-					}
-				},
 				{
 					"name": "STI Cases-by Etiology",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Etiology.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Etiology.sql"
 					}
 				},
 				{
 					"name": "STI Cases-by Sex Screened",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Screened.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Sex_Screened.sql"
 					}
 				},
 				{
 					"name": "STI Cases-by Sex Treated",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Treated.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Sex_Treated.sql"
 					}
 				},
 
@@ -838,14 +815,6 @@
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection _TB_FP.sql"
 					}
-				},
-
-				{
-					"name": "HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection_TB_FP_HIV_Patients_Received_CPT.sql"
-					}
 				}
 
 
@@ -867,7 +836,7 @@
 			},
 			{
 				"name": "Gender Equity and Social Inclusion HIV AIDS",
-				"type": "MRSGeneric",
+				"type": "ElisGeneric",
 				"config": {
 					"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/14-Gender-Equity-and-Social-Inclusion/Gender_ Equity_and_Social_Inclusion_HIV.sql"
 				}
@@ -1135,14 +1104,6 @@
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/gestational_weeks_maternal_age.sql"
-					}
-				},
-
-				{
-					"name": "Summary of Indoor Services Inpatient Outcome Referred Out",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_referredout.sql"
 					}
 				},
 

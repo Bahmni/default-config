@@ -1354,15 +1354,6 @@
 			"Safe abortion-Visit Type": {
 				"required": true
 			},
-			"Safe abortion-Surgical procedure": {
-				"required": true
-			},
-			"Safe abortion-Medical Procedure": {
-				"required": true
-			},
-			"PAC Cause": {
-				"required": true
-			},
 			"PTSD-Follow Up": {
 				"allowFutureDates": true
 			},
@@ -1660,7 +1651,6 @@
 				"required": true
 			},
 			"Discharge Note-Post op surgery complications": {
-				"required": true,
 				"multiSelect": true
 			},
 			"Mental health-Visit type": {

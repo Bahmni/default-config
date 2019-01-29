@@ -52,8 +52,8 @@ FROM
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
         AND cn2.concept_name_type = 'FULLY_SPECIFIED'
         AND cn2.voided = 0
-    INNER JOIN encounter e1 ON o1.encounter_id = e1.encounter_id
-    INNER JOIN visit v1 ON v1.visit_id = e1.visit_id
+    INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
+    INNER JOIN visit v1 ON v1.visit_id = e.visit_id
     WHERE
         CAST(v1.date_started AS DATE) BETWEEN DATE(DATE_SUB('#startDate#', INTERVAL 12 MONTH)) AND DATE(DATE_SUB('#endDate#', INTERVAL 12 MONTH))) first_concept ON first_concept.answer = first_answers.answer
         LEFT OUTER JOIN
