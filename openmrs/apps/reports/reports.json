@@ -759,6 +759,13 @@
 					}
 				},
 				{
+					"name": "HIV Exposed Baby- Early Infant Diagnosis (EID) Antibody > 18 mo",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_HIV_Early_Infant_Diagnosis_Antibody_greater_than_18_mo.sql"
+					}
+				},
+				{
 					"name": "Total Clients Assessed STI",
 					"type": "MRSGeneric",
 					"config": {

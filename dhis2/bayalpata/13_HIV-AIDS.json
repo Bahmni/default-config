@@ -798,6 +798,25 @@
 				}
 			]
 		},
+		"HIV Exposed Baby- Early Infant Diagnosis (EID) Antibody > 18 mo": {
+			"dataValues": [
+
+				{
+					"_comment": "positive",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Ed75Jc9wwr0",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "negative",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "t9xI1FlE6fC",
+					"row": 2,
+					"column": 2
+				}
+			]
+		},
 
 
 		"Exposed baby live births ARV Prophylaxis ANC visit HIV Positive delivered Postnatal women received FP": {
