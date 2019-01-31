@@ -52,7 +52,7 @@
         "type": "config",
         "extensionParams": {
             "conceptName": "Patient_information",
-            "translationKey": "FEE_INFORMATION_LOCALE_KEY",
+            "translationKey": "PATIENT_OBS_INFORMATION_LOCALE_KEY",
             "required":true
         },
         "order": 2,

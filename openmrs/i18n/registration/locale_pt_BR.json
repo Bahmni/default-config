@@ -19,7 +19,7 @@
 	"REGISTRATION_INSTITUTE_NAME_TEXT_KEY":"Nome do Hospital",
 	"REGISTRATION_INSTITUTE_REGISTERED_TEXT_KEY":"(Registado)",
 	"REGISTRATION_INSTITUTE_ADDRESS":"Endereço do Hospital",
-	"FEE_INFORMATION_LOCALE_KEY":"Informação das Taxas",
+	"PATIENT_OBS_INFORMATION_LOCALE_KEY":"Informação do paciente",
 	"NUTRITIONAL_VALUES_LOCALE_KEY":"Valores Nutricionais",
 	"REGISTRATION_PRINT_WITH_BARCODE":"Imprimir com <u>C</u>ódigo de Barras",
 
