@@ -30,24 +30,7 @@ FROM
         IS FALSE
     WHERE
         question_concept_name.name = 'STI, Risk Group'
-            AND cd.name = 'Coded' UNION SELECT 
-        answer_concept_fully_specified_name.concept_id AS answer,
-            answer_concept_fully_specified_name.name AS answer_name
-    FROM
-        concept c
-    INNER JOIN concept_datatype cd ON c.datatype_id = cd.concept_datatype_id
-    INNER JOIN concept_name question_concept_name ON c.concept_id = question_concept_name.concept_id
-        AND question_concept_name.concept_name_type = 'FULLY_SPECIFIED'
-        AND question_concept_name.voided IS FALSE
-    INNER JOIN global_property gp ON gp.property IN ('concept.true' , 'concept.false')
-    INNER JOIN concept_name answer_concept_fully_specified_name ON answer_concept_fully_specified_name.concept_id = gp.property_value
-        AND answer_concept_fully_specified_name.concept_name_type = 'FULLY_SPECIFIED'
-        AND answer_concept_fully_specified_name.voided
-        IS FALSE
-    WHERE
-        question_concept_name.name = 'STI, Risk Group'
-            AND cd.name = 'Boolean'
-    ORDER BY answer_name DESC) first_answers
+            AND cd.name = 'Coded') first_answers
         INNER JOIN
     (SELECT 
         ca.answer_concept AS answer,
@@ -69,24 +52,7 @@ FROM
         IS FALSE
     WHERE
         question_concept_name.name = 'STI-Etiological Diagnosis'
-            AND cd.name = 'Coded' UNION SELECT 
-        answer_concept_fully_specified_name.concept_id AS answer,
-            answer_concept_fully_specified_name.name AS answer_name
-    FROM
-        concept c
-    INNER JOIN concept_datatype cd ON c.datatype_id = cd.concept_datatype_id
-    INNER JOIN concept_name question_concept_name ON c.concept_id = question_concept_name.concept_id
-        AND question_concept_name.concept_name_type = 'FULLY_SPECIFIED'
-        AND question_concept_name.voided IS FALSE
-    INNER JOIN global_property gp ON gp.property IN ('concept.true' , 'concept.false')
-    INNER JOIN concept_name answer_concept_fully_specified_name ON answer_concept_fully_specified_name.concept_id = gp.property_value
-        AND answer_concept_fully_specified_name.concept_name_type = 'FULLY_SPECIFIED'
-        AND answer_concept_fully_specified_name.voided
-        IS FALSE
-    WHERE
-        question_concept_name.name = 'STI-Etiological Diagnosis'
-            AND cd.name = 'Boolean'
-    ORDER BY answer_name DESC) second_answers
+            AND cd.name = 'Coded') second_answers
         INNER JOIN
     reporting_age_group rag ON rag.report_group_name = 'All Ages'
         LEFT OUTER JOIN
