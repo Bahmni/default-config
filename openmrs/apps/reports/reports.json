@@ -1100,6 +1100,13 @@
 					}
 				},
 				{
+					"name": "Summary of Indoor Services Inpatient Outcome DOR LAMA DAMA",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_outcome_DOR_LAMA_DAMA.sql"
+					}
+				},
+				{
 					"name": "Summary of Indoor Services Gestational weeks(Neonate Form)",
 					"type": "MRSGeneric",
 					"config": {

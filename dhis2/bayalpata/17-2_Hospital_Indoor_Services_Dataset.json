@@ -172,127 +172,251 @@
 				}
 			]
 		},
+		"Summary of Indoor Services Inpatient Outcome DOR LAMA DAMA": {
+			"dataValues": [{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "PYZpOtxWlsY",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "PYZpOtxWlsY",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "nAwr1SuDL5X",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "nAwr1SuDL5X",
+					"row": 4,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "uHC49o0YWzj",
+					"row": 5,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "uHC49o0YWzj",
+					"row": 6,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "aFDqE1qyJwH",
+					"row": 7,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "aFDqE1qyJwH",
+					"row": 8,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "HnwIe5GtEQd",
+					"row": 9,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "HnwIe5GtEQd",
+					"row": 10,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "oQDF5rAiZ9s",
+					"row": 11,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "oQDF5rAiZ9s",
+					"row": 12,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "Nifo5ju2pPP",
+					"row": 13,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "Nifo5ju2pPP",
+					"row": 14,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "MzCbP9IShpH",
+					"row": 15,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "MzCbP9IShpH",
+					"row": 16,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "IgUWH05VOXS",
+					"row": 17,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "IgUWH05VOXS",
+					"row": 18,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "pjjYseu1oTW",
+					"row": 19,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "pjjYseu1oTW",
+					"row": 20,
+					"column": 3
+				}
+
+			]
+		},
 
 
 		"Summary of Indoor Services Inpatient Outcome": {
 			"dataValues": [{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "IEPgzf9wukn",
-					"row": 121,
+					"row": 81,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "IEPgzf9wukn",
-					"row": 122,
+					"row": 82,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "VT7pxUmkCk4",
-					"row": 123,
+					"row": 83,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "VT7pxUmkCk4",
-					"row": 124,
+					"row": 84,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "hfKKGFpcahT",
-					"row": 125,
+					"row": 85,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "hfKKGFpcahT",
-					"row": 126,
+					"row": 86,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "idfm34Azg6Q",
-					"row": 127,
+					"row": 87,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "idfm34Azg6Q",
-					"row": 128,
+					"row": 88,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "jeODCTX57ty",
-					"row": 129,
+					"row": 89,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "jeODCTX57ty",
-					"row": 130,
+					"row": 90,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "eWZ03zEBkBX",
-					"row": 131,
+					"row": 91,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "eWZ03zEBkBX",
-					"row": 132,
+					"row": 92,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "byiU4Z8VZxP",
-					"row": 133,
+					"row": 93,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "byiU4Z8VZxP",
-					"row": 134,
+					"row": 94,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "qFKmdcMXi8R",
-					"row": 135,
+					"row": 95,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "qFKmdcMXi8R",
-					"row": 136,
+					"row": 96,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "XgqSseUwYwV",
-					"row": 137,
+					"row": 97,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "XgqSseUwYwV",
-					"row": 138,
+					"row": 98,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "xsf043Abyz4",
-					"row": 139,
+					"row": 99,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "xsf043Abyz4",
-					"row": 140,
+					"row": 100,
 					"column": 4
 				},
 
@@ -302,121 +426,121 @@
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "Vh884xx3SDo",
-					"row": 101,
+					"row": 61,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "Vh884xx3SDo",
-					"row": 102,
+					"row": 62,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "JjtNfeIkZc3",
-					"row": 103,
+					"row": 63,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "JjtNfeIkZc3",
-					"row": 104,
+					"row": 64,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "FcYoBAZBVjO",
-					"row": 105,
+					"row": 65,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "FcYoBAZBVjO",
-					"row": 106,
+					"row": 66,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "qcgMT3F0AR3",
-					"row": 107,
+					"row": 67,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "qcgMT3F0AR3",
-					"row": 108,
+					"row": 68,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "VylsiKOh3Bl",
-					"row": 109,
+					"row": 69,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "VylsiKOh3Bl",
-					"row": 110,
+					"row": 70,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "bZZ5l7H5r1l",
-					"row": 111,
+					"row": 71,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "bZZ5l7H5r1l",
-					"row": 112,
+					"row": 72,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "GwnF85IRBcP",
-					"row": 113,
+					"row": 73,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "GwnF85IRBcP",
-					"row": 114,
+					"row": 74,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "a3rRLfav30P",
-					"row": 115,
+					"row": 75,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "a3rRLfav30P",
-					"row": 116,
+					"row": 76,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "yMvg20IXOuD",
-					"row": 117,
+					"row": 77,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "yMvg20IXOuD",
-					"row": 118,
+					"row": 78,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "arDN0NoNYrq",
-					"row": 119,
+					"row": 79,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "arDN0NoNYrq",
-					"row": 120,
+					"row": 80,
 					"column": 4
 				},
 				
@@ -425,247 +549,121 @@
 {
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "S74wqYPP0vX",
-					"row": 161,
+					"row": 101,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "S74wqYPP0vX",
-					"row": 162,
+					"row": 102,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "MG81K0P93cC",
-					"row": 163,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "MG81K0P93cC",
-					"row": 164,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "BHMcr2LttVZ",
-					"row": 165,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "BHMcr2LttVZ",
-					"row": 166,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "q1rh08vhNLa",
-					"row": 167,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "q1rh08vhNLa",
-					"row": 168,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "FVUaOSyrp8X",
-					"row": 169,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "FVUaOSyrp8X",
-					"row": 170,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "qC0mnCelPuB",
-					"row": 171,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "qC0mnCelPuB",
-					"row": 172,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "xRGqy7Adibr",
-					"row": 173,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "xRGqy7Adibr",
-					"row": 174,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "jSCf0lQ0CKP",
-					"row": 175,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "jSCf0lQ0CKP",
-					"row": 176,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "O3Z3alM218T",
-					"row": 177,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "O3Z3alM218T",
-					"row": 178,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "GSebS9QkuVm",
-					"row": 179,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "GSebS9QkuVm",
-					"row": 180,
-					"column": 4
-				},
-
-
-				
-				
-				
-				
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "PYZpOtxWlsY",
-					"row": 92,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "PYZpOtxWlsY",
-					"row": 93,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "nAwr1SuDL5X",
-					"row": 95,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "nAwr1SuDL5X",
-					"row": 96,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "uHC49o0YWzj",
-					"row": 97,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "uHC49o0YWzj",
-					"row": 99,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "aFDqE1qyJwH",
-					"row": 100,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "aFDqE1qyJwH",
-					"row": 101,
-					"column": 4
-				},
-				{
-					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "HnwIe5GtEQd",
 					"row": 103,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "HnwIe5GtEQd",
+					"dataElement": "MG81K0P93cC",
 					"row": 104,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "oQDF5rAiZ9s",
-					"row": 106,
+					"dataElement": "BHMcr2LttVZ",
+					"row": 105,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "oQDF5rAiZ9s",
-					"row": 107,
+					"dataElement": "BHMcr2LttVZ",
+					"row": 106,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "Nifo5ju2pPP",
+					"dataElement": "q1rh08vhNLa",
+					"row": 107,
+					"column": 4
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "q1rh08vhNLa",
+					"row": 108,
+					"column": 4
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "FVUaOSyrp8X",
 					"row": 109,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "Nifo5ju2pPP",
+					"dataElement": "FVUaOSyrp8X",
 					"row": 110,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "MzCbP9IShpH",
-					"row": 114,
+					"dataElement": "qC0mnCelPuB",
+					"row": 111,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "MzCbP9IShpH",
+					"dataElement": "qC0mnCelPuB",
 					"row": 112,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "IgUWH05VOXS",
+					"dataElement": "xRGqy7Adibr",
+					"row": 113,
+					"column": 4
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "xRGqy7Adibr",
+					"row": 114,
+					"column": 4
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "jSCf0lQ0CKP",
 					"row": 115,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "IgUWH05VOXS",
+					"dataElement": "jSCf0lQ0CKP",
 					"row": 116,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
-					"dataElement": "pjjYseu1oTW",
-					"row": 118,
+					"dataElement": "O3Z3alM218T",
+					"row": 117,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
-					"dataElement": "pjjYseu1oTW",
+					"dataElement": "O3Z3alM218T",
+					"row": 118,
+					"column": 4
+				},
+				{
+					"categoryOptionCombo": "ye1QuAMRG5Z",
+					"dataElement": "GSebS9QkuVm",
 					"row": 119,
+					"column": 4
+				},
+				{
+					"categoryOptionCombo": "PflKpozpO7b",
+					"dataElement": "GSebS9QkuVm",
+					"row": 120,
 					"column": 4
 				},
 
@@ -924,121 +922,121 @@
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "J08nUlGXWcU",
-					"row": 81,
+					"row": 41,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "J08nUlGXWcU",
-					"row": 82,
+					"row": 42,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "u5Ju7K3EFZ3",
-					"row": 83,
+					"row": 43,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "u5Ju7K3EFZ3",
-					"row": 84,
+					"row": 44,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "W1Tfa8N3tEq",
-					"row": 85,
+					"row": 45,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "W1Tfa8N3tEq",
-					"row": 86,
+					"row": 46,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "YTzkpp1RDGx",
-					"row": 87,
+					"row": 47,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "YTzkpp1RDGx",
-					"row": 88,
+					"row": 48,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "NuvEJyyrRyn",
-					"row": 89,
+					"row": 49,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "NuvEJyyrRyn",
-					"row": 90,
+					"row": 50,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "qNch4vXPvMS",
-					"row": 91,
+					"row": 51,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "qNch4vXPvMS",
-					"row": 92,
+					"row": 52,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "UAbEC9wm8JC",
-					"row": 93,
+					"row": 53,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "UAbEC9wm8JC",
-					"row": 94,
+					"row": 54,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "EDHAawGus2l",
-					"row": 95,
+					"row": 55,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "EDHAawGus2l",
-					"row": 96,
+					"row": 56,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "q9HWBr7XI3j",
-					"row": 97,
+					"row": 57,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "q9HWBr7XI3j",
-					"row": 98,
+					"row": 58,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "ye1QuAMRG5Z",
 					"dataElement": "D0BdHXhtQ0b",
-					"row": 99,
+					"row": 59,
 					"column": 4
 				},
 				{
 					"categoryOptionCombo": "PflKpozpO7b",
 					"dataElement": "D0BdHXhtQ0b",
-					"row": 100,
+					"row": 60,
 					"column": 4
 				}
 			]

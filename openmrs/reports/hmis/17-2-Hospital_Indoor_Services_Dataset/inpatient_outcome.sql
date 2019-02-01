@@ -8,6 +8,7 @@ from
   concept_view AS question
   INNER JOIN concept_answer ON question.concept_id = concept_answer.concept_id AND question.concept_full_name IN ('Discharge note, Inpatient outcome')
   INNER JOIN concept_view AS answer ON answer.concept_id = concept_answer.answer_concept
+  AND answer.concept_full_name NOT IN ('DOR','LAMA/DAMA','Referred on request')
   INNER JOIN (SELECT DISTINCT value_reference AS type FROM visit_attribute) visit_type 
   INNER JOIN reporting_age_group ON reporting_age_group.report_group_name = 'Inpatient'
   INNER JOIN (SELECT 'M' as gender UNION SELECT 'F' AS gender) as gender
