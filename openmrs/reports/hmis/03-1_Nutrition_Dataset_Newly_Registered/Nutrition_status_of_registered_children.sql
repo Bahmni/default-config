@@ -30,8 +30,8 @@ DISTINCT(p.person_id),
         JOIN nonVoidedQuestionAnswerObs oVisitType ON e.encounter_id = oVisitType.encounter_id
         JOIN person_address address ON p.person_id = address.person_id
       WHERE !p.voided AND !v.voided AND !e.voided
-      AND address.city_village = (Select city_village FROM location where name = 'Bayalapata')
-            AND address.address1 = (Select address1 FROM location where name = 'Bayalapata')
+      AND address.city_village = (Select city_village FROM location where name = (SELECT property_value FROM global_property WHERE property='hospital.location'))
+            AND address.address1 = (Select address1 FROM location where name = (SELECT property_value FROM global_property WHERE property='hospital.location'))
             AND DATE(oStatus.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             AND DATE(oVisitType.obs_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
             AND TIMESTAMPDIFF(MONTH, p.birthdate, v.date_started) <= 24

@@ -4,7 +4,7 @@
         "displayByDefault": true,
         "defaultSections": true,
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "Nepal EHR",
             "header": "Visit",
             "logo": "../images/nhn-logo.png"
         }
@@ -12,7 +12,7 @@
     "discharge_summary": {
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "Nepal EHR",
             "header": "Discharge Summary",
             "logo": "../images/nhn-logo.png"
         },
@@ -111,7 +111,7 @@
     "opdSummary": {
         "title": "OPD Summary",
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "Nepal EHR",
             "header": "OPD Summary",
             "logo": "../images/nhn-logo.png",
             "showNameAndImage": true
@@ -203,7 +203,7 @@
     "testSummary": {
         "title": "OPD One Pager",
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "Nepal EHR",
             "header": "OPD One Pager",
             "logo": "../images/nhn-logo.png",
             "showNameAndImage": true

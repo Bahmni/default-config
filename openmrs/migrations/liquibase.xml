@@ -7,7 +7,10 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-        <changeSet id="bahmni-atomfeed-offset-marker" author="tw" context="rel3">
+		 <include file="./bahmni-reports-liquibase.xml" />
+		 <include file="./views-liquibase.xml" />
+		 <include file="./visit-types-liquibase" />
+       <!-- <changeSet id="bahmni-atomfeed-offset-marker" author="tw" context="rel3">
                 <preConditions onFail="MARK_RAN">
                         <sqlCheck expectedResult="0">
                                 SELECT COUNT(*) FROM scheduler_task_config where schedulable_class = 'org.openmrs.module.atomfeed.scheduler.tasks.EventRecordsNumberOffsetMarkerTask'
