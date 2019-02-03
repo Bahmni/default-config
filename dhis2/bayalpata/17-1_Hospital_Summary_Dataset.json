@@ -212,32 +212,38 @@
       ]
     },
 	
-	"Hospital Services - Referred out patient(OPD,IPD)":{
+	"Hospital Services - Referred out patient(OPD)":{
       "dataValues": [
         {
           "categoryOptionCombo": "ye1QuAMRG5Z",
           "dataElement": "O7vdFXujKQX",
-          "row": 2,
+          "row": 1,
           "column": 3
         },
+        
+		{
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "O7vdFXujKQX",
+          "row": 2,
+          "column": 3
+        }
+		
+      ]
+    },
+	"Hospital Services - Referred out patient(IPD)":{
+      "dataValues": [
+        
         {
           "categoryOptionCombo": "ye1QuAMRG5Z", 
           "dataElement": "cUMLBeIlaIp",
           "row": 1,
-          "column": 3
-        }
-		,
-		{
-          "categoryOptionCombo": "PflKpozpO7b",  
-          "dataElement": "O7vdFXujKQX",
-          "row": 4,
-          "column": 3
+          "column": 2
         },
         {
           "categoryOptionCombo": "PflKpozpO7b", 
           "dataElement": "cUMLBeIlaIp",
-          "row": 3,
-          "column": 3
+          "row": 2,
+          "column": 2
         }
 		
       ]
