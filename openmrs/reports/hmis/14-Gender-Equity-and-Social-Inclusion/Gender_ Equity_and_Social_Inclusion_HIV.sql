@@ -48,7 +48,7 @@ FROM
         gen,
         pd,
         iti) as first
-        LEFT JOIN clinlims.ethnicity de on 1=1
+        RIGHT JOIN clinlims.ethnicity de on 1=1
     group BY
         ethnicity,
         first.gen, first.ppid,testid

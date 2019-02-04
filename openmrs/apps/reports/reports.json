@@ -759,6 +759,13 @@
 					}
 				},
 				{
+					"name": "HIV Exposed Baby- Early Infant Diagnosis (EID) Antibody > 18 mo",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_HIV_Early_Infant_Diagnosis_Antibody_greater_than_18_mo.sql"
+					}
+				},
+				{
 					"name": "Total Clients Assessed STI",
 					"type": "MRSGeneric",
 					"config": {
@@ -1056,10 +1063,17 @@
 					}
 				},
 				{
-					"name": "Hospital Services - Referred out patient(OPD,IPD)",
+					"name": "Hospital Services - Referred out patient(OPD)",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_out_ipd_opd.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_out_opd.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Referred out patient(IPD)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_out_ipd.sql"
 					}
 				},
 				{
@@ -1090,6 +1104,13 @@
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_outcome.sql"
+					}
+				},
+				{
+					"name": "Summary of Indoor Services Inpatient Outcome DOR LAMA DAMA",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_outcome_DOR_LAMA_DAMA.sql"
 					}
 				},
 				{
