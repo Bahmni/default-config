@@ -21,9 +21,32 @@
 	     "disablePhotoCapture": true,
              "forwardUrlsForVisitTypes": [
                {
-                   "visitType": "OPD",
-                   "forwardUrl": "../appointments/#/home/manage/summary",
-                   "translationKey": "Start OPD Visit",
+                   "visitType": "Urgences",
+                   "forwardUrl": "../registration/index.html#/patient/new",
+                   "shortcutKey": "c"
+               },{
+                   "visitType": "Ambulatoire",
+                   "forwardUrl": "../registration/index.html#/patient/new",
+                   "shortcutKey": "c"
+               },{
+                   "visitType": "Hospitalisation",
+                   "forwardUrl": "../registration/index.html#/patient/new",
+                   "shortcutKey": "c"
+               },{
+                   "visitType": "Chirurgie plastique",
+                   "forwardUrl": "../registration/index.html#/patient/new",
+                   "shortcutKey": "c"
+               },{
+                   "visitType": "Laboratoire",
+                     "forwardUrl": "../registration/index.html#/patient/new",
+                   "shortcutKey": "c"
+               },{
+                   "visitType": "Radiologie",
+                     "forwardUrl": "../registration/index.html#/patient/new",
+                   "shortcutKey": "c"
+               },{
+                   "visitType": "Bloc Opératoire",
+                     "forwardUrl": "../registration/index.html#/patient/new",
                    "shortcutKey": "c"
                }],
             "patientInformation": {
@@ -65,7 +88,7 @@
 
             "autoCompleteFields":["familyName", "caste"],
             "defaultIdentifierPrefix": "GAN",
-            "defaultVisitType": "OPD",
+            "defaultVisitType": "Urgences",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
             "showLastName": true,
