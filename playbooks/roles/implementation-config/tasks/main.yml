@@ -1,2 +1,0 @@
-- include: implementation-config.yml
-  when: implementation_name != 'default'
