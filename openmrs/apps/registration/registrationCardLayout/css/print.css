@@ -30,6 +30,32 @@ h1, h2, h3 {
   table-layout: fixed;
 }
 
+.subpage {
+    height: 100%;
+    margin-top: 14.82mm;
+    margin-left: 7.21mm;
+
+}
+
+.subpage ul {
+    list-style: none;
+}
+
+.subpage ul li {
+    height: 35.1mm;
+    width: 56.5mm;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2px;
+    display: inline-block;
+    padding: 5px;
+}
+
+
+.subpage ul li p{
+    line-height: 1.5;
+}
+
 /* line 24, print.scss */
 .registrationCard-print-table td.registrationCard-photo {
   padding-top: 2px;
