@@ -32,22 +32,6 @@
                    "visitType": "Hospitalisation",
                    "forwardUrl": "../registration/index.html#/patient/new",
                    "shortcutKey": "c"
-               },{
-                   "visitType": "Chirurgie plastique",
-                   "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
-               },{
-                   "visitType": "Laboratoire",
-                     "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
-               },{
-                   "visitType": "Radiologie",
-                     "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
-               },{
-                   "visitType": "Bloc Opératoire",
-                     "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
                }],
             "patientInformation": {
                 "caretakerDetails": {
