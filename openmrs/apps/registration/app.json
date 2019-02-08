@@ -32,22 +32,6 @@
                    "visitType": "Hospitalisation",
                    "forwardUrl": "../registration/index.html#/patient/new",
                    "shortcutKey": "c"
-               },{
-                   "visitType": "Chirurgie plastique",
-                   "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
-               },{
-                   "visitType": "Laboratoire",
-                     "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
-               },{
-                   "visitType": "Radiologie",
-                     "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
-               },{
-                   "visitType": "Bloc Opératoire",
-                     "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
                }],
             "patientInformation": {
                 "caretakerDetails": {
@@ -134,13 +118,13 @@
                 "Phone number 1" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
                 "Phone number 2" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
                 "Phone number" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
-                "Legacy ID" : {"pattern" : "[0-9]{6}", "errorMessage" : "Devrait avoir 6 caractères"}
+                "LegacyID" : {"pattern" : "[0-9]{6}", "errorMessage" : "Devrait avoir 6 caractères"}
             },
             "patientSearch": {
                 "customAttributes": {
                     "label": "Ancien No de dossier",
                     "placeholder": "Ancien No de dossier",
-                    "fields": ["Legacy ID"]
+                    "fields": ["LegacyID"]
                 }
             },
             "patientSearchResults": {
