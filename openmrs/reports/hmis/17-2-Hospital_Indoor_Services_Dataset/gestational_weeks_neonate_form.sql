@@ -38,7 +38,7 @@ FROM
      on gestation_period_obs.encounter_id = e.encounter_id
           AND gestation_period_obs.concept_id = (SELECT concept_id
                                                  FROM concept_view
-                                                 WHERE concept_full_name = 'Delivery Note, Gestation period')
+                                                 WHERE concept_full_name = 'Delivery-Gravida')
           AND gestation_period_obs.voided = FALSE
    WHERE
    (gestation_period_obs.value_numeric IS NOT NULL) and 
