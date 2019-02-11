@@ -44,5 +44,6 @@
   "REGISTRATION_LABEL_SAVED":"Enregistré",
   "REGISTRATION_LABEL_ESTIMATE":"Estimée",
   "REGISTRATION_LABEL_PATIENT_LAST_NAME": "Nom de famille",
-  "REGISTRATION_LABEL_SELECT_GENDER": "Sélectionner genre"
+  "REGISTRATION_LABEL_SELECT_GENDER": "Sélectionner genre",
+  "REGISTRATION_PRINT_STICKER_KEY": "Imprimer les étiquettes"
 }

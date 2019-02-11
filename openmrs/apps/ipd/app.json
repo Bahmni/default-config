@@ -17,7 +17,7 @@
         "onAdmissionForwardTo": "#",
         "onTransferForwardTo": "#",
         "onDischargeForwardTo": "#",
-        "defaultVisitType": "IPD",
+        "defaultVisitType": "Hospitalisation",
         "expectedDateOfDischarge": "",
         "conceptSetUI": {
             "Expected Date of Discharge": {
