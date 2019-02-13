@@ -80,6 +80,7 @@
             "showSaveConfirmDialog": false,
             "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
+            "showEnterID":false,
             "printOptions": [
                 {
                     "translationKey": "REGISTRATION_PRINT_STICKER_KEY",
@@ -110,6 +111,7 @@
                     "label": "Ancien No de dossier",
                     "placeholder": "Ancien No de dossier",
                     "fields": ["Ancien No de dossier"]
+
                 }
             },
             "patientSearchResults": {

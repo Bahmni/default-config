@@ -33,22 +33,27 @@ h1, h2, h3 {
 .subpage {
     height: 100%;
     margin-top: 14.82mm;
-    margin-left: 7.21mm;
-
+    margin-left: 5mm;
+    margin-right: 5mm;
 }
 
 .subpage ul {
     list-style: none;
+    padding-left:0;
 }
 
 .subpage ul li {
-    height: 35.1mm;
-    width: 56.5mm;
+    height: 37.1mm;
+    width: 61.5mm;
     border: 1px solid black;
     border-radius: 10px;
-    padding: 2px;
     display: inline-block;
-    padding: 5px;
+    padding: 2px;
+    margin-right: 1.5mm;
+}
+
+.subpage ul li:nth-child(3n) {
+    margin-right: 0mm;
 }
 
 
