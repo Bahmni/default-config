@@ -21,14 +21,14 @@
                 <tbody>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "REGISTRATION_LABEL_REGISTRATION_DATE" |  translate }}</span>
+                        <span class="hindi-text">Data do Registro</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.registrationDate | bahmniDate}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "REGISTRATION_LABEL_PATIENT_IDENTIFIER" |  translate }}</span>
+                        <span class="hindi-text">Patient Identifier</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.primaryIdentifier.identifier}} </td>
@@ -42,7 +42,7 @@
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "REGISTRATION_LABEL_PATIENT_NAME" |  translate }}</span>
+                        <span class="hindi-text">Nome do Paciente</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>
@@ -51,36 +51,35 @@
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "REGISTRATION_LABEL_AGE" |  translate }}
-</span>
+                        <span class="hindi-text">Idade</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.age | age}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "REGISTRATION_LABEL_GENDER" |  translate }}</span>
+                        <span class="hindi-text">Genero</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.gender}} </td>
-               
+                </tr>
                 <tr>
                     <td class="registrationCard-details-name">
                         <span class="hindi-text">Address</span>
                     </td>
-                    <td class="registrationCard-details-seperator">   </td>
+                    <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.primaryRelative}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "locality_locale" |  translate }}</span>
+                        <span class="hindi-text">Localidade</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.address.address1}} </td>
                 </tr>
                  <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "administrative_locale" |  translate }}</span>
+                        <span class="hindi-text">Administrativo</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.address.address2}} </td>
@@ -88,24 +87,10 @@
 
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "district_locale" |  translate }}</span>
+                        <span class="hindi-text">Distrito</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.address.cityVillage}} </td>
-                </tr>
-                 <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "province_locale" |  translate }}</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.address.stateProvince}} </td>
-                </tr>
-                 <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">{{ "country_locale" |  translate }}</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.address.country}} </td>
                 </tr>
                 </tbody>
             </table>
