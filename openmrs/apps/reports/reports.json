@@ -319,8 +319,8 @@
 		}
 	},
 
-		"07 Family Planning Program": {
-		"name": "07 Family Planning Program",
+		"07-Family Planning Program": {
+		"name": "07-Family Planning Program",
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
