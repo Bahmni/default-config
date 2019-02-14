@@ -1640,9 +1640,6 @@
 			"Psychosis_FU-Follow up": {
 				"required": true
 			},
-			"Psychosis_FU-Consent for household visit": {
-				"required": true
-			},
 			"Psychosis_FU-Psychiatrist's recommendation followed": {
 				"required": true
 			},
@@ -1663,8 +1660,6 @@
 				"required": true
 			},
 			"Discharge Note-Post op surgery complications": {
-				"multiSelect": true
-			},
 				"required": true,
 				"multiSelect": true
 			},

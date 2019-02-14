@@ -319,7 +319,7 @@
 		}
 	},
 
-	"07 Family Planning Program": {
+		"07 Family Planning Program": {
 		"name": "07 Family Planning Program",
 		"DHISProgram": true,
 		"type": "concatenated",
@@ -340,7 +340,6 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/07-Family_Planning_Program/No_of_devices_used.sql"
 					}
 				},
-
 				{
 					"name": "Family Planning Program - Permanent FP method (New users)",
 					"type": "MRSGeneric",
@@ -767,7 +766,6 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_Total_Clients_Assessed_STI.sql"
 					}
 				},
-
 				{
 					"name": "STI Cases-by Syndromes",
 					"type": "MRSGeneric",
@@ -779,21 +777,21 @@
 					"name": "STI Cases-by Etiology",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Etiology.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Etiology.sql"
 					}
 				},
 				{
 					"name": "STI Cases-by Sex Screened",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Screened.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Sex_Screened.sql"
 					}
 				},
 				{
 					"name": "STI Cases-by Sex Treated",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Treated.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Sex_Treated.sql"
 					}
 				},
 
@@ -826,7 +824,6 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection _TB_FP.sql"
 					}
 				},
-
 				{
 					"name": "HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)",
 					"type": "MRSGeneric",
@@ -1132,7 +1129,6 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_referredout.sql"
 					}
 				},
-
 
 				{
 					"name": "FreeHealthServices Outpatient",
