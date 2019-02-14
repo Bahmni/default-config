@@ -1,5 +1,0 @@
-uuid,name,description,class,datatype,shortname,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14,answer.15,answer.16
-,"FP, Family Planning Method",,Misc,Coded,Family Planning Method Provided,,,,Condoms,Pills,Depo,IUCD,Implant,,,,,,,,,,,
-,"FP, Users Type",,Misc,Coded,Users Type,,,,New,Existing,,,,,,,,,,,,,,
-,"FP, Units provided",,Misc,Numeric,Units Provided,,,,,,,,,,,,,,,,,,,
-,"FP, Discontinued/Removed",,Misc,Coded,Family Planning Method Discontinued/Removed,,,,Pills,Depo,IUCD,Implant,,,,,,,,,,,,

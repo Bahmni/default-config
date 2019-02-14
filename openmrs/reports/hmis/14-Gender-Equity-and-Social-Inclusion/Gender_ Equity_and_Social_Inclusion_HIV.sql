@@ -30,8 +30,8 @@ FROM
             INNER JOIN clinlims.person per ON p.person_id = per.id
             INNER JOIN clinlims.patient_identity pi ON p.id = pi.patient_id
             INNER JOIN clinlims.patient_identity_type pit ON pi.identity_type_id = pit.id and pi.identity_type_id=37
-                AND t.id = 23810
-                AND r.value != ''
+			  AND t.name IN ('HIV (Blood)','HIV (Serum)')
+			  AND r.value != ''
                 AND r.result_type = 'D'
                 AND r.abnormal = TRUE
 
@@ -48,7 +48,7 @@ FROM
         gen,
         pd,
         iti) as first
-        LEFT JOIN clinlims.ethnicity de on 1=1
+        RIGHT JOIN clinlims.ethnicity de on 1=1
     group BY
         ethnicity,
         first.gen, first.ppid,testid

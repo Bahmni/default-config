@@ -1,4 +1,4 @@
-bahmnilab_url: "https://s3.ap-south-1.amazonaws.com/possible-artifacts/89-artifacts/openelis.war"
+bahmnilab_url: "https://github.com/Possiblehealth/possible-artifacts/raw/master/90-artifacts/openelis.war"
 bahmni_lab_temp_files:
   - bahmni-lab.war
   - possible-bahmni-lab

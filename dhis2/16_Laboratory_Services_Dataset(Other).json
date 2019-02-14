@@ -1,0 +1,81 @@
+{
+  "orgUnit": "<Your organization id>",
+  "reports": { 
+    "16 Laboratory Services Dataset(Other)": {
+      "dataValues": [    	
+		{
+		 "_comment": "Biochemistry-S_Protein",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "n5icJ65j8Q3",
+          "row": 1,
+          "column": 1
+        },
+		{
+		 "_comment": "Biochemistry-other",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "RqSKEolefFR",
+          "row": 1,
+          "column": 2
+        },
+		{
+		 "_comment": "Bacteriology-gm_stain",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "coBAbfppycX",
+          "row": 1,
+          "column": 3
+        },
+		{
+		 "_comment": "Bacteriology-body_fluid_culture",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "xMXbKs6edeu",
+          "row": 1,
+          "column": 4
+        },
+		{
+		 "_comment": "Bacteriology-body_fluid_afb",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "V01YnWJdDp0",
+          "row": 1,
+          "column": 5
+        },
+		{
+		"_comment": "Immunology-TPHA",
+          "categoryOptionCombo": "wCvNkhhbSbl",  
+          "dataElement": "KQGrcNYhocs",
+          "row": 1,
+          "column": 6
+        },
+		{
+		"_comment": "Immunology-RPR/VDRL",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "llvGO9epm7O",
+          "row": 1,
+          "column": 6
+        },
+		{
+		"_comment": "Biochemistry-Sugar-F",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "GYgsh4jyQhD",
+          "row": 1,
+          "column": 7
+        },
+		{
+		"_comment": "Biochemistry-Sugar-PP",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "icbE4llLraf",
+          "row": 1,
+          "column": 8
+        },
+		{
+		"_comment": "Biochemistry-Sugar-R",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "jp5y3JXmVEx",
+          "row": 1,
+          "column": 9
+        }
+		
+      ]
+    }
+	
+  }
+}

@@ -1,0 +1,754 @@
+{
+  "orgUnit": "<Your organization id>",
+  "reports": {
+    "Leprosy program total patient count": {
+      "dataValues": [    	
+		{
+		"_comment": "New cases-M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "k4bqJU6Otyr",
+          "row": 1,
+          "column": 4
+        },
+		 { 
+		"_comment": "New cases-M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "k4bqJU6Otyr",
+          "row": 2,
+          "column": 4
+        },
+        { 
+		"_comment": "Relapse cases-M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "LhPiUHVF3qH",
+          "row": 9,
+          "column": 4
+        },
+		{
+		"_comment": "Replase cases-M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "LhPiUHVF3qH",
+          "row": 10,
+          "column": 4
+        },
+        { 
+		"_comment": "Retreatment cases-M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "MDQuDIvcmDG",
+          "row": 5,
+          "column": 4
+        },
+		{
+		"_comment": "Retreatment cases-M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "MDQuDIvcmDG",
+          "row": 6,
+          "column": 4
+        },
+		 { 
+		"_comment": " Transferred in cases-M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "gKDp6rM5SKC",
+          "row": 13,
+          "column": 4
+        },
+        { 
+		"_comment": " Transferred in cases-M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "gKDp6rM5SKC",
+          "row": 14,
+          "column": 4
+        },
+		{
+		"_comment": "New cases-P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "cg8bW1IGGY6",
+          "row": 3,
+          "column": 4
+        },
+		 { 
+		"_comment": "New cases-P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "cg8bW1IGGY6",
+          "row": 4,
+          "column": 4
+        },
+        { 
+		"_comment": "Relapse cases-P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "Umvs7eqA9bF",
+          "row": 11,
+          "column": 4
+        },
+		{
+		"_comment": "Replase cases-P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "Umvs7eqA9bF",
+          "row": 12,
+          "column": 4
+        },
+        { 
+		"_comment": "Retreatment cases-P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "SqqmKBBO5dA",
+          "row": 7,
+          "column": 4
+        },
+		{
+		"_comment": "Retreatment cases-P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "SqqmKBBO5dA",
+          "row": 8,
+          "column": 4
+        },
+		 { 
+		"_comment": " Transferred in cases-P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "B0grizM21U0",
+          "row": 15,
+          "column": 4
+        },
+        { 
+		"_comment": " Transferred in cases-P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "B0grizM21U0",
+          "row": 16,
+          "column": 4
+        }     
+      ]
+    },
+    "Leprosy program total patient in this month":{
+      "dataValues": [
+        {
+		"_comment": "M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "ymGtY0eS5Jc",
+          "row": 1,
+          "column": 3
+        },
+		 { 
+		"_comment": "M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "ymGtY0eS5Jc",
+          "row": 2,
+          "column": 3
+        },
+        { 
+		"_comment": "P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "lr2c4SvhC5w",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "lr2c4SvhC5w",
+          "row": 4,
+          "column": 3
+        }
+      ]
+    },
+	 "Leprosy program total deducted":{
+      "dataValues": [
+        {
+		"_comment": "RFT-M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "N097AQezHbX",
+          "row": 9,
+          "column": 4
+        },
+		 { 
+		"_comment": "RFT-M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "N097AQezHbX",
+          "row": 10,
+          "column": 4
+        },
+        { 
+		"_comment": "Transfer Out-M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "aCMvVLEtHKm",
+          "row": 13,
+          "column": 4
+        },
+		{
+		"_comment": "Transfer Out-M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "aCMvVLEtHKm",
+          "row": 14,
+          "column": 4
+        },
+        { 
+		"_comment": "Defulter-M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "SzRGyOFmdjo",
+          "row": 1,
+          "column": 4
+        },
+		{
+		"_comment": "Defulter-M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "SzRGyOFmdjo",
+          "row": 2,
+          "column": 4
+        },
+		 { 
+		"_comment": " Other Deduction-M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "psRprHTmF2h",
+          "row": 5,
+          "column": 4
+        },
+        { 
+		"_comment": "Other Deduction-M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "psRprHTmF2h",
+          "row": 6,
+          "column": 4
+        },
+		{
+		"_comment": "RFT-P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "qyYAJ76ln2k",
+          "row": 11,
+          "column": 4
+        },
+		 { 
+		"_comment": "RFT-P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "qyYAJ76ln2k",
+          "row": 12,
+          "column": 4
+        },
+        { 
+		"_comment": "Transfer Out-P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "MIabZFoyiNa",
+          "row": 15,
+          "column": 4
+        },
+		{
+		"_comment": "Transfer Out-P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "MIabZFoyiNa",
+          "row": 16,
+          "column": 4
+        },
+        { 
+		"_comment": "Defulter-P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "WPz17LTYpne",
+          "row": 3,
+          "column": 4
+        },
+		{
+		"_comment": "Defulter-P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "WPz17LTYpne",
+          "row": 4,
+          "column": 4
+        },
+		 { 
+		"_comment": "Other Deduction-P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "USNeEAsWwj9",
+          "row": 7,
+          "column": 4
+        },
+        { 
+		"_comment": "Other Deduction-P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "USNeEAsWwj9",
+          "row": 8,
+          "column": 4
+        }     
+      ]
+    },
+	 "Leprosy program total patient at the end of this month after deduction":{
+      "dataValues": [
+        {
+		"_comment": "M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "D2sfyGW4Ade",
+          "row": 1,
+          "column": 2
+        },
+		 { 
+		"_comment": "M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "D2sfyGW4Ade",
+          "row": 1,
+          "column": 3
+        },
+        { 
+		"_comment": "P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "vg1Cmw3Tcim",
+          "row": 2,
+          "column": 2
+        },
+		{
+		"_comment": "P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "vg1Cmw3Tcim",
+          "row": 2,
+          "column": 3
+        }
+      ]
+    },
+	"Leprosy program total patient at the end of this month after deduction less than 14":{
+      "dataValues": [
+        {
+		"_comment": "M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "cSOdzmM0920",
+          "row": 1,
+          "column": 2
+        },
+		 { 
+		"_comment": "M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "cSOdzmM0920",
+          "row": 1,
+          "column": 3
+        },
+        { 
+		"_comment": "P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "KFfj5Sr37F1",
+          "row": 2,
+          "column": 2
+        },
+		{
+		"_comment": "P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "KFfj5Sr37F1",
+          "row": 2,
+          "column": 3
+        }
+      ]
+    },
+	"Leprosy program total positive smear cases":{
+      "dataValues": [
+        {
+		"_comment": "M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "S0oeJ56oWxj",
+          "row": 1,
+          "column": 3
+        },
+		 { 
+		"_comment": "M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "S0oeJ56oWxj",
+          "row": 2,
+          "column": 3
+        },
+        { 
+		"_comment": "P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "ihereZIMhXR",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "ihereZIMhXR",
+          "row": 4,
+          "column": 3
+        }
+      ]
+    },
+		"Leprosy program total smear cases":{
+      "dataValues": [
+        {
+		"_comment": "M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "smIZPpDohxD",
+          "row": 1,
+          "column": 3
+        },
+		 { 
+		"_comment": "M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "smIZPpDohxD",
+          "row": 2,
+          "column": 3
+        },
+        { 
+		"_comment": "P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "iPeIqZQP2tQ",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "iPeIqZQP2tQ",
+          "row": 4,
+          "column": 3
+        }
+      ]
+    },
+	"Leprosy program total new cases less than 14 years":{
+      "dataValues": [
+        {
+		"_comment": "M.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "suBFDHxUSC8",
+          "row": 1,
+          "column": 3
+        },
+		 { 
+		"_comment": "M.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "suBFDHxUSC8",
+          "row": 2,
+          "column": 3
+        },
+        { 
+		"_comment": "P.B-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "jOs9JAeA3Gd",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "P.B-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "jOs9JAeA3Gd",
+          "row": 4,
+          "column": 3
+        }
+      ]
+    },
+	"Leprosy program total deformity status count":{
+      "dataValues": [
+        {
+		"_comment": "Category 0-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "nhgRY4S5kis",
+          "row": 1,
+          "column": 3
+        },
+		 { 
+		"_comment": "Category 0-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "nhgRY4S5kis",
+          "row": 2,
+          "column": 3
+        },
+        { 
+		"_comment": "Category 1-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "aqR2YwUkIkH",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "Category 1-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "aqR2YwUkIkH",
+          "row": 4,
+          "column": 3
+        },
+		{
+		"_comment": "Category 2-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "PHIVH7lScjQ",
+          "row": 5,
+          "column": 3
+        },
+		 { 
+		"_comment": "Category 2-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "PHIVH7lScjQ",
+          "row": 6,
+          "column": 3
+        },
+        { 
+		"_comment": "Not Examined-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "l1BzWBEy2TT",
+          "row": 7,
+          "column": 3
+        },
+		{
+		"_comment": "Not Examined-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "l1BzWBEy2TT",
+          "row": 8,
+          "column": 3
+        }
+      ]
+    },
+	"Leprosy program total deformity status less than 14 years":{
+      "dataValues": [
+        {
+		"_comment": "Category 0-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "I43IE8wKadT",
+          "row": 1,
+          "column": 3
+        },
+		 { 
+		"_comment": "Category 0-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "I43IE8wKadT",
+          "row": 2,
+          "column": 3
+        },
+        { 
+		"_comment": "Category 1-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "EMY9856ZvOK",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "Category 1-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "EMY9856ZvOK",
+          "row": 4,
+          "column": 3
+        },
+		{
+		"_comment": "Category 2-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "poHcbVFCtFx",
+          "row": 5,
+          "column": 3
+        },
+		 { 
+		"_comment": "Category 2-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "poHcbVFCtFx",
+          "row": 6,
+          "column": 3
+        },
+        { 
+		"_comment": "Not Examined-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "reGClVSPj6B",
+          "row": 7,
+          "column": 3
+        },
+		{
+		"_comment": "Not Examined-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "reGClVSPj6B",
+          "row": 8,
+          "column": 3
+        }
+      ]
+    },
+	"Leprosy program total deformity status RFT count":{
+      "dataValues": [
+        {
+		"_comment": "Category 0-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "lEwM1ALjfQr",
+          "row": 1,
+          "column": 3
+        },
+		 { 
+		"_comment": "Category 0-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "lEwM1ALjfQr",
+          "row": 2,
+          "column": 3
+        },
+        { 
+		"_comment": "Category 1-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "KfD6Pfv5tbq",
+          "row": 3,
+          "column": 3
+        },
+		{
+		"_comment": "Category 1-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "KfD6Pfv5tbq",
+          "row": 4,
+          "column": 3
+        },
+		{
+		"_comment": "Category 2-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "XVfWdGLJQZW",
+          "row": 5,
+          "column": 3
+        },
+		 { 
+		"_comment": "Category 2-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "XVfWdGLJQZW",
+          "row": 6,
+          "column": 3
+        },
+        { 
+		"_comment": "Not Examined-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "qdHA2j347gQ",
+          "row": 7,
+          "column": 3
+        },
+		{
+		"_comment": "Not Examined-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "qdHA2j347gQ",
+          "row": 8,
+          "column": 3
+        }
+      ]
+    },
+	"Leprosy program Cohort of new registered patients":{
+      "dataValues": [
+        {
+		"_comment": "Total Registered M.B-after 18 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "vackV4atPC7",
+          "row": 1,
+          "column": 2
+        },
+		 { 
+		"_comment": "Total Registered M.B-after 18 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "vackV4atPC7",
+          "row": 1,
+          "column": 3
+        },
+        { 
+		"_comment": "Total Registered P.B-after 9 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "P970wTENApq",
+          "row": 2,
+          "column": 2
+        },
+		{
+		"_comment": "Total Registered P.B-after 9 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "P970wTENApq",
+          "row": 2,
+          "column": 3
+        },
+		 {
+		"_comment": "RFT M.B-after 18 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "Ii61WdOXlqD",
+          "row": 1,
+          "column": 4
+        },
+		 { 
+		"_comment": "RFT M.B-after 18 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "Ii61WdOXlqD",
+          "row": 1,
+          "column": 5
+        },
+        { 
+		"_comment": "RFT P.B-after 9 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "fHOosywf2AR",
+          "row": 2,
+          "column": 4
+        },
+		{
+		"_comment": "RFT P.B-after 9 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "fHOosywf2AR",
+          "row": 2,
+          "column": 5
+        },
+		{
+		"_comment": "Defulter M.B-after 18 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "IKLFuZBeSOP",
+          "row": 1,
+          "column": 6
+        },
+		 { 
+		"_comment": "Defulter M.B-after 18 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "IKLFuZBeSOP",
+          "row": 1,
+          "column": 7
+        },
+        { 
+		"_comment": "Defulter P.B-after 9 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "LubS0oalroe",
+          "row": 2,
+          "column": 6
+        },
+		{
+		"_comment": "Defulter P.B-after 9 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "LubS0oalroe",
+          "row": 2,
+          "column": 7
+        },
+		{
+		"_comment": "Other deducted M.B-after 18 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "hJErXQBA6fE",
+          "row": 1,
+          "column": 8
+        },
+		 { 
+		"_comment": "Other deducted M.B-after 18 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "hJErXQBA6fE",
+          "row": 1,
+          "column": 9
+        },
+        { 
+		"_comment": "Other deducted P.B-after 9 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "fAlVOp4TZxi",
+          "row": 2,
+          "column": 8
+        },
+		{
+		"_comment": "Other deducted P.B-after 9 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "fAlVOp4TZxi",
+          "row": 2,
+          "column": 9
+        },
+		{
+		"_comment": "Currently in treatment M.B-after 18 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "Vwuh7TnkmQT",
+          "row": 1,
+          "column": 10
+        },
+		 { 
+		"_comment": "Currently in treatment M.B-after 18 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "Vwuh7TnkmQT",
+          "row": 1,
+          "column": 11
+        },
+        { 
+		"_comment": "Currently in treatment P.B-after 9 months-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "pvNcK95ZAMr",
+          "row": 2,
+          "column": 10
+        },
+		{
+		"_comment": "Currently in treatment P.B-after 9 months-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "pvNcK95ZAMr",
+          "row": 2,
+          "column": 11
+        }
+        
+      ]
+    }
+  }
+}

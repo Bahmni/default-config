@@ -32,7 +32,7 @@
         "onAdmissionForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onDischargeForwardTo": "#/patient/search",
-        "defaultVisitType": "IPD",
+        "defaultVisitType": "General",
         "maxPatientsPerBed": 2,
         "dashboard": {
             "translationKey": "DASHBOARD_TAB_GENERAL_KEY",

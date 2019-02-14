@@ -1386,131 +1386,6 @@
 				"required": true,
 				"multiSelect": true
 			},
-			"Mental health-Visit type": {
-				"required": true
-			},
-			"Depression-Patient History": {
-				"required": true
-			},
-			"Depression Followup-Improvement": {
-				"required": true
-			},
-			"Depression-Signs of mania": {
-				"required": true
-			},
-			"Depression-Medical Adherence": {
-				"required": true
-			},
-			"Depression-Counseling benefits": {
-				"required": true
-			},
-			"Depression Initial-Counselling": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Depression F/U-Follow up": {
-				"required": true
-			},
-			"Depression-Consent for Household Visit": {
-				"required": true
-			},
-			"Depression-Recommendation Rationale Followed": {
-				"required": true
-			},
-			"Depression Initial-Patient History": {
-				"required": true
-			},
-			"Depression Initial-Grief": {
-				"required": true
-			},
-			"Depression Initial-History of Mania": {
-				"required": true
-			},
-			"Depression-Severity of depression": {
-				"required": true
-			},
-			"Depression Initial-Progress Toward Goal of Treatment": {
-				"required": true
-			},
-			"Depression Initial-Follow up visit": {
-				"required": true
-			},
-			"Depression Initial-Consent for Household Visit": {
-				"required": true
-			},
-			"Depression Follow up-Conselling": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Depression-F/U-PHQ9-1": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-2": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-3": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-4": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-5": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-6": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-7": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-8": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-9": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-1": {
-				"required": true
-			},
-			"Depression Initail-PHQ9-2": {
-				"required": true
-			},
-			"Depression Initial -PHQ9-3": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-4": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-5": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-6": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-7": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-8": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-9": {
-				"required": true
-			},
-			"Depression Initial-PHQ9 Effect": {
-				"required": true
-			},
-			"Depression Initial-PHQ9 Total": {
-				"required": true
-			},
-			"Depression-Progress toward Goal of treatment": {
-				"required": true
-			},
-			"Burn Note-Site of burn": {
-				"multiSelect": true
-			},
-			"Burn Note-Degree of burn": {
-				"multiSelect": true
-			},
 			"Burn Note-Complication of burn": {
 				"multiSelect": true
 			},
@@ -1790,6 +1665,137 @@
 			"Discharge Note-Post op surgery complications": {
 				"multiSelect": true
 			},
+				"required": true,
+				"multiSelect": true
+			},
+			"Mental health-Visit type": {
+				"required": true
+			},
+			"Depression-Patient History": {
+				"required": true
+			},
+			"Depression Followup-Improvement": {
+				"required": true
+			},
+			"Depression-Signs of mania": {
+				"required": true
+			},
+			"Depression-Medical Adherence": {
+				"required": true
+			},
+			"Depression-Counseling benefits": {
+				"required": true
+			},
+			"Depression Initial-Counselling": {
+				"required": true,
+				"multiSelect": true
+			},
+			"Depression F/U-Follow up": {
+				"required": true
+			},
+			"Depression-Consent for Household Visit": {
+				"required": true
+			},
+			"Depression-Recommendation Rationale Followed": {
+				"required": true
+			},
+			"Depression Initial-Patient History": {
+				"required": true
+			},
+			"Depression Initial-Grief": {
+				"required": true
+			},
+			"Depression Initial-History of Mania": {
+				"required": true
+			},
+			"Depression-Severity of depression": {
+				"required": true
+			},
+			"Depression Initial-Progress Toward Goal of Treatment": {
+				"required": true
+			},
+			"Depression Initial-Follow up visit": {
+				"required": true
+			},
+			"Depression Initial-Consent for Household Visit": {
+				"required": true
+			},
+			"Depression Follow up-Conselling": {
+				"required": true,
+				"multiSelect": true
+			},
+			"Depression-F/U-PHQ9-1": {
+				"required": true
+			},
+			"Depression-F/U-PHQ9-2": {
+				"required": true
+			},
+			"Depression-F/U-PHQ9-3": {
+				"required": true
+			},
+			"Depression-F/U-PHQ9-4": {
+				"required": true
+			},
+			"Depression-F/U-PHQ9-5": {
+				"required": true
+			},
+			"Depression-F/U-PHQ9-6": {
+				"required": true
+			},
+			"Depression-F/U-PHQ9-7": {
+				"required": true
+			},
+			"Depression-F/U-PHQ9-8": {
+				"required": true
+			},
+			"Depression-F/U-PHQ9-9": {
+				"required": true
+			},
+			"Depression Initial-PHQ9-1": {
+				"required": true
+			},
+			"Depression Initail-PHQ9-2": {
+				"required": true
+			},
+			"Depression Initial -PHQ9-3": {
+				"required": true
+			},
+			"Depression Initial-PHQ9-4": {
+				"required": true
+			},
+			"Depression Initial-PHQ9-5": {
+				"required": true
+			},
+			"Depression Initial-PHQ9-6": {
+				"required": true
+			},
+			"Depression Initial-PHQ9-7": {
+				"required": true
+			},
+			"Depression Initial-PHQ9-8": {
+				"required": true
+			},
+			"Depression Initial-PHQ9-9": {
+				"required": true
+			},
+			"Depression Initial-PHQ9 Effect": {
+				"required": true
+			},
+			"Depression Initial-PHQ9 Total": {
+				"required": true
+			},
+			"Depression-Progress toward Goal of treatment": {
+				"required": true
+			},
+			"Burn Note-Site of burn": {
+				"multiSelect": true
+			},
+			"Burn Note-Degree of burn": {
+				"multiSelect": true
+			},
+			"Psychosis_FU-Consent for household visit": {
+				"required": true
+			},
 			"IMAM, Visit Type": {
 				"required": true
 			},
@@ -1797,6 +1803,9 @@
 				"required": true
 			},
 			"NBA-Sepsis risk factor": {
+				"multiSelect": true
+			},
+			"Delivery Note-Complication Present": {
 				"multiSelect": true
 			},
 			"defaults": {

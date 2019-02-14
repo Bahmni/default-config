@@ -1,9 +1,0 @@
-uuid,name,description,class,datatype,shortname,reference-term-source,reference-term-code,reference-term-relationship,answer.1,answer.2,answer.3,answer.4,answer.5,answer.6,answer.7,answer.8,answer.9,answer.10,answer.11,answer.12,answer.13,answer.14,answer.15,answer.16
-,OI Initial,,Misc,N/A,OI Initial,,,,,,,,,,,,,,,,,,,
-,OI Follow up,,Misc,N/A,OI Follow up,,,,,,,,,,,,,,,,,,,
-,"OI, Type of visit",,Misc,Coded,Type of visit,,,,OI Initial,OI Follow up,,,,,,,,,,,,,,
-,"OI, Provided CPT",,Misc,Boolean,Provided Cotrim Prohylaxis,,,,,,,,,,,,,,,,,,,
-,"OI, Screening for TB",,Misc,Boolean,Screening for TB,,,,,,,,,,,,,,,,,,,
-,"OI, Refer to other sites for TB screening",,Misc,Boolean,Refer to other sites for TB screening,,,,,,,,,,,,,,,,,,,
-,"OI, Remarks",,Misc,Text,Remarks,,,,,,,,,,,,,,,,,,,
-,"OI, Opportunistic infections",,Misc,Coded,,,,,Bacterial Pneumonia Opportunistic Infection,Tuberculosis Opportunistic Infection,Candidiasis Opportunistic Infection,Diarrhoea Opportunistic Infection,Crypto Meningitis Opportunistic Infection,Pneumocysitis Pneumonia Opportunistic Infection,Cytomegato Virus Opportunistic Infection,Herpes Zoster Opportunistic Infection,Herpes Genitalis Opportunistic Infection,Toxicity side effects,Others,,,,,
