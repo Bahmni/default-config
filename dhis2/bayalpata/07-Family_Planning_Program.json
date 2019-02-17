@@ -1,8 +1,9 @@
 {
   "orgUnit": "Bm39oMfSNir",
-  "dataSetIdFamily": "JOAyT4yOEcs",
-  "reports": {
-   "Family Planning Program - Temporary FP method (No of devices used)": {
+	"dataSetIdFamily": "JOAyT4yOEcs",
+	"reports": {
+
+		"Family Planning Program - Temporary FP method (No of devices used)": {
 			"dataValues": [{
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "XcWK8DnxZgE",
@@ -97,29 +98,29 @@
 					"_comment": "new less than 20_pills",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "oCqILrkoRPB",
-					"row": 5,
+					"row": 1,
 					"column": 2
 				},
 				{
 					"_comment": "new less than 20_depo",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "AnmhKKJgX2G",
-					"row": 5,
-					"column": 7
+					"row": 7,
+					"column": 2
 				},
 				{
 					"_comment": "new less than 20_IUCD",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "SujVjgXHP72",
 					"row": 5,
-					"column": 5
+					"column": 2
 				},
 				{
 					"_comment": "new less than 20_implant",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "CuRbZM8HWyR",
-					"row": 5,
-					"column": 6
+					"row": 6,
+					"column": 2
 				},
 				{
 					"_comment": "new more than 20_pills",
@@ -132,29 +133,29 @@
 					"_comment": "new more than 20_depo",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "FCqWVnEwIeX",
-					"row": 5,
-					"column": 7
+					"row": 7,
+					"column": 3
 				},
 				{
 					"_comment": "new more than 20_IUCD",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "DwOKj8SLOtF",
 					"row": 5,
-					"column": 5
+					"column": 3
 				},
 				{
 					"_comment": "new more than 20_implant",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "d80NCjU1iPK",
-					"row": 5,
-					"column": 6
+					"row": 6,
+					"column": 3
 				},
 				{
 					"_comment": "Existing_pills",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "Mg77ZuyM6fe",
-					"row": 5,
-					"column": 2,
+					"row": 2,
+					"column": 5,
 					"getElementBack": true,
 					"fieldValue": "numberOfPillsUser"
 				},
@@ -162,8 +163,8 @@
 					"_comment": "Existing_depo",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "tobLk0FbS9k",
-					"row": 5,
-					"column": 7,
+					"row": 7,
+					"column": 5,
 					"getElementBack": true,
 					"fieldValue": "numberOfDepoUser"
 				},
@@ -180,8 +181,8 @@
 					"_comment": "Existing_implant",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "vaRoCnJ7Xwl",
-					"row": 5,
-					"column": 6,
+					"row": 6,
+					"column": 5,
 					"getElementBack": true,
 					"fieldValue": "numberOfImplantUser"
 				},
@@ -189,28 +190,28 @@
 					"_comment": "discontinued_pills",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "fPdwKS6tcyn",
-					"row": 5,
-					"column": 2
+					"row": 2,
+					"column": 6
 				},
 				{
 					"_comment": "discontinued_depo",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "gn4hsUJEG7c",
-					"row": 5,
-					"column": 7
+					"row": 7,
+					"column": 6
 				},
 				{
 					"_comment": "discontinued_IUCD",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "eeTiOM51Tbq",
 					"row": 5,
-					"column": 5
+					"column": 6
 				},
 				{
 					"_comment": "discontinued_implant",
 					"categoryOptionCombo": "kdsirVNKdhm",
 					"dataElement": "UGdWSivv6AA",
-					"row": 5,
+					"row": 6,
 					"column": 6
 				}
 
