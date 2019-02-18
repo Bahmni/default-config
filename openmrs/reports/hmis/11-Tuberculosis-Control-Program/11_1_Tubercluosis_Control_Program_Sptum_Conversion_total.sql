@@ -30,7 +30,7 @@ FROM
         AND answer_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('Tuberculosis, Diagnosis Category')
+        question_concept_name.name IN ('TB Intake-Diagnosis category')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) first_answers
        
@@ -47,7 +47,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'Tuberculosis, Diagnosis Category'
+        AND cn1.name = 'TB Intake-Diagnosis category'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
@@ -68,7 +68,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'Tuberculosis F/U, Sputum conversion result'
+        AND cn1.name = 'TBFU-Sputum conversion result'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id

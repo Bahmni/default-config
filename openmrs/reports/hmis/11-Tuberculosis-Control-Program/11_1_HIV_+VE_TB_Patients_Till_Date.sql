@@ -23,7 +23,7 @@ FROM
         AND question_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT')
+        question_concept_name.name IN ('TB Intake-Is patient on ART','TB Intake-Is patient on CPT')
     ORDER BY answer_name DESC) first_answers
         INNER JOIN
     (SELECT 'M' AS gender UNION SELECT 'F' AS gender) gender
@@ -39,7 +39,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name IN ('Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT')
+        AND cn1.name IN ('TB Intake-Is patient on ART','TB Intake-Is patient on CPT')
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
