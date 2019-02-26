@@ -32,5 +32,10 @@
   "district_locale":"District",
   "administrative_locale":"Administrative",
   "locality_locale":"Locality",
-  "REGISTRATION_EDUCATION_KEY":"Education Details"  
+  "ADDRESS_CLOSE_OF_LOCALE":"Close of",
+  "ADDRESS_AVENUE_STREET_LOCALE":"Avenue / Street",
+  "ADDRESS_BLOCK_LOCALE":"Block",
+  "ADDRESS_FLOOR_FLAT_LOCALE":"Floor / Flat",
+  "ADDRESS_HOUSE_NUMBER_LOCALE":"House Number",
+  "REGISTRATION_EDUCATION_KEY":"Education Details"
 }

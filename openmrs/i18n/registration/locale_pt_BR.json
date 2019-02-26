@@ -33,5 +33,10 @@
 	"district_locale":"Distrito",
 	"administrative_locale":"Administrativo",
 	"locality_locale":"Localidade",
-     "education":"Nivel de Escolaridade"
+    "education":"Nivel de Escolaridade",
+    "ADDRESS_CLOSE_OF_LOCALE":"Perto De",
+	"ADDRESS_AVENUE_STREET_LOCALE":"Avenida/Rua",
+	"ADDRESS_BLOCK_LOCALE":"Quateirão",
+	"ADDRESS_FLOOR_FLAT_LOCALE":"Andar / Flat",
+	"ADDRESS_HOUSE_NUMBER_LOCALE":"N^o^ da Casa"
 }		
