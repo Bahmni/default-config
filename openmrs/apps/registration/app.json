@@ -19,13 +19,6 @@
         "config" : {
                 "patientInformation": {
              	
-       "patientReferenceInformation": {
-                "title": "patientReferenceInformation",
-                "translationKey": "REGISTRATION_REFERENCE_INFO_KEY",
-                "attributes": ["Nome","Apelido","Phone_2"],
-                "order" : 2,
-                "expanded": true
-        },
         "patientTransferenceInformation": {
                 "title": "patientTransferenceInformation",
                 "translationKey": "REGISTRATION_TRANSFERENCE_INFO_KEY",
@@ -48,6 +41,7 @@
                 },
                 "defaults":  {
                     "class": "General",
+                    "TestResult": "HIV_Positive",
                     "landHolding": 2
                 }
             },
@@ -69,7 +63,7 @@
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
-            "showBirthTime": true,
+            "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
