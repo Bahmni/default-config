@@ -1,17 +1,13 @@
 {
   "homePage": {
-    "header_text": "<b>BEM VINDO AO<br />SISTEMA ELECTRÓNICO DE SEGUIMENTO DE PACIENTES<br />SESP - POC",
+    "header_text": "<b>MINISTÉRIO DA SAÚDE<br />SISTEMA ELECTRÓNICO DE SEGUIMENTO DE PACIENTES(SESP) - POC",
     "logo": "/bahmni/images/emblem_of_mozambique.png",
-    "title_text": " ",
-    "bottomBanner": "/bahmni/images/jembi_uem_moasis_logo.png"
+    "title_text": " "
   },
   "loginPage": {
     "logo": "/bahmni/images/flag_of_mozambique.png",
     "showHeaderText": true,
-    "showTitleText": true,
-    "bottomLogos" : [
-      "/bahmni/images/jembi_uem_moasis_logo.png"
-    ]
+    "showTitleText": true
   },
   "helpLink": {
     "url": "https://bahmni.atlassian.net/wiki/display/BAH/Bahmni+Home"
