@@ -11,5 +11,8 @@
   },
   "helpLink": {
     "url": "https://bahmni.atlassian.net/wiki/display/BAH/Bahmni+Home"
+  },
+  "misauLink": {
+	  "url": "http://www.misau.gov.mz"
   }
 }
