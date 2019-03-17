@@ -318,11 +318,13 @@
 			]
 		}
 	},
-	"07 Family Planning Program": {
-		"name": "07 Family Planning Program",
+
+		"07-Family Planning Program": {
+		"name": "07-Family Planning Program",
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
+
 			"reports": [
 			{
 					"name": "Family Planning Program all temporary methods",
@@ -758,13 +760,19 @@
 					}
 				},
 				{
+					"name": "HIV Exposed Baby- Early Infant Diagnosis (EID) Antibody > 18 mo",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_2_HIV_Early_Infant_Diagnosis_Antibody_greater_than_18_mo.sql"
+					}
+				},
+				{
 					"name": "Total Clients Assessed STI",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_Total_Clients_Assessed_STI.sql"
 					}
 				},
-
 				{
 					"name": "STI Cases-by Syndromes",
 					"type": "MRSGeneric",
@@ -776,21 +784,21 @@
 					"name": "STI Cases-by Etiology",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Etiology.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Etiology.sql"
 					}
 				},
 				{
 					"name": "STI Cases-by Sex Screened",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Screened.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Sex_Screened.sql"
 					}
 				},
 				{
 					"name": "STI Cases-by Sex Treated",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_ By_Sex_Treated.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_3_STI_Cases_By_Sex_Treated.sql"
 					}
 				},
 
@@ -823,9 +831,8 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection _TB_FP.sql"
 					}
 				},
-
 				{
-					"name": "HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)",
+					"name": "HIV-AIDS Program Opportunistic Infection - TB and FP(HIV Patients received CPT)",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection_TB_FP_HIV_Patients_Received_CPT.sql"
@@ -1002,7 +1009,7 @@
 					"name": "OPD Surgical Problems(Total and New OPD)",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_Surgical_Problem_Total _OPD_New_Old.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_Surgical_Problem_Total_OPD_New_Old.sql"
 					}
 				}
 			]
@@ -1071,10 +1078,17 @@
 					}
 				},
 				{
-					"name": "Hospital Services - Referred out patient(OPD,IPD)",
+					"name": "Hospital Services - Referred out patient(OPD)",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_out_ipd_opd.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_out_opd.sql"
+					}
+				},
+				{
+					"name": "Hospital Services - Referred out patient(IPD)",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-1-Hospital_Summary_Dataset/referred_out_ipd.sql"
 					}
 				},
 				{
@@ -1108,6 +1122,13 @@
 					}
 				},
 				{
+					"name": "Summary of Indoor Services Inpatient Outcome DOR LAMA DAMA",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_outcome_DOR_LAMA_DAMA.sql"
+					}
+				},
+				{
 					"name": "Summary of Indoor Services Gestational weeks(Neonate Form)",
 					"type": "MRSGeneric",
 					"config": {
@@ -1129,7 +1150,6 @@
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/17-2-Hospital_Indoor_Services_Dataset/inpatient_referredout.sql"
 					}
 				},
-
 
 				{
 					"name": "FreeHealthServices Outpatient",

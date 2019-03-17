@@ -87,6 +87,7 @@ FROM
    WHERE ov.question_full_name = 'PNC, IFA Tablets Provided'
          AND date(ov.obs_datetime) BETWEEN '#startDate#' AND '#endDate#'
    GROUP BY ov.person_id) AS IFA
+WHERE IFA.IFA_TABLETS >= 45
 
 UNION ALL
 

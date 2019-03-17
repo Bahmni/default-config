@@ -1,0 +1,2345 @@
+
+{
+	"orgUnit": "Bm39oMfSNir",
+	"reports": {
+
+		"HIV Testing And Counseling (TESTED)": {
+			"dataValues": [
+				{
+					"_comment": "Sex Workers< 14-F",
+					"categoryOptionCombo": "ktewykzGsbr",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "Sex Workers<14-M",
+					"categoryOptionCombo": "glbQsKDFJrG",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "Sex Workers<14-TG",
+					"categoryOptionCombo": "isbBWYkOrVP",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 4
+				},
+				{
+					"_comment": "Sex Workers>15-F",
+					"categoryOptionCombo": "wCZsbIsa9rH",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "Sex Workers>15-M",
+					"categoryOptionCombo": "cZrEUSOhHVk",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"_comment": "Sex Workers>15-TG",
+					"categoryOptionCombo": "M0wfP2DJ3P3",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 4
+				},
+				
+				
+				
+
+				{
+					"_comment": "People who inject drugs (PWIDs)< 14-F",
+					"categoryOptionCombo": "dIEtOhuJBGm",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 6
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)<14-M",
+					"categoryOptionCombo": "nXBkNfEg4li",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 5
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)<14-TG",
+					"categoryOptionCombo": "y4WyHgmvY72",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 7
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)>15-F",
+					"categoryOptionCombo": "B8AqrDOJLl2",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 6
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)>15-M",
+					"categoryOptionCombo": "WFACPk2HZ9m",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 5
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)>15-TG",
+					"categoryOptionCombo": "cBf01EJ1N8g",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 7
+				},
+
+
+
+				{
+					"_comment": "MSM & TG< 14-F",
+					"categoryOptionCombo": "aEWJD7nsfxf",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 9
+				},
+				{
+					"_comment": "MSM & TG<14-M",
+					"categoryOptionCombo": "GfHmrGrlvFb",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 8
+				},
+				{
+					"_comment": "MSM & TG<14-TG",
+					"categoryOptionCombo": "l7gYDuwMicm",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 10
+				},
+				{
+					"_comment": "MSM & TG>15-F",
+					"categoryOptionCombo": "Tv8vXdk1FmI",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 9
+				},
+				{
+					"_comment": "MSM & TG>15-M",
+					"categoryOptionCombo": "mbODt9xO7lw",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 8
+				},
+				{
+					"_comment": "MSM & TG>15-TG",
+					"categoryOptionCombo": "W10pjzDzJl8",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 10
+				},
+
+
+
+
+				{
+					"_comment": "Blood or Organ Recipients< 14-F",
+					"categoryOptionCombo": "fwaz4RR3Tre",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 12
+				},
+				{
+					"_comment": "Blood or Organ Recipients<14-M",
+					"categoryOptionCombo": "O6M2EBNPFP7",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 11
+				},
+				{
+					"_comment": "Blood or Organ Recipients<14-TG",
+					"categoryOptionCombo": "qlGoV92ORDK",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 13
+				},
+				{
+					"_comment": "Blood or Organ Recipients>15-F",
+					"categoryOptionCombo": "IzBht8sFGFw",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 12
+				},
+				{
+					"_comment": "Blood or Organ Recipients>15-M",
+					"categoryOptionCombo": "neJMbz1JWhT",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 11
+				},
+				{
+					"_comment": "Blood or Organ Recipients>15-TG",
+					"categoryOptionCombo": "crfB7rhtTiy",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 13
+				},
+
+
+				{
+					"_comment": "Clients of Sex Workers< 14-F",
+					"categoryOptionCombo": "MRMvulHYLee",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 15
+				},
+				{
+					"_comment": "Clients of Sex Workers<14-M",
+					"categoryOptionCombo": "FPfChlEZQy5",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 14
+				},
+				{
+					"_comment": "Clients of Sex Workers<14-TG",
+					"categoryOptionCombo": "Cl7Tv5Z6R5h",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 16
+				},
+				{
+					"_comment": "Clients of Sex Workers>15-F",
+					"categoryOptionCombo": "hKrgGMEUOzj",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 14
+				},
+				{
+					"_comment": "Clients of Sex Workers>15-M",
+					"categoryOptionCombo": "aE0Nyjyej0F",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 15
+				},
+				{
+					"_comment": "Clients of Sex Workers>15-TG",
+					"categoryOptionCombo": "mKzpVqbW7mU",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 16
+				},
+
+
+
+
+
+				{
+					"_comment": "Migrants< 14-F",
+					"categoryOptionCombo": "ad1eY67y1ES",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 18
+				},
+				{
+					"_comment": "Migrants<14-M",
+					"categoryOptionCombo": "whuUi6PESIB",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 17
+				},
+				{
+					"_comment": "Migrants<14-TG",
+					"categoryOptionCombo": "WTBsbdWcc5s",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 19
+				},
+				{
+					"_comment": "Migrants>15-F",
+					"categoryOptionCombo": "ZzfxncMlGks",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 18
+				},
+				{
+					"_comment": "Migrants>15-M",
+					"categoryOptionCombo": "LqJ9pPh3nNB",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 17
+				},
+				{
+					"_comment": "Migrants>15-TG",
+					"categoryOptionCombo": "hM3qN1V8aWR",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 19
+				},
+
+
+
+
+
+				{
+					"_comment": "Spouse/Partners of Migrants< 14-F",
+					"categoryOptionCombo": "aWzfGXnYoTP",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 21
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants<14-M",
+					"categoryOptionCombo": "tVTjYdzX4pT",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 20
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants<14-TG",
+					"categoryOptionCombo": "K83igwuwpa7",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 22
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants>15-F",
+					"categoryOptionCombo": "Iv8QQ5xvF4u",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 21
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants>15-M",
+					"categoryOptionCombo": "o416KDvaMJS",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 20
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants>15-TG",
+					"categoryOptionCombo": "VgjLeMlARMg",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 22
+				},
+
+
+
+
+
+
+
+
+				{
+					"_comment": "Others< 14-F",
+					"categoryOptionCombo": "HMnnwQeqUZZ",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 24
+				},
+				{
+					"_comment": "Others<14-M",
+					"categoryOptionCombo": "X7TX0FX63b3",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 23
+				},
+				{
+					"_comment": "Others<14-TG",
+					"categoryOptionCombo": "DWJcsVHb46P",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 1,
+					"column": 25
+				},
+				{
+					"_comment": "Others>15-F",
+					"categoryOptionCombo": "z4ocPyWhUao",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 24
+				},
+				{
+					"_comment": "Others>15-M",
+					"categoryOptionCombo": "XacM0B4U06X",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 23
+				},
+				{
+					"_comment": "Others>15-TG",
+					"categoryOptionCombo": "OcEeU8R5Wyx",
+					"dataElement": "UZWkdkiLYVo",
+					"row": 2,
+					"column": 25
+				}
+
+			]
+		},
+
+
+		"HIV Testing And Counseling (POSITIVE)": {
+			"dataValues": [
+				{
+					"_comment": "Sex Workers< 14-F",
+					"categoryOptionCombo": "ktewykzGsbr",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "Sex Workers<14-M",
+					"categoryOptionCombo": "glbQsKDFJrG",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "Sex Workers<14-TG",
+					"categoryOptionCombo": "isbBWYkOrVP",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 4
+				},
+				{
+					"_comment": "Sex Workers>15-F",
+					"categoryOptionCombo": "wCZsbIsa9rH",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "Sex Workers>15-M",
+					"categoryOptionCombo": "cZrEUSOhHVk",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"_comment": "Sex Workers>15-TG",
+					"categoryOptionCombo": "M0wfP2DJ3P3",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 4
+				},
+				
+				
+				
+				
+						
+
+				{
+					"_comment": "People who inject drugs (PWIDs)< 14-F",
+					"categoryOptionCombo": "dIEtOhuJBGm",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 6
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)<14-M",
+					"categoryOptionCombo": "nXBkNfEg4li",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 5
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)<14-TG",
+					"categoryOptionCombo": "y4WyHgmvY72",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 7
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)>15-F",
+					"categoryOptionCombo": "B8AqrDOJLl2",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 6
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)>15-M",
+					"categoryOptionCombo": "WFACPk2HZ9m",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 5
+				},
+				{
+					"_comment": "People who inject drugs (PWIDs)>15-TG",
+					"categoryOptionCombo": "cBf01EJ1N8g",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 7
+				},
+
+
+
+				{
+					"_comment": "MSM & TG< 14-F",
+					"categoryOptionCombo": "aEWJD7nsfxf",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 9
+				},
+				{
+					"_comment": "MSM & TG<14-M",
+					"categoryOptionCombo": "GfHmrGrlvFb",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 8
+				},
+				{
+					"_comment": "MSM & TG<14-TG",
+					"categoryOptionCombo": "l7gYDuwMicm",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 10
+				},
+				{
+					"_comment": "MSM & TG>15-F",
+					"categoryOptionCombo": "Tv8vXdk1FmI",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 9
+				},
+				{
+					"_comment": "MSM & TG>15-M",
+					"categoryOptionCombo": "mbODt9xO7lw",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 8
+				},
+				{
+					"_comment": "MSM & TG>15-TG",
+					"categoryOptionCombo": "W10pjzDzJl8",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 10
+				},
+
+
+
+
+				{
+					"_comment": "Blood or Organ Recipients< 14-F",
+					"categoryOptionCombo": "fwaz4RR3Tre",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 12
+				},
+				{
+					"_comment": "Blood or Organ Recipients<14-M",
+					"categoryOptionCombo": "O6M2EBNPFP7",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 11
+				},
+				{
+					"_comment": "Blood or Organ Recipients<14-TG",
+					"categoryOptionCombo": "qlGoV92ORDK",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 13
+				},
+				{
+					"_comment": "Blood or Organ Recipients>15-F",
+					"categoryOptionCombo": "IzBht8sFGFw",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 12
+				},
+				{
+					"_comment": "Blood or Organ Recipients>15-M",
+					"categoryOptionCombo": "neJMbz1JWhT",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 11
+				},
+				{
+					"_comment": "Blood or Organ Recipients>15-TG",
+					"categoryOptionCombo": "crfB7rhtTiy",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 13
+				},
+
+
+				{
+					"_comment": "Clients of Sex Workers< 14-F",
+					"categoryOptionCombo": "MRMvulHYLee",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 15
+				},
+				{
+					"_comment": "Clients of Sex Workers<14-M",
+					"categoryOptionCombo": "FPfChlEZQy5",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 14
+				},
+				{
+					"_comment": "Clients of Sex Workers<14-TG",
+					"categoryOptionCombo": "Cl7Tv5Z6R5h",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 16
+				},
+				{
+					"_comment": "Clients of Sex Workers>15-F",
+					"categoryOptionCombo": "hKrgGMEUOzj",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 14
+				},
+				{
+					"_comment": "Clients of Sex Workers>15-M",
+					"categoryOptionCombo": "aE0Nyjyej0F",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 15
+				},
+				{
+					"_comment": "Clients of Sex Workers>15-TG",
+					"categoryOptionCombo": "mKzpVqbW7mU",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 16
+				},
+
+
+
+
+
+				{
+					"_comment": "Migrants< 14-F",
+					"categoryOptionCombo": "ad1eY67y1ES",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 18
+				},
+				{
+					"_comment": "Migrants<14-M",
+					"categoryOptionCombo": "whuUi6PESIB",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 17
+				},
+				{
+					"_comment": "Migrants<14-TG",
+					"categoryOptionCombo": "WTBsbdWcc5s",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 19
+				},
+				{
+					"_comment": "Migrants>15-F",
+					"categoryOptionCombo": "ZzfxncMlGks",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 18
+				},
+				{
+					"_comment": "Migrants>15-M",
+					"categoryOptionCombo": "LqJ9pPh3nNB",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 17
+				},
+				{
+					"_comment": "Migrants>15-TG",
+					"categoryOptionCombo": "hM3qN1V8aWR",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 19
+				},
+
+
+
+
+
+				{
+					"_comment": "Spouse/Partners of Migrants< 14-F",
+					"categoryOptionCombo": "aWzfGXnYoTP",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 21
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants<14-M",
+					"categoryOptionCombo": "tVTjYdzX4pT",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 20
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants<14-TG",
+					"categoryOptionCombo": "K83igwuwpa7",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 22
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants>15-F",
+					"categoryOptionCombo": "Iv8QQ5xvF4u",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 21
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants>15-M",
+					"categoryOptionCombo": "o416KDvaMJS",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 20
+				},
+				{
+					"_comment": "Spouse/Partners of Migrants>15-TG",
+					"categoryOptionCombo": "VgjLeMlARMg",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 22
+				},
+
+
+
+
+
+
+
+
+				{
+					"_comment": "Others< 14-F",
+					"categoryOptionCombo": "HMnnwQeqUZZ",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 24
+				},
+				{
+					"_comment": "Others<14-M",
+					"categoryOptionCombo": "X7TX0FX63b3",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 23
+				},
+				{
+					"_comment": "Others<14-TG",
+					"categoryOptionCombo": "DWJcsVHb46P",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 1,
+					"column": 25
+				},
+				{
+					"_comment": "Others>15-F",
+					"categoryOptionCombo": "z4ocPyWhUao",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 24
+				},
+				{
+					"_comment": "Others>15-M",
+					"categoryOptionCombo": "XacM0B4U06X",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 23
+				},
+				{
+					"_comment": "Others>15-TG",
+					"categoryOptionCombo": "OcEeU8R5Wyx",
+					"dataElement": "NyJJEDI5shJ",
+					"row": 2,
+					"column": 25
+				}
+
+			]
+		},
+		"HIV Exposed Baby- Early Infant Diagnosis (EID)": {
+			"dataValues": [
+
+				{
+					"_comment": "within 2 months positive",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "IrM1v1koSEf",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"_comment": "within 2 months negative",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "VUXlIz7r8Cq",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"_comment": "2-9 months positive",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "MfkArWZjyL3",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "2-9 months negative",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "wj2yk8GNN5Q",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "9-18 months positive",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "INf5DZwVLF3",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"_comment": "9-18 months negative",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "BagLIT6wnc9",
+					"row": 2,
+					"column": 3
+				}
+			]
+		},
+		"HIV Exposed Baby- Early Infant Diagnosis (EID) Antibody > 18 mo": {
+			"dataValues": [
+
+				{
+					"_comment": "positive",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Ed75Jc9wwr0",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "negative",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "t9xI1FlE6fC",
+					"row": 2,
+					"column": 2
+				}
+			]
+		},
+
+
+		"Exposed baby live births ARV Prophylaxis ANC visit HIV Positive delivered Postnatal women received FP": {
+			"dataValues": [{
+					"_comment": "Exposed Baby-Live births",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "CVH3X0Xqe87",
+					"row": 1,
+					"column": 1
+				},
+				{
+					"_comment": "Exposed Baby-Started ARV Prophylaxis",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "LzOXaXHFsP6",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "HIV+ve Women (Deliveries)",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Cw2C5u7qXog",
+					"row": 1,
+					"column": 4
+				}
+
+			]
+		},
+
+
+		"PMTCT of HIV ART Started,HIV Positive Women,Male Partner,Breast Feeding status": {
+			"dataValues": [
+
+				{
+					"_comment": "ART started-before pregnancy",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "jqyzzzVg9Hj",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "ART started- ANC",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "BqsVe0mMJ5x",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "ART started-labour and delivery",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "ebT2TGBitjN",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"_comment": "ART started-postnatal",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "J1FOtP4pD87",
+					"row": 4,
+					"column": 3
+				},
+				{
+					"_comment": "HIV+ve-Women-Male Partner who know their status",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Lc9CJmuevxy",
+					"row": 6,
+					"column": 3
+				}
+
+			]
+		},
+		"HIV Prevention of Mother-To-Child Transmission (PMTCT) Dataset(Labour & Delivery and Postnatal)": {
+			"dataValues": [
+				{
+					"_comment": "Counseling and Testing-Antenatal(ANC)-counsled",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "I5mm6lCVOke",
+					"row": 2,
+					"column": 2
+				},
+
+				{
+					"_comment": "Counseling and Testing-Antenatal(ANC)-tested",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "kcPJTbYhsSJ",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"_comment": "Counseling and Testing-Antenatal(ANC)-positive",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Z2kMarZqg5U",
+					"row": 4,
+					"column": 2
+				},
+				{
+					"_comment": "Counseling and Testing-Labour & Delivery-counsled",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "LF4AyH3ld79",
+					"row": 5,
+					"column": 2
+				},
+				{
+					"_comment": "Counseling and Testing-Labour & Delivery-tested",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "l6LYnh4LA0o",
+					"row": 6,
+					"column": 2
+				},
+				{
+					"_comment": "Counseling and Testing-Labour & Delivery-positive",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "waO7EMzRFMO",
+					"row": 7,
+					"column": 2
+				},
+				{
+					"_comment": "Counseling and Testing-Postnatal-counsled",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "PNeH6e8Zk5C",
+					"row": 8,
+					"column": 2
+				},
+				{
+					"_comment": "Counseling and Testing-Postnatal-tested",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "GIQUNR2DiVC",
+					"row": 9,
+					"column": 2
+				},
+				{
+					"_comment": "Counseling and Testing-Postnatal-positive",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "mfYORJjZo4q",
+					"row": 10,
+					"column": 2
+				}
+			]
+		},
+		"Asymptomatic Partners Treated": {
+			"dataValues": [{
+					"_comment": "Asymptomatic Partners Treated-F",
+					"categoryOptionCombo": "YwjOaHAvG6m",
+					"dataElement": "YPpqANKU05q",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"_comment": "Asymptomatic Partners Treated-M",
+					"categoryOptionCombo": "zbfeiEeiC34",
+					"dataElement": "YPpqANKU05q",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "Asymptomatic Partners Treated-TG",
+					"categoryOptionCombo": "DVzC42inPjR",
+					"dataElement": "YPpqANKU05q",
+					"row": 3,
+					"column": 2
+				}
+			]
+		},
+		"Total Clients Assessed STI": {
+			"dataValues": [{
+					"_comment": "Total Clients Assessed-Female Sex Workers (FSWs)",
+					"categoryOptionCombo": "N8obptCXv0k",
+					"dataElement": "rkYQJyToheM",
+					"row": 10,
+					"column": 2
+				},
+				{
+					"_comment": "Total Clients Assessed-People who Inject Drugs (PWIDs)",
+					"categoryOptionCombo": "q6yhZEWMtwK",
+					"dataElement": "rkYQJyToheM",
+					"row": 8,
+					"column": 2
+				},
+				{
+					"_comment": "Total Clients Assessed-MSM and TG",
+					"categoryOptionCombo": "xasNlF5QEKb",
+					"dataElement": "rkYQJyToheM",
+					"row": 4,
+					"column": 2
+				},
+				{
+					"_comment": "Total Clients Assessed-Clients of FSWs",
+					"categoryOptionCombo": "fDxbHpWBa7v",
+					"dataElement": "rkYQJyToheM",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"_comment": "Total Clients Assessed-Male migrants",
+					"categoryOptionCombo": "yjn333AYmLn",
+					"dataElement": "rkYQJyToheM",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"_comment": "Total Clients Assessed-Spouses of male migrants",
+					"categoryOptionCombo": "jAmZ5bhMNJy",
+					"dataElement": "rkYQJyToheM",
+					"row": 11,
+					"column": 2
+				},
+				{
+					"_comment": "Total Clients Assessed-Pregnant women",
+					"categoryOptionCombo": "Ojl2zVYZIvd",
+					"dataElement": "rkYQJyToheM",
+					"row": 9,
+					"column": 2
+				},
+				{
+					"_comment": "Total Clients Assessed-Neonates",
+					"categoryOptionCombo": "w8kP6ZjPm9x",
+					"dataElement": "rkYQJyToheM",
+					"row": 5,
+					"column": 2
+				},
+				{
+					"_comment": "Total Clients Assessed-Others",
+					"categoryOptionCombo": "Zw5NZF6dX2E",
+					"dataElement": "rkYQJyToheM",
+					"row": 7,
+					"column": 2
+				}
+			]
+		},
+
+		
+		"STI Cases-by Etiology": {
+			"dataValues": [{
+					"_comment": "Cervicitis-Female Sex Workers (FSWs)",
+					"categoryOptionCombo": "N8obptCXv0k",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 10,
+					"column": 3
+				},
+				{
+					"_comment": "Cervicitis-People who Inject Drugs (PWIDs)",
+					"categoryOptionCombo": "q6yhZEWMtwK",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 8,
+					"column": 3
+				},
+				{
+					"_comment": "Cervicitis-MSM and TG",
+					"categoryOptionCombo": "xasNlF5QEKb",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 4,
+					"column": 3
+				},
+				{
+					"_comment": "Cervicitis-Clients of FSWs",
+					"categoryOptionCombo": "fDxbHpWBa7v",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "Cervicitis-Male migrants",
+					"categoryOptionCombo": "yjn333AYmLn",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"_comment": "Cervicitis-Spouses of male migrants",
+					"categoryOptionCombo": "jAmZ5bhMNJy",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 11,
+					"column": 3
+				},
+				{
+					"_comment": "Cervicitis-Pregnant women",
+					"categoryOptionCombo": "Ojl2zVYZIvd",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 8,
+					"column": 3
+				},
+				{
+					"_comment": "Cervicitis-Neonates",
+					"categoryOptionCombo": "w8kP6ZjPm9x",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 5,
+					"column": 3
+				},
+				{
+					"_comment": "Cervicitis-Others",
+					"categoryOptionCombo": "Zw5NZF6dX2E",
+					"dataElement": "YkjB6ddFhMt",
+					"row": 7,
+					"column": 3
+				},
+
+
+
+
+
+				{
+					"_comment": "Vaginitis-Female Sex Workers (FSWs)",
+					"categoryOptionCombo": "N8obptCXv0k",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 65,
+					"column": 3
+				},
+				{
+					"_comment": "Vaginitis-People who Inject Drugs (PWIDs)",
+					"categoryOptionCombo": "q6yhZEWMtwK",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 63,
+					"column": 3
+				},
+				{
+					"_comment": "Vaginitis-MSM and TG",
+					"categoryOptionCombo": "xasNlF5QEKb",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 59,
+					"column": 3
+				},
+				{
+					"_comment": "Vaginitis-Clients of FSWs",
+					"categoryOptionCombo": "fDxbHpWBa7v",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 57,
+					"column": 3
+				},
+				{
+					"_comment": "Vaginitis-Male migrants",
+					"categoryOptionCombo": "yjn333AYmLn",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 58,
+					"column": 3
+				},
+				{
+					"_comment": "Vaginitis-Spouses of male migrants",
+					"categoryOptionCombo": "jAmZ5bhMNJy",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 66,
+					"column": 3
+				},
+				{
+					"_comment": "Vaginitis-Pregnant women",
+					"categoryOptionCombo": "Ojl2zVYZIvd",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 64,
+					"column": 3
+				},
+				{
+					"_comment": "Vaginitis-Neonates",
+					"categoryOptionCombo": "w8kP6ZjPm9x",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 60,
+					"column": 3
+				},
+				{
+					"_comment": "Vaginitis-Others",
+					"categoryOptionCombo": "Zw5NZF6dX2E",
+					"dataElement": "ZUe8gWgC2a4",
+					"row": 62,
+					"column": 3
+				},
+
+
+
+
+
+
+				{
+					"_comment": "Herpes genitalis-Female Sex Workers (FSWs)",
+					"categoryOptionCombo": "N8obptCXv0k",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 32,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes genitalis-People who Inject Drugs (PWIDs)",
+					"categoryOptionCombo": "q6yhZEWMtwK",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 30,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes genitalis-MSM and TG",
+					"categoryOptionCombo": "xasNlF5QEKb",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 26,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes genitalis-Clients of FSWs",
+					"categoryOptionCombo": "fDxbHpWBa7v",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 24,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes genitalis-Male migrants",
+					"categoryOptionCombo": "yjn333AYmLn",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 25,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes genitalis-Spouses of male migrants",
+					"categoryOptionCombo": "jAmZ5bhMNJy",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 33,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes genitalis-Pregnant women",
+					"categoryOptionCombo": "Ojl2zVYZIvd",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 31,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes genitalis-Neonates",
+					"categoryOptionCombo": "w8kP6ZjPm9x",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 27,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes genitalis-Others",
+					"categoryOptionCombo": "Zw5NZF6dX2E",
+					"dataElement": "NO4Q1cqiuAj",
+					"row": 29,
+					"column": 3
+				},
+
+
+				{
+					"_comment": "Gm Stain +ve-Female Sex Workers (FSWs)",
+					"categoryOptionCombo": "N8obptCXv0k",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 21,
+					"column": 3
+				},
+				{
+					"_comment": "Gm Stain +ve-People who Inject Drugs (PWIDs)",
+					"categoryOptionCombo": "q6yhZEWMtwK",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 19,
+					"column": 3
+				},
+				{
+					"_comment": "Gm Stain +ve-MSM and TG",
+					"categoryOptionCombo": "xasNlF5QEKb",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 15,
+					"column": 3
+				},
+				{
+					"_comment": "Gm Stain +ve-Clients of FSWs",
+					"categoryOptionCombo": "fDxbHpWBa7v",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 13,
+					"column": 3
+				},
+				{
+					"_comment": "Gm Stain +ve-Male migrants",
+					"categoryOptionCombo": "yjn333AYmLn",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 14,
+					"column": 3
+				},
+				{
+					"_comment": "Gm Stain +ve-Spouses of male migrants",
+					"categoryOptionCombo": "jAmZ5bhMNJy",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 22,
+					"column": 3
+				},
+				{
+					"_comment": "Gm Stain +ve-Pregnant women",
+					"categoryOptionCombo": "Ojl2zVYZIvd",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 20,
+					"column": 3
+				},
+				{
+					"_comment": "Gm Stain +ve-Neonates",
+					"categoryOptionCombo": "w8kP6ZjPm9x",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 16,
+					"column": 3
+				},
+				{
+					"_comment": "Gm Stain +ve-Others",
+					"categoryOptionCombo": "Zw5NZF6dX2E",
+					"dataElement": "iWbV0HzlWsL",
+					"row": 18,
+					"column": 3
+				},
+
+
+
+				{
+					"_comment": "Syphilis-Female Sex Workers (FSWs)",
+					"categoryOptionCombo": "N8obptCXv0k",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 54,
+					"column": 3
+				},
+				{
+					"_comment": "Syphilis-People who Inject Drugs (PWIDs)",
+					"categoryOptionCombo": "q6yhZEWMtwK",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 52,
+					"column": 3
+				},
+				{
+					"_comment": "Syphilis-MSM and TG",
+					"categoryOptionCombo": "xasNlF5QEKb",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 48,
+					"column": 3
+				},
+				{
+					"_comment": "Syphilis-Clients of FSWs",
+					"categoryOptionCombo": "fDxbHpWBa7v",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 46,
+					"column": 3
+				},
+				{
+					"_comment": "Syphilis-Male migrants",
+					"categoryOptionCombo": "yjn333AYmLn",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 47,
+					"column": 3
+				},
+				{
+					"_comment": "Syphilis-Spouses of male migrants",
+					"categoryOptionCombo": "jAmZ5bhMNJy",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 55,
+					"column": 3
+				},
+				{
+					"_comment": "Syphilis-Pregnant women",
+					"categoryOptionCombo": "Ojl2zVYZIvd",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 53,
+					"column": 3
+				},
+				{
+					"_comment": "Syphilis-Neonates",
+					"categoryOptionCombo": "w8kP6ZjPm9x",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 49,
+					"column": 3
+				},
+				{
+					"_comment": "Syphilis-Others",
+					"categoryOptionCombo": "Zw5NZF6dX2E",
+					"dataElement": "gLvteKd7Kwe",
+					"row": 51,
+					"column": 3
+				}
+
+			]
+		},
+		"STI Cases-by Sex Screened": {
+			"dataValues": [
+				{
+					"_comment": "Female",
+					"categoryOptionCombo": "YwjOaHAvG6m",
+					"dataElement": "Sy1XmU4XMVa",
+					"row": 1,
+					"column": 2
+				},
+					{
+					"_comment": "Male",
+					"categoryOptionCombo": "zbfeiEeiC34",
+					"dataElement": "Sy1XmU4XMVa",
+					"row": 2,
+					"column": 2
+				},
+					{
+					"_comment": "TG",
+					"categoryOptionCombo": "DVzC42inPjR",
+					"dataElement": "Sy1XmU4XMVa",
+					"row": 3,
+					"column": 2
+				}
+			]
+		},
+			
+		"STI Cases-by Sex Treated": {
+			"dataValues": [
+				{
+					"_comment": "Diagnosed-F",
+					"categoryOptionCombo": "YwjOaHAvG6m",
+					"dataElement": "JKHd2Bcxixf",
+					"row": 1,
+					"column": 2
+				},
+					{
+					"_comment": "Diagnosed-M",
+					"categoryOptionCombo": "zbfeiEeiC34",
+					"dataElement": "JKHd2Bcxixf",
+					"row": 2,
+					"column": 2
+				},
+					{
+					"_comment": "Diagnosed-TG",
+					"categoryOptionCombo": "DVzC42inPjR",
+					"dataElement": "JKHd2Bcxixf",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"_comment": "Treated-F",
+					"categoryOptionCombo": "YwjOaHAvG6m",
+					"dataElement": "rIHzObrYaia",
+					"row": 1,
+					"column": 2
+				},
+					{
+					"_comment": "Treated-M",
+					"categoryOptionCombo": "zbfeiEeiC34",
+					"dataElement": "rIHzObrYaia",
+					"row": 2,
+					"column": 2
+				},
+					{
+					"_comment": "Treated-TG",
+					"categoryOptionCombo": "DVzC42inPjR",
+					"dataElement": "rIHzObrYaia",
+					"row": 3,
+					"column": 2
+				}
+			]
+		},
+		"HIV-AIDS Program Opportunistic Infections diagnosed": {
+			"dataValues": [{
+					"_comment": "Bacterial Pneumonia-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "nNkUv1Mq6LE",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "Bacterial Pneumonia-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "nNkUv1Mq6LE",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "Bacterial Pneumonia-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "nNkUv1Mq6LE",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"_comment": "TB-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "tkp4AAyNVo1",
+					"row": 32,
+					"column": 3
+				},
+				{
+					"_comment": "TB-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "tkp4AAyNVo1",
+					"row": 31,
+					"column": 3
+				},
+				{
+					"_comment": "TB-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "tkp4AAyNVo1",
+					"row": 33,
+					"column": 3
+				},
+				{
+					"_comment": "Candidiasis-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "nI28jCbTm3z",
+					"row": 5,
+					"column": 3
+				},
+				{
+					"_comment": "Candidiasis-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "nI28jCbTm3z",
+					"row": 4,
+					"column": 3
+				},
+				{
+					"_comment": "Candidiasis-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "nI28jCbTm3z",
+					"row": 6,
+					"column": 3
+				},
+				{
+					"_comment": "Diarrhoea-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "f4MuUH3PlIQ",
+					"row": 14,
+					"column": 3
+				},
+				{
+					"_comment": "Diarrhoea-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "f4MuUH3PlIQ",
+					"row": 13,
+					"column": 3
+				},
+				{
+					"_comment": "Diarrhoea-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "f4MuUH3PlIQ",
+					"row": 15,
+					"column": 3
+				},
+				{
+					"_comment": "Cryptococcal Meningitis-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "f4MuUH3PlIQ",
+					"row": 8,
+					"column": 3
+				},
+				{
+					"_comment": "Cryptococcal Meningitis-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "f4MuUH3PlIQ",
+					"row": 7,
+					"column": 3
+				},
+				{
+					"_comment": "Cryptococcal Meningitis-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "f4MuUH3PlIQ",
+					"row": 9,
+					"column": 3
+				},
+				{
+					"_comment": "PCP*-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "UvCjfjCJFnb",
+					"row": 26,
+					"column": 3
+				},
+				{
+					"_comment": "PCP*-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "UvCjfjCJFnb",
+					"row": 25,
+					"column": 3
+				},
+				{
+					"_comment": "PCP*-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "UvCjfjCJFnb",
+					"row": 27,
+					"column": 3
+				},
+				{
+					"_comment": "Cytomegato Virus-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "rddIoPGKW90",
+					"row": 11,
+					"column": 3
+				},
+				{
+					"_comment": "Cytomegato Virus-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "rddIoPGKW90",
+					"row": 10,
+					"column": 3
+				},
+				{
+					"_comment": "Cytomegato Virus-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "rddIoPGKW90",
+					"row": 12,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes Zoster-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "xKV4WaxOhER",
+					"row": 20,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes Zoster-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "xKV4WaxOhER",
+					"row": 19,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes Zoster-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "xKV4WaxOhER",
+					"row": 21,
+					"column": 3
+				},
+				{
+					"_comment": "Genital Herpes-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "JGXqwdzbn8g",
+					"row": 17,
+					"column": 3
+				},
+				{
+					"_comment": "Genital Herpes-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "JGXqwdzbn8g",
+					"row": 16,
+					"column": 3
+				},
+				{
+					"_comment": "Genital Herpes-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "JGXqwdzbn8g",
+					"row": 18,
+					"column": 3
+				},
+				{
+					"_comment": "Toxo-plasmosis-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "VxZo21bX59i",
+					"row": 29,
+					"column": 3
+				},
+				{
+					"_comment": "Toxo-plasmosis-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "VxZo21bX59i",
+					"row": 28,
+					"column": 3
+				},
+				{
+					"_comment": "Toxo-plasmosis-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "VxZo21bX59i",
+					"row": 30,
+					"column": 3
+				},
+				{
+					"_comment": "Others-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "r94yJQOzGYb",
+					"row": 23,
+					"column": 3
+				},
+				{
+					"_comment": "Others-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "r94yJQOzGYb",
+					"row": 22,
+					"column": 3
+				},
+				{
+					"_comment": "Others-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "r94yJQOzGYb",
+					"row": 24,
+					"column": 3
+				}
+			]
+		},
+
+
+
+
+
+
+		"HIV-AIDS Program Opportunistic Infections treated": {
+			"dataValues": [{
+					"_comment": "Bacterial Pneumonia-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "lp7ljdCinPm",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "Bacterial Pneumonia-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "lp7ljdCinPm",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "Bacterial Pneumonia-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "lp7ljdCinPm",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"_comment": "TB-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "hPGIAAUqpvS",
+					"row": 32,
+					"column": 3
+				},
+				{
+					"_comment": "TB-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "hPGIAAUqpvS",
+					"row": 31,
+					"column": 3
+				},
+				{
+					"_comment": "TB-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "hPGIAAUqpvS",
+					"row": 33,
+					"column": 3
+				},
+				{
+					"_comment": "Candidiasis-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "vbPBLDCfhV2",
+					"row": 5,
+					"column": 3
+				},
+				{
+					"_comment": "Candidiasis-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "vbPBLDCfhV2",
+					"row": 4,
+					"column": 3
+				},
+				{
+					"_comment": "Candidiasis-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "vbPBLDCfhV2",
+					"row": 6,
+					"column": 3
+				},
+				{
+					"_comment": "Diarrhoea-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "Xqv8XWqux0i",
+					"row": 14,
+					"column": 3
+				},
+				{
+					"_comment": "Diarrhoea-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "Xqv8XWqux0i",
+					"row": 13,
+					"column": 3
+				},
+				{
+					"_comment": "Diarrhoea-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "Xqv8XWqux0i",
+					"row": 15,
+					"column": 3
+				},
+				{
+					"_comment": "Cryptococcal Meningitis-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "ocLEeGWGp7O",
+					"row": 8,
+					"column": 3
+				},
+				{
+					"_comment": "Cryptococcal Meningitis-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "ocLEeGWGp7O",
+					"row": 7,
+					"column": 3
+				},
+				{
+					"_comment": "Cryptococcal Meningitis-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "ocLEeGWGp7O",
+					"row": 9,
+					"column": 3
+				},
+				{
+					"_comment": "PCP*-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "mCKMkzFWvmy",
+					"row": 26,
+					"column": 3
+				},
+				{
+					"_comment": "PCP*-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "mCKMkzFWvmy",
+					"row": 25,
+					"column": 3
+				},
+				{
+					"_comment": "PCP*-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "mCKMkzFWvmy",
+					"row": 27,
+					"column": 3
+				},
+				{
+					"_comment": "Cytomegato Virus-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "c2h4ROUs45m",
+					"row": 11,
+					"column": 3
+				},
+				{
+					"_comment": "Cytomegato Virus-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "c2h4ROUs45m",
+					"row": 10,
+					"column": 3
+				},
+				{
+					"_comment": "Cytomegato Virus-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "c2h4ROUs45m",
+					"row": 12,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes Zoster-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "oez1t3IMTZY",
+					"row": 20,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes Zoster-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "oez1t3IMTZY",
+					"row": 19,
+					"column": 3
+				},
+				{
+					"_comment": "Herpes Zoster-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "oez1t3IMTZY",
+					"row": 21,
+					"column": 3
+				},
+				{
+					"_comment": "Genital Herpes-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "jMji2KwXyRV",
+					"row": 17,
+					"column": 3
+				},
+				{
+					"_comment": "Genital Herpes-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "jMji2KwXyRV",
+					"row": 16,
+					"column": 3
+				},
+				{
+					"_comment": "Genital Herpes-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "jMji2KwXyRV",
+					"row": 18,
+					"column": 3
+				},
+				{
+					"_comment": "Toxo-plasmosis-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "ywokhrfUX84",
+					"row": 29,
+					"column": 3
+				},
+				{
+					"_comment": "Toxo-plasmosis-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "ywokhrfUX84",
+					"row": 28,
+					"column": 3
+				},
+				{
+					"_comment": "Toxo-plasmosis-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "ywokhrfUX84",
+					"row": 30,
+					"column": 3
+				},
+				{
+					"_comment": "Others-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "uLQFOQ7511C",
+					"row": 23,
+					"column": 3
+				},
+				{
+					"_comment": "Others-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "uLQFOQ7511C",
+					"row": 22,
+					"column": 3
+				},
+				{
+					"_comment": "Others-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "uLQFOQ7511C",
+					"row": 24,
+					"column": 3
+				}
+			]
+		},
+		"HIV-AIDS Program Opportunistic Infection - TB and FP(HIV Patients received CPT)": {
+			"dataValues": [{
+					"_comment": "< 5 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "dt7sU3JM87d",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "5- 14 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "Ke9OAUUhb4Z",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "≥ 15 Years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "ywmvaXaVB8S",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"_comment": "< 5 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "dt7sU3JM87d",
+					"row": 2,
+					"column": 4
+				},
+				{
+					"_comment": "5- 14 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "Ke9OAUUhb4Z",
+					"row": 1,
+					"column": 4
+				},
+				{
+					"_comment": "≥ 15 Years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "ywmvaXaVB8S",
+					"row": 3,
+					"column": 4
+				},
+				{
+					"_comment": "< 5 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "dt7sU3JM87d",
+					"row": 2,
+					"column": 5
+				},
+				{
+					"_comment": "5- 14 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "Ke9OAUUhb4Z",
+					"row": 1,
+					"column": 5
+				},
+				{
+					"_comment": "≥ 15 Years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "ywmvaXaVB8S",
+					"row": 3,
+					"column": 5
+				}
+			]
+		},
+		"HIV-AIDS Program Opportunistic Infection TB and FP": {
+			"dataValues": [{
+					"_comment": "Total no of PLHIV served this month for OI services< 5 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "nCex1XJPFYj",
+					"row": 8,
+					"column": 3
+				},
+				{
+					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "uAHiqtsg3mT",
+					"row": 7,
+					"column": 3
+				},
+				{
+					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "u3U9eIOsEvv",
+					"row": 9,
+					"column": 3
+				},
+				{
+					"_comment": "Total no of PLHIV served this month for OI services< 5 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "nCex1XJPFYj",
+					"row": 8,
+					"column": 4
+				},
+				{
+					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "uAHiqtsg3mT",
+					"row": 7,
+					"column": 4
+				},
+				{
+					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "u3U9eIOsEvv",
+					"row": 9,
+					"column": 4
+				},
+				{
+					"_comment": "Total no of PLHIV served this month for OI services< 5 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "nCex1XJPFYj",
+					"row": 8,
+					"column": 5
+				},
+				{
+					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "uAHiqtsg3mT",
+					"row": 7,
+					"column": 5
+				},
+				{
+					"_comment": "Total no of PLHIV served this month for OI services≥ 15 Years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "u3U9eIOsEvv",
+					"row": 9,
+					"column": 5
+				},
+
+
+
+
+
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "z9I5hGSrWej",
+					"row": 5,
+					"column": 3
+				},
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "qFEUUI51eil",
+					"row": 4,
+					"column": 3
+				},
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "b59G70maDeN",
+					"row": 6,
+					"column": 3
+				},
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "z9I5hGSrWej",
+					"row": 5,
+					"column": 4
+				},
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "qFEUUI51eil",
+					"row": 4,
+					"column": 4
+				},
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "b59G70maDeN",
+					"row": 6,
+					"column": 4
+				},
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "z9I5hGSrWej",
+					"row": 5,
+					"column": 5
+				},
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "qFEUUI51eil",
+					"row": 4,
+					"column": 5
+				},
+				{
+					"_comment": "PLHA diagnosed & treated for OI this month≥ 15 Years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "b59G70maDeN",
+					"row": 6,
+					"column": 5
+				},
+
+
+
+				{
+					"_comment": "Assessed for TB this month < 5 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "RbaLxS0Wc0v",
+					"row": 11,
+					"column": 3
+				},
+				{
+					"_comment": "Assessed for TB this month 5- 14 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "bM1gsyyDiNj",
+					"row": 10,
+					"column": 3
+				},
+				{
+					"_comment": "Assessed for TB this month ≥ 15 Years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "Xatns77yOwt",
+					"row": 12,
+					"column": 3
+				},
+				{
+					"_comment": "Assessed for TB this month < 5 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "RbaLxS0Wc0v",
+					"row": 11,
+					"column": 4
+				},
+				{
+					"_comment": "Assessed for TB this month 5- 14 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "bM1gsyyDiNj",
+					"row": 10,
+					"column": 4
+				},
+				{
+					"_comment": "Assessed for TB this month ≥ 15 Years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "Xatns77yOwt",
+					"row": 12,
+					"column": 4
+				},
+				{
+					"_comment": "Assessed for TB this month < 5 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "RbaLxS0Wc0v",
+					"row": 11,
+					"column": 5
+				},
+				{
+					"_comment": "Assessed for TB this month 5- 14 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "bM1gsyyDiNj",
+					"row": 10,
+					"column": 5
+				},
+				{
+					"_comment": "Assessed for TB this month ≥ 15 Years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "Xatns77yOwt",
+					"row": 12,
+					"column": 5
+				},
+
+
+
+
+
+
+
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "KSkwqLrT0Cs",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "eWA0r7teWoX",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "S65XqzNvhKC",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "KSkwqLrT0Cs",
+					"row": 2,
+					"column": 4
+				},
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "eWA0r7teWoX",
+					"row": 1,
+					"column": 4
+				},
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "S65XqzNvhKC",
+					"row": 3,
+					"column": 4
+				},
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "KSkwqLrT0Cs",
+					"row": 2,
+					"column": 5
+				},
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "eWA0r7teWoX",
+					"row": 1,
+					"column": 5
+				},
+				{
+					"_comment": "HIV Patients initiated IPT this month (new) ≥ 15 Years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "S65XqzNvhKC",
+					"row": 3,
+					"column": 5
+				},
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+				{
+					"_comment": "New clients on TB treatment < 5 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "r9qMm46D7Qi",
+					"row": 14,
+					"column": 3
+				},
+				{
+					"_comment": "New clients on TB treatment 5- 14 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "IBC2wabbulL",
+					"row": 13,
+					"column": 3
+				},
+				{
+					"_comment": "New clients on TB treatment ≥ 15 Years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "WDuhYBse9jq",
+					"row": 15,
+					"column": 3
+				},
+				{
+					"_comment": "New clients on TB treatment < 5 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "r9qMm46D7Qi",
+					"row": 14,
+					"column": 4
+				},
+				{
+					"_comment": "New clients on TB treatment 5- 14 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "IBC2wabbulL",
+					"row": 13,
+					"column": 4
+				},
+				{
+					"_comment": "New clients on TB treatment ≥ 15 Years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "WDuhYBse9jq",
+					"row": 15,
+					"column": 4
+				},
+				{
+					"_comment": "New clients on TB treatment < 5 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "r9qMm46D7Qi",
+					"row": 14,
+					"column": 5
+				},
+				{
+					"_comment": "New clients on TB treatment 5- 14 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "IBC2wabbulL",
+					"row": 13,
+					"column": 5
+				},
+				{
+					"_comment": "New clients on TB treatment ≥ 15 Years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "WDuhYBse9jq",
+					"row": 15,
+					"column": 5
+				}
+
+			]
+		}
+
+
+
+	}
+}

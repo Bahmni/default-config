@@ -8,8 +8,9 @@ FROM
     (SELECT 'Primi' AS type UNION SELECT 'Multi' AS type UNION SELECT 'Grand Multi' AS type) AS birth
         LEFT JOIN
     (SELECT 
-        IF(a.parity LIKE 'Single%', 'Primi', IF(a.parity LIKE 'Twins%', 'Multi', 'Grand Multi')) AS delivery_outcome,
-            IF(a.parity LIKE 'Single%', 1, IF(a.parity LIKE 'Twins%', 2, 3)) AS sort_order,
+        IF(a.parity LIKE '%Primi%', 'Primi',
+        IF(a.parity LIKE '%Grand Multi%', 'Grand Multi', 'Multi')) AS delivery_outcome,
+            IF(a.parity LIKE '%Primi%', 1, IF(a.parity LIKE '%Multi%', 2, 3)) AS sort_order,
             SUM(IF(a.gestation_period BETWEEN 22 AND 27, 1, 0)) AS 22_27,
             SUM(IF(a.gestation_period BETWEEN 28 AND 36, 1, 0)) AS 28_36,
             SUM(IF(a.gestation_period BETWEEN 37 AND 41, 1, 0)) AS 37_41,
@@ -44,7 +45,7 @@ FROM
    (gestation_period_obs.value_numeric IS NOT NULL) and 
      outcome_of_delivery_obs.concept_id = (SELECT concept_id
                                            FROM concept_view
-                                           WHERE concept_full_name = 'Delivery Note, Outcome of Delivery')
+                                           WHERE concept_full_name = 'Delivery-Gravida')
      AND DATE(e.encounter_datetime) BETWEEN DATE('#startDate#') AND DATE('#endDate#')
      AND outcome_of_delivery_obs.voided = FALSE group by pi.identifier) a  group by a.parity)  simpler_form ON simpler_form.delivery_outcome = birth.type
 GROUP BY birth.type

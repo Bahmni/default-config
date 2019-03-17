@@ -27,6 +27,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static Double ZERO = 0.0;
     static Map<BahmniObservation, BahmniObservation> obsParentMap = new HashMap<BahmniObservation, BahmniObservation>();
 
+
     public static enum BmiStatus {
         VERY_SEVERELY_UNDERWEIGHT("Very Severely Underweight"),
         SEVERELY_UNDERWEIGHT("Severely Underweight"),
@@ -51,6 +52,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
+
         calculateAndAdd(bahmniEncounterTransaction);
     }
 
