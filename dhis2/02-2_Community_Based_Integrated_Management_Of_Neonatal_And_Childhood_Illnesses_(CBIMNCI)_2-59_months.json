@@ -1,0 +1,229 @@
+{
+	"orgUnit": "<Your organization id>",
+	"reports": {
+		"Total Registered Cases (2-59)months": {
+			"dataValues": [{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "QRCtcop84In",
+					"row": 1,
+					"column": 1
+				}
+
+			]
+		},
+		"Childhood Illness (2-59)ARI Classification Dehydration Diarrhoea and Refered Out": {
+			"dataValues": [{
+					"_comment": "ARI",
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "GC6lQSFDO5m",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "GGkot8wSlCj",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "KcPFNbB3UZg",
+					"row": 3,
+					"column": 3
+				},
+				{
+					"_comment": "Dehydration",
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "A2lsvQ94qw5",
+					"row": 5,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "SlIi0mTWXte",
+					"row": 7,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "Z7hy1EP2KW5",
+					"row": 6,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "KZzKMkn4H7q",
+					"row": 8,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "sAdwOfXe6Ld",
+					"row": 10,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "cvo4qh1QkTA",
+					"row": 12,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "CIO7DFOzXSy",
+					"row": 13,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "z8fdZad32Pv",
+					"row": 16,
+					"column": 3
+				}
+			]
+		},
+		"Childhood Illness(2-59) total treatment": {
+			"dataValues": [{
+					"_comment": "Amoxicillin",
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "C2QpFPSO3cn",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "Other Antibiotics",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "RR9YSQg5sSY",
+					"row": 6,
+					"column": 2
+				},
+				{
+					"_comment": "ORS and Zinc",
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "H3GSFHu9DMV",
+					"row": 4,
+					"column": 2
+				},
+				{
+					"_comment": "IV Fluid",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "PbkNwfEqhmR",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"_comment": "Anti-helminthes",
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "B713onHvu2I",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"_comment": "Retinol (Vitamin A)",
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "iJzkUTWNH5a",
+					"row": 7,
+					"column": 2
+				}
+			]
+		},
+
+		"Childhood Illness (2-59)Measles Falciparum Malaria Non Falciparum Malaria Complicated Malaria Fever Anaemia Other": {
+			"dataValues": [{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "g4gt5htFQEZ",
+					"row": 2,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "RByUk9PhqrG",
+					"row": 5,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "IM6lK8Mf0q1",
+					"row": 7,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "fZEiEvVrr5K",
+					"row": 4,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "IXYmLRVEHc2",
+					"row": 3,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "jg3YHWsBweg",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "YuNB9v6cf3x",
+					"row": 6,
+					"column": 2
+				}
+			]
+		},
+
+		"Childhood Illness(2-59) total Follow up": {
+			"dataValues": [{
+				"categoryOptionCombo": "J0QYmZGlEii",
+				"dataElement": "ri3xWgIHsw1",
+				"row": 1,
+				"column": 1
+			}]
+		},
+
+		"Childhood Illness (2-59) total Ear Infection cases": {
+			"dataValues": [{
+				"categoryOptionCombo": "J0QYmZGlEii",
+				"dataElement": "o9sqrRiJzrZ",
+				"row": 1,
+				"column": 1
+			}]
+		},
+		"Total malnutrition(2-59) cases": {
+			"dataValues": [{
+				"categoryOptionCombo": "J0QYmZGlEii",
+				"dataElement": "v42lkXexjFS",
+				"row": 1,
+				"column": 1
+			}]
+		},
+
+
+		"Total death(2-59)": {
+			"dataValues": [{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "R6GsecvoH7c",
+					"row": 1,
+					"column": 1
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "jfa1GkNMHfz",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "upTQ8ZYfzRq",
+					"row": 1,
+					"column": 3
+				}
+			]
+		}
+
+
+
+	}
+}

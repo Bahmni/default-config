@@ -1,0 +1,1108 @@
+{
+  "orgUnit": "<Your organization id>",
+  "reports": {
+    "OPD Malignancy": {
+      "dataValues": [    						 
+        {
+		"_comment": "Breast cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "foBSqZVlQqZ",
+          "row": 1,
+          "column": 3
+        },
+		 {
+		 "_comment": "Cervical/ uteri cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "KaHd1xBHBfO",
+          "row": 2,
+          "column": 3
+        },
+		 {
+		 "_comment": "Lung/ brunchial Cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "FvUsjP01G6w",
+          "row": 3,
+          "column": 3
+        },
+		 {
+		 "_comment": "Oesophagus cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "wzTTSKR3JgH",
+          "row": 4,
+          "column": 3
+        },
+		 {
+		 "_comment": "Stomach cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "CHDJ7eiK26X",
+          "row": 5,
+          "column": 3
+        },
+		 {
+		 "_comment": "Thyroid cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "qA53nDCEOgt",
+          "row": 6,
+          "column": 3
+        },
+		 {
+		 "_comment": "Liver cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "Bj8m5N2pTT4",
+          "row": 7,
+          "column": 3
+        },
+		 {
+		 "_comment": "Pancreatic cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "Ls6DBELhucD",
+          "row": 8,
+          "column": 3
+        },
+		 {
+		 "_comment": "Bone/ bone marrow cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "RVhyQYMBoTs",
+          "row": 9,
+          "column": 3
+        },
+		 {
+		 "_comment": "Gall bladder cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "cWN72D91wWx",
+          "row": 10,
+          "column": 3
+        },
+		{
+		 "_comment": "Colorectal colon with rectum cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "PYQPAx2s3On",
+          "row": 11,
+          "column": 3
+        },
+			 {
+		 "_comment": "Oral cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "KkV2jvCCISU",
+          "row": 12,
+          "column": 3
+        },
+		 {
+		 "_comment": "Lymphoma cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "KVZxc94qbg0",
+          "row": 13,
+          "column": 3
+        },
+		 {
+		 "_comment": "Ovary  cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "rorMnL90qUo",
+          "row": 14,
+          "column": 3
+        },
+		 {
+		 "_comment": "Urinary bladder cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "XeLKZHIMpSb",
+          "row": 15,
+          "column": 3
+        },
+		 {
+		 "_comment": "Nasopharyngeal cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "g8lF7Um9jQA",
+          "row": 16,
+          "column": 3
+        },
+		 {
+		 "_comment": "Head & neck cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "CFfXxPrIx8E",
+          "row": 17,
+          "column": 3
+        },
+		{
+		 "_comment": "Other Cancer-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "sO9oFKB9IAJ",
+          "row": 18,
+          "column": 3
+        },
+		
+		
+		
+		
+		
+		 {
+		"_comment": "Breast cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "foBSqZVlQqZ",
+          "row": 1,
+          "column": 4
+        },
+		 {
+		 "_comment": "Cervical/ uteri cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "KaHd1xBHBfO",
+          "row": 2,
+          "column": 4
+        },
+		 {
+		 "_comment": "Lung/ brunchial Cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "FvUsjP01G6w",
+          "row": 3,
+          "column": 4
+        },
+		 {
+		 "_comment": "Oesophagus cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "wzTTSKR3JgH",
+          "row": 4,
+          "column": 4
+        },
+		 {
+		 "_comment": "Stomach cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "CHDJ7eiK26X",
+          "row": 5,
+          "column": 4
+        },
+		 {
+		 "_comment": "Thyroid cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "qA53nDCEOgt",
+          "row": 6,
+          "column": 4
+        },
+		 {
+		 "_comment": "Liver cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "Bj8m5N2pTT4",
+          "row": 7,
+          "column": 4
+        },
+		 {
+		 "_comment": "Pancreatic cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "Ls6DBELhucD",
+          "row": 8,
+          "column": 4
+        },
+		 {
+		 "_comment": "Bone/ bone marrow cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "RVhyQYMBoTs",
+          "row": 9,
+          "column": 4
+        },
+		 {
+		 "_comment": "Gall bladder cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "cWN72D91wWx",
+          "row": 10,
+          "column": 4
+        },
+		 {
+		 "_comment": "Colorectal colon with rectum cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "PYQPAx2s3On",
+          "row": 11,
+          "column": 4
+        },
+			 {
+		 "_comment": "Oral cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "KkV2jvCCISU",
+          "row": 12,
+          "column": 4
+        },
+		 {
+		 "_comment": "Lymphoma cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "KVZxc94qbg0",
+          "row": 13,
+          "column": 4
+        },
+		 {
+		 "_comment": "Ovary  cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "rorMnL90qUo",
+          "row": 14,
+          "column": 4
+        },
+		 {
+		 "_comment": "Urinary bladder cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "XeLKZHIMpSb",
+          "row": 15,
+          "column": 4
+        },
+		 {
+		 "_comment": "Nasopharyngeal cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "g8lF7Um9jQA",
+          "row": 16,
+          "column": 4
+        },
+		 {
+		 "_comment": "Head & neck cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "CFfXxPrIx8E",
+          "row": 17,
+          "column": 4
+        },
+		{
+		 "_comment": "Other Cancer-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "sO9oFKB9IAJ",
+          "row": 18,
+          "column": 4
+        }
+      ]
+    },
+	
+	
+	
+	"OPD Cardiovascular Respiratory Related Problems": {
+      "dataValues": [    						 
+        {
+		"_comment": "Hypertension-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "qrqs5BcXz4K",
+          "row": 1,
+          "column": 3
+        },
+		 {
+		 "_comment": "Congestive heart failure -F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "JNDXvvL6e73",
+          "row": 2,
+          "column": 3
+        },
+		 {
+		 "_comment": "Cardiac heart failure-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "CAgq78eCGoT",
+          "row": 3,
+          "column": 3
+        },
+		 {
+		 "_comment": "Chronic Obstructive Pulmonary Disease (COPD)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "nGRapIBn04F",
+          "row": 4,
+          "column": 3
+        },
+		 {
+		 "_comment": "Acute rheumatic fever-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "bWTc0CtkExj",
+          "row": 5,
+          "column": 3
+        },
+		 {
+		 "_comment": "Rheumatic heart disease (RHD)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "wYzKSWInjSq",
+          "row": 6,
+          "column": 3
+        },
+		 {
+		 "_comment": "Ischemic heart disease-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "S4wji3QBoDj",
+          "row": 7,
+          "column": 3
+        },
+		 {
+		 "_comment": "Other cardiovascular problems-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "qtjVLLOPJMq",
+          "row": 8,
+          "column": 3
+        },
+		 {
+		 "_comment": "Bronchial asthma-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "aeNEz2w7vUt",
+          "row": 9,
+          "column": 3
+        },
+		
+		
+		
+		
+		
+		{
+		"_comment": "Hypertension-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "qrqs5BcXz4K",
+          "row": 1,
+          "column": 4
+        },
+		 {
+		 "_comment": "Congestive heart failure -M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "JNDXvvL6e73",
+          "row": 2,
+          "column": 4
+        },
+		 {
+		 "_comment": "Cardiac heart failure-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "CAgq78eCGoT",
+          "row": 3,
+          "column": 4
+        },
+		 {
+		 "_comment": "Chronic Obstructive Pulmonary Disease (COPD)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "nGRapIBn04F",
+          "row": 4,
+          "column": 4
+        },
+		 {
+		 "_comment": "Acute rheumatic fever-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "bWTc0CtkExj",
+          "row": 5,
+          "column": 4
+        },
+		 {
+		 "_comment": "Rheumatic heart disease (RHD)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "wYzKSWInjSq",
+          "row": 6,
+          "column": 4
+        },
+		 {
+		 "_comment": "Ischemic heart disease-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "S4wji3QBoDj",
+          "row": 7,
+          "column": 4
+        },
+		 {
+		 "_comment": "Other cardiovascular problems-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "qtjVLLOPJMq",
+          "row": 8,
+          "column": 4
+        },
+		 {
+		 "_comment": "Bronchial asthma-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "aeNEz2w7vUt",
+          "row": 9,
+          "column": 4
+        }
+		]
+	},
+	
+	
+	
+	"OPD Other Diseases Injuries": {
+      "dataValues": [    						 
+        {
+		"_comment": "Acute Renal failure-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "CDE0GWEcSai",
+          "row": 1,
+          "column": 3
+        },
+		{
+		 "_comment": "Chronic Renal failure-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "r3sO6KWErru",
+          "row": 2,
+          "column": 3
+        },
+		 {
+		 "_comment": "Nephritis-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "LgjEP3jIXsd",
+          "row": 3,
+          "column": 3
+        },
+		 {
+		 "_comment": "Nephrotic syndrome-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "F9nektGalvQ",
+          "row": 4,
+          "column": 3
+        },
+		 
+		 {
+		 "_comment": "Headache-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "STQAKvx4hrd",
+          "row": 5,
+          "column": 3
+        },
+		 {
+		 "_comment": "Pyrexia of Unknown Origin (PUO)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "uuMnXAm0kdm",
+          "row": 6,
+          "column": 3
+        },
+		 {
+		 "_comment": "Gastritis (APD)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "PeTGehwYB0s",
+          "row": 7,
+          "column": 3
+        },
+		 {
+		 "_comment": "Insect/Wasp BITE -F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "AfuEmTogPN2",
+          "row": 8,
+          "column": 3
+        },
+		 {
+		 "_comment": "Abdominal Pain-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "goDe1kKhJGF",
+          "row": 9,
+          "column": 3
+        },
+		{
+		 "_comment": "Cirrhosis of liver-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "QXFsxDNzIa3",
+          "row": 10,
+          "column": 3
+        },
+		 {
+		 "_comment": "Burns and Scalds-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "LFBNWB6AEAS",
+          "row": 11,
+          "column": 3
+        },
+		 {
+		 "_comment": "Toxic Effect-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "OqXKbJoicMI",
+          "row": 12,
+          "column": 3
+        },
+		 {
+		 "_comment": "Dog Bite-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "hlijidCZeXC",
+          "row": 13,
+          "column": 3
+        },
+		 {
+		 "_comment": "Other rabies susceptible animal bite-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "OD3nX0vpeRk",
+          "row": 14,
+          "column": 3
+        },
+		 {
+		 "_comment": "Snake bite: Poisonous-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "ZK7kbGKuFhH",
+          "row": 15,
+          "column": 3
+        },
+		 {
+		 "_comment": "Snake bite: Non-poisonous-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "SdnBnsRltSh",
+          "row": 16,
+          "column": 3
+        },
+		 {
+		 "_comment": "Physical Disability (Disabled Person)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "lm5yM11ZfpT",
+          "row": 17,
+          "column": 3
+        },
+		 
+		
+		
+		
+		
+		{
+		"_comment": "Acute Renal failure-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "CDE0GWEcSai",
+          "row": 1,
+          "column": 4
+        },
+		{
+		 "_comment": "Chronic Renal failure-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "r3sO6KWErru",
+          "row": 2,
+          "column": 4
+        },
+		 {
+		 "_comment": "Nephritis-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "LgjEP3jIXsd",
+          "row": 3,
+          "column": 4
+        },
+		 {
+		 "_comment": "Nephrotic syndrome-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "F9nektGalvQ",
+          "row": 4,
+          "column": 4
+        },
+		 
+		 {
+		 "_comment": "Headache-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "STQAKvx4hrd",
+          "row": 5,
+          "column": 4
+        },
+		 {
+		 "_comment": "Pyrexia of Unknown Origin (PUO)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "uuMnXAm0kdm",
+          "row": 6,
+          "column": 4
+        },
+		 {
+		 "_comment": "Gastritis (APD)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "PeTGehwYB0s",
+          "row": 7,
+          "column": 4
+        },
+		 {
+		 "_comment": "Insect/Wasp bite-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "AfuEmTogPN2",
+          "row": 8,
+          "column": 4
+        },
+		 {
+		 "_comment": "Abdominal Pain-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "goDe1kKhJGF",
+          "row": 9,
+          "column": 4
+        },
+		{
+		 "_comment": "Cirrhosis of liver-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "QXFsxDNzIa3",
+          "row": 10,
+          "column": 4
+        },
+		 {
+		 "_comment": "Burns and Scalds-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "LFBNWB6AEAS",
+          "row": 11,
+          "column": 4
+        },
+		 {
+		 "_comment": "Toxic Effect-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "OqXKbJoicMI",
+          "row": 12,
+          "column": 4
+        },
+		 {
+		 "_comment": "Dog Bite-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "hlijidCZeXC",
+          "row": 13,
+          "column": 4
+        },
+		 {
+		 "_comment": "Other rabies susceptible animal bite-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "OD3nX0vpeRk",
+          "row": 14,
+          "column": 4
+        },
+		 {
+		 "_comment": "Snake bite: Poisonous-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "ZK7kbGKuFhH",
+          "row": 15,
+          "column": 4
+        },
+		 {
+		 "_comment": "Snake bite: Non-poisonous-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "SdnBnsRltSh",
+          "row": 16,
+          "column": 4
+        },
+		 {
+		 "_comment": "Physical Disability (Disabled Person)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "lm5yM11ZfpT",
+          "row": 17,
+          "column": 4
+        }
+		]
+	},
+	
+	
+	
+	
+	"OPD Orthopaedic Problems": {
+      "dataValues": [    						 
+        {
+		"_comment": "Falls/ injuries/ fractures-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "VBrz7cTB79f",
+          "row": 6,
+          "column": 3
+        },
+		 {
+		 "_comment": "Road Traffic Accident (RTA)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "wmZ2OGp6ukm",
+          "row": 1,
+          "column": 3
+        },
+		 {
+		 "_comment": "Rheumatoid arthritis-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "NNlu3dspuAb",
+          "row": 2,
+          "column": 3
+        },
+		 {
+		 "_comment": "Arthritis-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "zcqze4wzYJf",
+          "row": 3,
+          "column": 3
+        },
+		 {
+		 "_comment": "Osteo arthrosis-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "rHbb3KBlxBU",
+          "row": 4,
+          "column": 3
+        },
+		 {
+		 "_comment": "Back ache (musculo- skeletal pain)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "PABYQLhP6kF",
+          "row": 5,
+          "column": 3
+        },
+		
+		
+		
+		
+		
+		{
+		"_comment": "Falls/ injuries/ fractures-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "VBrz7cTB79f",
+          "row": 6,
+          "column": 4
+        },
+		 {
+		 "_comment": "Road Traffic Accident (RTA)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "wmZ2OGp6ukm",
+          "row": 1,
+          "column": 4
+        },
+		 {
+		 "_comment": "Rheumatoid arthritis-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "NNlu3dspuAb",
+          "row": 2,
+          "column": 4
+        },
+		 {
+		 "_comment": "Arthritis-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "zcqze4wzYJf",
+          "row": 3,
+          "column": 4
+        },
+		 {
+		 "_comment": "Osteo arthrosis-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "rHbb3KBlxBU",
+          "row": 4,
+          "column": 4
+        },
+		 {
+		 "_comment": "Back ache (musculo- skeletal pain)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "PABYQLhP6kF",
+          "row": 5,
+          "column": 4
+        }
+		 
+		]
+	},
+	
+	
+	
+	
+	
+	"OPD Surgical Problems": {
+      "dataValues": [    						 
+        {
+		"_comment": "Acid peptic disorders-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "YCXYzdxUeum",
+          "row": 1,
+          "column": 3
+        },
+		 {
+		 "_comment": "Anal Fissure-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "jdsiabr6R8B",
+          "row": 2,
+          "column": 3
+        },
+		 {
+		 "_comment": "Anal fistula-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "INV87zUyfus",
+          "row": 3,
+          "column": 3
+        },
+		 {
+		 "_comment": "Fistula of Intestine-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "OJRkVtEJZJA",
+          "row": 4,
+          "column": 3
+        },
+		 {
+		 "_comment": "Renal stones-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "sOXBvbQfg3k",
+          "row": 5,
+          "column": 3
+        },
+		 {
+		 "_comment": "Breast lumps (adenoma)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "iiJsrZe0bNk",
+          "row": 6,
+          "column": 3
+        },
+		 {
+		 "_comment": "Mastitis (Ignored breast)/breast abscess-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "fi0vtzIViQE",
+          "row": 7,
+          "column": 3
+        },
+		 {
+		 "_comment": "Mastalgia breast-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "asmWrHpopvG",
+          "row": 8,
+          "column": 3
+        },
+		 {
+		 "_comment": "Lumps (lipoma)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "ba2N6S0Nqdb",
+          "row": 9,
+          "column": 3
+        },
+		 {
+		 "_comment": "Sebaceous cyst-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "ctGjkbCRtZn",
+          "row": 10,
+          "column": 3
+        },
+		 {
+		 "_comment": "Pilonidal sinus-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "ZhUGMCZfdWb",
+          "row": 11,
+          "column": 3
+        },
+			 {
+		 "_comment": "Appendicitis-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "NM4bzwrsgs0",
+          "row": 13,
+          "column": 3
+        },
+		 {
+		 "_comment": "Cholecystitis-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "QxEgmIN7OQM",
+          "row": 14,
+          "column": 3
+        },
+		 {
+		 "_comment": "Cholelithiasis (gall stone)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "A6x6SS5Dgds",
+          "row": 15,
+          "column": 3
+        },
+		 {
+		 "_comment": "Hernia-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "Wtjpt7S9YQG",
+          "row": 16,
+          "column": 3
+        },
+		 {
+		 "_comment": "Hydrocoele-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "y0eNCU4p6nf",
+          "row": 17,
+          "column": 3
+        },
+		 {
+		 "_comment": "Phimosis/para-phimosis-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "DEtuUddCtlE",
+          "row": 18,
+          "column": 3
+        },
+		 {
+		 "_comment": "Haemorrhoids/Piles-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "WEEGs3oAxHz",
+          "row": 19,
+          "column": 3
+        },
+		{
+		 "_comment": "Epididymitis/ Orchitis-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "so2s568hmR9",
+          "row": 20,
+          "column": 3
+        },
+		 {
+		 "_comment": "Prostatism (BEP/BPH)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "Y5tTcY8S6tG",
+          "row": 21,
+          "column": 3
+        },
+		 {
+		 "_comment": "Not mentioned above and other-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "G0FIKc60DcJ",
+          "row": 22,
+          "column": 3
+        },
+		
+		
+		
+		
+		 {
+		"_comment": "Acid peptic disorders-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "YCXYzdxUeum",
+          "row": 1,
+          "column": 4
+        },
+		 {
+		 "_comment": "Anal Fissure-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "jdsiabr6R8B",
+          "row": 2,
+          "column": 4
+        },
+		 {
+		 "_comment": "Anal fistula-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "INV87zUyfus",
+          "row": 3,
+          "column": 4
+        },
+		 {
+		 "_comment": "Fistula of Intestine-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "OJRkVtEJZJA",
+          "row": 4,
+          "column": 4
+        },
+		 {
+		 "_comment": "Renal stones-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "sOXBvbQfg3k",
+          "row": 5,
+          "column": 4
+        },
+		 {
+		 "_comment": "Breast lumps (adenoma)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "iiJsrZe0bNk",
+          "row": 6,
+          "column": 4
+        },
+		 {
+		 "_comment": "Mastitis (Ignored breast)/breast abscess-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "fi0vtzIViQE",
+          "row": 7,
+          "column": 4
+        },
+		 {
+		 "_comment": "Mastalgia breast-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "asmWrHpopvG",
+          "row": 8,
+          "column": 4
+        },
+		 {
+		 "_comment": "Lumps (lipoma)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "ba2N6S0Nqdb",
+          "row": 9,
+          "column": 4
+        },
+		 {
+		 "_comment": "Sebaceous cyst-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "ctGjkbCRtZn",
+          "row": 10,
+          "column": 4
+        },
+		 {
+		 "_comment": "Pilonidal sinus-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "ZhUGMCZfdWb",
+          "row": 11,
+          "column": 4
+        },
+			 {
+		 "_comment": "Appendicitis-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "NM4bzwrsgs0",
+          "row": 13,
+          "column": 4
+        },
+		 {
+		 "_comment": "Cholecystitis-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "QxEgmIN7OQM",
+          "row": 14,
+          "column": 4
+        },
+		 {
+		 "_comment": "Cholelithiasis (gall stone)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "A6x6SS5Dgds",
+          "row": 15,
+          "column": 4
+        },
+		 {
+		 "_comment": "Hernia-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "Wtjpt7S9YQG",
+          "row": 16,
+          "column": 4
+        },
+		 {
+		 "_comment": "Hydrocoele-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "y0eNCU4p6nf",
+          "row": 17,
+          "column": 4
+        },
+		 {
+		 "_comment": "Phimosis/para-phimosis-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "DEtuUddCtlE",
+          "row": 18,
+          "column": 4
+        },
+		 {
+		 "_comment": "Haemorrhoids/Piles-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "WEEGs3oAxHz",
+          "row": 19,
+          "column": 4
+        },
+		{
+		 "_comment": "Epididymitis/ Orchitis-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "so2s568hmR9",
+          "row": 20,
+          "column": 4
+        },
+		 {
+		 "_comment": "Prostatism (BEP/BPH)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "Y5tTcY8S6tG",
+          "row": 21,
+          "column": 4
+        }
+		]
+	},
+	"Not mentioned above and others": {
+      "dataValues": [  
+		{
+		 "_comment": "Not mentioned above and other-M",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "G0FIKc60DcJ",
+          "row": 1,
+          "column": 1
+        },	  
+		 {
+		 "_comment": "Not mentioned above and other-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "G0FIKc60DcJ",
+          "row": 1,
+          "column": 2
+        }
+		]
+	},
+	
+	"OPD Surgical Problems(Total and New OPD)": {
+      "dataValues": [    						 
+        {
+		"_comment": "Total New OPD Visits (Including Under 5 Children)-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "xvwrzooDVQ7",
+          "row": 1,
+          "column": 1
+        },
+		 {
+		 "_comment": "Total Old (repeated) OPD Visits-F",
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "EUX6hTMoCe9",
+          "row": 1,
+          "column": 3
+        },	
+		  {
+		"_comment": "Total New OPD Visits (Including Under 5 Children)-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "xvwrzooDVQ7",
+          "row": 1,
+          "column": 2
+        },
+		 {
+		 "_comment": "Total Old (repeated) OPD Visits-M",
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "EUX6hTMoCe9",
+          "row": 1,
+          "column": 4
+        }
+		]
+	}
+		
+		
+	
+}
+}

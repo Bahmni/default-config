@@ -1,0 +1,154 @@
+{
+  "orgUnit": "<Your organization id>",
+  "reports": {
+    "Immunized children count": {
+      "dataValues": [    	
+		{
+		"_comment": "Vaccine-BCG Vaccine",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "w84aFW1LESM",
+          "row": 4,
+          "column": 3
+        },
+        { 
+		"_comment": "Vaccine-DPT-HepB-Hib-first",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "S4NHzUtxuFr",
+          "row": 5,
+          "column": 3
+        },
+		{
+		"_comment": "Vaccine-DPT-HepB-Hib-second",
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "EWloIcvmV6J",
+          "row": 6,
+          "column": 3
+        },
+        {
+		"_comment": "Vaccine-DPT-HepB-Hib-third",
+          "categoryOptionCombo": "kdsirVNKdhm",
+          "dataElement": "BKLqlVqwTX9", 
+          "row": 7,
+          "column": 3
+        },
+        {
+		"_comment": "Vaccine-OPV-First",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "j0Bqqi6vw0a",
+          "row": 13,
+          "column": 3
+        }
+		,
+		{
+		"_comment": "Vaccine-OPV-second",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "iIBI3R4j7rR",
+          "row": 14,
+          "column": 3
+        },
+        {
+		"_comment": "Vaccine-OPV-third",
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "SZXbOZ7nCcT", 
+          "row": 15,
+          "column": 3
+        },
+        {
+		"_comment": "Vaccine-PCV-first",
+          "categoryOptionCombo": "kdsirVNKdhm",   
+          "dataElement": "F3fBb33oh1c",
+          "row": 16,
+          "column": 3
+        },
+		{
+		"_comment": "Vaccine-PCV-second",
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "TkfynUxlyEA",
+          "row": 17,
+          "column": 3
+        },
+        { 
+		"_comment": "Vaccine-PCV-third",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+		  "dataElement": "PZet2gxoVk4",
+          "row": 18,
+          "column": 3
+        },
+		{
+		"_comment": "Vaccine-Rota-first",
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "XZZ0Lbe79KT",
+          "row": 19,
+          "column": 3
+        },
+		{
+		"_comment": "Vaccine-Rota-second",
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "a6M1cxcfKOC",
+          "row": 20,
+          "column": 3
+        },
+		 {
+		"_comment": "Vaccine-FIPV-First",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "W4MXIx0utSp",
+          "row": 8,
+          "column": 3
+        }
+		,
+		{
+		"_comment": "Vaccine-FIPV-second",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "HHg41AN9x3a",
+          "row": 9,
+          "column": 3
+        },
+        {
+		"_comment": "Vaccine-Measles/rubella-first",
+          "categoryOptionCombo": "kdsirVNKdhm",
+          "dataElement": "ZOssey90Zzq", 
+          "row": 11,
+          "column": 3
+        },
+        {
+		"_comment": "Vaccine-Measles/rubella-second",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "LLqzacIY1IW",
+          "row": 12,
+          "column": 3
+        }
+		,
+		{
+		"_comment": "Vaccine-JE",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "ZVZtO6UfQ85",
+          "row": 10,
+          "column": 3
+        },
+        {
+		"_comment": "ANC, TD Given-first",
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "vvjFCmI0DBV", 
+          "row": 1,
+          "column": 3
+        },
+        {
+		"_comment": "ANC, TD Given-second",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "T6HLuCqpOMn",
+          "row": 2,
+          "column": 3
+        }
+		,
+        {
+		"_comment": "ANC, TD Given-seond plus",
+          "categoryOptionCombo": "kdsirVNKdhm",  
+          "dataElement": "q0XkNvBOqZc",
+          "row": 3,
+          "column": 3
+        }
+          
+      ]
+    }	
+  }
+}

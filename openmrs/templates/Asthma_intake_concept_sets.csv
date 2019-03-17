@@ -1,6 +1,0 @@
-uuid,name,shortname,description,class,child.1,child.2,child.3,child.4,child.5,child.6
-,"Asthma, Diagnosis Details",Diagnosis Details,,Misc,"Asthma, Last Visit Date","Asthma, Previous Followup Location","Asthma, Diagnosis Status","Asthma, Date Confirmed","Asthma, Diagnosis Location",
-,"Asthma, Last Exacerbation",Last Exacerbation details,,Misc,"Asthma, Last Exacerbation Within 12 months","Asthma, Last Exacerbation date","Asthma, Last Exacerbation Treated at","Asthma, Last Exacerbation Inpatient Details","Asthma, Hospitalizations","Asthma, Treated as Outpatient"
-,"Asthma, Past Diagnostics",Past diagnostics,,Misc,"Asthma, Peak Expiratory Flow","Asthma, Spirometry","Asthma, Tests For Allergy",,,
-,"Asthma, Symptoms",Symptoms,,Misc,"Asthma, Assess Classic Symptoms","Asthma, Other Clues",,,,
-,"Asthma, Intake",Asthma – Intake,,Misc,"Asthma, Diagnosis Details","Asthma, Last Exacerbation","Asthma, Past Diagnostics","Asthma, Symptoms","Asthma, Current Home Medications","Asthma, All Other Medicines"

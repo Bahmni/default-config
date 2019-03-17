@@ -1,0 +1,941 @@
+{
+	"orgUnit": "<Your organization id>",
+	"reports": {
+		"16 Laboratory Services Dataset": {
+			"dataValues": [{
+					"_comment": "Haematology-HB",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "MX5XthyOLIX",
+					"row": 1,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-RBC",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "ga8cotZYUGN",
+					"row": 2,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-WBC",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "udHP9cMdus0",
+					"row": 4,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Platelets",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "HkVFI7zvtco",
+					"row": 3,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-DLC",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Ks9ADEZCFQd",
+					"row": 5,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-ESR",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "hcN0jcWCBLx",
+					"row": 6,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-PCV",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "saptNmjMs1t",
+					"row": 7,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-MCV",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "o6paypYS2tc",
+					"row": 8,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-MCHC",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "kTMrl2nmqdQ",
+					"row": 9,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-RDW",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "jtq2eCYU4TI",
+					"row": 10,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-BT",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "PEtNspPKfGU",
+					"row": 11,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-CT",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "VxCaWebcSNY",
+					"row": 12,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Retics",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "XJcUhKfv6iG",
+					"row": 13,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-PBS",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "IB7pwInGJ2Z",
+					"row": 14,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Paracites",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "JNq4RsSbvLV",
+					"row": 15,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-MPO",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "JWcZvHhr1Wh",
+					"row": 16,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-PAS",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "JaZYiW0YaCW",
+					"row": 17,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Sickling Test",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "TWkqsR5UgVd",
+					"row": 18,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Urine for Hemosiderin",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "KhBNHEeaRQ6",
+					"row": 19,
+					"column": 6
+				},
+
+
+
+
+
+
+
+
+				{
+					"_comment": "Haematology-APTT",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "lQ3GQrEk9mB",
+					"row": 20,
+					"column": 6
+				},
+
+				{
+					"_comment": "Haematology-Blood Group",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "sgR3aHSyj0A",
+					"row": 22,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Rh-Type",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "JX7RzmPZcdL",
+					"row": 23,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-BM",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "i03IN3kQAOj",
+					"row": 24,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-CSF",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "qnMX0uTJgT4",
+					"row": 25,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Spleen/fluid aspirate",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "zxrGE62lt7K",
+					"row": 26,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Alde-hyde",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "QPNEYl5SKm8",
+					"row": 27,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-MP-Total",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "UX2IdkwZPm6",
+					"row": 28,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-HbA1c",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "TPfANsOsI68",
+					"row": 29,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Hb Electro-phoresis",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "F8v1z9J0lOg",
+					"row": 30,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-LE",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "RdQOc3LQLP7",
+					"row": 31,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-ALC/ AEC",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "MT1F817ybIC",
+					"row": 32,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-FDP/D-dimer",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "bwHADypDLFl",
+					"row": 33,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Fac VIII",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "vBnEHWgBcLR",
+					"row": 34,
+					"column": 6
+				},
+				{
+					"_comment": "Haematology-Fac IX",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "UK3UTayMDhQ",
+					"row": 35,
+					"column": 6
+				},
+
+
+
+
+
+
+
+				{
+					"_comment": "Immunlogy-Pregnancy-Test",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "R5coLEZO6gu",
+					"row": 36,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-ASO",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "rwRnTLpdCWu",
+					"row": 37,
+					"column": 6
+				},
+				{
+					"_comment": "Immunlogy-CRP",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "biBCfb3VTLe",
+					"row": 38,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-RA-Factor",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "NHUktqhJjbE",
+					"row": 39,
+					"column": 6
+				},
+
+
+
+				{
+					"_comment": "Immunology-ANA",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "nkd4WEiWYpm",
+					"row": 41,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-ANA",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "nkd4WEiWYpm",
+					"row": 41,
+					"column": 7
+				},
+				{
+					"_comment": "Immunology-DNA-ELISA",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "HPm9E1TXZj4",
+					"row": 42,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-CEA",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "Chpshc4ebjM",
+					"row": 44,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-CA-125",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "gVibsIFUGKo",
+					"row": 45,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Ca 19-9",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "Y75eapME064",
+					"row": 46,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Ca 15.3",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "wt7S2uqK6K1",
+					"row": 47,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-TORCH IG-G/M",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "RZ0RRg35jTG",
+					"row": 48,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-MEASLES-IG-G",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "SJZ1Uv3fXPn",
+					"row": 49,
+					"column": 7
+				},
+				{
+					"_comment": "Immunology-RUBELLA-IGG",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "RBHRqI1plDF",
+					"row": 50,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Echino-coccus",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "lv5WiRQ4EeS",
+					"row": 51,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Amoe-biasis",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "ZCoqqsa2dPi",
+					"row": 52,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-PSA",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "U8KGjwMF8pn",
+					"row": 53,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Ferri-tine",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "ZD0rMCtnrmu",
+					"row": 54,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Cystice-rcosis",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "dRgsrcHnY6k",
+					"row": 55,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Bru-cella",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "lrfHXRRnECT",
+					"row": 56,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Thyro-globulin",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "uYVS9Y6WGGX",
+					"row": 57,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Protein Electro-phoresis",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "ys3Z6SrXbl8",
+					"row": 58,
+					"column": 6
+				},
+
+				{
+					"_comment": "Immunology-β-HCG",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "HtBLiECACGI",
+					"row": 59,
+					"column": 6
+				},
+
+				{
+					"_comment": "Immunology-RK-39",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "Vjdjtgx1vez",
+					"row": 60,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-RK-39",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "Vjdjtgx1vez",
+					"row": 60,
+					"column": 7
+				},
+				{
+					"_comment": "Immunology-JE",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "zebx7lWQoyM",
+					"row": 61,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-JE",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "zebx7lWQoyM",
+					"row": 61,
+					"column": 7
+				},
+
+				{
+					"_comment": "Immunology-Dengue",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "ci7ny20DDx5",
+					"row": 62,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Dengue",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "ci7ny20DDx5",
+					"row": 62,
+					"column": 7
+				},
+
+				{
+					"_comment": "Immunology-Rapid MP Test",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "FxeXI2YccuG",
+					"row": 63,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Rapid MP Test",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "B5ykil1xCD7",
+					"row": 63,
+					"column": 7
+				},
+				{
+					"_comment": "Immunology-Rapid MP Test",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "uxXLme8h5rp",
+					"row": 63,
+					"column": 8
+				},
+				{
+					"_comment": "Immunology-Mantoux",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "iR2RIlfklv4",
+					"row": 64,
+					"column": 6
+				},
+				{
+					"_comment": "Immunology-Others",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "W7hA38opoJo",
+					"row": 65,
+					"column": 6
+				},
+
+
+
+
+
+
+
+
+
+
+
+
+				{
+					"_comment": "Biochemistry-Blood-urea",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "zEyNSH7f3bc",
+					"row": 69,
+					"column": 6
+				},
+
+				{
+					"_comment": "Biochemistry-Creatinine",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "EAej1kE1URL",
+					"row": 70,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-Uric_acid",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "aZL9j6tqQ9p",
+					"row": 71,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-Albumin",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "KxjvbnzwCwh",
+					"row": 72,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-Total_choles",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "wulw5ifRsNe",
+					"row": 74,
+					"column": 6
+				},
+
+				{
+					"_comment": "Biochemistry-HDL",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "EDGJSDQRSBc",
+					"row": 75,
+					"column": 6
+				},
+
+				{
+					"_comment": "Biochemistry-TG",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "aSL8XQRSfQp",
+					"row": 76,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-LDL",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "VXTX6a2cthA",
+					"row": 77,
+					"column": 6
+				},
+
+				{
+					"_comment": "Biochemistry-Calcium",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "R5LM4KpJvod",
+					"row": 78,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-Amylase",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "jnhUYbBZse7",
+					"row": 80,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-SGOT",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "a0yIeDftBG7",
+					"row": 82,
+					"column": 6
+				},
+
+
+
+
+
+				{
+					"_comment": "Biochemistry-SGPT",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "uk6zFeOqUKH",
+					"row": 83,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-ALK_Phos",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "iKAc48pZwIU",
+					"row": 84,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-Bili-T",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "yLqINBhloWG",
+					"row": 85,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-Bili-D",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "brcgKcED8N3",
+					"row": 86,
+					"column": 6
+				},
+
+				{
+					"_comment": "Biochemistry-Sodium",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "gCtmVdbe7SY",
+					"row": 87,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-Potasium",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "KkBUEB0zQPc",
+					"row": 88,
+					"column": 6
+				},
+				{
+					"_comment": "Biochemistry-24hr_protein",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "C7eoJAFCH0M",
+					"row": 89,
+					"column": 6
+				},
+
+
+
+
+
+
+
+				{
+					"_comment": "Bacteriology-blood",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "it4JusH87Wk",
+					"row": 102,
+					"column": 6
+				},
+				{
+					"_comment": "Bacteriology-urine",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "sLACvSMlg2x",
+					"row": 103,
+					"column": 6
+				},
+				{
+					"_comment": "Bacteriology-swab",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "MkoyR8apLNJ",
+					"row": 105,
+					"column": 6
+				},
+				{
+					"_comment": "Bacteriology-stool",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "llI4WtU0scF",
+					"row": 106,
+					"column": 6
+				},
+
+				{
+					"_comment": "Bacteriology-pus",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "kp79HNscnxJ",
+					"row": 108,
+					"column": 6
+				},
+				{
+					"_comment": "Bacteriology-CSF",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "gvv8uQaWTcW",
+					"row": 111,
+					"column": 6
+				},
+				{
+					"_comment": "Bacteriology-sputum-afb",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "iHLe8HKsB3K",
+					"row": 113,
+					"column": 6
+				},
+
+				{
+					"_comment": "Bacteriology-sputum-afb",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "iHLe8HKsB3K",
+					"row": 113,
+					"column": 7
+				},
+				{
+					"_comment": "Bacteriology-leprosy_smear",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Lruh22ELAGR",
+					"row": 114,
+					"column": 6
+				},
+				{
+					"_comment": "Bacteriology-Widal",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "czXIORFAbvx",
+					"row": 115,
+					"column": 6
+				},
+				{
+					"_comment": "Bacteriology-Fungus",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "Ko8Z7R3PaN2",
+					"row": 116,
+					"column": 6
+				},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				{
+					"_comment": "Virology-HIV",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "HJpcsC6D0at",
+					"row": 119,
+					"column": 6
+				},
+				{
+					"_comment": "Virology-HIV",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "HJpcsC6D0at",
+					"row": 119,
+					"column": 7
+				},
+				{
+					"_comment": "Virology-HAV",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "SsCz3Z9wUvx",
+					"row": 120,
+					"column": 6
+				},
+				{
+					"_comment": "Virology-HAV",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "SsCz3Z9wUvx",
+					"row": 120,
+					"column": 7
+				},
+				{
+					"_comment": "Virology-HBsAg",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "X8FtE4lSQYQ",
+					"row": 121,
+					"column": 6
+				},
+				{
+					"_comment": "Virology-HBsAg",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "X8FtE4lSQYQ",
+					"row": 121,
+					"column": 7
+				},
+				{
+					"_comment": "Virology-HCV",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "AETUEJEkhGk",
+					"row": 122,
+					"column": 6
+				},
+				{
+					"_comment": "Virology-HCV",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "AETUEJEkhGk",
+					"row": 122,
+					"column": 7
+				},
+				{
+					"_comment": "Virology-HEV",
+					"categoryOptionCombo": "A0ezJDD4TfL",
+					"dataElement": "WmSJOvBs3Ck",
+					"row": 123,
+					"column": 6
+				},
+				{
+					"_comment": "Virology-HEV",
+					"categoryOptionCombo": "wCvNkhhbSbl",
+					"dataElement": "WmSJOvBs3Ck",
+					"row": 123,
+					"column": 7
+				},
+				{
+					"_comment": "Virology-Western Bolt",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "HQr6MM8GsjH",
+					"row": 124,
+					"column": 6
+				},
+				{
+					"_comment": "Virology-CD4",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "ujt1GxVHLHV",
+					"row": 125,
+					"column": 6
+				},
+				{
+					"_comment": "Virology-Viral load",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "DcQtyLaLoCx",
+					"row": 126,
+					"column": 6
+				},
+				{
+					"_comment": "Virology-others",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "vmRFuQZTS6N",
+					"row": 127,
+					"column": 6
+				},
+
+
+
+
+
+
+				{
+					"_comment": "Parasitology-stool",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "b3zYEkHFmat",
+					"row": 135,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-occult-blood",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "z9i5nhshIPk",
+					"row": 136,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-Reducing sugar",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "aydXkBquvXP",
+					"row": 137,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-urine-RE",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "PX30ls6pIRm",
+					"row": 138,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-bile-salt",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "KC4gQ1lbXAg",
+					"row": 139,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-bile-pigment",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "uVcWLuam362",
+					"row": 140,
+					"column": 6
+				},
+
+				{
+					"_comment": "Parasitology-Urobi-linogen",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "XEe49IIPcoD",
+					"row": 141,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-Porpho-bilinogen",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "XEe49IIPcoD",
+					"row": 142,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-Ace-tone",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "W1DQovLs4sh",
+					"row": 143,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-Chyle",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "rzfTpDSCtgk",
+					"row": 144,
+					"column": 6
+				},
+				{
+					"_comment": "Parasitology-Semen-analysis",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "SXwweKinsnK",
+					"row": 145,
+					"column": 6
+				}
+
+
+
+			]
+		}
+
+	}
+}

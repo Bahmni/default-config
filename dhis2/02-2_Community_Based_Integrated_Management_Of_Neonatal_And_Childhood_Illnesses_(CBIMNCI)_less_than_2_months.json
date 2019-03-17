@@ -1,0 +1,170 @@
+{
+	"orgUnit": "<Your organization id>",
+	"reports": {
+
+		"Childhood Illness Registered(Children aged below 2 months)": {
+			"dataValues": [{
+					"categoryOptionCombo": "MMj2Dc8TvgL",
+					"dataElement": "UbOzhGOJdrq",
+					"row": 1,
+					"column": 1
+				},
+				{
+					"categoryOptionCombo": "ZQJ5pcgH1lJ",
+					"dataElement": "UbOzhGOJdrq",
+					"row": 1,
+					"column": 2
+				}
+
+			]
+		},
+
+		"Childhood Illness PSBI LBI Jaundice Breastfed difficuilty feeding or low weight (less than 2 months)": {
+			"dataValues": [{
+					"categoryOptionCombo": "MMj2Dc8TvgL",
+					"dataElement": "ISzvhZycG3z",
+					"row": 12,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ZQJ5pcgH1lJ",
+					"dataElement": "ISzvhZycG3z",
+					"row": 11,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "MMj2Dc8TvgL",
+					"dataElement": "YXIPqFIPsjg",
+					"row": 8,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ZQJ5pcgH1lJ",
+					"dataElement": "YXIPqFIPsjg",
+					"row": 7,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "MMj2Dc8TvgL",
+					"dataElement": "IDbh8WJcQsP",
+					"row": 6,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ZQJ5pcgH1lJ",
+					"dataElement": "IDbh8WJcQsP",
+					"row": 5,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "fmCWNnmldW4",
+					"row": 4,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "aFgNWKMgYz9",
+					"row": 3,
+					"column": 3
+				},
+
+
+				{
+					"categoryOptionCombo": "MMj2Dc8TvgL",
+					"dataElement": "kqspOhPReRm",
+					"row": 14,
+					"column": 3
+				},
+				{
+					"categoryOptionCombo": "ZQJ5pcgH1lJ",
+					"dataElement": "kqspOhPReRm",
+					"row": 13,
+					"column": 3
+				}
+
+			]
+		},
+		"Childhood Illness Treatment Gentamycin 1st dose and Complete Dose(less than 2 months)": {
+			"dataValues": [{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "fK36K8WBX9s",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "Q5YnsomfHvO",
+					"row": 2,
+					"column": 2
+				}
+			]
+		},
+		"Childhood Illness (less than 2 months) Follow up and other antibiotics": {
+			"dataValues": [{
+					"categoryOptionCombo": "J0QYmZGlEii",
+					"dataElement": "WoIzHgdHUjE",
+					"row": 1,
+					"column": 2
+				},
+				{
+					"_comment": "other antibiotics",
+					"categoryOptionCombo": "kdsirVNKdhm",
+					"dataElement": "TwMrwcnwuSO",
+					"row": 2,
+					"column": 2
+				}
+
+			]
+		},
+		"Childhood Illness (less than 2 months) treatment": {
+			"dataValues": [{
+					"_comment": "Amoxicillin less than 28",
+					"categoryOptionCombo": "MMj2Dc8TvgL",
+					"dataElement": "zxN7niCGtSh",
+					"row": 2,
+					"column": 3
+				},
+				{
+					"_comment": "Amoxicillin more than 28",
+					"categoryOptionCombo": "ZQJ5pcgH1lJ",
+					"dataElement": "zxN7niCGtSh",
+					"row": 1,
+					"column": 3
+				},
+				{
+					"_comment": "Ampicillin less than 28",
+					"categoryOptionCombo": "MMj2Dc8TvgL",
+					"dataElement": "lfjCh0FyKSc",
+					"row": 4,
+					"column": 3
+				},
+				{
+					"_comment": "Ampicillin more than 28",
+					"categoryOptionCombo": "ZQJ5pcgH1lJ",
+					"dataElement": "lfjCh0FyKSc",
+					"row": 3,
+					"column": 3
+				}
+
+			]
+		},
+		"Total death less than 2 months": {
+			"dataValues": [{
+					"categoryOptionCombo": "MMj2Dc8TvgL",
+					"dataElement": "adiGRH9XgjW",
+					"row": 1,
+					"column": 1
+				},
+				{
+					"categoryOptionCombo": "ZQJ5pcgH1lJ",
+					"dataElement": "adiGRH9XgjW",
+					"row": 1,
+					"column": 2
+				}
+
+			]
+		}
+
+	}
+}

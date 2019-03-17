@@ -1,0 +1,284 @@
+{
+  "orgUnit": "<Your organization id>",
+  "reports": {
+    "Hospital Services - Total Client Served": {
+      "dataValues": [    						 
+        {
+          "categoryOptionCombo": "I1gylzOskBs",
+          "dataElement": "HscG3R78Jzc",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "TTNFd2X49S6", 
+          "dataElement": "HscG3R78Jzc",
+          "row": 1,
+          "column": 3
+        },
+		{
+          "categoryOptionCombo": "I1gylzOskBs",   
+          "dataElement": "XjuXeaVPUsr",
+          "row": 1,
+          "column": 4
+        },
+        {
+          "categoryOptionCombo": "TTNFd2X49S6", 
+          "dataElement": "XjuXeaVPUsr",
+          "row": 1,
+          "column": 5
+        },
+		
+        {
+          "categoryOptionCombo": "BsqZjzoTKXF",  
+          "dataElement": "HscG3R78Jzc",
+          "row": 2,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "ayMV9ieefqQ",  
+          "dataElement": "HscG3R78Jzc",
+          "row": 2,
+          "column": 3
+        },
+        {
+          "categoryOptionCombo": "BsqZjzoTKXF", 
+          "dataElement": "XjuXeaVPUsr",
+          "row": 2,
+          "column": 4
+        },
+        {
+          "categoryOptionCombo": "ayMV9ieefqQ", 
+          "dataElement": "XjuXeaVPUsr",
+          "row": 2,
+          "column": 5
+        }
+		,
+        {
+          "categoryOptionCombo": "sfmUgn8yywu", 
+          "dataElement": "HscG3R78Jzc",
+          "row": 3,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "iUcXHCikw4W", 
+          "dataElement": "HscG3R78Jzc",
+          "row": 3,
+          "column": 3
+        }
+		,
+        {
+          "categoryOptionCombo": "sfmUgn8yywu", 
+          "dataElement": "XjuXeaVPUsr",
+          "row": 3,
+          "column": 4
+        },
+        {
+          "categoryOptionCombo": "iUcXHCikw4W", 
+          "dataElement": "XjuXeaVPUsr",
+          "row": 3,
+          "column": 5
+        }
+		,
+        {
+          "categoryOptionCombo": "ra6Eu2HG3uz", 
+          "dataElement": "HscG3R78Jzc",
+          "row": 4,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "h5jQOtCwdWf", 
+          "dataElement": "HscG3R78Jzc",
+          "row": 4,
+          "column": 3
+        }
+		,
+        {
+          "categoryOptionCombo": "ra6Eu2HG3uz", 
+          "dataElement": "XjuXeaVPUsr",
+          "row": 4,
+          "column": 4
+        },
+        {
+          "categoryOptionCombo": "h5jQOtCwdWf", 
+          "dataElement": "XjuXeaVPUsr",
+          "row": 4,
+          "column": 5
+        }
+          
+      ]
+    }
+	,
+    "Hospital Services - Emergency Services":{
+      "dataValues": [
+        {
+          "categoryOptionCombo": "ye1QuAMRG5Z", 
+          "dataElement": "fuHbV1eiKs0",
+          "row": 1,
+          "column": 2
+        },
+        { 
+          "categoryOptionCombo": "PflKpozpO7b", 
+          "dataElement": "fuHbV1eiKs0",
+          "row": 1,
+          "column": 3
+        },
+		{
+          "categoryOptionCombo": "ye1QuAMRG5Z", 
+          "dataElement": "EtdsmjNmxVZ",
+          "row": 2,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "PflKpozpO7b", 
+          "dataElement": "EtdsmjNmxVZ",
+          "row": 2,
+          "column": 3
+        },
+		{
+          "categoryOptionCombo": "ye1QuAMRG5Z", 
+          "dataElement": "CLYbMAU5lhD",
+          "row": 3,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "PflKpozpO7b", 
+          "dataElement": "CLYbMAU5lhD",
+          "row": 3,
+          "column": 3
+        },
+		{
+          "categoryOptionCombo": "ye1QuAMRG5Z", 
+          "dataElement": "HEgvfxOppUY",
+          "row": 4,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "PflKpozpO7b",
+          "dataElement": "HEgvfxOppUY",
+          "row": 4,
+          "column": 3
+        }
+      ]
+    },
+	
+	"Hospital Services - Total Patients Admitted and Total Beds":{
+      "dataValues": [
+        {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "e7awSzM03vh",
+          "row": 1,
+          "column": 2
+        },
+		 {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "hE0Kl0AKRKj",
+          "row": 3,
+          "column": 2
+        },
+		 {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "XSzX9nccK7m",
+          "row": 2,
+          "column": 2
+        }
+      ]
+    },
+	
+	"Hospital Services - Total Inpatient Days":{
+      "dataValues": [
+        {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "mVPlNZIq82F",
+          "row": 1,
+          "column": 1
+        }
+      ]
+    },
+	
+	"Hospital Services - Referred In patient":{
+      "dataValues": [
+        {
+          "categoryOptionCombo": "ye1QuAMRG5Z",  
+          "dataElement": "W7SEWzmObUP",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "PflKpozpO7b",
+          "dataElement": "W7SEWzmObUP",
+          "row": 2,
+          "column": 2
+        }
+      ]
+    },
+	
+	"Hospital Services - Referred out patient(OPD,IPD)":{
+      "dataValues": [
+        {
+          "categoryOptionCombo": "ye1QuAMRG5Z",
+          "dataElement": "O7vdFXujKQX",
+          "row": 2,
+          "column": 3
+        },
+        {
+          "categoryOptionCombo": "ye1QuAMRG5Z", 
+          "dataElement": "cUMLBeIlaIp",
+          "row": 1,
+          "column": 3
+        }
+		,
+		{
+          "categoryOptionCombo": "PflKpozpO7b",  
+          "dataElement": "O7vdFXujKQX",
+          "row": 4,
+          "column": 3
+        },
+        {
+          "categoryOptionCombo": "PflKpozpO7b", 
+          "dataElement": "cUMLBeIlaIp",
+          "row": 3,
+          "column": 3
+        }
+		
+      ]
+    },
+	
+	"Hospital Services - Referred out patient(ER)":{
+      "dataValues": [
+        {
+          "categoryOptionCombo": "ye1QuAMRG5Z",
+          "dataElement": "R8gvkj9ssaI",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "categoryOptionCombo": "PflKpozpO7b", 
+          "dataElement": "R8gvkj9ssaI",
+          "row": 2,
+          "column": 2
+        }
+      ]
+    },
+	
+	
+	"Hospital Services - Diagnostic Services (USG, ECG)":{
+      "dataValues": [
+        {
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "Hy2ikWKzAUh",  
+          "row": 1,
+          "column": 2
+        },
+		{
+          "categoryOptionCombo": "kdsirVNKdhm", 
+          "dataElement": "HXPj1cIqZIC",
+          "row": 2,
+          "column": 2 
+        }
+      ]
+    }
+	
+	
+	
+  }
+}

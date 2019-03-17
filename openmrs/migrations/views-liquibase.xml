@@ -5,7 +5,10 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
 
-    <changeSet id="POSSIBLE-VIEWS-PATIENT-VIEW" author="tw" runOnChange="true">
+    
+	
+	
+	<changeSet id="POSSIBLE-VIEWS-PATIENT-VIEW" author="tw" runOnChange="true">
         <sql>
             create or replace view patient_view as
             select
@@ -97,23 +100,31 @@
     </changeSet>
     <changeSet id="POSSIBLE-VIEWS-OBS-VIEW" author="tw" runOnChange="true">
         <sql>
-            create or replace view obs_view as
-            select
-            concept_view.*,
-            obs.obs_id as obs_id,
-            obs.value_text as value_text,
-            obs.value_datetime as value_datetime,
-            obs.value_numeric as value_numeric,
-            obs.value_coded as value_coded,
-            obs.value_boolean as value_boolean,
-            obs.obs_group_id as obs_group_id,
-            obs.person_id as person_id,
-            obs.encounter_id as encounter_id,
-            obs.obs_datetime as obs_datetime,
-            obs.voided as voided
-            from obs, concept_view
-            where
-            obs.concept_id = concept_view.concept_id;
+            create or replace view  obs_view AS
+			SELECT 
+				concept_view.concept_id AS concept_id,
+				concept_view.concept_full_name AS concept_full_name,
+				concept_view.concept_short_name AS concept_short_name,
+				concept_view.concept_class_name AS concept_class_name,
+				concept_view.concept_datatype_name AS concept_datatype_name,
+				concept_view.retired AS retired,
+				concept_view.description AS description,
+				concept_view.date_created AS date_created,
+				obs.obs_id AS obs_id,
+				obs.value_text AS value_text,
+				obs.value_datetime AS value_datetime,
+				obs.value_numeric AS value_numeric,
+				obs.value_coded AS value_coded,
+				obs.obs_group_id AS obs_group_id,
+				obs.person_id AS person_id,
+				obs.encounter_id AS encounter_id,
+				obs.obs_datetime AS obs_datetime,
+				obs.voided AS voided
+			FROM
+				(obs
+				JOIN concept_view)
+			WHERE
+				(obs.concept_id = concept_view.concept_id)
         </sql>
     </changeSet>
     <changeSet id="POSSIBLE-VIEWS-RADIOLOGY-VIEW" author="tw" runOnChange="true">
@@ -138,18 +149,6 @@
             file_obs.concept_full_name = 'Document' and
             file_obs.obs_group_id = radiology_obs.obs_id and
             radiology_obs.concept_id = radiology_view.concept_id;
-        </sql>
-    </changeSet>
-    <changeSet id="POSSIBLE-VIEWS-PERSON-IDS-VIEW" author="tw" runOnChange="true">
-        <sql>
-            create or replace view person_ids as
-            (select o.person_id,
-            o.concept_full_name as concept_full_name,
-            o.value_concept_full_name as value_concept_full_name,
-            p.gender as gender,
-            o.obs_datetime as obs_datetime
-            from valid_coded_obs_view o
-            inner join person p on o.person_id = p.person_id);
         </sql>
     </changeSet>
     <changeSet id="POSSIBLE-VIEWS-nonVoidedConceptFullName" author="tw" runOnChange="true">
@@ -194,4 +193,31 @@
             WHERE !observation.voided;
         </sql>
     </changeSet>
+	
+	<changeSet id="POSSIBLE-VIEWS-CODED-OBS-VIEW" author="Laxman" runOnChange="true">
+	 <sql>
+	 CREATE OR REPLACE
+		VIEW coded_obs_view AS
+			SELECT 
+				obs.obs_id AS obs_id,
+				obs.concept_id AS concept_id,
+				obs.person_id AS person_id,
+				obs.value_coded AS value_coded,
+				obs.obs_group_id AS obs_group_id,
+				obs.obs_datetime AS obs_datetime,
+				obs.encounter_id AS encounter_id,
+				obs.creator AS creator,
+				reference_concept.concept_full_name AS concept_full_name,
+				value_concept.concept_full_name AS value_concept_full_name,
+				obs.voided AS voided
+			FROM
+				((obs
+				JOIN concept_view reference_concept ON (((reference_concept.concept_id = obs.concept_id)
+					AND ((reference_concept.concept_datatype_name = 'Coded')
+					OR (reference_concept.concept_datatype_name = 'Boolean')))))
+				LEFT JOIN concept_view value_concept ON ((value_concept.concept_id = obs.value_coded)))
+	 
+	 </sql>
+    </changeSet>
+	
 </databaseChangeLog>
