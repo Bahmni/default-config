@@ -1999,14 +1999,14 @@
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "nCex1XJPFYj",
-					"row": 7,
+					"row": 8,
 					"column": 3
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 8,
+					"row": 7,
 					"column": 3
 				},
 				{
@@ -2020,14 +2020,14 @@
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "nCex1XJPFYj",
-					"row": 7,
+					"row": 8,
 					"column": 4
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 8,
+					"row": 7,
 					"column": 4
 				},
 				{
@@ -2041,14 +2041,14 @@
 					"_comment": "Total no of PLHIV served this month for OI services< 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "nCex1XJPFYj",
-					"row": 7,
+					"row": 8,
 					"column": 5
 				},
 				{
 					"_comment": "Total no of PLHIV served this month for OI services5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "uAHiqtsg3mT",
-					"row": 8,
+					"row": 7,
 					"column": 5
 				},
 				{
@@ -2067,14 +2067,14 @@
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "z9I5hGSrWej",
-					"row": 4,
+					"row": 5,
 					"column": 3
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "qFEUUI51eil",
-					"row": 5,
+					"row": 4,
 					"column": 3
 				},
 				{
@@ -2088,14 +2088,14 @@
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "z9I5hGSrWej",
-					"row": 4,
+					"row": 5,
 					"column": 4
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "qFEUUI51eil",
-					"row": 5,
+					"row": 4,
 					"column": 4
 				},
 				{
@@ -2109,14 +2109,14 @@
 					"_comment": "PLHA diagnosed & treated for OI this month< 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "z9I5hGSrWej",
-					"row": 4,
+					"row": 5,
 					"column": 5
 				},
 				{
 					"_comment": "PLHA diagnosed & treated for OI this month5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "qFEUUI51eil",
-					"row": 5,
+					"row": 4,
 					"column": 5
 				},
 				{
@@ -2133,14 +2133,14 @@
 					"_comment": "Assessed for TB this month < 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "RbaLxS0Wc0v",
-					"row": 10,
+					"row": 11,
 					"column": 3
 				},
 				{
 					"_comment": "Assessed for TB this month 5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "bM1gsyyDiNj",
-					"row": 11,
+					"row": 10,
 					"column": 3
 				},
 				{
@@ -2154,14 +2154,14 @@
 					"_comment": "Assessed for TB this month < 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "RbaLxS0Wc0v",
-					"row": 10,
+					"row": 11,
 					"column": 4
 				},
 				{
 					"_comment": "Assessed for TB this month 5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "bM1gsyyDiNj",
-					"row": 11,
+					"row": 10,
 					"column": 4
 				},
 				{
@@ -2175,14 +2175,14 @@
 					"_comment": "Assessed for TB this month < 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "RbaLxS0Wc0v",
-					"row": 10,
+					"row": 11,
 					"column": 5
 				},
 				{
 					"_comment": "Assessed for TB this month 5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "bM1gsyyDiNj",
-					"row": 11,
+					"row": 10,
 					"column": 5
 				},
 				{
@@ -2203,14 +2203,14 @@
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 1,
+					"row": 2,
 					"column": 3
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-F",
 					"categoryOptionCombo": "fWqT46wDX5G",
 					"dataElement": "eWA0r7teWoX",
-					"row": 2,
+					"row": 1,
 					"column": 3
 				},
 				{
@@ -2224,14 +2224,14 @@
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 1,
+					"row": 2,
 					"column": 4
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-M",
 					"categoryOptionCombo": "mF1o6p14lxL",
 					"dataElement": "eWA0r7teWoX",
-					"row": 2,
+					"row": 1,
 					"column": 4
 				},
 				{
@@ -2245,14 +2245,14 @@
 					"_comment": "HIV Patients initiated IPT this month (new) < 5 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "KSkwqLrT0Cs",
-					"row": 1,
+					"row": 2,
 					"column": 5
 				},
 				{
 					"_comment": "HIV Patients initiated IPT this month (new) 5- 14 years-TG",
 					"categoryOptionCombo": "YDmqM7oj6C1",
 					"dataElement": "eWA0r7teWoX",
-					"row": 2,
+					"row": 1,
 					"column": 5
 				},
 				{
@@ -2261,9 +2261,80 @@
 					"dataElement": "S65XqzNvhKC",
 					"row": 3,
 					"column": 5
+				},
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+				{
+					"_comment": "New clients on TB treatment < 5 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "r9qMm46D7Qi",
+					"row": 14,
+					"column": 3
+				},
+				{
+					"_comment": "New clients on TB treatment 5- 14 years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "IBC2wabbulL",
+					"row": 13,
+					"column": 3
+				},
+				{
+					"_comment": "New clients on TB treatment ≥ 15 Years-F",
+					"categoryOptionCombo": "fWqT46wDX5G",
+					"dataElement": "WDuhYBse9jq",
+					"row": 15,
+					"column": 3
+				},
+				{
+					"_comment": "New clients on TB treatment < 5 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "r9qMm46D7Qi",
+					"row": 14,
+					"column": 4
+				},
+				{
+					"_comment": "New clients on TB treatment 5- 14 years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "IBC2wabbulL",
+					"row": 13,
+					"column": 4
+				},
+				{
+					"_comment": "New clients on TB treatment ≥ 15 Years-M",
+					"categoryOptionCombo": "mF1o6p14lxL",
+					"dataElement": "WDuhYBse9jq",
+					"row": 15,
+					"column": 4
+				},
+				{
+					"_comment": "New clients on TB treatment < 5 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "r9qMm46D7Qi",
+					"row": 14,
+					"column": 5
+				},
+				{
+					"_comment": "New clients on TB treatment 5- 14 years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "IBC2wabbulL",
+					"row": 13,
+					"column": 5
+				},
+				{
+					"_comment": "New clients on TB treatment ≥ 15 Years-TG",
+					"categoryOptionCombo": "YDmqM7oj6C1",
+					"dataElement": "WDuhYBse9jq",
+					"row": 15,
+					"column": 5
 				}
-
-
 
 			]
 		}

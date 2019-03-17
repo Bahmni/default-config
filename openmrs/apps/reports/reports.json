@@ -319,8 +319,8 @@
 		}
 	},
 
-		"07 Family Planning Program": {
-		"name": "07 Family Planning Program",
+		"07-Family Planning Program": {
+		"name": "07-Family Planning Program",
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
@@ -832,7 +832,7 @@
 					}
 				},
 				{
-					"name": "HIV-AIDS Program Opportunistic Infection TB and FP(HIV Patients received CPT)",
+					"name": "HIV-AIDS Program Opportunistic Infection - TB and FP(HIV Patients received CPT)",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/13-HIV_AIDS/13_5_Opportunistic_Infection_TB_FP_HIV_Patients_Received_CPT.sql"
@@ -1009,7 +1009,7 @@
 					"name": "OPD Surgical Problems(Total and New OPD)",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_Surgical_Problem_Total _OPD_New_Old.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/15-OPD/15-15_Surgical_Problem_Total_OPD_New_Old.sql"
 					}
 				}
 			]

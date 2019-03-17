@@ -24,7 +24,7 @@
             "Diabetes, Progress",
             "Diabetes-Counseling",
             "Discharge Note",
-            "DRTuberculosis, Intake Note",
+            "DR TB Intake note",
             "ECG Notes", 
             "ER General Notes",
             "HIV Testing and Counseling (HTC)",
@@ -54,8 +54,8 @@
             "Sexually Transmitted Infections",
             "Stroke OPD",
             "Trauma Notes",
-            "Tuberculosis, Intake",
-            "Tuberculosis, Follow up note",
+            "Tuberculosis, Intake Note",
+            "Tuberculosis Follow up note",
             "DR TB Follow up Note",
             "USG Notes",
             "TEST TEMPLATE (टेस्ट टेम्प्लेट)",
@@ -75,7 +75,8 @@
             "Post Delivery Family Planning Checklist",
             "Prevention of Mother-to-Child Transmission Intake Template",
             "Reproductive Health-Note",
-            "Safe Abortion"
+            "Safe Abortion",
+	    "Safe abortion QI note"
         ],
         "lessThanTwoMonths":[
             "CBIMNCI (<2 months child)",

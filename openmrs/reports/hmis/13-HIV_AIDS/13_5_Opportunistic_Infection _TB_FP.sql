@@ -25,14 +25,11 @@ FROM
         AND question_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('HIVTC, Any OI in past 3 months?' , 
+        question_concept_name.name IN ('HIVTC, Any OI in past 3 months?' ,
         'HIVTC, Opportunistic Infection Diagnosis',
-        'HIVTC, HIV care IPT started',
         'HIVTC, TB Screened',
-        'HIVTC, TB Treatment start date',
-        'HIVTC, Need Family Planning assessment',
-        'HIVTC, FP methods used by the patient',
-        'HIVTC-Progress Refer for FP'
+        'HIVTC, HIV care IPT started', 
+        'HIVTC, TB Treatment start date'
         )
     ORDER BY answer_name DESC) first_question
         INNER JOIN
@@ -68,12 +65,10 @@ FROM
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
         AND cn1.name IN ('HIVTC, Any OI in past 3 months?' ,
         'HIVTC, Opportunistic Infection Diagnosis',
+        'HIVTC, TB Screened',
         'HIVTC, HIV care IPT started', 
-         'HIVTC, TB Screened',
-        'HIVTC, TB Treatment start date',
-        'HIVTC, Need Family Planning assessment', 
-        'HIVTC, FP methods used by the patient',
-        'HIVTC-Progress Refer for FP'
+        'HIVTC, TB Treatment start date'
+        
      )
         AND o1.voided = 0
         AND cn1.voided = 0
@@ -87,5 +82,5 @@ FROM
         INTERVAL reporting_age_group.min_days DAY)) AND (DATE_ADD(DATE_ADD(patients.birthdate,
             INTERVAL reporting_age_group.max_years YEAR),
         INTERVAL reporting_age_group.max_days DAY))
-GROUP BY first_question.answer_name , reporting_age_group.name;
-
+GROUP BY first_question.answer_name , reporting_age_group.name
+Order By first_question.answer_name, reporting_age_group.name asc;
