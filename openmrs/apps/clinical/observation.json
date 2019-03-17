@@ -63,7 +63,10 @@
 	    "Family Planning Template",
             "Family Planning and Reproductive Health Template",
 	    "Osteoarthritis QI note",
-	    "Safe abortion QI note"
+	    "Safe abortion QI note",
+	    "Leprosy note",
+	    "Kalazar note",
+	    "Animal bite note"
         ],
         "male": [],
         "female": [
@@ -71,12 +74,13 @@
             "ANC-USG Note",
             "CHP Antenatal Care",
             "Delivery note",
-            "PNC Note",
+            "PNC note",
             "Post Delivery Family Planning Checklist",
             "Prevention of Mother-to-Child Transmission Intake Template",
             "Reproductive Health-Note",
             "Safe Abortion",
-	    "Safe abortion QI note"
+	    "Safe abortion QI note",
+	    "Antenatal checkup(ANC) note"
         ],
         "lessThanTwoMonths":[
             "CBIMNCI (<2 months child)",
@@ -89,8 +93,9 @@
         "preschooler": [
             "CBIMNCI (2 to 59 months child)",
             "Nutrition",
-            "IMAM Program",
-            "MAM-SAM Counseling Note"
+            "MAM-SAM Counseling Note",
+	    "IMAM note",
+	    "Vaccine note"
         ]
     }
 
