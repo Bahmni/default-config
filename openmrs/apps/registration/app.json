@@ -46,8 +46,7 @@
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
+                "showAddressFieldsTopDown": true
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
@@ -109,7 +108,7 @@
                 },
                 "personAttributes": {
                     "fields": [
-                            "nick_name"
+                            "NICK_NAME"
                     ]
                 }
             },		
@@ -118,7 +117,7 @@
 		"customAttributes": { 
                  "label": "Alcunha",
                     "placeholder": "Alcunha",
-                    "fields": ["nick_name"]
+                    "fields": ["NICK_NAME"]
         }
         	}    
         }

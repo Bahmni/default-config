@@ -9,7 +9,7 @@
   ],
   "config": {
     "minCharLengthToTriggerPatientSearch": 3,
-    "enableSpecialities": true,
+    "enableSpecialities": false,
     "startOfWeek": 2,
     "weekStart": "isoWeek",
     "calendarSlotDuration": "00:30",
