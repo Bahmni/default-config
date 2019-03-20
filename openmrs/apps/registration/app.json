@@ -30,7 +30,7 @@
         "patientHIVTestInformation": {
                 "title": "patientHIVTestInformation",
                 "translationKey": "REGISTRATION_HIVTEST_INFO_KEY",
-                "attributes": ["DateofHIVDiagnosis","Typeoftest","TestResult","Patient Status"],
+                "attributes": ["DateofHIVDiagnosis","Typeoftest","TEST_RESULT","PATIENT_STATUS","LOCATION_OF_TEST","SECTOR_SELECT","ATIP_SELECT","HEALTH_FACILITY_NAME","HEALTH_FACILITY_DISTRICT","HEALTH_FACILITY_PROVINCE"],
                 "order" : 4,
                 "expanded": true
         },
@@ -41,8 +41,8 @@
                 },
                 "defaults":  {
                     "class": "General",
-                    "TestResult": "HIV_Positive",
-                    "Patient Status": "Pre TARV",
+                    "TEST_RESULT": "Positive",
+                    "PATIENT_STATUS": "Pre TARV",
                     "landHolding": 2
                 }
             },
