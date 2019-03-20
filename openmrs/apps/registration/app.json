@@ -36,7 +36,8 @@
         },
                      "hidden": {
                     "attributes": [
-                        "primaryContact"
+                        "primaryContact",
+                        "TEST_RESULT"
                     ]
                 },
                 "defaults":  {
