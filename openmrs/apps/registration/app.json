@@ -22,7 +22,7 @@
         "patientTransferenceInformation": {
                 "title": "patientTransferenceInformation",
                 "translationKey": "REGISTRATION_TRANSFERENCE_INFO_KEY",
-                "attributes": ["Transferred from another HF","Date of transference","Transferred out HF name","Patient stage"],
+                "attributes": ["Transferred from another HF","Date of transference","Transferred out HF name","PATIENT_STATUS"],
                 "order" : 3,
                 "expanded": true
         },
