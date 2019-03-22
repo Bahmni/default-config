@@ -22,7 +22,7 @@
         "patientTransferenceInformation": {
                 "title": "patientTransferenceInformation",
                 "translationKey": "REGISTRATION_TRANSFERENCE_INFO_KEY",
-                "attributes": ["Transferred from another HF","Date of transference","Transferred out HF name","Patient stage"],
+                "attributes": ["Transferred from another HF","Date of transference","Transferred out HF name","Patient Status"],
                 "order" : 3,
                 "expanded": true
         },
@@ -30,7 +30,7 @@
         "patientHIVTestInformation": {
                 "title": "patientHIVTestInformation",
                 "translationKey": "REGISTRATION_HIVTEST_INFO_KEY",
-                "attributes": ["DateofHIVDiagnosis","Typeoftest","TestResult","Patient Status"],
+                "attributes": ["DateofHIVDiagnosis","Typeoftest","TestResult"],
                 "order" : 4,
                 "expanded": true
         },
