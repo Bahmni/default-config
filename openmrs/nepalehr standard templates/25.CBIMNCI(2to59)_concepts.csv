@@ -1,0 +1,162 @@
+"uuid","name","description","class","shortname","datatype","units","High Normal","Low Normal","Allow Decimal","locale","synonym.1","synonym.2","answer.1","answer.2","answer.3","answer.4","answer.5","answer.6","answer.7","answer.8","reference-term-source","reference-term-code","reference-term-relationship"
+"714d5275-9f3e-41dc-82d1-e95fcd335173","New",,"Misc","New","N/A",,,,,,"","","","","","","","","","",,,
+"cd8bf875-3c5b-4774-9326-41b5b62f5bff","Follow-up visit",,"Misc","Follow up visit","N/A",,,,,,"","","","","","","","","","",,,
+"d518c17d-25d7-458b-90bf-6ecde8acc677","CBIMNCI 2 to 59-Case",,"Misc","Case","Coded",,,,,,"","","New","Follow-up visit","","","","","","",,,
+"126ced65-6e96-4f97-9369-19a49e83325c","Referred in",,"Misc","Referred in","Boolean",,,,,,"","","","","","","","","","",,,
+"49978fdc-a60f-47e8-8695-e4d1eb19a593","OPD-Chief complaint",,"Misc","Chief complaint","Text",,,,,,"","","","","","","","","","",,,
+"88aeccd9-7816-442b-83dd-c778a0f4b367","OPD-HPI notes","<li>Location</li>
+
+	<li>Severity</li>
+
+	<li>Quality</li>
+
+	<li>Timing : Constant / Intermittent, how long did it last</li>
+
+	<li>Duration : When did it Start</li>
+
+	<li>Modifying Factors : Anything make it better or worse</li>
+
+	<li>Context : What were you doing when it started</li>
+
+	<li>Associated Signs or Symptoms</li>","Misc","History of present illness","Text",,,,,,"","","","","","","","","","",,,
+"4e6aa6f3-70b1-4722-b03a-122ec0dfd793","OPD-Pertinent system","General <br>
+HEENT<br>
+CV<br>
+Lungs<br>
+Abdomen<br>
+MSK<br>
+Skin<br>
+Neuro <br>
+Psych<br>","Misc","Pertinent system","Text",,,,,,"","","","","","","","","","",,,
+"da374383-23aa-46fa-a364-b3c96270dd99","Respiratory Rate 2-1 years","2 Months to 1 Years","Misc","1 years","Numeric",,,,,,"","","","","","","","","","",,,
+"b7f923d8-3faf-4f13-8fd2-9a7237af7440","Respiratory rate abnormal",,"Abnormal","Respiratory rate abnormal","Boolean",,,,,,"","","","","","","","","","",,,
+"292fc850-bc1f-441e-8c7c-a641ce8bf361","Childhood Illness-Temperature",,"Misc","Temperature","Numeric",,,,,,"","","","","","","","","","",,,
+"631a1e5d-a3bb-40e1-bcff-4661522cf675","CBIMNCI 2 to 59-General danger signs present","Baby cannot suck/swallow breast milk, vomits everything, convulsions (history), lethargic or unconscious, convulsions (during observation)","Misc","General danger signs present","Boolean",,,,,,"","","","","","","","","","",,,
+"a6fe244d-992d-446e-9895-cb064690fe23","Chest indrawing",,"Misc","Chest indrawing","N/A",,,,,,"","","","","","","","","","",,,
+"765ba45e-d7d8-40de-8ba8-1e6fdff93515","Strider",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"4dc8e88c-b687-4a90-8471-7ad374c6df61","Wheezing",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"6b8812ce-c687-4627-b315-613ccbd16585","Not present",,"Misc","Not present","N/A",,,,,,"","","","","","","","","","",,,
+"16f90ad4-88f1-4362-82c2-3533736482ce","Acute Respiratory Illness-Symptoms",,"Misc",,"Coded",,,,,,"","","Chest indrawing","Strider","Wheezing","Not present","","","","",,,
+"240ad25c-535f-4135-b0c5-0c6c75294d15","Acute Respiratory Illness-Days",,"Misc","Days","Numeric",,,,,,"","","","","","","","","","",,,
+"7263f850-b564-4080-89f7-f91468d6563e","CBIMNCI 2 to 59-No pneumonia",,"Misc","No pneumonia","N/A",,,,,,"","","","","","","","","","",,,
+"f5a14a96-02c6-41e4-899c-c9146f817740","CBIMNCI 2 to 59-Pneumonia",,"Misc","Pneumonia","N/A",,,,,,"","","","","","","","","","",,,
+"f4d5a4b7-c991-4392-936f-def5ae2d498b","CBIMNCI 2 to 59-Severe pneumonia",,"Misc","Severe pneumonia","N/A",,,,,,"","","","","","","","","","",,,
+"de72ae3b-9a4b-43b2-bcdf-5df9d0554d0c","CBIMNCI 2 to 59-ARI classification","*Severe pneumonia 
+
+<li>presence of danger sign
+
+<li>presence of stridor in a silent child
+
+ *Pneumonia 
+
+<li>chest in-drawing or wheezing)
+
+ *No Pneumonia (no sign of severe pneumonia and pneumonia)","Misc","ARI classification","Coded",,,,,,"","","CBIMNCI 2 to 59-No pneumonia","CBIMNCI 2 to 59-Pneumonia","CBIMNCI 2 to 59-Severe pneumonia","","","","","",,,
+"0d13aa36-0b02-470d-ad4a-24a64d361607","Diarrhea",,"Misc","Diarrhea","N/A",,,,,,"","","","","","","","","","",,,
+"2ab1ed22-0d90-4f69-9609-c4a07c60774f","Chronic diarrhea",,"Misc","Chronic diarrhea","N/A",,,,,,"","","","","","","","","","",,,
+"2e39c143-202b-4ddb-8813-64ca1b061c6f","Dysentery",,"Misc","Dysentery","N/A",,,,,,"","","","","","","","","","",,,
+"6b8812ce-c687-4627-b315-613ccbd16585","Not present",,"Misc","Not present","N/A",,,,,,"","","","","","","","","","",,,
+"ad9c1be2-5fcd-4e77-b62b-7721d63b8900","Childhood Illness-Diarrhoea present","watery stool three times or more in 24 hours, Dysentery: Presence of blood in the stool, Chronic Diarrhoea - Diarrhoea for more than 14 days","Misc","Diarrhoea present","Coded",,,,,,"","","Diarrhea","Chronic diarrhea","Dysentery","Not present","","","","",,,
+"a75e9ef9-121c-4dbd-9e03-e4784e107b69","Slowly",,"Misc","Slowly","N/A",,,,,,"","","","","","","","","","",,,
+"34609927-c87e-47f0-8817-779a067a4024","Very slowly",,"Misc","Very slowly","N/A",,,,,,"","","","","","","","","","",,,
+"ca75d155-5b38-4284-b8a3-0112b6a40804","Skin pinch",,"Misc","Skin pinch","Coded",,,,,,"","","Slowly","Very slowly","","","","","","",,,
+"d1ca0f4d-8c92-4cab-97f3-f6ace7641aa9","No dehydration",,"Misc","No dehydration","N/A",,,,,,"","","","","","","","","","",,,
+"2753214b-67a1-42ab-ae8c-46b504904f22","Some dehydration",,"Misc","Some dehydration","N/A",,,,,,"","","","","","","","","","",,,
+"13309b73-0315-4039-9503-ad916393491a","Severe dehydration",,"Misc","Severe dehydration","N/A",,,,,,"","","","","","","","","","",,,
+"38d06edc-3d93-4025-83ad-9d1b43d24f73","Not applicable",,"Misc","Not applicable","N/A",,,,,,"NA","","","","","","","","","",,,
+"253012a5-5525-4f3a-bb2e-c87427eef4ba","Childhood Illness-Dehydration status","Severe Dehydration (If any of two given signs present)
+
+	<li>Lethargic or unconscious
+
+        <li>Body movement less than normal
+
+	<li>Sunken eyes
+
+	<li>Skin pinch goes back very slowly (>2 seconds)
+
+	<li>Infant less than one month of age
+
+Some dehydration: 
+	<li>Irritable
+ 
+	<li>Sunken eyes
+
+	<li>Skin pinch goes back slowly (<2 seconds)
+                                                           
+No Dehydration:
+
+	<li>No sufficient signs to classify under severe or some dehydration","Misc","Dehydration status","Coded",,,,,,"","","No dehydration","Some dehydration","Severe dehydration","Not applicable","","","","",,,
+"79e89866-c222-4a87-9ec8-3a70e3855e4b","Childhood Illness-Fever present",,"Misc","Fever present","Boolean",,,,,,"","","","","","","","","","",,,
+"a96eb491-8187-4a4a-99e7-ca67d6fe0c5d","Days of fever",,"Misc","How many days?","Numeric",,,,,,"","","","","","","","","","",,,
+"b61003a8-9c4e-4dcb-af58-5f249ecbd8b9","CBIMNCI 2 to 59-Nature of fever","Describe the nature of fever in terms of frequency, diurnal pattern, severity, +- chills and rigor, or any other specific features","Misc","Nature of fever","Text",,,,,,"","","","","","","","","","",,,
+"15a2ed54-8a9a-44db-83bd-187cbcba7bc8","High",,"Misc","High","N/A",,,,,,"","","","","","","","","","",,,
+"c64f90a1-ee18-477e-a1ff-a64472f9c0c1","Low",,"Misc","Low","N/A",,,,,,"","","","","","","","","","",,,
+"1273a31c-8c43-4288-8b8a-e245b778124e","Very low",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"b17058df-b93e-4f73-a221-02b9415d41ce","Risk free",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"423eb4a0-e135-402d-bc26-fe8669d60756","Stratified malaria risk","Also look for travel history in last 30 days","Misc",,"Coded",,,,,,"","","High","Low","Very low","Risk free","","","","",,,
+"d3cf0b17-6391-4bb8-8b34-8ef98c5001f0","CBIMNCI 2 to 59-Complicated malaria","General danger signs present; Neck stiffness; General danger signs with Microscopic/RDT positive (Send for investigations)","Misc","Complicated malaria","Boolean",,,,,,"","","","","","","","","","",,,
+"2dc9ae6e-a56e-492e-9547-d55b947f1154","CBIMNCI 2 to 59-Falciparum malaria","Microscopic/RDT positive and Faciparum Positive","Misc","Falciparum malaria","Boolean",,,,,,"","","","","","","","","","",,,
+"7fb5491a-46cc-4cff-9d57-5cfc3d04c4d4","CBIMNCI 2 to 59-Non falciparum malaria","Microscopic RDT Positive and Falciparum Negative","Misc","Non falciparum malaria","Boolean",,,,,,"","","","","","","","","","",,,
+"62e7fade-b8a2-45fc-9658-10381a8792da","CBIMNCI 2 to 59-Fever without malaria","Running nose, Measles like rash, other causes of fever and Microscopic RDT Negative","Misc","Fever without malaria","Boolean",,,,,,"","","","","","","","","","",,,
+"9b5d3a4e-84f8-477d-b4ca-9cf670b86329","CBIMNCI 2 to 59-Other cause of fever","General Danger signs present; Neck stiffness","Misc","Other cause of fever","Text",,,,,,"","","","","","","","","","",,,
+"a8981526-ab10-4e3a-92df-56a7b35c4636","CBIMNCI 2 to 59-Measles",,"Misc","Measles","Boolean",,,,,,"","","","","","","","","","",,,
+"e81057ba-0622-44f0-88a5-9a31771bc25d","CBIMNCI 2 to 59-Measles in last 3 months","Look for oral lesions and their extension; eye discharge, cloudy cornea","Misc","Measles in last 3 months","Boolean",,,,,,"","","","","","","","","","",,,
+"a0c855b4-f1e7-4bf9-9430-d3a54db4bce3","CBIMNCI 2 to 59-Severe complicated measles","General danger signs, cloudy cornea, several oral lesions with/without extension","Misc","Severe complicated measles","Boolean",,,,,,"","","","","","","","","","",,,
+"6981fb6b-3c50-4ca8-b96e-7b4876476f94","CBIMNCI 2 to 59-Measles with opthalmic complication","Eye discharge; oral lesions","Misc","Measles with opthalmic complication","Boolean",,,,,,"","","","","","","","","","",,,
+"248b656c-e9d4-42d5-b78d-7b0ebf32d894","Ear pain",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"1a67b300-167b-4145-95dc-665482e4b673","Tender swelling behind the ear",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"8fb18f58-230d-4fa6-a006-e08f14e557d7","Ear discharge",,"Misc","Ear discharge","N/A",,,,,,"","","","","","","","","","",,,
+"6b8812ce-c687-4627-b315-613ccbd16585","Not present",,"Misc","Not present","N/A",,,,,,"","","","","","","","","","",,,
+"3e6c27c2-d128-4e1f-972d-bea444ad41fc","Ear infections symptoms",,"Misc","Symptoms","Coded",,,,,,"","","Ear pain","Tender swelling behind the ear","Ear discharge","Not present","","","","",,,
+"68a41f95-91e0-476d-8fb1-03dd1b40183e","Ear discharge days",,"Misc","Days","Numeric",,,,,,"","","","","","","","","","",,,
+"01ca49c0-e4ce-4ed6-9a2c-5af76a69b662","Ear infection days",,"Misc","Days","Numeric",,,,,,"","","","","","","","","","",,,
+"29b1d3c4-ac07-492c-b33f-bab280a8ad1d","Acute ear infection",,"Misc","Acute ear infection","N/A",,,,,,"","","","","","","","","","",,,
+"39ab96e8-d0b3-4805-83c3-ebfe77d84b2f","Chronic ear infection",,"Misc","Chronic ear infection","N/A",,,,,,"","","","","","","","","","",,,
+"10c18ea5-fdfb-4ecb-ba6e-393f97acb7af","Mastoiditis",,"Misc","Mastoiditis","N/A",,,,,,"","","","","","","","","","",,,
+"6b8812ce-c687-4627-b315-613ccbd16585","Not present",,"Misc","Not present","N/A",,,,,,"","","","","","","","","","",,,
+"c3345646-e4b2-4605-959a-8073502b6858","CBIMNCI 2 to 59-Ear infection present","<li>Acute ear infection (ear pain or discharge from ear for <14 days) 
+
+<li>Chronic ear infection (no pain and ear discharge for > 14 days)
+
+<li>Mastoiditis (pain and swelling behind ear)
+
+<li>No ear infection (no signs from above)","Misc","Ear infection present","Coded",,,,,,"","","Acute ear infection","Chronic ear infection","Mastoiditis","Not present","","","","",,,
+"791ca757-963e-433e-9104-9d63c67212c5","Normal weight",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"df08934b-5ba5-4583-a40c-515fcfa28a9e","Low weight",,"Misc","Low weight","N/A",,,,,,"","","","","","","","","","",,,
+"e6f85ea2-0cc6-4e5a-b47e-b40a7aab4c32","Very low weight",,"Misc","Very low weight","N/A",,,,,,"","","","","","","","","","",,,
+"9873aa65-146d-483e-8455-90ae37b0fbe3","CBIMNC 2_59-Weight condition",,"Misc",,"Coded",,,,,,"","","Normal weight","Low weight","Very low weight","","","","","",,,
+"a36f148e-335f-4522-b0c4-7d5545c5a8aa","Some",,"Misc","Some","N/A",,,,,,"","","","","","","","","","",,,
+"c0e4f196-72db-4f5a-a01a-9d3bb28d9011","Severe",,"Misc","Severe","N/A",,,,,,"","","","","","","","","","",,,
+"cfe5f5cb-e12f-4e17-943c-af4da37c453e","CBIMNCI 2 to 59-Pallor",,"Misc","Pallor","Coded",,,,,,"","","Some","Severe","","","","","","",,,
+"9580e09a-075d-4ce2-b7b8-da64bb089407","CBIMNCI 2 to 59-Anaemia",,"Misc","Anaemia","Boolean",,,,,,"","","","","","","","","","",,,
+"25679673-9b7f-45fc-8fa6-6cb1e15c8468","CBIMNCI 2 to 59-Other diagnosis",,"Misc","Other diagnosis than above","Boolean",,,,,,"","","","","","","","","","",,,
+"18bc0f26-839f-44c0-9a56-39165ab9dde4","CBIMNCI 2 to 59-If other diagnosis",,"Misc","If other diagnosis, specify","Text",,,,,,"","","","","","","","","","",,,
+"2f338a6d-9513-4744-960a-9b9c53a0a704","Childhood Illness-Counseling provided",,"Misc","Counseling provided","Boolean",,,,,,"","","","","","","","","","",,,
+"f3a5de3d-79a4-451f-b188-8b8e5c34d6fa","Regular follow up",,"Misc","Regular follow up","N/A",,,,,,"","","","","","","","","","",,,
+"96c55e7b-a8f4-4038-a88d-c8f72b2ef51e","Immediate visit",,"Misc","Immediate visit","N/A",,,,,,"","","","","","","","","","",,,
+"a794c301-c1f7-40cf-b0f4-c2223c9bfbf8","Food",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"afdb0455-c87b-4056-9e4e-7977a00e1559","Operative fluids",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"20201719-3f07-4231-9c6f-6ebea635b901","CBIMNCI 2 to 59-Counseling purpose",,"Misc","Counseling purpose","Coded",,,,,,"","","Regular follow up","Immediate visit","Food","Operative fluids","","","","",,,
+"99c01719-46e7-46b0-9980-4c9878c52d21","Childhood Illness-Vitamin A provided",,"Misc","Vitamin A provided","Numeric",,,,,,"","","","","","","","","","",,,
+"60d9b677-3c88-4d33-860e-53a3b876aa26","ARI",,"Misc","ARI","N/A",,,,,,"","","","","","","","","","",,,
+"f31eb01a-2b40-4c13-bb45-3a2d99724c0f","Diarrhoea",,"Misc","Diarrhoea","N/A",,,,,,"","","","","","","","","","",,,
+"6a133023-41ec-4886-880a-e651aadd29b9","Fever",,"Misc","Fever","N/A",,,,,,"","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","",,,
+"79b17e5f-85b4-46ea-ac76-74a9629151f3","Malnutrition",,"Misc","Malnutrition","N/A",,,,,,"","","","","","","","","","",,,
+"a8824432-8641-4740-afdd-87a73226eb98","CBIMNCI 2 to 59-Refered out",,"Misc","Refered out","Coded",,,,,,"","","ARI","Diarrhoea","Fever","Others","Malnutrition","","","",,,
+"61253a32-891c-46da-9c54-829452fc362c","CBIMNCI 2 to 59-Advised for OTP/local health facility",,"Misc","Follow up advised for OTP/local health facility","Boolean",,,,,,"","","","","","","","","","",,,
+"a74ae51b-5ad9-4b63-8b63-ba8ee8ce05ce","CBIMNCI 2 to 59-Others",,"Misc","Others","Text",,,,,,"","","","","","","","","","",,,
+"2bd9c426-faf1-4531-9b47-21f1a7fd7e99","Follow up days at BH",,"Misc","Follow up days at BH","Text",,,,,,"","","","","","","","","","",,,
+"d7eb6023-4085-48d1-986f-3885aea54f43","Worse",,"Misc","Worse","N/A",,,,,,"","","","","","","","","","",,,
+"60964a9c-ecff-41d2-bb5c-197dd7f911ca","Same",,"Misc","Same","N/A",,,,,,"","","","","","","","","","",,,
+"45836ad4-daab-469d-adab-4f7cdae1df67","Improved",,"Misc","Improved","N/A",,,,,,"","","","","","","","","","",,,
+"00306785-d35c-49f7-afc5-b7cf4acb738f","CBIMNCI 2 to 59-Follow up result",,"Misc","Follow up result","Coded",,,,,,"","","Worse","Same","Improved","","","","","",,,
+"35492a7e-b558-4e6b-91e5-d4e644b2612c","Childhood Illness-Assessment/plan",,"Misc","Assessment/plan","Text",,,,,,"","","","","","","","","","",,,
+"1a81bcea-b033-43b2-ba1e-f52e45317e3f","Amoxicillin",,"Drug",,"N/A",,,,,,"","","","","","","","","","",,,
+"ad286704-6916-4d54-9f20-2f5c4f0719cd","IV fluid",,"Drug","IV fluid","N/A",,,,,,"","","","","","","","","","",,,
+"36346b65-2fb2-458d-bc4c-94e7a8a690e8","Anti helminthes",,"Drug","Anti helminthes","N/A",,,,,,"","","","","","","","","","",,,
+"a034731c-5ac5-4ec9-baee-2c44dfae9005","Retinol (vitamin A)",,"Drug",,"N/A",,,,,,"","","","","","","","","","",,,
+"5633cdd2-91e2-4bd4-a77c-9b14645c188e","ORS and Zinc",,"Drug",,"N/A",,,,,,"","","","","","","","","","",,,
+"2ba4ffd1-1223-4714-b75c-c610ea27a059","ORS only",,"Drug","ORS only","N/A",,,,,,"","","","","","","","","","",,,
+"3aef42af-d3d9-4cc7-bd59-547c476641a4","Other antibiotics",,"Misc","Other antibiotics","N/A",,,,,,"","","","","","","","","","",,,
+"74cbb7c3-3364-4fc6-a3d4-e93cba06b016","CBIMNCI 2 to 59-Treated with",,"Misc","Treated with","Coded",,,,,,"","","Amoxicillin","IV fluid","Anti helminthes","Retinol (vitamin A)","ORS and Zinc","ORS only","Other antibiotics","",,,

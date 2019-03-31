@@ -1,0 +1,7 @@
+uuid,name,description,class,shortname,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13,child.14,reference-term-source,reference-term-code,reference-term-relationship
+,Discharge Note-Aama Program,,Test,Aama Program,Discharge note-Transportation incentive,Discharge note-ANC incentive,,,,,,,,,,,,,,,
+,Discharge note-Mother Details,,Misc,Mother?s details,Discharge note-Contraceptive chosen,Discharge Note-Aama Program,,,,,,,,,,,,,,,
+,Discharge Note-Infant detail,,Misc,Infant detail,Discharge note-Infant condition,Discharge note-Complications during hospital stay,Discharge note-Intervention during hospital stay,,,,,,,,,,,,,,
+,Discharge Note-Delivery Details,,Misc,Delivery Details,Discharge note-Mother Details,Discharge Note-Infant detail,,,,,,,,,,,,,,,
+,IMAM-Discharge,,Test,,Discharge note-IMAM admission weight,Discharge note-IMAM discharge weight,IMAM-Discharge status,,,,,,,,,,,,,,
+,Discharge note,,Misc,Discharge note,Discharge note-Admission date,Discharge note-Discharge date,Discharge note-Discharged to,Discharge note-Diagnosis,Discharge note-Inpatient outcome,Discharge note-Major surgery in this admission,Discharge note-Post operative complications,Discharge note-Brief hospital course,Discharge Note-Delivery Details,IMAM-Discharge,Discharge note-Medication on discharge,Discharge note-Followup instructions,Discharge note-Name of the doctor for more information,,,,

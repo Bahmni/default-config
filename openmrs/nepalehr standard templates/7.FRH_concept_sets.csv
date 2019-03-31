@@ -1,0 +1,4 @@
+uuid,name,description,class,shortname,child.1,child.2,child.3,child.4,child.5,child.6,child.7,child.8,child.9,child.10,child.11,child.12,child.13,child.14,child.15,child.16,child.17,reference-term-source,reference-term-code,reference-term-relationship
+,FRH-New users,,Misc,New users,FRH-short acting method provided,FRH-Long acting and permanent method,FRH-Other procedure,,,,,,,,,,,,,,,,,
+,FRH-Continuous user,,Misc,Continuous user,FRH-Existing continued,FRH-Discontinued,FRH-Reason for discontinue,FRH-New method chosen,,,,,,,,,,,,,,,,
+,Family planning and reproductive health template,,Misc,Family planning and reproductive health,FP-Users type,Referred in,FRH-counselling done,FRH-Consent obtained,FRH-New users,FRH-Continuous user,FRH-Units provided,FRH-Procedure follow up,FRH-Anesthesia applied,FRH-Sterile technique,FRH-Complications,FRH-Additional findings,FRH-Client contact number,FRH-Contact number,FRH-Guardian name,FRH-Guardian relationship,,,,

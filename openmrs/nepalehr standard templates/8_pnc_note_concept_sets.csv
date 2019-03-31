@@ -1,0 +1,4 @@
+"uuid","name","description","class","shortname","child.1","child.2","child.3","child.4","child.5","child.6","child.7","child.8","child.9","child.10","child.11","child.12","reference-term-source","reference-term-code","reference-term-relationship"
+"33a873ef-78d2-4799-865e-77a979e45a1f","PNC-PNC visit",,"Misc","PNC visit","PNC, PNC visit date","Referred in","PNC-Visit number","PNC-Visit type","PNC-Obstructive complication","PNC-Treatment suggestion during postpartum","PNC-Blood transfusion quantity","PNC-IFA tablets provided","PNC-Vitamin a capsules provided","PNC-Remarks","PNC-Post","",,,
+"d5c0a0e6-4369-42ca-a6ad-8b9f41618cb8","PNC-HIV program",,"Misc","HIV Program","PNC-HIV counselling","PNC-HIV tested","HCT, Result if tested","","","","","","","","","",,,
+"3faf08dd-0b79-4978-a2b7-e74d4e04d9cf","PNC note",,"Misc","PNC note","PNC-PNC visit","PNC-HIV program","","","","","","","","","","",,,

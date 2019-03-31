@@ -1,0 +1,109 @@
+"uuid","name","description","class","shortname","datatype","units","High Normal","Low Normal","Allow Decimal","locale","synonym.1","synonym.2","answer.1","answer.2","answer.3","answer.4","answer.5","answer.6","answer.7","answer.8","reference-term-source","reference-term-code","reference-term-relationship"
+"714d5275-9f3e-41dc-82d1-e95fcd335173","New",,"Misc","New","N/A",,,,,,"","","","","","","","","","",,,
+"df29e3df-9d29-41eb-929f-2b42b10869f2","Follow up",,"Misc","Follow up","N/A",,,,,,"","","","","","","","","","",,,
+"e92b6cf4-3d1c-4319-8625-af09a0604bd3","Childhood Illness-<2 months",,"Misc","CBIMNCI <2-Case","Coded",,,,,,"","","New","Follow up","","","","","","",,,
+"126ced65-6e96-4f97-9369-19a49e83325c","Referred in",,"Misc","Referred in","Boolean",,,,,,"","","","","","","","","","",,,
+"49978fdc-a60f-47e8-8695-e4d1eb19a593","OPD-Chief complaint",,"Misc","Chief complaint","Text",,,,,,"","","","","","","","","","",,,
+"88aeccd9-7816-442b-83dd-c778a0f4b367","OPD-HPI notes","<li>Location</li>
+
+	<li>Severity</li>
+
+	<li>Quality</li>
+
+	<li>Timing : Constant / Intermittent, how long did it last</li>
+
+	<li>Duration : When did it Start</li>
+
+	<li>Modifying Factors : Anything make it better or worse</li>
+
+	<li>Context : What were you doing when it started</li>
+
+	<li>Associated Signs or Symptoms</li>","Misc","History of present illness","Text",,,,,,"","","","","","","","","","",,,
+"5292d989-f892-4c67-82ec-ac060f5c2292","Respiratory rate","(Match RR with age group and if increased prompt ARI section)				 (<50 for 2-12 months, <40 for 1-5 years)","Misc","Respiratory rate","Numeric",,,,,,"","","","","","","","","","",,,
+"b7f923d8-3faf-4f13-8fd2-9a7237af7440","Respiratory rate abnormal",,"Abnormal","Respiratory rate abnormal","Boolean",,,,,,"","","","","","","","","","",,,
+"292fc850-bc1f-441e-8c7c-a641ce8bf361","Childhood Illness-Temperature",,"Misc","Temperature","Numeric",,,,,,"","","","","","","","","","",,,
+"6a133023-41ec-4886-880a-e651aadd29b9","Fever",,"Misc","Fever","N/A",,,,,,"","","","","","","","","","",,,
+"0a3bf47c-ef6b-4c0c-959b-f688c6a4529d","Severe hypothermia",,"Misc","Severe hypothermia","N/A",,,,,,"","","","","","","","","","",,,
+"c4e757f6-81e3-4876-9827-78dd3b9e189c","Hypothermia",,"Misc","Hypothermia","N/A",,,,,,"","","","","","","","","","",,,
+"ab542035-05a7-4eda-9b83-419a4fcf9b23","Normal",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"e8dca248-eccf-48ae-9ad5-49062424f884","CBIMNCI <2-Status","Hypothermia (<35.5 oC = severe hypothermia, 35.5 – 36.5 oC hypothermia, 37.5 oC = fever)","Misc","Status","Coded",,,,,,"","","Fever","Severe hypothermia","Hypothermia","Normal","","","","",,,
+"2bb02569-af33-420d-90cb-28878f9ab4f8","Convulsion",,"Misc","Convulsion","N/A",,,,,,"","","","","","","","","","",,,
+"b683e127-1e8c-4f75-bad9-3a9631a8dd50","Severe chest indrawing",,"Misc","Severe chest indrawing","N/A",,,,,,"","","","","","","","","","",,,
+"5aa9ec45-bdef-41fa-b79a-2bb774cb4bc0","Grunting",,"Misc","Grunting","N/A",,,,,,"","","","","","","","","","",,,
+"499f0052-76ba-45ac-b28d-4bf2fcfa898d","Bulging fontanelle",,"Misc","Bulging fontanelle","N/A",,,,,,"","","","","","","","","","",,,
+"8301c2fc-23bb-4dbf-af5a-7f2eeaf3e018","Lethargic/ unconscious",,"Misc","Lethargic/ unconscious","N/A",,,,,,"","","","","","","","","","",,,
+"7a056f96-7437-4c2e-9582-ddc9bfb34955","Unable to feed",,"Misc","Unable to feed","N/A",,,,,,"","","","","","","","","","",,,
+"6b8812ce-c687-4627-b315-613ccbd16585","Not present",,"Misc","Not present","N/A",,,,,,"","","","","","","","","","",,,
+"1913a84f-c029-478e-a040-b8d37c003514","PSBI/LBI/NBI-Symptoms",,"Misc","Symptoms","Coded",,,,,,"","","Convulsion","Severe chest indrawing","Grunting","Bulging fontanelle","Lethargic/ unconscious","Unable to feed","Not present","",,,
+"4a70fd5e-07a6-41c3-8551-cdc802995342","PSBI/LBI/NBI-PSBI","Convulsion, fast breathing 60 or more/Min, severe chest in-drawing, nasal flaring, grunting, unable to suck/swallow breast milk, budging fontanelle, umbilical infection Extending to the surrounding skin, fever >37.5 oC or severe hypothermia <35.5 oC, Pustular lesion (10 or more in number or single large skin pustule), lethargic or unconscious or less than normal body movements","Misc","PSBI","Boolean",,,,,,"","","","","","","","","","",,,
+"f7433f9e-d08f-4196-a9fb-01c2ee72dc18","Umbilicus red",,"Misc","Umbilicus red","N/A",,,,,,"","","","","","","","","","",,,
+"adb818ab-b492-4f97-8be6-eb6ebc744ae9","Umbilicus with pus",,"Misc","Umbilicus with pus","N/A",,,,,,"","","","","","","","","","",,,
+"6b8812ce-c687-4627-b315-613ccbd16585","Not present",,"Misc","Not present","N/A",,,,,,"","","","","","","","","","",,,
+"f44bea13-85a3-4022-a2a2-2ad542bce94e","PSBI/LBI/NBI-Umbilicus infection",,"Misc","Umbilicus infection","Coded",,,,,,"","","Umbilicus red","Umbilicus with pus","Not present","","","","","",,,
+"4fcd88d8-65c5-408b-b8d9-a567102163a8","PSBI/LBI/NBI-LBI","Red umbilicus, or pus discharge from umbilicus; less than 10 pustular skin lesions, eye discharge","Misc","LBI","Boolean",,,,,,"","","","","","","","","","",,,
+"9f823b12-d1ef-4136-b3ca-d34a62293767","PSBI/LBI/NBI-NBI","No signs and symptoms of infection present","Misc","NBI","Boolean",,,,,,"","","","","","","","","","",,,
+"56d5a3a3-d254-43e1-b04d-5b0391bacbee","Jaundice present",,"Misc","Jaundice present","N/A",,,,,,"","","","","","","","","","",,,
+"900950b3-fbc4-44aa-9c2d-330230e9834d","Severe jaundice",,"Misc","Severe jaundice","N/A",,,,,,"","","","","","","","","","",,,
+"6b8812ce-c687-4627-b315-613ccbd16585","Not present",,"Misc","Not present","N/A",,,,,,"","","","","","","","","","",,,
+"f592d960-c2de-47e4-8ca7-25a2c01162a3","PSBI/LBI/NBI-Jaundice","Severe jaundice-  (Jaundice extending up to hands and feet, Jaundice seen in first 24 hours or after 14th day of birth), 
+Jaundice (absence of spreading of jaundice up to hands and feet, Jaundice seen in between 2 – 14 days)","Misc","Jaundice","Coded",,,,,,"","","Jaundice present","Severe jaundice","Not present","","","","","",,,
+"0d13aa36-0b02-470d-ad4a-24a64d361607","Diarrhea",,"Misc","Diarrhea","N/A",,,,,,"","","","","","","","","","",,,
+"2ab1ed22-0d90-4f69-9609-c4a07c60774f","Chronic diarrhea",,"Misc","Chronic diarrhea","N/A",,,,,,"","","","","","","","","","",,,
+"2e39c143-202b-4ddb-8813-64ca1b061c6f","Dysentery",,"Misc","Dysentery","N/A",,,,,,"","","","","","","","","","",,,
+"6b8812ce-c687-4627-b315-613ccbd16585","Not present",,"Misc","Not present","N/A",,,,,,"","","","","","","","","","",,,
+"ad9c1be2-5fcd-4e77-b62b-7721d63b8900","Childhood Illness-Diarrhoea present","watery stool three times or more in 24 hours, Dysentery: Presence of blood in the stool, Chronic Diarrhoea - Diarrhoea for more than 14 days","Misc","Diarrhoea present","Coded",,,,,,"","","Diarrhea","Chronic diarrhea","Dysentery","Not present","","","","",,,
+"a75e9ef9-121c-4dbd-9e03-e4784e107b69","Slowly",,"Misc","Slowly","N/A",,,,,,"","","","","","","","","","",,,
+"34609927-c87e-47f0-8817-779a067a4024","Very slowly",,"Misc","Very slowly","N/A",,,,,,"","","","","","","","","","",,,
+"ca75d155-5b38-4284-b8a3-0112b6a40804","Skin pinch",,"Misc","Skin pinch","Coded",,,,,,"","","Slowly","Very slowly","","","","","","",,,
+"d1ca0f4d-8c92-4cab-97f3-f6ace7641aa9","No dehydration",,"Misc","No dehydration","N/A",,,,,,"","","","","","","","","","",,,
+"2753214b-67a1-42ab-ae8c-46b504904f22","Some dehydration",,"Misc","Some dehydration","N/A",,,,,,"","","","","","","","","","",,,
+"13309b73-0315-4039-9503-ad916393491a","Severe dehydration",,"Misc","Severe dehydration","N/A",,,,,,"","","","","","","","","","",,,
+"38d06edc-3d93-4025-83ad-9d1b43d24f73","Not applicable",,"Misc","Not applicable","N/A",,,,,,"NA","","","","","","","","","",,,
+"253012a5-5525-4f3a-bb2e-c87427eef4ba","Childhood Illness-Dehydration status","Severe Dehydration (If any of two given signs present)
+
+	<li>Lethargic or unconscious
+
+        <li>Body movement less than normal
+
+	<li>Sunken eyes
+
+	<li>Skin pinch goes back very slowly (>2 seconds)
+
+	<li>Infant less than one month of age
+
+Some dehydration: 
+	<li>Irritable
+ 
+	<li>Sunken eyes
+
+	<li>Skin pinch goes back slowly (<2 seconds)
+                                                           
+No Dehydration:
+
+	<li>No sufficient signs to classify under severe or some dehydration","Misc","Dehydration status","Coded",,,,,,"","","No dehydration","Some dehydration","Severe dehydration","Not applicable","","","","",,,
+"f4516dff-10ee-474a-992a-1fa12559bc27","Breastfed",,"Misc","Breastfed","Boolean",,,,,,"","","","","","","","","","",,,
+"eb34dcb4-1554-44d4-b8ff-a4efa6eb8751","Breastfeeding frequency",,"Misc","Breast feeding, How many times in 24 hours?","Numeric",,,,,,"","","","","","","","","","",,,
+"f8bfecc8-fdf4-4e59-a8f7-75b856fe6472","Difficulty feeding or low weight","<li> Ineffective position and/or contact, Ineffective suckling, Breastfed infant for less than 10 times in 24 hours, additional feeding practices along with breastfeeding (soup, or other food), low weight for age, oral thrush or painful lesions inside the mouth 
+<li>No difficulty breastfeeding or low weight- Normal weight for age, or no signs of inadequate nutrition","Misc","Difficulty feeding or low weight","Boolean",,,,,,"","","","","","","","","","",,,
+"2f338a6d-9513-4744-960a-9b9c53a0a704","Childhood Illness-Counseling provided",,"Misc","Counseling provided","Boolean",,,,,,"","","","","","","","","","",,,
+"f3a5de3d-79a4-451f-b188-8b8e5c34d6fa","Regular follow up",,"Misc","Regular follow up","N/A",,,,,,"","","","","","","","","","",,,
+"96c55e7b-a8f4-4038-a88d-c8f72b2ef51e","Immediate visit",,"Misc","Immediate visit","N/A",,,,,,"","","","","","","","","","",,,
+"b764f968-6326-46c2-9033-3e78ab18bf1c","Keep warm",,"Misc","Keep warm","N/A",,,,,,"","","","","","","","","","",,,
+"e8d0dae5-58be-4f3d-911f-ad6e05c9786a","Breast feeding",,"Misc","Breast feeding","N/A",,,,,,"","","","","","","","","","",,,
+"622cbf78-62be-41a4-b6c5-cc2898d7fa1f","CBIMNCI <2-Counseling provided for",,"Misc","Counseling provided for","Coded",,,,,,"","","Regular follow up","Immediate visit","Keep warm","Breast feeding","","","","",,,
+"99c01719-46e7-46b0-9980-4c9878c52d21","Childhood Illness-Vitamin A provided",,"Misc","Vitamin A provided","Numeric",,,,,,"","","","","","","","","","",,,
+"5c9eab25-a285-41a4-92e5-a61d4e9bc6cf","CBIMNCI <2-Albendazole given",,"Misc","Albendazole given","Boolean",,,,,,"","","","","","","","","","",,,
+"a2be4e9d-7aae-4f75-b94d-2768448e5c0a","CBIMNCI <2-Referred out",,"Misc",,"Boolean",,,,,,"","","","","","","","","","",,,
+"c3f67ad5-dbb7-4137-b8aa-4b77dd3b368c","CBIMNCI <2-Follow up",,"Misc","Follow up","Numeric",,,,,,"Follow up in","","","","","","","","","",,,
+"45836ad4-daab-469d-adab-4f7cdae1df67","Improved",,"Misc","Improved","N/A",,,,,,"","","","","","","","","","",,,
+"60964a9c-ecff-41d2-bb5c-197dd7f911ca","Same",,"Misc","Same","N/A",,,,,,"","","","","","","","","","",,,
+"d7eb6023-4085-48d1-986f-3885aea54f43","Worse",,"Misc","Worse","N/A",,,,,,"","","","","","","","","","",,,
+"15bc4c67-1838-4529-b91b-19b16108f0c2","CBIMNCI <2-Follow up result",,"Misc","Follow up result","Coded",,,,,,"","","Improved","Same","Worse","","","","","",,,
+"35492a7e-b558-4e6b-91e5-d4e644b2612c","Childhood Illness-Assessment/plan",,"Misc","Assessment/plan","Text",,,,,,"","","","","","","","","","",,,
+"6cb58308-0ed6-4391-9176-ba373865a621","Amoxicilin",,"Misc","Amoxicilin","N/A",,,,,,"","","","","","","","","","",,,
+"3aef42af-d3d9-4cc7-bd59-547c476641a4","Other antibiotics",,"Misc","Other antibiotics","N/A",,,,,,"","","","","","","","","","",,,
+"d61f4c57-c4f7-45aa-a6db-58daf5d0ed19","CBIMNCI <2-Treated with",,"Misc","Treated with","Coded",,,,,,"","","Amoxicilin","Other antibiotics","","","","","","",,,
+"15f3d9a9-a862-400d-ad64-19a1901c6714","1 st dose",,"Misc","1 st dose","N/A",,,,,,"","","","","","","","","","",,,
+"1c009c1c-e9b1-43c5-aed4-33e947c3fe26","Complete dose",,"Misc","Complete dose","N/A",,,,,,"","","","","","","","","","",,,
+"a7b1954d-45f5-4f0b-bf87-f245394b2c7d","Not given",,"Misc",,"N/A",,,,,,"","","","","","","","","","",,,
+"0d50850f-1af7-43be-a317-af7ae6f43277","CBIMNCI <2-Gentamycin",,"Misc","Gentamycin","Coded",,,,,,"","","1 st dose","Complete dose","Not given","","","","","",,,

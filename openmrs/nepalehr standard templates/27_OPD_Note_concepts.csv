@@ -1,0 +1,4 @@
+"uuid","name","description","class","shortname","datatype","units","High Normal","Low Normal","Allow Decimal","locale","synonym.1","answer.1","reference-term-source","reference-term-code","reference-term-relationship"
+"3cb71b67-4d4a-4f2f-9c9f-44a5022624e2","Last visit (Bayalpata)","Date of Last Visit to Bayalpata","Misc","Date of last visit","Date",,,,,,"","",,,
+"9df61047-100f-478c-abfe-04929e6b3d34","Last visit (Outside Provider)","Date of last visit to outside provider","Misc","Date of outside provider","Date",,,,,,"","",,,
+"a783180b-354c-43e3-b167-b1f201efc818","OPD Disposition","OPD Disposition","Misc","OPD Disposition","Coded",,,,,,"","",,,

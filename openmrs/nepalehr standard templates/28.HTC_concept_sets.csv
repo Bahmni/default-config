@@ -1,0 +1,5 @@
+"uuid","name","description","class","shortname","child.1","child.2","child.3","child.4","child.5","child.6","child.7","child.8","child.9","reference-term-source","reference-term-code","reference-term-relationship"
+"84eb9881-1a80-48c0-b024-ebaf6e29635a","HTC-Pretest counseling",,"Misc","Pretest counseling","HTC-Pre test counseling","HTC-Tested before","HTC-Result if tested","HTC-Reason for test","HTC-Other reason for test","HTC-Pregnancy status","HTC-Risk group","HTC-Other risk group","",,,
+"e548ed06-60e8-4f94-ae6e-ca19208add5c","HTC-HIV test",,"Misc","HIV test","HTC-Informed consent","HTC-Initial","HTC-Confirmatory","HTC-Tie breaker","Triodot","Result of triodot","","","",,,
+"8a94405b-dab7-42b6-84a2-5a43ecdf304b","HTC-Post test counseling",,"Misc","Post test counseling","HTC-Result recieved","HTC-Post","HTC-Result","HTC-Partner counseling","HTC-WHO staging","HTC, Referral","","","",,,
+"1c345864-f675-4cb9-8d47-e8c594c7308e","HIV testing and counseling(HTC)",,"Misc","HIV testing and counseling","HTC-Pretest counseling","HTC-HIV test","Referred in","HTC-Post test counseling","ART-Condoms given","","","","",,,

@@ -1,0 +1,189 @@
+"uuid","name","description","class","shortname","datatype","units","High Normal","Low Normal","Allow Decimal","locale","synonym.1","synonym.2","answer.1","answer.2","answer.3","answer.4","answer.5","answer.6","answer.7","answer.8","answer.9","answer.10","answer.11","answer.12","answer.13","reference-term-source","reference-term-code","reference-term-relationship"
+"bb3ca574-aa87-45d8-b68a-c8e9a8e30c38","ART-Pre",,"Misc","Pre-ART number","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"9446a653-d0ea-49b0-8a96-5d7a1dbc346e","ART-ART number",,"Misc","ART number","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"0aaacebd-880e-405f-9df1-ad99d6c9c551","HIVTC-Chief complaint",,"Misc","Chief complaint","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"09e90938-5def-42b6-999c-95cba549992f","HIVTC-History of present illness","<li>Location</li>
+
+	<li>Severity</li>
+
+	<li>Quality</li>
+
+	<li>Timing : Constant / Intermittent, how long did it last</li>
+
+	<li>Duration : When did it Start</li>
+
+	<li>Modifying Factors : Anything make it better or worse</li>
+
+	<li>Context : What were you doing when it started</li>
+
+	<li>Associated Signs or Symptoms</li>","Misc","History of present illness","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"3c822592-c51d-475f-908a-994178cf7d28","HIVTC-Physical examination details","<li>General 
+</li>
+	<li>HEENT
+</li>
+	<li>CV
+</li>
+	<li>Lungs
+</li>
+	<li>Abdomen
+</li>
+	<li>MSK
+</li>
+	<li>Skin
+</li>
+	<li>Neuro 
+</li>
+	<li>Psych</li>","Misc","Physical examination details","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"126ced65-6e96-4f97-9369-19a49e83325c","Referred in",,"Misc","Referred in","Boolean",,,,,,"","","","","","","","","","","","","","","",,,
+"7d0ac91b-950c-45b8-adb9-645226b28328","HIVTC-Problem","<li>Most likely diagnosis and other differential diagnosis
+</li>
+	<li>Stable, unstable, improved / worse / same
+</li>
+	<li>Patient counseling and education on ____
+</li>
+	<li>Diagnostic plan and orders
+</li>
+	<li>Medication plan and prescription</li>","Misc","Problem","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"023a7977-b977-4a1d-8e98-2fd7d4422099","Unmarried",,"Misc","Unmarried","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"3f311f71-81ad-418f-9efc-63d6f621cfd9","Married",,"Misc","Married","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"08af1905-22c3-4ec3-bfff-832408947d19","Divorced",,"Misc","Divorced","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"b6ab3028-466d-4afb-9235-3145a023f513","Widowed",,"Misc","Widowed","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"deadb791-eeb7-454f-a7f4-240bb16599fd","HIVTC-Marital status",,"Misc","Marital status","Coded",,,,,,"","","Unmarried","Married","Divorced","Widowed","","","","","","","","","",,,
+"6dd513f3-538d-4202-97be-921bc239bd3f","ART-Patient contact number",,"Misc","Contact number","Numeric",,,,,,"","","","","","","","","","","","","","","",,,
+"1114b82b-07ea-412c-9aac-e754da9ee8bd","ANC-Own",,"Misc","Own","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"ad96794b-3e7d-482a-b0e8-0eb998d16d60","ANC-Kin",,"Misc","Kin","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"4dd3af56-51d5-44dd-b3d5-84d972faf499","HIVTC Intake-Whose",,"Misc","Whose?","Coded",,,,,,"","","ANC-Own","ANC-Kin","","","","","","","","","","","",,,
+"660aa19c-23b1-405c-8ed5-0f4b1e077695","HIVTC Intake-Gurdian/Kin name",,"Misc","Gurdian/Kin name","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"036c2846-36b7-49ad-b406-14e328b5fc82","Sex worker",,"Misc","Sex worker","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0bd2f2b7-852a-4e92-95ab-fbe16ceddfe5","People who inject drugs",,"Misc","People who inject drugs","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"c4582bfd-5f87-47fd-8ae0-cacad0d48bd8","MSM and transgenders",,"Misc","MSM and transgenders","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d0d988a6-0b2f-4629-90aa-23658b8efdf6","Blood or organ recipient",,"Misc","Blood or organ recipient","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"1c2cdc41-03c9-4bc2-b035-9d7a178362ea","Client of sex worker",,"Misc","Client of sex worker","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"a7f23fb6-aeae-4d97-92db-444389f1ecd4","Migrant",,"Misc","Migrant","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"6b8d5e85-5c5b-4e8b-95b9-097b06627cfa","Spouse of migrant",,"Misc","Spouse of migrant","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"aecf4265-5adc-43ab-bfaa-10c08b94a347","HIVTC-Risk group",,"Misc","Risk group","Coded",,,,,,"","","Sex worker","People who inject drugs","MSM and transgenders","Blood or organ recipient","Client of sex worker","Migrant","Spouse of migrant","Others","","","","","",,,
+"267323af-6017-4711-b104-0bec787f9af7","HTC",,"Misc","HTC","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"8c2ec130-6f86-4951-ad4c-215976a1b488","Tuberculosis entry point",,"Misc","Tuberculosis","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"c639fed4-0f44-4f13-ae48-f5cf917370dd","Entry Point Outpatient",,"Misc","Outpatient","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"4788b4ad-cb8c-4b33-b7e9-5e2ede400c44","Congestive Heart Failure - Intake - Last Exacerbation - Treated at - Inpatient",,"Misc","Inpatient","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"8e775742-32b1-428f-b69b-e9d45dcb5dec","Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"c199628c-651c-4fa4-a780-2e736f10f1d4","Prevention of Mother to child  transmission(PMTCT)",,"Misc","PMTCT note","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"3a0639b5-4098-47aa-a8f6-770487c5ae01","Sextually transmitted infection",,"Misc","STI","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"187b4d30-5735-4353-a5d6-3b5ef8e3daa0","Private health facility",,"Misc","Private health facility","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"c414fedd-9bc1-4a79-9946-b45fcf6c1367","Non-governmental organization",,"Misc","NGO","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0bf931a9-4d6b-4ec9-8c74-f8368224dc97","Self referred",,"Misc","Self referred","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"1adefe92-46ec-44ff-b8d0-61967d8c8547","Outreach/Special services",,"Misc","Outreach/Special services","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"97d1f5d3-d836-4d93-96fe-3e3a8d8b0596","HIVTC-Entry point",,"Misc","Entry point","Coded",,,,,,"","","HTC","Tuberculosis entry point","Entry Point Outpatient","Congestive Heart Failure - Intake - Last Exacerbation - Treated at - Inpatient","Paediatric","Prevention of Mother to child  transmission(PMTCT)","Sextually transmitted infection","Private health facility","Non-governmental organization","Self referred","Outreach/Special services","Others","",,,
+"56f5e87f-4847-4fcb-82db-180ff05c5b47","AZT/3TC/NVP",,"Misc","AZT/3TC/NVP","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d186f233-e8ce-4b74-ac68-1c3502ff2cea","AZT/3TC/NVP-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"f09060d2-2f09-4566-b434-d1573873f169","AZT/3TC/EFV",,"Misc","AZT/3TC/EFV","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"00067c9c-22b1-4c89-a61e-8e1b2134fda4","AZT/3TC/EFV-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"7fe7d27c-c640-4c43-9cfb-0d4b821cb6ad","TDF/3TC/NVP",,"Misc","TDF/3TC/NVP","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d98a7d1b-abac-4c95-9267-97697971104e","TDF/3TC/NVP-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"c3facd70-5f8f-46c9-9dd0-f0f1f90a885f","TDF/3TC/EFV",,"Misc","TDF/3TC/EFV","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"fade8e5d-07cf-4fde-8bc5-86fe2f53d9c6","TDF/3TC/EFV-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"e43d78ed-ec27-45d9-8bad-414333cf8794","TDF/3TC/LPV/r",,"Misc","TDF/3TC/LPV/r","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"1d389771-f2ad-4789-9559-40f588643829","AZT/3TC/LPV/r",,"Misc","AZT/3TC/LPV/r","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d314066f-3df1-4333-b367-c200f24b20f5","HIVTC-Mothers arv regimen",,"Misc","Regimen","Coded",,,,,,"","","AZT/3TC/NVP","AZT/3TC/NVP-Paediatric","AZT/3TC/EFV","AZT/3TC/EFV-Paediatric","TDF/3TC/NVP","TDF/3TC/NVP-Paediatric","TDF/3TC/EFV","TDF/3TC/EFV-Paediatric","TDF/3TC/LPV/r","AZT/3TC/LPV/r","Others","","",,,
+"539ba1f4-be93-4984-8bc4-66a3ec02424a","HIVTC-Mothers arv regimen start date",,"Misc","Regimen start date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"4238bb58-650f-42d2-a055-beeffb2b1970","HIVTC Intake-Within six weeks",,"Misc","Birth to six weeks","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"492994b8-2626-497d-bcd0-e1c28121e87d","HIVTC Intake-Six weeks to two months",,"Misc","6 weeks to 2 months","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"3580f48d-0e3d-4534-8c41-8ea62765f31e","2 to 9 months",,"Misc","2 - 9 months","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"f3c2fbac-240b-46ee-bd22-3ae348d9203e","9 to 18 months",,"Misc","9 - 18 months","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"05a08511-9553-43c3-8e2e-f3b476881616","ART-Early infant diagnosis",,"Misc","Early infant diagnosis","Coded",,,,,,"","","HIVTC Intake-Within six weeks","HIVTC Intake-Six weeks to two months","2 to 9 months","9 to 18 months","","","","","","","","","",,,
+"53c32f1a-c9c1-40d4-a1ad-93386057b126","ART-PCR test date",,"Misc","PCR test date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"d76f36c5-c989-417f-a9ba-0ca6721d770a","Positive",,"Misc","Positive","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"5c57dba8-15bb-4b00-a2dd-469b2aa68523","Negative",,"Misc","Negative","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"293dcbf4-245c-4526-bba1-f56b29191ae9","HIVTC Intake-PCR test result",,"Misc","PCR test result","Coded",,,,,,"","","Positive","Negative","","","","","","","","","","","",,,
+"889f8072-b0b5-41d1-8807-a56bb7babecf","ART-Antibody test date",,"Misc","Antibody test date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"d76f36c5-c989-417f-a9ba-0ca6721d770a","Positive",,"Misc","Positive","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"5c57dba8-15bb-4b00-a2dd-469b2aa68523","Negative",,"Misc","Negative","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"ce9e5c71-c42a-4cb8-862e-102c699d0722","ART-Antibody test result",,"Misc","Antibody test result","Coded",,,,,,"","","Positive","Negative","","","","","","","","","","","",,,
+"92bdc6be-86dd-476c-b11a-fab52f68a35e","ART-CPT prophylaxis start date after 6wks",,"Misc","CPT prophylaxis start date after 6wks","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"f9bd6469-d2e9-4684-9182-3cc6e55a8d60","HIVTC-HIV +ve diagnosed date",,"Misc","HIV +ve diagnosed date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"7262a4c2-7909-4415-b5cc-2b8411ea26ba","HIVTC-HIV care enrolled date","Registered date in HIV care service","Misc","Enrolled date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"52c1a6b3-479a-4524-882f-a518bb844a3d","Stage i",,"Misc","Stage i","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d558383f-959d-4519-b628-b8e3e51fc764","Stage ii",,"Misc","Stage ii","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"c7f60075-f1d6-47fe-9b2f-3e0c67217789","Stage iii",,"Misc","Stage iii","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"501fe15e-7f7d-4adf-85ae-f797c16e48e3","Stage iv",,"Misc","Stage iv","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"22ec77e0-b4d0-4e6d-9493-12f4eddb5664","HIVTC-HIV care who staging",,"Misc","WHO staging","Coded",,,,,,"","","Stage i","Stage ii","Stage iii","Stage iv","","","","","","","","","",,,
+"e337c42c-c229-454b-8263-10835551d33d","HIVTC-HIV care cpt started",,"Misc","CPT started","Boolean",,,,,,"","","","","","","","","","","","","","","",,,
+"ff7de09b-a077-4ba5-a178-b210b3f9b9bb","HIVTC-HIV care cpt start date",,"Misc","CPT start date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"6059aa48-b94f-41b7-812e-8b3942b43fdb","HIVTC-HIV care ipt started",,"Misc","IPT started","Boolean",,,,,,"","","","","","","","","","","","","","","",,,
+"f47a870e-d76f-4304-a2c9-55782139d735","HIVTC-HIV care ipt start date",,"Misc","IPT start date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"5c57dba8-15bb-4b00-a2dd-469b2aa68523","Negative",,"Misc","Negative","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d76f36c5-c989-417f-a9ba-0ca6721d770a","Positive",,"Misc","Positive","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"9fe6b57f-2e2e-4f8f-9626-426c137516e1","HIVTC-Smear tb assessment at enrollment",,"Misc","Smear","Coded",,,,,,"","","Negative","Positive","","","","","","","","","","","",,,
+"5c57dba8-15bb-4b00-a2dd-469b2aa68523","Negative",,"Misc","Negative","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d76f36c5-c989-417f-a9ba-0ca6721d770a","Positive",,"Misc","Positive","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"f8c8af6f-a761-4648-bb5c-0e3a6b4c9e49","HIVTC-Culture tb assessment at enrollment",,"Misc","Culture","Coded",,,,,,"","","Negative","Positive","","","","","","","","","","","",,,
+"5c57dba8-15bb-4b00-a2dd-469b2aa68523","Negative",,"Misc","Negative","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d76f36c5-c989-417f-a9ba-0ca6721d770a","Positive",,"Misc","Positive","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"7829a2d6-25f0-4811-8e1b-4fa434775226","HIVTC-Chest x",,"Misc","Chest x-ray","Coded",,,,,,"","","Negative","Positive","","","","","","","","","","","",,,
+"5c57dba8-15bb-4b00-a2dd-469b2aa68523","Negative",,"Misc","Negative","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d76f36c5-c989-417f-a9ba-0ca6721d770a","Positive",,"Misc","Positive","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"5ad33ae3-6312-479b-b23d-cd26ac93935e","HIVTC-Gene xpert tb assessment at enrollment",,"Misc","Gene xpert","Coded",,,,,,"","","Negative","Positive","","","","","","","","","","","",,,
+"0c3b6acd-2be9-4719-8862-e4e75896db18","Extra pulmonary",,"Misc","Extra pulmonary","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"85c3dc30-9745-43e9-b773-7556966090b6","Pulmonary(BC)",,"Misc",,"N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"1226b137-6754-45b3-9ace-b7bf5992be25","Pulmonary(CD)",,"Misc",,"N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"40d40cf7-6f3f-4f6b-bc54-665b4cfc077e","HIVTC-TB type",,"Misc","TB type","Coded",,,,,,"","","Extra pulmonary","Pulmonary(BC)","Pulmonary(CD)","","","","","","","","","","",,,
+"8939151e-b1f2-4d1f-9f4d-9171f6a243cd","HIVTC-TB treatment start date",,"Misc","TB treatment start date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"6c347726-5d78-42da-9e7f-a739d9d4b5b8","Category i",,"Misc","Category i","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"47eec68c-5d5b-4e1b-a3c6-1697f1937652","Category ii",,"Misc","Category ii","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"9b627cd4-fc39-4c05-8869-d89d7c63e393","Category iii",,"Misc","Category iii","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"f2627c59-8513-4ad1-9f93-aa0ea574a9ca","HIVTC-TB regimen",,"Misc","TB Regimen","Coded",,,,,,"","","Category i","Category ii","Category iii","","","","","","","","","","",,,
+"1ccf4d8e-e1ce-4eca-b92b-c2cea9869de0","Cured",,"Misc",,"N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"be6a88ee-d7e9-4b38-a33e-67b2369fc10f","Completed",,"Misc",,"N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"5a600fd3-bef3-4b76-b181-07bab07dea66","Failure",,"Misc",,"N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"a38cbc06-520c-49cd-9361-30fbb8229ebe","HIVTC-TB treatment outcome",,"Misc","Treatment outcome","Coded",,,,,,"","","Cured","Completed","Failure","Others","","","","","","","","","",,,
+"cf745eaa-790b-469e-8f4d-c9ee0f025a6d","HIVTC-Other chronic diseases","Ask patient he/she have any other chronic disease. If they have, record that here.","Misc","Diseases","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"e9f2abe5-b7f1-478c-baa8-9bc10218be19","HIVTC-Other chronic disease drugs","Record drug name and dosages for the chronic illness.","Misc","Drugs","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"34a263a1-018f-4e4c-bbf2-8a4afd22ce84","HIVTC-ART eligible date","Record the date when the patient is eligible for ART drug. Use National ART Guideline, CD4 Count and WHO Staging.","Misc","ART eligible date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"c5ffacd8-f60e-4def-b95b-63368cded8b6","HIVTC-ART start date","Record ART Started date and regimen.","Misc","ART start date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"56f5e87f-4847-4fcb-82db-180ff05c5b47","AZT/3TC/NVP",,"Misc","AZT/3TC/NVP","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d186f233-e8ce-4b74-ac68-1c3502ff2cea","AZT/3TC/NVP-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"f09060d2-2f09-4566-b434-d1573873f169","AZT/3TC/EFV",,"Misc","AZT/3TC/EFV","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"00067c9c-22b1-4c89-a61e-8e1b2134fda4","AZT/3TC/EFV-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"7fe7d27c-c640-4c43-9cfb-0d4b821cb6ad","TDF/3TC/NVP",,"Misc","TDF/3TC/NVP","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d98a7d1b-abac-4c95-9267-97697971104e","TDF/3TC/NVP-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"c3facd70-5f8f-46c9-9dd0-f0f1f90a885f","TDF/3TC/EFV",,"Misc","TDF/3TC/EFV","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"fade8e5d-07cf-4fde-8bc5-86fe2f53d9c6","TDF/3TC/EFV-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"e43d78ed-ec27-45d9-8bad-414333cf8794","TDF/3TC/LPV/r",,"Misc","TDF/3TC/LPV/r","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"1d389771-f2ad-4789-9559-40f588643829","AZT/3TC/LPV/r",,"Misc","AZT/3TC/LPV/r","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"396e0df3-da7a-488b-a053-539d9f76a97c","HIVTC-ART regimen",,"Misc","ART Regimen","Coded",,,,,,"","","AZT/3TC/NVP","AZT/3TC/NVP-Paediatric","AZT/3TC/EFV","AZT/3TC/EFV-Paediatric","TDF/3TC/NVP","TDF/3TC/NVP-Paediatric","TDF/3TC/EFV","TDF/3TC/EFV-Paediatric","TDF/3TC/LPV/r","AZT/3TC/LPV/r","Others","","",,,
+"0bf5ac6f-5334-46e7-8cb1-e0d43f5e9938","HIVTC-Transferred in from","If patient comes from another site to our place, record that site name.","Misc","From (site)","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"56f5e87f-4847-4fcb-82db-180ff05c5b47","AZT/3TC/NVP",,"Misc","AZT/3TC/NVP","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d186f233-e8ce-4b74-ac68-1c3502ff2cea","AZT/3TC/NVP-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"f09060d2-2f09-4566-b434-d1573873f169","AZT/3TC/EFV",,"Misc","AZT/3TC/EFV","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"00067c9c-22b1-4c89-a61e-8e1b2134fda4","AZT/3TC/EFV-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"7fe7d27c-c640-4c43-9cfb-0d4b821cb6ad","TDF/3TC/NVP",,"Misc","TDF/3TC/NVP","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"d98a7d1b-abac-4c95-9267-97697971104e","TDF/3TC/NVP-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"c3facd70-5f8f-46c9-9dd0-f0f1f90a885f","TDF/3TC/EFV",,"Misc","TDF/3TC/EFV","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"fade8e5d-07cf-4fde-8bc5-86fe2f53d9c6","TDF/3TC/EFV-Paediatric",,"Misc","Paediatric","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"e43d78ed-ec27-45d9-8bad-414333cf8794","TDF/3TC/LPV/r",,"Misc","TDF/3TC/LPV/r","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"1d389771-f2ad-4789-9559-40f588643829","AZT/3TC/LPV/r",,"Misc","AZT/3TC/LPV/r","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"fa7bbd0f-3970-4631-959f-82dab0167473","HIVTC-Transferred patient regimen",,"Misc","Patient Regimen","Coded",,,,,,"","","AZT/3TC/NVP","AZT/3TC/NVP-Paediatric","AZT/3TC/EFV","AZT/3TC/EFV-Paediatric","TDF/3TC/NVP","TDF/3TC/NVP-Paediatric","TDF/3TC/EFV","TDF/3TC/EFV-Paediatric","TDF/3TC/LPV/r","AZT/3TC/LPV/r","Others","","",,,
+"b5c59b24-fe96-479f-bfb7-d832ac9cfc78","HIVTC-Date of transferred in",,"Misc","Transferred in date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"9d15f85b-2421-426b-8e86-6696e80b2bb0","HIVTC-Viral load","Record viral load 6months after the treatment started and then repeat once in every 12 months.","Misc","Viral load","Text",,,,,,"","","","","","","","","","","","","","","",,,
+"260909d7-3689-4db8-9188-ab0bc501278c","HIVTC-Viral load date",,"Misc","Viral load date","Date",,,,,,"","","","","","","","","","","","","","","",,,
+"3dfb3c92-76c8-4986-9f89-8b22839fc5d7","HIVTC-CD4 count","Need to repeat once in every six months. If less than six months since last test, enter last known value.","Misc","CD4 count","Numeric",,,,,,"","","","","","","","","","","","","","","",,,
+"76564bd7-8375-4ba9-b96a-ab6d7f0b2338","Condoms",,"Misc","Condoms","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"93961215-ec0d-4a15-b124-0c2b29a1acd4","Oral contraceptives",,"Misc","Oral contraceptives","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"f642b5f1-711f-4b45-89fc-3a3bc08d5a92","IUCD",,"Misc","IUCD","N/A",,,,,,"IUCD","","","","","","","","","","","","","","",,,
+"0f84ef85-720e-4bab-80b7-12340bdc1f57","Depo",,"Misc",,"N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"95644eb3-e748-4d16-a5a6-21ad75422126","Implant",,"Misc","Implant","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"1ae49269-da47-4979-a8a3-9460e45472ec","Permanent",,"Misc",,"N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"e801af05-3924-44a6-9d80-94dee6c94f7b","HIVTC intake-FP chosen",,"Misc","FP chosen","Coded",,,,,,"","","Condoms","Oral contraceptives","IUCD","Depo","Implant","Permanent","Others","","","","","","",,,
+"ca78645e-a806-4afc-8354-fc419b95bbd7","HIVTC intake-Consent for home visit","During the home visits, the CHWLs will counsel you about your condition and provide you information on how to care for yourself and your family. They can also help coordinate your care with the hospital. Confidentiality will be maintained throughout the sessions.","Misc","Would you like to participate in home visit service?","Boolean",,,,,,"","","","","","","","","","","","","","","",,,
+"d123603d-133c-4ddb-b26e-0132a0e0b973","1 week",,"Misc","1 week","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"be711e77-402d-4205-9677-ba7c0c792031","2 weeks",,"Misc","2 weeks","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"b2a2378e-09d2-425a-9fc9-c1a5aa0b15fc","3 weeks",,"Misc","3 weeks","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"a3eae9b3-b760-4b3d-a42f-7b5acd152823","1 month",,"Misc","1 month","N/A",,,,,,"","","","","","","","","","","","","","","",,,
+"e84bb2c3-df2a-47df-affc-c49cbc64c1d4","Followup","Assume ""1 month"" as ""one month or more""","Misc","Followup","Coded",,,,,,"","","1 week","2 weeks","3 weeks","1 month","","","","","","","","","",,,

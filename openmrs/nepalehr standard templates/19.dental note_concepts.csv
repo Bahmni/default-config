@@ -1,0 +1,64 @@
+"uuid","name","description","class","shortname","datatype","units","High Normal","Low Normal","Allow Decimal","locale","synonym.1","synonym.2","answer.1","answer.2","answer.3","answer.4","answer.5","answer.6","answer.7","answer.8","answer.9","answer.10","answer.11","answer.12","answer.13","answer.14","reference-term-source","reference-term-code","reference-term-relationship"
+"adf45d2e-a463-4048-83c6-f6dc685e1e1e","Ultra poor or poor",,"Misc","Ultra poor or poor","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"d9b5e28f-d107-4e4e-b6a7-0df47f2f5eeb","Helpless or destitute",,"Misc","Helpless or destitute","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"4bd0f38d-a194-4033-8cd4-d021b3814534","Disabled",,"Misc","Disabled","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"0905c0e9-8931-40ac-b195-cbaf632e379b","Senior citizens",,"Misc","Sr. citizens greater than 60 years","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"3b5ebd00-1d17-4ff6-9f9c-e4cfbea0ed86","FCHV",,"Misc","FCHV","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"9ea33e69-b48e-4c6f-a115-321660010830","Gender based violence",,"Misc","Gender based violence","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"38d06edc-3d93-4025-83ad-9d1b43d24f73","Not applicable",,"Misc","Not applicable","N/A",,,,,,"NA","","","","","","","","","","","","","","","",,,
+"118dfa37-a378-4eb7-88cf-b9e07947cb56","OPD-Free health service code",,"Misc","Free health service code","Coded",,,,,,"","","Ultra poor or poor","Helpless or destitute","Disabled","Senior citizens","FCHV","Gender based violence","Others","Not applicable","","","","","","",,,
+"126ced65-6e96-4f97-9369-19a49e83325c","Referred in",,"Misc","Referred in","Boolean",,,,,,"","","","","","","","","","","","","","","","",,,
+"49978fdc-a60f-47e8-8695-e4d1eb19a593","OPD-Chief complaint",,"Misc","Chief complaint","Text",,,,,,"","","","","","","","","","","","","","","","",,,
+"88aeccd9-7816-442b-83dd-c778a0f4b367","OPD-HPI notes","<li>Location</li>
+
+	<li>Severity</li>
+
+	<li>Quality</li>
+
+	<li>Timing : Constant / Intermittent, how long did it last</li>
+
+	<li>Duration : When did it Start</li>
+
+	<li>Modifying Factors : Anything make it better or worse</li>
+
+	<li>Context : What were you doing when it started</li>
+
+	<li>Associated Signs or Symptoms</li>","Misc","History of present illness","Text",,,,,,"","","","","","","","","","","","","","","","",,,
+"b66cb0a9-5bd8-4500-ba0f-011c0b6de88d","Dental note-Findings",,"Misc","Findings","Text",,,,,,"","","","","","","","","","","","","","","","",,,
+"064eb111-3285-4ac0-abba-c14c221dd98d","OPD-Medical history",,"Misc","Past medical history","Text",,,,,,"","","","","","","","","","","","","","","","",,,
+"ea846f58-53c0-4a57-9052-cac7dc5fd48b","BP data-Systolic",,"Misc","Systolic","Numeric",,,,,,"","","","","","","","","","","","","","","","",,,
+"0c0a41b6-823c-4ac5-a130-bc1d187065db","BP Systolic Data-Systolic abnormal",,"Abnormal","Systolic abnormal","Boolean",,,,,,"","","","","","","","","","","","","","","","",,,
+"7d4c058e-26ea-46a3-b5d1-1dd280e98b32","BP data-Diastolic",,"Misc","Diastolic","Numeric",,,,,,"","","","","","","","","","","","","","","","",,,
+"bce264b6-65c5-48b1-97af-0446e609c211","BP Diastolic Data-Diastolic abnormal",,"Abnormal","Diastolic abnormal","Boolean",,,,,,"","","","","","","","","","","","","","","","",,,
+"6e9015ca-2c42-45bd-9814-51460558f797","Sitting",,"Misc","Sitting","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"337ebf41-e650-4334-82be-560a0fd3cd83","Supine",,"Misc","Supine","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"0c020f14-07fc-48a4-97f3-cff60c03108c","Others",,"Misc","Others","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"0bb8adc6-063b-4257-864a-808008e38003","Posture",,"Misc","Posture","Coded",,,,,,"","","Sitting","Supine","Others","","","","","","","","","","","",,,
+"edcb4c28-1316-440d-9139-840bd5ac77c0","All",,"Misc","All","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"90b80c91-f4b2-492f-a629-ebd585f0bba2","Upper left",,"Misc","Upper left","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"1ab228d1-dfa3-457d-9949-7c600cc1e9af","Upper right",,"Misc","Upper right","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"fb7ebd4b-26b8-4116-91c0-ea984c120a6f","Lower left",,"Misc","Lower left","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"48b26332-f795-4df8-9dc2-5cc492d45a19","Lower right",,"Misc","Lower right","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"ed6bbb2f-9adb-43bd-8b81-697f78b70545","Dental note-Tooth quadrant",,"Misc","Tooth quadrant","Coded",,,,,,"","","All","Upper left","Upper right","Lower left","Lower right","","","","","","","","","",,,
+"80fb869c-8dde-42ab-accb-27d3f00863a6","Number-1",,"Misc","1","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"8772774d-4356-4fa9-a0aa-833bee300287","Number-2",,"Misc","2","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"74d520e1-bbf3-4344-9da8-bbd7e624ee2f","Number-3",,"Misc","3","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"8333091d-8908-4b39-a548-bdd6b615e615","Number-4",,"Misc","4","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"3689114a-d883-476e-8a42-756ed7985767","Number-5",,"Misc","5","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"b914ee15-10c4-4df0-8149-6e146c3e45b6","Number-6",,"Misc","6","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"42f78732-666c-4c0f-b6fd-ccfffc9f1e47","Number-7",,"Misc","7","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"fdc46291-5f7c-453b-9a89-e746c4f0a556","Number-8",,"Misc","8","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"bacc4555-18b9-4162-89c9-1f62624cc611","Character-A",,"Misc","A","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"0e7a1a59-3876-4f20-b376-f6fbcb31c710","Character-B",,"Misc","B","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"6e922151-affd-4c13-a8a5-501220d5c2a3","Character-C",,"Misc","C","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"7ae46309-3ee6-42b4-8113-f42002355196","Character-D",,"Misc","D","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"05d9604b-273d-418f-9114-cb000dc9e8aa","Character-E",,"Misc","E","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"f069102d-00e5-4807-bd77-f590fab43af3","Dental note-Tooth number",,"Misc","Tooth number","Coded",,,,,,"","","Number-1","Number-2","Number-3","Number-4","Number-5","Number-6","Number-7","Number-8","Character-A","Character-B","Character-C","Character-D","Character-E","",,,
+"71e55756-47a6-4bba-bb12-da7945f7c55a","Scaling",,"Misc","Scaling","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"8e9a9ca2-8dab-415f-9109-09df39bedcfa","Extraction",,"Misc","Extraction","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"ed1d6b2c-f9d3-40fb-9afd-cee9441e70de","Restoration(temporary)",,"Misc","Restoration (temporary)","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"d5d6906e-b10f-4b1a-b247-4de91192519d","Restroration(permanent)",,"Misc","Restoration (permanent)","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"d262e39e-5c16-4b97-b0b5-36bc7388cf46","Root canal treatment",,"Misc","Root canal treatment","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"5975b474-73b7-44f5-aa21-8f5c9c6a38d5","Oral hygienic instructions",,"Misc","Oral hygienic instructions","N/A",,,,,,"","","","","","","","","","","","","","","","",,,
+"cc4e23e1-3824-4396-8847-3697730dba72","Dental note-Procedure",,"Misc","Procedure","Coded",,,,,,"","","Scaling","Extraction","Restoration(temporary)","Restroration(permanent)","Root canal treatment","Oral hygienic instructions","","","","","","","","",,,

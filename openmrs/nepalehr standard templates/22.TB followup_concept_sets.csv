@@ -1,0 +1,3 @@
+"uuid","name","description","class","shortname","child.1","child.2","child.3","child.4","child.5","child.6","reference-term-source","reference-term-code","reference-term-relationship"
+"c42d5cfc-672a-49e5-80b3-9c25aa4bfe2d","TB F/U-Conversion and Outcome report",,"Misc","Conversion and Outcome report","Tuberculosis-Tests ordered","TB FU-Test result","TB FU-Diagnosis category(PBC)","TB FU-Sputum conversion result","TB FU-Treatment outcome","",,,
+"182cee9e-e2e7-4963-af25-e26884204d59","TB follow(TB FU) up note",,"Misc","Tuberculosis follow up note","TB FU-Follow up month","TB FU-Patient still undergoing treatment","TB F/U-Conversion and Outcome report","","","",,,

@@ -1,0 +1,6 @@
+"uuid","name","description","class","shortname","child.1","child.2","child.3","child.4","child.5","child.6","child.7","child.8","child.9","reference-term-source","reference-term-code","reference-term-relationship"
+"52d5b328-b635-4d70-9031-447856add0c4","Systolic Data",,"Concept Details","Systolic","BP data-Systolic","BP Systolic Data-Systolic abnormal","","","","","","","",,,
+"ddebbc7a-dd7e-4076-a9d9-b6eea7a3aea0","Diastolic",,"Concept Details","Diastolic","BP data-Diastolic","BP Diastolic Data-Diastolic abnormal","","","","","","","",,,
+"392fedb3-13ac-485d-b721-42e7c6567cb2","Blood Pressure",,"Misc","Blood pressure","Systolic Data","Diastolic","Posture","","","","","","",,,
+"6269b773-6e0e-4813-ac26-475fc95c51c9","Dental note-Treatment",,"Misc","Treatment","Dental note-Tooth quadrant","Dental note-Tooth number","Dental note-Procedure","","","","","","",,,
+"0ba9632b-dc46-4a5d-aaec-a00b94924b4a","Dental note",,"Misc","Dental note","OPD-Free health service code","Referred in","OPD-Chief complaint","OPD-HPI notes","Dental note-Findings","OPD-Medical history","Blood Pressure","Dental note-Treatment","",,,

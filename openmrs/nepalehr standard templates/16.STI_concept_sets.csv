@@ -1,0 +1,5 @@
+"uuid","name","description","class","shortname","child.1","child.2","child.3","child.4","child.5","child.6","child.7","child.8","child.9","child.10","reference-term-source","reference-term-code","reference-term-relationship"
+"578931b3-e976-4ad6-bb28-f86665a124da","STI-Diagnosis and counselling",,"Misc","STI Diagnosis (syndromic and etiological)","STI-STI syndromic diagnosis","STI-Other STI diagnosis syndrome","STI-Etiological diagnosis","VDRL positive","STI-TPPA +ve","STI-Gram","STI-Risk group","STI-Other risk group","Referred in","",,,
+"b7d857da-674e-479b-a448-dc9b32860ca4","STI-Treatment",,"Misc","STI treatment","STI-Sydromic treatment","STI-Etiological treatment","STI-Syphilis screening","STI-Presumptive treatment for sex workers","STI-Asymptomatic partners treated","STI, Referral","STI-Referred To","","","",,,
+"20ccd05e-cfda-44bd-be67-af947ed7023a","STI-Counselling/assessed",,"Misc","Counselling/assessed","STI-STI counseling","","","","","","","","","",,,
+"47bee189-5e11-4ded-9eb1-01d4ea3d8bbe","Sexually transmitted infections(STI) note",,"Misc","STI note","STI-Diagnosis and counselling","STI-Treatment","STI-Counselling/assessed","","","","","","","",,,

@@ -1,0 +1,9 @@
+"uuid","name","description","class","shortname","datatype","units","High Normal","Low Normal","Allow Decimal","locale","synonym.1","answer.1","answer.2","answer.3","answer.4","answer.5","reference-term-source","reference-term-code","reference-term-relationship"
+"74492c6f-cec3-4cc7-bde5-d7ecde110fee","ECG-Details",,"Misc","Details","Text",,,,,,"","","","","","",,,
+"a2735dec-809d-4a5d-bd77-19758b67296b","Operative Note-OPD",,"Misc","OPD","N/A",,,,,,"","","","","","",,,
+"d56d6a6b-282b-48db-9324-1f281db0cc62","Operative Note-Emergency",,"Misc","","N/A",,,,,,"","","","","","",,,
+"3588d710-7481-4e9e-830b-26a557fb9173","Operative Note-IPD",,"Misc","","N/A",,,,,,"","","","","","",,,
+"88ea20ac-33df-4063-a1c2-ef6549979edf","RHD-Other",,"Misc",,"N/A",,,,,,"","","","","","",,,
+"08002d65-afcc-42d3-8c59-53aa006b4ca0","ECG-Done in",,"Misc","Done in","Coded",,,,,,"","Operative Note-OPD","Operative Note-Emergency","Operative Note-IPD","RHD-Other","",,,
+"e5ee47db-23da-4c19-ae61-c238b0c3cd9c","Done by",,"Misc","Done by","Text",,,,,,"","","","","","",,,
+"d0cb4eef-3ff7-415c-bba0-5805d8c94937","ECG-Remarks",,"Misc","Remarks","Text",,,,,,"","","","","","",,,
