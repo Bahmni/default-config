@@ -1,11 +1,11 @@
 {
   "homePage": {
-    "header_text": "<b>Welcome to Possible Health Bayalpata",
-    "logo": "/bahmni/images/bahmniLogoFull.png",
+    "header_text": "<b>Welcome to NepalEHR",
+    "logo": "/bahmni/images/nepalEhrLogoFull.png",
     "title_text": " "
   },
   "loginPage": {
-    "logo": "/bahmni/images/bahmniLogoFull.png",
+    "logo": "/bahmni/images/nepalEhrLogoFull.png",
     "showHeaderText": true,
     "showTitleText": false
   },

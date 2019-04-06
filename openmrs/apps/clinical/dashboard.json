@@ -4,7 +4,7 @@
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "Nepal EHR",
             "header": "General Summary",
             "logo": "../images/nhn-logo.png"
         },
@@ -443,7 +443,7 @@
     "hiv": {
         "dashboardName": "HIV",
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "NepalEHR",
             "header": "HIV Summary",
             "logo": "../images/nhn-logo.png"
         },
@@ -491,7 +491,7 @@
     "motherhood": {
         "dashboardName": "Motherhood",
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "NepalEHR",
             "header": "Motherhood Summary",
             "logo": "../images/nhn-logo.png"
         },
@@ -528,7 +528,7 @@
     "operationsAndProcedures": {
         "dashboardName": "Operations and Procedures",
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "NepalEHR",
             "header": "Operations and Procedures Summary",
             "logo": "../images/nhn-logo.png"
         },
@@ -565,7 +565,7 @@
     "imam": {
         "dashboardName": "IMAM",
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "NepalEHR",
             "header": "IMAM Summary",
             "logo": "../images/nhn-logo.png"
         },
@@ -602,7 +602,7 @@
     "communityHealth": {
         "dashboardName": "Community Health",
         "printing": {
-            "title": "Bayalpata Hospital",
+            "title": "NepalEHR",
             "header": "Community Health Summary",
             "logo": "../images/nhn-logo.png"
         },

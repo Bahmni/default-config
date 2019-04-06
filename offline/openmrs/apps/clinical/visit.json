@@ -5,7 +5,7 @@
         "printing": {
             "title": "Bahmni",
             "header": "Visit",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../images/nepalEhrLogo.png"
         },
         "defaultSections": true,
         "sections": {
@@ -50,7 +50,7 @@
         "printing": {
             "title": "Bahmni",
             "header": "Discharge Summary",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../images/nepalEhrLogo.png"
         },
         "sections": {
             "PatientInformation":{
