@@ -29,3 +29,4 @@ from
               and gender.gender = result.gender
 GROUP BY question.concept_full_name, answer.concept_full_name, gender.gender
 ORDER BY answer.concept_full_name,gender.gender;
+ORDER BY answer.concept_full_name,gender.gender;
