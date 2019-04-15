@@ -18,6 +18,14 @@
         ],
         "config" : {
                 "patientInformation": {
+
+        "patientContactInformation": {
+                "title": "patientContactInformation",
+                "translationKey": "REGISTRATION_CONTACT_INFORMATION",
+                "attributes": ["PRIMARY_CONTACT_NUMBER_1","ALTERNATIVE_CONTACT_NUMBER_1","ALTERNATIVE_CONTACT_NUMBER_2"],
+                "order" : 2,
+                "expanded": true
+        },
              	
         "patientTransferenceInformation": {
                 "title": "patientTransferenceInformation",
