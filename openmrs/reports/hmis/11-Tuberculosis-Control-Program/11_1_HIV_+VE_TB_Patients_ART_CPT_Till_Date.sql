@@ -24,7 +24,7 @@ FROM
         AND question_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('Tuberculosis, Is patient on ART','Tuberculosis, Is patient on CPT')
+        question_concept_name.name IN ('TB Intake-Is patient on art','TB Intake-Is patient on cpt')
     ORDER BY answer_name DESC) first_answers
         INNER JOIN
     (SELECT 'M' AS gender UNION SELECT 'F' AS gender) gender

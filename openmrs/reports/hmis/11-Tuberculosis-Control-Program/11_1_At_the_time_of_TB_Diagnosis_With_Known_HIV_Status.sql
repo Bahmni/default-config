@@ -22,7 +22,7 @@ FROM
         INNER JOIN
     concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name IN ('TB Intake-With known hiv status')
+        AND cn1.name IN ('Tuberculosis-With known HIV status')
         AND o1.voided = 0
         AND cn1.voided = 0
         INNER JOIN

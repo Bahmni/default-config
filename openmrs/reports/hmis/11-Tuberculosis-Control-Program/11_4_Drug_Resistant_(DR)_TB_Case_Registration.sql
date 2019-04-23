@@ -31,7 +31,7 @@ FROM
         AND answer_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('DRTuberculosis, Diagnosis Category','DRTuberculosis, HIV Infection')
+        question_concept_name.name IN ('DRTB Intake-Diagnosis category','DRTB intake-HIV infection')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) first_answers
         INNER JOIN
@@ -47,7 +47,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name IN ('DRTuberculosis, Diagnosis Category','DRTuberculosis, HIV Infection')
+        AND cn1.name IN ('DRTB Intake-Diagnosis category','DRTB intake-HIV infection')
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id

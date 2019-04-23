@@ -32,7 +32,7 @@ FROM
         AND answer_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name ='Tuberculosis, Referred by'
+        question_concept_name.name ='TB Intake-Referred by'
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) first_answers
         INNER JOIN
@@ -56,7 +56,7 @@ FROM
         AND answer_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('Tuberculosis, Type')
+        question_concept_name.name IN ('TB Intake-Type')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) second_answers
         INNER JOIN
@@ -72,7 +72,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'Tuberculosis, Referred by'
+        AND cn1.name = 'TB Intake-Referred by'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
@@ -93,7 +93,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'Tuberculosis, Type'
+        AND cn1.name = 'TB Intake-Type'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
@@ -117,7 +117,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'Tuberculosis, Diagnosis Category'
+        AND cn1.name = 'TB Intake-Diagnosis category'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id

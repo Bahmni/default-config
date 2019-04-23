@@ -31,7 +31,7 @@ FROM
         AND answer_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('DRTuberculosis, HIV Infection')
+        question_concept_name.name IN ('DRTB intake-HIV infection')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) first_answers
         INNER JOIN
@@ -54,7 +54,7 @@ FROM
         AND answer_concept_short_name.voided
         IS FALSE
     WHERE
-        question_concept_name.name IN ('DRTuberculosis, Treatment outcome')
+        question_concept_name.name IN ('DRTB FU-Treatment outcome')
             AND cd.name = 'Coded'
     ORDER BY answer_name DESC) second_answers
         INNER JOIN
@@ -70,12 +70,12 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'DRTuberculosis, HIV Infection'
+        AND cn1.name = 'DRTB intake-HIV infection'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
         AND cn2.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn2.name = 'Yes'
+        AND cn2.name = 'True'
         AND cn2.voided = 0
     INNER JOIN encounter e ON o1.encounter_id = e.encounter_id
     INNER JOIN visit v1 ON v1.visit_id = e.visit_id
@@ -93,7 +93,7 @@ FROM
         obs o1
     INNER JOIN concept_name cn1 ON o1.concept_id = cn1.concept_id
         AND cn1.concept_name_type = 'FULLY_SPECIFIED'
-        AND cn1.name = 'DRTuberculosis, Treatment outcome'
+        AND cn1.name = 'DRTB FU-Treatment outcome'
         AND o1.voided = 0
         AND cn1.voided = 0
     INNER JOIN concept_name cn2 ON o1.value_coded = cn2.concept_id
