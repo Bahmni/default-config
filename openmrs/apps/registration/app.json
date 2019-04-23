@@ -19,6 +19,14 @@
         "config" : {
                 "patientInformation": {
 
+        "patientProfessionInformation": {
+                "title": "patientProfessionInformation",
+                "translationKey": "REGISTRATION_PROFESSIONAL_INFORMATION",
+                "attributes": ["PATIENT_OCCUPATION","PATIENT_EDUCATION"],
+                "order" : 1,
+                "expanded": true
+        },
+
         "patientContactInformation": {
                 "title": "patientContactInformation",
                 "translationKey": "REGISTRATION_CONTACT_INFORMATION",
