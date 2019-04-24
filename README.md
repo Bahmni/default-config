@@ -1,4 +1,3 @@
-WIKI_Sanjay_test
 #### [Wiki](docs/Wiki.md#wiki)
 
 
@@ -63,7 +62,7 @@ https://ci-bahmni.thoughtworks.com/go/files/Bahmni_MRS_Master/{Build_Number}/Bui
 
 "config" : {
   "autoCompleteFields":["familyName", "caste"],
-  "defaultIdentifierPrefix": "GAN",
+  "defaultIdentifierPrefix": "NEHR",
   "searchByIdForwardUrl": "/patient/{{patientUuid}}?visitType=OPD - RETURNING",
   "conceptSetUI": {
       "temparature": {
