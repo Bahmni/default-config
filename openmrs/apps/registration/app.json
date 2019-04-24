@@ -103,11 +103,11 @@
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "latitude" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},           
-                "address3" : {"pattern" : "[0-9]{0}", "errorMessage" : "Should contain number"},
-                "address4" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address5" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address6" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "postalCode" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}
+                "address3" : {"pattern" : "[a-zA-Z0-9\\s]{0}", "errorMessage" : "Should contain Characters, Numbers"},
+                "address4" : {"pattern" : "[a-zA-Z0-9\\s)-(]{0,}", "errorMessage" : "Should contain Characters, Numbers,-,(,)"},
+                "address5" : {"pattern" : "[a-zA-Z0-9\\s-]{0,}", "errorMessage" : "Should contain Characters, Numbers, -"},
+                "address6" : {"pattern" : "[a-zA-Z0-9\\s-]{0,}", "errorMessage" : "Should contain Characters, Numbers, -"},
+                "postalCode" : {"pattern" : "[a-zA-Z0-9\\s)-(]{0,}", "errorMessage" : "Should contain Characters, Numbers,-,(,)"}
                 
             },
             "patientSearchResults": {
