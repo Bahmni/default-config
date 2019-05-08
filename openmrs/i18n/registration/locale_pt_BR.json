@@ -32,7 +32,7 @@
 	"province_locale":"Província",
 	"district_locale":"Distrito",
 	"administrative_locale":"Administrativo",
-	"locality_locale":"Localidade",
+	"locality_locale":"Localidade/Bairro",
     "education":"Nivel de Escolaridade",
     "ADDRESS_CLOSE_OF_LOCALE":"Perto De",
 	"ADDRESS_AVENUE_STREET_LOCALE":"Avenida/Rua",
