@@ -2,6 +2,10 @@
     "id": "bahmni.clinical",
     "extensionPoints": [
         {
+            "id": "org.bahmni.clinical.consultation.board",
+            "description": "Bahmni Clinical Consultation Page"
+        },
+        {
             "id": "org.bahmni.clinical.conceptSetGroup.*",
             "description": "Define conceptsets part of a conceptset group"
         },
@@ -20,7 +24,6 @@
     ],
     "config": {
         "hideConditions": false,
-        "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
         "quickPrints":false,
         "networkConnectivity" : {
@@ -40,8 +43,11 @@
                 "ID_Number": {
                     "required" : true
                 },
-                "Stage": {
-                    "excludeFrom": ["ART","TB Program","PTV program"]
+                "Co-morbidites": {
+                    "excludeFrom": ["HIV Program"]
+                },
+                "Doctor": {
+                    "excludeFrom": ["TB Program"]
                 }
             },
             "patientContext": {
@@ -51,11 +57,10 @@
             		"Stage"
         		],
         		"personAttributes": [
-            		"class",
-            		"caste"
+            		
         		],
         		"additionalPatientIdentifiers": [
-           			"National ID"
+           			
        		],
         		"preferredIdentifier": "Id_Number"
     	},
@@ -65,9 +70,7 @@
             "Patient file"
         ],
         "otherInvestigationsMap": {
-            "Radiology": "Radiology Order",
-            "Endoscopy": "Endoscopy Order"
-        },
+                    },
         "allowConsultationWhenNoOpenVisit": false,
         "defaultVisitType": "OPD",
         "visitTypeForRetrospectiveEntries": "Special OPD",
@@ -105,10 +108,6 @@
             },
             "Set1": {
                 "allowAddMore": true
-            },
-            "Home equipment": {
-                "dropdown": true,
-                "disableAddNotes": true
             },
             "Set2": {
                 "allowAddMore": true
