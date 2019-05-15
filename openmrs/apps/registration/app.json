@@ -77,7 +77,7 @@
             "defaultVisitType": "FIRST CONSULTATION",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
 	        "afterVisitSaveForwardUrl": "../registration/index.html#/search",
-            "showMiddleName": false,
+            "showMiddleName": true,
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
