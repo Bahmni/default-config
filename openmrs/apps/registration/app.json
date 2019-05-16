@@ -134,7 +134,8 @@
                     "fields": [
                             "NICK_NAME",
                             "PATIENT_STATUS",
-                            "PRIMARY_CONTACT_NUMBER_1"
+                            "PRIMARY_CONTACT_NUMBER_1",
+                            "US_REG_DATE"
                     ]
                 }
             },		
