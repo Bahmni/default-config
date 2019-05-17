@@ -9,7 +9,7 @@
   ],
   "config": {
     "minCharLengthToTriggerPatientSearch": 3,
-    "enableSpecialities": true,
+    "enableSpecialities": false,
     "startOfWeek": 2,
     "weekStart": "isoWeek",
     "calendarSlotDuration": "00:30",
@@ -41,6 +41,12 @@
       "#9400D3",
       "#FF1493",
       "#00BFFF"
+    ],
+    "appointmentBlocks":[
+      {"name":"APP_BLOCK_1","startTime":"12:00 am","endTime":"08:59 am"},
+      {"name":"APP_BLOCK_2","startTime":"09:00 am","endTime":"11:59 am"},
+      {"name":"APP_BLOCK_3","startTime":"12:00 pm","endTime":"03:29 pm"},
+      {"name":"APP_BLOCK_4","startTime":"03:30 pm","endTime":"11:59 pm"}
     ],
     "allowedActions": ["CheckedIn", "Completed", "Missed", "Cancelled"],
     "allowedActionsByStatus": {

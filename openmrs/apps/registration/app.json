@@ -17,63 +17,78 @@
             "activeVisitUuid"
         ],
         "config" : {
-            "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
+                "patientInformation": {
+
+        "patientProfessionInformation": {
+                "title": "patientProfessionInformation",
+                "translationKey": "REGISTRATION_PROFESSIONAL_INFORMATION",
+                "attributes": ["PATIENT_OCCUPATION","PATIENT_EDUCATION"],
+                "order" : 1,
+                "expanded": true
+        },
+
+        "patientContactInformation": {
+                "title": "patientContactInformation",
+                "translationKey": "REGISTRATION_CONTACT_INFORMATION",
+                "attributes": ["PRIMARY_CONTACT_NUMBER_1","ALTERNATIVE_CONTACT_NUMBER_1","ALTERNATIVE_CONTACT_NUMBER_2"],
+                "order" : 2,
+                "expanded": true
+        },
+             	
+        "patientTransferenceInformation": {
+                "title": "patientTransferenceInformation",
+                "translationKey": "REGISTRATION_TRANSFERENCE_INFO_KEY",
+                "attributes": ["Transferred from another HF","Date of transference","Transferred out HF name","PATIENT_STATUS"],
+                "order" : 3,
+                "expanded": true
+        },
+
+        "patientHIVTestInformation": {
+                "title": "patientHIVTestInformation",
+                "translationKey": "REGISTRATION_HIVTEST_INFO_KEY",
+                "attributes": ["DateofHIVDiagnosis","Typeoftest","TEST_RESULT","PATIENT_STATUS","LOCATION_OF_TEST","SECTOR_SELECT","ATIP_SELECT","HEALTH_FACILITY_NAME","HEALTH_FACILITY_DISTRICT","HEALTH_FACILITY_PROVINCE"],
+                "order" : 4,
+                "expanded": true
+        },
+                     "hidden": {
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
-                    ]
-                },
-                "hidden": {
-                    "attributes": [
-                        "primaryContact"
+                        "primaryContact",
+                        "TEST_RESULT"
                     ]
                 },
                 "defaults":  {
                     "class": "General",
+                    "TEST_RESULT": "Positive",
+                    "PATIENT_STATUS": "Pre TARV",
                     "landHolding": 2
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
+                "showAddressFieldsTopDown": true,
+                "strictAutocompleteFromLevel": "address1"
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
                 "Parent":"patient"
             },
-
             "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
-            "defaultVisitType": "OPD",
+            "defaultIdentifierPrefix": "MOZ",
+	        "extraIdentifiersToDisplay" : "NID (SERVIÇO TARV)",
+            "defaultVisitType": "FIRST CONSULTATION",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "showMiddleName": true,
+	        "afterVisitSaveForwardUrl": "../registration/index.html#/search",
+            "showMiddleName": false,
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
-            "showBirthTime": true,
+            "showBirthTime": false,
+            "disablePhotoCapture": true,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
                     "shortcutKey": "p"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
                 },
                 {
                     "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
@@ -89,6 +104,11 @@
                 "FHS": {
                     "buttonSelect": true
                 },
+                 "Home equipment": {
+                "dropdown": true,
+                "disableAddNotes": true
+            },
+
                 "defaults":{
                     "FHS": "Present"
                 }
@@ -99,19 +119,33 @@
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"}
+                "latitude" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},           
+                "address3" : {"pattern" : "[a-zA-Z0-9\\s]{0,}", "errorMessage" : "Should contain Characters, Numbers"},
+                "address4" : {"pattern" : "[a-zA-Z0-9\\s)-(]{0,}", "errorMessage" : "Should contain Characters, Numbers,-,(,)"},
+                "address5" : {"pattern" : "[a-zA-Z0-9\\s-]{0,}", "errorMessage" : "Should contain Characters, Numbers, -"},
+                "address6" : {"pattern" : "[a-zA-Z0-9\\s-]{0,}", "errorMessage" : "Should contain Characters, Numbers, -"},
+                "postalCode" : {"pattern" : "[a-zA-Z0-9\\s)-(]{0,}", "errorMessage" : "Should contain Characters, Numbers,-,(,)"}
+                
             },
-            "patientSearch": {
+            "patientSearchResults": {
                 "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
+                    "fields" : []
                 },
-                "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                "personAttributes": {
+                    "fields": [
+                            "NICK_NAME",
+                            "PATIENT_STATUS",
+                            "PRIMARY_CONTACT_NUMBER_1"
+                    ]
                 }
-            }
+            },		
+            "patientSearch": {
+                "address": {},
+		"customAttributes": { 
+                 "label": "Alcunha",
+                    "placeholder": "Alcunha",
+                    "fields": ["NICK_NAME"]
+        }
+        	}    
         }
 }

@@ -2,12 +2,14 @@
 <table border="1" cellpadding="0" cellspacing="1" class="registrationCard-print-table">
     <tbody>
     <tr>
-        <td class="print-table-left" valign="top">
+        <td class="print-table-right" valign="top">
             <table>
                 <tr>
-                   
                     <td class="print-table-right-header">
-                        <h3 class="print-center">POC HF 01</h3>
+                        <h3>
+                        {{ "REGISTRATION_INSTITUTE_NAME_TEXT_KEY" | translate }}
+                        </h3>
+                        <h3 class="print-center">{{ "REGISTRATION_INSTITUTE_REGISTERED_TEXT_KEY" |  translate }}</h3>
                     </td>
                     <td class="registrationCard-photo">
                         <img ng-src="{{patient.image}}" style="width: 20mm; height: 20mm; "
@@ -19,58 +21,69 @@
                 <tbody>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">data de registro</span>
+                        <span class="hindi-text">Data do Registro</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.registrationDate | bahmniDate}} </td>
                 </tr>
-            
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">Nome completo</span>
+                        <span class="hindi-text">Patient Identifier</span>
+                    </td>
+                    <td class="registrationCard-details-seperator"> :  </td>
+                    <td>{{patient.primaryIdentifier.identifier}} </td>
+                </tr>
+                <tr>
+                    <td class="registrationCard-details-name">
+                        <span class="hindi-text">Nome do Paciente</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>
                         <span class="hindi-text">{{patient.fullNameLocal()}}</span>
                     </td>
+                </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">Era</span>
+                        <span class="hindi-text">Idade</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.age | age}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">Gênero</span>
+                        <span class="hindi-text">Genero</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.gender}} </td>
                 </tr>
-            
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">Aldeia</span>
+                        <span class="hindi-text">Address</span>
+                    </td>
+                    <td class="registrationCard-details-seperator"> :  </td>
+                    <td>{{patient.primaryRelative}} </td>
+                </tr>
+                <tr>
+                    <td class="registrationCard-details-name">
+                        <span class="hindi-text">Localidade</span>
+                    </td>
+                    <td class="registrationCard-details-seperator"> :  </td>
+                    <td>{{patient.address.address1}} </td>
+                </tr>
+                 <tr>
+                    <td class="registrationCard-details-name">
+                        <span class="hindi-text">Administrativo</span>
+                    </td>
+                    <td class="registrationCard-details-seperator"> :  </td>
+                    <td>{{patient.address.address2}} </td>
+                </tr>
+
+                <tr>
+                    <td class="registrationCard-details-name">
+                        <span class="hindi-text">Distrito</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.address.cityVillage}} </td>
-                </tr>
-            
-                <tr>
-                <td>
-               <img id="barcode"
-                     jsbarcode-value="{{patient.extraIdentifiers[0].identifier}}"
-                     jsbarcode-width="2"
-                     jsbarcode-height="100"
-                     jsbarcode-margin="0"
-                     jsbarcode-displayValue="false"
-                     jsbarcode-textAlign="left"
-                     jsbarcode-textMargin="0"
-                     jsbarcode-fontSize="10"
-
-                />
-                
-                </td>
                 </tr>
                 </tbody>
             </table>
@@ -78,11 +91,4 @@
     </tr>
     </tbody>
 </table>
- 
-<script type="text/javascript" src="/bahmni_config/openmrs/apps/JsBarcode.all.min.js"></script>
-<script>
-    (function() {
-        JsBarcode("#barcode").init();
-    })();
-</script>
 

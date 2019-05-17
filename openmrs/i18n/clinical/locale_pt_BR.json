@@ -63,5 +63,13 @@
   "PATIENT_VISIT_PAGE_KEY":"Pág. Visita de Paciente",
   "HOME_DASHBOARD_KEY":"Início Painel",
   "MEDICATION_CHANGE_DURATION_BUTTON": "Alterar Duração",
-  "DASHBOARD_TITLE_Consultation_KEY": "Anotações da Consulta"
+  "DASHBOARD_TITLE_Consultation_KEY": "Anotações da Consulta",
+   "DASHBOARD_TITLE_APPOINTMENTS_KEY": "Compromissos",
+   "DASHBOARD_UPCOMING_APPOINTMENTS_KEY": "Próximos compromissos",
+   "DASHBOARD_NO_UPCOMING_APPOINTMENTS_KEY": "No upcoming appointments",
+   "DASHBOARD_PAST_APPOINTMENTS_KEY": "Nomeações passadas",
+   "DASHBOARD_NO_PAST_APPOINTMENTS_KEY": "Nenhum compromisso passado",
+   "MODULE_LABEL_ART_PROGRAMS_KEY": "ART Programa",
+   "MODULE_LABEL_TB_PROGRAMS_KEY": "TB Programa",
+   "MODULE_LABEL_ALL_PROGRAMS_KEY": "ALL Programa"
 }
