@@ -84,6 +84,9 @@
                 "durationRequired": false,
                 "allowAddMore": true
             },
+            "Probable delivery date": {
+               "allowFutureDates":true
+           },
             "Tuberculosis, Adverse Effects" :{
                 "multiSelect" : true,
                 "autocomplete" : true
