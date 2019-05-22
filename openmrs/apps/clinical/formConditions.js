@@ -54,7 +54,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
     }
 },
 "Received nutritional support" (formName, formFieldValues) {
-    var dia = formFieldValues['Received nutritional support'];
+    var dia = formFieldValues["Received nutritional support"];
 
     if (dia === true) {
         return {
@@ -83,8 +83,8 @@ Bahmni.ConceptSet.FormConditions.rules = {
 },
 "Type_Prophylaxis" (formName, formFieldValues) {
     var dia = formFieldValues["Type_Prophylaxis"];
-    var returnShowValue = new Array();
-    var returnHideValue = new Array();
+    var returnShowValue = [];
+    var returnHideValue = [];
     if (dia && dia.length) {
 
         if (dia.includes("INH")) {
