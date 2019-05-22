@@ -12,9 +12,9 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-     'Conduct_Family_planning' : function (formName, formFieldValues) {
-        var yes = formFieldValues['Conduct_Family_planning'];
-        if (yes ==  "Conduct_Family_planning_Yes") {
+     "Conduct_Family_planning" (formName, formFieldValues) {
+        var yes = formFieldValues["Conduct_Family_planning"];
+        if (yes ===  "Conduct_Family_planning_Yes") {
             return {
                 show: ["Conduct_Contraceptive_Methods_PRES_Condom_button","Conduct_Contraceptive_Methods_PIL_Oral_Contraceptive_button",
 "Conduct_Contraceptive_Methods_INJ_Injection_button","Conduct_Contraceptive_Methods_IMP_Implant_button","Conduct_Contraceptive_Methods_DIU_Intra_button",
