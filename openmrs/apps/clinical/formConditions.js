@@ -12,7 +12,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    "PP_Key_population": function(formName, formFieldValues) {
+    "PP_Key_population" (formName, formFieldValues) {
         var dia = formFieldValues["PP_Key_population"];
         if (dia === "PP_Key_population_Yes") {
             return {
@@ -24,7 +24,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    "PP_Vulnerable_Population": function(formName, formFieldValues) {
+    "PP_Vulnerable_Population" (formName, formFieldValues) {
         var dia = formFieldValues["PP_Vulnerable_Population"];
         if (dia === "PP_Vulnerable_Population_Yes") {
             return {
