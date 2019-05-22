@@ -12,9 +12,9 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    'PP_Key_population': function(formName, formFieldValues) {
-        var dia = formFieldValues['PP_Key_population'];
-        if (dia == "PP_Key_population_Yes") {
+    "PP_Key_population": function(formName, formFieldValues) {
+        var dia = formFieldValues["PP_Key_population"];
+        if (dia === "PP_Key_population_Yes") {
             return {
                 show: ["PP_If_Key_population_yes"]
             }
@@ -24,9 +24,9 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    'PP_Vulnerable_Population': function(formName, formFieldValues) {
-        var dia = formFieldValues['PP_Vulnerable_Population'];
-        if (dia == "PP_Vulnerable_Population_Yes") {
+    "PP_Vulnerable_Population": function(formName, formFieldValues) {
+        var dia = formFieldValues["PP_Vulnerable_Population"];
+        if (dia === "PP_Vulnerable_Population_Yes") {
             return {
                 show: ["PP_IF_Vulnerable_Population_Yes"]
             }
