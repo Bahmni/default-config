@@ -119,10 +119,10 @@
                 "familyName" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ]{0,}", "errorMessage" : "Should contain characters"},
-                "address3" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-]*", "errorMessage" : "Should contain characters"},
-                "address4" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-]*", "errorMessage" : "Should contain characters"},
-                "address5" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-]*", "errorMessage" : "Should contain characters"},
-                "postalCode" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-]*", "errorMessage" : "Should contain characters"}
+                "address3" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"},
+                "address4" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"},
+                "address5" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"},
+                "postalCode" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"}
             },
             "patientSearchResults": {
                 "address": {
