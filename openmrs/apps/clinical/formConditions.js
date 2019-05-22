@@ -85,7 +85,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
     var dia = formFieldValues["Type_Prophylaxis"];
     var returnShowValue = [];
     var returnHideValue = [];
-    if (dia && dia.length) {
+    
 
         if (dia.includes("INH")) {
 
@@ -118,13 +118,8 @@ Bahmni.ConceptSet.FormConditions.rules = {
             hide: returnHideValue
         }
 
-    } else {
-
-        return {
-            hide: ["CTZ_Details", "INH_Details", "Fluconazol_Details"]
-
-        }
-    }
+    
+    
 },
     'Systolic Data' : function (formName, formFieldValues) {
         var systolic = formFieldValues['Systolic'];
@@ -136,7 +131,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
         } else {
             return {
                 disable: ["Posture"]
-            }
+            };
         }
     }
 };
