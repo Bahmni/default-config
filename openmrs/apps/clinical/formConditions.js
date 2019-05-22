@@ -1,5 +1,5 @@
 Bahmni.ConceptSet.FormConditions.rules = {
-    'Diastolic Data' : function (formName, formFieldValues) {
+    'Diastolic Data': function(formName, formFieldValues) {
         var systolic = formFieldValues['Systolic'];
         var diastolic = formFieldValues['Diastolic'];
         if (systolic || diastolic) {
@@ -12,9 +12,9 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    'PP_Key_population' : function (formName, formFieldValues) {
+    'PP_Key_population': function(formName, formFieldValues) {
         var dia = formFieldValues['PP_Key_population'];
-        if (dia ==  "PP_Key_population_Yes") {
+        if (dia == "PP_Key_population_Yes") {
             return {
                 show: ["PP_If_Key_population_yes"]
             }
@@ -23,10 +23,10 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 hide: ["PP_If_Key_population_yes"]
             }
         }
-     },
-     'PP_Vulnerable_Population' : function (formName, formFieldValues) {
+    },
+    'PP_Vulnerable_Population': function(formName, formFieldValues) {
         var dia = formFieldValues['PP_Vulnerable_Population'];
-        if (dia ==  "PP_Vulnerable_Population_Yes") {
+        if (dia == "PP_Vulnerable_Population_Yes") {
             return {
                 show: ["PP_IF_Vulnerable_Population_Yes"]
             }
@@ -35,8 +35,8 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 hide: ["PP_IF_Vulnerable_Population_Yes"]
             }
         }
-     },
-    'Systolic Data' : function (formName, formFieldValues) {
+    },
+    'Systolic Data': function(formName, formFieldValues) {
         var systolic = formFieldValues['Systolic'];
         var diastolic = formFieldValues['Diastolic'];
         if (systolic || diastolic) {
