@@ -127,6 +127,9 @@
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "DI_List of cause": {
+                "dropdown": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
