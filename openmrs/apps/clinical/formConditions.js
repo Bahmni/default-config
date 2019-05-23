@@ -49,7 +49,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    'Reference_Other_Services' : function (formName, formFieldValues) {
+    "Reference_Other_Services" (formName, formFieldValues) {
         var value = formFieldValues["Reference_Other_Services"];
         
         if (value === "Reference_Other") {
@@ -62,7 +62,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    'Reference_Eligible' : function (formName, formFieldValues) {
+    "Reference_Eligible" (formName, formFieldValues) {
         var value = formFieldValues["Reference_Eligible"];
         
         if (value) {
