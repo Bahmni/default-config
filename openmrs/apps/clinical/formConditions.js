@@ -1,4 +1,4 @@
-Bahmni.ConceptSet.FormConditions.rules = {
+Bahmni.ConceptSet.FormConditions.rulesOverride = {
     'Diastolic Data': function(formName, formFieldValues) {
         var systolic = formFieldValues['Systolic'];
         var diastolic = formFieldValues['Diastolic'];
