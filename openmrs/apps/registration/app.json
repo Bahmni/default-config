@@ -104,10 +104,23 @@
                 "FHS": {
                     "buttonSelect": true
                 },
+
+              "WEIGHT": {
+                "disableAddNotes": true
+              },
+              "HEIGHT": {
+                "disableAddNotes": true
+              },
                  "Home equipment": {
                 "dropdown": true,
                 "disableAddNotes": true
             },
+              "HF_Pregnancy status": {
+                "disableAddNotes": true
+              },
+              "Breastfeeding status": {
+                "disableAddNotes": true
+              },
 
                 "defaults":{
                     "FHS": "Present"
@@ -119,12 +132,11 @@
                 "familyName" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ]{0,}", "errorMessage" : "Should contain characters"},
-                "latitude" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address3" : {"pattern" : "[a-zA-Z0-9\\s]{0,}", "errorMessage" : "Should contain Characters, Numbers"},
-                "address4" : {"pattern" : "[a-zA-Z0-9\\s)-(]{0,}", "errorMessage" : "Should contain Characters, Numbers,-,(,)"},
-                "address5" : {"pattern" : "[a-zA-Z0-9\\s-]{0,}", "errorMessage" : "Should contain Characters, Numbers, -"},
-                "address6" : {"pattern" : "[a-zA-Z0-9\\s-]{0,}", "errorMessage" : "Should contain Characters, Numbers, -"},
-                "postalCode" : {"pattern" : "[a-zA-Z0-9\\s)-(]{0,}", "errorMessage" : "Should contain Characters, Numbers,-,(,)"}
+                "address3" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"},
+                "address4" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"},
+                "address5" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"},
+                "address6" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"},
+                "postalCode" : {"pattern" : "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ0-9_-;,:.]*", "errorMessage" : "Should contain characters"}
             },
             "patientSearchResults": {
                 "address": {
