@@ -127,6 +127,45 @@
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "Reference_CR": {
+                "disableAddNotes": true
+            },
+            "Reference_PC": {
+                "disableAddNotes": true
+            },
+            "Reference_AR": {
+                "disableAddNotes": true
+            },
+            "Reference_MPS": {
+                "disableAddNotes": true
+            },
+            "Reference_Other_Specify_Group": {
+                "disableAddNotes": true
+            },
+            "Reference_GA": {
+                "disableAddNotes": true
+            },
+            "Reference_AF": {
+                "disableAddNotes": true
+            },
+            "Reference_CA": {
+                "disableAddNotes": true
+            },
+            "Reference_PU": {
+                "disableAddNotes": true
+            },
+            "Reference_FR": {
+                "disableAddNotes": true
+            },
+            "Reference_DT": {
+                "disableAddNotes": true
+            },
+            "Reference_DC": {
+                "disableAddNotes": true
+            },
+            "Reference_MDC_Other": {
+                "disableAddNotes": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
