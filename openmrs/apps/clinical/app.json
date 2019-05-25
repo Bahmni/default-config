@@ -127,6 +127,21 @@
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "Staging_WHO Stages": {
+                "buttonSelect": true
+            }, 
+            "Name of Diseases_Group VII": {
+                "dropdown": true
+            },
+            "Conditions_WHO Stages": {
+                "dropdown": true
+            },
+            "Diagnosis_Group VII": {
+                "allowAddMore": true
+            },
+            "WHO Stages_New": {
+                "allowAddMore": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
