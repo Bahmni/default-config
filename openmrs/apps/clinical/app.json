@@ -84,6 +84,21 @@
                 "durationRequired": false,
                 "allowAddMore": true
             },
+             "PP_Key_population": {
+                  "disableAddNotes": true
+            },
+            "PP_If_Key_population_yes": {
+                  "disableAddNotes": true
+            },
+            "PP_Vulnerable_Population": {
+                  "disableAddNotes": true
+            },
+            "PP_IF_Vulnerable_Population_Yes": {
+                  "disableAddNotes": true
+            },
+            "Probable delivery date": {
+               "allowFutureDates":true
+           },
             "Probable delivery date": {
                "allowFutureDates":true
             },
