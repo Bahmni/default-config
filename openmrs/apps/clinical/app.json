@@ -96,6 +96,18 @@
             "PP_IF_Vulnerable_Population_Yes": {
                   "disableAddNotes": true
             },
+            "WEIGHT": {
+                  "disableAddNotes": true
+            },
+            "HEIGHT": {
+                  "disableAddNotes": true
+            },
+            "Brachial_perimeter_new": {
+                  "disableAddNotes": true
+            },
+            "Nutritional_States_new": {
+                  "disableAddNotes": true
+            },
             "Probable delivery date": {
                "allowFutureDates":true
            },
