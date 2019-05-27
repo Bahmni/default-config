@@ -88,13 +88,15 @@
                   "disableAddNotes": true
             },
             "PP_If_Key_population_yes": {
-                  "disableAddNotes": true
+                  "disableAddNotes": true,
+                  "required": true
             },
             "PP_Vulnerable_Population": {
                   "disableAddNotes": true
             },
             "PP_IF_Vulnerable_Population_Yes": {
-                  "disableAddNotes": true
+                  "disableAddNotes": true,
+                  "required": true
             },
             "WEIGHT": {
                   "disableAddNotes": true
@@ -107,12 +109,6 @@
             },
             "Nutritional_States_new": {
                   "disableAddNotes": true
-            },
-            "PP_If_Key_population_yes":{
-                  "required": true
-            },
-            "PP_IF_Vulnerable_Population_Yes":{
-                  "required": true
             },
             "Probable delivery date": {
                "allowFutureDates":true
