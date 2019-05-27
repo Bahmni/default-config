@@ -108,6 +108,12 @@
             "Nutritional_States_new": {
                   "disableAddNotes": true
             },
+            "PP_If_Key_population_yes":{
+                  "required": true
+            },
+            "PP_IF_Vulnerable_Population_Yes":{
+                  "required": true
+            },
             "Probable delivery date": {
                "allowFutureDates":true
            },
