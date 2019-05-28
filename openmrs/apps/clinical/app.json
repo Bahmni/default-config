@@ -224,6 +224,9 @@
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "DI_List of cause": {
+                "dropdown": true
+            },
             "Reference_CR": {
                 "disableAddNotes": true
             },
