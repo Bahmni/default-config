@@ -35,7 +35,7 @@
                 { "locale" : "pt", "css": "offline-language-portuguese-brazil"}
             ]
         },
-    	"diagnosisStatus": "Inactive",
+        "diagnosisStatus": "Inactive",
             "program": {
                 "patientInformation": {
                     "ageLimit": 100
@@ -51,19 +51,19 @@
                 }
             },
             "patientContext": {
-        		"programAttributes": [
-            		"Id_Number",
-            		"Doctor",
-            		"Stage"
-        		],
-        		"personAttributes": [
-            		
-        		],
-        		"additionalPatientIdentifiers": [
-           			
-       		],
-        		"preferredIdentifier": "Id_Number"
-    	},
+                "programAttributes": [
+                    "Id_Number",
+                    "Doctor",
+                    "Stage"
+                ],
+                "personAttributes": [
+                    
+                ],
+                "additionalPatientIdentifiers": [
+                    
+            ],
+                "preferredIdentifier": "Id_Number"
+        },
         "obsIgnoreList": [
             "REGISTRATION FEES",
             "COMMENTS",
@@ -84,9 +84,106 @@
                 "durationRequired": false,
                 "allowAddMore": true
             },
+             "PP_Key_population": {
+                  "disableAddNotes": true
+            },
+            "PP_If_Key_population_yes": {
+                  "disableAddNotes": true,
+                  "required": true
+            },
+            "PP_Vulnerable_Population": {
+                  "disableAddNotes": true
+            },
+            "PP_IF_Vulnerable_Population_Yes": {
+                  "disableAddNotes": true,
+                  "required": true
+            },
+            "WEIGHT": {
+                  "disableAddNotes": true
+            },
+            "HEIGHT": {
+                  "disableAddNotes": true
+            },
+            "Brachial_perimeter_new": {
+                  "disableAddNotes": true
+            },
+            "Nutritional_States_new": {
+                  "disableAddNotes": true
+            },
             "Probable delivery date": {
                "allowFutureDates":true
            },
+            "Probable delivery date": {
+               "allowFutureDates":true
+            },
+            "Symptoms_Prophylaxis": {
+               "required": true,
+               "dropdown": true
+            },
+           "Symptoms Prophylaxis_New": {
+               "required": true
+            },
+            "Date of Diagnosis": {
+               "required": true           
+            },
+            "Treatment End Date": {
+               "buttonSelect": true
+            },
+            "Has STI Symptoms": {
+               "required": true
+            },
+            "TB Type is Extrapulmonary": {
+               "required": true,
+               "buttonSelect": true
+            }, 
+           "TInfants Odema_Prophylaxis": {
+               "required": true,
+               "buttonSelect": true
+            }, 
+            "Nutrition Supplement": {
+               "buttonSelect": true
+            }, 
+           "Quantity of Nutritional Supplement": {
+               "required": true
+            }, 
+            "Type_Prophylaxis": {
+              "multiSelect" : true
+            },
+            "State_Prophylaxis": {
+               "required": true,
+           "buttonSelect": true
+            },
+            "State_Prophylaxis_CTZ": {
+               "required": true,
+               "buttonSelect": true
+            },
+           "State_Prophylaxis_Fluconazol": {
+               "required": true,
+               "buttonSelect": true
+            },
+           "Start Date_Prophylaxis": {
+               "required": true
+            },
+           "Start Date_Prophylaxis_CTZ": {
+               "required": true
+            },
+           "Start Date_Prophylaxis_Fluconazol": {
+               "required": true
+            },
+           "Received nutritional support": {
+               "required": true
+            },
+           "STI Diagnosis_Prophylaxis": {
+               "required": true,
+               "buttonSelect": true
+            }, 
+            "Syndromic Approach_STI": {
+               "required": true,
+               "buttonSelect": true
+            }, 
+            "TB Type": {
+               "dropdown": true
+            },
             "Tuberculosis, Adverse Effects" :{
                 "multiSelect" : true,
                 "autocomplete" : true
@@ -141,6 +238,48 @@
             },
             "WHO Stages_New": {
                 "allowAddMore": true
+            },
+            "DI_List of cause": {
+                "dropdown": true
+            },
+            "Reference_CR": {
+                "disableAddNotes": true
+            },
+            "Reference_PC": {
+                "disableAddNotes": true
+            },
+            "Reference_AR": {
+                "disableAddNotes": true
+            },
+            "Reference_MPS": {
+                "disableAddNotes": true
+            },
+            "Reference_Other_Specify_Group": {
+                "disableAddNotes": true
+            },
+            "Reference_GA": {
+                "disableAddNotes": true
+            },
+            "Reference_AF": {
+                "disableAddNotes": true
+            },
+            "Reference_CA": {
+                "disableAddNotes": true
+            },
+            "Reference_PU": {
+                "disableAddNotes": true
+            },
+            "Reference_FR": {
+                "disableAddNotes": true
+            },
+            "Reference_DT": {
+                "disableAddNotes": true
+            },
+            "Reference_DC": {
+                "disableAddNotes": true
+            },
+            "Reference_MDC_Other": {
+                "disableAddNotes": true
             },
             "defaults": {
                 "Number of living children": 1,

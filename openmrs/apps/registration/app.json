@@ -104,10 +104,23 @@
                 "FHS": {
                     "buttonSelect": true
                 },
+
+              "WEIGHT": {
+                "disableAddNotes": true
+              },
+              "HEIGHT": {
+                "disableAddNotes": true
+              },
                  "Home equipment": {
                 "dropdown": true,
                 "disableAddNotes": true
             },
+              "HF_Pregnancy status": {
+                "disableAddNotes": true
+              },
+              "Breastfeeding status": {
+                "disableAddNotes": true
+              },
 
                 "defaults":{
                     "FHS": "Present"
