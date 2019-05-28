@@ -281,6 +281,12 @@
             "Reference_MDC_Other": {
                 "disableAddNotes": true
             },
+            "Reference_Other_Services": {
+                "disableAddNotes": true
+            },
+            "Reference_Eligible": {
+                "disableAddNotes": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
