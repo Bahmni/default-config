@@ -108,6 +108,7 @@
                   "disableAddNotes": true
             },
             "Nutritional_States_new": {
+
                   "disableAddNotes": true
             },
             "Probable delivery date": {
@@ -118,71 +119,138 @@
             },
             "Symptoms_Prophylaxis": {
                "required": true,
+               "disableAddNotes": true,
                "dropdown": true
             },
            "Symptoms Prophylaxis_New": {
+               "disableAddNotes": true,
                "required": true
             },
             "Date of Diagnosis": {
+               "disableAddNotes": true,
                "required": true           
             },
             "Treatment End Date": {
+               "disableAddNotes": true,
                "buttonSelect": true
             },
             "Has STI Symptoms": {
+               "disableAddNotes": true,
                "required": true
             },
             "TB Type is Extrapulmonary": {
+               "disableAddNotes": true,
                "required": true,
                "buttonSelect": true
             }, 
            "TInfants Odema_Prophylaxis": {
+               "disableAddNotes": true,
                "required": true,
                "buttonSelect": true
             }, 
             "Nutrition Supplement": {
+               "disableAddNotes": true,
                "buttonSelect": true
             }, 
            "Quantity of Nutritional Supplement": {
-               "required": true
+               "disableAddNotes": true
             }, 
             "Type_Prophylaxis": {
+              "disableAddNotes": true,
               "multiSelect" : true
             },
             "State_Prophylaxis": {
+               "disableAddNotes": true,
                "required": true,
-           "buttonSelect": true
+           	   "buttonSelect": true
             },
             "State_Prophylaxis_CTZ": {
+               "disableAddNotes": true,
                "required": true,
                "buttonSelect": true
             },
            "State_Prophylaxis_Fluconazol": {
+               "disableAddNotes": true,
                "required": true,
                "buttonSelect": true
             },
            "Start Date_Prophylaxis": {
+               "disableAddNotes": true,
                "required": true
             },
            "Start Date_Prophylaxis_CTZ": {
+               "disableAddNotes": true,
                "required": true
             },
            "Start Date_Prophylaxis_Fluconazol": {
+               "disableAddNotes": true,
                "required": true
             },
            "Received nutritional support": {
+               "disableAddNotes": true,
                "required": true
             },
            "STI Diagnosis_Prophylaxis": {
+               "disableAddNotes": true,
                "required": true,
                "buttonSelect": true
             }, 
             "Syndromic Approach_STI": {
+               "disableAddNotes": true,
                "required": true,
                "buttonSelect": true
             }, 
             "TB Type": {
+               "disableAddNotes": true,
                "dropdown": true
+            },
+             "Has TB Symptoms": {
+                "disableAddNotes": true
+            },
+            "TB_Type": {
+                "disableAddNotes": true
+            },
+            "SP_Treatment Start Date": {
+                "disableAddNotes": true
+            },
+            "SP_Treatment State": {
+                "disableAddNotes": true
+            },
+            "SP_Treatment End Date": {
+                "disableAddNotes": true
+            },
+            "End Date": {
+                "disableAddNotes": true
+            },
+            "End Date_CTZ": {
+                "disableAddNotes": true
+            },
+            "End Date_Fluconazol": {
+                "disableAddNotes": true
+            },
+            "Infants Odema_Prophylaxis": {
+                "disableAddNotes": true
+            },
+            "Received nutritional education": {
+                "disableAddNotes": true
+            },
+            "Unit of Measurement (Sachets)": {
+                "disableAddNotes": true
+            },
+            "Blood Pressure – Diastolic_VSNew": {
+                "disableAddNotes": true
+            },
+            "Blood Pressure – Systolic_VitalS": {
+                "disableAddNotes": true
+            },
+            "Heart Rate_VS_VitalsNew": {
+                "disableAddNotes": true
+            },
+            "Temperature VS1": {
+                "disableAddNotes": true
+            },
+            "Respiratory frequency_VS1": {
+                "disableAddNotes": true
             },
             "Tuberculosis, Adverse Effects" :{
                 "multiSelect" : true,
@@ -320,7 +388,6 @@
             "Conduct_Contraceptive_Methods_OUT_Other_button": {
                 "disableAddNotes": true
             },
-
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
