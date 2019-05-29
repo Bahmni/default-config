@@ -65,27 +65,10 @@
                 }
             },
            
-            "programs":{  
-                "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
-                "type":"programs",
-                "displayOrder":10
-            },
+           
             
            
-            "labOrdersDisplayControl":{  
-                "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "type":"ordersControl",
-                "orderType":"Lab Order",
-                "showDetailsButton":true,
-                "displayOrder":9,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                },
+           
                 "expandedViewConfig":{  
                     "conceptNames":[  
                         "Systolic",
@@ -180,75 +163,9 @@
                 }
             },
            
-            "historyAndExaminations":{  
-                "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":14,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "History and Examination"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "History and Examination"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "gynaecology":{  
-                "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
-                "type":"gynaecology",
-                "isObservation":true,
-                "displayOrder":15,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "showDetailsButton":true,
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "obstetrics":{  
-                "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
-                "type":"obstetrics",
-                "isObservation":true,
-                "displayOrder":16,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
+            
+           
+            
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
@@ -299,11 +216,7 @@
                 }
             },
             
-            "conditions": {
-                "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
-                "type": "conditionsList",
-                "displayOrder": 20
-            },
+           
             "formsDisplay": {
                 "type": "forms",
                 "displayOrder": 21,
@@ -322,7 +235,6 @@
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
                 }
             }
-        }
     },
     "trends":{  
         "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
@@ -455,23 +367,7 @@
         "maxRecentlyViewedPatients":10,
         "sections":{  
             
-            "HistoryAndExamination":{  
-                "type":"historyAndExamination",
-                "isObservation":true,
-                "displayType":"Full-Page",
-                "dashboardConfig":{  
-                    "showGroupDateTime":false,
-                    "conceptNames":[  
-                        "Chief Complaint Data",
-                        "Examination Notes",
-                        "Smoking History",
-                        "Clief COmplaint Notes",
-                        "Blood Pressure"
-                    ]
-                },
-                "displayOrder":6,
-                "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
-            },
+            
             "drugOther":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"drugOrderDetails",
