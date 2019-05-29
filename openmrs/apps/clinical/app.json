@@ -142,6 +142,11 @@
                "disableAddNotes": true,
                "required": true,
                "buttonSelect": true
+            },
+            "TB Type is Extrapulmonary_Sensitive": {
+               "disableAddNotes": true,
+               "required": true,
+               "buttonSelect": true
             }, 
            "TInfants Odema_Prophylaxis": {
                "disableAddNotes": true,
