@@ -15,7 +15,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     "TB_Type" (formName, formFieldValues) {
     var dia = formFieldValues["TB_Type"];
 
-    if (dia === "Extrapulmonary (Sensitive/Resistant)") {
+    if (dia === "Extrapulmonary (Sensitive/Resistant)" || dia === "Extrapulmonary_Resistant_SP" ) {
         return {
             show: ["TB Type is Extrapulmonary"]
         }
