@@ -14,16 +14,31 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     },
     "TB_Type" (formName, formFieldValues) {
     var dia = formFieldValues["TB_Type"];
+    var returnShowValues = [];
+    var returnHideValues = [];
 
-    if (dia === "Extrapulmonary (Sensitive/Resistant)" || dia === "Extrapulmonary_Resistant_SP" ) {
-        return {
-            show: ["TB Type is Extrapulmonary"]
+    if (dia === "Extrapulmonary (Sensitive/Resistant)") {
+
+            returnShowValues.push("TB Type is Extrapulmonary");
+            returnHideValues.push("TB Type is Extrapulmonary_Sensitive");
+
+        } 
+        else if (dia === "Extrapulmonary_Resistant_SP") {
+
+            returnShowValues.push("TB Type is Extrapulmonary_Sensitive");
+            returnHideValues.push("TB Type is Extrapulmonary");
+
+        } else {
+            
+            returnHideValues.push("TB Type is Extrapulmonary");
+            returnHideValues.push("TB Type is Extrapulmonary_Sensitive");
+
         }
-    } else {
-        return {
-            hide: ["TB Type is Extrapulmonary"]
+    return {
+
+            show: returnShowValues,
+            hide: returnHideValues
         }
-    }
 },
 "Has TB Symptoms" (formName, formFieldValues) {
     var dia = formFieldValues["Has TB Symptoms"];
