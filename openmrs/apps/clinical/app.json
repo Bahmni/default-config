@@ -112,10 +112,41 @@
                   "disableAddNotes": true
             },
             "Probable delivery date": {
-               "allowFutureDates":true
-           },
-            "Probable delivery date": {
-               "allowFutureDates":true
+               "allowFutureDates":true,
+               "disableAddNotes": true
+            },
+            "Last Menstruation Date": {
+                "disableAddNotes": true
+            },
+            "Pregnancy_Yes_No": {
+                "disableAddNotes": true
+            },
+            "Date of Delivery": {
+                "disableAddNotes": true
+            },
+            "Number of Alive Babies Born": {
+                "disableAddNotes": true
+            },
+            "Number of Still Babies Born": {
+                "disableAddNotes": true
+            },
+            "Breastfeeding_ANA": {
+                "disableAddNotes": true
+            },
+            "Pain during sexual intercourse": {
+                "disableAddNotes": true
+            },
+            "Vaginal bleeding after sexual intercourse": {
+                "disableAddNotes": true
+            },
+            "Vaginal bleeding between menstruation_NA": {
+                "disableAddNotes": true
+            },
+            "Pain below the belly_NA": {
+                "disableAddNotes": true
+            },
+            "Referred to for cervical cancer screening": {
+                "disableAddNotes": true
             },
             "Symptoms_Prophylaxis": {
                "required": true,
