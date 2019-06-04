@@ -45,8 +45,6 @@ h1, h2, h3 {
 .subpage ul li {
     height: 37.1mm;
     width: 61.5mm;
-    border: 1px solid black;
-    border-radius: 10px;
     display: inline-block;
     padding: 2px;
     margin-right: 1.5mm;

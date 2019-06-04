@@ -1,0 +1,40 @@
+<master_ip> ansible_connection=local
+<slave_ip> ansible_ssh_user=root
+
+[bahmni-emr-db]
+<master_ip>
+<slave_ip> passive=yes
+
+[bahmni-mart]
+<master_ip>
+<slave_ip> passive=yes
+
+[bahmni-mart-db]
+<master_ip>
+
+[bahmni-mart-db-slave]
+<slave_ip>
+
+[bahmni-mart-scdf]
+<master_ip>
+<slave_ip> passive=yes
+
+[metabase]
+<master_ip>
+<slave_ip> passive=yes
+
+[metabase-db]
+<master_ip>
+
+[metabase-db-slave]
+<slave_ip>
+
+[local:children]
+bahmni-mart
+bahmni-mart-db
+bahmni-mart-db-slave
+bahmni-mart-scdf
+bahmni-emr-db
+metabase
+metabase-db
+metabase-db-slave

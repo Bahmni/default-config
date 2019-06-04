@@ -22,7 +22,7 @@
   "PATIENT_CONTACT_DETAILS": "Coordonnées du patient",
   "CARETAKER_DETAILS": "Coordonnées de l'accompagnant",
   "REGISTRATION_LABEL_DOB": "Date de naissance",
-  " REGISTRATION_LABEL_PATIENT_FIRSTNAME": "Prénom",
+  "REGISTRATION_LABEL_PATIENT_FIRSTNAME": "Prénom",
   "REGISTRATION_LABEL_PATIENT_MIDDLE_NAME": "2e prénom",
   "REGISTRATION_LABEL_NEW_PATIENT":"Nouveau patient",
   "REGISTRATION_LABEL_ADDRESS_INFO": "Information sur l'adresse",

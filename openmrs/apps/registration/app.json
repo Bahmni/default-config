@@ -17,7 +17,7 @@
             "activeVisitUuid"
         ],
         "config" : {
-	 
+       "showPatientIdentifier": false,
 	     "disablePhotoCapture": true,
              "forwardUrlsForVisitTypes": [
                {
@@ -50,29 +50,13 @@
                         "Phone number 1",
                         "Phone number 2"
                     ]
-                },
-                "hidden": {
-                    "attributes": [
-                        "primaryContact"
-                    ]
-                },
-                "defaults":  {
-                    "class": "General",
-                    "landHolding": 2
                 }
             },
             "addressHierarchy": {
                 "showAddressFieldsTopDown": false,
                 "strictAutocompleteFromLevel": "stateProvince"
             },
-            "relationshipTypeMap": {
-                "Doctor":"provider",
-                "Parent":"patient"
-            },
-
-            "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
-            "defaultVisitType": "Hospitalisation",
+            "defaultVisitType": "Urgences",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
             "showLastName": true,
@@ -88,18 +72,6 @@
                     "shortcutKey": "t"
                 }
             ],
-            "conceptSetUI": {
-                "REGISTRATION FEES": {
-                    "required": true,
-                    "label": "Fee"
-                },
-                "FHS": {
-                    "buttonSelect": true
-                },
-                "defaults":{
-                    "FHS": "Present"
-                }
-            },
             "fieldValidation" : {
                 "Phone number 1" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
                 "Phone number 2" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
@@ -111,7 +83,6 @@
                     "label": "Ancien No de dossier",
                     "placeholder": "Ancien No de dossier",
                     "fields": ["Ancien No de dossier"]
-
                 }
             },
             "patientSearchResults": {
@@ -121,9 +92,6 @@
                 "personAttributes": {
                     "fields": ["Ancien No de dossier"]
                 }
-            },
-            "mandatoryPersonAttributes" : [
-                "Refferé par"
-            ]
+            }
         }
 }

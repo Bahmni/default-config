@@ -1,0 +1,8 @@
+timezone: America/Port-au-Prince
+bahmni_repo_url: https://dl.bintray.com/bahmni/rpm/
+implementation_name: haiti
+selinux_state: disabled
+omods: ["https://bahmni-msf.s3.ap-south-1.amazonaws.com/haiti-release-artefacts/release-1.0/patientidentifiergenerator-0.1.0.omod"]
+nagios_contact_email: xyz@gmail.com
+ssmtp_auth_user: xyz@gmail.com
+ssmtp_auth_pass: pass123123
