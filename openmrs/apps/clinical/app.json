@@ -155,6 +155,7 @@
             },
            "Symptoms Prophylaxis_New": {
                "disableAddNotes": true,
+               "multiSelect" : true,
                "required": true
             },
             "Date of Diagnosis": {
