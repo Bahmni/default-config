@@ -31,7 +31,7 @@
     "country_locale":"País",
 	"province_locale":"Província",
 	"district_locale":"Distrito",
-	"administrative_locale":"Administrativo",
+	"administrative_locale":"Posto Administrativo",
 	"locality_locale":"Localidade/Bairro",
     "education":"Nivel de Escolaridade",
     "ADDRESS_CLOSE_OF_LOCALE":"Perto De",
