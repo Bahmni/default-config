@@ -17,8 +17,8 @@
             "activeVisitUuid"
         ],
         "config" : {
-       "showPatientIdentifier": false,
-	     "disablePhotoCapture": true,
+             "showPatientIdentifier": false,
+      	     "disablePhotoCapture": true,
              "forwardUrlsForVisitTypes": [
                {
                    "visitType": "Urgences",
@@ -54,7 +54,7 @@
             },
             "addressHierarchy": {
                 "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
+                "strictAutocompleteFromLevel": "address3"
             },
             "defaultVisitType": "Urgences",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",

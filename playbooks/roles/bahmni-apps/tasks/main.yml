@@ -1,0 +1,33 @@
+- name: Get bahmniapps zip artifact from s3 bucket
+  get_url:
+    url: "{{ bahmniapps }}"
+    dest: /opt/bahmni-web/etc
+    mode: 0755
+
+- stat: path=/opt/bahmni-web/etc/bahmniapps.zip
+  register: latest_bahmniapps
+
+- name: unlinking /var/www/bahmniapps
+  file: path=/var/www/bahmniapps state=absent
+  when: latest_bahmniapps.stat.exists == True
+
+- name: Remove old bahmniapps backup
+  file: path=/opt/bahmni-web/etc/bahmniapps_backup state=absent
+  when: latest_bahmniapps.stat.exists == True
+
+- name: bahmniapps backup
+  command: mv /opt/bahmni-web/etc/bahmniapps /opt/bahmni-web/etc/bahmniapps_backup
+  when: latest_bahmniapps.stat.exists == True
+  ignore_errors: yes
+
+- name: Unzip downloaded bahmniapps file
+  command: unzip /opt/bahmni-web/etc/bahmniapps.zip -d /opt/bahmni-web/etc/bahmniapps
+  when: latest_bahmniapps.stat.exists == True
+
+- name: Change ownership of bahmniapps file
+  action: file state=directory recurse=yes path=/opt/bahmni-web/etc/bahmniapps owner=bahmni group=bahmni
+  when: latest_bahmniapps.stat.exists == True
+
+- name: linking /var/www/bahmniapps to bahmniapps
+  file: src=/opt/bahmni-web/etc/bahmniapps dest=/var/www/bahmniapps owner=bahmni group=bahmni state=link
+  when: latest_bahmniapps.stat.exists == True
