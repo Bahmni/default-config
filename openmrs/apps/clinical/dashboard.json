@@ -25,7 +25,7 @@
                 "showCertainty":true,
                 "showOrder":true,
                 "showDetailsButton":true,
-                "displayOrder":1
+                "displayOrder":3
             },
             "navigationLinksControl":{
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
@@ -38,12 +38,10 @@
                     "enrolment"
                 ]
             },
-
-
             "treatments":{
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
-                "displayOrder":4,
+                "displayOrder":5,
                 "dashboardConfig":{
                     "showFlowSheet":true,
                     "showListView":true,
@@ -65,13 +63,10 @@
                 }
             },
 
-
-
-
             "labResults":{
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type":"labOrders",
-                "displayOrder":6,
+                "displayOrder":1,
                 "dashboardConfig":{
                     "title":null,
                     "numberOfVisits":6,
@@ -90,7 +85,7 @@
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":11,
+                "displayOrder":4,
                 "dashboardConfig":{
                     "conceptNames":[
                         "HEIGHT",
@@ -120,17 +115,25 @@
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":12,
+                "displayOrder":6,
                 "dashboardConfig":{
                     "showDetailsButton":true,
                     "conceptNames":[
-                        "Vitals"
+                        "Blood Pressure – Diastolic_VSNew",
+                        "Blood Pressure – Systolic_VitalS",
+                        "Heart Rate_VS_VitalsNew",
+                        "Temperature VS1",
+                        "Respiratory frequency_VS1"
                     ],
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{
                     "conceptNames":[
-                        "Vitals"
+                        "Blood Pressure – Diastolic_VSNew",
+                        "Blood Pressure – Systolic_VitalS",
+                        "Heart Rate_VS_VitalsNew",
+                        "Temperature VS1",
+                        "Respiratory frequency_VS1"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
@@ -154,7 +157,7 @@
             "visits":{
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":3,
+                "displayOrder":7,
                 "dashboardConfig":{
                     "title":null,
                     "maximumNoOfVisits":8,
@@ -203,7 +206,7 @@
 
             "formsDisplay": {
                 "type": "forms",
-                "displayOrder": 21,
+                "displayOrder": 8,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10
@@ -213,7 +216,7 @@
             },
             "patientAppointments": {
                 "type": "custom",
-                "displayOrder": 22,
+                "displayOrder": 9,
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
