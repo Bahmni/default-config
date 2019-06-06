@@ -6,7 +6,7 @@
     "translationKey": "MODULE_LABEL_REGISTRATION_KEY",
     "url": "../registration/index.html",
     "icon": "fa-user",
-    "order": 2,
+    "order": 1,
     "requiredPrivilege": "app:registration"
   },
   "programs": {
@@ -56,7 +56,7 @@
     "translationKey": "MODULE_LABEL_APPOINTMENT_SCHEDULING_KEY",
     "url": "../appointments",
     "icon": "fa fa-calendar",
-    "order": 1,
+    "order": 2,
     "requiredPrivilege": "app:appointments"
   }
 
