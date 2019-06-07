@@ -18,11 +18,12 @@
         ],
         "config" : {
              "showPatientIdentifier": false,
+             "showStartVisitButton": false,
       	     "disablePhotoCapture": true,
              "forwardUrlsForVisitTypes": [
                {
                    "visitType": "Urgences",
-                   "forwardUrl": "../registration/index.html#/patient/new",
+                   "forwardUrl": "../registration/index.html#/search",
                    "shortcutKey": "c"
                },{
                    "visitType": "Ambulatoire",
@@ -76,7 +77,7 @@
                 "Phone number 1" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
                 "Phone number 2" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
                 "Phone number" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
-                "Ancien No de dossier" : {"pattern" : "[0-9]{6}", "errorMessage" : "Devrait avoir 6 caractères"}
+                "Ancien No de dossier" : {"pattern" : "[0-9]{1,6}", "errorMessage" : "Doit contenir between 1 to 6 chiffres"}
             },
             "patientSearch": {
                 "customAttributes": {

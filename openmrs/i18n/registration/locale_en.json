@@ -24,5 +24,7 @@
   "REGISTRATION_PRINT_WITH_BARCODE": "Bar<u>c</u>ode Print",
   "PATIENT_CONTACT_DETAILS": "Patient Contact details",
   "CARETAKER_DETAILS": "Caretaker details",
-  "REGISTRATION_PRINT_STICKER_KEY": "Print Sticker"
+  "REGISTRATION_PRINT_STICKER_KEY": "Print Sticker",
+  "MESSAGE_DIALOG_OPTION_COPY" : "Copy Error",
+  "MESSAGE_DIALOG_OPTION_OKAY": "Ok"
 }
