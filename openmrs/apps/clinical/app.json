@@ -41,20 +41,21 @@
                     "ageLimit": 100
                 },
                 "ID_Number": {
-                    "required" : true
+                    "required" : false
                 },
                 "Co-morbidites": {
-                    "excludeFrom": ["HIV Program"]
+                    "excludeFrom": ["HIV","TB","TARV"]
                 },
                 "Doctor": {
-                    "excludeFrom": ["TB Program"]
+                    "excludeFrom": ["HIV","TB","TARV"]
+                },
+                "Stage": {
+                    "excludeFrom": ["HIV","TB","TARV"]
                 }
             },
             "patientContext": {
                 "programAttributes": [
-                    "Id_Number",
-                    "Doctor",
-                    "Stage"
+
                 ],
                 "personAttributes": [
                     
@@ -67,7 +68,11 @@
         "obsIgnoreList": [
             "REGISTRATION FEES",
             "COMMENTS",
-            "Patient file"
+            "Patient file",
+            "Id_Number",
+            "Doctor",
+            "Stage"
+        
         ],
         "otherInvestigationsMap": {
                     },
