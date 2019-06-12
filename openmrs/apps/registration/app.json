@@ -20,20 +20,6 @@
              "showPatientIdentifier": false,
              "showStartVisitButton": false,
       	     "disablePhotoCapture": true,
-             "forwardUrlsForVisitTypes": [
-               {
-                   "visitType": "Urgences",
-                   "forwardUrl": "../registration/index.html#/search",
-                   "shortcutKey": "c"
-               },{
-                   "visitType": "Ambulatoire",
-                   "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
-               },{
-                   "visitType": "Hospitalisation",
-                   "forwardUrl": "../registration/index.html#/patient/new",
-                   "shortcutKey": "c"
-               }],
             "patientInformation": {
                 "caretakerDetails": {
                     "title": "Caretaker details",
@@ -42,7 +28,8 @@
                         "Full name",
                         "Phone number",
                         "Relationship with the patient"
-                    ]
+                    ],
+                    "expanded": true
                 },
                 "patientContactDetails" : {
                     "title": "Patient Contact details",
@@ -50,7 +37,8 @@
                     "attributes": [
                         "Phone number 1",
                         "Phone number 2"
-                    ]
+                    ],
+                    "expanded": true
                 }
             },
             "addressHierarchy": {
