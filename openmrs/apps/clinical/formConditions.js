@@ -101,8 +101,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     var returnShowValue = [];
     var returnHideValue = [];
     
-
-        if (dia.includes("INH")) {
+    if (dia === "INH") {
 
             returnShowValue.push("INH_Details");
 
@@ -110,7 +109,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             returnHideValue.push("INH_Details");
 
         }
-        if (dia.includes("CTZ")) {
+        if (dia === "CTZ") {
 
             returnShowValue.push("CTZ_Details");
 
@@ -118,7 +117,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             returnHideValue.push("CTZ_Details");
 
         }
-        if (dia.includes("Fluconazol")) {
+        if (dia ==="Fluconazol") {
 
             returnShowValue.push("Fluconazol_Details");
 
