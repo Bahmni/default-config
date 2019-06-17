@@ -132,7 +132,7 @@
     "type": "config",
     "extensionParams": {
       "default": true,
-      "conceptName": "Group V-Rastreios/Profilaxias"
+      "conceptName": "Group V-Screening / Prophylaxis"
     },
     "order": 4,
     "requiredPrivilege": "app:clinical"
