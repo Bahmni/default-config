@@ -1,0 +1,20 @@
+- name: Get implementer-interface rpm from s3 bucket
+  get_url:
+    url: "{{ implementerinterface }}"
+    dest: /opt/bahmni-implementer-interface.rpm
+    mode: 0755
+    force: yes
+- name: check if implementer-interface is installed
+  yum:
+    list: bahmni-implementer-interface
+  register: bahmni_implementer_interface_info
+  ignore_errors: true
+- name: Uninstall implementer-interface
+  yum:
+    name: bahmni-implementer-interface
+    state: absent
+  when: bahmni_implementer_interface_info.results
+- name: install implementer-interface rpm from opt
+  yum:
+    name: /opt/bahmni-implementer-interface.rpm
+    state: present

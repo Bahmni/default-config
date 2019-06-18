@@ -1,0 +1,19 @@
+- name: Find existing bahmnicore omod
+  find:
+    paths: /opt/openmrs/modules
+    patterns: bahmnicore*.omod
+  register: result
+
+- name: Delete bahmnicore omod
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  with_items: "{{ result.files }}"
+
+- name: Get bahmnicore rpm from s3 bucket and place it in /opt/openmrs/modules
+  get_url:
+      url: "{{ bahmnicore }}"
+      dest: /opt/openmrs/modules/bahmnicore.omod
+      mode: 0644
+- name: Change ownership of bahmnicore file
+  action: file state=file path=/opt/openmrs/modules/bahmnicore.omod owner=bahmni group=bahmni

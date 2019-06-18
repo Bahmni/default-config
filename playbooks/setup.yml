@@ -1,1 +1,4 @@
+implementerinterface: https://bahmni-msf.s3.ap-south-1.amazonaws.com/haiti-release-artefacts/release-1.0/bahmni-implementer-interface-91.noarch.rpm
 bahmniapps: https://bahmni-msf.s3.ap-south-1.amazonaws.com/haiti-release-artefacts/release-1.0/bahmniapps.zip
+appointments: https://bahmni-msf.s3.ap-south-1.amazonaws.com/haiti-release-artefacts/release-1.0/appointments.omod
+bahmnicore: https://bahmni-msf.s3.ap-south-1.amazonaws.com/haiti-release-artefacts/release-1.0/bahmnicore-0.92-SNAPSHOT.omod
