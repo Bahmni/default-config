@@ -469,7 +469,7 @@
              },
              "CONFIDENT_HIV_TEST": {
                 "disableAddNotes": true,
-                "dropdown": true
+                "buttonSelect": true
              },
              "CONFIDENT_HIV_CARE": {
                 "disableAddNotes": true,
@@ -477,7 +477,10 @@
              },
              "CONFIDENT_CCR": {
                 "disableAddNotes": true,
-                "dropdown": true
+                "buttonSelect": true
+             },
+             "CONFIDENT_FAMILY_SITUATION": {
+                "allowAddMore": true
              },
             "defaults": {
                 "Number of living children": 1,
