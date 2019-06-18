@@ -440,7 +440,8 @@
                 "disableAddNotes": true
              },
              "CONFIDENT_RELATIONSHIP": {
-                "disableAddNotes": true
+                "disableAddNotes": true,
+                "dropdown": true
              },
              "CONFIDENT_TELEPHONE1": {
                 "disableAddNotes": true
