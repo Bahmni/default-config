@@ -430,6 +430,54 @@
             "Conduct_Contraceptive_Methods_OUT_Other_button": {
                 "disableAddNotes": true
             },
+            "CONFIDENT_NAME": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_SURNAME": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_AGE": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_RELATIONSHIP": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_TELEPHONE1": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_TELEPHONE2": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_PROVINCE": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_DISTRICT": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_LOCALITY": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_BLOCK": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_STREET": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_POR": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_HIV_TEST": {
+                "disableAddNotes": true,
+                "dropdown": true
+             },
+             "CONFIDENT_HIV_CARE": {
+                "disableAddNotes": true,
+                "buttonSelect": true
+             },
+             "CONFIDENT_CCR": {
+                "disableAddNotes": true,
+                "dropdown": true
+             },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [

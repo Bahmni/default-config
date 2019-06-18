@@ -132,7 +132,7 @@
     "type": "config",
     "extensionParams": {
       "default": true,
-      "conceptName": "Confident Details"
+      "conceptName": "CONFIDENT_FORM"
     },
     "order": 9,
     "requiredPrivilege": "app:clinical"
