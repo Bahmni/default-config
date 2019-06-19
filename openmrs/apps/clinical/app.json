@@ -479,6 +479,9 @@
                 "disableAddNotes": true,
                 "buttonSelect": true
              },
+             "CONFIDENT_NID": {
+                "disableAddNotes": true
+             },
              "CONFIDENT_FAMILY_SITUATION": {
                 "allowAddMore": true
              },
