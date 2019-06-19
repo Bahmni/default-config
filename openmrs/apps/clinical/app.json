@@ -430,6 +430,135 @@
             "Conduct_Contraceptive_Methods_OUT_Other_button": {
                 "disableAddNotes": true
             },
+            "Apss_Disclosure_Diagnosis_results_child_adolescent": {
+                  "disableAddNotes": true
+            },
+            "Apss_Pre_TARV_counselling": {
+                  "disableAddNotes": true
+            },
+            "Apss_Pre_TARV_counselling_comments": {
+                  "disableAddNotes": true
+            },
+            "Apss_Psychosocial_factors_affecting_adherence": {
+                  "disableAddNotes": true
+            },
+            "Apss_Psychosocial_factors_Reasons": {
+                  "disableAddNotes": true,
+                  "multiSelect" : true
+            },
+            "Apss_Psychosocial_factors_Details": {
+                  "disableAddNotes": true
+            },
+            "Apss_Positive_prevention_Alcohol_other_Drugs_consumption": {
+                  "disableAddNotes": true
+            },
+            "Apss_Positive_prevention_Disclosure_HIV_status_partner_encouragement_test": {
+                  "disableAddNotes": true
+            },
+            "Apss_Positive_prevention_Family_Planning": {
+                  "disableAddNotes": true
+            },
+            "Apss_Positive_prevention_Need_community_support": {
+                  "disableAddNotes": true
+            },
+            "Apss_Positive_prevention_Sexual_behavior": {
+                  "disableAddNotes": true
+            },
+            "Apss_Positive_prevention_Sexually_Transmitted_Infections": {
+                  "disableAddNotes": true
+            },
+            "Apss_Positive_prevention_importance_adherence": {
+                  "disableAddNotes": true
+            },
+            "Apss_Positive_prevention_Key_Population": {
+                  "disableAddNotes": true
+            },
+            "Apss_Adherence_follow_up_Has_informed_someone": {
+                  "disableAddNotes": true
+            },
+            "Apss_Adherence_follow_up_Has_informed_Full_Name": {
+                  "disableAddNotes": true
+            },
+            "Apss_Adherence_follow_up_Has_informed_Relationship": {
+                  "disableAddNotes": true
+            },
+            "Apss_Adherence_follow_up_Who_administers_ARV": {
+                  "disableAddNotes": true
+            },
+            "Apss_Adherence_follow_up_Who_administers_Full_Name": {
+                  "disableAddNotes": true
+            },
+            "Apss_Adherence_follow_up_Who_administers_Relationship": {
+                  "disableAddNotes": true
+            },
+            "Apss_Support_Groups_Disclosed_Children": {
+                  "disableAddNotes": true
+            },
+            "Apss_Support_Groups_Parents_Caregivers": {
+                  "disableAddNotes": true
+            },
+            "Apss_Support_Groups_Disclosed_Adolescents": {
+                  "disableAddNotes": true
+            },
+            "Apss_Support_Groups_Mother_Mother": {
+                  "disableAddNotes": true
+            },
+            "Apss_Support_Groups_Other": {
+                  "disableAddNotes": true
+            },
+            "Apss_Support_Groups_Specify_group": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_GAAC": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Family_Approach": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Adherence_Clubs": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_One_Stop": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Fast_flow": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Quarterly_dispensary": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Community_Dispensary": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Other": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Specify Model": {
+                  "disableAddNotes": true
+            },
+            "Apss_Prepared_start_ARV_treatment": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Date": {
+                  "disableAddNotes": true
+            },
+            "Apss_Differentiated_Models_Name_Provider": {
+                  "disableAddNotes": true
+            },
+            "Apss_Agreement_Terms_Patient_Caregiver_agrees_contacted": {
+                  "disableAddNotes": true
+            },
+            "Apss_Agreement_Terms_Type_Contact": {
+                  "disableAddNotes": true,
+                  "multiSelect" : true
+            },
+            "Apss_Agreement_Terms_Confidant_agrees_contacted": {
+                  "disableAddNotes": true
+            },
+            "Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact": {
+                  "disableAddNotes": true,
+                  "multiSelect" : true
+            },            
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
