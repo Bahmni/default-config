@@ -430,6 +430,61 @@
             "Conduct_Contraceptive_Methods_OUT_Other_button": {
                 "disableAddNotes": true
             },
+            "CONFIDENT_NAME": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_SURNAME": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_AGE": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_RELATIONSHIP": {
+                "disableAddNotes": true,
+                "dropdown": true
+             },
+             "CONFIDENT_TELEPHONE1": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_TELEPHONE2": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_PROVINCE": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_DISTRICT": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_LOCALITY": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_BLOCK": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_STREET": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_POR": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_HIV_TEST": {
+                "disableAddNotes": true,
+                "buttonSelect": true
+             },
+             "CONFIDENT_HIV_CARE": {
+                "disableAddNotes": true,
+                "buttonSelect": true
+             },
+             "CONFIDENT_CCR": {
+                "disableAddNotes": true,
+                "buttonSelect": true
+             },
+             "CONFIDENT_NID": {
+                "disableAddNotes": true
+             },
+             "CONFIDENT_FAMILY_SITUATION": {
+                "allowAddMore": true
+             },
             "Apss_Disclosure_Diagnosis_results_child_adolescent": {
                   "disableAddNotes": true
             },
