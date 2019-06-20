@@ -13,7 +13,7 @@
   yum:
     name: bahmni-implementer-interface
     state: absent
-  when: bahmni_implementer_interface_info.results
+  when: bahmni_implementer_interface_info is defined
 - name: install implementer-interface rpm from opt
   yum:
     name: /opt/bahmni-implementer-interface.rpm

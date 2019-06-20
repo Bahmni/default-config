@@ -4,147 +4,168 @@
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
         <li>
             <p class="localname"><strong>{{patient.givenName}}&nbsp;{{patient.middleName}}&nbsp;{{patient.familyName}}</strong></p>
             <p>No de dossier:{{patient.primaryIdentifier.identifier}}&nbsp;{{}}</p>
-            <p>{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years>0">{{patient.age.years}}&nbsp;ans&nbsp;/{{patient.gender}}</p>
+            <p ng-if="patient.age.years==0">{{patient.age.months}}&nbsp;mois&nbsp;/{{patient.gender}}</p>
             <p>Date d'admission:{{patient.registrationDate | date: 'dd/MM/yyyy'}}</p>
 
         </li>
