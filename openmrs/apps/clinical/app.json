@@ -276,20 +276,21 @@
             "Unit of Measurement (Sachets)": {
                 "disableAddNotes": true
             },
-            "Blood Pressure – Diastolic_VSNew": {
+            "Blood_Pressure_–_Diastolic_VSNew": {
                 "disableAddNotes": true
             },
-            "Blood Pressure – Systolic_VitalS": {
+            "Blood_Pressure_–_Systolic_VitalS": {
                 "disableAddNotes": true
             },
-            "Heart Rate_VS_VitalsNew": {
+            "Heart_Rate_VS_VitalsNew": {
                 "disableAddNotes": true
             },
-            "Temperature VS1": {
+            "Temperature_VS1": {
                 "disableAddNotes": true
             },
-            "Respiratory frequency_VS1": {
-                "disableAddNotes": true
+            "Respiratory_frequency_VS1": {
+                "disableAddNotes": true,
+                "hideAbnormalButton": true
             },
             "Tuberculosis, Adverse Effects" :{
                 "multiSelect" : true,
