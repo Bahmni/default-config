@@ -164,16 +164,14 @@
                "required": true
             },
             "Date of Diagnosis": {
-               "disableAddNotes": true,
-               "required": true           
+               "disableAddNotes": true
             },
             "Treatment End Date": {
                "disableAddNotes": true,
                "buttonSelect": true
             },
             "Has STI Symptoms": {
-               "disableAddNotes": true,
-               "required": true
+               "disableAddNotes": true
             },
             "TB Type is Extrapulmonary": {
                "disableAddNotes": true,
@@ -193,7 +191,7 @@
             "Nutrition Supplement": {
                "disableAddNotes": true,
                "buttonSelect": true
-            }, 
+            },
            "Quantity of Nutritional Supplement": {
                "disableAddNotes": true
             }, 
@@ -229,8 +227,7 @@
                "required": true
             },
            "Received nutritional support": {
-               "disableAddNotes": true,
-               "required": true
+               "disableAddNotes": true
             },
            "STI Diagnosis_Prophylaxis": {
                "disableAddNotes": true,
