@@ -142,7 +142,8 @@
                         "groupBy":"encounters",
                         "obsConcepts":[
                             "Weight",
-                            "Vitals"
+                            "Height",
+                            "Vital Signs_VS"
                         ],
                         "drugConcepts":[
 
