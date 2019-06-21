@@ -86,5 +86,10 @@
   "MISSED": "Ausente",
   "CANCELLED": "Cancelada",
   "FINISHED": "Realizada",
-  "COMPLETED": "Realizada"
+  "COMPLETED": "Realizada",
+  "Missed":"Absent",
+  "Completed": "Realizada",
+  "Scheduled":"Agendada",
+  "Cancelled":"Cancelar",
+  "CheckedIn":"Introduza um horário de entrada válido."
 }
