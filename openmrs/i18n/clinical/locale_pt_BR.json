@@ -77,5 +77,10 @@
 "PATIENT_ADT_PAGE_KEY":"Pág. Paciente internado",
 "PATIENT_DASHBOARD_KEY":"Painel do paciente",
 "PATIENT_VISIT_PAGE_KEY":"Pág. Marcação do paciente",
-"PROGRAM_MANAGEMENT_PAGE_KEY":"Pág. Gestão do Serviço"
+"PROGRAM_MANAGEMENT_PAGE_KEY":"Pág. Gestão do Serviço",
+"Missed":"Absent",
+"Completed": "Realizada",
+"Scheduled":"Agendada",
+"Cancelled":"Cancelar",
+"CheckedIn":"Introduza um horário de entrada válido."
 }
