@@ -111,21 +111,21 @@
                 "dashboardConfig":{
                     "showDetailsButton":true,
                     "conceptNames":[
-                        "Blood Pressure – Diastolic_VSNew",
-                        "Blood Pressure – Systolic_VitalS",
-                        "Heart Rate_VS_VitalsNew",
-                        "Temperature VS1",
-                        "Respiratory frequency_VS1"
+                        "Blood_Pressure_–_Diastolic_VSNew",
+                        "Blood_Pressure_–_Systolic_VitalS",
+                        "Heart_Rate_VS_VitalsNew",
+                        "Temperature_VS1",
+                        "Respiratory_frequency_VS1"
                     ],
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{
                     "conceptNames":[
-                        "Blood Pressure – Diastolic_VSNew",
-                        "Blood Pressure – Systolic_VitalS",
-                        "Heart Rate_VS_VitalsNew",
-                        "Temperature VS1",
-                        "Respiratory frequency_VS1"
+                        "Blood_Pressure_–_Diastolic_VSNew",
+                        "Blood_Pressure_–_Systolic_VitalS",
+                        "Heart_Rate_VS_VitalsNew",
+                        "Temperature_VS1",
+                        "Respiratory_frequency_VS1"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
@@ -135,7 +135,7 @@
                         "obsConcepts":[
                             "Weight",
                             "Height",
-                            "Vital Signs_VS"
+                            "Vital_Signs_VS"
                         ],
                         "drugConcepts":[
 
