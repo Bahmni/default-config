@@ -19,14 +19,6 @@
                     "countyDistrict"
                 ]
             },
-            "diagnosis":{
-                "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "type":"diagnosis",
-                "showCertainty":true,
-                "showOrder":true,
-                "showDetailsButton":true,
-                "displayOrder":3
-            },
             "navigationLinksControl":{
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type":"navigationLinksControl",
@@ -154,7 +146,35 @@
                     }
                 }
             },
-
+            "whoStaging": {
+                "translationKey": "DASHBOARD_TITLE_WHO_STAGE",
+                "type": "vitals",
+                "isObservation": true,
+                "displayOrder": 4,
+                "dashboardConfig": {
+                    "conceptNames": [
+                    "HTC, WHO Staging"
+                    ],
+                    "showDetailsButton": true,
+                    "numberOfVisits": 1,
+                    "scope": "latest"
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "HTC, WHO Staging"
+                    ],
+                    "numberOfVisits": 1,
+                    "scope": "latest",
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                    }
+                }
+            },
+            "conditions": {
+                "translationKey": "CONDITION_LIST_DISPLAY_CONTROL_TITLE",
+                "type": "conditionsList",
+                "displayOrder": 5
+            },
             "visits":{
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
