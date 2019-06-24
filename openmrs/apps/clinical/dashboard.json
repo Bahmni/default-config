@@ -27,6 +27,11 @@
                 "showDetailsButton":true,
                 "displayOrder":1
             },
+            "allergies": {
+                "translationKey":"ALLERGIES_LIST_DISPLAY_CONTROL_TITLE",
+                "type": "allergiesList",
+                "displayOrder":1
+            },
             "navigationLinksControl":{
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type":"navigationLinksControl",
