@@ -186,8 +186,8 @@ angular.module('bahmni.common.displaycontrol.custom')
             $scope.pastAppointments = response[1].data;
             for(let i=0; i < $scope.pastAppointments.length; i++){
                 delete $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_PROVIDER_KEY;
-                $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY = $scope.setBlock($scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY)
-                $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY = $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY.toUpperCase()
+                $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY = $scope.setBlock($scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY)
+                $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY = $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY.toUpperCase()
             }
             $scope.pastAppointmentsHeadings = _.keys($scope.pastAppointments[0]);
         });
