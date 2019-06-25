@@ -81,7 +81,7 @@
         "visitTypeForRetrospectiveEntries": "Special OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
-        "clinicalProviderForms": ["Clinical_Observation_form", "Group V-Screening / Prophylaxis", "Group_Priority_Population_obs_form", "Group IV-Anamneses", "Group_VIII_Conduct_obs_form", "Reference_Form","DI_Death Information Form" ],
+        "clinicalProviderForms": ["Clinical_Observation_form", "Group V-Screening / Prophylaxis", "Group_Priority_Population_obs_form", "Group IV-Anamneses", "Group_VIII_Conduct_obs_form", "Reference_Form","CONFIDENT_FORM","DI_Death Information Form" ],
         "APSSProviderForms": ["Group_Priority_Population_obs_form", "Reference_Form", "Apss_obs_form"],
         "conceptSetUI": {
             "Chief Complaint Data": {
