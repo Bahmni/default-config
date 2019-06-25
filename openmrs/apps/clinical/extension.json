@@ -93,6 +93,116 @@
     "order": 2,
     "requiredPrivilege": "app:clinical"
   },
+  "bahmniClinicalConceptSetGroupObservationsFormGroupPriorityPopulation": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.formGroupPriorityPopulation",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Group_Priority_Population_obs_form"
+    },
+    "order": 1,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsClinicalObservation": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.clinicalObservation",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Clinical_Observation_form"
+    },
+    "order": 2,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsAnamneses": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.anamneses",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Group IV-Anamneses"
+    },
+    "order": 3,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsConfidentDetails": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.confidentDetails",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "CONFIDENT_FORM"
+    },
+    "order": 9,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsRasterios": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.Rasterios",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Group V-Screening / Prophylaxis"
+    },
+    "order": 4,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsDiagnosisStaging": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.DiagnosisStaging",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Group VII-Diagnosis/Staging"
+    },
+    "order": 5,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsConduct": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.Conduct",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Group_VIII_Conduct_obs_form"
+    },
+    "order": 6,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsReference": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.Reference",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Reference_Form"
+    },
+    "order": 7,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsDeathInformation": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.DeathInformation",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "DI_Death Information Form"
+    },
+    "order":8,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsApssObs": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.ApssObs",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Apss_obs_form"
+    },
+    "order":9,
+    "requiredPrivilege": "app:clinical"
+  },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
     "id": "bahmni.clinical.conceptSetGroup.observations.secondVitals",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",

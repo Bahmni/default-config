@@ -101,8 +101,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     var returnShowValue = [];
     var returnHideValue = [];
     
-
-        if (dia.includes("INH")) {
+    if (dia === "INH") {
 
             returnShowValue.push("INH_Details");
 
@@ -110,7 +109,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             returnHideValue.push("INH_Details");
 
         }
-        if (dia.includes("CTZ")) {
+        if (dia === "CTZ") {
 
             returnShowValue.push("CTZ_Details");
 
@@ -118,7 +117,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             returnHideValue.push("CTZ_Details");
 
         }
-        if (dia.includes("Fluconazol")) {
+        if (dia ==="Fluconazol") {
 
             returnShowValue.push("Fluconazol_Details");
 
@@ -175,6 +174,126 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         } else {
             return {
                 hide: ["PP_IF_Vulnerable_Population_Yes"]
+            }
+        }
+    },
+     "Apss_Pre_TARV_counselling" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Pre_TARV_counselling"];
+        if (yes === "Apss_Pre_TARV_counselling_Yes") {
+            return {
+                show: ["Apss_Pre_TARV_counselling_comments"]
+            }
+        } else {
+            return {
+                hide: ["Apss_Pre_TARV_counselling_comments"]
+            }
+        }
+    },
+    "Apss_Psychosocial_factors_affecting_adherence" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Psychosocial_factors_affecting_adherence"];
+        if (yes === "Apss_Psychosocial_factors_affecting_adherence_Yes") {
+            return {
+                show: ["Apss_Psychosocial_factors_Reasons"]
+            }
+        } else {
+            return {
+                hide: ["Apss_Psychosocial_factors_Reasons"]
+            }
+        }
+    },
+    "Apss_Adherence_follow_up_Has_informed_someone" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Adherence_follow_up_Has_informed_someone"];
+        if (yes === "Apss_Adherence_follow_up_Has_informed_someone_Yes") {
+            return {
+                show: ["Apss_Adherence_follow_up_Has_informed_Full_Name","Apss_Adherence_follow_up_Has_informed_Relationship"]
+            }
+        } else {
+            return {
+                hide: ["Apss_Adherence_follow_up_Has_informed_Full_Name","Apss_Adherence_follow_up_Has_informed_Relationship"]
+            }
+        }
+    },
+    "Apss_Adherence_follow_up_Who_administers_ARV" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Adherence_follow_up_Who_administers_ARV"];
+        if (yes === "Apss_Adherence_follow_up_Who_administers_ARV_Yes") {
+            return {
+                show: ["Apss_Adherence_follow_up_Who_administers_Full_Name","Apss_Adherence_follow_up_Who_administers_Relationship"]
+            }
+        } else {
+            return {
+                hide: ["Apss_Adherence_follow_up_Who_administers_Full_Name","Apss_Adherence_follow_up_Who_administers_Relationship"]
+            }
+        }
+    },
+    "Apss_Support_Groups_Other" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Support_Groups_Other"];
+        if (yes === "Apss_Support_Groups_Start")   {
+            return {
+                show: ["Apss_Support_Groups_Specify_group"]
+            }
+        }  else if (yes === "Apss_Support_Groups_In_Progress") {
+
+            return {
+                show: ["Apss_Support_Groups_Specify_group"]
+            }
+        } 
+         else if (yes === "Apss_Support_Groups_End") {
+
+            return {
+                show: ["Apss_Support_Groups_Specify_group"]
+            }
+        }
+         else {
+            return {
+                hide: ["Apss_Support_Groups_Specify_group"]
+            }
+        }
+    },
+    "Apss_Differentiated_Models_Other" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Differentiated_Models_Other"];
+        if (yes === "Apss_Differentiated_Models_Start")   {
+            return {
+                show: ["Apss_Differentiated_Models_Specify Model"]
+            }
+        }  else if (yes === "Apss_Differentiated_Models_In_Progress") {
+
+            return {
+                show: ["Apss_Differentiated_Models_Specify Model"]
+            }
+        } 
+         else if (yes === "Apss_Differentiated_Models_End") {
+
+            return {
+                show: ["Apss_Differentiated_Models_Specify Model"]
+            }
+        }
+         else {
+            return {
+                hide: ["Apss_Differentiated_Models_Specify Model"]
+            }
+        }
+    },
+    "Apss_Agreement_Terms_Patient_Caregiver_agrees_contacted" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Agreement_Terms_Patient_Caregiver_agrees_contacted"];
+        if (yes === "Apss_Agreement_Terms_Patient_Caregiver_agrees_contacted_Yes")  {
+            return {
+                show: ["Apss_Agreement_Terms_Type_Contact"]
+            }
+        } else {
+            return {
+                hide: ["Apss_Agreement_Terms_Type_Contact"]
+            }
+        }
+    },
+    "Apss_Agreement_Terms_Confidant_agrees_contacted" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Agreement_Terms_Confidant_agrees_contacted"];
+        if (yes === "Apss_Agreement_Terms_Confidant_agrees_contacted_Yes")  {
+            return {
+                show: ["Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact"]
+            }
+        } else {
+            return {
+                hide: ["Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact"]
             }
         }
     },
