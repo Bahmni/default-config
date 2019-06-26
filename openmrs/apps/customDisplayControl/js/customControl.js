@@ -179,15 +179,15 @@ angular.module('bahmni.common.displaycontrol.custom')
             $scope.upcomingAppointments = response[0].data;
             for(let i=0; i < $scope.upcomingAppointments.length; i++){
                 delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_PROVIDER_KEY;
+                delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY;
                 $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY = $scope.setBlock($scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY)
-                $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY = $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY.toUpperCase()
             }
             $scope.upcomingAppointmentsHeadings = _.keys($scope.upcomingAppointments[0]);
             $scope.pastAppointments = response[1].data;
             for(let i=0; i < $scope.pastAppointments.length; i++){
                 delete $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_PROVIDER_KEY;
+                delete $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY;
                 $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY = $scope.setBlock($scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY)
-                $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY = $scope.pastAppointments[i].DASHBOARD_APPOINTMENTS_STATUS_KEY.toUpperCase()
             }
             $scope.pastAppointmentsHeadings = _.keys($scope.pastAppointments[0]);
         });
