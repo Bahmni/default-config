@@ -197,13 +197,13 @@ angular.module('bahmni.common.displaycontrol.custom')
         };
 
         $scope.setBlock = function (timeInterval) {
-            if(timeInterval === "12:00 AM - 8:59 PM" || timeInterval === "12:00 AM - 08:59 PM"){
+            if(timeInterval === "10:00 PM - 6:59 AM" || timeInterval === "12:00 AM - 8:59 AM"){
                 return "APP_BLOCK_1"
             } else
-            if(timeInterval === "9:00 AM - 11:59 PM" || timeInterval === "09:00 AM - 11:59 PM"){
+            if(timeInterval === "7:00 AM - 9:59 AM" || timeInterval === "9:00 AM - 11:59 AM" ){
                 return "APP_BLOCK_2"
             } else
-            if(timeInterval === "12:00 AM - 3:29 PM" || timeInterval === "12:00 AM - 03:29 PM" ){
+            if(timeInterval === "10:00 AM - 1:29 PM" || timeInterval === "12:00 PM - 3:29 PM" ){
                 return "APP_BLOCK_3"
             } else {
                 return "APP_BLOCK_4"
