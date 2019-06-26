@@ -39,5 +39,8 @@
   "ADDRESS_HOUSE_NUMBER_LOCALE":"House Number",
   "REGISTRATION_EDUCATION_KEY":"Education Details",
   "ADDRESS_POVOADO_ALDEIA_NUMBER_LOCALE":"Village/Town",
-  "REGISTRATION_CONTACT_INFORMATION":"Contact Information"
+  "REGISTRATION_CONTACT_INFORMATION":"Contact Information",
+  "REGISTRATION_INVALID_MOTHER_NAME_FIELD" : "MOTHER NAME should contain characters only",
+  "REGISTRATION_INVALID_FATHER_NAME_FIELD" : "FATHER NAME should contain characters only.",
+  "REGISTRATION_INVALID_MIDDLE_NAME_FIELD" : "MIDDLE NAME should contain characters only"
 }
