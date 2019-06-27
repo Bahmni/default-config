@@ -44,4 +44,3 @@
 	"REGISTRATION_INVALID_FATHER_NAME_FIELD" : "NOME DO PAI deve conter caracteres apenas.",
 	"REGISTRATION_INVALID_MIDDLE_NAME_FIELD" : "NOME DO MEIO deve conter caracteres apenas.",
 	"REGISTRATION_INVALID_GIVEN_NAME_FIELD" : "Introduza o primeiro nome."
-}
