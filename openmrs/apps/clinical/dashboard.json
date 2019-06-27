@@ -96,7 +96,8 @@
                         "HEIGHT",
                         "Weight",
                         "BMI Data",
-                        "BMI Status Data"
+                        "BMI Status Data",
+                        "Brachial_perimeter_new"
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
@@ -106,7 +107,8 @@
                         "HEIGHT",
                         "Weight",
                         "BMI",
-                        "BMI STATUS"
+                        "BMI STATUS",
+                        "Brachial_perimeter_new"
                     ],
                     "numberOfVisits":2,
                     "scope":"latest",
