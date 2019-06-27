@@ -1248,7 +1248,14 @@
 			}]
 		}
 	},
-
+	
+	"Anesthesia_number_of_clients_served": {
+		"name": "Anesthesia Number of Clients Served",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/reports/hmis/anesthesia-review.sql"
+		}
+	},
 
 	"hospital_activities__number_of_clients_served_new_and_total": {
 		"name": "Hospital Activities - Number of Clients Served (New and Total)",
