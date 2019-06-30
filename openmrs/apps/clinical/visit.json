@@ -6,7 +6,7 @@
         "printing": {
             "title": "NepalEHR",
             "header": "Visit",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/nepalEhrLogoFull.png"
         }
     },
     "discharge_summary": {
