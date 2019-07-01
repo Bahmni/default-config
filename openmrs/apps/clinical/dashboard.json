@@ -46,7 +46,7 @@
             "treatments":{
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
-                "displayOrder":5,
+                "displayOrder":7,
                 "dashboardConfig":{
                     "showFlowSheet":true,
                     "showListView":true,
@@ -164,7 +164,7 @@
                 "translationKey": "DASHBOARD_TITLE_WHO_STAGE",
                 "type": "vitals",
                 "isObservation": true,
-                "displayOrder": 12,
+                "displayOrder": 10,
                 "dashboardConfig": {
                     "conceptNames": [
                     "HTC, WHO Staging"
@@ -187,12 +187,12 @@
             "conditions": {
                 "translationKey": "CONDITION_LIST_DISPLAY_CONTROL_TITLE",
                 "type": "conditionsList",
-                "displayOrder": 11
+                "displayOrder": 5
             },
             "visits":{
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":7,
+                "displayOrder":9,
                 "dashboardConfig":{
                     "title":null,
                     "maximumNoOfVisits":8,
@@ -241,7 +241,7 @@
 
             "formsDisplay": {
                 "type": "forms",
-                "displayOrder": 10,
+                "displayOrder": 12,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10
@@ -251,7 +251,7 @@
             },
             "patientAppointments": {
                 "type": "custom",
-                "displayOrder": 9,
+                "displayOrder": 11,
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
