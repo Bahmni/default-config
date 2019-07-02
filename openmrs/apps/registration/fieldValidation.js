@@ -33,9 +33,9 @@ Bahmni.Registration.customValidator = {
     },
     "middleName" : {
         method: function (name, value, personAttributeDetails) {
-            var regexCharacters = "[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ ]*";
+            var regexCharacters = "^[a-záàãâéèêẽíìóòõôúùçA-ZÁÀÃÂÉÈÊẼÍÌÓÒÔÕÚÙÇ ]+$";
             return value.match(regexCharacters);
         },
-        errorMessage: "REGISTRATION_INVALID_MOTHER_NAME_FIELD"
+        errorMessage: "REGISTRATION_INVALID_MIDDLE_NAME_FIELD"
     }
 };
