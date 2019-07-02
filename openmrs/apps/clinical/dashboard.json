@@ -41,6 +41,21 @@
                 },
                 "displayOrder": 1
             },
+	    
+	"customControl": {
+          "type": "custom",
+          "displayOrder": 1,
+          "showDetailsButton": true,
+          "config": {
+              "retireLinesConditions": [["ORDER", "FULLY_INVOICED"]],
+              "nonApprovedConditions": [["ORDER", "NON_INVOICED"],["INVOICE", "OVERDUE", "NOT_PAID"]],
+              "approvedConditions": [["INVOICE", "PAID"],["INVOICE", "NOT_OVERDUE"]],
+              "showDetailsButton": true,
+              "translationKey": "IMPL_BILLING_STATUS",
+              "template": "<billing-status></billing-status>"
+          }
+        },
+	
             "diagnosis": {
                 "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
                 "type": "diagnosis",

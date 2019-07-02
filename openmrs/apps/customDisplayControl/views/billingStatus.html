@@ -1,0 +1,40 @@
+<section class="dashboard-section">
+  <h2 ng-dialog-class="ngdialog ngdialog-theme-default ng-dialog-all-details-page" ng-dialog-data='{"section": {{section}}, "patient": {{patient}} }' class="section-title">
+    <span class="title-link">{{config.translationKey | translate}} </span>
+    <i class="fa"></i>
+  </h2>
+
+  <div ng-hide="lines.length">
+    <div class="placeholder-text">
+      <p translate="DISPLAY_CONTROL_ERROR_MESSAGE_KEY" translate-values="{displayControl : '{{config.translationKey | translate}}'}"></p>
+    </div>
+  </div>
+
+  <table ng-show="lines.length" class="dashboard-table">
+    <tbody>
+      <tr ng-repeat="line in lines | filter:{retire: false } | orderBy: '-date'">
+        <td>
+          <span>
+            {{ line.document }}
+          </span>
+        </td>
+        <td>
+          <span>
+            {{ line.displayName }}
+          </span>
+        </td>
+        <td>
+          <span>
+            <i class="fa fa-ok" ng-show="line.approved"></i>
+            <i class="fa fa-times-circle" ng-hide="line.approved"></i>
+          </span>
+        </td>
+        <td>
+          <span>
+            {{ line.date | bahmniDate }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
