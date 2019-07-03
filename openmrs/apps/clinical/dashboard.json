@@ -107,7 +107,7 @@
                         "HEIGHT",
                         "Weight",
                         "BMI",
-                        "BMI STATUS",
+                        "BMI Status Data",
                         "Brachial_perimeter_new"
                     ],
                     "numberOfVisits":2,
