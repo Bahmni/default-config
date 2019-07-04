@@ -347,10 +347,10 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
                 }
         }
     },
-    'Pregnancy_Yes_No': function (formName, formFieldValues) {
-        var preg_value = formFieldValues["Pregnancy_Yes_No"];
+    "Pregnancy_Yes_No" (formName, formFieldValues) {
+        var pregValue = formFieldValues["Pregnancy_Yes_No"];
 
-        if (preg_value == "Pregnancy_Yes") {
+        if (pregValue === "Pregnancy_Yes") {
             return {
                 show: ["Probable delivery date"]
             }
@@ -361,10 +361,10 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
-    'Date of Delivery': function (formName, formFieldValues) {
-        var deliv_value = formFieldValues["Date of Delivery"];
+    "Date of Delivery" (formName, formFieldValues) {
+        var delivValue = formFieldValues["Date of Delivery"];
 
-        if (deliv_value) {
+        if (delivValue) {
             return {
                 show: ["Number of Alive Babies Born", "Number of Still Babies Born"]
             }
