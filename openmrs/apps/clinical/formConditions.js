@@ -335,5 +335,43 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
                 hide: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other"]
             }
         }
+    },
+    "Gynecology/Obstetrics" (formName, formFieldValues, patient) { 
+        if (patient.gender === "F") {
+            return {
+                show: ["Last Menstruation Date","Pregnancy_Yes_No","Probable delivery date","Date of Delivery","Number of Alive Babies Born","Number of Still Babies Born","Breastfeeding_ANA","Pain during sexual intercourse","Vaginal bleeding after sexual intercourse","Vaginal bleeding between menstruation_NA","Pain below the belly_NA","Referred to for cervical cancer screening"]
+            }
+        } else {
+            return {
+                hide: ["Last Menstruation Date","Pregnancy_Yes_No","Probable delivery date","Date of Delivery","Number of Alive Babies Born","Number of Still Babies Born","Breastfeeding_ANA","Pain during sexual intercourse","Vaginal bleeding after sexual intercourse","Vaginal bleeding between menstruation_NA","Pain below the belly_NA","Referred to for cervical cancer screening"],
+                }
+        }
+    },
+    "Pregnancy_Yes_No" (formName, formFieldValues) {
+        var pregValue = formFieldValues["Pregnancy_Yes_No"];
+
+        if (pregValue === "Pregnancy_Yes") {
+            return {
+                show: ["Probable delivery date"]
+            }
+        } else {
+            return {
+                hide: ["Probable delivery date"]
+
+            }
+        }
+    },
+    "Date of Delivery" (formName, formFieldValues) {
+        var delivValue = formFieldValues["Date of Delivery"];
+
+        if (delivValue) {
+            return {
+                show: ["Number of Alive Babies Born", "Number of Still Babies Born"]
+            }
+        } else {
+            return {
+                hide: ["Number of Alive Babies Born", "Number of Still Babies Born"]
+            }
+        }
     }
 };
