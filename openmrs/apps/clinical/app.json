@@ -392,7 +392,8 @@
                 "disableAddNotes": true
             },
             "Reference_Other_Services": {
-                "disableAddNotes": true
+                "disableAddNotes": true,
+                "multiSelect" : true
             },
             "Reference_Eligible": {
                 "disableAddNotes": true
@@ -613,9 +614,6 @@
             "Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact": {
                   "disableAddNotes": true,
                   "multiSelect" : true
-            },
-            "Reference_Other_Services": {
-                "multiSelect" : true
             },            
             "defaults": {
                 "Number of living children": 1,
