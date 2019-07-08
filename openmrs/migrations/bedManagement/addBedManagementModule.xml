@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+          <changeSet id="HAITI_CONFIG_260620192332" author="Pritam">
+                  <preConditions onFail="MARK_RAN">
+                      <sqlCheck expectedResult="0">
+                          SELECT COUNT(*) FROM concept_name WHERE `name` IN
+                                  (
+                                  "Admettre en Hospitalisation", "Admettre aux Soins Intensifs", "Admettre en BMR", "Transférer en Hospitalisation", "Transférer aux Soins Intensifs", "Transférer en BMR", "Sortie du patient"
+                                  )
+                                  and concept_name_type = "FULLY_SPECIFIED" and voided = 0;
+                      </sqlCheck>
+                  </preConditions>
+                  <comment>Creating concepts for Disposition</comment>
+                  <sql>
+                        set @concept_id = 0;
+                        set @concept_short_id = 0;
+                        set @concept_full_id = 0;
+                        set @count = 0;
+                        set @uuid = NULL;
+
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Admettre en Hospitalisation","Admettre en Hospitalisation",'N/A','Misc',false);
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Admettre aux Soins Intensifs","Admettre aux Soins Intensifs",'N/A','Misc',false);
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Admettre en BMR","Admettre en BMR",'N/A','Misc',false);
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Transférer en Hospitalisation","Transférer en Hospitalisation",'N/A','Misc',false);
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Transférer aux Soins Intensifs","Transférer aux Soins Intensifs",'N/A','Misc',false);
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Transférer en BMR","Transférer en BMR",'N/A','Misc',false);
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Sortie du patient","Sortie du patient",'N/A','Misc',false);
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Mettre en hébergement","Mettre en hébergement",'N/A','Misc',false);
+                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Sortir de l'hebergement","Sortir de l'hebergement",'N/A','Misc',false);
+                  </sql>
+          </changeSet>
+          <changeSet id="HAITI_CONFIG_260620192359" author="Pritam">
+                <preConditions onFail="MARK_RAN">
+                      <sqlCheck expectedResult="8">
+                        select count(*) from concept_answer ca
+                          join
+                          concept_name cn
+                          on ca.concept_id = cn.concept_id
+                          where ca.answer_concept IN
+                                (
+                                select concept_id from concept_name where name IN
+                                   (
+                                   'Undo Discharge','Admit Patient','Discharge Patient','Transfer Patient'
+                                   )
+                                and concept_name_type = "FULLY_SPECIFIED" and voided = 0
+                                )
+                                AND cn.concept_id IN
+                                   (
+                                    select concept_id from concept_name where
+                                    name = 'Disposition' and concept_name_type = "FULLY_SPECIFIED" and voided = 0
+                                    );
+                     </sqlCheck>
+                </preConditions>
+                <comment>Removing child from Disposition</comment>
+                <sql>
+                      SELECT concept_id INTO @ConceptID FROM concept_name WHERE name ="Disposition" AND concept_name_type="FULLY_SPECIFIED";
+                      DELETE FROM concept_answer WHERE concept_id=@conceptID;
+                </sql>
+          </changeSet>
+          <changeSet id="HAITI_CONFIG_201907011055" author="Pritam">
+                  <comment>Adding new Dispositions</comment>
+                  <sql>
+                      set @concept_id = 0;
+                      set @child1_concept_id = 0;
+                      set @child2_concept_id = 0;
+                      set @child3_concept_id = 0;
+                      set @child4_concept_id = 0;
+                      set @child5_concept_id = 0;
+                      set @child6_concept_id = 0;
+                      set @child7_concept_id = 0;
+                      set @child8_concept_id = 0;
+                      set @child9_concept_id = 0;
+
+                      select concept_id into @concept_id from concept_name where name = "Disposition" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+
+                      select concept_id into @child1_concept_id from concept_name where name = 'Admettre en Hospitalisation' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+                      select concept_id into @child2_concept_id from concept_name where name = 'Admettre aux Soins Intensifs' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+                      select concept_id into @child3_concept_id from concept_name where name = 'Admettre en BMR' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+                      select concept_id into @child4_concept_id from concept_name where name = 'Transférer en Hospitalisation' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+                      select concept_id into @child5_concept_id from concept_name where name = 'Transférer aux Soins Intensifs' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+                      select concept_id into @child6_concept_id from concept_name where name = 'Transférer en BMR' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+                      select concept_id into @child7_concept_id from concept_name where name = 'Sortie du patient' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+                      select concept_id into @child8_concept_id from concept_name where name = 'Mettre en hébergement' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+                      select concept_id into @child9_concept_id from concept_name where name = 'Sortir de l\'hebergement' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
+
+                      call add_concept_answer (@concept_id, @child1_concept_id, 1);
+                      call add_concept_answer (@concept_id, @child2_concept_id, 2);
+                      call add_concept_answer (@concept_id, @child3_concept_id, 3);
+                      call add_concept_answer (@concept_id, @child4_concept_id, 4);
+                      call add_concept_answer (@concept_id, @child5_concept_id, 5);
+                      call add_concept_answer (@concept_id, @child6_concept_id, 6);
+                      call add_concept_answer (@concept_id, @child7_concept_id, 7);
+                      call add_concept_answer (@concept_id, @child8_concept_id, 8);
+                      call add_concept_answer (@concept_id, @child9_concept_id, 9);
+                  </sql>
+         </changeSet>
+         <changeSet id="HAITI_CONFIG_201907011056" author="Pritam">
+                  <comment>Adding codes to specific concepts</comment>
+                  <sql>
+                      SELECT concept_source_id INTO @source_id FROM concept_reference_source where name = 'org.openmrs.module.emrapi';
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'ADMITTING_TO_HOSPITALIZATION',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Admettre en Hospitalisation', 'ADMITTING_TO_HOSPITALIZATION');
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'ADMIT_INTENSIVE_CARE',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Admettre aux Soins Intensifs', 'ADMIT_INTENSIVE_CARE');
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'ADMIT_IN_BMR',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Admettre en BMR', 'ADMIT_IN_BMR');
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'TRANSFER_TO_HOSPITALIZATION',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Transférer en Hospitalisation', 'TRANSFER_TO_HOSPITALIZATION');
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'TRANSFER_TO_INTENSIVE_CARE',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Transférer aux Soins Intensifs', 'TRANSFER_TO_INTENSIVE_CARE');
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'TRANSFER_TO_BMR',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Transférer en BMR', 'TRANSFER_TO_BMR');
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'PATIENT_EXIT',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Sortie du patient', 'PATIENT_EXIT');
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'PUT_IN_HOSTING',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Mettre en hébergement', 'PUT_IN_HOSTING');
+
+                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+                      (4,'EXIT_ACCOMODATION',@source_id,uuid(),now());
+                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Sortir de l\'hebergement', 'EXIT_ACCOMODATION');
+
+                  </sql>
+         </changeSet>
+         <changeSet id="HAITI_CONFIG_201907041554" author="Pritam">
+                  <preConditions onFail="MARK_RAN">
+                      <sqlCheck expectedResult="0">
+                          SELECT count(*) from concept_set cs where cs.concept_set in (SELECT concept_id from concept_name where name = 'IPD Expected DD' and concept_name_type="FULLY_SPECIFIED");
+                      </sqlCheck>
+                  </preConditions>
+                  <comment>Adding the concepts for expected date of discharge</comment>
+                  <sql>
+                      set @concept_id = 0;
+                      set @concept_name_short_id = 0;
+                      set @concept_name_full_id = 0;
+                      set @concept_datatype_coded = 0;
+                        call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'IPD Expected DD', 'IPD Expected DD', 'N/A', 'misc', true);
+
+                      set @child1_concept_id = 0;
+                      set @concept_name_short_id = 0;
+                      set @concept_name_full_id = 0;
+                      set @concept_datatype_coded = 0;
+                      call add_concept(@child1_concept_id, @concept_name_short_id, @concept_name_full_id, 'Expected Date of Discharge', 'Expected Date of Discharge', 'Date', 'misc', false);
+
+                      set @child2_concept_id = 0;
+                      set @concept_name_short_id = 0;
+                      set @concept_name_full_id = 0;
+                      set @concept_datatype_coded = 0;
+                      call add_concept(@child2_concept_id, @concept_name_short_id, @concept_name_full_id, 'Reason for Change in EDD', 'Reason for Change in EDD', 'Text', 'misc', false);
+
+                      INSERT INTO concept_set (concept_id,concept_set,sort_weight,creator,date_created,uuid) VALUES (@child1_concept_id,@concept_id,1,8,now(),uuid());
+                      INSERT INTO concept_set (concept_id,concept_set,sort_weight,creator,date_created,uuid) VALUES (@child2_concept_id,@concept_id,1,8,now(),uuid());
+                  </sql>
+         </changeSet>
+         <changeSet id="HAITI_CONFIG_201907040022" author="Pritam">
+           <comment>Stored Procedure to add concept</comment>
+           <sqlFile path="bedManagement/patientToAdmit.sql" endDelimiter="#"/>
+         </changeSet>
+         <changeSet id="HAITI_CONFIG_201907040023" author="Pritam">
+           <comment>Stored Procedure to add concept</comment>
+           <sqlFile path="bedManagement/patientToDischarge.sql" endDelimiter="#"/>
+         </changeSet>
+         <changeSet id="HAITI_CONFIG_201907040024" author="Pritam">
+           <comment>Stored Procedure to add concept</comment>
+           <sqlFile path="bedManagement/patientToTransfer.sql" endDelimiter="#"/>
+         </changeSet>
+         <changeSet id="HAITI_CONFIG_201907040025" author="Pritam">
+           <comment>Stored Procedure to add concept</comment>
+           <sqlFile path="bedManagement/patientAlreadyAdmitted.sql" endDelimiter="#"/>
+         </changeSet>
+         <changeSet id="HAITI_CONFIG_201907040026" author="SivaR">
+            <preConditions onFail="MARK_RAN">
+                <sqlCheck expectedResult="0">
+                  SELECT count(*) from location where name  in ("Hebergement","Services d\'Hospitalisation","Hebergement - 1");
+                </sqlCheck>
+            </preConditions>
+            <comment>Adding Hebergement Location  </comment>
+            <sql>
+                  INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Services d\'Hospitalisation', 'Services d\'Hospitalisation', FALSE, uuid(), NOW(), 1);
+                  INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Hebergement', 'Hebergement', FALSE, uuid(), NOW(), 1);
+                  INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Hebergement - 1', 'Hebergement - 1', FALSE, uuid(), NOW(), 1);
+            </sql>
+        </changeSet>
+        <changeSet id="HAITI_CONFIG_201907040027" author="SivaR">
+           <preConditions onFail="MARK_RAN">
+               <sqlCheck expectedResult="0">
+                   SELECT count(*) from location_tag where `name` = 'Admission Location' and retired = 0;
+               </sqlCheck>
+           </preConditions>
+           <comment>Inserting Admission Location Tags</comment>
+           <sql>
+                INSERT INTO location_tag (name, description, creator, date_created, retired, uuid) VALUES ('Admission Location', 'Patient admission location for ipd', 1, now(), 0, uuid());
+           </sql>
+       </changeSet>
+       <changeSet id="HAITI_CONFIG_201907040028" author="SivaR">
+          <preConditions onFail="MARK_RAN">
+              <sqlCheck expectedResult="0">
+                  SELECT count(*) FROM location_tag_map WHERE location_tag_id = (SELECT location_tag_id FROM location_tag WHERE name = 'Admission Location');
+              </sqlCheck>
+          </preConditions>
+          <comment>Mapping location_tag admission location to location</comment>
+              <sql>
+                SELECT location_tag_id INTO @location_tag_id FROM location_tag WHERE name = 'Admission Location';
+
+                SELECT location_id INTO @location_id1 FROM location WHERE location.name='Services d\'Hospitalisation';
+                INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id1, @location_tag_id);
+
+                SELECT location_id INTO @location_id1 FROM location WHERE location.name='Hebergement - 1';
+                INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id1, @location_tag_id);
+
+                SELECT location_id INTO @location_id1 FROM location WHERE location.name='Soins Intensifs';
+                INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id1, @location_tag_id);
+
+                SELECT location_id INTO @location_id2 FROM location WHERE location.name='Hospitalisation';
+                INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id2, @location_tag_id);
+
+                SELECT location_id INTO @location_id3 FROM location WHERE location.name='Service BMR';
+                INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id3, @location_tag_id);
+
+                SELECT location_id INTO @location_id4 FROM location WHERE location.name='Hebergement';
+                INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id4, @location_tag_id);
+              </sql>
+      </changeSet>
+      <changeSet id="HAITI_CONFIG_201907040030" author="SivaR">
+         <comment>Mapping to parent location </comment>
+         <sql>
+              SELECT location_id INTO @location_id1 FROM location WHERE location.name='Services d\'Hospitalisation';
+              update location set parent_location = @location_id1 where `name` = 'Hospitalisation';
+              update location set parent_location = @location_id1 where `name` = 'Soins Intensifs';
+              update location set parent_location = @location_id1 where `name` = 'Service BMR';
+
+              SELECT location_id INTO @location_id2 FROM location WHERE location.name='Hebergement';
+              update location set parent_location = @location_id2 where `name` = 'Hebergement - 1';
+         </sql>
+     </changeSet>
+
+      <changeSet id="HAITI_CONFIG_201907040029" author="SivaR">
+         <preConditions onFail="MARK_RAN">
+             <sqlCheck expectedResult="0">
+                 select count(*) from bed_type where `name` = 'Normal';
+             </sqlCheck>
+         </preConditions>
+         <comment>Adding Bed type </comment>
+         <sql>
+              INSERT INTO bed_type (name, display_name, description) VALUES ('normal', 'normal bed', 'NRM');
+         </sql>
+     </changeSet>
+     <changeSet id="HAITI_CONFIG_201907040031" author="SivaR">
+       <comment>Stored Procedure to add concept</comment>
+       <sqlFile path="bedManagement/insertBedLayout.sql"/>
+     </changeSet>
+</databaseChangeLog>

@@ -1,53 +1,112 @@
 {
-  "bahmniAdtPatientsSearchPatientsToAdmit":{
-    "id": "bahmni.adt.patients.search.patientsToAdmit",
+  "bahmniAdtPatientsSearchPatientsAdmitted": {
+        "id": "bahmni.ipd.patients.search.patientsAdmitted",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsAdmitted",
+            "view": "tabular",
+            "translationKey": "MODULE_LABEL_ADMITTED_PATIENT_KEY",
+            "links": [
+                {
+                    "url": "/bahmni/bedmanagement/#/bedManagement/patient/{{patientUuid}}",
+                    "linkColumn": "identifier",
+                    "newTab": false
+                }, {
+                    "url": "/bahmni/bedmanagement/#/bedManagement/patient/{{patientUuid}}",
+                    "linkColumn": "Bed Management",
+                    "newTab": true
+                }, {
+                    "url": "/bahmni/clinical/#/default/patient/{{patientUuid}}/dashboard/disposition",
+                    "linkColumn": "disposition",
+                    "newTab": true
+                }
+            ],
+            "forwardUrl": "#/bedManagement/patient/{{patientUuid}}",
+            "linkColumn": "action",
+            "searchColumns": ["identifier", "PATIENT_LISTING_QUEUES_HEADER_NAME", "gender", "department", "age", "Bed No","Admitted On"]
+        },
+        "label": "Admitted",
+        "order": 0,
+        "requiredPrivilege": "app:adt"
+    },
+  "bahmniAdtAdmettreEnHospitalisation": {
+    "id": "bahmni.ipd.patients.search.admettreEnHospitalisation",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
-      "translationKey": "MODULE_LABEL_TO_ADMIT_KEY",
-      "forwardUrl":"#/bedManagement/patient/{{patientUuid}}"
+      "view": "tabular",
+      "searchHandler": "emrapi.sqlSearch.admettreEnHospitalisation",
+      "translationKey": "MODULE_LABEL_TO_ADMIT_TO_HOSPITALISATION_KEY",
+      "linkColumn": "action",
+      "forwardUrl": "#/bedManagement/patient/{{patientUuid}}",
+      "searchColumns": [
+        "identifier",
+        "PATIENT_LISTING_QUEUES_HEADER_NAME",
+        "gender",
+        "age",
+        "Disposition Date",
+        "Department"
+      ]
     },
-    "label": "To Admit",
-    "order": 1,
-    "requiredPrivilege": "app:adt"
-  },
-  "bahmniAdtPatientsSearchPatientsAdmitted":{
-    "id": "bahmni.adt.patients.search.patientsAdmitted",
-    "extensionPointId": "org.bahmni.patient.search",
-    "type": "config",
-    "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.admittedPatients",
-      "translationKey": "MODULE_LABEL_ADMITTED_KEY",
-      "forwardUrl" : "#/bedManagement/patient/{{patientUuid}}"
-    },
-    "label": "Admitted",
     "order": 2,
     "requiredPrivilege": "app:adt"
   },
-  "bahmniAdtPatientsSearchPatientsToDischarge":{
-    "id": "bahmni.adt.patients.search.patientsToDischarge",
+  "bahmniAdtTransferEnHospitalisation": {
+    "id": "bahmni.ipd.patients.search.transferEnHospitalisation",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
-      "translationKey": "MODULE_LABEL_TO_DISCHARGE_KEY",
-      "forwardUrl" : "#/bedManagement/patient/{{patientUuid}}"
+      "view": "tabular",
+      "searchHandler": "emrapi.sqlSearch.transferEnHospitalisation",
+      "translationKey": "MODULE_LABEL_TO_MOVEMENT_TO_WARD_KEY",
+      "linkColumn": "action",
+      "forwardUrl": "#/bedManagement/patient/{{patientUuid}}",
+      "searchColumns": [
+        "identifier",
+        "PATIENT_LISTING_QUEUES_HEADER_NAME",
+        "gender",
+        "age",
+        "Disposition Date",
+        "Department"
+      ]
     },
-    "label": "To Discharge",
     "order": 3,
     "requiredPrivilege": "app:adt"
   },
-  "bahmniAdtPatientsSearchAllPatients":{
+  "bahmniAdtPatientsSearchPatientsTransferHome": {
+    "id": "bahmni.ipd.patients.search.patientsTransferHome",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.PatientsTransferHome",
+      "view": "tabular",
+      "translationKey": "MODULE_LABEL_TO_TRANSFER_TO_HOME_KEY",
+      "forwardUrl": "#/bedManagement/patient/{{patientUuid}}",
+      "linkColumn": "action",
+      "searchColumns": [
+        "identifier",
+        "PATIENT_LISTING_QUEUES_HEADER_NAME",
+        "gender",
+        "age",
+        "Department",
+        "Bed No",
+        "Disposition Date"
+      ]
+    },
+    "order": 4,
+    "requiredPrivilege": "app:adt"
+  },
+  "bahmniAdtPatientsSearchAllPatients": {
     "id": "bahmni.adt.patients.search.allPatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
       "translationKey": "MODULE_LABEL_ALL_KEY",
-      "forwardUrl" : "#/bedManagement/patient/{{patientUuid}}"
+      "forwardUrl": "#/bedManagement/patient/{{patientUuid}}"
     },
     "label": "All",
-    "order": 4,
+    "order": 5,
     "requiredPrivilege": "app:adt"
   }
 }

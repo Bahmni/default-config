@@ -12,20 +12,20 @@
         "visitUuid"
     ],
     "config": {
-        "wardListSqlSearchHandler": "bedManagement.sqlGet.patientListForAdmissionLocation",
+        "wardListSqlSearchHandler": "emrapi.sqlGet.allWardsListDetails",
         "diagnosisStatus": "Inactive",
-        "onAdmissionForwardTo": "#",
+        "onAdmissionForwardTo": "#/bedManagement/patient/{{patientUuid}}/visit/{{visitUuid}}",
         "onTransferForwardTo": "#",
         "onDischargeForwardTo": "#",
         "defaultVisitType": "Hospitalisation",
-        "expectedDateOfDischarge": "",
+        "expectedDateOfDischarge": "IPD Expected DD",
         "conceptSetUI": {
             "Expected Date of Discharge": {
                 "disableAddNotes": true,
                 "allowFutureDates": true
             }
         },
-        "hideStartNewVisitPopUp": false,
+        "hideStartNewVisitPopUp": true,
         "dashboard": {
             "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
             "conceptName": "Adt Notes",
