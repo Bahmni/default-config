@@ -159,13 +159,13 @@
     "order": 5,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsConduct": {
-    "id": "bahmni.clinical.conceptSetGroup.observations.Conduct",
+  "bahmniClinicalConceptSetGroupObservationsFamilyPlanning": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.FamilyPlanning",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "default": true,
-      "conceptName": "Group_VIII_Conduct_obs_form"
+      "conceptName": "Group_VIII_Family_Planning_obs_form"
     },
     "order": 6,
     "requiredPrivilege": "app:clinical"

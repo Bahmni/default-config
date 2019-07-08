@@ -135,28 +135,27 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     
     
 },
-"Conduct_Family_planning" (formName, formFieldValues, patient) {
-        var yes = formFieldValues["Conduct_Family_planning"];
-        if (yes === "Conduct_Family_planning_Yes" && patient.gender === "M") {
-            return {
-                show: ["Conduct_Contraceptive_Methods_PRES_Condom_button","Conduct_Contraceptive_Methods_VAS_Vasectomy_button","Conduct_Contraceptive_Methods_OUT_Other_button"]
-            }
-        } else if (yes === "Conduct_Family_planning_Yes" && patient.gender === "F") {
-           return {
-               show: ["Conduct_Contraceptive_Methods_PRES_Condom_button","Conduct_Contraceptive_Methods_PIL_Oral_Contraceptive_button",
-                   "Conduct_Contraceptive_Methods_INJ_Injection_button","Conduct_Contraceptive_Methods_IMP_Implant_button","Conduct_Contraceptive_Methods_DIU_Intra_button",
-                   "Conduct_Contraceptive_Methods_Uterine_device_button","Conduct_Contraceptive_Methods_LT_Tubal_Ligation_button",
-                   "Conduct_Contraceptive_Methods_MAL_Lactational_Amenorrhea_Method_button","Conduct_Contraceptive_Methods_OUT_Other_button"]
-           }
-        } else {
-            return {
-                hide: ["Conduct_Contraceptive_Methods_PRES_Condom_button","Conduct_Contraceptive_Methods_PIL_Oral_Contraceptive_button",
-                    "Conduct_Contraceptive_Methods_INJ_Injection_button","Conduct_Contraceptive_Methods_IMP_Implant_button","Conduct_Contraceptive_Methods_DIU_Intra_button",
-                    "Conduct_Contraceptive_Methods_Uterine_device_button","Conduct_Contraceptive_Methods_LT_Tubal_Ligation_button","Conduct_Contraceptive_Methods_VAS_Vasectomy_button",
-                    "Conduct_Contraceptive_Methods_MAL_Lactational_Amenorrhea_Method_button","Conduct_Contraceptive_Methods_OUT_Other_button"]
-            }
+"Family_Planning_Methods" (formName, formFieldValues, patient) {
+    
+    if (patient.gender === "M") {
+        return {
+            show: ["Family_Planning_Contraceptive_Methods_PRES_Condom_button", "Family_Planning_Contraceptive_Methods_VAS_Vasectomy_button",
+                "Family_Planning_Contraceptive_Methods_OUT_Other_button"],
+            hide: ["Family_Planning_Contraceptive_Methods_INJ_Injection_button", "Family_Planning_Contraceptive_Methods_IMP_Implant_button",
+                "Family_Planning_Contraceptive_Methods_DIU_Intra_button", "Family_Planning_Contraceptive_Methods_Uterine_device_button",
+                "Family_Planning_Contraceptive_Methods_LT_Tubal_Ligation_button","Family_Planning_Contraceptive_Methods_PIL_Oral_Contraceptive_button", "Family_Planning_Contraceptive_Methods_MAL_Lactational_Amenorrhea_Method_button"]
         }
-     },
+    }
+    else {
+        return {
+            show: ["Family_Planning_Contraceptive_Methods_PIL_Oral_Contraceptive_button",
+                "Family_Planning_Contraceptive_Methods_INJ_Injection_button", "Family_Planning_Contraceptive_Methods_IMP_Implant_button",
+                "Family_Planning_Contraceptive_Methods_DIU_Intra_button", "Family_Planning_Contraceptive_Methods_Uterine_device_button",
+                "Family_Planning_Contraceptive_Methods_LT_Tubal_Ligation_button", "Family_Planning_Contraceptive_Methods_MAL_Lactational_Amenorrhea_Method_button"],
+            hide: ["Family_Planning_Contraceptive_Methods_VAS_Vasectomy_button"]
+        }
+    }
+},
 
     "PP_Key_population" (formName, formFieldValues) {
         var dia = formFieldValues["PP_Key_population"];
