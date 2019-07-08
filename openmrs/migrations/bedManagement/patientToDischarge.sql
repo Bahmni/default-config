@@ -1,4 +1,3 @@
-
 INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
 VALUES ('emrapi.sqlSearch.PatientsTransferHome',
 "SELECT DISTINCT
@@ -6,7 +5,7 @@ VALUES ('emrapi.sqlSearch.PatientsTransferHome',
     concat(pn.given_name, ' ', ifnull(pn.family_name,''))             AS PATIENT_LISTING_QUEUES_HEADER_NAME,
     floor(DATEDIFF(CURDATE(), p.birthdate) / 365)                     AS age,
     p.gender                                                          AS gender,
-    parentLocation.name                                               AS Department,
+    parentLocation.name                                               AS DEPARTMENT_KEY,
     b.bed_number                                                      AS `Bed No`,
     DATE_FORMAT(o.obs_datetime,'%d %b %Y %h:%i %p')                   AS 'Disposition Date',
     'Patient Sortant'                                                   AS action,
@@ -21,7 +20,8 @@ FROM visit v
     INNER JOIN bed_patient_assignment_map bpam ON bpam.patient_id = p.person_id AND bpam.date_stopped IS NULL AND bpam.voided IS FALSE
     INNER JOIN bed b ON bpam.bed_id = b.bed_id
     INNER JOIN bed_location_map blm ON bpam.bed_id = blm.bed_id
-    INNER JOIN location parentLocation ON parentLocation.location_id = blm.location_id AND parentLocation.retired IS FALSE
+    INNER JOIN location childLocation on blm.location_id = childLocation.location_id AND childLocation.retired IS FALSE
+    INNER JOIN location parentLocation ON parentLocation.location_id = childLocation.parent_location AND parentLocation.retired IS FALSE
     INNER JOIN (SELECT
                     DISTINCT v.visit_id
                 FROM encounter en
@@ -43,4 +43,4 @@ FROM visit v
     INNER JOIN concept_name cn ON o.value_coded = cn.concept_id AND cn.concept_name_type = 'FULLY_SPECIFIED'
                                 AND cn.voided is FALSE AND cn.name = 'Sortie du patient'
 WHERE v.date_stopped IS NULL
-ORDER BY o.obs_datetime;",'Discharge patient after ADT',uuid());
+ORDER BY parentLocation.name,o.obs_datetime;",'Discharge patient after ADT',uuid());

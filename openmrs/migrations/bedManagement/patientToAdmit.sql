@@ -3,12 +3,12 @@ INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`
 VALUES ('emrapi.sqlSearch.admettreEnHospitalisation',
 "SELECT DISTINCT
   pi.identifier                                         AS identifier,
-  concat(pn.given_name, ' ', ifnull(pn.family_name,''))            AS PATIENT_LISTING_QUEUES_HEADER_NAME,
+  concat(pn.given_name, ' ', ifnull(pn.family_name,'')) AS PATIENT_LISTING_QUEUES_HEADER_NAME,
   floor(DATEDIFF(CURDATE(), p.birthdate) / 365)         AS age,
   p.gender                                              AS gender,
   DATE_FORMAT(o.obs_datetime,'%d %b %Y %h:%i %p')       AS 'Disposition Date',
-  cn.name                                               As Department,
-  'Admettre le patient'                                         AS action,
+  cn.name                                               As DEPARTMENT_KEY,
+  'Admettre le patient'                                 AS action,
   concat('', p.uuid)                                    AS uuid,
   concat('', v.uuid)                                    AS activeVisitUuid
 FROM person p
@@ -44,4 +44,4 @@ WHERE v.date_stopped IS NULL AND cn.name in ('Admettre en Hospitalisation','Adme
                                     WHEN lastDischargeTime.date_stopped IS NULL THEN 1
                                 END
 GROUP BY pi.identifier
-ORDER BY o.obs_datetime;",'To Admit patient list',uuid());
+ORDER BY cn.name,o.obs_datetime;",'To Admit patient list',uuid());

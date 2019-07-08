@@ -102,6 +102,22 @@
                   </sql>
          </changeSet>
          <changeSet id="HAITI_CONFIG_201907011056" author="Pritam">
+                 <preConditions onFail="MARK_RAN">
+                     <sqlCheck expectedResult="0">
+                        select 
+                        count(*)
+                        From
+                        concept_reference_term
+                        where `code` in
+                                      ("ADMITTING_TO_HOSPITALIZATION","ADMIT_INTENSIVE_CARE","ADMIT_IN_BMR",
+                                      "TRANSFER_TO_HOSPITALIZATION","TRANSFER_TO_INTENSIVE_CARE","TRANSFER_TO_BMR",
+                                      "PATIENT_EXIT","PUT_IN_HOSTING","EXIT_ACCOMODATION")
+                        and retired = 0
+                        and concept_source_id = (
+                                                  select concept_source_id from concept_reference_source where `name` = 'org.openmrs.module.emrapi'  and retired =0
+                                               );
+                     </sqlCheck>
+                 </preConditions>
                   <comment>Adding codes to specific concepts</comment>
                   <sql>
                       SELECT concept_source_id INTO @source_id FROM concept_reference_source where name = 'org.openmrs.module.emrapi';
