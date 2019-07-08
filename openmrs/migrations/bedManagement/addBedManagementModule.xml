@@ -104,7 +104,7 @@
          <changeSet id="HAITI_CONFIG_201907011056" author="Pritam">
                  <preConditions onFail="MARK_RAN">
                      <sqlCheck expectedResult="0">
-                        select 
+                        select
                         count(*)
                         From
                         concept_reference_term
@@ -191,19 +191,19 @@
                   </sql>
          </changeSet>
          <changeSet id="HAITI_CONFIG_201907040022" author="Pritam">
-           <comment>Stored Procedure to add concept</comment>
+           <comment>Adding patient to admit queue</comment>
            <sqlFile path="bedManagement/patientToAdmit.sql" endDelimiter="#"/>
          </changeSet>
          <changeSet id="HAITI_CONFIG_201907040023" author="Pritam">
-           <comment>Stored Procedure to add concept</comment>
+           <comment>Adding patient to discharge queue</comment>
            <sqlFile path="bedManagement/patientToDischarge.sql" endDelimiter="#"/>
          </changeSet>
          <changeSet id="HAITI_CONFIG_201907040024" author="Pritam">
-           <comment>Stored Procedure to add concept</comment>
+           <comment>Adding patient to transfer queue</comment>
            <sqlFile path="bedManagement/patientToTransfer.sql" endDelimiter="#"/>
          </changeSet>
          <changeSet id="HAITI_CONFIG_201907040025" author="Pritam">
-           <comment>Stored Procedure to add concept</comment>
+           <comment>Adding patient admitted queue</comment>
            <sqlFile path="bedManagement/patientAlreadyAdmitted.sql" endDelimiter="#"/>
          </changeSet>
          <changeSet id="HAITI_CONFIG_201907040026" author="SivaR">
@@ -212,7 +212,7 @@
                   SELECT count(*) from location where name  in ("Hebergement","Services d\'Hospitalisation","Hebergement - 1");
                 </sqlCheck>
             </preConditions>
-            <comment>Adding Hebergement Location  </comment>
+            <comment>Add locations Services d'Hospitalisation, Hebergement and Hebergement - 1 </comment>
             <sql>
                   INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Services d\'Hospitalisation', 'Services d\'Hospitalisation', FALSE, uuid(), NOW(), 1);
                   INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Hebergement', 'Hebergement', FALSE, uuid(), NOW(), 1);
@@ -222,7 +222,7 @@
         <changeSet id="HAITI_CONFIG_201907040027" author="SivaR">
            <preConditions onFail="MARK_RAN">
                <sqlCheck expectedResult="0">
-                   SELECT count(*) from location_tag where `name` = 'Admission Location' and retired = 0;
+                   SELECT count(*) from location_tag where name = 'Admission Location' and retired = 0;
                </sqlCheck>
            </preConditions>
            <comment>Inserting Admission Location Tags</comment>
@@ -260,8 +260,13 @@
               </sql>
       </changeSet>
       <changeSet id="HAITI_CONFIG_201907040030" author="SivaR">
-         <comment>Mapping to parent location </comment>
-         <sql>
+          <preConditions onFail="MARK_RAN">
+              <sqlCheck expectedResult="4">
+                  select count(*) from location where name in('Hospitalisation','Soins Intensifs','Service BMR','Hebergement - 1') and  parent_location is null;
+              </sqlCheck>
+          </preConditions>
+          <comment>Mapping to parent location </comment>
+          <sql>
               SELECT location_id INTO @location_id1 FROM location WHERE location.name='Services d\'Hospitalisation';
               update location set parent_location = @location_id1 where `name` = 'Hospitalisation';
               update location set parent_location = @location_id1 where `name` = 'Soins Intensifs';
@@ -269,7 +274,7 @@
 
               SELECT location_id INTO @location_id2 FROM location WHERE location.name='Hebergement';
               update location set parent_location = @location_id2 where `name` = 'Hebergement - 1';
-         </sql>
+          </sql>
      </changeSet>
 
       <changeSet id="HAITI_CONFIG_201907040029" author="SivaR">
@@ -280,7 +285,7 @@
          </preConditions>
          <comment>Adding Bed type </comment>
          <sql>
-              INSERT INTO bed_type (name, display_name, description) VALUES ('normal', 'normal bed', 'NRM');
+              INSERT INTO bed_type (name, display_name, description) VALUES ('Normal', 'Normal Bed', 'NRM');
          </sql>
      </changeSet>
      <changeSet id="HAITI_CONFIG_201907040031" author="SivaR">
