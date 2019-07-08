@@ -5,7 +5,7 @@ VALUES ('emrapi.sqlSearch.PatientsTransferHome',
     concat(pn.given_name, ' ', ifnull(pn.family_name,''))             AS PATIENT_LISTING_QUEUES_HEADER_NAME,
     floor(DATEDIFF(CURDATE(), p.birthdate) / 365)                     AS age,
     p.gender                                                          AS gender,
-    parentLocation.name                                               AS DEPARTMENT_KEY,
+    childLocation.name                                               AS department,
     b.bed_number                                                      AS `Bed No`,
     DATE_FORMAT(o.obs_datetime,'%d %b %Y %h:%i %p')                   AS 'Disposition Date',
     'Patient Sortant'                                                   AS action,
@@ -43,4 +43,4 @@ FROM visit v
     INNER JOIN concept_name cn ON o.value_coded = cn.concept_id AND cn.concept_name_type = 'FULLY_SPECIFIED'
                                 AND cn.voided is FALSE AND cn.name = 'Sortie du patient'
 WHERE v.date_stopped IS NULL
-ORDER BY parentLocation.name,o.obs_datetime;",'Discharge patient after ADT',uuid());
+ORDER BY childLocation.name,o.obs_datetime;",'Discharge patient after ADT',uuid());

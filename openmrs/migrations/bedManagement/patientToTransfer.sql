@@ -5,7 +5,7 @@ VALUES ('emrapi.sqlSearch.transferEnHospitalisation',
           concat(pn.given_name, ' ', pn.family_name)            AS PATIENT_LISTING_QUEUES_HEADER_NAME,
           floor(DATEDIFF(CURDATE(), p.birthdate) / 365)         AS age,
           p.gender                                              AS gender,
-          parentLocation.name                                   AS DEPARTMENT_KEY,
+          childLocation.name                                   AS department,
           b.bed_number                                          AS `Bed No`,
           DATE_FORMAT(o.obs_datetime,'%d %b %Y %h:%i %p')       AS 'Disposition Date',
           'Mouvement des patients'                                    AS action,
@@ -43,4 +43,4 @@ VALUES ('emrapi.sqlSearch.transferEnHospitalisation',
         INNER JOIN concept_name cn ON o.value_coded = cn.concept_id AND cn.concept_name_type = 'FULLY_SPECIFIED' AND cn.voided is FALSE
                                                                     AND cn.name in ('Transférer en Hospitalisation','Transférer aux Soins Intensifs','Transférer en BMR') AND o.date_created > bpam.date_created
     WHERE v.date_stopped IS NULL
-    ORDER BY parentLocation.name,o.obs_datetime;",'Patient moving to different bed/location',uuid());
+    ORDER BY childLocation.name,o.obs_datetime;",'Patient moving to different bed/location',uuid());

@@ -18,7 +18,7 @@
         ],
         "config" : {
              "showPatientIdentifier": false,
-             "showStartVisitButton": false,
+             "showStartVisitButton": true,
       	     "disablePhotoCapture": true,
             "patientInformation": {
                 "caretakerDetails": {

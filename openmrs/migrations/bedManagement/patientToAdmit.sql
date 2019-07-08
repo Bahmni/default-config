@@ -7,7 +7,7 @@ VALUES ('emrapi.sqlSearch.admettreEnHospitalisation',
   floor(DATEDIFF(CURDATE(), p.birthdate) / 365)         AS age,
   p.gender                                              AS gender,
   DATE_FORMAT(o.obs_datetime,'%d %b %Y %h:%i %p')       AS 'Disposition Date',
-  cn.name                                               As DEPARTMENT_KEY,
+  cn.name                                               As department,
   'Admettre le patient'                                 AS action,
   concat('', p.uuid)                                    AS uuid,
   concat('', v.uuid)                                    AS activeVisitUuid

@@ -6,7 +6,17 @@
         xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-
+          <changeSet id="HAITI_CONFIG_201907081617" author="Pritam">
+              <preConditions onFail="MARK_RAN">
+                  <sqlCheck expectedResult="1">
+                      select count(*) from person_attribute_type where `name` = 'Refferé par' and retired = 1;
+                  </sqlCheck>
+              </preConditions>
+              <comment>Removing Person attributes causing issue </comment>
+              <sql>
+                  delete from person_attribute_type where `name` = 'Refferé par' and retired = 1;
+              </sql>
+          </changeSet>
           <changeSet id="HAITI_CONFIG_260620192332" author="Pritam">
                   <preConditions onFail="MARK_RAN">
                       <sqlCheck expectedResult="0">

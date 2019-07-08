@@ -5,11 +5,11 @@ VALUES ('emrapi.sqlSearch.patientsAdmitted',
         concat(pn.given_name, ' ', ifnull(pn.family_name,'')) AS PATIENT_LISTING_QUEUES_HEADER_NAME,
         FLOOR(DATEDIFF(CURDATE(), p.birthdate) / 365)         AS age,
         p.gender                                              AS gender,
-        parentLocation.name                                   AS DEPARTMENT_KEY,
+        childLocation.name                                   AS department,
         b.bed_number                                          AS `Bed No`,
         DATE_FORMAT(bpam.date_started, '%d %b %Y %h:%i %p')   AS `Admitted On`,
-        'Mouvement/décharge'                                  AS BED_MANAGEMENT_KEY,
-        'Entrez disposition'                                   AS DISPOSITION_BOARD_LABEL_KEY,
+        'Mouvement/décharge'                                  AS `Bed Management`,
+        'Entrez disposition'                                   AS disposition,
         concat('', p.uuid)                                    AS uuid,
         concat('', v.uuid)                                    AS activeVisitUuid
     FROM visit v
@@ -25,4 +25,4 @@ VALUES ('emrapi.sqlSearch.patientsAdmitted',
         INNER JOIN location parentLocation ON parentLocation.location_id = childLocation.parent_location AND parentLocation.retired IS FALSE
 
     WHERE v.date_stopped IS NULL AND v.voided IS FALSE
-    ORDER BY parentLocation.name;",'Already admitted patient',uuid());
+    ORDER BY childLocation.name;",'Already admitted patient',uuid());
