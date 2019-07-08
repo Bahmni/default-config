@@ -81,7 +81,7 @@
         "visitTypeForRetrospectiveEntries": "Special OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
-        "clinicalProviderForms": ["Clinical_Observation_form", "Group V-Screening / Prophylaxis", "Group_Priority_Population_obs_form", "Group IV-Anamneses", "Group_VIII_Conduct_obs_form", "Reference_Form","CONFIDENT_FORM","DI_Death Information Form" ],
+        "clinicalProviderForms": ["Clinical_Observation_form", "Group V-Screening / Prophylaxis", "Group_Priority_Population_obs_form", "Group IV-Anamneses", "Group_VIII_Family_Planning_obs_form", "Reference_Form","CONFIDENT_FORM","DI_Death Information Form" ],
         "APSSProviderForms": ["Group_Priority_Population_obs_form", "Reference_Form", "Apss_obs_form"],
         "conceptSetUI": {
             "Chief Complaint Data": {
@@ -401,37 +401,34 @@
             "Reference_Eligible": {
                 "disableAddNotes": true
             },
-            "Conduct_Family_planning": {
+            "Family_Planning_Contraceptive_Methods_PRES_Condom_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_PRES_Condom_button": {
+            "Family_Planning_Contraceptive_Methods_PIL_Oral_Contraceptive_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_PIL_Oral_Contraceptive_button": {
+            "Family_Planning_Contraceptive_Methods_INJ_Injection_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_INJ_Injection_button": {
+            "Family_Planning_Contraceptive_Methods_IMP_Implant_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_IMP_Implant_button": {
+            "Family_Planning_Contraceptive_Methods_DIU_Intra_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_DIU_Intra_button": {
+            "Family_Planning_Contraceptive_Methods_Uterine_device_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_Uterine_device_button": {
+            "Family_Planning_Contraceptive_Methods_LT_Tubal_Ligation_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_LT_Tubal_Ligation_button": {
+            "Family_Planning_Contraceptive_Methods_VAS_Vasectomy_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_VAS_Vasectomy_button": {
+            "Family_Planning_Contraceptive_Methods_MAL_Lactational_Amenorrhea_Method_button": {
                 "disableAddNotes": true
             },
-            "Conduct_Contraceptive_Methods_MAL_Lactational_Amenorrhea_Method_button": {
-                "disableAddNotes": true
-            },
-            "Conduct_Contraceptive_Methods_OUT_Other_button": {
+            "Family_Planning_Contraceptive_Methods_OUT_Other_button": {
                 "disableAddNotes": true
             },
             "CONFIDENT_NAME": {
