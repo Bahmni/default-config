@@ -617,7 +617,10 @@
             "Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact": {
                   "disableAddNotes": true,
                   "multiSelect" : true
-            },            
+            },
+            "CONFIDENT_AGE_TYPE": {
+                  "dropdown": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
