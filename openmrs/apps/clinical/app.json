@@ -114,6 +114,9 @@
             "Brachial_perimeter_new": {
                   "disableAddNotes": true
             },
+            "BMI": {
+            "disableAddNotes": true
+            },
             "Nutritional_States_new": {
 
                   "disableAddNotes": true
