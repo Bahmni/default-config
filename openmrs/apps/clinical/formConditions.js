@@ -392,5 +392,16 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
                 hide: ["CONFIDENT_CCR"]
             }
         }
-    }
+    },
+    "Gynecology/Obstetrics" (formName, formFieldValues, patient) {
+        if (patient.gender === "F") {
+            return {
+                show: ["Gynecology/Obstetrics"],
+            }
+        } else {
+            return {
+                hide: ["Gynecology/Obstetrics"],
+            }
+        }
+    },
 };
