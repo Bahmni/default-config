@@ -340,17 +340,6 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
-    "Gynecology/Obstetrics" (formName, formFieldValues, patient) { 
-        if (patient.gender === "F") {
-            return {
-                show: ["Last Menstruation Date","Pregnancy_Yes_No","Probable delivery date","Date of Delivery","Number of Alive Babies Born","Number of Still Babies Born","Breastfeeding_ANA","Pain during sexual intercourse","Vaginal bleeding after sexual intercourse","Vaginal bleeding between menstruation_NA","Pain below the belly_NA","Referred to for cervical cancer screening"]
-            }
-        } else {
-            return {
-                hide: ["Last Menstruation Date","Pregnancy_Yes_No","Probable delivery date","Date of Delivery","Number of Alive Babies Born","Number of Still Babies Born","Breastfeeding_ANA","Pain during sexual intercourse","Vaginal bleeding after sexual intercourse","Vaginal bleeding between menstruation_NA","Pain below the belly_NA","Referred to for cervical cancer screening"],
-                }
-        }
-    },
     "Pregnancy_Yes_No" (formName, formFieldValues) {
         var pregValue = formFieldValues["Pregnancy_Yes_No"];
 
