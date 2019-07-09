@@ -1,6 +1,7 @@
     {
     "MODULE_LABEL_REGISTRATION_KEY": "Registration",
     "MODULE_LABEL_CLINICAL_KEY": "Clinical",
+    "MODULE_LABEL_APSS_KEY": "APSS&PP",
     "MODULE_LABEL_INPATIENT_KEY": "InPatient",
     "MODULE_LABEL_RADIOLOGY_UPLOAD_KEY": "Radiology Upload",
     "MODULE_LABEL_PATIENT_DOCUMENTS_KEY": "Patient Documents",
