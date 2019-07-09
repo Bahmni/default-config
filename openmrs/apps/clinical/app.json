@@ -443,6 +443,10 @@
              "CONFIDENT_AGE": {
                 "disableAddNotes": true
              },
+             "CONFIDENT_AGE_TYPE": {
+                "disableAddNotes": true,
+                "dropdown": true
+             },
              "CONFIDENT_RELATIONSHIP": {
                 "disableAddNotes": true,
                 "dropdown": true
@@ -617,9 +621,6 @@
             "Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact": {
                   "disableAddNotes": true,
                   "multiSelect" : true
-            },
-            "CONFIDENT_AGE_TYPE": {
-                  "dropdown": true
             },
             "defaults": {
                 "Number of living children": 1,
