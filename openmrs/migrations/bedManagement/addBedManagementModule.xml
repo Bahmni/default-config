@@ -302,4 +302,23 @@
        <comment>Stored Procedure to add concept</comment>
        <sqlFile path="bedManagement/insertBedLayout.sql"/>
      </changeSet>
+     <changeSet id="HAITI_CONFIG_201907081813" author="Pritam">
+         <preConditions onFail="MARK_RAN">
+             <sqlCheck expectedResult="0">
+                 select count(*) from bed_tag where `name` in ("Suspiscion BMR","BMR","Isolation","Soins Palliatifs","Hors service") and voided = 0;
+             </sqlCheck>
+         </preConditions>
+         <comment>Adding Bed type </comment>
+         <sql>
+            INSERT INTO bed_tag(name, creator, date_created, voided, uuid) VALUES ('Suspiscion BMR', 1, now(), 0, uuid());
+            INSERT INTO bed_tag(name, creator, date_created, voided, uuid) VALUES ('BMR', 1, now(), 0, uuid());
+            INSERT INTO bed_tag(name, creator, date_created, voided, uuid) VALUES ('Isolation', 1, now(), 0, uuid());
+            INSERT INTO bed_tag(name, creator, date_created, voided, uuid) VALUES ('Soins Palliatifs', 1, now(), 0, uuid());
+            INSERT INTO bed_tag(name, creator, date_created, voided, uuid) VALUES ('Hors service', 1, now(), 0, uuid());
+         </sql>
+      </changeSet>
+      <changeSet id="HAITI_CONFIG_201907091421" author="Pritam">
+        <comment>Adding ward list view for bed management</comment>
+        <sqlFile path="bedManagement/wardListView.sql"/>
+      </changeSet>
 </databaseChangeLog>

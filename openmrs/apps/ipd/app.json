@@ -26,6 +26,28 @@
             }
         },
         "hideStartNewVisitPopUp": true,
+        "colorForTags": [
+            {
+                "name": "Suspiscion BMR",
+                "color": "#FFFF00"
+            },
+            {
+                "name": "BMR",
+                "color": "#FF0000"
+            },
+            {
+                "name": "Isolation",
+                "color": "#0000FF"
+            },
+            {
+                "name": "Soins Palliatifs",
+                "color": "#808080"
+            },
+            {
+                "name": "Hors service",
+                "color": "#000000"
+            }
+        ],
         "dashboard": {
             "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
             "conceptName": "Adt Notes",

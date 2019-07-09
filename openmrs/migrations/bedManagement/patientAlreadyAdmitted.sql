@@ -25,4 +25,4 @@ VALUES ('emrapi.sqlSearch.patientsAdmitted',
         INNER JOIN location parentLocation ON parentLocation.location_id = childLocation.parent_location AND parentLocation.retired IS FALSE
 
     WHERE v.date_stopped IS NULL AND v.voided IS FALSE
-    ORDER BY childLocation.name;",'Already admitted patient',uuid());
+    ORDER BY childLocation.name DESC;",'Already admitted patient',uuid());
