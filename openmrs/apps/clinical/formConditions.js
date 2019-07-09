@@ -377,5 +377,31 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
                 hide: ["Number of Alive Babies Born", "Number of Still Babies Born"]
             }
         }
+    },
+    "CONFIDENT_HIV_TEST" (formName, formFieldValues) {
+        var value = formFieldValues["CONFIDENT_HIV_TEST"];
+
+        if (value === "CONFIDENT_HIV_POSITIVE") {
+            return {
+                show: ["CONFIDENT_HIV_CARE"]
+            }
+        } else {
+            return {
+                hide: ["CONFIDENT_HIV_CARE"]
+            }
+        }
+    },
+    "CONFIDENT_FAMILY_SITUATION" (formName, formFieldValues, patient) {
+        var value = patient.age;
+
+        if (value < 5) {
+            return {
+                show: ["CONFIDENT_CCR"]
+            }
+        } else {
+            return {
+                hide: ["CONFIDENT_CCR"]
+            }
+        }
     }
 };
