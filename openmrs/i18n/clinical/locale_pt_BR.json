@@ -92,5 +92,6 @@
   "Completed": "Realizada",
   "Scheduled":"Agendada",
   "Cancelled":"Cancelar",
-  "CheckedIn":"Introduza um horário de entrada válido."
+  "CheckedIn":"Introduza um horário de entrada válido.",
+  "Group_VIII_Family_Planning_obs_form": "Planeamento Familiar"
 }
