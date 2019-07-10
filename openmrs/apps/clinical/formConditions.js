@@ -380,19 +380,6 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
-    "CONFIDENT_FAMILY_SITUATION" (formName, formFieldValues, patient) {
-        var value = patient.age;
-
-        if (value < 5) {
-            return {
-                show: ["CONFIDENT_CCR"]
-            }
-        } else {
-            return {
-                hide: ["CONFIDENT_CCR"]
-            }
-        }
-    },
     "Gynecology/Obstetrics" (formName, formFieldValues, patient) {
         if (patient.gender === "F") {
             return {
@@ -404,4 +391,21 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
+    "CONFIDENT_AGE" (formName, formFieldValues) {
+        var val = formFieldValues["CONFIDENT_AGE"];
+        if (val && val < 5 ) {
+            return {
+                show: ["CONFIDENT_AGE_TYPE", "CONFIDENT_CCR"]
+            }
+        } else if (val && val >= 5) {
+            return {
+                show: ["CONFIDENT_AGE_TYPE"],
+                hide: ["CONFIDENT_CCR"]
+            }
+        } else {
+            return {
+                hide: ["CONFIDENT_AGE_TYPE", "CONFIDENT_CCR"]
+            }
+        }
+    }
 };

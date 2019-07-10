@@ -445,7 +445,8 @@
              },
              "CONFIDENT_AGE_TYPE": {
                 "disableAddNotes": true,
-                "dropdown": true
+                "dropdown": true,
+                "required": true
              },
              "CONFIDENT_RELATIONSHIP": {
                 "disableAddNotes": true,
