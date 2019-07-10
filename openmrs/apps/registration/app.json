@@ -31,17 +31,16 @@
                 "registerNewPatient1": {
                     "title": "Register a New Patient",
                     "attributes": [
-                        "UniqueArtID",
-                        "HIVExposedInfant(HEI)No"
+                        "TypeofPatient"
                     ],
 					"expand": true,
 					"order": 2
                 },
                 "registerNewPatient2": {
-                    "title": "not shown",
+                    "title": "Not shown",
                     "attributes": [
-                        "OrderOfBirth",
-                        "KeyPopulationType"
+						"UniqueArtNo",
+                        "HIVExposedInfant(HEI)No"
                     ],
 					"expand": true,
 					"order": 3
@@ -55,18 +54,6 @@
 					"expand": true,
 					"order": 4
                 },
-                "treatmentSupporterInformation": {
-                    "title": "Treatment Supporter",
-                    "attributes": [
-                        "TreatmentSupporterFirstName",
-                        "TreatmentSupporterLastName",
-                        "TreatmentSupporterTelephoneNumber",
-						"TreatmentSupporterAddress",
-						"HomeCareProvidedBy"
-                    ],
-					"expand": true,
-					"order": 5
-                },
 				"defaults":  {
                     "MobileCountryCode": "South Sudan"
                 }
@@ -79,11 +66,8 @@
                 "Doctor":"provider",
                 "Parent":"patient"
             },
-			"forwardUrlsForVisitTypes": [{
-				"forwardUrl": "/bahmni/clinical/index.html#/default/patient/{{patientUuid}}/dashboard",
-				"visitType": "OPD"
-			}],
 
+			"disablePhotoCapture": true,
 			"showEnterID": false,
 			"dobMandatory": true,
             "autoCompleteFields":["familyName", "givenName"],
@@ -92,7 +76,7 @@
             "showMiddleName": false,
             "showLastName": true,
             "isLastNameMandatory": true,
-            "showSaveConfirmDialog": true,
+            "showSaveConfirmDialog": false,
             "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
@@ -136,6 +120,13 @@
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"}
+            },
+            "patientSearch": {
+                "customAttributes": {
+                    "label": "Unique Art No.",
+                    "placeholder": "Enter Unique Art No",
+                    "fields": ["UniqueArtNo"]
+                }
             }
         }
 }
