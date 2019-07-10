@@ -554,6 +554,15 @@
             "Apss_Adherence_follow_up_Who_administers_Relationship": {
                   "disableAddNotes": true
             },
+            "Apss_Adherence_follow_up_Adherence_Plan": {
+                "disableAddNotes": true
+            },
+            "Apss_Adherence_follow_up_Side_Effects": {
+                "disableAddNotes": true
+            },
+            "Apss_Adherence_follow_up_Adherence_TARV": {
+                "disableAddNotes": true
+            },
             "Apss_Support_Groups_Disclosed_Children": {
                   "disableAddNotes": true
             },
