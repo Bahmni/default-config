@@ -393,14 +393,16 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     },
     "CONFIDENT_AGE" (formName, formFieldValues) {
         var val = formFieldValues["CONFIDENT_AGE"];
-        if (val && val < 5 ) {
-            return {
-                show: ["CONFIDENT_AGE_TYPE", "CONFIDENT_CCR"]
-            }
-        } else if (val && val >= 5) {
-            return {
-                show: ["CONFIDENT_AGE_TYPE"],
-                hide: ["CONFIDENT_CCR"]
+        if ( val ) {
+            if(val < 5 ) {
+                return {
+                    show: ["CONFIDENT_AGE_TYPE", "CONFIDENT_CCR"]
+                }
+            } else {
+                return {
+                    show: ["CONFIDENT_AGE_TYPE"],
+                    hide: ["CONFIDENT_CCR"]
+                }
             }
         } else {
             return {
