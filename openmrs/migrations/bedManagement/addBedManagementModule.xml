@@ -42,8 +42,6 @@
                         call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Transférer aux Soins Intensifs","Transférer aux Soins Intensifs",'N/A','Misc',false);
                         call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Transférer en BMR","Transférer en BMR",'N/A','Misc',false);
                         call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Sortie du patient","Sortie du patient",'N/A','Misc',false);
-                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Mettre en hébergement","Mettre en hébergement",'N/A','Misc',false);
-                        call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Sortir de l'hebergement","Sortir de l'hebergement",'N/A','Misc',false);
                   </sql>
           </changeSet>
           <changeSet id="HAITI_CONFIG_260620192359" author="Pritam">
@@ -85,8 +83,6 @@
                       set @child5_concept_id = 0;
                       set @child6_concept_id = 0;
                       set @child7_concept_id = 0;
-                      set @child8_concept_id = 0;
-                      set @child9_concept_id = 0;
 
                       select concept_id into @concept_id from concept_name where name = "Disposition" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
 
@@ -97,8 +93,6 @@
                       select concept_id into @child5_concept_id from concept_name where name = 'Transférer aux Soins Intensifs' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
                       select concept_id into @child6_concept_id from concept_name where name = 'Transférer en BMR' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
                       select concept_id into @child7_concept_id from concept_name where name = 'Sortie du patient' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
-                      select concept_id into @child8_concept_id from concept_name where name = 'Mettre en hébergement' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
-                      select concept_id into @child9_concept_id from concept_name where name = 'Sortir de l\'hebergement' and concept_name_type = 'FULLY_SPECIFIED'  and voided = 0 and locale = 'en';
 
                       call add_concept_answer (@concept_id, @child1_concept_id, 1);
                       call add_concept_answer (@concept_id, @child2_concept_id, 2);
@@ -107,8 +101,6 @@
                       call add_concept_answer (@concept_id, @child5_concept_id, 5);
                       call add_concept_answer (@concept_id, @child6_concept_id, 6);
                       call add_concept_answer (@concept_id, @child7_concept_id, 7);
-                      call add_concept_answer (@concept_id, @child8_concept_id, 8);
-                      call add_concept_answer (@concept_id, @child9_concept_id, 9);
                   </sql>
          </changeSet>
          <changeSet id="HAITI_CONFIG_201907011056" author="Pritam">
@@ -121,7 +113,7 @@
                         where `code` in
                                       ("ADMITTING_TO_HOSPITALIZATION","ADMIT_INTENSIVE_CARE","ADMIT_IN_BMR",
                                       "TRANSFER_TO_HOSPITALIZATION","TRANSFER_TO_INTENSIVE_CARE","TRANSFER_TO_BMR",
-                                      "PATIENT_EXIT","PUT_IN_HOSTING","EXIT_ACCOMODATION")
+                                      "PATIENT_EXIT")
                         and retired = 0
                         and concept_source_id = (
                                                   select concept_source_id from concept_reference_source where `name` = 'org.openmrs.module.emrapi'  and retired =0
@@ -160,14 +152,6 @@
                       (4,'PATIENT_EXIT',@source_id,uuid(),now());
                       call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Sortie du patient', 'PATIENT_EXIT');
 
-                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
-                      (4,'PUT_IN_HOSTING',@source_id,uuid(),now());
-                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Mettre en hébergement', 'PUT_IN_HOSTING');
-
-                      INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
-                      (4,'EXIT_ACCOMODATION',@source_id,uuid(),now());
-                      call CREATE_REFERENCE_ORG_OPENMRS_MODULE_EMRAPI('Sortir de l\'hebergement', 'EXIT_ACCOMODATION');
-
                   </sql>
          </changeSet>
          <changeSet id="HAITI_CONFIG_201907041554" author="Pritam">
@@ -188,13 +172,13 @@
                       set @concept_name_short_id = 0;
                       set @concept_name_full_id = 0;
                       set @concept_datatype_coded = 0;
-                      call add_concept(@child1_concept_id, @concept_name_short_id, @concept_name_full_id, 'Expected Date of Discharge', 'Expected Date of Discharge', 'Date', 'misc', false);
+                      call add_concept(@child1_concept_id, @concept_name_short_id, @concept_name_full_id, 'Date de Sortie Estimée', 'Date de Sortie Estimée', 'Date', 'misc', false);
 
                       set @child2_concept_id = 0;
                       set @concept_name_short_id = 0;
                       set @concept_name_full_id = 0;
                       set @concept_datatype_coded = 0;
-                      call add_concept(@child2_concept_id, @concept_name_short_id, @concept_name_full_id, 'Reason for Change in EDD', 'Reason for Change in EDD', 'Text', 'misc', false);
+                      call add_concept(@child2_concept_id, @concept_name_short_id, @concept_name_full_id, 'Raison pour changement de la DSE', 'Raison pour changement de la DSE', 'Text', 'misc', false);
 
                       INSERT INTO concept_set (concept_id,concept_set,sort_weight,creator,date_created,uuid) VALUES (@child1_concept_id,@concept_id,1,8,now(),uuid());
                       INSERT INTO concept_set (concept_id,concept_set,sort_weight,creator,date_created,uuid) VALUES (@child2_concept_id,@concept_id,1,8,now(),uuid());
@@ -219,14 +203,12 @@
          <changeSet id="HAITI_CONFIG_201907040026" author="SivaR">
             <preConditions onFail="MARK_RAN">
                 <sqlCheck expectedResult="0">
-                  SELECT count(*) from location where name  in ("Hebergement","Services d\'Hospitalisation","Hebergement - 1");
+                  SELECT count(*) from location where name = "Services d\'Hospitalisation";
                 </sqlCheck>
             </preConditions>
-            <comment>Add locations Services d'Hospitalisation, Hebergement and Hebergement - 1 </comment>
+            <comment>Add locations Services d'Hospitalisation</comment>
             <sql>
                   INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Services d\'Hospitalisation', 'Services d\'Hospitalisation', FALSE, uuid(), NOW(), 1);
-                  INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Hebergement', 'Hebergement', FALSE, uuid(), NOW(), 1);
-                  INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Hebergement - 1', 'Hebergement - 1', FALSE, uuid(), NOW(), 1);
             </sql>
         </changeSet>
         <changeSet id="HAITI_CONFIG_201907040027" author="SivaR">
@@ -253,26 +235,20 @@
                 SELECT location_id INTO @location_id1 FROM location WHERE location.name='Services d\'Hospitalisation';
                 INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id1, @location_tag_id);
 
-                SELECT location_id INTO @location_id1 FROM location WHERE location.name='Hebergement - 1';
-                INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id1, @location_tag_id);
-
-                SELECT location_id INTO @location_id1 FROM location WHERE location.name='Soins Intensifs';
-                INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id1, @location_tag_id);
-
-                SELECT location_id INTO @location_id2 FROM location WHERE location.name='Hospitalisation';
+                SELECT location_id INTO @location_id2 FROM location WHERE location.name='Soins Intensifs';
                 INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id2, @location_tag_id);
 
-                SELECT location_id INTO @location_id3 FROM location WHERE location.name='Service BMR';
+                SELECT location_id INTO @location_id3 FROM location WHERE location.name='Hospitalisation';
                 INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id3, @location_tag_id);
 
-                SELECT location_id INTO @location_id4 FROM location WHERE location.name='Hebergement';
+                SELECT location_id INTO @location_id4 FROM location WHERE location.name='Service BMR';
                 INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id4, @location_tag_id);
               </sql>
       </changeSet>
       <changeSet id="HAITI_CONFIG_201907040030" author="SivaR">
           <preConditions onFail="MARK_RAN">
-              <sqlCheck expectedResult="4">
-                  select count(*) from location where name in('Hospitalisation','Soins Intensifs','Service BMR','Hebergement - 1') and  parent_location is null;
+              <sqlCheck expectedResult="3">
+                  select count(*) from location where name in('Hospitalisation','Soins Intensifs','Service BMR') and  parent_location is null;
               </sqlCheck>
           </preConditions>
           <comment>Mapping to parent location </comment>
@@ -281,9 +257,6 @@
               update location set parent_location = @location_id1 where `name` = 'Hospitalisation';
               update location set parent_location = @location_id1 where `name` = 'Soins Intensifs';
               update location set parent_location = @location_id1 where `name` = 'Service BMR';
-
-              SELECT location_id INTO @location_id2 FROM location WHERE location.name='Hebergement';
-              update location set parent_location = @location_id2 where `name` = 'Hebergement - 1';
           </sql>
      </changeSet>
 

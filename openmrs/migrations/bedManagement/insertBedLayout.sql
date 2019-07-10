@@ -42,9 +42,3 @@ CALL insertBedIntoLocation('38', 'Service BMR', 1, 4);
 CALL insertBedIntoLocation('35', 'Service BMR', 2, 1);
 CALL insertBedIntoLocation('39', 'Service BMR', 2, 5);
 CALL insertBedIntoLocation('40', 'Service BMR', 3, 5);
-
-
-CALL insertBedIntoLocation('Curacao', 'Hebergement - 1', 1, 1);
-CALL insertBedIntoLocation('Gonayiv', 'Hebergement - 1', 2, 1);
-CALL insertBedIntoLocation('Kayiman', 'Hebergement - 1', 3, 1);
-CALL insertBedIntoLocation('Latoti', 'Hebergement - 1', 4, 1);
