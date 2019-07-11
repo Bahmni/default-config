@@ -391,35 +391,38 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
-    "CONFIDENT_AGE" (formName, formFieldValues) {
-        var val = formFieldValues["CONFIDENT_AGE"];
-        if ( val ) {
-            if(val < 5 ) {
+    "CONFIDENT_AGE_TYPE" (formName, formFieldValues) {
+        var ageType = formFieldValues["CONFIDENT_AGE_TYPE"];
+        var ageVal = formFieldValues["CONFIDENT_AGE"];
+        
+        if ((ageType != "Anos") && (ageType != "Meses")) {
+            return {
+                hide: ["CONFIDENT_CCR"]
+            }
+        }
+
+        if (ageType === "Anos") {
+            if (ageVal < 5) {
                 return {
-                    show: ["CONFIDENT_AGE_TYPE", "CONFIDENT_CCR"]
+                    show: ["CONFIDENT_CCR"]
                 }
             } else {
                 return {
-                    show: ["CONFIDENT_AGE_TYPE"],
                     hide: ["CONFIDENT_CCR"]
                 }
             }
-        } else {
-            return {
-                hide: ["CONFIDENT_AGE_TYPE", "CONFIDENT_CCR"]
-            }
+
         }
-    },
-    "CONFIDENT_AGE_TYPE" (formName, formFieldValues) {
-        var ageType = formFieldValues["CONFIDENT_AGE_TYPE"];
-        var val = formFieldValues["CONFIDENT_AGE"];
-        if(val < 5 && ageType === "Years") {
-            return {
-                show: ["CONFIDENT_CCR"]
-            }
-        } else {
-            return {
-                hide: ["CONFIDENT_CCR"]
+
+        if (ageType === "Meses") {
+            if (ageVal < 60) {
+                return {
+                    show: ["CONFIDENT_CCR"]
+                }
+            } else {
+                return {
+                    hide: ["CONFIDENT_CCR"]
+                }
             }
         }
     }
