@@ -9,40 +9,6 @@
         },
         "defaultSections": true,
         "sections": {
-            "pivotTable":{
-                "type": "pivotTable",
-                "displayOrder": 0,
-                "title": "Vitals Flowsheet",
-                "config": {
-                    "groupBy": "encounters",
-                    "obsConcepts": [
-                        "Pulse",
-                        "Diastolic",
-                        "Systolic",
-                        "Temperature",
-                        "RR",
-                        "SPO2",
-                        "Height",
-                        "WEIGHT",
-                        "M/C Days"
-                    ],
-                    "labConcepts": ""
-                }
-            },
-            "pacsOrders":{
-                "type":"pacsOrders",
-                "displayOrder": 1,
-                "translationKey": "PACS_ORDERS_VISIT_PAGE_KEY",
-                "config":{
-                    "orderType": "Radiology Order"
-                }
-            },
-            "conditions": {
-                "title": "Conditions",
-                "type": "conditionsList",
-                "displayOrder": 2,
-                "config": { }
-            }
         }
     }
 

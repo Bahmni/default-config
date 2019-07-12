@@ -37,6 +37,12 @@
             ]
         },
     	"diagnosisStatus": "Inactive",
+        "adtNavigationConfig": {
+            "hideGoToIPDButton": false,
+            "forwardUrl": "../bedmanagement/#/patient/{{patientUuid}}/visit/{{visitUuid}}/dashboard",
+            "privilege": "app:adt",
+            "title": "Go to IPD dashboard"
+        },
             "program": {
                 "patientInformation": {
                     "ageLimit": 100

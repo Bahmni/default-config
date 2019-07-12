@@ -28,4 +28,9 @@
           <sqlFile path="bedManagement/insertBedIntoLocationStoredProcedure.sql" endDelimiter="#"/>
         </changeSet>
         <include file ="bedManagement/addBedManagementModule.xml"/>
+        <changeSet id="HAITI_CONFIG_110720191921" author="Vineela">
+           <comment>Adding global property for patient movement history display control</comment>
+           <sqlFile path="bedManagement/patientMovementHistoryDisplayControl.sql"/>
+         </changeSet>
+
 </databaseChangeLog>
