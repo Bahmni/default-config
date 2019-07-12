@@ -35,7 +35,7 @@
         <changeSet id="HAITI_CONFIG_120720191053" author="Sreekalyan">
             <comment>Updating global.property with regular expression for Patient names</comment>
                 <sql>
-                    update global_property set property_value='^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ'_ ]{1,50}$.*$' where property='patient.nameValidationRegex';
+                    update global_property set property_value='^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ\'_ ]{1,50}$.*$' where property='patient.nameValidationRegex';
                 </sql>
         </changeSet>
 
