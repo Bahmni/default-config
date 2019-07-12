@@ -67,15 +67,15 @@
                 "Phone number" : {"pattern" : "[0-9]{8}", "errorMessage" : "Devrait avoir 8 caractères"},
                 "Ancien No de dossier" : {"pattern" : "[0-9]{1,6}", "errorMessage" : "Doit contenir between 1 to 6 chiffres"},
                 "givenName":{
-                    "pattern": "^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ\'_ ]{1,50}$.*$",
+                    "pattern": "^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ'_ ]{1,50}$.*$",
                     "errorMessage": "Doit contenir des caractères (longueur max 50)"
                 },
                 "middleName": {
-                    "pattern": "^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ\'_ ]{1,50}$.*$",
+                    "pattern": "^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ'_ ]{1,50}$.*$",
                     "errorMessage": "Doit contenir des caractères (longueur max 50)"
                 },
                 "familyName": {
-                    "pattern": "^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ\'_ ]{1,50}$.*$",
+                    "pattern": "^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ'_ ]{1,50}$.*$",
                     "errorMessage": "Doit contenir des caractères (longueur max 50)"
                 }
             },
