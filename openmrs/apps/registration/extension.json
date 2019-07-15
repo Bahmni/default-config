@@ -30,44 +30,5 @@
         "icon": "fa-patient-edit",
         "order": 1,
         "requiredPrivilege": "View Patients"
-    },
-    "nutritionalValues":{
-        "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Nutritional Values",
-            "translationKey": "NUTRITIONAL_VALUES_LOCALE_KEY",
-            "conceptNames": ["Height", "Weight", "BMI Data", "BMI Status Data"],
-            "required":true,
-            "showLatest": true
-        },
-        "order": 1,
-        "requiredPrivilege": "Edit Visits"
-    },
-    "feeInformation":{
-        "id": "bahmni.registration.conceptSetGroup.feeInformation",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Fee Information",
-            "translationKey": "FEE_INFORMATION_LOCALE_KEY",
-            "required":true
-        },
-        "order": 2,
-        "requiredPrivilege": "Edit Visits"
-    },
-    "nutritionalValue":{
-        "id": "bahmni.registration.conceptSetGroup.nutritionalValue",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "forms",
-        "extensionParams": {
-            "formName": "Nutritional Values",
-            "conceptNames": ["Height", "Weight", "BMI Data", "BMI Status Data"],
-            "required":true,
-            "showLatest": true
-        },
-        "order": 3,
-        "requiredPrivilege": "Edit Visits"
     }
 }
