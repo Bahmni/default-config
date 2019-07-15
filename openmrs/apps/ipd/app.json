@@ -25,7 +25,7 @@
                 "allowFutureDates": true
             }
         },
-        "hideStartNewVisitPopUp": false ,
+        "hideStartNewVisitPopUp": true ,
         "colorForTags": [
             {
                 "name": "Suspiscion BMR",
