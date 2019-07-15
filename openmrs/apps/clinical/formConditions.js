@@ -158,7 +158,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
 },
 
     "Anthropometric" (formName, formFieldValues, patient) {
-        if (patient.gender === "M" && patient.age > 5) {
+        if ((patient.gender === "M") && (patient.age > 5)) {
            return {
                hide: ["Brachial_perimeter_new"]
            }
