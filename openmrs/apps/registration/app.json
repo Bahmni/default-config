@@ -93,6 +93,23 @@
                 "personAttributes": {
                     "fields": ["Ancien No de dossier"]
                 }
-            }
+            },
+            "forwardUrlsForVisitTypes": [
+                {
+                    "visitType": "Urgences",
+                    "forwardUrl": "../clinical/index.html#/default/patient/{{patientUuid}}",
+                    "shortcutKey": "c"
+                },
+                {
+                    "visitType": "Ambulatoire",
+                    "forwardUrl": "../registration/index.html#/search",
+                    "shortcutKey": "h"
+                },
+                {
+                    "visitType": "Hospitalisation",
+                    "forwardUrl": "../bedmanagement/#/home",
+                    "shortcutKey": "h"
+                }
+            ]
         }
 }
