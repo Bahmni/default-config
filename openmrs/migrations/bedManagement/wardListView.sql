@@ -3,8 +3,8 @@ INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`
 VALUES ('emrapi.sqlGet.allWardsListDetails',
 "SELECT DISTINCT
 bed.bed_number                                                                     	AS 'Lit',
-patient_identifier.identifier                                                      	AS 'Id',
 CONCAT(pn.given_name, ' ', pn.family_name)                                         	AS 'Nom',
+patient_identifier.identifier                                                      	AS 'Identité',
 p.gender                                                                              As 'Sexe',
 TIMESTAMPDIFF(YEAR, p.birthdate, CURDATE())                                           AS 'Age',
 CAST(DATE_FORMAT(latestAdmissionEncounter.admission_datetime, '%Y-%m-%d') AS CHAR) 	AS 'Date d''admissuin'
