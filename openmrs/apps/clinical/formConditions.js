@@ -395,7 +395,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         var ageType = formFieldValues["CONFIDENT_AGE_TYPE"];
         var ageVal = formFieldValues["CONFIDENT_AGE"];
 
-        if(ageType && ageVal > 0){
+        if(ageVal > 0){
             if(ageVal < 5 && (ageType === "Years" || ageType === "Anos" || ageType === "CONFIDENT_AGE_TYPE_YEARS")){
                 return {
                     show: ["CONFIDENT_CCR"]
@@ -419,7 +419,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         var ageType = formFieldValues["CONFIDENT_AGE_TYPE"];
         var ageVal = formFieldValues["CONFIDENT_AGE"];
 
-        if(ageType && ageVal > 0){
+        if(ageVal > 0){
             if(ageVal < 5 && (ageType === "Years" || ageType === "Anos" || ageType === "CONFIDENT_AGE_TYPE_YEARS")){
                 return {
                     show: ["CONFIDENT_CCR"]
