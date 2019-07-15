@@ -157,6 +157,18 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     }
 },
 
+    "Anthropometric" (formName, formFieldValues, patient) {
+        if ((patient.gender === "M") && (patient.age > 5)) {
+           return {
+               hide: ["Brachial_perimeter_new"]
+           }
+        } else {
+            return {
+                show: ["Brachial_perimeter_new"]
+            }
+        }
+    },
+
     "PP_Key_population" (formName, formFieldValues) {
         var dia = formFieldValues["PP_Key_population"];
         if (dia === "PP_Key_population_Yes") {
