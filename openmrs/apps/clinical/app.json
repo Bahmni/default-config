@@ -115,7 +115,7 @@
             },
             "Set2": {
                 "allowAddMore": true
-            },
+			},
             "Coded3": {
                 "multiSelect": true
             },
@@ -131,6 +131,9 @@
             "General Family Information": {
                 "allowAddMore": true
             },
+			"ART Regimen - Substitution within 1st Line": {
+                "allowAddMore": true
+            },			
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
