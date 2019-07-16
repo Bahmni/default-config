@@ -41,6 +41,17 @@
             <comment>Stored Procedure to create users and assign bed management and registration roles</comment>
             <sqlFile path="bedManagement/createBedManagementUserProcedure.sql" endDelimiter="#"/>
         </changeSet>
+        <changeSet id="HAITI_CONFIG_201907161600" author="Bindu">
+            <preConditions onFail="MARK_RAN">
+                <sqlCheck expectedResult="1">
+                    select count(*) from role_privilege where privilege in('app:clinical:locationpicker', 'app:clinical:onbehalf', 'app:clinical:retrospective');
+                </sqlCheck>
+            </preConditions>
+            <comment>Removing Retrospective privilege for all the users in Bahmni</comment>
+            <sql>
+                delete from role_privilege where privilege in('app:clinical:locationpicker', 'app:clinical:onbehalf', 'app:clinical:retrospective');
+            </sql>
+        </changeSet>
         <include file ="bedManagement/addBedManagementModule.xml"/>
         <include file="bedManagement/createBedManagementUsers.xml"/>
 
