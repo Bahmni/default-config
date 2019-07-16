@@ -27,7 +27,6 @@
           <comment>Stored Procedure to insert beds into locations</comment>
           <sqlFile path="bedManagement/insertBedIntoLocationStoredProcedure.sql" endDelimiter="#"/>
         </changeSet>
-        <include file ="bedManagement/addBedManagementModule.xml"/>
         <changeSet id="HAITI_CONFIG_110720191921" author="Vineela">
            <comment>Adding global property for patient movement history display control</comment>
            <sqlFile path="bedManagement/patientMovementHistoryDisplayControl.sql"/>
@@ -38,5 +37,12 @@
                     update global_property set property_value='^[a-z*A-Z*âÂàÀäÄçÇéÉèÈêÊëËîÎïÏôÔùÙûÛüÜÿñÑœŒÆæ\'_ ]{1,50}$.*$' where property='patient.nameValidationRegex';
                 </sql>
         </changeSet>
+        <changeSet id="HAITI_CONFIG_201907151130" author="Bindu, Alekhya">
+            <comment>Stored Procedure to create users and assign bed management and registration roles</comment>
+            <sqlFile path="bedManagement/createBedManagementUserProcedure.sql" endDelimiter="#"/>
+        </changeSet>
+        <include file ="bedManagement/addBedManagementModule.xml"/>
+        <include file="bedManagement/createBedManagementUsers.xml"/>
+
 
 </databaseChangeLog>

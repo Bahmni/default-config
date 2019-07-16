@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="HAITI_CONFIG_201907151145" author="Bindu, Alekhya">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM role_privilege WHERE role = "InPatient-App" AND privilege = "Edit Bed Tags";
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Edit Bed Tags privilege to role InPatient-App</comment>
+        <sql>
+            INSERT INTO role_privilege(role, privilege) VALUES ("InPatient-App", "Edit Bed Tags");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907151146" author="Bindu, Alekhya">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM role_privilege WHERE role = "InPatient-App" AND privilege = "Get Bed Tags";
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Get Bed Tags privilege to role InPatient-App</comment>
+        <sql>
+            INSERT INTO role_privilege(role, privilege) VALUES ("InPatient-App", "Get Bed Tags");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141811" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="macena_p";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","MACENA","PIERRE","macena_p","4d0b24ccade22df6d154778cd66baf04288aae26df97a961f3ea3dd616fbe06dcebecc9bbe4ce93c8e12dca21e5935c08b0954534892c568b8c12b92f26a2448","1c9d7e94aeeb7a2459ef45ed200b2944582e0e7088d75f9b57a3644861ea766c20a269b3fe2eadaff1bc445ecfbd9bd3c0c550dfd813de48d39423cd3d1a8b10");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141812" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="murielle_a";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Murielle","ANGLADE","murielle_a","4d0b24ccade22df6d154778cd66baf04288aae26df97a961f3ea3dd616fbe06dcebecc9bbe4ce93c8e12dca21e5935c08b0954534892c568b8c12b92f26a2448","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141813" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="betty_c";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Betty","CETOUTE","betty_c","4d0b24ccade22df6d154778cd66baf04288aae26df97a961f3ea3dd616fbe06dcebecc9bbe4ce93c8e12dca21e5935c08b0954534892c568b8c12b92f26a2448","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141814" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="katlyne_c";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Katlyne","CHARLES","katlyne_c","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141815" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="lynda_c";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Lynda","CHARLOT DESTINE","lynda_c","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141816" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="esther_c";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Esther","CHERAMY","esther_c","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141817" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="kettelie_d";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Kettelie","DACINE","kettelie_d","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141818" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="lucianie_d";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Lucianie","DEREUS","lucianie_d","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141819" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="benita_f";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Bénita","FLEURISTAL","benita_f","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141820" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="eugenie_g";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Eugénie","GERMAIN","eugenie_g","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141821" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="gladine_g";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Gladine","GUE","gladine_g","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141822" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="alexandra_g";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Alexandra","GUILLAUME","alexandra_g","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141823" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="monette_i";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Monette","ISIDOR","monette_i","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141824" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="nadege_j";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Nadège","JEAN LESTIN","nadege_j","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141825" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="bleda_j";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Bléda","JOSEPH","bleda_j","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141826" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="dassise_j";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Dassise","JOSIUS","dassise_j","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141827" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="kettelye_j";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Kettelye","JEROME","kettelye_j","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141828" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="fedeline_m";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Fedeline","MILFLEUR","fedeline_m","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141829" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="firmane_o";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Firmane","ORUS","firmane_o","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141830" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="niclese_p";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Niclèse","PECK","niclese_p","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141831" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="sherlyne_p";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Sherlyne","PERRIER","sherlyne_p","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141832" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="renine_p";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Renine","PETIT","renine_p","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141833" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="andremene_p";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Andremène","PIERRE-LOUIS","andremene_p","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141834" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="nadia_p";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Nadia","PIERRE-LOUIS","nadia_p","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141835" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="martine_r";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Martine","RICHARD","martine_r","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141836" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="angeline_s";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Angeline","SAINT-FLEUR","angeline_s","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141837" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="simonne_t";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Simonne","THOMAS","simonne_t","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141838" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="makatia_a";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Makatia","ALCIMA","makatia_a","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141839" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="guerlande_b";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Guerlande","BARREAU","guerlande_b","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141840" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="nancy_f";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Nancy","FERODIN","nancy_f","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141841" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="marie_p";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Marie Estelle","PIERRE-LOUIS","marie_p","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141842" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="guerline_c";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Guerline","CHRISTALIN","guerline_c","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141843" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="marie_j";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Marie Jeunia","Jean Baptiste","marie_j","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907141844" author="Alekhya, Bindu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from users where username="elionise_m";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new users and assign bed management and registration roles</comment>
+        <sql>
+            call create_bed_management_user("F","Elionise","MENEUS","elionise_m","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
+        </sql>
+    </changeSet>
+</databaseChangeLog>
