@@ -31,7 +31,6 @@ Bahmni.ConceptSet.FormConditions.rules = {
             return {
                 hide: ["Lost To Follow Up Information" , "Transferred Out Information"],
                 show:["Death Information"]
-                // hide:["Transferred Out Information"]
             }
         } else if( death === "Lost Follow Up( < 3 Months)"){ 
             return {
