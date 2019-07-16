@@ -170,14 +170,12 @@
                     "HTC, WHO Staging"
                     ],
                     "showDetailsButton": true,
-                    "numberOfVisits": 1,
                     "scope": "latest"
                 },
                 "expandedViewConfig": {
                     "conceptNames": [
                         "HTC, WHO Staging"
                     ],
-                    "numberOfVisits": 1,
                     "scope": "latest",
                     "showDetailsButton": true,
                     "pivotTable": {
