@@ -7,7 +7,7 @@ CONCAT(pn.given_name, ' ', pn.family_name)                                      
 patient_identifier.identifier                                                      	AS 'Identité',
 p.gender                                                                              As 'Sexe',
 TIMESTAMPDIFF(YEAR, p.birthdate, CURDATE())                                           AS 'Age',
-CAST(DATE_FORMAT(latestAdmissionEncounter.admission_datetime, '%Y-%m-%d') AS CHAR) 	AS 'Date d''admissuin'
+CAST(DATE_FORMAT(latestAdmissionEncounter.admission_datetime, '%Y-%m-%d') AS CHAR) 	AS 'Date d''admission'
 from
 bed
 INNER JOIN bed_location_map blm ON blm.bed_id = bed.bed_id
@@ -26,4 +26,4 @@ LEFT OUTER JOIN (
                     GROUP BY
                       e.patient_id
                   ) latestAdmissionEncounter ON p.person_id = latestAdmissionEncounter.patient_id
-Order by bed.bed_number;",'SQL query to get list of bed details in ward',@uuid);
+Order by ABS(bed.bed_number);",'SQL query to get list of bed details in ward',@uuid);
