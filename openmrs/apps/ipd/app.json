@@ -81,8 +81,7 @@
                     "displayOrder": 1,
                     "showLinks": [
                         "home",
-                        "registration",
-                        "enrolment"
+                        "registration"
                     ],
                     "customLinks": [
                         {
