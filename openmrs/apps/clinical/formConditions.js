@@ -326,16 +326,16 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             };
         }
     },
-    "Reference_Other_Services" (formName, formFieldValues) {
-        var value = formFieldValues["Reference_Other_Services"];
+     "Reference_Other_Specify_Group" (formName, formFieldValues) {
+        var value = formFieldValues["Reference_Other_Specify_Group"];
         
-        if (value === "Reference_Other") {
+        if (value) {
             return {
-                show: ["Reference_Other_Text"]
+                show: ["Reference_Other_Specify_Group_Other"]
             }
         } else {
             return {
-                hide: ["Reference_Other_Text"]
+                hide: ["Reference_Other_Specify_Group_Other"]
             }
         }
     },
@@ -352,6 +352,18 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
+     "Reference_MDC_Other" (formName, formFieldValues) {
+        var pregValue = formFieldValues["Reference_MDC_Other"];
+        if (pregValue) {
+             return {
+                show: ["Reference_MDC_Other_comments"]
+             }
+         } else {
+             return {
+                hide: ["Reference_MDC_Other_comments"]
+             }
+         }
+     },
     "Pregnancy_Yes_No" (formName, formFieldValues) {
         var pregValue = formFieldValues["Pregnancy_Yes_No"];
 
