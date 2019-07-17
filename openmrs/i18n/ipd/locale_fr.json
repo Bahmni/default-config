@@ -76,5 +76,8 @@
   "DISPLAY_CONTROL_ERROR_MESSAGE_KEY": "Pas de {{displayControl}} pour ce patient",
   "DOB_LABEL": "Date de naissance",
   "NO_ADMISSION_DETAILS_MESSAGE": "Pas de détails d'admission pour ce patient.",
-  "NO_DISPOSTIONS_AVAILABLE_MESSAGE_KEY":"Pas de placements disponible"
+  "NO_DISPOSTIONS_AVAILABLE_MESSAGE_KEY":"Pas de placements disponible",
+  "CLINICAL_YEARS_TRANSLATION_KEY": "Annes",
+  "SEARCH_NAME_PLACEHOLDER_KEY": "Search Name/{{ primaryIdentifier }}  ...",
+  "SEARCH_KEY": "Recherche"
 }
