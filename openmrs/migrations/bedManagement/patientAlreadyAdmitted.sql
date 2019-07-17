@@ -8,8 +8,8 @@ VALUES ('emrapi.sqlSearch.patientsAdmitted',
         childLocation.name                                   AS department,
         b.bed_number                                          AS `Bed No`,
         DATE_FORMAT(bpam.date_started, '%d %b %Y %h:%i %p')   AS `Admitted On`,
-        'Mouvement/décharge'                                  AS `Bed Management`,
-        'Entrez disposition'                                   AS disposition,
+        'Mouvement/Sortie'                                  AS `Bed Management`,
+        'Entrer orientation'                                   AS disposition,
         concat('', p.uuid)                                    AS uuid,
         concat('', v.uuid)                                    AS activeVisitUuid
     FROM visit v
