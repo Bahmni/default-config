@@ -373,9 +373,6 @@
             "Reference_Other_Specify_Group": {
                 "disableAddNotes": true
             },
-            "Reference_Other_Specify_Group_Other": {
-                "disableAddNotes": true
-            },
             "Reference_GA": {
                 "disableAddNotes": true
             },
@@ -401,6 +398,7 @@
                 "disableAddNotes": true
             },
             "Reference_Other_Services": {
+                "disableAddNotes": true,
                 "multiSelect" : true
             },
             "Reference_Eligible": {
