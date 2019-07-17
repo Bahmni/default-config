@@ -632,6 +632,15 @@
                   "disableAddNotes": true,
                   "multiSelect" : true
             },
+            "Prophylaxis_Nutritional_Status": {
+                  "disableAddNotes": true
+            },
+            "Syndromic Approach_STI_M": {
+                  "disableAddNotes": true
+            },
+            "Syndromic Approach_STI_F": {
+                  "disableAddNotes": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
