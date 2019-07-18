@@ -110,4 +110,11 @@
             update location set parent_location = @location_id1 where `name` = 'Services d\'Hospitalisation';
         </sql>
     </changeSet>
+    </changeSet>
+    <changeSet id="IRAQ-201907180248" author="Sreekalyan">
+    <comment>Mapping already existing patient locationid to the newly created visit location's location id </comment>
+        <sql>
+            update visit set location_id =(select location_id from location where name='Parent location');
+        </sql>
+    </changeSet>
 </databaseChangeLog>
