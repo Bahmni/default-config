@@ -79,5 +79,6 @@
   "NO_DISPOSTIONS_AVAILABLE_MESSAGE_KEY":"Pas de placements disponible",
   "CLINICAL_YEARS_TRANSLATION_KEY": "Annes",
   "SEARCH_NAME_PLACEHOLDER_KEY": "Search Name/{{ primaryIdentifier }}  ...",
-  "SEARCH_KEY": "Recherche"
+  "SEARCH_KEY": "Recherche",
+  "DISCHARGE_DATE_LABEL":"Date de sortie"
 }
