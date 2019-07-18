@@ -632,6 +632,27 @@
                   "disableAddNotes": true,
                   "multiSelect" : true
             },
+            "Prophylaxis_Nutritional_Status": {
+                  "disableAddNotes": true
+            },
+            "Syndromic Approach_STI_M": {
+                  "disableAddNotes": true
+            },
+            "Syndromic Approach_STI_F": {
+                  "disableAddNotes": true
+            },
+            "SP_Side_Effects_INH": {
+                  "disableAddNotes": true
+            },
+            "SP_Side_Effects_CTZ": {
+                  "disableAddNotes": true
+            },
+            "SP_Side_Effects_Fluconazol": {
+                  "disableAddNotes": true
+            },
+            "SP_Measurement_Unit": {
+                  "disableAddNotes": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
