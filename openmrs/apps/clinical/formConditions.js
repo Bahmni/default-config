@@ -98,8 +98,6 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
 },
 "STI Diagnosis_Prophylaxis" (formName, formFieldValues, patient) {
     var dia = formFieldValues["STI Diagnosis_Prophylaxis"];
-    var returnShowValue = [];
-    var returnHideValue = [];
 
     if (dia === "Syndromic Approach") {
         if (patient.gender === "M") {
