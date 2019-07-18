@@ -401,4 +401,135 @@
             call create_bed_management_user("F","Elionise","MENEUS","elionise_m","b1ed748e3a006ad55a2f81ae91b4e99ff4746856c79d482eda851aa0f6c0c149787a7e152afcf52e51b28b68d435735aa8fd81ab7a5b2476a4c9e2bdc519065a","b084dc52f7de4003c536d0c2a6ed3fd0bc10256d0ac5ef69cdd223be5d39d30ea810bb24dfa11ef6b85f778fe4f5e535e1e7bad83c8e8ca0ec09dc0d1c48f9d");
         </sql>
     </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181436" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="jesulene_et";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select  user_id into @user_id1  from users where username = 'jesulene_et';
+            INSERT INTO user_role VALUES ( @user_id1,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id1,"InPatient-App");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181437" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="wedslere_p";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select user_id into @user_id2  from users where username = 'wedslere_p';
+            INSERT INTO user_role VALUES ( @user_id2,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id2,"InPatient-App");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181438" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="elca_l";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select user_id into @user_id3  from users where username = 'elca_l';
+            INSERT INTO user_role VALUES ( @user_id3,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id3,"InPatient-App");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181439" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="casline_m";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select user_id into @user_id4  from users where username = 'casline_m';
+            INSERT INTO user_role VALUES ( @user_id4,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id4,"InPatient-App");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181440" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="backup_n";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+             select user_id into @user_id5  from users where username = 'backup_n';
+             INSERT INTO user_role VALUES ( @user_id5,"Clinical-App");
+             INSERT INTO user_role VALUES ( @user_id5,"InPatient-App");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181442" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="sherlie_o";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select user_id into @user_id6  from users where username = 'sherlie_o';
+            INSERT INTO user_role VALUES ( @user_id6,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id6,"InPatient-App");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181443" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="adeline_r";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select user_id into @user_id7  from users where username = 'adeline_r';
+            INSERT INTO user_role VALUES ( @user_id7,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id7,"InPatient-App");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181444" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="elionise_m";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select user_id into @user_id8  from users where username = 'islande_s';
+            INSERT INTO user_role VALUES ( @user_id8,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id8,"InPatient-App");
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201907181445" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="nously_v";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select user_id into @user_id9  from users where username = 'nously_v';
+            INSERT INTO user_role VALUES ( @user_id9,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id9,"InPatient-App");
+        </sql>
+    </changeSet>
+
+    <changeSet id="HAITI_CONFIG_201907181446" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from users where username="marie_z";
+            </sqlCheck>
+        </preConditions>
+        <comment>assign clinical:app roles</comment>
+        <sql>
+            select user_id into @user_id10  from users where username = 'marie_z';
+            INSERT INTO user_role VALUES ( @user_id10,"Clinical-App");
+            INSERT INTO user_role VALUES ( @user_id10,"InPatient-App");
+        </sql>
+    </changeSet>
 </databaseChangeLog>
