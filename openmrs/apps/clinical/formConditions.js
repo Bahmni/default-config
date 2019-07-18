@@ -129,26 +129,14 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     }
 
 },
-"SP_Side_Effects" (formName, formFieldValues, patient) {
-    var answer = formFieldValues["SP_Side_Effects"];
-    if (answer) {
-        return {
-            show: ["SP_Side_Effects_Text"]    
-        }
-    } else {
-        return {
-            hide: ["SP_Side_Effects_Text"]
-        }
-    }
-},
 "Type_Prophylaxis" (formName, formFieldValues) {
     var dia = formFieldValues["Type_Prophylaxis"];
     var returnShowValue = [];
     var returnHideValue = [];
-    
     if (dia === "INH") {
 
             returnShowValue.push("INH_Details");
+            returnHideValue.push("Secondary effects_INH");
 
         } else {
             returnHideValue.push("INH_Details");
@@ -157,6 +145,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         if (dia === "CTZ") {
 
             returnShowValue.push("CTZ_Details");
+            returnHideValue.push("Secondary effects_CTZ");
 
         } else {
             returnHideValue.push("CTZ_Details");
@@ -165,6 +154,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         if (dia ==="Fluconazol") {
 
             returnShowValue.push("Fluconazol_Details");
+            returnHideValue.push("Secondary effects_Fluconazol");
 
         } else {
             returnHideValue.push("Fluconazol_Details");
@@ -179,6 +169,42 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
 
     
     
+},
+"SP_Side_Effects_INH" (formName, formFieldValues, patient) {
+    var answer = formFieldValues["SP_Side_Effects_INH"];
+    if (answer) {
+        return {
+            show: ["Secondary effects_INH"]    
+        }
+    } else {
+        return {
+            hide: ["Secondary effects_INH"]
+        }
+    }
+},
+"SP_Side_Effects_CTZ" (formName, formFieldValues, patient) {
+    var answer = formFieldValues["SP_Side_Effects_CTZ"];
+    if (answer) {
+        return {
+            show: ["Secondary effects_CTZ"]    
+        }
+    } else {
+        return {
+            hide: ["Secondary effects_CTZ"]
+        }
+    }
+},
+"SP_Side_Effects_Fluconazol" (formName, formFieldValues, patient) {
+    var answer = formFieldValues["SP_Side_Effects_Fluconazol"];
+    if (answer) {
+        return {
+            show: ["Secondary effects_Fluconazol"]    
+        }
+    } else {
+        return {
+            hide: ["Secondary effects_Fluconazol"]
+        }
+    }
 },
 "Family_Planning_Methods" (formName, formFieldValues, patient) {
     
