@@ -49,6 +49,65 @@
         </changeSet>
         <include file ="bedManagement/addBedManagementModule.xml"/>
         <include file="bedManagement/createBedManagementUsers.xml"/>
+    <changeSet id="IRAQ-201907181133" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="6">
+                select
+                count(*)
+                from
+                location l
+                INNER JOIN location_tag_map ltm on l.location_id = ltm.location_id and l.retired = 0
+                INNER JOIN location_tag lt on ltm.location_tag_id = lt.location_tag_id
+                where lt.name = 'Visit Location'
+            </sqlCheck>
+        </preConditions>
+        <comment>Removing visit location mapping from Ambulatoire,Bloc Opératoire,Hospitalisation,Service BMR,Soins Intensifs,Urgences </comment>
+        <sql>
+            select location_id Into @location_id1 from location where name = 'Ambulatoire' and retired = 0;
+            select location_id Into @location_id2 from location where name = 'Bloc Opératoire' and retired = 0;
+            select location_id Into @location_id3 from location where name = 'Hospitalisation' and retired = 0;
+            select location_id Into @location_id4 from location where name = 'Service BMR' and retired = 0;
+            select location_id Into @location_id5 from location where name = 'Soins Intensifs' and retired = 0;
+            select location_id Into @location_id6 from location where name = 'Urgences' and retired = 0;
+            SELECT location_tag_id into @location_tag_id from location_tag where name = 'Visit Location';
 
+            delete from location_tag_map where location_id = @location_id1    and location_tag_id = @location_tag_id;
+            delete from location_tag_map where location_id = @location_id2    and location_tag_id = @location_tag_id;
+            delete from location_tag_map where location_id = @location_id3    and location_tag_id = @location_tag_id;
+            delete from location_tag_map where location_id = @location_id4    and location_tag_id = @location_tag_id;
+            delete from location_tag_map where location_id = @location_id5    and location_tag_id = @location_tag_id;
+            delete from location_tag_map where location_id = @location_id6    and location_tag_id = @location_tag_id;
+        </sql>
+    </changeSet>
+    <changeSet id="IRAQ-201907181134" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from location where name = 'Parent location' and  parent_location is null;
+            </sqlCheck>
+        </preConditions>
+        <comment>Create Parent  location  and map to visit location</comment>
+        <sql>
+            INSERT INTO location (name, description, retired, uuid, date_created, creator) VALUES ('Parent location', 'Parentlocation', FALSE, uuid(), NOW(), 1);
 
+            SELECT location_tag_id INTO @location_tag_id FROM location_tag WHERE name = 'Visit Location';
+            SELECT location_id INTO @location_id1 FROM location WHERE location.name='Parent location';
+
+            INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id1, @location_tag_id);
+        </sql>
+    </changeSet>
+    <changeSet id="IRAQ-201907181135" author="Sreekalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="3">
+                select count(*) from location where name in('Ambulatoire','Bloc Opératoire','Urgences') and  parent_location is null;
+            </sqlCheck>
+        </preConditions>
+        <comment>Mapping to parent location </comment>
+        <sql>
+            SELECT location_id INTO @location_id1 FROM location WHERE location.name='Patient location';
+            update location set parent_location = @location_id1 where `name` = 'Ambulatoire';
+            update location set parent_location = @location_id1 where `name` = 'Bloc Opératoire';
+            update location set parent_location = @location_id1 where `name` = 'Urgences';
+            update location set parent_location = @location_id1 where `name` = 'Services d\'Hospitalisation';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
