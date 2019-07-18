@@ -228,6 +228,18 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     }
 },
 
+    "Anthropometric" (formName, formFieldValues, patient) {
+        if ((patient.gender === "M") && (patient.age > 5)) {
+           return {
+               hide: ["Brachial_perimeter_new"]
+           }
+        } else {
+            return {
+                show: ["Brachial_perimeter_new"]
+            }
+        }
+    },
+
     "PP_Key_population" (formName, formFieldValues) {
         var dia = formFieldValues["PP_Key_population"];
         if (dia === "PP_Key_population_Yes") {
@@ -465,36 +477,50 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     "CONFIDENT_AGE_TYPE" (formName, formFieldValues) {
         var ageType = formFieldValues["CONFIDENT_AGE_TYPE"];
         var ageVal = formFieldValues["CONFIDENT_AGE"];
-        
-        if ((ageType != "Anos") && (ageType != "Years") && (ageType != "Meses") && (ageType != "Months")) {
+
+        if(ageVal > 0){
+            if(ageVal < 5 && (ageType === "Years" || ageType === "Anos" || ageType === "CONFIDENT_AGE_TYPE_YEARS")){
+                return {
+                    show: ["CONFIDENT_CCR"]
+                }
+            } else if (ageVal < 60 && (ageType === "Months" || ageType === "Meses" || ageType === "CONFIDENT_AGE_TYPE_MONTHS")){
+                return {
+                    show: ["CONFIDENT_CCR"]
+                }
+            }else {
+                return {
+                    hide: ["CONFIDENT_CCR"]
+                }
+            }
+        } else {
             return {
                 hide: ["CONFIDENT_CCR"]
             }
         }
+    },
+    "CONFIDENT_AGE" (formName, formFieldValues) {
+        var ageType = formFieldValues["CONFIDENT_AGE_TYPE"];
+        var ageVal = formFieldValues["CONFIDENT_AGE"];
 
-        if ((ageType === "Anos") || (ageType === "Years")) {
-            if (ageVal < 5) {
+        if(ageVal > 0){
+            if(ageVal < 5 && (ageType === "Years" || ageType === "Anos" || ageType === "CONFIDENT_AGE_TYPE_YEARS")){
                 return {
                     show: ["CONFIDENT_CCR"]
                 }
-            } else {
+            } else if (ageVal < 60 && (ageType === "Months" || ageType === "Meses" || ageType === "CONFIDENT_AGE_TYPE_MONTHS")){
+                return {
+                    show: ["CONFIDENT_CCR"]
+                }
+            }else {
                 return {
                     hide: ["CONFIDENT_CCR"]
                 }
             }
-
-        }
-
-        if ((ageType === "Meses") || (ageType === "Months")) {
-            if (ageVal < 60) {
-                return {
-                    show: ["CONFIDENT_CCR"]
-                }
-            } else {
-                return {
-                    hide: ["CONFIDENT_CCR"]
-                }
+        } else {
+            return {
+                hide: ["CONFIDENT_CCR"]
             }
         }
     }
+
 };
