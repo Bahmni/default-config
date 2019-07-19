@@ -23,7 +23,7 @@
                 "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
                 "showDetailsButton":true,
                 "type":"disposition",
-                "numberOfVisits":1,
+                "numberOfVisits":5,
                 "displayOrder":7
             },
             "visits":{
@@ -32,7 +32,7 @@
                 "displayOrder":3,
                 "dashboardConfig":{
                     "title":null,
-                    "maximumNoOfVisits":8,
+                    "maximumNoOfVisits":5,
                     "groupByVisits":true
                 }
             }

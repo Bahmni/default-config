@@ -125,6 +125,7 @@
   "DASHBOARD_TITLE_MEDICAL_FOLLOW-UP_PLAN": "Plan de suivi médical",
   "DASHBOARD_TITLE_DISCHARGE_MEDICATION_KEY": "Médicaments de sortie",
   "DASHBOARD_TITLE_SURGICAL_FOLLOW_UP_PLAN_KEY": "Plan de suivi chirurgical",
-  "ADMINISTRATIVE_NOTE_KEY": "Remarques administratives"
+  "ADMINISTRATIVE_NOTE_KEY": "Remarques administratives",
+  "ADMISSION_DATE_LABEL": "Date d'admission"
 
 }

@@ -3,7 +3,7 @@
   "MODULE_LABEL_TO_ADMIT_TO_HOSPITALISATION_KEY":"Admettre",
   "MODULE_LABEL_TO_MOVEMENT_TO_WARD_KEY": "Mouvement vers",
   "MODULE_LABEL_TO_TRANSFER_TO_HOME_KEY": "Sortir",
-  "MODULE_LABEL_ADMITTED_PATIENT_KEY": "Admitted",
+  "MODULE_LABEL_ADMITTED_PATIENT_KEY": "Admis",
   "BED_MANAGEMENT_KEY": "Gestion des lits",
   "ADMIT_HOME_KEY":"Gestion des patients",
   "PATIENT_DETAILS_KEY":"Détails du patient:",
