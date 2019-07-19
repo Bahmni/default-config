@@ -116,4 +116,5 @@
             update visit set location_id =(select location_id from location where name='Parent location');
         </sql>
     </changeSet>
+    <include file="bedManagement/updatingBedManagementQueueForTranslation.xml"/>
 </databaseChangeLog>
