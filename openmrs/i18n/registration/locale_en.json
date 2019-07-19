@@ -21,5 +21,6 @@
   "REGISTRATION_INSTITUTE_ADDRESS": "Ganiyari, District - Bilaspur",
   "FEE_INFORMATION_LOCALE_KEY": "Fee Information",
   "NUTRITIONAL_VALUES_LOCALE_KEY": "Nutritional Values",
-  "REGISTRATION_PRINT_WITH_BARCODE": "Bar<u>c</u>ode Print"
+  "REGISTRATION_PRINT_WITH_BARCODE": "Bar<u>c</u>ode Print",
+  "TREATMENT_SUPPORTER_LOCALE_KEY": "Treatment Supporter"
 }
