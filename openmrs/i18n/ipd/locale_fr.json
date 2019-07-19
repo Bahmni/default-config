@@ -80,5 +80,8 @@
   "CLINICAL_YEARS_TRANSLATION_KEY": "Annes",
   "SEARCH_NAME_PLACEHOLDER_KEY": "Search Name/{{ primaryIdentifier }}  ...",
   "SEARCH_KEY": "Recherche",
-  "DISCHARGE_DATE_LABEL":"Date de sortie"
+  "DISCHARGE_DATE_LABEL":"Date de sortie",
+  "CLINICAL_YEARS_TRANSLATION_KEY": "Annes",
+  "CLINICAL_MONTHS_TRANSLATION_KEY": "Mois",
+  "CLINICAL_DAYS_TRANSLATION_KEY": "Jours"
 }
