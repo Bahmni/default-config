@@ -74,36 +74,67 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     if (dia === true) {
         return {
 
-            show: ["Received nutritional education"]
+            show: ["Received nutritional education", "Nutrition Supplement"]
         }
     } else {
         return {
-            hide: ["Received nutritional education"]
+            hide: ["Received nutritional education", "Nutrition Supplement"]
         }
     }
 },
-"STI Diagnosis_Prophylaxis" (formName, formFieldValues) {
-    var dia = formFieldValues["STI Diagnosis_Prophylaxis"];
+"Nutrition Supplement" (formName, formFieldValues) {
+    var dia = formFieldValues["Nutrition Supplement"];
 
-    if (dia === "Syndromic Approach") {
+    if (dia) {
         return {
 
-            show: ["Syndromic Approach_STI"]
+            show: ["Quantity of Nutritional Supplement", "SP_Measurement_Unit"]
         }
     } else {
         return {
-            hide: ["Syndromic Approach_STI"]
+            hide: ["Quantity of Nutritional Supplement", "SP_Measurement_Unit"]
         }
     }
+},
+"STI Diagnosis_Prophylaxis" (formName, formFieldValues, patient) {
+    var dia = formFieldValues["STI Diagnosis_Prophylaxis"];
+
+    if (dia === "Syndromic Approach") {
+        if (patient.gender === "M") {
+            return {
+                show: ["Syndromic Approach_STI_M"]
+            }
+    } else {
+            return {
+                show: ["Syndromic Approach_STI_F"]
+            }
+        }
+    } else {
+        return {
+            hide:["Syndromic Approach_STI_M", "Syndromic Approach_STI_F"]
+        }
+    }
+},
+"Nutrition_Prophylaxis" (formName, formFieldValues, patient) {
+    if (patient.age < 5) {
+        return {
+            show: ["Infants Odema_Prophylaxis"]
+        }
+    } else {
+        return {
+            hide: ["Infants Odema_Prophylaxis"]
+        }
+    }
+
 },
 "Type_Prophylaxis" (formName, formFieldValues) {
     var dia = formFieldValues["Type_Prophylaxis"];
     var returnShowValue = [];
     var returnHideValue = [];
-    
     if (dia === "INH") {
 
             returnShowValue.push("INH_Details");
+            returnHideValue.push("Secondary effects_INH");
 
         } else {
             returnHideValue.push("INH_Details");
@@ -112,6 +143,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         if (dia === "CTZ") {
 
             returnShowValue.push("CTZ_Details");
+            returnHideValue.push("Secondary effects_CTZ");
 
         } else {
             returnHideValue.push("CTZ_Details");
@@ -120,6 +152,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         if (dia ==="Fluconazol") {
 
             returnShowValue.push("Fluconazol_Details");
+            returnHideValue.push("Secondary effects_Fluconazol");
 
         } else {
             returnHideValue.push("Fluconazol_Details");
@@ -134,6 +167,42 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
 
     
     
+},
+"SP_Side_Effects_INH" (formName, formFieldValues, patient) {
+    var answer = formFieldValues["SP_Side_Effects_INH"];
+    if (answer) {
+        return {
+            show: ["Secondary effects_INH"]    
+        }
+    } else {
+        return {
+            hide: ["Secondary effects_INH"]
+        }
+    }
+},
+"SP_Side_Effects_CTZ" (formName, formFieldValues, patient) {
+    var answer = formFieldValues["SP_Side_Effects_CTZ"];
+    if (answer) {
+        return {
+            show: ["Secondary effects_CTZ"]    
+        }
+    } else {
+        return {
+            hide: ["Secondary effects_CTZ"]
+        }
+    }
+},
+"SP_Side_Effects_Fluconazol" (formName, formFieldValues, patient) {
+    var answer = formFieldValues["SP_Side_Effects_Fluconazol"];
+    if (answer) {
+        return {
+            show: ["Secondary effects_Fluconazol"]    
+        }
+    } else {
+        return {
+            hide: ["Secondary effects_Fluconazol"]
+        }
+    }
 },
 "Family_Planning_Methods" (formName, formFieldValues, patient) {
     
@@ -454,12 +523,13 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
                 }
             }else {
                 return {
-                    hide: ["CONFIDENT_CCR"]
+                    hide: ["CONFIDENT_CCR"],
+                    show: ["CONFIDENT_AGE_TYPE"]
                 }
             }
         } else {
             return {
-                hide: ["CONFIDENT_CCR"]
+                hide: ["CONFIDENT_CCR","CONFIDENT_AGE_TYPE"]
             }
         }
     }
