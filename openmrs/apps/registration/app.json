@@ -45,6 +45,14 @@
 					"expand": true,
 					"order": 3
                 },
+                "registerNewPatient3": {
+                    "title": "Not shown",
+                    "attributes": [
+						"MaritalStatus"
+                    ],
+					"expand": true,
+					"order": 4
+                },
                 "contactInformation": {
                     "title": "Contact Information",
                     "attributes": [
@@ -52,7 +60,7 @@
                         "MobileNumber"
                     ],
 					"expand": true,
-					"order": 4
+					"order": 5
                 },
 				"defaults":  {
                     "MobileCountryCode": "South Sudan"
@@ -125,7 +133,7 @@
                 "customAttributes": {
                     "label": "Unique Art No.",
                     "placeholder": "Enter Unique Art No",
-                    "fields": ["UniqueArtNo"]
+                    "fields": ["UniqueArtNo","MaritalStatus","Cohort"]
                 }
             }
         }
