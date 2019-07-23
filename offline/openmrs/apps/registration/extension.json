@@ -44,17 +44,5 @@
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
-    },
-    "feeInformation":{
-        "id": "bahmni.registration.conceptSetGroup.feeInformation",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Fee Information",
-            "translationKey": "FEE_INFORMATION_LOCALE_KEY",
-            "required":true
-        },
-        "order": 2,
-        "requiredPrivilege": "Edit Visits"
     }
 }
