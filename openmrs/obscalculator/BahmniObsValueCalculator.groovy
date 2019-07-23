@@ -11,6 +11,7 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.bahmniemrapi.obscalculator.ObsValueCalculator;
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncounterTransaction
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction;
+import org.openmrs.util.LocaleUtility;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Months;
@@ -240,10 +241,20 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     static def bmi(Double height, Double weight) {
+        String locale = LocaleUtility.getDefaultLocale();
         if (height == ZERO) {
-            throw new IllegalArgumentException("Please enter Height greater than zero")
+            if (locale == "en"){
+                throw new IllegalArgumentException("Please enter Height greater than zero")
+            }else {
+                throw new IllegalArgumentException("Introduza Altura maior que zero")
+            }
+
         } else if (weight == ZERO) {
-            throw new IllegalArgumentException("Please enter Weight greater than zero")
+            if (locale == "en"){
+                throw new IllegalArgumentException("Please enter Weight greater than zero")
+            } else {
+                throw new IllegalArgumentException("Introduza Peso maior que zero")
+            }
         }
         Double heightInMeters = height / 100;
         Double value = weight / (heightInMeters * heightInMeters);
