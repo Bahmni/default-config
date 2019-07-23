@@ -1,131 +1,156 @@
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/print.css"/>
-<table border="1" cellpadding="0" cellspacing="1" class="registrationCard-print-table">
-    <tbody>
-    <tr>
-        <td  class="print-table-left">
-            <table>
-                <tr>
+<table border="1" cellpadding="0" class="registrationCard-print-table">
 
-                    <td>
-                        <h3 class="print-table-header">सूचना</h3>
-                        <ul class="print-table-left-body">
-                            <li>
-                                स्वास्थ्य केन्द्र में पुनः आने के समय यह कार्ड लाना अति आवश्यक है ।
-                            </li>
-                            <li>
-                                दवा डाक्टर के निर्देशानुसार ही लें ।
-                            </li>
-                            <li>
-                                केन्द्र में पंजीयन का समय - प्रातः 8:30 से  दोपहर 12:00 बजे तक ।
-                            </li>
-                            <li>
-                                ओ.पी.डी. के दिन - सोम, बुध, शुक्र ।
-                            </li>
-                            <li>
-                                साप्ताहिक अवकाश - रविवार ।
-                            </li>
-                        </ul>
-                        <div class="caution">
-                            <h3 class="print-table-header">सावधान</h3>
-                            <p>
-                                बीडी, तम्बाकू, गुटका से केंसर, ह्रदय रोग और दमा हो सकते हैं ।
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </td>
+    <style>
+        .visit_info {
+            border-collapse: collapse;
+        }
+
+        .visit_info td,
+        .visit_info th {
+            border: 1px solid black;
+
+        }
+    </style>
+    <tbody>
+        <tr>
+            <td class="print-table-left">
+                </head>
+
+                <body>
+                    <table class="visit_info">
+                        <tr>
+                            <th>Visit Date</th>
+                            <th>CD4 Count/CD4% <br>(<=15yrs)</th> <th>Viral Load</th>
+                            <th>Current ART<br>/Other Medication</th>
+                            <th>Next appointment Date</th>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+            </td>
         <td class="print-table-right" valign="top">
             <table>
                 <tr>
                     <td class="logo">
                         <p>
-                            <img src="/bahmni_config/openmrs/apps/registration/registrationCardLayout/images/bahmni-icon.png" style="width: 12mm; height: 12mm; "/>
+                            <img src="/bahmni_config/openmrs/apps/registration/registrationCardLayout/images/bahmniLogoFull.png"
+                                style="width: 12mm; height: 12mm; " />
                         </p>
                     </td>
                     <td class="print-table-right-header">
-                            <h3>
-                                जन&nbsp;स्वास्थ्य&nbsp;सहयोग  
-                            </h3>
-                            <h3 class="print-center">(पंजीकृत)</h3>
+                        <h3>
+                            MINISTRY OF HEALTH
+                        </h3>
+                        <h3 class="print-center" style="width: 250px">Republic Of South Sudan</h3>
                     </td>
                     <td class="registrationCard-photo">
                         <img ng-src="{{patient.image}}" style="width: 20mm; height: 20mm; "
-                             onerror="this.onerror=null;this.src='../images/blank.jpeg';"/>
+                            onerror="this.onerror=null;this.src='../images/blank.jpeg';" />
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3" class="print-center registrationCard-location">
-                        गनियारी, जिला - बिलासपुर
+                        ART CLIENT HAND HELD CARD
                     </td>
                 </tr>
             </table>
             <table class="registrationCard-details">
                 <tbody>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">दिनाँक</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.registrationDate | bahmniDate}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">रजिस्ट्रेशन</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.primaryIdentifier.identifier}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">नाम</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>
-                        <span class="hindi-text">{{patient.fullNameLocal()}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">उम्र</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.age | age}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">लिंग</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.gender}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">पिता/पति</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.primaryRelative}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">गाँव</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.address.cityVillage}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">तहसील</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.address.address3}} </td>
-                </tr>
+                    <tr>
+                        <td class="facilityname" style="width: 350px">
+                            <span class="faciliy"> Facility Name :</span>
+                        </td>
+                        <td> ..................... </td>
+                    </tr>
+                    <tr>
+                        <td class="detailsname" style="width: 300px">
+                            <span class="name">Full Names:</span>
+                        </td>
+                        <td style="width: 300px">
+                            {{patient.fullNameLocal()}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-age">
+                            <span class="hindi">Age: &nbsp; {{patient.age | age}} </span>
+                        </td>
+                        <td>
+                            Sex: &nbsp; {{patient.gender}}
+                        </td>
+        
+        
+                    </tr>
+                    <tr>
+                        <td class="details-Art">
+                            <span class="hindi-text">ART No: &nbsp; {{patient.primaryIdentifier.identifier}}</span>
+                        </td>
+                        <td>
+                            HEI No: &nbsp; .............
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="details-art-start-date">
+                            <span class="hindi-text">ART Start Date:</span>
+                        </td>
+                        <td>
+                            .... / .... / ....
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td class="details-initial-art-start>
+                                                                <span class=" hindi-text">Initial ART Regimen:</span>
+                        </td>
+                        <td>
+                            .......................
+                        </td>
+                    </tr>
                 </tbody>
-            </table>
+                <table>
+                    <tr>
+                        <ol>
+                            <li>Carry this card and present it to the health worker at every visit.</li>
+                            <li>Keep the appointment date as indicated in this card.</li>
+                            <li>In case of new symptoms, visit the facility or call health worker.</li>
+                            <li>If you can't come, call health worker on number below.</li>
+                        </ol>
+                        <td style="padding-left: 20px">Health Facility Telephone No. ...................... </td>
+                    </tr>
+                </table>  
+            </table>    
         </td>
-    </tr>
-    </tbody>
-</table>
+        </tr>
+        </tbody>
+        </table>
+
 
 <div class="print-wrapper registration-print-summary">
     <link rel="stylesheet" href="../styles/registrationPrint.css" media="all"/>
