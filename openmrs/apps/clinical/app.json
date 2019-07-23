@@ -137,6 +137,63 @@
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "Other Entry Point":{
+                 "required":true
+            },
+            "Other - Occupation":{
+                "required":true
+            },
+            "HIV - Entry Point":{
+                 "required":true
+            },
+            "Name of Clinic":{
+                 "required":true
+            },
+            "Date Transferred in":{
+                 "required":true
+            },
+            "Literate":{
+                 "required":true
+            },
+            "Education Level":{
+                "required":true
+            },
+            "HIV Care - Alcohol Intake":{
+                "required":true
+            },
+            "Drug Allergies":{
+                 "required":true
+            },
+            "HIV Care -Drug Allergies Notes":{
+                 "required":true
+            },
+            "ARVs Received in":{
+                "required":true
+            },
+            "Place Received ART":{
+                "required":true
+            },
+            "Other (Place specify)":{
+                 "required":true
+            },
+            "Were ARVS Received , In Clinical Milestones":{
+                 "required":true
+            },
+            "ART Follow up - Scheduled Date":{
+                  "required":true
+            },
+            "FP Method":{
+                   "required":true
+            },
+            "Number of Days Hospitalized":{
+                  "required":true
+            },
+            "Child Regimen Information":{
+                   "allowAddMore": true
+            },
+            "ART Regimen(Switch to 2nd Line)":{
+                    "allowAddMore": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
