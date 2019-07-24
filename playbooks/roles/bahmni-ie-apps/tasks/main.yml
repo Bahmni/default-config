@@ -1,0 +1,20 @@
+- name: Find existing bahmni.ie.apps omod
+  find:
+    paths: /opt/openmrs/modules
+    patterns: bahmni.ie.apps*.omod
+  register: result
+
+- name: Delete bahmni.ie.apps omod
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  with_items: "{{ result.files }}"
+
+- name: Get bahmni.ie.apps omod from s3 bucket and place it in /opt/openmrs/modules
+  get_url:
+    url: "{{ bahmniieapps }}"
+    dest: /opt/openmrs/modules/bahmni.ie.apps.omod
+    mode: 0644
+
+- name: Change ownership of bahmni.ie.apps file
+  action: file state=file path=/opt/openmrs/modules/bahmni.ie.apps.omod owner=bahmni group=bahmni
