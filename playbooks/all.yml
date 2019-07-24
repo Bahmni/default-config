@@ -1,7 +1,7 @@
 - hosts: bahmni-emr
   become: yes
   roles:
-    - { role: implementer-interface }
-    - { role: bahmni-apps }
-    - { role: bahmni-core }
-    - { role: appointments }
+    - { role: implementer-interface, tags: implementer_interface }
+    - { role: bahmni-apps, tags: bahmni_apps }
+    - { role: bahmni-core, tags: bahmni_core }
+    - { role: appointments, tags: appointments }

@@ -12,22 +12,22 @@
   when: latest_bahmniapps.stat.exists == True
 
 - name: Remove old bahmniapps backup
-  file: path=/opt/bahmni-web/etc/iraq_bahmniapps_backup state=absent
+  file: path=/opt/bahmni-web/etc/haiti_bahmniapps_backup state=absent
   when: latest_bahmniapps.stat.exists == True
 
 - name: bahmniapps backup
-  command: mv /opt/bahmni-web/etc/iraq_bahmniapps /opt/bahmni-web/etc/iraq_bahmniapps_backup
+  command: mv /opt/bahmni-web/etc/haiti_bahmniapps /opt/bahmni-web/etc/haiti_bahmniapps_backup
   when: latest_bahmniapps.stat.exists == True
   ignore_errors: yes
 
 - name: Unzip downloaded bahmniapps file
-  command: unzip /opt/bahmni-web/etc/bahmniapps.zip -d /opt/bahmni-web/etc/iraq_bahmniapps
+  command: unzip /opt/bahmni-web/etc/bahmniapps.zip -d /opt/bahmni-web/etc/haiti_bahmniapps
   when: latest_bahmniapps.stat.exists == True
 
 - name: Change ownership of bahmniapps file
-  action: file state=directory recurse=yes path=/opt/bahmni-web/etc/iraq_bahmniapps owner=bahmni group=bahmni
+  action: file state=directory recurse=yes path=/opt/bahmni-web/etc/haiti_bahmniapps owner=bahmni group=bahmni
   when: latest_bahmniapps.stat.exists == True
 
 - name: linking /var/www/bahmniapps to bahmniapps
-  file: src=/opt/bahmni-web/etc/iraq_bahmniapps dest=/var/www/bahmniapps owner=bahmni group=bahmni state=link
+  file: src=/opt/bahmni-web/etc/haiti_bahmniapps dest=/var/www/bahmniapps owner=bahmni group=bahmni state=link
   when: latest_bahmniapps.stat.exists == True
