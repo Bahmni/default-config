@@ -417,7 +417,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         } else {
             return {
-                hide: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other"]
+                hide: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other","Reference_MDC_Other_comments"]
             }
         }
     },
