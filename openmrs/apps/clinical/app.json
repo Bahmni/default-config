@@ -421,9 +421,6 @@
             "Family_Planning_Contraceptive_Methods_DIU_Intra_button": {
                 "disableAddNotes": true
             },
-            "Family_Planning_Contraceptive_Methods_Uterine_device_button": {
-                "disableAddNotes": true
-            },
             "Family_Planning_Contraceptive_Methods_LT_Tubal_Ligation_button": {
                 "disableAddNotes": true
             },
@@ -633,6 +630,27 @@
             "Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact": {
                   "disableAddNotes": true,
                   "multiSelect" : true
+            },
+            "Prophylaxis_Nutritional_Status": {
+                  "disableAddNotes": true
+            },
+            "Syndromic Approach_STI_M": {
+                  "disableAddNotes": true
+            },
+            "Syndromic Approach_STI_F": {
+                  "disableAddNotes": true
+            },
+            "SP_Side_Effects_INH": {
+                  "disableAddNotes": true
+            },
+            "SP_Side_Effects_CTZ": {
+                  "disableAddNotes": true
+            },
+            "SP_Side_Effects_Fluconazol": {
+                  "disableAddNotes": true
+            },
+            "SP_Measurement_Unit": {
+                  "disableAddNotes": true
             },
             "defaults": {
                 "Number of living children": 1,
