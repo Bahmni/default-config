@@ -58,7 +58,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static def calculateAndAdd(BahmniEncounterTransaction bahmniEncounterTransaction) {
         Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
         def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
-
+        String locale = bahmniEncounterTransaction.getLocale();
         BahmniObservation heightObservation = find("Height", observations, null)
         BahmniObservation weightObservation = find("Weight", observations, null)
         BahmniObservation parent = null;
@@ -127,7 +127,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             bmiDataObservation = bmiDataObservation ?: createObs("BMI Data", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
             bmiStatusDataObservation = bmiStatusDataObservation ?: createObs("BMI Status Data", null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
 
-            def bmi = bmi(height, weight)
+            def bmi = bmi(height, weight, locale)
             bmiObservation = bmiObservation ?: createObs("BMI", bmiDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
             bmiObservation.setValue(bmi);
 
@@ -240,8 +240,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return newObservation
     }
 
-    static def bmi(Double height, Double weight) {
-        String locale = LocaleUtility.getDefaultLocale();
+    static def bmi(Double height, Double weight, String locale) {
         if (height == ZERO) {
             if (locale == "en"){
                 throw new IllegalArgumentException("Please enter Height greater than zero")
