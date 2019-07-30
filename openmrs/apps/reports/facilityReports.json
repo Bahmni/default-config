@@ -1,9 +1,30 @@
 {
-	"appointmentReport": {
+	"missedAppointmentReport": {
 		"name": "Missed Appointment Report",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/missedAppointments.sql"
+		}
+	},
+	"summaryAppointmentReport": {
+		"name": "Appointment Summary Report",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/summaryAppointmentReport.sql"
+		}
+	},
+	"visitAppointmentReport": {
+		"name": "Visit Appointment Report",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/visitAppointmentReport.sql"
+		}
+	},
+	"walkinAppointmentReport": {
+		"name": "WalkIn Visit Report",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/walkinAppointmentReport.sql"
 		}
 	}
 }
