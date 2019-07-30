@@ -29,7 +29,7 @@
 					"order": 1
                 },
                 "registerNewPatient1": {
-                    "title": "Register a New Patient",
+                    "title": "Register A New Patient",
                     "attributes": [
                         "TypeofPatient"
                     ],
@@ -57,10 +57,23 @@
                     "title": "Contact Information",
                     "attributes": [
                         "MobileCountryCode",
-                        "MobileNumber"
+                        "MobileNumber",
+						"AlternativeNumber"
                     ],
 					"expand": true,
 					"order": 5
+                },
+                "treatmentSupporter": {
+                    "title": "Treatment Supporter",
+                    "attributes": [
+                        "TreatmentSupporterFirstName",
+                        "TreatmentSupporterLastName",
+						"TreatmentSupporterTelephoneNumber",
+						"TreatmentSupporterAddress",
+						"HomeCareProvidedBy"
+                    ],
+					"expand": true,
+					"order": 6
                 },
 				"defaults":  {
                     "MobileCountryCode": "South Sudan"
@@ -81,7 +94,7 @@
             "autoCompleteFields":["familyName", "givenName"],
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "showMiddleName": false,
+            "showMiddleName": true,
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
