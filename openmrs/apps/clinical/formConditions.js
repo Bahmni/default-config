@@ -199,7 +199,88 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         } 
     },
-    
-    
+    "Interruption Type" : function (formName , formFieldValues){
+        var interruptiontype = formFieldValues["Interruption Type"];
+        if(interruptiontype === "Stop"){
+            return{
+                show: ["ART Treatment Reasons For Stop"]
+            }
+        }else {
+            return{
+                hide: ["ART Treatment Reasons For Stop"]
+            }
+        }    
+    },
+    "Switched Regimen" : function (formName , formFieldValues){
+        var switchedregimen = formFieldValues["Switched Regimen"];
+        if(switchedregimen == true){
+            return{
+                show: ["Regimen Switched To"]
+            }
+        }else {
+            return{
+                hide: ["Regimen Switched To"]
+            }
+        }    
+    },
+    "Regimen Switched To" : function (formName , formFieldValues){
+        var switchedregimento = formFieldValues["Regimen Switched To"];
+        if(switchedregimento === "Regimen Switched To (Adult First Line)"){
+            return{
+                show: ["ART Regimen - Substitution within 1st Line"],
+                hide: ["ART Regimen(Switch to 2nd Line)","Other Reason"]
 
+            }
+        }else if(switchedregimento === "Regimen Switched To (Adult Second Line)"){
+            return{
+                show: ["ART Regimen(Switch to 2nd Line)" ],
+                hide:  ["ART Regimen - Substitution within 1st Line","Other Reason(Second Regimen Change)"]
+            }
+        }  else {
+            return{
+                hide: ["ART Regimen - Substitution within 1st Line", "ART Regimen(Switch to 2nd Line)"]
+
+            }
+
+        }  
+    }, 
+    "ART Treatment Reasons For Stop" : function (formName , formFieldValues){
+        var arttreatmentreason = formFieldValues["ART Treatment Reasons For Stop"];
+        if(arttreatmentreason === "Other Reason For ART Stop"){
+            return{
+                show: ["Specify Reason For Art Stop"]
+            }
+        }else {
+            return{
+                hide: ["Specify Reason For Art Stop"]
+            }
+        }    
+    },
+    "Reason For Regimen Change(First Line)" : function (formName , formFieldValues){
+        var changereasonfirstreg = formFieldValues["Reason For Regimen Change(First Line)"];
+        if(changereasonfirstreg === "Other Reason For Regimen Change(First Line)"){
+            return{
+                show: ["Other Reason"]
+            }
+        }else {
+            return{
+                hide: ["Other Reason"]
+            }
+        }    
+    },
+    "Reason For Regimen Change(Second Line)" : function (formName , formFieldValues){
+        var changereasonsecondreg = formFieldValues["Reason For Regimen Change(Second Line)"];
+        if(changereasonsecondreg === "Other Reason For Regimen Change(Second Line)"){
+            return{
+                show: ["Other Reason(Second Regimen Change)"]
+            }
+        }else {
+            return{
+                hide: ["Other Reason(Second Regimen Change)"]
+            }
+        }    
+    }
+   
+
+   
 };

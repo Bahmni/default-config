@@ -194,6 +194,24 @@
             "ART Regimen(Switch to 2nd Line)":{
                     "allowAddMore": true
             },
+            "Reason":{
+                   "required":true
+            },
+            "Specify Reason For Art Stop":{
+                "required":true
+            },
+            "Other Reason":{
+                "required":true
+            },
+            "Other Reason(Second Regimen Change)":{
+                "required":true
+            },
+            "Regimen Switched To":{
+                "required":true
+            },
+            "ART Treatment Reasons For Stop":{
+                "required":true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
