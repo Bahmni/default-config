@@ -10,8 +10,7 @@ select distinct(pi.identifier) as "NID",
       pn.family_name,
       ''
     )
-  )as "Complete Name",
-  personAttributesNICKNAME.value AS 'Alcunha',
+  )as "Nome Completo  ",
   case when p.gender = 'M' then 'Male' when p.gender = 'F' then 'Female' when p.gender = 'O' then 'Other' end as "Sexo",
   TIMESTAMPDIFF(
     YEAR,
@@ -19,7 +18,7 @@ select distinct(pi.identifier) as "NID",
     CURDATE()
   ) as "Idade",
 
-  personAttributesonRegistration.value as "Contacto Principal",
+  personAttributesonRegistration.value as "Contacto",
 
   paddress.state_province AS 'Província', 
   paddress.city_village AS 'Distrito', 
@@ -28,7 +27,9 @@ select distinct(pi.identifier) as "NID",
   paddress.address4 AS 'Avenida/Rua',
   paddress.address5 AS 'Nº da Casa',
   paddress.postal_code AS 'Perto De',
-  cast(pt.date_created as date) AS 'Date of Registration at HF'
+  cast(pt.date_created as date) AS 'Data de Registo na US',
+  " " AS 'Data de Inicio TARV',
+  " " AS 'Estado de Permanência'
   
   from person p 
   inner join person_name pn on pn.person_id = p.person_id and p.voided=0 and pn.voided=0
@@ -38,9 +39,6 @@ select distinct(pi.identifier) as "NID",
 
   LEFT JOIN person_attribute personAttributesonRegistration on personAttributesonRegistration.person_id=p.person_id and personAttributesonRegistration.voided=0
   INNER JOIN person_attribute_type personAttributeTypeonRegistration on personAttributesonRegistration.person_attribute_type_id = personAttributeTypeonRegistration.person_attribute_type_id and personAttributeTypeonRegistration.name = 'PRIMARY_CONTACT_NUMBER_1'
-
-  LEFT JOIN person_attribute personAttributesNICKNAME on personAttributesNICKNAME.person_id=p.person_id and personAttributesNICKNAME.voided=0
-  and personAttributesNICKNAME.person_attribute_type_id in (select person_attribute_type_id from person_attribute_type where name = 'NICK_NAME')
 
   LEFT JOIN person_attribute pa on pa.person_id=p.person_id and pa.voided=0
   INNER JOIN person_attribute_type pat on pa.person_attribute_type_id = pat.person_attribute_type_id and personAttributeTypeonRegistration.name = 'PRIMARY_CONTACT_NUMBER_1'
