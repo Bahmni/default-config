@@ -17,7 +17,7 @@ select distinct
    end
    as "Sexo", TIMESTAMPDIFF( YEAR, p.birthdate, CURDATE() ) as "Idade",
    personAttributesonRegistration.value as "Contacto",
-   paddress.state_province as 'Província',
+   paddress.state_province as "Província",
    paddress.city_village AS 'Distrito',
    paddress.address1 AS 'Localidade/Bairro',
    paddress.address3 AS 'Quarteirão',
