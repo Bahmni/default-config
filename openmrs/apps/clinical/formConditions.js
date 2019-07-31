@@ -191,11 +191,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         if(patient.age < 15){
             return{
                 show: ["Child Regimen Information"],
-                hide:["ART Regimen - Substitution within 1st Line" , "ART Regimen(Switch to 2nd Line)"]
+                hide:["ART Regimen - Substitution within 1st Line" , "ART Regimen(Switch to 2nd Line)" ,"Initial ART Regimen (Adult)"]
             }
         }else {
             return{
-                hide: ["Child Regimen Information"]
+                hide: ["Child Regimen Information" , "Initial ART Regimen(Children)"]
             }
         } 
     },
@@ -280,7 +280,4 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     }
-   
-
-   
 };

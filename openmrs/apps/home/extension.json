@@ -149,6 +149,16 @@
     "icon": "fa fa-calendar",
     "order": 14,
     "requiredPrivilege": "app:appointments"
-  }
+  },
+   "possible_dhis_2_integration": {
+    "id": "possible.dhis2Integration",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "label": "DHIS2 integration",
+    "url": "https://play.dhis2.org/2.32.1/dhis-web-commons/security/login.action",
+    "icon": "fa-book",
+    "order": 15,
+    "requiredPrivilege": "app:reports"
+}
 
 }
