@@ -18,15 +18,15 @@ select distinct
    as "Sexo", TIMESTAMPDIFF( YEAR, p.birthdate, CURDATE() ) as "Idade",
    personAttributesonRegistration.value as "Contacto",
    paddress.state_province as "Província",
-   paddress.city_village AS 'Distrito',
-   paddress.address1 AS 'Localidade/Bairro',
-   paddress.address3 AS 'Quarteirão',
-   paddress.address4 AS 'Avenida/Rua',
-   paddress.address5 AS 'Nº da Casa',
-   paddress.postal_code AS 'Perto De',
-   cast(pt.date_created as date) AS 'Data de Registo na US',
-   " " AS 'Data de Inicio TARV',
-   " " AS 'Estado de Permanência'
+   paddress.city_village AS "Distrito",
+   paddress.address1 AS "Localidade/Bairro",
+   paddress.address3 AS "Quarteirão",
+   paddress.address4 AS "Avenida/Rua",
+   paddress.address5 AS "Nº da Casa",
+   paddress.postal_code AS "Perto De",
+   cast(pt.date_created as date) AS "Data de Registo na US",
+   " " AS "Data de Inicio TARV",
+   " " AS "Estado de Permanência"
 from
    person p 
    inner join
