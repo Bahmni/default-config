@@ -32,7 +32,6 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             
             returnHideValues.push("TB Type is Extrapulmonary");
             returnHideValues.push("TB Type is Extrapulmonary_Sensitive");
-
         }
     return {
 
@@ -417,7 +416,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         } else {
             return {
-                hide: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other"]
+                hide: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other","Reference_MDC_Other_comments"]
             }
         }
     },
@@ -473,6 +472,21 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
+
+    "CONFIDENT_HIV_CARE" (formName,formFieldValues) {
+        var value = formFieldValues["CONFIDENT_HIV_CARE"];
+
+        if (value == true){
+            return {
+                show: ["CONFIDENT_NID"]
+        }
+        } else {
+            return {
+                hide: ["CONFIDENT_NID"]
+                }
+            }
+    },
+
     "Gynecology/Obstetrics" (formName, formFieldValues, patient) {
         if (patient.gender === "F") {
             return {
@@ -529,7 +543,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         } else {
             return {
-                hide: ["CONFIDENT_CCR","CONFIDENT_AGE_TYPE"]
+                hide: ["CONFIDENT_CCR"]
             }
         }
     }
