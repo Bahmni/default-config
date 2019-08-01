@@ -3,9 +3,9 @@
         "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "printing": {
-            "title": "Bahmni",
+            "title": "SISTEMA ELECTRÓNICO DE SEGUIMENTO DE PACIENTES(SESP) - POC",
             "header": "Visit",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "../images/emblem_of_mozambique.png"
         },
         "defaultSections": true,
         "sections": {
