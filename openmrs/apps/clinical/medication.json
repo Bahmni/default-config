@@ -27,6 +27,10 @@
             "defaultDurationUnit": "Month(s)"
           }
         ],
+        "durationUnits" : [
+          "Day(s)",
+          "Dia (s)"
+        ],
         "drugFormDefaults": {
           "Ayurvedic": {
             "doseUnits": "Teaspoon",
