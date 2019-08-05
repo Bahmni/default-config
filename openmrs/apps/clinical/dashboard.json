@@ -24,18 +24,109 @@
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":5,
-                "displayOrder":7
+                "displayOrder":3
             },
             "visits":{
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":3,
+                "displayOrder":1,
                 "dashboardConfig":{
                     "title":null,
                     "maximumNoOfVisits":5,
                     "groupByVisits":true
                 }
-            }
+            },
+            "vitalSignsFormDisplayControl": {
+                  "translationKey": "DASHBOARD_SIGNES_VITAUX_FORM_DETAILS",
+                  "type": "vitals",
+                  "isObservation": true,
+                  "showCertainty": true,
+                  "showOrder": true,
+                  "showDetailsButton": true,
+                  "displayOrder": 4,
+                  "numberOfVisits": 3,
+                  "dashboardConfig": {
+                    "conceptNames": [
+                      "Date et Heure enregistrée",
+                      "Poids",
+                      "Taille",
+                      "Indice de masse corporelle (IMC)",
+                      "Frequence Respiratoire",
+                      "Temperature",
+                      "Pouls",
+                      "Pression Arterielle Systolique (PAS)",
+                      "Pression Arterielle Diastolique (PAD)",
+                      "Saturation en Oxygène",
+                      "Glycémie",
+                      "Hemocue"
+                    ]
+                  },
+                  "expandedViewConfig": {
+                    "conceptNames": [
+                      "Date et Heure enregistrée",
+                      "Poids",
+                      "Taille",
+                      "Indice de masse corporelle (IMC)",
+                      "Frequence Respiratoire",
+                      "Temperature",
+                      "Pouls",
+                      "Pression Arterielle Systolique (PAS)",
+                      "Pression Arterielle Diastolique (PAD)",
+                      "Saturation en Oxygène",
+                      "Glycémie",
+                      "Hemocue"
+                    ],
+                    "numberOfVisits": "",
+                    "pivotTable": {
+                    }
+                  }
+                }
         }
-    }
+    },
+    "trends": {
+    "translationKey": "Tendances",
+    "maxRecentlyViewedPatients": 10,
+    "sections": {
+        "poidsTrends":{
+                     "type":"observationGraph",
+                     "title":"Poids",
+                     "config":{
+                               "yAxisConcepts":["Poids"],
+                               "xAxisConcept":"observationDateTime",
+                               "numberOfVisits":""
+                             },
+                     "displayOrder":1
+                   },
+        "poulsTrends":{
+                    "type":"observationGraph",
+                    "title":"Pouls",
+                    "config":{
+                              "yAxisConcepts":["Pouls"],
+                              "xAxisConcept":"observationDateTime",
+                              "numberOfVisits":""
+                             },
+                    "displayOrder":2
+                  },
+        "temperatureTrends":{
+                     "type":"observationGraph",
+                     "title":"Temperature",
+                     "config":{
+                               "yAxisConcepts":["Temperature"],
+                               "xAxisConcept":"observationDateTime",
+                               "numberOfVisits":""
+                             },
+                     "displayOrder":3
+                   },
+         "frequencyRespiratoireTrends":{
+                      "type":"observationGraph",
+                      "title":"Frequence Respiratoire",
+                      "config":{
+                                "yAxisConcepts":["Frequence Respiratoire"],
+                                "xAxisConcept":"observationDateTime",
+                                "numberOfVisits": ""
+                              },
+                      "displayOrder":4
+                    }
+                 }
+             }
 }

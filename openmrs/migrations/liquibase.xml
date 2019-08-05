@@ -117,4 +117,9 @@
         </sql>
     </changeSet>
     <include file="bedManagement/updatingBedManagementQueueForTranslation.xml"/>
+    <changeSet id="HAITI_CONFIG_2019070311238" author="Pritam">
+      <comment>Stored Procedure to add CEIL reference term</comment>
+      <sqlFile path="createReferenceMappingForCEIL.sql" endDelimiter="#"/>
+    </changeSet>
+    <include file="vitalSigns/vitalSignsForm.xml"/>
 </databaseChangeLog>

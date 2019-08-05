@@ -126,6 +126,8 @@
   "DASHBOARD_TITLE_DISCHARGE_MEDICATION_KEY": "Médicaments de sortie",
   "DASHBOARD_TITLE_SURGICAL_FOLLOW_UP_PLAN_KEY": "Plan de suivi chirurgical",
   "ADMINISTRATIVE_NOTE_KEY": "Remarques administratives",
-  "ADMISSION_DATE_LABEL": "Date d'admission"
+  "ADMISSION_DATE_LABEL": "Date d'admission",
+  "DASHBOARD_SIGNES_VITAUX_FORM_DETAILS": "Signes Vitaux",
+  "OBSERVATION_GRAPH_NO_DATA_LABEL": ""
 
 }
