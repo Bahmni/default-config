@@ -203,6 +203,50 @@
     "order":9,
     "requiredPrivilege": "app:clinical"
   },
+  "bahmniClinicalConceptSetGroupObservationsApssSectionI": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.ApssSectionI",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Apss_Section_I_form"
+    },
+    "order":9,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsApssSectionII": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.ApssSectionII",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Apss_Section_II_form"
+    },
+    "order":9,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsApssSectionIII": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.ApssSectionIII",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Apss_Section_III_form"
+    },
+    "order":9,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsApssSectionIV": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.ApssSectionIV",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Apss_Section_IV_form"
+    },
+    "order":9,
+    "requiredPrivilege": "app:clinical"
+  },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
     "id": "bahmni.clinical.conceptSetGroup.observations.secondVitals",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
