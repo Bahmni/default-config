@@ -131,26 +131,81 @@
     "order": 5,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsHistory": {
+  "bahmniClinicalConceptSetGroupObservationsHIV": {
     "id": "bahmni.clinical.conceptSetGroup.observations.history",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
-      "conceptName": "History and Examination",
+      "conceptName": "HIV AND PERSONAL HISTORY FORM",
       "default": true
     },
     "order": 1,
     "requiredPrivilege": "app:clinical:history"
   },
-  "bahmniClinicalConceptSetGroupObservationsVitals": {
+  "bahmniClinicalConceptSetGroupObservationsARTHistory": {
     "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "default": true,
-      "conceptName": "Vitals"
+      "conceptName": "ART History And Clinical Milestone"
     },
     "order": 2,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsFamilyHistory": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "HIV CARE - Family History Data"
+    },
+    "order": 3,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsInterruption": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "ART Treatment And Interruption Form"
+    },
+    "order": 4,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsHIVART": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "HIV AND ART FOLLOW UP FORM"
+    },
+    "order": 5,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsTB": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "TB FORM"
+    },
+    "order": 6,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsEndTB": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "End Of Follow Up Form"
+    },
+    "order": 7,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
