@@ -279,5 +279,59 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 hide: ["Other Reason(Second Regimen Change)"]
             }
         }    
-    }
-};
+    },
+    "Family Member - HIV Status" : function (formName , formFieldValues){
+        var hivstatus = formFieldValues["Family Member - HIV Status"];
+        if(hivstatus === "Known"){
+            return{
+                show: ["Result","Date Tested HIV","Result of HTS","Unique ART No/HEI No"]
+            }
+        }else {
+            return{
+                hide: ["Result","Date Tested HIV","Result of HTS","Unique ART No/HEI No"]
+            }
+        }    
+    },
+    "ART Follow up - Information" : function (formName , formFieldValues, patient){
+        if(patient.gender === "F"){     
+            return{
+                show: ["Current on FP","FP Pregnant","FP Method","EDD"]
+            }
+        }else {
+            return{
+                hide: ["Current on FP","FP Pregnant","FP Method","EDD"]
+            }
+        }    
+    }, 
+    "VL Results" : function (formName , formFieldValues){
+    var vlresults = formFieldValues["VL Results"];
+        if(vlresults >= 1000){ 
+            alert("Patient Required Enhanced Adherence Counselling");    
+            return{
+           show:["Classification Of Adherence"]            
+            }
+        }else {
+            return{
+                hide:["Classification Of Adherence"]
+            }
+        }    
+    }, 
+    "FP Pregnant" : function (formName , formFieldValues){
+        var fppregnant = formFieldValues["FP Pregnant"];
+            if(fppregnant == true){     
+                alert("Enroll This Patient To PMTCT Clinic");
+            }    
+        }, 
+   
+    "Date of HIV Retesting Before ART": function (formName, formFieldValues) {
+        var dateretestedhiv = formFieldValues["Date of HIV Retesting Before ART"];
+        var datefirsttestedhiv = formFieldValues["Date First Tested HIV +"];
+        var date1 = new Date(datefirsttestedhiv);
+        var date2 = new Date(dateretestedhiv);
+        if (date1 > date2) {
+            alert("HIV RETESTING DATE SHOULD BE GREATER THAN HIV FIRST TESTING DATE");
+            
+        }
+    }  
+    
+ };
