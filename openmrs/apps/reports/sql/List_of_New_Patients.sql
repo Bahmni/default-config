@@ -5,15 +5,15 @@ select distinct
       when
          p.gender = 'M' 
       then
-         'Male' 
+         'Masculino' 
       when
          p.gender = 'F' 
       then
-         'Female' 
+         'Feminino' 
       when
          p.gender = 'O' 
       then
-         'Other' 
+         'Outro' 
    end
    as "Sexo", TIMESTAMPDIFF( YEAR, p.birthdate, CURDATE() ) as "Idade",
    personAttributesonRegistration.value as "Contacto",
