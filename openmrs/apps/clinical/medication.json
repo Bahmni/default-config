@@ -10,6 +10,7 @@
         "defaultDurationUnit": "Day(s)",
         "hideOrderSet" : false,
         "defaultInstructions": "As directed",
+        "allowOnlyCodedDrugs" : true,
         "frequencyDefaultDurationUnitsMap": [
           {
             "minFrequency": "1/7",
