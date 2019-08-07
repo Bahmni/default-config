@@ -254,6 +254,21 @@
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
                 }
+            },
+            "positivePrevention": {
+                "type": "custom",
+                "displayOrder": 12,
+                "config": {
+                    "title": "DASHBOARD_POSITIVE_PREVENTION_KEY",
+                    "label": "DASHBOARD_POSITIVE_PREVENTION_KEY_TOTAL_YES",
+                    "conceptNames": ["Apss_Positive_prevention"],
+                    "template": "<positive-prevention-dashboard section='config' patient='patient'></positive-prevention-dashboard>",
+                    "numberOfVisits": 4,
+                    "visitDomId": [],
+                    "visitDateTime": [],
+                    "numberOfYesPerVisit": [],
+                    "numberOfYes": 0
+                }
             }
         }
     },
