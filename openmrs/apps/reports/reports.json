@@ -1,4 +1,11 @@
 {
+    "patientlist": {
+        "name": "Lista de novos pacientes",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_New_Patients.sql"
+        }
+    },
     "visitReport10": {
         "name": "Visit Report",
         "type": "visits",
