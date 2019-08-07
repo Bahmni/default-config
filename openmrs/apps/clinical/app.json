@@ -257,6 +257,10 @@
             "TB_Type": {
                 "disableAddNotes": true
             },
+            "TB Treatment": {
+              "disableAddNotes": true,
+              "dropdown": true
+            },
             "SP_Treatment Start Date": {
                 "disableAddNotes": true
             },
