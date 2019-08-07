@@ -452,6 +452,10 @@
                 "disableAddNotes": true,
                 "dropdown": true
              },
+             "Apss_Adherence_follow_up_Has_informed_someone_RELATIONSHIP": {
+                "disableAddNotes": true,
+                "dropdown": true
+             },
              "CONFIDENT_TELEPHONE1": {
                 "disableAddNotes": true
              },
@@ -540,19 +544,16 @@
             "Apss_Adherence_follow_up_Has_informed_someone": {
                   "disableAddNotes": true
             },
-            "Apss_Adherence_follow_up_Has_informed_Full_Name": {
-                  "disableAddNotes": true
-            },
             "Apss_Adherence_follow_up_Has_informed_Relationship": {
                   "disableAddNotes": true
             },
-            "Apss_Adherence_follow_up_Who_administers_ARV": {
+            "Apss_Adherence_follow_up_If_Child_Adolescent_Elderly_Disabled": {
                   "disableAddNotes": true
             },
             "Apss_Adherence_follow_up_Who_administers_Full_Name": {
                   "disableAddNotes": true
             },
-            "Apss_Adherence_follow_up_Who_administers_Relationship": {
+            "Apss_Adherence_follow_up_Administers_ARV_Alone": {
                   "disableAddNotes": true
             },
             "Apss_Adherence_follow_up_Adherence_Plan": {

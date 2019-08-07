@@ -219,7 +219,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         },
         template: '<ng-include src="contentUrl"/>'
     };
-}]).directive('positivePreventionDashboard', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {    
+}]).directive('positivePreventionDashboard', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
     var link = function ($scope) {
         var patientUuid = $scope.patient.uuid;
         var conceptNames = $scope.section.conceptNames;
@@ -235,18 +235,17 @@ angular.module('bahmni.common.displaycontrol.custom')
             var countObservationsForDomId = -1;
             $scope.observations = response.data;
             $scope.observations.forEach(observation => {
-                var countNumberOfYes = 0;
+                var index = 0;
                 var observationValues = observation.value.split(',');
                 countObservationsForDomId += 1;
                 observationValues.forEach(value => {
                     if(value.endsWith('_Yes')){
-                        $scope.section.numberOfYes += 1;
-                        countNumberOfYes += 1;
+                        $scope.section.conceptsWithYes.push(observation.groupMembers[index].conceptNameToDisplay);
                     }
+                    index += 1;
                 });
                 $scope.section.visitDomId.push(countObservationsForDomId);
-                $scope.section.visitDateTime.push(dateFormat(observation.observationDateTime));
-                $scope.section.numberOfYesPerVisit.push(countNumberOfYes);
+                $scope.section.visitDateTime.push(observation.observationDateTime);
             });
         }));
     };
@@ -262,18 +261,3 @@ angular.module('bahmni.common.displaycontrol.custom')
 
     }
 }]);
-
-var dateFormat = function (date) {
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var formattedDate = new Date(date);
-    var day = formattedDate.getDate();
-    var month =  monthNames[formattedDate.getMonth()];
-    var year = (formattedDate.getFullYear()).toString().substring(2);
-    var hours = formattedDate.getHours();
-    var min = formattedDate.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-    min = min < 10 ? '0'+min : min;
-    return day + " " + month + " " + year + " " + hours + ":" + min + " " + ampm;
-}

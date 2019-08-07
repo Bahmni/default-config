@@ -2,34 +2,17 @@
     <h2 class="section-title" ng-click="goToListView()"><span style="border-bottom: 1px solid white;">{{ section.title | titleTranslate}}</span></h2>
 
     <ul style="font-size: 14px;color: #000000">
-        <li ng-repeat="dateTime in section.visitDateTime" style="background-color:#ddd;padding-top:3px;padding-bottom:3px">
+        <li ng-repeat="dateTime in section.visitDateTime" style="background-color:#ddd;">
             <span class="tree-list-item row-click toggle-container ng-scope ng-isolate-scope active" id="visit{{section.visitDomId[$index]}}" toggle="obsGroup.isOpen">
                 <i class="fa fa-caret-right"></i>
                 <i class="fa fa-caret-down"></i>
                 <span class="obs-date">
-                    {{dateTime}}
+                    {{dateTime | bahmniDateTime}}
                 </span>
             </span>
-        
-            <ul class="print-observations hidden-print" id="conteudoXPTO">
-                <show-observation
-                    show-details-button="::config.showDetailsButton"
-                    patient="::patient"
-                    observation="::observation"
-                    ng-repeat="observation in ::obsGroup.value"
-                    level="2">
-                </show-observation>
-                <table class="table-header">
-                    <tr>
-                        <td>
-                            {{section.label | titleTranslate}}
-                        </td>
-                        <td>
-                            {{section.numberOfYesPerVisit[$index]}}
-                        </td>
-                    </tr>
-                </table>
-            </ul>
+            <div ng-repeat="concept in section.conceptsWithYes" class="print-observations hidden-print" style="background-color:#fff;margin-bottom:1px;padding-left:20px;padding-top:4px;padding-bottom:4px">
+                {{concept}}
+            </div>
         </li>
     </ul>
 
