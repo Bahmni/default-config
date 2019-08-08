@@ -272,7 +272,8 @@
               "disableAddNotes": true
             },
             "End Date": {
-                "disableAddNotes": true
+              "allowFutureDates":true,
+              "disableAddNotes": true
             },
             "End Date_CTZ": {
                 "disableAddNotes": true
