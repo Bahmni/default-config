@@ -1,8 +1,8 @@
 <section class="app-dashboard-integration">
     <h2 class="section-title" ng-click="goToListView()"><span style="border-bottom: 1px solid white;">{{ section.title | titleTranslate}}</span></h2>
-
+    <p ng-if="section.visitDateTime.length == 0" style="background-color:#ffffff;color:#444444;padding:5px">{{::'NO_POSITIVE_PREVENTION_WITH_YES_MESSAGE' | translate}} </p>
     <ul style="font-size: 14px;color: #000000">
-        <li ng-repeat="dateTime in section.visitDateTime" style="background-color:#ddd;">
+        <li ng-repeat="dateTime in section.visitDateTime track by $index" style="background-color:#ddd;">
             <span class="tree-list-item row-click toggle-container ng-scope ng-isolate-scope active" id="visit{{section.visitDomId[$index]}}" toggle="obsGroup.isOpen">
                 <i class="fa fa-caret-right"></i>
                 <i class="fa fa-caret-down"></i>
@@ -10,7 +10,7 @@
                     {{dateTime | bahmniDateTime}}
                 </span>
             </span>
-            <div ng-repeat="concept in section.conceptsWithYes" class="print-observations hidden-print" style="background-color:#fff;margin-bottom:1px;padding-left:20px;padding-top:4px;padding-bottom:4px">
+            <div ng-repeat="concept in section.conceptsWithYes[$index] track by $index" class="print-observations hidden-print" style="background-color:#fff;margin-bottom:1px;padding-left:20px;padding-top:4px;padding-bottom:4px">
                 {{concept}}
             </div>
         </li>

@@ -237,15 +237,17 @@ angular.module('bahmni.common.displaycontrol.custom')
             $scope.observations.forEach(observation => {
                 var index = 0;
                 var observationValues = observation.value.split(',');
+                var groupMembers = [];
                 countObservationsForDomId += 1;
                 observationValues.forEach(value => {
                     if(value.endsWith('_Yes')){
-                        $scope.section.conceptsWithYes.push(observation.groupMembers[index].conceptNameToDisplay);
+                        groupMembers.push(observation.groupMembers[index].conceptNameToDisplay);
                     }
                     index += 1;
                 });
                 $scope.section.visitDomId.push(countObservationsForDomId);
                 $scope.section.visitDateTime.push(observation.observationDateTime);
+                $scope.section.conceptsWithYes.push(groupMembers);
             });
         }));
     };
@@ -258,6 +260,5 @@ angular.module('bahmni.common.displaycontrol.custom')
             section: "="
         },
         template: '<ng-include src="contentUrl"/>'
-
     }
 }]);
