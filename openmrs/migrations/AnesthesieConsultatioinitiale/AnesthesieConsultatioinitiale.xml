@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="HAITI_CONFIG_201908021123" author="SreeKalyan">
+        <comment>Adding Concepts for Anesthesie Consultatio initiale</comment>
+        <sqlFile path="AnesthesieConsultatioinitiale/addConceptForAneshesieInitiale.sql"/>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908021229" author="Pritam">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_numeric where concept_id in ("Spécifiez le nombre d'anesthésies antérieures","Ouverture de la bouche","taux d'hémoglobine","taux de plaquettes","Créatininémie","Urée","Kaliémie","Natrémie")
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding concept numeric entries</comment>
+        <sql>
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Spécifiez le nombre d'anesthésies antérieures" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Ouverture de la bouche" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "taux d'hémoglobine" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'g/dl',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Créatininémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Urée" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Kaliémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Natrémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "taux de plaquettes" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'10³',1,1);
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908021255" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select
+                count(*)
+                From
+                concept_reference_term
+                where `code` in
+                (
+                 "1633", "1871", "1065", "1066", "1067", "160327", "160328", "160329", "160330", "160331", "160332")
+                and retired = 0
+                and concept_source_id = (
+                select concept_source_id from concept_reference_source where `name` = 'CEIL'  and retired =0
+                );
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding codes to specific concepts</comment>
+        <sql>
+            SELECT concept_source_id INTO @source_id FROM concept_reference_source where name = 'CEIL';
+
+            call CREATE_REFERENCE_MAPPING_CEIL('Date la consultation', '162869');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'1065',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('Oui', '1065');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'1633',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('Antécédents médicaux', '1633');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'1871',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('Antécédents de transfusion', '1871');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'1066',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('Non', '1066');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'1067',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('Ne sait pas', '1067');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'160327',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('ASA I', '160327');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'160328',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('ASA II', '160328');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'160329',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('ASA III', '160329');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'160330',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('ASA IV', '160330');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'160331',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('ASA V', '160331');
+
+            INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
+            (4,'160332',@source_id,uuid(),now());
+            call CREATE_REFERENCE_MAPPING_CEIL('ASA VI', '160332');
+
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908020346" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Aucun", "Hypertension", "Diabetes", "Asthme","Insuffisance Rénale","Epilepsie","Tuberculose pulmonaire","Autre pathologie cardiaque","Autre pathologie respiratoire","AVC","Autre")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Antécédents médicaux");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Antécédents médicaux</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+            set @child4_concept_id = 0;
+            set @child5_concept_id = 0;
+            set @child6_concept_id = 0;
+            set @child7_concept_id = 0;
+            set @child8_concept_id = 0;
+            set @child9_concept_id = 0;
+            set @child10_concept_id = 0;
+            set @child11_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Antécédents médicaux" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Aucun' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Hypertension' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Diabetes' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child4_concept_id from concept_name where name = 'Asthme' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child5_concept_id from concept_name where name = 'Insuffisance Rénale' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child6_concept_id from concept_name where name = 'Epilepsie' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child7_concept_id from concept_name where name = 'Tuberculose pulmonaire' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child8_concept_id from concept_name where name = 'Autre pathologie cardiaque' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child9_concept_id from concept_name where name = 'Autre pathologie respiratoire' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child10_concept_id from concept_name where name = 'AVC' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child11_concept_id from concept_name where name = 'Autre' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+            call add_concept_answer(@concept_id, @child5_concept_id, 5);
+            call add_concept_answer(@concept_id, @child6_concept_id, 6);
+            call add_concept_answer(@concept_id, @child7_concept_id, 7);
+            call add_concept_answer(@concept_id, @child8_concept_id, 8);
+            call add_concept_answer(@concept_id, @child9_concept_id, 9);
+            call add_concept_answer(@concept_id, @child10_concept_id, 10);
+            call add_concept_answer(@concept_id, @child11_concept_id, 11);
+
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908020415" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Oui","Non","Ne sait pas")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Le patient a-t-il des allergies connues a des médicaments ?");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Le patient a-t-il des allergies connues a des médicaments ?</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Le patient a-t-il des allergies connues a des médicaments ?" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Non' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908020422" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Aucune","Locale","Generale","Regionale")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Antécédents anesthésiques");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Antécédents anesthésiques</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+            set @child4_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Antécédents anesthésiques" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Aucune' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Locale' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Generale' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child4_concept_id from concept_name where name = 'Regionale' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="HAITI_CONFIG_201908020425" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Aucune","Admission en SI","Suffocation ou Cyanose","Difficulté d\'intubation","Retard au réveil","Autre","hyperthermie maligne","Arret cardiaque")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Réaction indésirable à une anesthésie antérieure");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Réaction indésirable à une anesthésie antérieure</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+            set @child4_concept_id = 0;
+            set @child5_concept_id = 0;
+            set @child6_concept_id = 0;
+            set @child7_concept_id = 0;
+            set @child8_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Réaction indésirable à une anesthésie antérieure" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Aucune' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Admission en SI' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Suffocation ou Cyanose' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child4_concept_id from concept_name where name = 'Difficulté d\'intubation' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child5_concept_id from concept_name where name = 'Retard au réveil' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child6_concept_id from concept_name where name = 'Autre' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child7_concept_id from concept_name where name = 'hyperthermie maligne' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child8_concept_id from concept_name where name = 'Arret cardiaque' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+            call add_concept_answer(@concept_id, @child5_concept_id, 5);
+            call add_concept_answer(@concept_id, @child6_concept_id, 6);
+            call add_concept_answer(@concept_id, @child7_concept_id, 7);
+            call add_concept_answer(@concept_id, @child8_concept_id, 8);
+
+
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908020436" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Oui","Non","Ne sait pas")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Antécédents de transfusion");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Antécédents de transfusion</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Antécédents de transfusion" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Non' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908020503" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Oui","Préciser","Non","Ne sait pas")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Antécédent d'incident transfusionnel?");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Antécédent d'incident transfusionnel?</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Antécédent d'incident transfusionnel?" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Préciser' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Non' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child4_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908020505" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Classe I","Classe II","Classe III","Classe IV")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Mallampati, classe");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Mallampati, classe</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Mallampati, classe" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Classe I' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Classe II' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Classe III' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child4_concept_id from concept_name where name = 'Classe IV' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908020509" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("ASA I","ASA II","ASA III","ASA IV","ASA V","ASA VI")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Score d'ASA");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Score d'ASA</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+            set @child4_concept_id = 0;
+            set @child5_concept_id = 0;
+            set @child6_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Score d'ASA" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'ASA I' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'ASA II' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'ASA III' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child4_concept_id from concept_name where name = 'ASA IV' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child5_concept_id from concept_name where name = 'ASA V' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child6_concept_id from concept_name where name = 'ASA VI' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+            call add_concept_answer(@concept_id, @child5_concept_id, 5);
+            call add_concept_answer(@concept_id, @child6_concept_id, 6);
+
+        </sql>
+    </changeSet>
+    <changeSet id="HAITI_CONFIG_201908020513" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("GAI","GAO","ALR","AG-","LMA","Bloc")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Type d'anesthésie prévue");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Type d'anesthésie prévue</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+            set @child4_concept_id = 0;
+            set @child5_concept_id = 0;
+            set @child6_concept_id = 0;
+
+
+
+            select concept_id into @concept_id from concept_name where name = "Type d'anesthésie prévue" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'GAI' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'GAO' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'ALR' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child4_concept_id from concept_name where name = 'AG-' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child5_concept_id from concept_name where name = 'LMA' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child6_concept_id from concept_name where name = 'Bloc' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+            call add_concept_answer(@concept_id, @child5_concept_id, 5);
+            call add_concept_answer(@concept_id, @child6_concept_id, 6);
+
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="HAITI_CONFIG_201908051151" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("O+","O-","A+","A-","B+","B-","AB+","AB-")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Groupe sanguin");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Groupe sanguin</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+            set @child4_concept_id = 0;
+            set @child5_concept_id = 0;
+            set @child6_concept_id = 0;
+            set @child7_concept_id = 0;
+            set @child8_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Groupe sanguin" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'O Positive' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'O Negative' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'A Positive' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child4_concept_id from concept_name where name = 'A Negative' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child5_concept_id from concept_name where name = 'B Positive' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child6_concept_id from concept_name where name = 'B Negative' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child7_concept_id from concept_name where name = 'AB Positive' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+            select concept_id into @child8_concept_id from concept_name where name = 'AB Negative' and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+            call add_concept_answer(@concept_id, @child5_concept_id, 5);
+            call add_concept_answer(@concept_id, @child6_concept_id, 6);
+            call add_concept_answer(@concept_id, @child7_concept_id, 7);
+            call add_concept_answer(@concept_id, @child8_concept_id, 8);
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="HAITI_CONFIG_201908051240" author="SreeKalyan">
+    <preConditions onFail="MARK_RAN">
+        <sqlCheck expectedResult="0">
+            select count(*) from concept_answer ca
+            join
+            concept_name cn
+            on ca.concept_id = cn.concept_id
+            where ca.answer_concept IN (select concept_id from concept_name where name IN
+            ("Oui","Non","Ne sait pas")
+            and concept_name_type = "FULLY_SPECIFIED")
+            AND
+            cn.concept_id IN (select concept_id from concept_name where name = "Hemogramme fait");
+        </sqlCheck>
+    </preConditions>
+    <comment>Adding Answers to Outcome of Hemogramme fait</comment>
+    <sql>
+        set @concept_id = 0;
+        set @child1_concept_id = 0;
+        set @child2_concept_id = 0;
+        set @child3_concept_id = 0;
+
+        select concept_id into @concept_id from concept_name where name = "Hemogramme fait" and
+        concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child2_concept_id from concept_name where name = 'Non' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child3_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+        call add_concept_answer(@concept_id, @child1_concept_id, 1);
+        call add_concept_answer(@concept_id, @child2_concept_id, 2);
+        call add_concept_answer(@concept_id, @child3_concept_id, 3);
+
+    </sql>
+    </changeSet>
+
+    <changeSet id="HAITI_CONFIG_201908051250" author="SreeKalyan">
+    <preConditions onFail="MARK_RAN">
+        <sqlCheck expectedResult="0">
+            select count(*) from concept_answer ca
+            join
+            concept_name cn
+            on ca.concept_id = cn.concept_id
+            where ca.answer_concept IN (select concept_id from concept_name where name IN
+            ("Oui","Non","Ne sait pas")
+            and concept_name_type = "FULLY_SPECIFIED")
+            AND
+            cn.concept_id IN (select concept_id from concept_name where name = "Bilan rénal fait");
+        </sqlCheck>
+    </preConditions>
+    <comment>Adding Answers to Outcome of Bilan rénal fait</comment>
+    <sql>
+        set @concept_id = 0;
+        set @child1_concept_id = 0;
+        set @child2_concept_id = 0;
+        set @child3_concept_id = 0;
+
+        select concept_id into @concept_id from concept_name where name = "Bilan rénal fait" and
+        concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child2_concept_id from concept_name where name = 'Non' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child3_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+        call add_concept_answer(@concept_id, @child1_concept_id, 1);
+        call add_concept_answer(@concept_id, @child2_concept_id, 2);
+        call add_concept_answer(@concept_id, @child3_concept_id, 3);
+
+    </sql>
+    </changeSet>
+
+    <changeSet id="HAITI_CONFIG_201908051255" author="SreeKalyan">
+    <preConditions onFail="MARK_RAN">
+        <sqlCheck expectedResult="0">
+            select count(*) from concept_answer ca
+            join
+            concept_name cn
+            on ca.concept_id = cn.concept_id
+            where ca.answer_concept IN (select concept_id from concept_name where name IN
+            ("Oui","Non","Ne sait pas")
+            and concept_name_type = "FULLY_SPECIFIED")
+            AND
+            cn.concept_id IN (select concept_id from concept_name where name = "Ionogramme fait");
+        </sqlCheck>
+    </preConditions>
+    <comment>Adding Answers to Outcome of Ionogramme fait</comment>
+    <sql>
+        set @concept_id = 0;
+        set @child1_concept_id = 0;
+        set @child2_concept_id = 0;
+        set @child3_concept_id = 0;
+
+        select concept_id into @concept_id from concept_name where name = "Ionogramme fait" and
+        concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child2_concept_id from concept_name where name = 'Non' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+        select concept_id into @child3_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+        'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+        call add_concept_answer(@concept_id, @child1_concept_id, 1);
+        call add_concept_answer(@concept_id, @child2_concept_id, 2);
+        call add_concept_answer(@concept_id, @child3_concept_id, 3);
+
+    </sql>
+    </changeSet>
+
+
+    <changeSet id="HAITI_CONFIG_201908051259" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Prêt pour le Bloc","Réanimation nécessaire","Temps de jeûn non respecté")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Résultat de l'observation initial d'anesthésie");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Résultat de l'observation initial d'anesthésie</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Résultat de l'observation initial d'anesthésie" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Prêt pour le Bloc' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Réanimation nécessaire' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Temps de jeûn non respecté' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="HAITI_CONFIG_201908050102" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Oui","Non","Ne sait pas")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "J'ai discuté les risques et bénéfices de l'anesthésie et ai répondu à toutes les questions?");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of J'ai discuté les risques et bénéfices de l'anesthésie et ai répondu à toutes les questions?</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "J'ai discuté les risques et bénéfices de l'anesthésie et ai répondu à toutes les questions?" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Non' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="HAITI_CONFIG_201908050112" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Oui","Non","Ne sait pas")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Prémédication donnée");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Prémédication donnée</comment>
+        <sql>
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+            set @child3_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Prémédication donnée" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Non' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child3_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+            call add_concept_answer(@concept_id, @child3_concept_id, 3);
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="HAITI_CONFIG_201908050420" author="SreeKalyan">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_answer ca
+                join
+                concept_name cn
+                on ca.concept_id = cn.concept_id
+                where ca.answer_concept IN (select concept_id from concept_name where name IN
+                ("Morphine","Autre")
+                and concept_name_type = "FULLY_SPECIFIED")
+                AND
+                cn.concept_id IN (select concept_id from concept_name where name = "Type de pré médication");
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Answers to Outcome of Type de pré médication</comment>
+        <sql>
+
+            set @concept_id = 0;
+            set @child1_concept_id = 0;
+            set @child2_concept_id = 0;
+
+            select concept_id into @concept_id from concept_name where name = "Type de pré médication" and
+            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child1_concept_id from concept_name where name = 'Morphine' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+            select concept_id into @child2_concept_id from concept_name where name = 'Autre' and concept_name_type =
+            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+            call add_concept_answer(@concept_id, @child1_concept_id, 1);
+            call add_concept_answer(@concept_id, @child2_concept_id, 2);
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

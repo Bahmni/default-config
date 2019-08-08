@@ -122,4 +122,5 @@
       <sqlFile path="createReferenceMappingForCEIL.sql" endDelimiter="#"/>
     </changeSet>
     <include file="vitalSigns/vitalSignsForm.xml"/>
+    <include file="AnesthesieConsultatioinitiale/AnesthesieConsultatioinitiale.xml"/>
 </databaseChangeLog>
