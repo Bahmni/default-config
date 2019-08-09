@@ -91,4 +91,4 @@ call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Prémédication
 call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Type de pré médication","Type de pré médication",'Coded','Question',false);
 call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Morphine","Morphine",'N/A','Misc',false);
 call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Autre","Autre",'N/A','Misc',false);
-call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Heure de l'injection", "Heure de l'injection",'Time','Misc',false);
+call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Heure de l'injection", "Heure de l'injection",'Datetime','Misc',false);
