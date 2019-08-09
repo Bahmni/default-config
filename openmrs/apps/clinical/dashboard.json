@@ -266,8 +266,7 @@
                     "numberOfVisits": 4,
                     "visitDomId": [],
                     "visitDateTime": [],
-                    "numberOfYesPerVisit": [],
-                    "numberOfYes": 0
+                    "conceptsWithYes": []
                 }
             }
         }

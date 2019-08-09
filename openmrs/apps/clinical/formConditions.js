@@ -289,23 +289,35 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         var yes = formFieldValues["Apss_Adherence_follow_up_Has_informed_someone"];
         if (yes === "Apss_Adherence_follow_up_Has_informed_someone_Yes") {
             return {
-                show: ["Apss_Adherence_follow_up_Has_informed_Full_Name","Apss_Adherence_follow_up_Has_informed_Relationship"]
+                show: ["Apss_Adherence_follow_up_Has_informed_someone_RELATIONSHIP"]
             }
         } else {
             return {
-                hide: ["Apss_Adherence_follow_up_Has_informed_Full_Name","Apss_Adherence_follow_up_Has_informed_Relationship"]
+                hide: ["Apss_Adherence_follow_up_Has_informed_someone_RELATIONSHIP"]
             }
         }
     },
-    "Apss_Adherence_follow_up_Who_administers_ARV" (formName, formFieldValues) {
-        var yes = formFieldValues["Apss_Adherence_follow_up_Who_administers_ARV"];
-        if (yes === "Apss_Adherence_follow_up_Who_administers_ARV_Yes") {
+    "Apss_Adherence_follow_up_If_Child_Adolescent_Elderly_Disabled" (formName, formFieldValues) {
+        var yes = formFieldValues["Apss_Adherence_follow_up_If_Child_Adolescent_Elderly_Disabled"];
+        if (yes === "Apss_Adherence_follow_up_If_Child_Adolescent_Elderly_Disabled_Yes") {
             return {
-                show: ["Apss_Adherence_follow_up_Who_administers_Full_Name","Apss_Adherence_follow_up_Who_administers_Relationship"]
+                show: ["Apss_Adherence_follow_up_Administers_ARV_Alone"]
             }
         } else {
             return {
-                hide: ["Apss_Adherence_follow_up_Who_administers_Full_Name","Apss_Adherence_follow_up_Who_administers_Relationship"]
+                hide: ["Apss_Adherence_follow_up_Administers_ARV_Alone", "Apss_Adherence_follow_up_Who_administers_Full_Name", "CONFIDENT_RELATIONSHIP"]
+            }
+        }
+    },
+    "Apss_Adherence_follow_up_Administers_ARV_Alone" (formName, formFieldValues) {
+        var answer = formFieldValues["Apss_Adherence_follow_up_Administers_ARV_Alone"];
+        if (answer === "Apss_Adherence_follow_up_Administers_ARV_Alone_No") {
+            return {
+                show: ["Apss_Adherence_follow_up_Who_administers_Full_Name", "CONFIDENT_RELATIONSHIP"]
+            }
+        } else {
+            return {
+                hide: ["Apss_Adherence_follow_up_Who_administers_Full_Name", "CONFIDENT_RELATIONSHIP"]
             }
         }
     },
