@@ -42,9 +42,7 @@
                   "isObservation": true,
                   "showCertainty": true,
                   "showOrder": true,
-                  "showDetailsButton": true,
                   "displayOrder": 4,
-                  "numberOfVisits": 3,
                   "dashboardConfig": {
                     "conceptNames": [
                       "Date et Heure enregistrée",
@@ -59,7 +57,9 @@
                       "Saturation en Oxygène",
                       "Glycémie",
                       "Hemocue"
-                    ]
+                    ],
+                    "numberOfVisits": 3,
+                    "showDetailsButton": true
                   },
                   "expandedViewConfig": {
                     "conceptNames": [

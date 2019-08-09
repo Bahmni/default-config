@@ -60,7 +60,7 @@
 
             INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
             (4,'1871',@source_id,uuid(),now());
-            call CREATE_REFERENCE_MAPPING_CEIL('Antécédents de transfusion', '1871');
+            call CREATE_REFERENCE_MAPPING_CEIL('Antécédent de transfusion', '1871');
 
             INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
             (4,'1066',@source_id,uuid(),now());
@@ -281,7 +281,7 @@
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child6_concept_id from concept_name where name = 'Autre' and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
-            select concept_id into @child7_concept_id from concept_name where name = 'hyperthermie maligne' and
+            select concept_id into @child7_concept_id from concept_name where name = 'Hyperthermie maligne' and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child8_concept_id from concept_name where name = 'Arret cardiaque' and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -310,17 +310,17 @@
                 ("Oui","Non","Ne sait pas")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Antécédents de transfusion");
+                cn.concept_id IN (select concept_id from concept_name where name = "Antécédent de transfusion");
             </sqlCheck>
         </preConditions>
-        <comment>Adding Answers to Outcome of Antécédents de transfusion</comment>
+        <comment>Adding Answers to Outcome of Antécédent de transfusion</comment>
         <sql>
             set @concept_id = 0;
             set @child1_concept_id = 0;
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Antécédents de transfusion" and
+            select concept_id into @concept_id from concept_name where name = "Antécédent de transfusion" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -343,34 +343,32 @@
                 concept_name cn
                 on ca.concept_id = cn.concept_id
                 where ca.answer_concept IN (select concept_id from concept_name where name IN
-                ("Oui","Préciser","Non","Ne sait pas")
+                ("Oui","Non","Ne sait pas")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Antécédent d'incident transfusionnel?");
+                cn.concept_id IN (select concept_id from concept_name where name ="Y a t-il eu incident transfusionnel?");
             </sqlCheck>
         </preConditions>
-        <comment>Adding Answers to Outcome of Antécédent d'incident transfusionnel?</comment>
+        <comment>Adding Answers to Outcome of Y a t-il eu incident transfusionnel?</comment>
         <sql>
             set @concept_id = 0;
             set @child1_concept_id = 0;
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Antécédent d'incident transfusionnel?" and
+            select concept_id into @concept_id from concept_name where name = "Y a t-il eu incident transfusionnel?" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
-            select concept_id into @child2_concept_id from concept_name where name = 'Préciser' and concept_name_type =
+            select concept_id into @child2_concept_id from concept_name where name = 'Non' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
-            select concept_id into @child3_concept_id from concept_name where name = 'Non' and concept_name_type =
-            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
-            select concept_id into @child4_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
+            select concept_id into @child3_concept_id from concept_name where name = 'Ne sait pas' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
 
             call add_concept_answer(@concept_id, @child1_concept_id, 1);
             call add_concept_answer(@concept_id, @child2_concept_id, 2);
             call add_concept_answer(@concept_id, @child3_concept_id, 3);
-            call add_concept_answer(@concept_id, @child4_concept_id, 4);
+
 
         </sql>
     </changeSet>
@@ -541,21 +539,21 @@
 
             select concept_id into @concept_id from concept_name where name = "Groupe sanguin" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
-            select concept_id into @child1_concept_id from concept_name where name = 'O Positive' and concept_name_type =
+            select concept_id into @child1_concept_id from concept_name where name = 'O+' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
-            select concept_id into @child2_concept_id from concept_name where name = 'O Negative' and concept_name_type =
+            select concept_id into @child2_concept_id from concept_name where name = 'O-' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
-            select concept_id into @child3_concept_id from concept_name where name = 'A Positive' and concept_name_type =
+            select concept_id into @child3_concept_id from concept_name where name = 'A+' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
-            select concept_id into @child4_concept_id from concept_name where name = 'A Negative' and
+            select concept_id into @child4_concept_id from concept_name where name = 'A-' and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
-            select concept_id into @child5_concept_id from concept_name where name = 'B Positive' and
+            select concept_id into @child5_concept_id from concept_name where name = 'B+' and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
-            select concept_id into @child6_concept_id from concept_name where name = 'B Negative' and
+            select concept_id into @child6_concept_id from concept_name where name = 'B-' and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
-            select concept_id into @child7_concept_id from concept_name where name = 'AB Positive' and
+            select concept_id into @child7_concept_id from concept_name where name = 'AB+' and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
-            select concept_id into @child8_concept_id from concept_name where name = 'AB Negative' and
+            select concept_id into @child8_concept_id from concept_name where name = 'AB-' and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
 
             call add_concept_answer(@concept_id, @child1_concept_id, 1);
