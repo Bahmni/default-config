@@ -128,6 +128,6 @@
   "ADMINISTRATIVE_NOTE_KEY": "Remarques administratives",
   "ADMISSION_DATE_LABEL": "Date d'admission",
   "DASHBOARD_SIGNES_VITAUX_FORM_DETAILS": "Signes Vitaux",
-  "OBSERVATION_GRAPH_NO_DATA_LABEL": ""
+  "OBSERVATION_GRAPH_NO_DATA_LABEL": "Pas de données"
 
 }
