@@ -92,3 +92,11 @@ call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Type de pré m�
 call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Morphine","Morphine",'N/A','Misc',false);
 call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Autre","Autre",'N/A','Misc',false);
 call add_concept(@concept_id,@concept_short_id,@concept_full_id,"Heure de l'injection", "Heure de l'injection",'Datetime','Misc',false);
+
+INSERT INTO concept_description (concept_id,description,locale,creator,date_created,changed_by,date_changed,uuid)
+VALUES
+((select concept_id from concept_name where name = "Type d\'anesthésie prévue" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0),'GA with intubation; GA with nothing or facial mask; GA with laryngeal mask; Spinal; Plexic or Troncular: Axillary/Femoral/Sciatic; Transverse Abdominal Plane Bloc; Other Regional Technique; Local Anaesthesia; Sedation; Inflitration by surgeon','fr',1,now(),NULL,NULL,uuid());
+
+INSERT INTO concept_description (concept_id,description,locale,creator,date_created,changed_by,date_changed,uuid)
+VALUES
+((select concept_id from concept_name where name = "Type d\'anesthésie prévue" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0),'GA with intubation; GA with nothing or facial mask; GA with laryngeal mask; Spinal; Plexic or Troncular: Axillary/Femoral/Sciatic; Transverse Abdominal Plane Bloc; Other Regional Technique; Local Anaesthesia; Sedation; Inflitration by surgeon','en',1,now(),NULL,NULL,uuid());

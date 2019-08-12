@@ -249,7 +249,7 @@
                 concept_name cn
                 on ca.concept_id = cn.concept_id
                 where ca.answer_concept IN (select concept_id from concept_name where name IN
-                ("Aucune","Admission en SI","Suffocation ou Cyanose","Difficulté d\'intubation","Retard au réveil","Autre","hyperthermie maligne","Arret cardiaque")
+                ("Aucune","Admission en SI","Suffocation ou Cyanose","Difficulté d\'intubation","Retard au réveil","Autre","Hyperthermie maligne","Arret cardiaque")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
                 cn.concept_id IN (select concept_id from concept_name where name = "Réaction indésirable à une anesthésie antérieure");
