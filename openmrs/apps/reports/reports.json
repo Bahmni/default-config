@@ -6,6 +6,14 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_New_Patients.sql"
         }
     },
+    "openelis": {
+        "name": " Lista de exames laboratoriais",
+        "type": "ElisGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/list_of_laboratory_requests.sql",
+            "macroTemplatePath": "/var/www/bahmni_config/openmrs/apps/reports/template/template.xls"
+        }
+    },
     "visitReport10": {
         "name": "Visit Report",
         "type": "visits",
