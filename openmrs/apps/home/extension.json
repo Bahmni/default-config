@@ -16,7 +16,7 @@
     "translationKey": "MODULE_LABEL_CLINICAL_KEY",
     "url": "../clinical/index.html#/default/patient/search",
     "icon": "fa-stethoscope",
-    "order": 3,
+    "order": 2,
     "requiredPrivilege": "app:clinical"
   },
   "admin": {
@@ -39,5 +39,25 @@
     "icon": "fa-bed",
     "order": 4,
     "requiredPrivilege": "app:adt"
+  },
+  "radiologyDocumentUpload": {
+    "id": "bahmni.radiology.document.upload",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_RADIOLOGY_UPLOAD_KEY",
+    "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
+    "icon": "icon-bahmni-radiology",
+    "order": 5,
+    "requiredPrivilege": "app:document-upload"
+  },
+  "implementerInterface": {
+    "id": "bahmni.implementer.interface",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_IMPLEMENTER_INTERFACE_KEY",
+    "url": "/implementer-interface",
+    "icon": "fa fa-pencil-square-o",
+    "order": 6,
+    "requiredPrivilege": "app:implementer-interface"
   }
 }

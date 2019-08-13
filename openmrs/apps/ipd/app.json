@@ -122,22 +122,6 @@
                         "pivotTable": {}
                     }
                 },
-                "admissionDetails": {
-                    "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
-                    "type": "admissionDetails",
-                    "displayOrder": 3,
-                    "expandedViewConfig": {
-                        "numberOfVisits": 3,
-                        "showDetailsButton": true,
-                        "pivotTable": {}
-                    }
-                },
-                "disposition": {
-                    "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
-                    "type": "disposition",
-                    "numberOfVisits": 6,
-                    "displayOrder": 4
-                },
                 "nursingnote": {
                     "translationKey": "DASHBOARD_TITLE_WARD_NURSING_NOTE_KEY",
                     "type": "vitals",

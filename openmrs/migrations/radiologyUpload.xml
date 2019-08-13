@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+   <changeSet id="HAITI_CONFIG_201908121707" author="Pritam">
+      <preConditions onFail="MARK_RAN">
+         <sqlCheck expectedResult="0">
+          SELECT COUNT(*) FROM concept_name WHERE `name` IN
+          (
+          "Radiologie", "Topographie de la brûlure", "Photos des plaies","Radiology"
+          )
+          and concept_name_type = "FULLY_SPECIFIED" and voided = 0;
+         </sqlCheck>
+      </preConditions>
+      <comment>Creating concepts for Document Upload</comment>
+      <sql>
+          set @concept_id = 0;
+          set @concept_short_id = 0;
+          set @concept_full_id = 0;
+          set @count = 0;
+          set @uuid = NULL;
+
+          call add_concept(@concept_id,@concept_short_id,@concept_full_id,'Radiologie','Radiologie','N/A','Misc',false);
+          call add_concept(@concept_id,@concept_short_id,@concept_full_id,'Topographie de la brûlure','Topographie de la brûlure','N/A','Misc',false);
+          call add_concept(@concept_id,@concept_short_id,@concept_full_id,'Photos des plaies','Photos des plaies','N/A','Misc',false);
+          call add_concept(@concept_id,@concept_short_id,@concept_full_id,'Radiology','Radiology','N/A','ConvSet',true);
+      </sql>
+   </changeSet>
+   <changeSet id="HAITI_CONFIG_201908121709" author="Pritam">
+      <preConditions onFail="MARK_RAN">
+           <sqlCheck expectedResult="0">
+              select COUNT(*) from concept_set cs
+              join concept_name cn
+              on cs.concept_id = cn.concept_id
+              where cs.concept_id IN (select concept_id from concept_name where name IN
+              (
+              "Radiologie", "Topographie de la brûlure", "Photos des plaies","Autre"
+              )
+              AND concept_name_type = "FULLY_SPECIFIED")
+              and cs.concept_set IN (select concept_id from concept_name where name = "Radiology");
+         </sqlCheck>
+      </preConditions>
+      <comment>Adding set members to Radiology</comment>
+      <sql>
+              select concept_id into @concept_id from concept_name where name = "Radiology" and concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
+
+              SELECT concept_id INTO @concept_id1 FROM concept_name WHERE name = 'Radiologie' AND concept_name_type="FULLY_SPECIFIED" and locale = 'fr' and voided = 0;
+              INSERT INTO concept_set(concept_id,concept_set,sort_weight,creator,date_created,uuid) VALUES (@concept_id1,@concept_id,1,1,now(),uuid());
+
+              SELECT concept_id INTO @concept_id2 FROM concept_name WHERE name = 'Topographie de la brûlure' AND concept_name_type="FULLY_SPECIFIED" and locale = 'fr' and voided = 0;
+              INSERT INTO concept_set(concept_id,concept_set,sort_weight,creator,date_created,uuid) VALUES (@concept_id2,@concept_id,2,1,now(),uuid());
+
+              SELECT concept_id INTO @concept_id3 FROM concept_name WHERE name = 'Photos des plaies' AND concept_name_type="FULLY_SPECIFIED" and locale = 'fr' and voided = 0;
+              INSERT INTO concept_set(concept_id,concept_set,sort_weight,creator,date_created,uuid) VALUES (@concept_id3,@concept_id,3,1,now(),uuid());
+
+              SELECT concept_id INTO @concept_id4 FROM concept_name WHERE name = 'Autre' AND concept_name_type="FULLY_SPECIFIED" and locale = 'fr' and voided = 0;
+              INSERT INTO concept_set(concept_id,concept_set,sort_weight,creator,date_created,uuid) VALUES (@concept_id4,@concept_id,4,1,now(),uuid());
+      </sql>
+   </changeSet>
+</databaseChangeLog>

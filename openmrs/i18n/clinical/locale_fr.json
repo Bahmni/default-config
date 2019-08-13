@@ -97,7 +97,7 @@
   "CLINICAL_DAYS_TRANSLATION_KEY": "Jours",
   "HOME_DASHBOARD_KEY": "Tableau de bord du Menu",
   "PATIENT_REGISTRATION_PAGE_KEY": "Enregistrement",
-  "DASHBOARD_TITLE_RADIOLOGY_KEY": "Documents médicaux du patient",
+  "DASHBOARD_TITLE_RADIOLOGY_KEY": "Documents médicaux téléchargés",
 
   "PATIENT_IPD_DASHBOARD_KEY": "Tableau de bord hospitalisation du patient",
   "DASHBOARD_TITLE_FINAL_VALIDATION": "Validation finale",

@@ -124,4 +124,5 @@
     <include file="vitalSigns/vitalSignsForm.xml"/>
     <include file="AnesthesieConsultatioinitiale/AnesthesieConsultatioinitiale.xml"/>
     <include file="anesthesieNotesPostOperatoir/anesthesieNotesPostOperatoir.xml"/>
+    <include file="radiologyUpload.xml"/>
 </databaseChangeLog>

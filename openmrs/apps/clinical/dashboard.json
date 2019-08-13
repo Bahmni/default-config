@@ -80,6 +80,15 @@
                     "pivotTable": {
                     }
                   }
+                },
+                "Radiology": {
+                    "type": "radiology",
+                    "groupByVisits": true,
+                    "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
+                    "displayOrder": 5,
+                    "config": {
+                    "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY"
+                    }
                 }
         }
     },
