@@ -232,22 +232,32 @@ angular.module('bahmni.common.displaycontrol.custom')
 
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/positivePreventionDashboard.html";
         spinner.forPromise(observationsService.fetch(patientUuid, conceptNames, scope, numberOfVisits, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid).then(function (response) {
-            var countObservationsForDomId = -1;
+            var apiVisits = 0;
+            
             $scope.observations = response.data;
+            if($scope.section.conceptsWithYes.length > 0){
+                $scope.section.visitDomId = [];
+                $scope.section.visitDateTime = [];
+                $scope.section.conceptsWithYes = [];
+            }
             $scope.observations.forEach(observation => {
                 var index = 0;
                 var observationValues = observation.value.split(',');
-                var groupMembers = [];
-                countObservationsForDomId += 1;
+                var groupMembersWithYes = [];
+
                 observationValues.forEach(value => {
+                    
                     if(value.endsWith('_Yes')){
-                        groupMembers.push(observation.groupMembers[index].conceptNameToDisplay);
+                        groupMembersWithYes.push(observation.groupMembers[index].conceptNameToDisplay);
                     }
                     index += 1;
                 });
-                $scope.section.visitDomId.push(countObservationsForDomId);
-                $scope.section.visitDateTime.push(observation.observationDateTime);
-                $scope.section.conceptsWithYes.push(groupMembers);
+                if(groupMembersWithYes.length > 0){
+                    $scope.section.visitDomId.push(apiVisits);
+                    $scope.section.visitDateTime.push(observation.observationDateTime);
+                    $scope.section.conceptsWithYes.push(groupMembersWithYes);
+                    apiVisits += 1;
+                }
             });
         }));
     };
@@ -261,4 +271,9 @@ angular.module('bahmni.common.displaycontrol.custom')
         },
         template: '<ng-include src="contentUrl"/>'
     }
-}]);
+}]).controller('PositivePreventionDetailsController', ['$scope',function ($scope) {
+    //$scope.config = $scope.ngDialogData.section ? $scope.ngDialogData.section.expandedViewConfig : {};    
+    $scope.title = $scope.ngDialogData.title;
+    $scope.visitsList = $scope.ngDialogData.visitDateTime;
+    $scope.conceptsWithYes = $scope.ngDialogData.conceptsWithYes;
+}]);;
