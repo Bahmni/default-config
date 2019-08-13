@@ -263,7 +263,7 @@
                     "label": "DASHBOARD_POSITIVE_PREVENTION_KEY_TOTAL_YES",
                     "conceptNames": ["Apss_Positive_prevention"],
                     "template": "<positive-prevention-dashboard section='config' patient='patient'></positive-prevention-dashboard>",
-                    "numberOfVisits": 4,
+                    "numberOfVisits": 3,
                     "visitDomId": [],
                     "visitDateTime": [],
                     "conceptsWithYes": []
