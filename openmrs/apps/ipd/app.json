@@ -100,21 +100,35 @@
                         "showDetailsButton": true,
                         "isEditable": true,
                         "conceptNames": [
-                            "Weight",
-                            "Height",
-                            "BMI Data",
-                            "VS, Blood pressure",
-                            "VS, Blood glucose"
+                          "SV, Date et Heure enregistrée",
+                          "SV, Poids",
+                          "SV, Taille",
+                          "SV, Indice de masse corporelle (IMC)",
+                          "SV, Frequence Respiratoire",
+                          "SV, Temperature",
+                          "SV, Pouls",
+                          "SV, Pression Arterielle Systolique (PAS)",
+                          "SV, Pression Arterielle Diastolique (PAD)",
+                          "SV, Saturation en Oxygène",
+                          "SV, Glycémie",
+                          "SV, Hemocue"
                         ],
                         "showGroupDateTime": true
                     },
                     "expandedViewConfig": {
                         "conceptNames": [
-                            "Weight",
-                            "Height",
-                            "BMI Data",
-                            "VS, Blood pressure",
-                            "VS, Blood glucose"
+                          "SV, Date et Heure enregistrée",
+                          "SV, Poids",
+                          "SV, Taille",
+                          "SV, Indice de masse corporelle (IMC)",
+                          "SV, Frequence Respiratoire",
+                          "SV, Temperature",
+                          "SV, Pouls",
+                          "SV, Pression Arterielle Systolique (PAS)",
+                          "SV, Pression Arterielle Diastolique (PAD)",
+                          "SV, Saturation en Oxygène",
+                          "SV, Glycémie",
+                          "SV, Hemocue"
                         ],
                         "isEditable": true,
                         "numberOfVisits": 3,

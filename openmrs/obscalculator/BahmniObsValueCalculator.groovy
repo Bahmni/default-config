@@ -45,7 +45,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
         file1.append "IN run"
-        List<String> bmiConceptNames = Arrays.asList("Poids", "Taille", "Indice de masse corporelle (IMC)");
+        List<String> bmiConceptNames = Arrays.asList("SV, Poids", "SV, Taille", "SV, Indice de masse corporelle (IMC)");
         Map<String, BahmniObservation> bahmniObsConceptMap = new HashMap<>();
         findObsForConceptsOfForm(bmiConceptNames, bahmniEncounterTransaction.getObservations(),"Signes vitaux", bahmniObsConceptMap);
         calculateBMI(bahmniEncounterTransaction, bahmniObsConceptMap);
@@ -57,15 +57,15 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         BahmniObservation weightObservation
 
         for (entry in bahmniObsConceptMap) {
-            if (('Taille').equalsIgnoreCase(entry.key))
+            if (('SV, Taille').equalsIgnoreCase(entry.key))
                 heightObservation = entry.value;
 
-            if (('Poids').equalsIgnoreCase(entry.key))
+            if (('SV, Poids').equalsIgnoreCase(entry.key))
                 weightObservation = entry.value;
         }
 
         if (heightObservation == null && weightObservation == null) {
-            BahmniObservation bmiObservation = bahmniObsConceptMap.get("Indice de masse corporelle (IMC)")
+            BahmniObservation bmiObservation = bahmniObsConceptMap.get("SV, Indice de masse corporelle (IMC)")
             BahmniObservation bmiAbnormalObservation = bahmniObsConceptMap.get("BMI Abnormal")
             voidObs(bmiObservation);
             voidObs(bmiAbnormalObservation);
@@ -79,7 +79,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
 
         if (hasValue(heightObservation) || hasValue(weightObservation)) {
-            BahmniObservation bmiObservation = bahmniObsConceptMap.get("Indice de masse corporelle (IMC)")
+            BahmniObservation bmiObservation = bahmniObsConceptMap.get("SV, Indice de masse corporelle (IMC)")
             BahmniObservation bmiAbnormalObservation = bahmniObsConceptMap.get("BMI Abnormal")
 
             Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid())
@@ -99,7 +99,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 String heightFormFieldPath = heightObservation.getFormFieldPath() /*If Height or weight is not filled*/
                 String heightFormNameSpace = heightObservation.getFormNamespace() /*If Height or weight is not filled*/
                 def bmi = bmi(height, weight)
-                bmiObservation = bmiObservation ?: createObs("Indice de masse corporelle (IMC)", bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+                bmiObservation = bmiObservation ?: createObs("SV, Indice de masse corporelle (IMC)", bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
                 Double roundOffBMI = Math.round(bmi * 100.0) / 100.0;
                 bmiObservation.setValue(roundOffBMI);
                 bmiObservation.setFormFieldPath(heightFormFieldPath.substring(0, heightFormFieldPath.indexOf("/"))+"/4-0")

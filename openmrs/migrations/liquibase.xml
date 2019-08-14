@@ -129,6 +129,19 @@
       <comment>Stored Procedure to add CEIL reference term</comment>
       <sqlFile path="createReferenceMappingForCEIL.sql" endDelimiter="#"/>
     </changeSet>
+    <changeSet id="HAITI_CONFIG_201908140822" author="Pritam">
+      <preConditions onFail="MARK_RAN">
+          <sqlCheck expectedResult="0">
+            select count(*) from concept_name where name = "Notes" and concept_name_type = "SHORT" and locale='fr';
+          </sqlCheck>
+      </preConditions>
+      <comment>Adding short name for Adt Notes</comment>
+      <sql>
+         select concept_id into @conceptid from concept_name where name='Adt Notes' and concept_name_type='FULLY_SPECIFIED' and locale='en';
+         insert into concept_name (concept_id,name,locale,date_created,creator,concept_name_type,uuid) values (@conceptid,'Notes','fr',now(),6,'SHORT',uuid());
+         insert into concept_name (concept_id,name,locale,date_created,creator,concept_name_type,uuid) values (@conceptid,'Notes','en',now(),6,'SHORT',uuid())
+      </sql>
+    </changeSet>
     <include file="vitalSigns/vitalSignsForm.xml"/>
     <include file="AnesthesieConsultatioinitiale/AnesthesieConsultatioinitiale.xml"/>
     <include file="anesthesieNotesPostOperatoir/anesthesieNotesPostOperatoir.xml"/>

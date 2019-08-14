@@ -13,19 +13,19 @@
     <changeSet id="HAITI_CONFIG_201908021229" author="Pritam">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
-                select count(*) from concept_numeric where concept_id in ("Spécifiez le nombre d'anesthésies antérieures","Ouverture de la bouche","taux d'hémoglobine","taux de plaquettes","Créatininémie","Urée","Kaliémie","Natrémie")
+                select count(*) from concept_numeric where concept_id in ("ACI, Spécifiez le nombre d'anesthésies antérieures","ACI, Ouverture de la bouche","ACI, taux d'hémoglobine","ACI, taux de plaquettes","ACI, Créatininémie","ACI, Urée","ACI, Kaliémie","ACI, Natrémie")
             </sqlCheck>
         </preConditions>
         <comment>Adding concept numeric entries</comment>
         <sql>
-                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Spécifiez le nombre d'anesthésies antérieures" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1);
-                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Ouverture de la bouche" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1);
-                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "taux d'hémoglobine" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'g/dl',1,1);
-                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Créatininémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
-                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Urée" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
-                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Kaliémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
-                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "Natrémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
-                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "taux de plaquettes" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'10³',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "ACI, Spécifiez le nombre d'anesthésies antérieures" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "ACI, Ouverture de la bouche" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "ACI, taux d'hémoglobine" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'g/dl',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "ACI, Créatininémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "ACI, Urée" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "ACI, Kaliémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "ACI, Natrémie" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'mmol/l',1,1);
+                INSERT INTO concept_numeric (concept_id,hi_absolute,hi_critical,hi_normal,low_absolute,low_critical,low_normal,units,precise,display_precision) VALUES ((select concept_id from concept_name where name = "ACI, taux de plaquettes" and concept_name_type = 'FULLY_SPECIFIED'  and locale = 'fr'  and voided = 0),NULL,NULL,NULL,NULL,NULL,NULL,'10³',1,1);
         </sql>
     </changeSet>
     <changeSet id="HAITI_CONFIG_201908021255" author="SreeKalyan">
@@ -48,7 +48,7 @@
         <sql>
             SELECT concept_source_id INTO @source_id FROM concept_reference_source where name = 'CEIL';
 
-            call CREATE_REFERENCE_MAPPING_CEIL('Date la consultation', '162869');
+            call CREATE_REFERENCE_MAPPING_CEIL('ACI, Date la consultation', '162869');
 
             INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
             (4,'1065',@source_id,uuid(),now());
@@ -60,7 +60,7 @@
 
             INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
             (4,'1871',@source_id,uuid(),now());
-            call CREATE_REFERENCE_MAPPING_CEIL('Antécédent de transfusion', '1871');
+            call CREATE_REFERENCE_MAPPING_CEIL('ACI, Antécédent de transfusion', '1871');
 
             INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
             (4,'1066',@source_id,uuid(),now());
@@ -107,7 +107,7 @@
                 ("Aucun", "Hypertension", "Diabetes", "Asthme","Insuffisance Rénale","Epilepsie","Tuberculose pulmonaire","Autre pathologie cardiaque","Autre pathologie respiratoire","AVC","Autre")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Antécédents médicaux");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Antécédents médicaux");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Antécédents médicaux</comment>
@@ -125,7 +125,7 @@
             set @child10_concept_id = 0;
             set @child11_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Antécédents médicaux" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Antécédents médicaux" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Aucun' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -175,7 +175,7 @@
                 ("Oui","Non","Ne sait pas")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Le patient a-t-il des allergies connues a des médicaments ?");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Le patient a-t-il des allergies connues a des médicaments ?");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Le patient a-t-il des allergies connues a des médicaments ?</comment>
@@ -185,7 +185,7 @@
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Le patient a-t-il des allergies connues a des médicaments ?" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Le patient a-t-il des allergies connues a des médicaments ?" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -211,7 +211,7 @@
                 ("Aucune","Locale","Generale","Regionale")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Antécédents anesthésiques");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Antécédents anesthésiques");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Antécédents anesthésiques</comment>
@@ -222,7 +222,7 @@
             set @child3_concept_id = 0;
             set @child4_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Antécédents anesthésiques" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Antécédents anesthésiques" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Aucune' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -252,7 +252,7 @@
                 ("Aucune","Admission en SI","Suffocation ou Cyanose","Difficulté d\'intubation","Retard au réveil","Autre","Hyperthermie maligne","Arret cardiaque")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Réaction indésirable à une anesthésie antérieure");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Réaction indésirable à une anesthésie antérieure");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Réaction indésirable à une anesthésie antérieure</comment>
@@ -267,7 +267,7 @@
             set @child7_concept_id = 0;
             set @child8_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Réaction indésirable à une anesthésie antérieure" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Réaction indésirable à une anesthésie antérieure" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Aucune' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -310,7 +310,7 @@
                 ("Oui","Non","Ne sait pas")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Antécédent de transfusion");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Antécédent de transfusion");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Antécédent de transfusion</comment>
@@ -320,7 +320,7 @@
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Antécédent de transfusion" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Antécédent de transfusion" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -346,7 +346,7 @@
                 ("Oui","Non","Ne sait pas")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name ="Y a t-il eu incident transfusionnel?");
+                cn.concept_id IN (select concept_id from concept_name where name ="ACI, Y a t-il eu incident transfusionnel?");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Y a t-il eu incident transfusionnel?</comment>
@@ -356,7 +356,7 @@
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Y a t-il eu incident transfusionnel?" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Y a t-il eu incident transfusionnel?" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -383,7 +383,7 @@
                 ("Classe I","Classe II","Classe III","Classe IV")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Mallampati, classe");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Mallampati, classe");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Mallampati, classe</comment>
@@ -393,7 +393,7 @@
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Mallampati, classe" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Mallampati, classe" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Classe I' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -422,7 +422,7 @@
                 ("ASA I","ASA II","ASA III","ASA IV","ASA V","ASA VI")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Score d'ASA");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Score d'ASA");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Score d'ASA</comment>
@@ -435,7 +435,7 @@
             set @child5_concept_id = 0;
             set @child6_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Score d'ASA" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Score d'ASA" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'ASA I' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
@@ -470,7 +470,7 @@
                 ("GAI","GAO","ALR","AG-","LMA","Bloc")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Type d'anesthésie prévue");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Type d'anesthésie prévue");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Type d'anesthésie prévue</comment>
@@ -485,7 +485,7 @@
 
 
 
-            select concept_id into @concept_id from concept_name where name = "Type d'anesthésie prévue" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Type d'anesthésie prévue" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'GAI' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
@@ -522,7 +522,7 @@
                 ("O+","O-","A+","A-","B+","B-","AB+","AB-")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Groupe sanguin");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Groupe sanguin");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Groupe sanguin</comment>
@@ -537,7 +537,7 @@
             set @child7_concept_id = 0;
             set @child8_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Groupe sanguin" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Groupe sanguin" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'O+' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
@@ -579,7 +579,7 @@
             ("Oui","Non","Ne sait pas")
             and concept_name_type = "FULLY_SPECIFIED")
             AND
-            cn.concept_id IN (select concept_id from concept_name where name = "Hemogramme fait");
+            cn.concept_id IN (select concept_id from concept_name where name = "ACI, Hemogramme fait");
         </sqlCheck>
     </preConditions>
     <comment>Adding Answers to Outcome of Hemogramme fait</comment>
@@ -589,7 +589,7 @@
         set @child2_concept_id = 0;
         set @child3_concept_id = 0;
 
-        select concept_id into @concept_id from concept_name where name = "Hemogramme fait" and
+        select concept_id into @concept_id from concept_name where name = "ACI, Hemogramme fait" and
         concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
         select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
         'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -616,7 +616,7 @@
             ("Oui","Non","Ne sait pas")
             and concept_name_type = "FULLY_SPECIFIED")
             AND
-            cn.concept_id IN (select concept_id from concept_name where name = "Bilan rénal fait");
+            cn.concept_id IN (select concept_id from concept_name where name = "ACI, Bilan rénal fait");
         </sqlCheck>
     </preConditions>
     <comment>Adding Answers to Outcome of Bilan rénal fait</comment>
@@ -626,7 +626,7 @@
         set @child2_concept_id = 0;
         set @child3_concept_id = 0;
 
-        select concept_id into @concept_id from concept_name where name = "Bilan rénal fait" and
+        select concept_id into @concept_id from concept_name where name = "ACI, Bilan rénal fait" and
         concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
         select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
         'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -653,7 +653,7 @@
             ("Oui","Non","Ne sait pas")
             and concept_name_type = "FULLY_SPECIFIED")
             AND
-            cn.concept_id IN (select concept_id from concept_name where name = "Ionogramme fait");
+            cn.concept_id IN (select concept_id from concept_name where name = "ACI, Ionogramme fait");
         </sqlCheck>
     </preConditions>
     <comment>Adding Answers to Outcome of Ionogramme fait</comment>
@@ -663,7 +663,7 @@
         set @child2_concept_id = 0;
         set @child3_concept_id = 0;
 
-        select concept_id into @concept_id from concept_name where name = "Ionogramme fait" and
+        select concept_id into @concept_id from concept_name where name = "ACI, Ionogramme fait" and
         concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
         select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
         'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -691,7 +691,7 @@
                 ("Prêt pour le Bloc","Réanimation nécessaire","Temps de jeûn non respecté")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Résultat de l'observation initial d'anesthésie");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Résultat de l'observation initial d'anesthésie");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Résultat de l'observation initial d'anesthésie</comment>
@@ -701,7 +701,7 @@
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Résultat de l'observation initial d'anesthésie" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Résultat de l'observation initial d'anesthésie" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Prêt pour le Bloc' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -728,7 +728,7 @@
                 ("Oui","Non","Ne sait pas")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "J'ai discuté les risques et bénéfices de l'anesthésie et ai répondu à toutes les questions?");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, J'ai discuté les risques et bénéfices de l'anesthésie et ai répondu à toutes les questions?");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of J'ai discuté les risques et bénéfices de l'anesthésie et ai répondu à toutes les questions?</comment>
@@ -738,7 +738,7 @@
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "J'ai discuté les risques et bénéfices de l'anesthésie et ai répondu à toutes les questions?" and
+            select concept_id into @concept_id from concept_name where name = "ACI, J'ai discuté les risques et bénéfices de l'anesthésie et ai répondu à toutes les questions?" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -765,7 +765,7 @@
                 ("Oui","Non","Ne sait pas")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Prémédication donnée");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Prémédication donnée");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Prémédication donnée</comment>
@@ -775,7 +775,7 @@
             set @child2_concept_id = 0;
             set @child3_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Prémédication donnée" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Prémédication donnée" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -802,7 +802,7 @@
                 ("Morphine","Autre")
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Type de pré médication");
+                cn.concept_id IN (select concept_id from concept_name where name = "ACI, Type de pré médication");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Type de pré médication</comment>
@@ -812,7 +812,7 @@
             set @child1_concept_id = 0;
             set @child2_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Type de pré médication" and
+            select concept_id into @concept_id from concept_name where name = "ACI, Type de pré médication" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Morphine' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;

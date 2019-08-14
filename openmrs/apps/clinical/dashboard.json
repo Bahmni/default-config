@@ -19,13 +19,6 @@
                     "countyDistrict"
                 ]
             },
-            "disposition":{
-                "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
-                "showDetailsButton":true,
-                "type":"disposition",
-                "numberOfVisits":5,
-                "displayOrder":3
-            },
             "visits":{
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
@@ -42,44 +35,61 @@
                   "isObservation": true,
                   "showCertainty": true,
                   "showOrder": true,
-                  "displayOrder": 4,
+                  "displayOrder": 2,
                   "dashboardConfig": {
                     "conceptNames": [
-                      "Date et Heure enregistrée",
-                      "Poids",
-                      "Taille",
-                      "Indice de masse corporelle (IMC)",
-                      "Frequence Respiratoire",
-                      "Temperature",
-                      "Pouls",
-                      "Pression Arterielle Systolique (PAS)",
-                      "Pression Arterielle Diastolique (PAD)",
-                      "Saturation en Oxygène",
-                      "Glycémie",
-                      "Hemocue"
+                      "SV, Date et Heure enregistrée",
+                      "SV, Poids",
+                      "SV, Taille",
+                      "SV, Indice de masse corporelle (IMC)",
+                      "SV, Frequence Respiratoire",
+                      "SV, Temperature",
+                      "SV, Pouls",
+                      "SV, Pression Arterielle Systolique (PAS)",
+                      "SV, Pression Arterielle Diastolique (PAD)",
+                      "SV, Saturation en Oxygène",
+                      "SV, Glycémie",
+                      "SV, Hemocue"
                     ],
                     "numberOfVisits": 3,
                     "showDetailsButton": true
                   },
                   "expandedViewConfig": {
                     "conceptNames": [
-                      "Date et Heure enregistrée",
-                      "Poids",
-                      "Taille",
-                      "Indice de masse corporelle (IMC)",
-                      "Frequence Respiratoire",
-                      "Temperature",
-                      "Pouls",
-                      "Pression Arterielle Systolique (PAS)",
-                      "Pression Arterielle Diastolique (PAD)",
-                      "Saturation en Oxygène",
-                      "Glycémie",
-                      "Hemocue"
+                      "SV, Date et Heure enregistrée",
+                      "SV, Poids",
+                      "SV, Taille",
+                      "SV, Indice de masse corporelle (IMC)",
+                      "SV, Frequence Respiratoire",
+                      "SV, Temperature",
+                      "SV, Pouls",
+                      "SV, Pression Arterielle Systolique (PAS)",
+                      "SV, Pression Arterielle Diastolique (PAD)",
+                      "SV, Saturation en Oxygène",
+                      "SV, Glycémie",
+                      "SV, Hemocue"
                     ],
                     "numberOfVisits": "",
                     "pivotTable": {
                     }
                   }
+                },
+                "disposition":{
+                    "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
+                    "showDetailsButton":true,
+                    "type":"disposition",
+                    "numberOfVisits":5,
+                    "displayOrder":3
+                },
+                "validationForms-2.0": {
+                      "type": "formsV2",
+                      "displayOrder": 4,
+                      "dashboardConfig": {
+                        "title": null,
+                        "maximumNoOfVisits": 1
+                      },
+                      "formGroup": ["Signes vitaux","Anesthésie Consultation Initiale","Anesthésie Note post opératoire","Anesthésie Consultation de suivi"],
+                      "translationKey": "Modifier les formulaires"
                 },
                 "Radiology": {
                     "type": "radiology",
@@ -90,6 +100,7 @@
                     "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY"
                     }
                 }
+
         }
     },
     "trends": {
@@ -100,7 +111,7 @@
                      "type":"observationGraph",
                      "title":"Poids",
                      "config":{
-                               "yAxisConcepts":["Poids"],
+                               "yAxisConcepts":["SV, Poids"],
                                "xAxisConcept":"observationDateTime",
                                "numberOfVisits":""
                              },
@@ -110,7 +121,7 @@
                     "type":"observationGraph",
                     "title":"Pouls",
                     "config":{
-                              "yAxisConcepts":["Pouls"],
+                              "yAxisConcepts":["SV, Pouls"],
                               "xAxisConcept":"observationDateTime",
                               "numberOfVisits":""
                              },
@@ -120,7 +131,7 @@
                      "type":"observationGraph",
                      "title":"Temperature",
                      "config":{
-                               "yAxisConcepts":["Temperature"],
+                               "yAxisConcepts":["SV, Temperature"],
                                "xAxisConcept":"observationDateTime",
                                "numberOfVisits":""
                              },
@@ -130,7 +141,7 @@
                       "type":"observationGraph",
                       "title":"Frequence Respiratoire",
                       "config":{
-                                "yAxisConcepts":["Frequence Respiratoire"],
+                                "yAxisConcepts":["SV, Frequence Respiratoire"],
                                 "xAxisConcept":"observationDateTime",
                                 "numberOfVisits": ""
                               },

@@ -72,7 +72,7 @@
 
             INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
             (4,'144464',@source_id,uuid(),now());
-            call CREATE_REFERENCE_MAPPING_CEIL('Complication de l\'anesthésie', '144464');
+            call CREATE_REFERENCE_MAPPING_CEIL('ANPO, Complication de l\'anesthésie', '144464');
 
         </sql>
     </changeSet>
@@ -87,7 +87,7 @@
                 ('None', 'GAI', 'GAO', 'GAL', 'RSA', 'RPX', 'RTA', 'RAO', 'LOA', 'SED', 'INF')
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Type d\'anesthésie réalisée");
+                cn.concept_id IN (select concept_id from concept_name where name = "ANPO, Type d\'anesthésie réalisée");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Type d'anesthésie réalisée</comment>
@@ -105,7 +105,7 @@
             set @child10_concept_id = 0;
             set @child11_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Type d\'anesthésie réalisée" and
+            select concept_id into @concept_id from concept_name where name = "ANPO, Type d\'anesthésie réalisée" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'None' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -167,7 +167,7 @@
                 )
                 and concept_name_type = "FULLY_SPECIFIED")
                 AND
-                cn.concept_id IN (select concept_id from concept_name where name = "Complication de l\'anesthésie");
+                cn.concept_id IN (select concept_id from concept_name where name = "ANPO, Complication de l\'anesthésie");
             </sqlCheck>
         </preConditions>
         <comment>Adding Answers to Outcome of Antécédents médicaux</comment>
@@ -185,7 +185,7 @@
             set @child10_concept_id = 0;
             set @child11_concept_id = 0;
 
-            select concept_id into @concept_id from concept_name where name = "Complication de l\'anesthésie" and
+            select concept_id into @concept_id from concept_name where name = "ANPO, Complication de l\'anesthésie" and
             concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
             select concept_id into @child1_concept_id from concept_name where name = 'Aucun' and concept_name_type =
             'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -235,7 +235,7 @@
                ("Oui","Non")
                and concept_name_type = "FULLY_SPECIFIED")
                AND
-               cn.concept_id IN (select concept_id from concept_name where name = "Transfuson sanguine");
+               cn.concept_id IN (select concept_id from concept_name where name = "ANPO, Transfuson sanguine");
            </sqlCheck>
        </preConditions>
        <comment>Adding Answers to Transfuson sanguine</comment>
@@ -244,7 +244,7 @@
            set @child1_concept_id = 0;
            set @child2_concept_id = 0;
 
-           select concept_id into @concept_id from concept_name where name = "Transfuson sanguine" and
+           select concept_id into @concept_id from concept_name where name = "ANPO, Transfuson sanguine" and
            concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
            select concept_id into @child1_concept_id from concept_name where name = 'Oui' and concept_name_type =
            'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -266,7 +266,7 @@
                  ("Sang Total","CG","PFC","Plaquettes","Albumine","Autre")
                  and concept_name_type = "FULLY_SPECIFIED")
                  AND
-                 cn.concept_id IN (select concept_id from concept_name where name = "Produit sanguin administré en per opératoire");
+                 cn.concept_id IN (select concept_id from concept_name where name = "ANPO, Produit sanguin administré en per opératoire");
              </sqlCheck>
          </preConditions>
          <comment>Adding Answers to Produit sanguin administré en per opératoire</comment>
@@ -279,7 +279,7 @@
              set @child5_concept_id = 0;
              set @child6_concept_id = 0;
 
-             select concept_id into @concept_id from concept_name where name = "Produit sanguin administré en per opératoire" and
+             select concept_id into @concept_id from concept_name where name = "ANPO, Produit sanguin administré en per opératoire" and
              concept_name_type = 'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
              select concept_id into @child1_concept_id from concept_name where name = 'Sang Total' and concept_name_type =
              'FULLY_SPECIFIED' and locale = 'en' and voided = 0;
@@ -314,7 +314,7 @@
                  ('Aucune', 'ABO incompatibility', 'Anaphylaxis', 'Fever', 'Hemolysis', 'Hypotension', 'Rash', 'Urticaria', 'Autre')
                  and concept_name_type = "FULLY_SPECIFIED")
                  AND
-                 cn.concept_id IN (select concept_id from concept_name where name = "Réaction transfusionnelle per operatoire");
+                 cn.concept_id IN (select concept_id from concept_name where name = "ANPO, Réaction transfusionnelle per operatoire");
              </sqlCheck>
          </preConditions>
          <comment>Adding Answers to Réaction transfusionnelle per operatoire</comment>
@@ -330,7 +330,7 @@
              set @child8_concept_id = 0;
              set @child9_concept_id = 0;
 
-             select concept_id into @concept_id from concept_name where name = "Réaction transfusionnelle per operatoire" and
+             select concept_id into @concept_id from concept_name where name = "ANPO, Réaction transfusionnelle per operatoire" and
              concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
              select concept_id into @child1_concept_id from concept_name where name = 'Aucune' and concept_name_type =
              'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
@@ -374,7 +374,7 @@
                   ('Aucun', 'Catheter Foley', 'Voie veineuse Peripherique', 'PICC Line', 'VVC', 'Sonde nasogastrique', 'Autre')
                   and concept_name_type = "FULLY_SPECIFIED")
                   AND
-                  cn.concept_id IN (select concept_id from concept_name where name = "Matériel présent");
+                  cn.concept_id IN (select concept_id from concept_name where name = "ANPO, Matériel présent");
               </sqlCheck>
           </preConditions>
           <comment>Adding Answers to Matériel présent</comment>
@@ -388,7 +388,7 @@
               set @child6_concept_id = 0;
               set @child7_concept_id = 0;
 
-              select concept_id into @concept_id from concept_name where name = "Matériel présent" and
+              select concept_id into @concept_id from concept_name where name = "ANPO, Matériel présent" and
               concept_name_type = 'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;
               select concept_id into @child1_concept_id from concept_name where name = 'Aucun' and concept_name_type =
               'FULLY_SPECIFIED' and locale = 'fr' and voided = 0;

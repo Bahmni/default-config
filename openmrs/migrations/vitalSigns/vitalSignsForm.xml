@@ -32,47 +32,47 @@
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'162869',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Date et Heure enregistrée', '162869');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Date et Heure enregistrée', '162869');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'5089',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Poids', '5089');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Poids', '5089');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'5090',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Taille', '5090');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Taille', '5090');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'1342',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Indice de masse corporelle (IMC)', '1342');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Indice de masse corporelle (IMC)', '1342');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'5242',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Frequence Respiratoire', '5242');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Frequence Respiratoire', '5242');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'5088',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Temperature', '5088');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Temperature', '5088');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'5087',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Pouls', '5087');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Pouls', '5087');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'5085',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Pression Arterielle Systolique (PAS)', '5085');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Pression Arterielle Systolique (PAS)', '5085');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'5086',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Pression Arterielle Diastolique (PAD)', '5086');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Pression Arterielle Diastolique (PAD)', '5086');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'5092',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Saturation en Oxygène', '5092');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Saturation en Oxygène', '5092');
 
                 INSERT INTO concept_reference_term (creator,code,concept_source_id,uuid,date_created) VALUES
                 (4,'163387',@source_id,uuid(),now());
-                call CREATE_REFERENCE_MAPPING_CEIL('Glycémie', '163387');
+                call CREATE_REFERENCE_MAPPING_CEIL('SV, Glycémie', '163387');
 
             </sql>
         </changeSet>
