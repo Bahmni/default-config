@@ -19,6 +19,14 @@
           <comment>Stored Procedure to add reference term</comment>
           <sqlFile path="createReferenceMappingORGOPENMRSMODULEEMRAPI.sql" endDelimiter="#"/>
         </changeSet>
+        <changeSet id="HAITI_CONFIG_201908121245" author="Sreekalyan">
+            <comment>Stored Procedure to add reference term</comment>
+            <sqlFile path="createReferenceMappingForICHI.sql" endDelimiter="#"/>
+        </changeSet>
+        <changeSet id="HAITI_CONFIG_201908121406" author="Sreekalyan">
+            <comment>Stored Procedure to add reference term</comment>
+            <sqlFile path="createReferenceMappingForSNOMED.sql" endDelimiter="#"/>
+        </changeSet>
         <changeSet id="HAITI_CONFIG_260620192058" author="Pritam">
           <comment>Deleting all bed location tags and bed location maps</comment>
           <sqlFile path="bedManagement/clearBedLayout.sql"/>
@@ -125,4 +133,5 @@
     <include file="AnesthesieConsultatioinitiale/AnesthesieConsultatioinitiale.xml"/>
     <include file="anesthesieNotesPostOperatoir/anesthesieNotesPostOperatoir.xml"/>
     <include file="radiologyUpload.xml"/>
+    <include file="AnesthesieConsultationdesuiv/AnesthesieConsultationdesuiv.xml"/>
 </databaseChangeLog>
