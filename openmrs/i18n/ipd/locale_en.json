@@ -50,5 +50,13 @@
   "MODULE_LABEL_TO_ADMIT_KEY": "To Admit",
   "MESSAGE_DIALOG_OPTION_COPY" : "Copy Error",
   "MESSAGE_DIALOG_OPTION_OKAY": "Ok",
-  "PATIENT_ADT_PAGE_KEY":"Patient ADT Page"
+  "PATIENT_ADT_PAGE_KEY":"Patient ADT Page",
+  "ADMIT_SUMMARY_KEY": "Admit Summary",
+  "DISCHARGE_SUMMARY_KEY": "Discharge Summary",
+  "DISCHARGE_FROM_KEY": "Discharge From:",
+  "PATIENT_MOVEMENT_KEY": "Patient Movement",
+  "MOVEMENT_FROM_KEY": "Movement From",
+  "MOVEMENT_TO_KEY": "Movement To",
+  "MOVE_KEY": "Move",
+  "ADMIT_TO_KEY": "Admit To:"
 }

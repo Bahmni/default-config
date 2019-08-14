@@ -83,5 +83,10 @@
   "DISCHARGE_DATE_LABEL":"Date de sortie",
   "CLINICAL_YEARS_TRANSLATION_KEY": "Annes",
   "CLINICAL_MONTHS_TRANSLATION_KEY": "Mois",
-  "CLINICAL_DAYS_TRANSLATION_KEY": "Jours"
+  "CLINICAL_DAYS_TRANSLATION_KEY": "Jours",
+  "DISCHARGE_FROM_KEY": "Sortie de:",
+  "MOVEMENT_FROM_KEY": "Mouvement de",
+  "MOVEMENT_TO_KEY": "Mouvement vers",
+  "MOVE_KEY": "Déplacer",
+  "ADMIT_TO_KEY": "Admettre vers:"
 }
