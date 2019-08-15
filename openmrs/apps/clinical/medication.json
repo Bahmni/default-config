@@ -9,7 +9,6 @@
       "inputOptionsConfig": {
         "defaultDurationUnit": "Day(s)",
         "hideOrderSet" : false,
-        "defaultInstructions": "As directed",
         "allowOnlyCodedDrugs" : true,
         "hiddenFields" : [
           "sos",
