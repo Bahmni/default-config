@@ -52,7 +52,7 @@
                     "showListView":true,
                     "showRoute":true,
                     "showDrugForm":true,
-                    "numberOfVisits":5,
+                    "numberOfVisits":3,
                     "showOtherActive":true,
                     "showDetailsButton":true
                 },
@@ -74,7 +74,7 @@
                 "displayOrder":1,
                 "dashboardConfig":{
                     "title":null,
-                    "numberOfVisits":6,
+                    "numberOfVisits":3,
                     "showChart":false,
                     "showTable":true,
                     "showNormalLabResults": true,
