@@ -42,21 +42,21 @@
                     "ageLimit": 100
                 },
                 "ID_Number": {
-                    "required" : true
+                    "excludeFrom": ["HIV Program","HEI Program","ART Program","PMTCT Program"]
                 },
                 "Co-morbidites": {
                     "excludeFrom": ["HIV Program","HEI Program","ART Program","PMTCT Program"]
                 },
                 "Doctor": {
-                    "excludeFrom": ["TB Program"]
+                    "excludeFrom": ["HIV Program","HEI Program","ART Program","PMTCT Program"]
                 },
                 "Stage":{
-                    "excludeFrom": ["HEI Program","ART Program","PMTCT Program"]
-                } 
+                    "excludeFrom": ["HEI Program","PMTCT Program"]
+                }
             },
             "patientContext": {
         		"programAttributes": [
-            		"Id_Number",
+            		
             		"Doctor",
             		"Stage"
         		],

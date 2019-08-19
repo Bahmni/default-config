@@ -187,18 +187,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
         } 
     },
 
-    "AntiRetroviral Treatment" : function (formName , formFieldValues, patient){ 
-        if(patient.age < 15){
-            return{
-                show: ["Child Regimen Information"],
-                hide:["ART Regimen - Substitution within 1st Line" , "ART Regimen(Switch to 2nd Line)" ,"Initial ART Regimen (Adult)"]
-            }
-        }else {
-            return{
-                hide: ["Child Regimen Information" , "Initial ART Regimen(Children)"]
-            }
-        } 
-    },
+    // "AntiRetroviral Treatment" : function (formName , formFieldValues, patient){ 
+    //     if(patient.age < 15){
+    //         return{
+    //             show: ["Child Regimen Information"],
+    //             hide:["ART Regimen - Substitution within 1st Line" , "ART Regimen(Switch to 2nd Line)" ,"Initial ART Regimen (Adult)"]
+    //         }
+    //     }else {
+    //         return{
+    //             hide: ["Child Regimen Information" , "Initial ART Regimen(Children)"]
+    //         }
+    //     } 
+    // },
     "Interruption Type" : function (formName , formFieldValues){
         var interruptiontype = formFieldValues["Interruption Type"];
         if(interruptiontype === "Stop"){
