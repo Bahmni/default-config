@@ -555,7 +555,8 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         } else {
             return {
-                hide: ["CONFIDENT_CCR"]
+                hide: ["CONFIDENT_CCR"],
+                disable: ["CONFIDENT_AGE_TYPE"]
             }
         }
     }
