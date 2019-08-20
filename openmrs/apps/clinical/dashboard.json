@@ -190,7 +190,7 @@
             "visits":{
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":9,
+                "displayOrder":11,
                 "dashboardConfig":{
                     "title":null,
                     "maximumNoOfVisits":8,
@@ -249,15 +249,15 @@
             },
             "patientAppointments": {
                 "type": "custom",
-                "displayOrder": 11,
+                "displayOrder": 12,
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
                 }
-            },
+            },  
             "positivePrevention": {
                 "type": "custom",
-                "displayOrder": 12,
+                "displayOrder": 9,
                 "config": {
                     "title": "DASHBOARD_POSITIVE_PREVENTION_KEY",
                     "label": "DASHBOARD_POSITIVE_PREVENTION_KEY_TOTAL_YES",
