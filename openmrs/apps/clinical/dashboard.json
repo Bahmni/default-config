@@ -86,7 +86,7 @@
                       "displayOrder": 4,
                       "dashboardConfig": {
                         "title": null,
-                        "maximumNoOfVisits": 1
+                        "maximumNoOfVisits": 5
                       },
                       "formGroup": ["Signes vitaux","Anesthésie Consultation Initiale","Anesthésie Note post opératoire","Anesthésie Consultation de suivi"],
                       "translationKey": "Modifier les formulaires"
