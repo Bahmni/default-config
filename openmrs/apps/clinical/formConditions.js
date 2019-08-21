@@ -186,7 +186,6 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         } 
     },
-
     // "AntiRetroviral Treatment" : function (formName , formFieldValues, patient){ 
     //     if(patient.age < 15){
     //         return{
@@ -228,12 +227,12 @@ Bahmni.ConceptSet.FormConditions.rules = {
         if(switchedregimento === "Regimen Switched To (Adult First Line)"){
             return{
                 show: ["ART Regimen - Substitution within 1st Line"],
-                hide: ["ART Regimen(Switch to 2nd Line)","Other Reason"]
+                hide: ["ART Regimen(Switch to 2nd Line)","Other Reason(First Line Regimen Change)"]
 
             }
         }else if(switchedregimento === "Regimen Switched To (Adult Second Line)"){
             return{
-                show: ["ART Regimen(Switch to 2nd Line)" ],
+                show: ["ART Regimen(Switch to 2nd Line)"],
                 hide:  ["ART Regimen - Substitution within 1st Line","Other Reason(Second Regimen Change)"]
             }
         }  else {
@@ -260,17 +259,17 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var changereasonfirstreg = formFieldValues["Reason For Regimen Change(First Line)"];
         if(changereasonfirstreg === "Other Reason For Regimen Change(First Line)"){
             return{
-                show: ["Other Reason"]
+                show: ["Other Reason(First Line Regimen Change)"]
             }
         }else {
             return{
-                hide: ["Other Reason"]
+                hide: ["Other Reason(First Line Regimen Change)"]
             }
         }    
     },
     "Reason For Regimen Change(Second Line)" : function (formName , formFieldValues){
-        var changereasonsecondreg = formFieldValues["Reason For Regimen Change(Second Line)"];
-        if(changereasonsecondreg === "Other Reason For Regimen Change(Second Line)"){
+        var changereasonsecond = formFieldValues["Reason For Regimen Change(Second Line)"];
+        if(changereasonsecond === "Other Reason For Regimen Change(First Line)"){
             return{
                 show: ["Other Reason(Second Regimen Change)"]
             }
@@ -332,7 +331,118 @@ Bahmni.ConceptSet.FormConditions.rules = {
             alert("HIV RETESTING DATE SHOULD BE GREATER THAN HIV FIRST TESTING DATE");
             
         }
-    }  
-    
+    },
+    "ART Regimen - Substitution within 1st Line" : function (formName , formFieldValues, patient){
+        if(patient.age < 15){     
+            return{
+                show: ["Child Regimens (First Line)"],
+                hide:["Substitution Regimen For Adults(First Line)"]
+            }
+        }else {
+            return{
+                hide: ["Child Regimens (First Line)"],
+                show: ["Substitution Regimen For Adults(First Line)"]
+            }
+        }    
+    },  
+    "ART Regimen(Switch to 2nd Line)" : function (formName , formFieldValues, patient){
+        if(patient.age < 15){     
+            return{
+                show: ["Children Second Line Regimens"],
+                hide:["Substitution Regimen (2nd Line Adults)"]
+            }
+        }else {
+            return{
+                hide: ["Children Second Line Regimens"],
+                show:["Substitution Regimen (2nd Line Adults)"]
+            }
+        }    
+    },  
+
+    "Is there an immunization not Given?" : function (formName , formFieldValues){
+        var immunizationgiven = formFieldValues["Is there an immunization not Given?"];
+            if(immunizationgiven == true){ 
+                return{
+               show:["Immunization Not Given"]            
+                }
+            }else {
+                return{
+                    hide:["Immunization Not Given"]
+                }
+            }    
+        },
+    "Clinical Assessment for Signs and Symptoms of HIV": function (formName, formFieldValues) {
+        var clinicalassessment = formFieldValues["Clinical Assessment for Signs and Symptoms of HIV"];
+        if (clinicalassessment === "Other Assessment Specify") {
+            return {
+                show: ["Specify other Assessement"]
+            }
+        } else {
+            return {
+                hide: ["Specify other Assessement"]
+            }
+        }
+    },
+
+    "Was any Development Milestone Missed?": function (formName, formFieldValues) {
+        var milestonemissed = formFieldValues["Was any Development Milestone Missed?"];
+        if (milestonemissed == true) {
+            return {
+                show: ["Development Milestones Missed"]
+            }
+        } else {
+            return {
+                hide: ["Development Milestones Missed"]
+            }
+        }
+    },
+    "Mother's ART Regimen": function (formName, formFieldValues) {
+        var motherartregimen = formFieldValues["Mother's ART Regimen"];
+        if (motherartregimen === "Other ART Regimen") {
+            return {
+                show: ["Specify other Mother's ART Regimen"]
+            }
+        } else {
+            return {
+                hide: ["Specify other Mother's ART Regimen"]
+            }
+        }
+    },
+    "HEI Treatment - Referred To ART Clinic": function (formName, formFieldValues) {
+        var referredtoclinic = formFieldValues["HEI Treatment - Referred To ART Clinic"];
+        if (referredtoclinic == true) {
+            return {
+                show: ["HEI Treatment - Referred To ART Clinic Date"]
+            }
+        } else {
+            return {
+                hide: ["HEI Treatment - Referred To ART Clinic Date"]
+            }
+        }
+    },
+    "HEI Treatment - Referred To ART Clinic": function (formName, formFieldValues) {
+        var referredtoclinic = formFieldValues["HEI Treatment - Referred To ART Clinic"];
+        if (referredtoclinic == true) {
+            return {
+                show: ["HEI Treatment - Referred To ART Clinic Date"]
+            }
+        } else {
+            return {
+                hide: ["HEI Treatment - Referred To ART Clinic Date"]
+            }
+        }
+    },
+    "HEI Treatment - Enrolled AT ART Clinic": function (formName, formFieldValues) {
+        var enrolleddate = formFieldValues["HEI Treatment - Enrolled AT ART Clinic"];
+        if (enrolleddate == true) {
+            return {
+                show: ["HEI Treatment - Enrolled AT ART Date"]
+            }
+        } else {
+            return {
+                hide: ["HEI Treatment - Enrolled AT ART Date"]
+            }
+        }
+    },
  };
 

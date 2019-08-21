@@ -215,6 +215,28 @@
             "ART Treatment Reasons For Stop":{
                 "required":true
             },
+            "Other Reason(First Line Regimen Change)":{
+                "required":true 
+            },
+            "Immunization Not Given":{
+                "required":true
+            },
+            "Specify other Assessement":{
+                "required":true
+            },
+            "Development Milestones Missed":{
+                "required":true
+            },
+            "Specify other Mother's ART Regimen":{
+                "required":true
+            },
+            "HEI Treatment - Enrolled AT ART Date":{
+                "required":true
+            },
+            "HEI Treatment - Referred To ART Clinic Date":{
+                "required":true
+            },
+
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
