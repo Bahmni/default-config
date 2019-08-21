@@ -1,4 +1,11 @@
 {
+    "patient": {
+        "name":  "Lista de Pacientes com pedidos de exames laboratoriais sem resultados",
+        "type": "ElisGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/sample.sql"
+        }
+    },
     "patientlist": {
         "name": "Lista de novos pacientes",
         "type": "MRSGeneric",
