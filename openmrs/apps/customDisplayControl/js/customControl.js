@@ -231,7 +231,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         var patientProgramUuid = undefined;
 
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/positivePreventionDashboard.html";
-        spinner.forPromise(observationsService.fetch(patientUuid, conceptNames, scope, numberOfVisits, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid).then(function (response) {
+        spinner.forPromise(observationsService.fetch(patientUuid, conceptNames, scope, 0, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid).then(function (response) {
             var apiVisits = 0;
             
             $scope.observations = response.data;
@@ -241,17 +241,14 @@ angular.module('bahmni.common.displaycontrol.custom')
                 $scope.section.conceptsWithYes = [];
             }
             $scope.observations.forEach(observation => {
-                var index = 0;
-                var observationValues = observation.value.split(',');
                 var groupMembersWithYes = [];
 
-                observationValues.forEach(value => {
-                    
-                    if(value.endsWith('_Yes')){
-                        groupMembersWithYes.push(observation.groupMembers[index].conceptNameToDisplay);
+                observation.groupMembers.forEach(member => {
+                    if(member.value.name.endsWith('_Yes')){
+                        groupMembersWithYes.push(member.conceptNameToDisplay);
                     }
-                    index += 1;
-                });
+                })
+                
                 if(groupMembersWithYes.length > 0){
                     $scope.section.visitDomId.push(apiVisits);
                     $scope.section.visitDateTime.push(observation.observationDateTime);
