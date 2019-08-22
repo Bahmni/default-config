@@ -16,7 +16,7 @@
   "HOME_DASHBOARD_KEY":"Home Dashboard",
   "DASHBOARD_DIAGNOSES_KEY":"Diagnoses",
   "DASHBOARD_SURGICAL_PROCEDURES_KEY":"Surgical Procedures",
-  "DASHBOARD_VITAL_FORM_KEY":"Vital form",
+  "DASHBOARD_VITAL_FORM_KEY":"Vital Form",
   "ALL_KEY":"All",
 
   "DASHBOARD_TITLE_VITALS_KEY":"Vitals",
@@ -38,6 +38,9 @@
   "DASHBOARD_COMPLICATIONS_KEY":"Complications Note",
   "DASHBOARD_OBSERVATIONS_SHEET_KEY": "Observations Sheet",
   "DASHBOARD_CONSULTATION_NOTE_KEY": "Consultation Note",
+  "DASHBOARD_ANESTHESIA_INITIALE_DISPLAYCONTROL_KEY": "Aneshesie Initiales Form",
+  "DASHBOARD_ANESTHESIA_DE_SUIVI_DISPLAYCONTROL_KEY": "Anesthesie Consultation de suiv Form",
+  "DASHBOARD_ANESTHESIA_POST_OPERATOIRE_DISPLAYCONTROL_KEY": "Anesthesia Post Operatoire Form",
   "LOST_KEY": "Lost",
   "ISOLATION_KEY": "Isolation",
   "STRICT_ISOLATION_KEY": "Strict Isolation",
