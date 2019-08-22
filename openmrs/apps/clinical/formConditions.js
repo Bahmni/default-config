@@ -114,15 +114,16 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
-    "Were ARVS Received , In Clinical Milestones" : function (formName , formFieldValues){
-        var arvsreceived = formFieldValues["Were ARVS Received , In Clinical Milestones"];
+    "Were ARVS Received?" : function (formName , formFieldValues){
+        var arvsreceived = formFieldValues["Were ARVS Received?"];
         if(arvsreceived == true){
             return{
-                show: ["ARVs Received in" , "Place Received ART", "Other (Place specify)"]
+                show: ["ARVs Received in" , "Place Received ART", "Other (Place specify)","ANC, ART Start Date","ART ,Stop Date"]      
             }
         }else {
             return{
-                hide: ["ARVs Received in", "Place Received ART" , "Other (Place specify)"]
+                hide: ["ARVs Received in", "Place Received ART" , "Other (Place specify)","ANC, ART Start Date","ART ,Stop Date"]
+            
             }
         }    
     },   
@@ -441,6 +442,44 @@ Bahmni.ConceptSet.FormConditions.rules = {
         } else {
             return {
                 hide: ["HEI Treatment - Enrolled AT ART Date"]
+            }
+        }
+    },
+    "Place Received ART": function (formName, formFieldValues) {
+        var placeartreceived = formFieldValues["Place Received ART"];
+        if (placeartreceived === "Other Answer") {
+            return {
+                show: ["Other (Place specify)"]
+            }
+        } else {
+            return {
+                hide: ["Other (Place specify)"]
+            }
+        }
+    },
+    "Is Patient on CTX or Dapose?": function (formName, formFieldValues) {
+        var patientondapose = formFieldValues["Is Patient on CTX or Dapose?"];
+        if (patientondapose == true) {
+            return {
+                show: ["CTX or Dapose Start Date"]
+            }
+        } else {
+            return {
+                hide: ["CTX or Dapose Start Date"]
+            }
+        }
+    },
+    "FP Pregnant": function (formName, formFieldValues) {
+        var patientpreg = formFieldValues["FP Pregnant"];
+        if (patientpreg == true) {
+            return {
+                show: ["EDD","PMTCT - HIV & ART Follow up"],
+                hide:["Current on FP"]
+            }
+        } else {
+            return {
+                hide: ["EDD","PMTCT - HIV & ART Follow up"],
+                show:["Current on FP"]
             }
         }
     },

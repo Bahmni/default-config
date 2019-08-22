@@ -40,13 +40,7 @@
             "program": {
                 "patientInformation": {
                     "ageLimit": 100
-                },
-                "ID_Number": {
-                    "excludeFrom": ["HIV Program","HEI Program","ART Program","PMTCT Program"]
-                },
-                "Co-morbidites": {
-                    "excludeFrom": ["HIV Program","HEI Program","ART Program","PMTCT Program"]
-                },
+                }, 
                 "Doctor": {
                     "excludeFrom": ["HIV Program","HEI Program","ART Program","PMTCT Program"]
                 },
@@ -58,16 +52,13 @@
         		"programAttributes": [
             		
             		"Doctor",
-            		"Stage"
+                    "Stage"
+                    
         		],
         		"personAttributes": [
             		"class",
             		"caste"
-        		],
-        		"additionalPatientIdentifiers": [
-           			"National ID"
-       		],
-        		"preferredIdentifier": "Id_Number"
+                ]
     	},
         "obsIgnoreList": [
             "REGISTRATION FEES",
@@ -236,7 +227,27 @@
             "HEI Treatment - Referred To ART Clinic Date":{
                 "required":true
             },
-
+            "ANC, ART Start Date":{
+                "required":true
+            },
+            "ART ,Stop Date":{
+                "required":true
+            },
+            "CTX or Dapose Start Date":{
+                "required":true
+            },
+            "Classification Of Adherence":{
+                "required":true
+            },
+            "EDD":{
+                "required":true
+            },
+            "PMTCT - HIV & ART Follow up":{
+                "required":true
+            },
+            "WHO Stage":{
+                "dropdown":true 
+            },          
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
