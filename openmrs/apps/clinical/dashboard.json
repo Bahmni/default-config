@@ -30,12 +30,17 @@
             "allergies": {
                 "translationKey":"ALLERGIES_LIST_DISPLAY_CONTROL_TITLE",
                 "type": "allergiesList",
-                "displayOrder":4
+                "displayOrder":6
+            },
+            "treatmentDate": {
+                "translationKey":"TREATMENT_START_DATE_LIST_DISPLAY_CONTROL_TITLE",
+                "type": "treatmentDate",
+                "displayOrder":2
             },
             "navigationLinksControl":{
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type":"navigationLinksControl",
-                "displayOrder":2,
+                "displayOrder":3,
                 "showLinks":[
                     "home",
                     "visit",
@@ -90,7 +95,7 @@
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":6,
+                "displayOrder":8,
                 "dashboardConfig":{
                     "conceptNames":[
                         "HEIGHT",
@@ -121,7 +126,7 @@
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":8,
+                "displayOrder":10,
                 "dashboardConfig":{
                     "showDetailsButton":true,
                     "conceptNames":[
@@ -164,7 +169,7 @@
                 "translationKey": "DASHBOARD_TITLE_WHO_STAGE",
                 "type": "vitals",
                 "isObservation": true,
-                "displayOrder": 10,
+                "displayOrder": 12,
                 "dashboardConfig": {
                     "conceptNames": [
                     "HTC, WHO Staging"
@@ -239,7 +244,7 @@
 
             "formsDisplay": {
                 "type": "forms",
-                "displayOrder": 12,
+                "displayOrder": 14,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10
