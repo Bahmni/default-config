@@ -1,0 +1,9 @@
+{
+	"artRegisterReport": {
+		"name": "ART Register Report",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artRegister.sql"
+		}
+	}
+}
