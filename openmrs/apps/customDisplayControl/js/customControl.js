@@ -278,7 +278,7 @@ angular.module('bahmni.common.displaycontrol.custom')
     $scope.isOpen = $scope.ngDialogData.isOpen;
 
     $scope.isOpen.forEach(function (value, index) { 
-        if(index == 0){
+        if(index === 0){
             value = true;
             $scope.isOpen[index] = true;
         }else{
