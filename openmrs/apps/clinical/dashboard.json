@@ -269,8 +269,8 @@
                     "conceptNames": ["Apss_Positive_prevention"],
                     "template": "<positive-prevention-dashboard section='config' patient='patient'></positive-prevention-dashboard>",
                     "numberOfVisits": 3,
-                    "visitDomId": [],
                     "visitDateTime": [],
+                    "isOpen": [],
                     "conceptsWithYes": []
                 }
             }
