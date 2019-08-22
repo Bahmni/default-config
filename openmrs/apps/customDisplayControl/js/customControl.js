@@ -251,7 +251,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                 if(groupMembersWithYes.length > 0){
                     $scope.section.visitDateTime.push(observation.observationDateTime);
                     $scope.section.conceptsWithYes.push(groupMembersWithYes);
-                    if(apiVisits == 0){
+                    if(apiVisits === 0){
                         $scope.section.isOpen.push(true);
                     }else{
                         $scope.section.isOpen.push(false);
