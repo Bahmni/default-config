@@ -224,7 +224,6 @@ angular.module('bahmni.common.displaycontrol.custom')
         var patientUuid = $scope.patient.uuid;
         var conceptNames = $scope.section.conceptNames;
         var scope = undefined;
-        var numberOfVisits = $scope.section.numberOfVisits;
         var visitUuid = undefined;
         var obsIgnoreList = undefined;
         var filterObsWithOrders = undefined;
@@ -250,9 +249,13 @@ angular.module('bahmni.common.displaycontrol.custom')
                 })
                 
                 if(groupMembersWithYes.length > 0){
-                    $scope.section.visitDomId.push(apiVisits);
                     $scope.section.visitDateTime.push(observation.observationDateTime);
                     $scope.section.conceptsWithYes.push(groupMembersWithYes);
+                    if(apiVisits === 0){
+                        $scope.section.isOpen.push(true);
+                    }else{
+                        $scope.section.isOpen.push(false);
+                    }
                     apiVisits += 1;
                 }
             });
@@ -269,8 +272,18 @@ angular.module('bahmni.common.displaycontrol.custom')
         template: '<ng-include src="contentUrl"/>'
     }
 }]).controller('PositivePreventionDetailsController', ['$scope',function ($scope) {
-    //$scope.config = $scope.ngDialogData.section ? $scope.ngDialogData.section.expandedViewConfig : {};    
     $scope.title = $scope.ngDialogData.title;
     $scope.visitsList = $scope.ngDialogData.visitDateTime;
     $scope.conceptsWithYes = $scope.ngDialogData.conceptsWithYes;
+    $scope.isOpen = $scope.ngDialogData.isOpen;
+
+    $scope.isOpen.forEach(function (value, index) { 
+        if(index === 0){
+            value = true;
+            $scope.isOpen[index] = true;
+        }else{
+            value = false;
+            $scope.isOpen[index] = false;
+        }
+    });
 }]);;
