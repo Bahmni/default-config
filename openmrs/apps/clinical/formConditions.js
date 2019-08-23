@@ -358,8 +358,22 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 show:["Substitution Regimen (2nd Line Adults)"]
             }
         }    
-    },  
-
+    }, 
+    "AntiRetroviral Treatment" : function (formName , formFieldValues, patient){
+        if(patient.age < 15){     
+            return{
+                show: ["Initial ART Regimen For Children"],
+                hide:["Initial ART Regimen (Adult)"]
+                
+            }
+        }else {
+            return{
+                hide: ["Initial ART Regimen For Children"],
+                show:["Initial ART Regimen (Adult)"]
+                
+            }
+        }    
+    }, 
     "Is there an immunization not Given?" : function (formName , formFieldValues){
         var immunizationgiven = formFieldValues["Is there an immunization not Given?"];
             if(immunizationgiven == true){ 
