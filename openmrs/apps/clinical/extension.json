@@ -150,7 +150,7 @@
       "default": true,
       "conceptName": "ART History And Clinical Milestone"
     },
-    "order": 2,
+    "order": 3,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsFamilyHistory": {
@@ -161,7 +161,7 @@
       "default": true,
       "conceptName": "HIV CARE - Family History Data"
     },
-    "order": 3,
+    "order": 2,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsInterruption": {
@@ -216,7 +216,7 @@
       "default": true,
       "conceptName": "ANC CARD FORM"
     },
-    "order": 8,
+    "order": 9,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsViralLoad": {
@@ -227,7 +227,7 @@
       "default": true,
       "conceptName": "Viral Load Lab Request Form"
     },
-    "order": 9,
+    "order": 8,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsHEIEnrollment": {
@@ -249,7 +249,7 @@
       "default": true,
       "conceptName": "Infant Clinical Follow Up Form"
     },
-    "order": 11,
+    "order": 12,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsHEITesting": {
@@ -260,7 +260,7 @@
       "default": true,
       "conceptName": "HEI TESTING INFORMATION"
     },
-    "order": 12,
+    "order": 11,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsHEIEndOfFollowup": {
@@ -282,7 +282,7 @@
       "default": true,
       "conceptName": "ART Treatment And Interruptions Form"
     },
-    "order": 14,
+    "order": 4,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
