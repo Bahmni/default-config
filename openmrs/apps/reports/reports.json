@@ -13,6 +13,13 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_New_Patients.sql"
         }
     },
+    "LTFUListReport": {
+      "name": "Lista de Abandonos",
+      "type": "MRSGeneric",
+      "config": {
+        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/TLFUPatients.sql"
+      }
+    },
     "visitReport10": {
         "name": "Visit Report",
         "type": "visits",
