@@ -1,8 +1,8 @@
 select
-   dataquery.test_name as "Test Name",
-   dataquery.test_count as "Test Count ",
-   dataquery.report_flag as "Report Flag",
-   dataquery.hf_name as "HF Name" 
+   dataquery.test_name as "Exame",
+   dataquery.test_count as "Número de exames",
+   dataquery.report_flag as "Estado",
+   dataquery.hf_name as "Unidade Sanitária" 
 from
    (
       select
@@ -18,7 +18,7 @@ from
             then
                'Health Facility' 
          end
-         as "hf_name", 'Total Requested' as "report_flag" 
+         as "hf_name", 'Total Pedidos' as "report_flag" 
       from
          patient 
          inner join
@@ -66,7 +66,7 @@ from
             then
                'Health Facility' 
          end
-         as "hf_name", 'Total Samples Collected' as "report_flag" 
+         as "hf_name", 'Total de amostras recolhidas' as "report_flag" 
       from
          patient 
          inner join
@@ -115,7 +115,7 @@ from
             then
                'Health Facility' 
          end
-         as "hf_name", 'Total Results Available' as "report_flag" 
+         as "hf_name", 'Total com resultados disponíveis' as "report_flag" 
       from
          patient 
          inner join
