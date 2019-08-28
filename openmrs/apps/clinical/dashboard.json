@@ -99,8 +99,16 @@
                     "config": {
                     "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY"
                     }
-                }
-
+                },
+                "patientMovementHistory": {
+                    "type": "custom",
+                    "displayType": "Full-Page",
+                    "displayOrder": 9,
+                    "config": {
+                        "title": "DASHBOARD_TITLE_PATIENT_MOVEMENT_HISTORY_KEY",
+                        "template": "<patient-movement-history section='section' patient='patient' visitUuid='visitUuid'></patient-movement-history>"
+            }
+          }
         }
     },
     "trends": {
