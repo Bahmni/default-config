@@ -72,20 +72,26 @@
                     "showDetailsButton":true
                 }
             },
-
-            "labResults":{
+            "labResults": {
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
-                "type":"labOrders",
+                "type":"custom",
                 "displayOrder":1,
-                "dashboardConfig":{
-                    "title":null,
+                "config":{
+                    "title": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                    "template": "<lab-results-dashboard section='config' patient='patient'></lab-results-dashboard>",
                     "numberOfVisits":3,
-                    "showChart":false,
+                    "params": [],
+                    "showChart":true,
                     "showTable":true,
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
-                    "showDetailsButton":false
+                    "showDetailsButton":false,
+                    "visitDateTime": [],
+                    "isOpen": [],
+                    "accessions": [],
+                    "labAccessions": [],
+                    "tabular": []
                 },
                 "expandedViewConfig":{
                     "numberOfVisits":10
