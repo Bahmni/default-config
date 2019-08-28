@@ -224,30 +224,40 @@ angular.module('bahmni.common.displaycontrol.custom')
         var patientUuid = $scope.patient.uuid;
         var conceptNames = $scope.section.conceptNames;
         var scope = undefined;
-        var numberOfVisits = $scope.section.numberOfVisits;
         var visitUuid = undefined;
         var obsIgnoreList = undefined;
         var filterObsWithOrders = undefined;
         var patientProgramUuid = undefined;
 
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/positivePreventionDashboard.html";
-        spinner.forPromise(observationsService.fetch(patientUuid, conceptNames, scope, numberOfVisits, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid).then(function (response) {
-            var countObservationsForDomId = -1;
+        spinner.forPromise(observationsService.fetch(patientUuid, conceptNames, scope, 0, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid).then(function (response) {
+            var apiVisits = 0;
+            
             $scope.observations = response.data;
+            if($scope.section.conceptsWithYes.length > 0){
+                $scope.section.visitDomId = [];
+                $scope.section.visitDateTime = [];
+                $scope.section.conceptsWithYes = [];
+            }
             $scope.observations.forEach(observation => {
-                var index = 0;
-                var observationValues = observation.value.split(',');
-                var groupMembers = [];
-                countObservationsForDomId += 1;
-                observationValues.forEach(value => {
-                    if(value.endsWith('_Yes')){
-                        groupMembers.push(observation.groupMembers[index].conceptNameToDisplay);
+                var groupMembersWithYes = [];
+
+                observation.groupMembers.forEach(member => {
+                    if(member.value.name.endsWith('_Yes')){
+                        groupMembersWithYes.push(member.conceptNameToDisplay);
                     }
-                    index += 1;
-                });
-                $scope.section.visitDomId.push(countObservationsForDomId);
-                $scope.section.visitDateTime.push(observation.observationDateTime);
-                $scope.section.conceptsWithYes.push(groupMembers);
+                })
+                
+                if(groupMembersWithYes.length > 0){
+                    $scope.section.visitDateTime.push(observation.observationDateTime);
+                    $scope.section.conceptsWithYes.push(groupMembersWithYes);
+                    if(apiVisits === 0){
+                        $scope.section.isOpen.push(true);
+                    }else{
+                        $scope.section.isOpen.push(false);
+                    }
+                    apiVisits += 1;
+                }
             });
         }));
     };
@@ -261,4 +271,95 @@ angular.module('bahmni.common.displaycontrol.custom')
         },
         template: '<ng-include src="contentUrl"/>'
     }
-}]);
+}]).controller('PositivePreventionDetailsController', ['$scope',function ($scope) {
+    $scope.title = $scope.ngDialogData.title;
+    $scope.visitsList = $scope.ngDialogData.visitDateTime;
+    $scope.conceptsWithYes = $scope.ngDialogData.conceptsWithYes;
+    $scope.isOpen = $scope.ngDialogData.isOpen;
+
+    $scope.isOpen.forEach(function (value, index) { 
+        if(index === 0){
+            value = true;
+            $scope.isOpen[index] = true;
+        }else{
+            value = false;
+            $scope.isOpen[index] = false;
+        }
+    });
+}]).directive('labResultsDashboard', ['labOrderResultService', 'appService', 'spinner', function (labOrderResultService, appService, spinner) {
+    var link = function ($scope) {
+        $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/labResultsDashboard.html";
+
+        var defaultParams = {
+            showTable: true,
+            showChart: true,
+            numberOfVisits: 0
+        };
+
+        $scope.params = angular.extend(defaultParams, $scope.params);
+        $scope.section.params = angular.extend(defaultParams, $scope.params);
+
+        var params = {
+            patientUuid: $scope.patient.uuid,
+            numberOfVisits: defaultParams.numberOfVisits,
+            visitUuids: $scope.params.visitUuids,
+            initialAccessionCount: $scope.params.initialAccessionCount,
+            latestAccessionCount: $scope.params.latestAccessionCount
+        };
+
+        var apiVisits = 0;
+
+        if($scope.section.accessions.length > 0){
+            $scope.section.visitDateTime = [];
+            $scope.section.accessions = [];
+        }
+
+        spinner.forPromise(labOrderResultService.getAllForPatient(params).then(function (results) {
+            $scope.section.labAccessions = results.labAccessions;
+            $scope.section.tabular = results.tabular;
+
+            results.labAccessions.forEach(accessionsByDate => {
+                var accessionDateLevel = [];
+                accessionsByDate.forEach(accession => {
+                    accessionDateLevel.push(accession.orderName);
+                });
+
+                if(accessionDateLevel.length > 0){
+                    $scope.section.visitDateTime.push(accessionsByDate[0].accessionDateTime);
+                    $scope.section.accessions.push(accessionDateLevel);
+                    if(apiVisits === 0){
+                        $scope.section.isOpen.push(true);
+                    }else{
+                        $scope.section.isOpen.push(false);
+                    }
+                    apiVisits += 1;
+                }
+            });
+            
+        }));
+    };
+
+    return {
+        restrict: 'E',
+        link: link,
+        scope: {
+            patient: "=",
+            section: "="
+        },
+        template: '<ng-include src="contentUrl"/>'
+    }
+}]).controller('LabResultsDashboardController', ['$scope',function ($scope) {
+    var accessionConfig = {
+        initialAccessionCount: undefined,
+        latestAccessionCount: undefined
+    };
+
+    $scope.tabular = new Bahmni.Clinical.TabularLabOrderResults($scope.ngDialogData.tabular.tabularResult, accessionConfig);
+    $scope.title = $scope.ngDialogData.title;
+    $scope.showChart = $scope.ngDialogData.showChart;
+    $scope.showTable = $scope.ngDialogData.showTable;
+    $scope.visitsList = $scope.ngDialogData.visitDateTime;
+    $scope.accessions = $scope.ngDialogData.accessions;
+    $scope.labAccessions = $scope.ngDialogData.labAccessions;
+    $scope.params = $scope.ngDialogData.params;
+}])

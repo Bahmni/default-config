@@ -553,9 +553,16 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
                     show: ["CONFIDENT_AGE_TYPE"]
                 }
             }
+        } else if( ageVal === 0) {
+            return {
+                hide: ["CONFIDENT_CCR"],
+                disable: ["CONFIDENT_AGE_TYPE"],
+                error: "Introduza Idade maior que zero"
+            }
         } else {
             return {
-                hide: ["CONFIDENT_CCR"]
+                hide: ["CONFIDENT_CCR"],
+                disable: ["CONFIDENT_AGE_TYPE"]
             }
         }
     }

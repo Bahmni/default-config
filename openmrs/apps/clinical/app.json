@@ -276,10 +276,12 @@
               "disableAddNotes": true
             },
             "End Date_CTZ": {
-                "disableAddNotes": true
+              "allowFutureDates":true,
+              "disableAddNotes": true
             },
             "End Date_Fluconazol": {
-                "disableAddNotes": true
+              "allowFutureDates":true,
+              "disableAddNotes": true
             },
             "Infants Odema_Prophylaxis": {
                 "disableAddNotes": true
