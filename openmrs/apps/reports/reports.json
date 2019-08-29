@@ -18,7 +18,15 @@
       "type": "MRSGeneric",
       "config": {
         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/TLFUPatients.sql"
-       }
+      }
+    },
+    "openelis": {
+        "name": " Lista de exames laboratoriais",
+        "type": "ElisGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/list_of_laboratory_requests.sql",
+            "macroTemplatePath": "/var/www/bahmni_config/openmrs/apps/reports/template/template.xls"
+        }
     },
     "laboratoryrequestswithoutsample": {
         "name": "Lista de Pacientes com pedidos de exames laboratoriais sem colheita de amostra",
