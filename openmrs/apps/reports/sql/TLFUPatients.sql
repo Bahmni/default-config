@@ -28,7 +28,7 @@ JOIN
           pss.patient_status,
           pss.date_created
       FROM patient_status_state pss
-      WHERE pss.patient_state='ABANDONED') patient_state ON patient_state.patient_id = p.person_id
+      WHERE pss.patient_state='ABANDONED' ORDER BY pss.date_created DESC LIMIT 1) patient_state ON patient_state.patient_id = p.person_id
 LEFT JOIN
   (SELECT eo.patient_id,
           eo.dispensed,
@@ -41,5 +41,6 @@ LEFT JOIN
       FROM orders o
       WHERE o.order_id NOT  IN
                         (SELECT order_id
-                          FROM erpdrug_order WHERE erpdrug_order.patient_id = o.patient_id)) missed_pickup ON missed_pickup.patient_id = p.person_id
+                          FROM erpdrug_order WHERE erpdrug_order.patient_id = o.patient_id)) missed_pickup
+                          ON missed_pickup.patient_id = p.person_id AND missed_pickup.date_created < patient_state.date_created
 WHERE cast(patient_state.date_created AS date) BETWEEN '#startDate#' AND '#endDate#';
