@@ -7,7 +7,6 @@ SELECT DISTINCT
        contact.contact AS Contact,
        concat (pa.state_province, ',', pa.city_village) AS Address,
        Concat(IFNULL(patient_state.patient_status, ''),' - ', IFNULL(patient_state.patient_state,'')) AS 'Patient State',
-       o.order_type_id,
        DATE(eod.dispenseddate) AS 'Last Drug Pick Up',
        DATE(missed_pickup.date_created) AS 'Last Missed Drug Pickup'
 FROM orders o
