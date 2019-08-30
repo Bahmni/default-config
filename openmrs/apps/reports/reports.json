@@ -1,6 +1,7 @@
 {
     "patient": {
         "name":  "Lista de Pacientes com pedidos de exames laboratoriais sem resultados",
+        "titleKey" : "PATIENTS_REQUESTS_NO_RESULTS",
         "type": "ElisGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/sample.sql"
@@ -8,6 +9,7 @@
     },
     "patientlist": {
         "name": "Lista de novos pacientes",
+        "titleKey" : "NEW_PATIENTS_LIST",
         "type": "MRSGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_New_Patients.sql"
@@ -15,6 +17,7 @@
     },
     "openelis": {
         "name": " Lista de exames laboratoriais",
+        "titleKey" : "LAB_REQUESTS_LIST",
         "type": "ElisGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/list_of_laboratory_requests.sql",
@@ -23,6 +26,7 @@
     },
     "laboratoryrequestswithoutsample": {
         "name": "Lista de Pacientes com pedidos de exames laboratoriais sem colheita de amostra",
+        "titleKey": "PATIENTS_WITHOUT_SAMPLES",
         "type": "ElisGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/laboratory_requests_without_sample.sql"
@@ -30,6 +34,7 @@
     },
     "visitReport10": {
         "name": "Visit Report",
+        "titleKey" : "VISIT_REPORT",
         "type": "visits",
         "config": {
             "forDataAnalysis": true,
@@ -57,6 +62,7 @@
     },
     "testReport": {
         "name": "Test Observation Report",
+        "titleKey" : "TEST_OBSERVATION_REPORT",
         "type": "observations",
         "config": {
             "patientAttributes": [
@@ -123,6 +129,7 @@
     },
     "formBuilderReport":{
         "name": "Form builder form Report",
+        "titleKey" : "FORM_BUILDER_REPORT",
         "type": "formBuilder",
         "config": {
             "patientAttributes": [
@@ -150,6 +157,7 @@
     },
     "chiefComplaintReport": {
         "name": "Chief Complaint Report",
+        "titleKey" : "CHIEF_COMPLAINT_REPORT",
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",
@@ -165,6 +173,7 @@
     },
     "inpatientMorbidity": {
         "name": "Inpatient Morbidity",
+        "titleKey" : "INPATIENT_MORBIDITY",
         "type": "diagnosisCount",
         "config": {
             "visitTypes": [
@@ -174,6 +183,7 @@
     },
     "outpatientMorbidity": {
         "name": "Outpatient Morbidity",
+        "titleKey" : "OUTPATIENT_MORBIDITY",
         "type": "diagnosisCount",
         "config": {
             "visitTypes": [
@@ -183,10 +193,12 @@
     },
     "laboratoryServices": {
         "name": "Laboratory Services",
+        "titleKey" : "LAB_SERVICES",
         "type": "TestCount"
     },
     "genericLaboratoryServices": {
         "name": "Generic Laboratory Services",
+        "titleKey" : "GENERIC_LAB_SERVICES",
         "type": "ElisGeneric",
         "config": {
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
@@ -194,6 +206,7 @@
     },
     "bloodPressure": {
         "name": "Blood Pressure",
+        "titleKey" : "BLOOD_PRESSURE",
         "type": "obsCount",
         "config": {
             "ageGroupName": "All Ages",

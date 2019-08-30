@@ -1,0 +1,15 @@
+{
+  "PATIENTS_WITHOUT_SAMPLES" : "List of patients who have laboratory requests without samples",
+  "NEW_PATIENTS_LIST" : "List of New Patients",
+  "LAB_REQUESTS_LIST" : "List of laboratory requests",
+  "PATIENTS_REQUESTS_NO_RESULTS" : "List of patients who have laboratory requests without results",
+  "VISIT_REPORT" : "Visit Report",
+  "TEST_OBSERVATION_REPORT" : "Test Observation Report ",
+  "FORM_BUILDER_REPORT" : "Form builder form Report ",
+  "CHIEF_COMPLAINT_REPORT" : "Chief Complaint Report",
+  "INPATIENT_MORBIDITY" : "Inpatient Morbidity ",
+  "OUTPATIENT_MORBIDITY" : "Outpatient Morbidity",
+  "LAB_SERVICES" : "Laboratory Services",
+  "GENERIC_LAB_SERVICES" : "Generic Laboratory Services",
+  "BLOOD_PRESSURE" : "Blood Pressure"
+}

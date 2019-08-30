@@ -1,0 +1,16 @@
+{
+  "PATIENTS_WITHOUT_SAMPLES" : "Lista de Pacientes com pedidos de exames laboratoriais sem colheita de amostra",
+  "NEW_PATIENTS_LIST" : "Lista de novos pacientes",
+  "LAB_REQUESTS_LIST" : "Lista de exames laboratoriais",
+  "PATIENTS_REQUESTS_NO_RESULTS" : "Lista de Pacientes com pedidos de exames laboratoriais sem resultados",
+  "VISIT_REPORT" : "Relatório de Visitas",
+  "TEST_OBSERVATION_REPORT" : "Relatório de testes de observação",
+  "FORM_BUILDER_REPORT" : "Relatório de Formulário Modelo",
+  "CHIEF_COMPLAINT_REPORT" : "Relatório de Principais queixas",
+  "INPATIENT_MORBIDITY" : "Morbidade hospitalar",
+  "OUTPATIENT_MORBIDITY" : "Morbidade Ambulatorial",
+  "LAB_SERVICES" : "Serviços Laboratoriais",
+  "GENERIC_LAB_SERVICES" : "Serviços Gerais Laboratoriais",
+  "BLOOD_PRESSURE" : "Pressão Sanguínea"
+
+}
