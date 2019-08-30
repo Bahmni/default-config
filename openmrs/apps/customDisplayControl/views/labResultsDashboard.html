@@ -1,26 +1,45 @@
 <section class="app-dashboard-integration">
     <h2 class="section-title has-link"
         ng-dialog="../common/displaycontrols/observation/views/labResultsDashboardDialog.html"
-        ng-dialog-controller="LabResultsDashboardController"
-        ng-dialog-data="{{section}}"
+        ng-dialog-controller="LabResultsDashboardController" ng-dialog-data="{{section}}"
         ng-dialog-class="ngdialog-theme-default ng-dialog-all-details-page">
         <span style="border-bottom: 1px solid white;">{{ section.title | titleTranslate}}</span>
         <i class="fa fa-external-link"></i>
     </h2>
-    <ul style="font-size: 14px;color: #000000">
-        <li ng-repeat="dateTime in section.visitDateTime | limitTo: section.numberOfVisits" style="background-color:#ddd;">
-            <span class="tree-list-item row-click toggle-container ng-scope ng-isolate-scope active" toggle="section.isOpen[$index]">
-                <i ng-class="section.isOpen[$index] ? 'fa fa-caret-down' : 'fa fa-caret-right'"></i>
-                <span class="obs-date">
-                    {{dateTime | bahmniDateTime}}
-                </span>
-            </span>
-            <div ng-if="section.isOpen[$index] == true">
-                <div ng-repeat="accession in section.accessions[$index] track by $index" class="print-observations hidden-print" style="background-color:#fff;margin-bottom:1px;padding-left:20px;padding-top:4px;padding-bottom:4px">
-                    {{accession | translate}}
+    <div>
+        <p class="placeholder-text" ng-if="!hasLabOrders()">{{ ::params.noLabOrdersMessage  | translate }}</p>
+        <ul ng-if="hasLabOrders()">
+            <li ng-repeat="labOrderResults in section.accessions" bindonce="section.accessions">
+                <div class="laborder-sub-heading toggle-container" toggle="labOrderResults.isOpen">
+                    <i class="fa fa-caret-right"></i>
+                    <i class="fa fa-caret-down"></i>
+                    <span class="hidden-print">{{ 'ACCESSION_AT_LABEL'|translate }} </span>
+                    <span class="visible-print">{{ 'SAMPLE_AT_LABEL'|translate }} </span>
+                    <span bo-text="getAccessionDetailsFrom(labOrderResults).accessionDateTime | bahmniDateTime"></span>
+                    <button class="toggle-btn fr" ng-if="showAccessionNotes(labOrderResults)"
+                        ng-click="toggle(labOrderResults)">
+                        <i class="fa fa-envelope" ng-hide="!labOrders.show"></i>
+                        <i class="fa fa-envelope-alt" ng-show="!labOrders.show"></i>
+                        {{ 'NOTES_LABEL'|translate }}
+                    </button>
                 </div>
-            </div>
-        </li>
-    </ul>
-
+                <div bm-show="labOrderResults.show">
+                    <div class="notes inline-notes" ng-if="getAccessionDetailsFrom(labOrderResults).accessionNotes">
+                        <div ng-repeat="accessionNote in getAccessionDetailsFrom(labOrderResults).accessionNotes"
+                            class="accession">
+                            <pre class="left">{{::accessionNote.text}}</pre>
+                            <div class="footer-note fr">
+                                <span class="provider" bo-text="accessionNote.providerName"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table bm-show="labOrderResults.isOpen">
+                    <tbody investigation-table-row test="::labOrderResult" params="::params"
+                        ng-repeat="labOrderResult in labOrderResults" ng-show="::shouldShowResults(labOrderResult)">
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+    </div>
 </section>

@@ -291,9 +291,23 @@ angular.module('bahmni.common.displaycontrol.custom')
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/labResultsDashboard.html";
 
         var defaultParams = {
-            showTable: true,
-            showChart: true,
-            numberOfVisits: 0
+            noLabOrdersMessage: "NO_LAB_ORDERS_FOR_PATIENT_MESSAGE_KEY",
+            showNormalLabResults: true,
+            showAccessionNotes: true,
+            title: "Lab Investigations",
+            translationKey: "LAB_INVESTIGATIONS_KEY"
+        },
+        hasAbnormalTests = function (labOrderResult) {
+            if (labOrderResult.isPanel) {
+                var hasAbnormal = false;
+                labOrderResult.tests.forEach(function (test) {
+                    if (test.abnormal) {
+                        hasAbnormal = true;
+                    }
+                });
+                return hasAbnormal;
+            }
+            return labOrderResult.abnormal;
         };
 
         $scope.params = angular.extend(defaultParams, $scope.params);
@@ -307,36 +321,48 @@ angular.module('bahmni.common.displaycontrol.custom')
             latestAccessionCount: $scope.params.latestAccessionCount
         };
 
-        var apiVisits = 0;
-
         if($scope.section.accessions.length > 0){
             $scope.section.visitDateTime = [];
             $scope.section.accessions = [];
         }
 
         spinner.forPromise(labOrderResultService.getAllForPatient(params).then(function (results) {
+            $scope.section.accessions = [];
             $scope.section.labAccessions = results.labAccessions;
             $scope.section.tabular = results.tabular;
 
-            results.labAccessions.forEach(accessionsByDate => {
-                var accessionDateLevel = [];
-                accessionsByDate.forEach(accession => {
-                    accessionDateLevel.push(accession.orderName);
-                });
-
-                if(accessionDateLevel.length > 0){
-                    $scope.section.visitDateTime.push(accessionsByDate[0].accessionDateTime);
-                    $scope.section.accessions.push(accessionDateLevel);
-                    if(apiVisits === 0){
-                        $scope.section.isOpen.push(true);
-                    }else{
-                        $scope.section.isOpen.push(false);
-                    }
-                    apiVisits += 1;
-                }
-            });
-            
+            results.labAccessions[0].isOpen = true;
+            for(let i=0; i < $scope.section.numberOfVisits; i++){
+                $scope.section.accessions.push(results.labAccessions[i]);
+            }
         }));
+
+        $scope.hasLabOrders = function () {
+            if ($scope.section.accessions && $scope.section.accessions.length > 0) return true;
+            return $scope.$emit("no-data-present-event") && false;
+        };
+
+        $scope.getAccessionDetailsFrom = function (labOrderResults) {
+            var labResultLine = labOrderResults[0].isPanel ? labOrderResults[0].tests[0] : labOrderResults[0];
+            return {
+                accessionUuid: labResultLine.accessionUuid,
+                accessionDateTime: labResultLine.accessionDateTime,
+                accessionNotes: labResultLine.accessionNotes
+            };
+        };
+
+        $scope.showAccessionNotes = function (labOrderResults) {
+            return $scope.getAccessionDetailsFrom(labOrderResults).accessionNotes && $scope.params.showAccessionNotes;
+        };
+
+        $scope.toggle = function (item) {
+            event.stopPropagation();
+            item.show = !item.show;
+        };
+
+        $scope.shouldShowResults = function (labOrderResult) {
+            return $scope.params.showNormalLabResults || hasAbnormalTests(labOrderResult);
+        };
     };
 
     return {
