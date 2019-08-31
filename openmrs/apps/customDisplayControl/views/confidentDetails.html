@@ -1,0 +1,27 @@
+<section class="app-dashboard-integration">
+    <h2 class="section-title has-link"
+        ng-dialog="../common/displaycontrols/observation/views/confidentDetailsDialog.html"
+        ng-dialog-controller="ConfidentDetailsController"
+        ng-dialog-data="{{section}}"
+        ng-dialog-class="ngdialog-theme-default ng-dialog-all-details-page">
+        <span style="border-bottom: 1px solid white;">{{ section.title | titleTranslate}}</span>
+        <i class="fa fa-external-link"></i>
+    </h2>
+    <p ng-if="section.visitDateTime.length === 0" style="background-color:#ffffff;color:#444444;padding:5px">{{::'NO_CONFIDENT_DETAILS' | translate}} </p>
+    <ul style="font-size: 14px;color: #000000">
+        <li ng-repeat="dateTime in section.visitDateTime | limitTo: section.numberOfVisits" style="background-color:#ddd;">
+            <span class="tree-list-item row-click toggle-container ng-scope ng-isolate-scope active" id="visit{{section.visitDomId[$index]}}" toggle="section.isOpen[$index]">
+                <i ng-class="section.isOpen[$index] ? 'fa fa-caret-down' : 'fa fa-caret-right'"></i>
+                <span class="obs-date">
+                    {{dateTime | bahmniDateTime}}
+                </span>
+            </span>
+            <div ng-if="section.isOpen[$index] == true">
+                <div ng-repeat="concept in section.conceptsWithYes[$index] track by $index" class="print-observations hidden-print" style="background-color:#fff;margin-bottom:1px;padding-left:20px;padding-top:4px;padding-bottom:4px">
+                    {{concept}}
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</section>

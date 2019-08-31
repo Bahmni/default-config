@@ -95,5 +95,7 @@
   "Scheduled":"Agendada",
   "Cancelled":"Cancelar",
   "CheckedIn":"Introduza um horário de entrada válido.",
-  "Group_VIII_Family_Planning_obs_form": "Planeamento Familiar"
+  "Group_VIII_Family_Planning_obs_form": "Planeamento Familiar",
+  "DASHBOARD_CONFIDENT_DETAILS_KEY": "Detalhes do confidente",
+  "NO_CONFIDENT_DETAILS": "Detalhes do confidente não disponiveis"
 }

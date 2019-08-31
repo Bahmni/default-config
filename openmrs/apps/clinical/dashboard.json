@@ -272,6 +272,19 @@
                     "isOpen": [],
                     "conceptsWithYes": []
                 }
+            },
+            "confidentDetails": {
+                "type": "custom",
+                "displayOrder": 4,
+                "config": {
+                    "title": "DASHBOARD_CONFIDENT_DETAILS_KEY",
+                    "conceptNames": ["CONFIDENT_DETAILS"],
+                    "template": "<confident-details section='config' patient='patient'></confident-details>",
+                    "numberOfVisits": 3,
+                    "visitDateTime": [],
+                    "isOpen": [],
+                    "conceptsWithYes": []
+                }
             }
         }
     },
