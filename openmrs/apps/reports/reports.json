@@ -1,4 +1,11 @@
 {
+    "listOfDefaulters": {
+        "name": "Lista de Pacientes que Faltaram a Consulta Clinica",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_Patients_Missed_Scheduled_Clinical_Appointment.sql"
+        }
+    },
     "patient": {
         "name":  "Lista de Pacientes com pedidos de exames laboratoriais sem resultados",
         "titleKey" : "PATIENTS_REQUESTS_NO_RESULTS",
