@@ -16,7 +16,7 @@ from
             when
                organization.name is NULL 
             then
-               'Health Facility' 
+               'Unidade Sanitária'
          end
          as "hf_name", 'Total Pedidos' as "report_flag" 
       from
@@ -64,7 +64,7 @@ from
             when
                organization.name is NULL 
             then
-               'Health Facility' 
+               'Unidade Sanitária'
          end
          as "hf_name", 'Total de amostras recolhidas' as "report_flag" 
       from
@@ -113,7 +113,7 @@ from
             when
                organization.name is NULL 
             then
-               'Health Facility' 
+               'Unidade Sanitária'
          end
          as "hf_name", 'Total com resultados disponíveis' as "report_flag" 
       from
