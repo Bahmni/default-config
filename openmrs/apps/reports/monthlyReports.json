@@ -5,5 +5,12 @@
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artRegister.sql"
 		}
+	},
+	"artDispensingReport": {
+		"name": "ART Dispensing Report",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artDispensingReport.sql"
+		}
 	}
 }
