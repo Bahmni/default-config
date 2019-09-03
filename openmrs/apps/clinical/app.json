@@ -247,7 +247,10 @@
             },
             "WHO Stage":{
                 "dropdown":true 
-            },          
+            }, 
+            "Medical History":{
+                "multiSelect" : true
+            },         
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
