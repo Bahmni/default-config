@@ -82,12 +82,6 @@
                     "showDetailsButton":true
                 }
             },
-            "radiology":{  
-                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
-                "type":"radiology",
-                "showDetailsButton":true,
-                "displayOrder":5
-            },
             "programs":{  
                 "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
                 "type":"programs",
@@ -102,16 +96,6 @@
                     "conceptNames":[  
                         "Summary"
                     ],
-                    "numberOfVisits":4
-                }
-            },
-            "pacs":{  
-                "orderType":"Radiology Order",
-                "type":"pacsOrders",
-                "translationKey":"DASHBOARD_TITLE_PACS_KEY",
-                "displayOrder":8,
-                "dashboardConfig":{  
-                    "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
                     "numberOfVisits":4
                 }
             },
@@ -137,17 +121,6 @@
                         "Temperature"
                     ],
                     "showDetailsButton":true
-                }
-            },
-            "bacteriologyResults":{  
-                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "type":"bacteriologyResultsControl",
-                "scope":"All",
-                "orderType":"",
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "BACTERIOLOGY CONCEPT SET"
-                    ]
                 }
             },
             "labResults":{  
@@ -278,52 +251,6 @@
                     }
                 }
             },
-            "gynaecology":{  
-                "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
-                "type":"gynaecology",
-                "isObservation":true,
-                "displayOrder":15,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "showDetailsButton":true,
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "obstetrics":{  
-                "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
-                "type":"obstetrics",
-                "isObservation":true,
-                "displayOrder":16,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
@@ -333,51 +260,6 @@
                     "maximumNoOfVisits":8,
                     "groupByVisits":true
                 }
-            },
-            "diabetes":{  
-                "title":"Diabetes",
-                "templateName":"Diabetes Templates",
-                "type":"diseaseTemplate",
-                "displayOrder":18,
-                "dashboardConfig":{  
-                    "showOnly":[  
-
-                    ]
-                },
-                "expandedViewConfig":{  
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-                        "numberOfVisits":"15",
-                        "groupBy":"encounters",
-                        "obsConcepts":[  
-                            "Weight",
-                            "Height",
-                            "Systolic",
-                            "Diastolic",
-                            "Diabetes, Foot Exam",
-                            "Diabetes, Eye Exam"
-                        ],
-                        "drugConcepts":[  
-                            "Ipratropium Pressurised",
-                            "Garbhpal Rasa"
-                        ],
-                        "labConcepts":[  
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Albumin",
-                            "Polymorph"
-                        ]
-                    }
-                }
-            },
-            "admissionDetails":{  
-                "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
-                "type":"admissionDetails",
-                "displayOrder":19,
-                "showDetailsButton":true
             },
             "conditions": {
                 "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
@@ -534,23 +416,6 @@
         "translationKey":"DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
         "maxRecentlyViewedPatients":10,
         "sections":{  
-            "Bacteriology Concept Set":{  
-                "displayType":"Full-Page",
-                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "type":"obsToObsFlowSheet",
-                "dashboardConfig":{  
-                    "numberOfVisits":1,
-                    "templateName":"BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept":"Specimen Collection Date",
-                    "conceptNames":[  
-                        "Specimen Id"
-                    ]
-                },
-                "expandedViewConfig":{  
-                    "templateName":"BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept":"Specimen Collection Date"
-                }
-            },
             "HistoryAndExamination":{  
                 "type":"historyAndExamination",
                 "isObservation":true,

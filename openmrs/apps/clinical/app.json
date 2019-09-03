@@ -40,31 +40,25 @@
             "program": {
                 "patientInformation": {
                     "ageLimit": 100
-                },
-                "ID_Number": {
-                    "required" : true
-                },
-                "Co-morbidites": {
-                    "excludeFrom": ["HIV Program"]
-                },
+                }, 
                 "Doctor": {
-                    "excludeFrom": ["TB Program"]
+                    "excludeFrom": ["HIV Program","HEI Program","ART Program","PMTCT Program"]
+                },
+                "Stage":{
+                    "excludeFrom": ["HEI Program","PMTCT Program"]
                 }
             },
             "patientContext": {
         		"programAttributes": [
-            		"Id_Number",
+            		
             		"Doctor",
-            		"Stage"
+                    "Stage"
+                    
         		],
         		"personAttributes": [
             		"class",
             		"caste"
-        		],
-        		"additionalPatientIdentifiers": [
-           			"National ID"
-       		],
-        		"preferredIdentifier": "Id_Number"
+                ]
     	},
         "obsIgnoreList": [
             "REGISTRATION FEES",
@@ -115,7 +109,7 @@
             },
             "Set2": {
                 "allowAddMore": true
-            },
+			},
             "Coded3": {
                 "multiSelect": true
             },
@@ -123,11 +117,140 @@
                 "allowAddMore": true
             },
             "Gynaecology, Gravida": {
-                "stepper": true
+                "stepper": true      
             },
+            "Consultation Images": {
+                "allowAddMore": true      
+            },
+            "General Family Information": {
+                "allowAddMore": true
+            },
+			"ART Regimen - Substitution within 1st Line": {
+                "allowAddMore": true
+            },			
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "Other Entry Point":{
+                 "required":true
+            },
+            "Other - Occupation":{
+                "required":true
+            },
+            "HIV - Entry Point":{
+                 "required":true
+            },
+            "Name of Clinic":{
+                 "required":true
+            },
+            "Date Transferred in":{
+                 "required":true
+            },
+            "Literate":{
+                 "required":true
+            },
+            "Education Level":{
+                "required":true
+            },
+            "HIV Care - Alcohol Intake":{
+                "required":true
+            },
+            "Drug Allergies":{
+                 "required":true
+            },
+            "HIV Care -Drug Allergies Notes":{
+                 "required":true
+            },
+            "ARVs Received in":{
+                "required":true
+            },
+            "Place Received ART":{
+                "required":true
+            },
+            "Other (Place specify)":{
+                 "required":true
+            },
+            "Were ARVS Received , In Clinical Milestones":{
+                 "required":true
+            },
+            "ART Follow up - Scheduled Date":{
+                  "required":true
+            },
+            "FP Method":{
+                   "required":true
+            },
+            "Number of Days Hospitalized":{
+                  "required":true
+            },
+            "Child Regimen Information":{
+                   "allowAddMore": true
+            },
+            "ART Regimen(Switch to 2nd Line)":{
+                    "allowAddMore": true
+            },
+            "Reason":{
+                   "required":true
+            },
+            "Specify Reason For Art Stop":{
+                "required":true
+            },
+            "Other Reason":{
+                "required":true
+            },
+            "Other Reason(Second Regimen Change)":{
+                "required":true
+            },
+            "Regimen Switched To":{
+                "required":true
+            },
+            "ART Treatment Reasons For Stop":{
+                "required":true
+            },
+            "Other Reason(First Line Regimen Change)":{
+                "required":true 
+            },
+            "Immunization Not Given":{
+                "required":true
+            },
+            "Specify other Assessement":{
+                "required":true
+            },
+            "Development Milestones Missed":{
+                "required":true
+            },
+            "Specify other Mother's ART Regimen":{
+                "required":true
+            },
+            "HEI Treatment - Enrolled AT ART Date":{
+                "required":true
+            },
+            "HEI Treatment - Referred To ART Clinic Date":{
+                "required":true
+            },
+            "ANC, ART Start Date":{
+                "required":true
+            },
+            "ART ,Stop Date":{
+                "required":true
+            },
+            "CTX or Dapose Start Date":{
+                "required":true
+            },
+            "Classification Of Adherence":{
+                "required":true
+            },
+            "EDD":{
+                "required":true
+            },
+            "PMTCT - HIV & ART Follow up":{
+                "required":true
+            },
+            "WHO Stage":{
+                "dropdown":true 
+            }, 
+            "Medical History":{
+                "multiSelect" : true
+            },         
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [

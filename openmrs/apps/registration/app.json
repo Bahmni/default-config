@@ -26,26 +26,65 @@
         ],
         "config" : {
             "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
+                "registrantInformation": {
+                    "title": "Registrant Information",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
-                    ]
+                        "HealthFacilityName",
+                        "TodaysDate",
+                        "RegistrantName"
+                    ],
+					"expand": true,
+					"order": 1
                 },
-                "hidden": {
+                "registerNewPatient1": {
+                    "title": "Register A New Patient",
                     "attributes": [
-                        "primaryContact"
-                    ]
+                        "TypeofPatient"
+                    ],
+					"expand": true,
+					"order": 2
                 },
-                "defaults":  {
-                    "class": "General",
-                    "landHolding": 2
+                "registerNewPatient2": {
+                    "title": "Not shown",
+                    "attributes": [
+						"UniqueArtNo",
+                        "HIVExposedInfant(HEI)No"
+                    ],
+					"expand": true,
+					"order": 3
+                },
+                "registerNewPatient3": {
+                    "title": "Not shown",
+                    "attributes": [
+						"MaritalStatus"
+                    ],
+					"expand": true,
+					"order": 4
+                },
+                "contactInformation": {
+                    "title": "Contact Information",
+                    "attributes": [
+                        "MobileCountryCode",
+                        "MobileNumber",
+						"AlternativeNumber"
+                    ],
+					"expand": true,
+					"order": 5
+                },
+                "treatmentSupporter": {
+                    "title": "Treatment Supporter",
+                    "attributes": [
+                        "TreatmentSupporterFirstName",
+                        "TreatmentSupporterLastName",
+						"TreatmentSupporterTelephoneNumber",
+						"TreatmentSupporterAddress",
+						"HomeCareProvidedBy"
+                    ],
+					"expand": true,
+					"order": 6
+                },
+				"defaults":  {
+                    "MobileCountryCode": "South Sudan"
                 }
             },
             "addressHierarchy": {
@@ -57,43 +96,27 @@
                 "Parent":"patient"
             },
 
-            "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
+			"disablePhotoCapture": true,
+			"showEnterID": false,
+			"dobMandatory": true,
+            "autoCompleteFields":["familyName", "givenName"],
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
-            "showBirthTime": true,
+            "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
                     "shortcutKey": "l"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-                    "shortcutKey": "p"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
-                    "shortcutKey": "c"
                 }
+               
             ],
             "conceptSetUI": {
-                "REGISTRATION FEES": {
-                    "required": true,
-                    "label": "Fee"
-                },
                 "FHS": {
                     "buttonSelect": true
                 },
@@ -110,15 +133,10 @@
                 "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"}
             },
             "patientSearch": {
-                "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "Unique Art No.",
+                    "placeholder": "Enter Unique Art No",
+                    "fields": ["UniqueArtNo","MaritalStatus","Cohort"]
                 }
             }
         }
