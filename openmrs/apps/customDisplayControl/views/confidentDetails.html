@@ -17,8 +17,8 @@
                 </span>
             </span>
             <div ng-if="section.isOpen[$index] == true">
-                <div ng-repeat="concept in section.conceptsWithYes[$index] track by $index" class="print-observations hidden-print" style="background-color:#fff;margin-bottom:1px;padding-left:20px;padding-top:4px;padding-bottom:4px">
-                    {{concept}}
+                <div ng-repeat="concept in section.confidentDetailsData[$index] track by $index" class="print-observations hidden-print" style="background-color:#fff;margin-bottom:1px;padding-left:20px;padding-top:4px;padding-bottom:4px">
+                        <span>{{concept.conceptNameToDisplay}}</span> <span>{{concept.valueAsString}}</span>
                 </div>
             </div>
         </li>

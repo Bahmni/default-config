@@ -303,56 +303,46 @@ angular.module('bahmni.common.displaycontrol.custom')
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/confidentDetails.html";
         spinner.forPromise(observationsService.fetch(patientUuid, conceptNames, scope, 0, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid).then(function (response) {
             var apiVisits = 0;
-            // if (response.data.length === 0) {
-            //     $scope.confidentData = undefined;
-            // } else {
-            //     for (var j = 0; j < response.data.length; j++) {
-            //         $scope.confidentData = response.data[j].groupMembers;
-            //         $scope.visitDateTime = response.data[j].observationDateTime;
-            //
-            //
-            //         for (var i = 0; i < $scope.confidentData.length; i++) {
-            //             if ($scope.confidentData[i].concept.name === "CONFIDENT_NAME") {
-            //                 $scope.confidentName = $scope.confidentData[i].valueAsString;
-            //             }
-            //             if ($scope.confidentData[i].concept.name === "CONFIDENT_SURNAME") {
-            //                 $scope.confidentSurname = $scope.confidentData[i].valueAsString;
-            //             }
-            //             if ($scope.confidentData[i].concept.name === "CONFIDENT_RELATIONSHIP") {
-            //                 $scope.confidentRelationship = $scope.confidentData[i].valueAsString;
-            //             }
-            //             if ($scope.confidentData[i].concept.name === "CONFIDENT_TELEPHONE1") {
-            //                 $scope.confidentContact = $scope.confidentData[i].valueAsString;
-            //             }
-            //         }
-            //     }
-            // }
-
             $scope.observations = response.data;
-            console.log('confident details directive');
-            console.log($scope.section);
+
+            if($scope.section.confidentDetailsData.length > 0){
+                $scope.section.visitDomId = [];
+                $scope.section.visitDateTime = [];
+                $scope.section.confidentDetailsData = [];
+            }
 
             $scope.observations.forEach(observation => {
-                var confidentName = [];
+                var groupMembersConfidentName = [];
+                var groupMembersConfidentSurname = [];
+                var groupMembersConfidentTelephone = [];
+                var groupMembersConfidentRelationship = [];
 
                 observation.groupMembers.forEach(member => {
-                    if(member.concept.name === "CONFIDENT_NAME"){
-                        confidentName.push(member.value);
+                    if (member.concept.name === "CONFIDENT_NAME"){
+                        groupMembersConfidentName.push(member);
+                    }
+                    if (member.concept.name === "CONFIDENT_SURNAME"){
+                        groupMembersConfidentSurname.push(member);
+                    }
+                    if (member.concept.name === "CONFIDENT_RELATIONSHIP"){
+                        groupMembersConfidentRelationship.push(member);
+                    }
+                    if (member.concept.name === "CONFIDENT_TELEPHONE1"){
+                        groupMembersConfidentTelephone.push(member);
                     }
                 })
 
-                if(confidentName.length > 0){
+                if (groupMembersConfidentName || groupMembersConfidentSurname || groupMembersConfidentRelationship || groupMembersConfidentTelephone) {
                     $scope.section.visitDateTime.push(observation.observationDateTime);
-                    if(apiVisits === 0){
+                    $scope.section.confidentDetailsData.push(groupMembersConfidentName.concat(groupMembersConfidentSurname).concat(groupMembersConfidentRelationship).concat(groupMembersConfidentTelephone));
+                    if (apiVisits === 0) {
                         $scope.section.isOpen.push(true);
-                    }else{
+                    } else {
                         $scope.section.isOpen.push(false);
                     }
                     apiVisits += 1;
                 }
             });
-
-
         }));
     };
 
@@ -366,10 +356,9 @@ angular.module('bahmni.common.displaycontrol.custom')
         template: '<ng-include src="contentUrl"/>'
     }
 }]).controller('ConfidentDetailsController', ['$scope',function ($scope) {
-    console.log('confident details controller');
-    console.log($scope);
     $scope.title = $scope.ngDialogData.title;
     $scope.visitsList = $scope.ngDialogData.visitDateTime;
+    $scope.confidentDetailsData = $scope.ngDialogData.confidentDetailsData;
     $scope.isOpen = $scope.ngDialogData.isOpen;
 
     $scope.isOpen.forEach(function (value, index) {
