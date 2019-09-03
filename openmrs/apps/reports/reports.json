@@ -22,6 +22,13 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_New_Patients.sql"
         }
     },
+    "listofdefaults": {
+        "name": "Lista de Faltas (Farmacia)",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/listofdefaults.sql"
+        }
+    },
     "openelis": {
         "name": " Lista de exames laboratoriais",
         "titleKey" : "LAB_REQUESTS_LIST",
