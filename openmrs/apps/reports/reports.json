@@ -11,7 +11,7 @@
         "titleKey" : "PATIENTS_REQUESTS_NO_RESULTS",
         "type": "ElisGeneric",
         "config": {
-            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/sample.sql"
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/sample_collected_result_not_entered.sql"
         }
     },
     "patientlist": {
