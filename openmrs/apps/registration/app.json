@@ -53,6 +53,19 @@
 					"expand": true,
 					"order": 4
                 },
+                "CaregiverFollowUp": {
+                    "title": "Mother/Caregiver Follow Up Information",
+                    "attributes": [
+						"MothersArtNo",
+                        "AlternateContactPerson",
+						"TelephoneNo",
+						"ContactPersonDisclosedTo",
+						"MotherInCareAtArtClinic",
+						"FacilityName"
+                    ],
+					"expand": true,
+					"order": 5
+                },
                 "contactInformation": {
                     "title": "Contact Information",
                     "attributes": [
@@ -61,7 +74,7 @@
 						"AlternativeNumber"
                     ],
 					"expand": true,
-					"order": 5
+					"order": 6
                 },
                 "treatmentSupporter": {
                     "title": "Treatment Supporter",
@@ -73,7 +86,7 @@
 						"HomeCareProvidedBy"
                     ],
 					"expand": true,
-					"order": 6
+					"order": 7
                 },
 				"defaults":  {
                     "MobileCountryCode": "South Sudan"
