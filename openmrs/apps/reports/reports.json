@@ -1,4 +1,11 @@
 {
+  "ListPatientsnotsuppressed": {
+        "name": " Lista de Paciente Nao Suprimidos (Carga Viral)",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_Patients_not_suppressed.sql"
+        }
+    },
     "listOfDefaulters": {
         "name": "Lista de Pacientes que Faltaram a Consulta Clinica",
         "type": "MRSGeneric",
