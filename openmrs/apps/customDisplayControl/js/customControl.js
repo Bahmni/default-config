@@ -234,8 +234,6 @@ angular.module('bahmni.common.displaycontrol.custom')
             var apiVisits = 0;
 
             $scope.observations = response.data;
-            console.log('positive prevention directive');
-            console.log($scope.section);
             if($scope.section.conceptsWithYes.length > 0){
                 $scope.section.visitDomId = [];
                 $scope.section.visitDateTime = [];
@@ -274,8 +272,6 @@ angular.module('bahmni.common.displaycontrol.custom')
         template: '<ng-include src="contentUrl"/>'
     }
 }]).controller('PositivePreventionDetailsController', ['$scope',function ($scope) {
-    console.log('positive prevention controller');
-    console.log($scope);
     $scope.title = $scope.ngDialogData.title;
     $scope.visitsList = $scope.ngDialogData.visitDateTime;
     $scope.conceptsWithYes = $scope.ngDialogData.conceptsWithYes;
@@ -304,6 +300,8 @@ angular.module('bahmni.common.displaycontrol.custom')
         spinner.forPromise(observationsService.fetch(patientUuid, conceptNames, scope, 0, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid).then(function (response) {
             var apiVisits = 0;
             $scope.observations = response.data;
+            console.log($scope.observations);
+            console.log($scope);
 
             if($scope.section.confidentDetailsData.length > 0){
                 $scope.section.visitDomId = [];

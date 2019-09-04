@@ -100,5 +100,6 @@
   "CANCELLED": "Cancelled",
   "FINISHED": "Completed",
   "COMPLETED": "Completed",
-  "Group_VIII_Family_Planning_obs_form": "Family Planning"
+  "Group_VIII_Family_Planning_obs_form": "Family Planning",
+  "NO_CONFIDENT_DETAILS": "Confidential Details Not Available"
 }
