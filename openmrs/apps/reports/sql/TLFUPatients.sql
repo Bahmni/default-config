@@ -7,7 +7,7 @@ SELECT DISTINCT
        contact.contact AS Contact,
        concat (pa.state_province, ',', pa.city_village) AS Address,
        Concat(IFNULL(patient_state.patient_status, ''),' - ', IFNULL(patient_state.patient_state,'')) AS 'Patient State',
-       DATE(eod.dispenseddate) AS 'Last Drug Pick Up',
+       DATE(eod.dispensed_date) AS 'Last Drug Pick Up',
        DATE(missed_pickup.date_created) AS 'Last Missed Drug Pickup'
 FROM orders o
 JOIN order_type ot ON o.order_type_id = ot.order_type_id AND ot.uuid='131168f4-15f5-102d-96e4-000c29c2a5d7'
@@ -31,7 +31,7 @@ JOIN
 LEFT JOIN
   (SELECT eo.patient_id,
           eo.dispensed,
-          eo.dispenseddate
+          eo.dispensed_date
   FROM erpdrug_order eo ) eod ON eod.patient_id = p.person_id
 LEFT JOIN
   (SELECT o.order_id,
