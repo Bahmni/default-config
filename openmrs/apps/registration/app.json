@@ -109,7 +109,7 @@
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
             "showLastName": true,
-            "isLastNameMandatory": true,
+            "isLastNameMandatory": false,
             "showSaveConfirmDialog": false,
             "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
@@ -135,7 +135,8 @@
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"}
+                "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"},
+				"MobileNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"}
             },
             "patientSearch": {
                 "customAttributes": {
