@@ -29,6 +29,14 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_New_Patients.sql"
         }
     },
+    "Listpatientswhoactivein23ARVLine": {
+        "name": "List of patients who are active in 2 and 3 ARV Line",
+        "titleKey" : "LIST_PATIENTS_ACTIVE_IN_2_3_ARV",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/List_of_patients_who_active_2_3_ARV_Line.sql"
+       }  
+   },
     "LTFUListReport": {
       "name": "Lista de Abandonos",
       "type": "MRSGeneric",

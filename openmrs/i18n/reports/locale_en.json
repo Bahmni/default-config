@@ -11,5 +11,6 @@
   "OUTPATIENT_MORBIDITY" : "Outpatient Morbidity",
   "LAB_SERVICES" : "Laboratory Services",
   "GENERIC_LAB_SERVICES" : "Generic Laboratory Services",
-  "BLOOD_PRESSURE" : "Blood Pressure"
+  "BLOOD_PRESSURE" : "Blood Pressure",
+  "LIST_PATIENTS_ACTIVE_IN_2_3_ARV" : "List of patients who are active in 2 and 3 ARV Line"
 }

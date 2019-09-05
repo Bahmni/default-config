@@ -11,6 +11,7 @@
   "OUTPATIENT_MORBIDITY" : "Morbidade Ambulatorial",
   "LAB_SERVICES" : "Serviços Laboratoriais",
   "GENERIC_LAB_SERVICES" : "Serviços Gerais Laboratoriais",
-  "BLOOD_PRESSURE" : "Pressão Sanguínea"
+  "BLOOD_PRESSURE" : "Pressão Sanguínea",
+  "LIST_PATIENTS_ACTIVE_IN_2_3_ARV" : "Lista de Pacientes em 2ª e 3ª linha de TARV"
 
 }
