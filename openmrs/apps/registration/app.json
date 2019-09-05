@@ -56,12 +56,14 @@
                 "CaregiverFollowUp": {
                     "title": "Mother/Caregiver Follow Up Information",
                     "attributes": [
-						"MothersArtNo",
-                        "AlternateContactPerson",
-						"TelephoneNo",
-						"ContactPersonDisclosedTo",
+						"HeiChildMothersName",
 						"MotherInCareAtArtClinic",
-						"FacilityName"
+						"MothersArtNo",
+						"FacilityName",
+                        "AlternateContactPerson",
+						"AlternateContactPersonRelationship",
+						"TelephoneNo",
+						"ContactPersonDisclosedTo"
                     ],
 					"expand": true,
 					"order": 5
