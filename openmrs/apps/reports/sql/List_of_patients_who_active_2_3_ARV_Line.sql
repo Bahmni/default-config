@@ -24,16 +24,18 @@ select distinct
    paddress.address4 AS "Avenida/Rua",
    paddress.address5 AS "Nº da Casa",
    paddress.postal_code AS "Perto De",
-   (select itreatment_line.concept_full_name as "Última Linha de Tratamento"
+   (select itreatment_line.name
     from patient ipt 
     inner join orders io
          on ipt.patient_id=io.patient_id
     inner join drug_order_relationship idor
          on idor.drug_order_id=io.order_id
-    inner join concept_view  itreatment_line
+    inner join concept_name  itreatment_line
          on itreatment_line.concept_id = idor.treatment_line_id
+         and itreatment_line.concept_name_type = "SHORT"
+         and itreatment_line.locale= "pt"
+         and (itreatment_line.name ='Terceira Linha' or itreatment_line.name ='Segunda Linha')
     where ipt.patient_id = pt.patient_id
-    and (itreatment_line.concept_full_name ='3rd Line' or itreatment_line.concept_full_name ='2nd Line')
     order by io.order_id desc limit 1) as "Última Linha de Tratamento",
     cast(dor.date_created as date) as "Data de Mudança de Linha"
 from
