@@ -1,7 +1,7 @@
 select distinct
 (pi.identifier) as "NID",
-   CONCAT( pn.given_name, " ", COALESCE( pn.middle_name, '' ), " ", COALESCE( pn.family_name, '' ) )as "Nome Completo ",
-   case
+CONCAT( pn.given_name, " ", COALESCE( pn.middle_name, '' ), " ", COALESCE( pn.family_name, '' ) )as "Nome Completo ",
+case
       when
          p.gender = 'M' 
       then
@@ -15,7 +15,8 @@ select distinct
       then
          'Outro' 
    end
-   as "Sexo", TIMESTAMPDIFF( YEAR, p.birthdate, CURDATE() ) as "Idade",
+   as "Sexo",
+   TIMESTAMPDIFF( YEAR, p.birthdate, CURDATE() ) as "Idade",
    personAttributesonRegistration.value as "Contacto",
    paddress.state_province as "Província",
    paddress.city_village AS "Distrito",
@@ -25,24 +26,67 @@ select distinct
    paddress.address5 AS "Nº da Casa",
    paddress.postal_code AS "Perto De",
    cast(pt.date_created as date) AS "Data de Registo na US",
-   " " AS "Data de Inicio TARV",
-   " " AS "Estado de Permanência"
+   concat(case
+      when
+         pss.patient_state = 'ABANDONED'
+      then
+         'Abandono'
+      when
+         pss.patient_state = 'ACTIVE'
+      then
+         'Activo'
+      when
+         pss.patient_state = 'INACTIVE_DEATH'
+      then
+         'Inactive Óbito'
+      when
+         pss.patient_state = 'INACTIVE_TRANSFERRED_OUT'
+      then
+         'Inactivo Transferir para'
+      when
+         pss.patient_state = 'INACTIVE_SUSPENDED'
+      then
+         'Inactivo Paciente Suspensão'
+   end,' - ',
+   case
+      when
+         pss.patient_status = 'Pre TARV'
+      then
+         'Pre TARV'
+      when
+         pss.patient_status = 'TARV'
+      then
+         'TARV'
+      when
+         pss.patient_status = 'TARV_ABANDONED'
+      then
+         'TARV-Abandono'
+      when
+         pss.patient_status = 'TARV_TREATMENT_SUSPENDED'
+      then
+         'TARV-Tratamento Suspenso'
+      when
+         pss.patient_status = 'TARV_RESTART'
+      then
+         'TARV-Reinício'
+   end ) AS "Estado de Permanência",
+   cast(erpdrug_order.dispensed_date as date) AS "Data de Inicio TARV"
 from
    person p 
-   inner join
+   INNER JOIN
       person_name pn 
       on pn.person_id = p.person_id 
       and p.voided = 0 
       and pn.voided = 0 
-   inner join
+   INNER JOIN
       patient_identifier pi 
       on pi.patient_id = p.person_id 
-      and pi.voided = 0 
-   inner join
+      and pi.voided = 0
+   INNER JOIN
       patient pt 
-      on pt.patient_id = p.person_id 
-      and pi.voided = 0 
-      and cast(pt.date_created as date) BETWEEN '#startDate#' and '#endDate#' 
+      on pt.patient_id = p.person_id
+      and pi.voided = 0
+      and cast(pt.date_created as date) BETWEEN '#startDate#' and '#endDate#'
    LEFT JOIN
       person_attribute personAttributesonRegistration 
       on personAttributesonRegistration.person_id = p.person_id 
@@ -64,7 +108,18 @@ from
       on pa.value = cv.concept_id 
       AND cv.retired = 0 
       and cv.concept_full_name = 'NEW_PATIENT' 
+   INNER JOIN
+      patient_status_state pss
+      on pss.patient_id=pt.patient_id
+   LEFT JOIN
+      patient_status_state pss2
+      on pss.patient_id=pss2.patient_id and pss.id < pss2.id
+   LEFT JOIN
+      erpdrug_order
+      on erpdrug_order.patient_id=pss.patient_id
+      and first_arv_dispensed = 1 and arv_dispensed = 1
    LEFT OUTER JOIN
       person_address paddress 
       ON p.person_id = paddress.person_id 
-      AND paddress.voided is false ;
+      AND paddress.voided is false
+      where pss2.id IS NULL;
