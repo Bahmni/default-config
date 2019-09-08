@@ -1,0 +1,11 @@
+
+<section class="block hierarchy">
+  <div ng-hide="lines.length">
+    <div class="placeholder-text">
+      <p translate="DISPLAY_CONTROL_ERROR_MESSAGE_KEY" translate-values="{displayControl : '{{config.translationKey | translate}}'}"></p>
+    </div>
+  </div>
+  <div ng-if="lines.length">
+    <billing-status-visit lines="lines" patient="patient"></billing-status-visit>
+  </div>
+</section>
