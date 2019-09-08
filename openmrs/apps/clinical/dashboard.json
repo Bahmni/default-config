@@ -25,7 +25,7 @@
                 "showCertainty":true,
                 "showOrder":true,
                 "showDetailsButton":true,
-                "displayOrder":3
+                "displayOrder":4
             },
             "allergies": {
                 "translationKey":"ALLERGIES_LIST_DISPLAY_CONTROL_TITLE",
@@ -51,7 +51,7 @@
             "treatments":{
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
-                "displayOrder":7,
+                "displayOrder":9,
                 "dashboardConfig":{
                     "showFlowSheet":true,
                     "showListView":true,
@@ -75,7 +75,7 @@
             "labResults":{
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type":"labOrders",
-                "displayOrder":1,
+                "displayOrder":2,
                 "dashboardConfig":{
                     "title":null,
                     "numberOfVisits":3,
@@ -189,12 +189,12 @@
             "conditions": {
                 "translationKey": "CONDITION_LIST_DISPLAY_CONTROL_TITLE",
                 "type": "conditionsList",
-                "displayOrder": 5
+                "displayOrder": 6
             },
             "visits":{
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":11,
+                "displayOrder":12,
                 "dashboardConfig":{
                     "title":null,
                     "maximumNoOfVisits":8,
@@ -253,7 +253,7 @@
             },
             "patientAppointments": {
                 "type": "custom",
-                "displayOrder": 12,
+                "displayOrder": 14,
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
@@ -261,7 +261,7 @@
             },  
             "positivePrevention": {
                 "type": "custom",
-                "displayOrder": 9,
+                "displayOrder": 10,
                 "config": {
                     "title": "DASHBOARD_POSITIVE_PREVENTION_KEY",
                     "label": "DASHBOARD_POSITIVE_PREVENTION_KEY_TOTAL_YES",
@@ -275,7 +275,7 @@
             },
             "confidentDetails": {
                 "type": "custom",
-                "displayOrder": 4,
+                "displayOrder": 1,
                 "config": {
                     "title": "DASHBOARD_CONFIDENT_DETAILS_KEY",
                     "conceptNames": ["CONFIDENT_DETAILS"],
