@@ -1,14 +1,13 @@
 SELECT DISTINCT
        pi.identifier AS NID,
-       Concat(IFNULL(pn.given_name, ''),'', IFNULL(pn.middle_name,''), ' ', IFNULL(pn.family_name,'')) AS Name,
-       p.gender AS Sex,
-       floor(datediff(now(), p.birthdate)/365) AS Age,
-       p.birthdate AS Birthdate,
-       contact.contact AS Contact,
-       concat (pa.state_province, ',', pa.city_village) AS Address,
-       Concat(IFNULL(patient_state.patient_status, ''),' - ', IFNULL(patient_state.patient_state,'')) AS 'Patient State',
-       DATE(eod.dispensed_date) AS 'Last Drug Pick Up',
-       DATE(missed_pickup.date_created) AS 'Last Missed Drug Pickup'
+       Concat(IFNULL(pn.given_name, ''),'', IFNULL(pn.middle_name,''), ' ', IFNULL(pn.family_name,'')) AS Nome,
+       p.gender AS Sexo,
+       floor(datediff(now(), p.birthdate)/365) AS Idade,
+       contact.contact AS 'Contacto Principal',
+       concat (pa.state_province, ',', pa.city_village) AS Endereço,
+       Concat(IFNULL(patient_state.patient_status, ''),' - ', IFNULL(patient_state.patient_state,'')) AS 'Estado do Paciente',
+       DATE(eod.dispensed_date) AS 'Último Levantamento',
+       DATE(missed_pickup.date_created) AS 'Último Levantamento Perdido'
 FROM orders o
 JOIN order_type ot ON o.order_type_id = ot.order_type_id AND ot.uuid='131168f4-15f5-102d-96e4-000c29c2a5d7'
 JOIN person p ON o.patient_id = person_id
