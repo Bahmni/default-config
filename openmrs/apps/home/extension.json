@@ -168,6 +168,16 @@
     "target": "_blank",
     "icon": "fa-bug",
     "order": 17
+  },
+  "possibleInsuranceIntegration": {
+    "id": "possible.insuranceIntegration",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+	"translationKey": "Insurance",
+    "url": "/insurance-integration/add-info",
+    "icon": "fa-book",
+    "order": 18,
+    "requiredPrivilege": "app:reports"
   }
 
 }
