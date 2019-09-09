@@ -1,0 +1,47 @@
+<style>
+.approved {
+    border-left: 3px solid green !important
+  }
+
+  .checked {
+    color: green
+  }
+
+  .nonApproved {
+    border-left: 3px solid red !important
+  }
+
+  .warning {
+    color: red
+  }
+</style>
+
+<ul class=form-field>
+  <li ng-repeat="(visitUuid,group) in groupedlines">
+    <div class="tree-list-item row-click toggle-container active" toggle="section.show">
+      <i class="fa fa-caret-right"></i>
+      <i class="fa fa-caret-down"></i>
+      <span>
+        <span ng-show="group.visit.startDate">{{ group.visit.startDate | bahmniDate }}</span>
+        <span ng-show="group.visit.endDate"> - {{ group.visit.endDate | bahmniDate }}</span>
+        <i class="fa fa-exclamation-triangle warning" ng-show="!group.approved && !section.show"></i>
+      </span>
+    </div>
+    <table class="repeated-table" ng-show="section.show">
+      <tbody ng-repeat="line in group.lines">
+        <tr>
+          <td ng-class="{ approved: line.approved, nonApproved : !line.approved }" style="width:5%">
+            <i class="fa fa-ok checked" ng-show="line.approved"></i>
+            <i class="fa fa-times-circle" ng-hide="line.approved"></i>
+          </td>
+          <td style="with:70%">
+            {{ line.displayName }}
+          </td>
+          <td style="width:25%">
+            {{ line.document }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
