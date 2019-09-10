@@ -250,7 +250,16 @@
             }, 
             "Medical History":{
                 "multiSelect" : true
-            },         
+            }, 
+            "GeneXpert , Result":{
+                "dropdown":true 
+            },
+            "AFB Microscopic, Results":{
+                "dropdown":true 
+            },
+            "CxR Results":{
+                "dropdown":true 
+            },       
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [

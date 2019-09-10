@@ -1,0 +1,1 @@
+{"dbNameCondition.js": "Bahmni.Common.Offline.dbNameCondition.get = function (provider, loginLocation) {\r    return loginLocation;\r};"}

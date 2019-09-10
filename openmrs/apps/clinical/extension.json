@@ -274,6 +274,17 @@
     "order": 13,
     "requiredPrivilege": "app:clinical"
   }, 
+  "bahmniClinicalConceptSetGroupObsertionsTbScreeningForm": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "TB SCREENING FORM"
+    },
+    "order": 14,
+    "requiredPrivilege": "app:clinical"
+  },
   "bahmniClinicalConceptSetGroupObsertionsARTTreatment": {
     "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
