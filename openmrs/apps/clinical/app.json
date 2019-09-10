@@ -259,7 +259,22 @@
             },
             "CxR Results":{
                 "dropdown":true 
-            },       
+            }, 
+            "GeneXpert Information":{
+                "isTabular": true
+            }, 
+            "AFB Microscopic":{
+                "isTabular": true
+            },
+            "FNA":{
+                "isTabular": true
+            },
+            "Culture, TB Investigations":{
+                "isTabular": true
+            },
+            "Crx":{
+                "isTabular": true
+            },    
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
