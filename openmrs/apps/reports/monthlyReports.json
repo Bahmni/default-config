@@ -12,5 +12,26 @@
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artDispensingReport.sql"
 		}
-	}
+	},
+	"artMonthlyStartedOnArtReport": {
+		"name": "ART Monthly Report - Started on ART (New and cumulative number of persons)",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artMonthlyStartedOnArtReport.sql"
+		}
+	},
+	"artMonthlyCurrentOnArtReport": {
+		"name": "ART Monthly Report - Current on ART (Based on age at start)",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artMonthlyCurrentOnArtReport.sql"
+		}
+	},
+	"artMonthlyViralLoadReport": {
+		"name": "ART Monthly Report - Viral Load",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artMonthlyViralLoadReport.sql"
+		}
+	}	
 }
