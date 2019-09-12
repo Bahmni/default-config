@@ -19,6 +19,7 @@
     "printListViewTemplateUrl": "/bahmni_config/openmrs/apps/appointments/printListView.html",
     "enableServiceTypes": false,
     "enableCalendarView": true,
+    "collapseServiceFilter": false,
     "isServiceOnAppointmentEditable": false,
     "colorsForAppointmentService": [
       "#006400",
