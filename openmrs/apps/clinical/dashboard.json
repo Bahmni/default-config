@@ -465,7 +465,7 @@
             },
             "Chronic Treatment Chart":{
                 "displayType":"Full-Page",
-                "title":"Chronic Treatment Chart",
+                "title":"CHRONIC_TREATMENT_CHART",
                 "type":"chronicTreatmentChart",
                 "dashboardConfig":{
                     "drugs":[
