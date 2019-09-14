@@ -104,5 +104,6 @@
   "DASHBOARD_CONFIDENT_DETAILS_KEY": "Confident Details",
   "NO_CONFIDENT_DETAILS": "Confidential Details Not Available",
   "CHRONIC_TREATMENT_CHART": "Chronic treatment chart",
-  "Stop": "End date"
+  "Stop": "End date",
+  "CHRONIC_DATE": "Date"
 }
