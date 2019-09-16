@@ -274,7 +274,55 @@
             },
             "Crx":{
                 "isTabular": true
-            },    
+            }, 
+             "First Attempt Method":{
+                 "dropdown":true
+             },  
+             "First Attempt Outcome":{
+                "dropdown":true
+            }, 
+            "Second Attempt Method":{
+                "dropdown":true
+            }, 
+            "Third Attempt Method":{
+                "dropdown":true
+            }, 
+            "Third Attempt Outcome":{
+                "dropdown":true
+            },
+            "Fourth Attempt Method":{
+                "dropdown":true
+            }, 
+            "Fourth Attempt Outcome":{
+                "dropdown":true
+            },
+            "Outcome,Second Attempt":{
+                "dropdown":true
+            },
+            "Other Follow up Method Specify(First Attempt)":{
+                "required":true
+            },
+            "Follow up Outcome Others Specify(First Attempt)":{
+                "required":true
+            },
+            "Other Follow up Method Specify(Second Attempt)":{
+                "required":true
+            },
+            "Follow up Outcome Others Specify(Second Attempt)":{
+                "required":true
+            },
+            "Other Follow up Method Specify(Third Attempt)":{
+                "required":true
+            },
+            "Follow up Outcome Others Specify(Third Attempt)":{
+                "required":true
+            },
+            "Other Follow up Method Specify(Fourth Attempt)":{
+                "required":true
+            },
+            "Follow up Outcome Others Specify(Fourth Attempt)":{
+                "required":true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [

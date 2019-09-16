@@ -500,5 +500,104 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         } 
     },
+    "First Attempt Method": function (formName, formFieldValues) {
+        var firstmethod = formFieldValues["First Attempt Method"];
+        if (firstmethod === "Other Specify") {
+            return {
+                show:["Other Follow up Method Specify(First Attempt)"]
+            }
+        } else {
+            return {
+                hide:["Other Follow up Method Specify(First Attempt)"]
+            }
+        }
+    },
+    "First Attempt Outcome": function (formName, formFieldValues) {
+        var firstoutcome = formFieldValues["First Attempt Outcome"];
+        if (firstoutcome === "Other Outcome") {
+            return {
+                show:["Follow up Outcome Others Specify(First Attempt)"]
+            }
+        } else {
+            return {
+                hide:["Follow up Outcome Others Specify(First Attempt)"]
+            }
+        }
+    },
+    "Second Attempt Method": function (formName, formFieldValues) {
+        var secondmethod = formFieldValues["Second Attempt Method"];
+        if (secondmethod === "Other Specify") {
+            return {
+                show:["Other Follow up Method Specify(Second Attempt)"]
+            }
+        } else {
+            return {
+                hide:["Other Follow up Method Specify(Second Attempt)"]
+            }
+        }
+    },
+    "Outcome,Second Attempt": function (formName, formFieldValues) {
+        var secondoutcome = formFieldValues["Outcome,Second Attempt"];
+        if (secondoutcome === "Other Specify") {
+            return {
+                show:["Follow up Outcome Others Specify(Second Attempt)"]
+            }
+        } else {
+            return {
+                hide:["Follow up Outcome Others Specify(Second Attempt)"]
+            }
+        }
+    },
+    "Third Attempt Method": function (formName, formFieldValues) {
+        var thirdmethod = formFieldValues["Third Attempt Method"];
+        if (thirdmethod === "Other") {
+            return {
+                show:["Other Follow up Method Specify(Third Attempt)"]
+            }
+        } else {
+            return {
+                hide:["Other Follow up Method Specify(Third Attempt)"]
+            }
+        }
+    },
+    "Third Attempt Outcome": function (formName, formFieldValues) {
+        var thirdoutcome = formFieldValues["Third Attempt Outcome"];
+        if (thirdoutcome === "Other Outcome") {
+            return {
+                show:["Follow up Outcome Others Specify(Third Attempt)"]
+            }
+        } else {
+            return {
+                hide:["Follow up Outcome Others Specify(Third Attempt)"]
+            }
+        }
+    },
+    "Fourth Attempt Method": function (formName, formFieldValues) {
+        var forthmethod = formFieldValues["Fourth Attempt Method"];
+        if (forthmethod === "Other") {
+            return {
+                show:["Other Follow up Method Specify(Fourth Attempt)"]
+            }
+        } else {
+            return {
+                hide:["Other Follow up Method Specify(Fourth Attempt)"]
+            }
+        }
+    },
+    "Fourth Attempt Outcome": function (formName, formFieldValues) {
+        var forthoutcome = formFieldValues["Fourth Attempt Outcome"];
+        if (forthoutcome === "Other Outcome") {
+            return {
+                show:["Follow up Outcome Others Specify(Fourth Attempt)"]
+            }
+        } else {
+            return {
+                hide:["Follow up Outcome Others Specify(Fourth Attempt)"]
+            }
+        }
+    },
+    
+    
+    
  };
 
