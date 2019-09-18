@@ -300,8 +300,6 @@ angular.module('bahmni.common.displaycontrol.custom')
         spinner.forPromise(observationsService.fetch(patientUuid, conceptNames, scope, 0, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid).then(function (response) {
             var apiVisits = 0;
             $scope.observations = response.data;
-            console.log($scope.observations);
-            console.log($scope);
 
             if($scope.section.confidentDetailsData.length > 0){
                 $scope.section.visitDomId = [];
