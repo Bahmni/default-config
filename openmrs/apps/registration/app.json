@@ -53,6 +53,16 @@
 					"expand": true,
 					"order": 4
                 },
+                "registerNewPatient5": {
+                    "title": "Not shown",
+                    "attributes": [
+						"MobileCountryCode",
+						"MobileNumber",
+						"AlternativeNumber"
+                    ],
+					"expand": true,
+					"order": 5
+                },
                 "CaregiverFollowUp": {
                     "title": "Mother/Caregiver Follow Up Information",
                     "attributes": [
@@ -60,23 +70,22 @@
 						"MotherInCareAtArtClinic",
 						"MothersArtNo",
 						"FacilityName",
-                        "AlternateContactPerson",
-						"AlternateContactPersonRelationship",
-						"TelephoneNo",
-						"ContactPersonDisclosedTo"
-                    ],
-					"expand": true,
-					"order": 5
-                },
-                "contactInformation": {
-                    "title": "Contact Information",
-                    "attributes": [
-                        "MobileCountryCode",
-                        "MobileNumber",
-						"AlternativeNumber"
+                        "MothersContactNumber"
                     ],
 					"expand": true,
 					"order": 6
+                },
+                "alternateContactInformation": {
+                    "title": "Alternative Contact",
+                    "attributes": [
+						"AlternateContactPerson",
+						"TelephoneNo",
+						"AlternateContactPersonLocation",
+						"AlternateContactPersonRelationship",
+						"ContactPersonDisclosedTo"
+                    ],
+					"expand": true,
+					"order": 7
                 },
                 "treatmentSupporter": {
                     "title": "Treatment Supporter",
@@ -88,7 +97,7 @@
 						"HomeCareProvidedBy"
                     ],
 					"expand": true,
-					"order": 7
+					"order": 8
                 },
 				"defaults":  {
                     "MobileCountryCode": "South Sudan"
