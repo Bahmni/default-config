@@ -81,8 +81,8 @@
         "visitTypeForRetrospectiveEntries": "Special OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
-        "clinicalProviderForms": ["Clinical_Observation_form", "Group V-Screening / Prophylaxis", "Group_Priority_Population_obs_form", "Group IV-Anamneses", "Group_VIII_Family_Planning_obs_form", "Reference_Form","CONFIDENT_FORM","DI_Death Information Form", "Apss_Section_I_form", "Apss_Section_II_form", "Apss_Section_III_form"],
-        "APSSProviderForms": ["CONFIDENT_FORM","Group_Priority_Population_obs_form", "Reference_Form", "Apss_Section_I_form", "Apss_Section_II_form", "Apss_Section_III_form"],
+        "clinicalProviderForms": ["Clinical_Observation_form", "Group V-Screening / Prophylaxis", "Group_Priority_Population_obs_form", "Group IV-Anamneses", "Group_VIII_Family_Planning_obs_form", "Reference_Form","CONFIDENT_FORM","DI_Death Information Form", "Apss_Section_I_form", "Apss_Section_II_form", "Apss_Section_III_form", "Clinical_History_Obs_Form"],
+        "APSSProviderForms": ["CONFIDENT_FORM","Group_Priority_Population_obs_form", "Reference_Form", "Apss_Section_I_form", "Apss_Section_II_form", "Apss_Section_III_form", "Clinical_History_Obs_Form"],
         "conceptSetUI": {
             "Chief Complaint Data": {
                 "autocomplete":true,
