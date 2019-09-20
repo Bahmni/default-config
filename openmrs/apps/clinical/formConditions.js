@@ -567,6 +567,25 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
                 disable: ["CONFIDENT_AGE_TYPE"]
             }
         }
-    }
+    },
+
+    "HOF_LAB_SITUATION_Carga_Viral" (formName, formFieldValues) {
+        var yes = formFieldValues["HOF_LAB_SITUATION_Carga_Viral"];
+        if (yes === "HOF_LAB_SITUATION_Carga_Viral_Qualitativo_option")   {
+            return {
+                show: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo"]
+            }
+        }  else if (yes === "HOF_LAB_SITUATION_Carga_Viral_Absolute_option") {
+
+            return {
+                show: ["HOF_LAB_SITUATION_Carga_Viral_Absolute"]
+            }
+        }
+        else {
+            return {
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo","HOF_LAB_SITUATION_Carga_Viral_Absolute"]
+            }
+        }
+    },
 
 };
