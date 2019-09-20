@@ -64,7 +64,7 @@
 					"order": 5
                 },
                 "CaregiverFollowUp": {
-                    "title": "Mother/Caregiver Follow Up Information",
+                    "title": "Mother Follow Up Information",
                     "attributes": [
 						"HeiChildMothersName",
 						"MotherInCareAtArtClinic",
@@ -76,7 +76,7 @@
 					"order": 6
                 },
                 "alternateContactInformation": {
-                    "title": "Alternative Contact",
+                    "title": "Alternative Caregiver",
                     "attributes": [
 						"AlternateContactPerson",
 						"TelephoneNo",
