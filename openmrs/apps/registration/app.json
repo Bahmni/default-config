@@ -104,8 +104,8 @@
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "address2"
+                "showAddressFieldsTopDown": true,
+                "strictAutocompleteFromLevel": "address0"
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
