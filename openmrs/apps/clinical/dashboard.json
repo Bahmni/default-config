@@ -447,22 +447,6 @@
                     "drugConceptSet":"All Other Drugs"
                 }
             },
-            "malaria":{
-                "title":"Malaria",
-                "type":"obsToObsFlowSheet",
-                "displayType":"Full-Page",
-                "displayOrder":26,
-                "dashboardConfig":{
-                    "groupByConcept":"Malaria, Treatment Start Date",
-                    "templateName":"Malaria",
-                    "conceptNames":[
-                        "Malaria, Parents Name",
-                        "Malaria, drug regimen",
-                        "Malaria, Malaria Type",
-                        "Malaria, Source"
-                    ]
-                }
-            },
             "Chronic Treatment Chart":{
                 "displayType":"Full-Page",
                 "title":"CHRONIC_TREATMENT_CHART",
