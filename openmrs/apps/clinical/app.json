@@ -637,6 +637,9 @@
                   "disableAddNotes": true,
                   "multiSelect" : true
             },
+            "Apss_Differentiated_Models_Date": {
+                  "disableAddNotes": true
+            },
             "Prophylaxis_Nutritional_Status": {
                   "disableAddNotes": true
             },
