@@ -130,8 +130,8 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     var dia = formFieldValues["Type_Prophylaxis"];
     var returnShowValue = [];
     var returnHideValue = [];
-    if (dia === "INH") {
-
+    if(formName !== "Clinical_History_Obs_Form" && formName !== "Tarv_and_Prophilaxis") {
+        if (dia === "INH") {
             returnShowValue.push("INH_Details");
             returnHideValue.push("Secondary effects_INH");
 
@@ -148,7 +148,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             returnHideValue.push("CTZ_Details");
 
         }
-        if (dia ==="Fluconazol") {
+        if (dia === "Fluconazol") {
 
             returnShowValue.push("Fluconazol_Details");
             returnHideValue.push("Secondary effects_Fluconazol");
@@ -158,11 +158,13 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
 
         }
 
+
         return {
 
             show: returnShowValue,
             hide: returnHideValue
         }
+    }
 
     
     

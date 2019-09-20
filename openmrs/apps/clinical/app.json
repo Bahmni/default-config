@@ -661,6 +661,12 @@
             "Apss_Reason_For_The_Visit": {
                 "disableAddNotes": true
             },
+            "Tarv_Initial_Regime": {
+                "dropdown": true
+            },
+            "Regime_Change": {
+                "dropdown": true
+             },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
