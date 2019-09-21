@@ -596,6 +596,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
+    // "Hei End Of Follow up (First Attempt Date)": function (formName, formFieldValues) {
+    //     var firstattdate= formFieldValues["Hei End Of Follow up (First Attempt Date)"];
+    //     if (firstattdate == null) {
+    //         return {
+    //             show:["First Attempt Method"]
+    //         }
+    //     } else {
+    //         return {
+    //             hide:["First Attempt Method"]
+    //         }
+    //     }
+    // },
     
     
     

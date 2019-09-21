@@ -17,6 +17,7 @@
             "activeVisitUuid"
         ],
         "config" : {
+            "afterVisitSaveForwardUrl" : "../clinical/#/default/patient/{{patientUuid}}/dashboard",
             "patientInformation": {
                 "registrantInformation": {
                     "title": "Registrant Information",
@@ -160,5 +161,6 @@
                     "fields": ["UniqueArtNo","MaritalStatus","Cohort"]
                 }
             }
+            
         }
 }
