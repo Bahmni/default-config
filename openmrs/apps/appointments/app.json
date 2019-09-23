@@ -10,8 +10,7 @@
   "config": {
     "minCharLengthToTriggerPatientSearch": 3,
     "enableSpecialities": true,
-    "startOfWeek": 2,
-    "weekStart": "isoWeek",
+    "startOfWeek": "Monday",
     "calendarSlotDuration": "00:30",
     "calendarSlotLabelInterval": "01:00",
     "startOfDay":"09:00",
@@ -20,6 +19,7 @@
     "enableServiceTypes": false,
     "enableCalendarView": true,
     "isServiceOnAppointmentEditable": false,
+    "enableResetAppointmentStatuses": ["CheckedIn"],
     "colorsForAppointmentService": [
       "#006400",
       "#DC143C",

@@ -29,6 +29,17 @@
     "order": 3,
     "requiredPrivilege": "app:adt"
   },
+  "bahmniIpd": {
+    "id": "bahmni.ipd",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_BED_MANAGEMENT_KEY",
+    "label": "InPatient",
+    "url": "../bedmanagement/#/home",
+    "icon": "fa-bed",
+    "order": 7,
+    "requiredPrivilege": "app:adt"
+  },
   "orders": {
     "id": "bahmni.orders",
     "extensionPointId": "org.bahmni.home.dashboard",
@@ -99,16 +110,16 @@
     "order": 10,
     "requiredPrivilege": "app:patient-documents"
   },  
-  "appointments": {
-    "id": "bahmni.appointments",
+  "bahmniOT": {
+    "id": "bahmni.ot",
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
-    "translationKey": "MODULE_LABEL_APOOINTMENTS_KEY",
-    "url": "../../openmrs/appointmentschedulingui/home.page",
-    "icon": "fa fa-calendar",
-    "order": 11,
-    "requiredPrivilege": "App: appointmentschedulingui.home"
-  },
+    "translationKey": "Operation Theatre",
+    "url": "../ot/",
+    "icon": "fa-hospital-o",
+    "order": 9,
+    "requiredPrivilege": "app:ot"
+  }, 
   "implementerInterface": {
     "id": "bahmni.implementer.interface",
     "extensionPointId": "org.bahmni.home.dashboard",
