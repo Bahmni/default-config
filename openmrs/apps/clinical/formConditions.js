@@ -614,12 +614,13 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
         var yes = formFieldValues["HOF_LAB_SITUATION_Carga_Viral"];
         if (yes === "HOF_LAB_SITUATION_Carga_Viral_Qualitativo_option")   {
             return {
-                show: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo"]
+                show: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo"],
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Absolute"]
             }
         }  else if (yes === "HOF_LAB_SITUATION_Carga_Viral_Absolute_option") {
-
             return {
-                show: ["HOF_LAB_SITUATION_Carga_Viral_Absolute"]
+                show: ["HOF_LAB_SITUATION_Carga_Viral_Absolute"],
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo"]
             }
         }
         else {
@@ -628,5 +629,4 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
-
 };

@@ -164,6 +164,51 @@
                     }
                 }
             },
+
+          "historyObsFrom":{
+            "title":"Historico Teste",
+            "type":"vitals",
+            "isObservation":true,
+            "displayOrder":17,
+            "dashboardConfig":{
+              "conceptNames":[
+                "Date_Of_Test",
+                "Tarv_Initial_Regime",
+                "Regime_Change",
+                "Change_Motivation",
+                "Date_Of_Change",
+                "Type_Prophylaxis",
+                "HTC, WHO Staging",
+                "HOF_CLINICAL_SITUATION_STAGING_I_CONDITION",
+                "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION",
+                "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION",
+                "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION",
+                "HOF_CLINICAL_SITUATION_TB_Antecedent",
+                "HOF_CLINICAL_SITUATION_Registered_to_Some_MDS",
+                "HOF_CLINICAL_SITUATION_Model_Type",
+                "HOF_LAB_SITUATION_CD4_value",
+                "CD4 %",
+                "HOF_LAB_SITUATION_CD4_Date",
+                "HOF_LAB_SITUATION_Carga_Viral",
+                "HOF_LAB_SITUATION_Carga_Viral_Qualitativo",
+                "HOF_LAB_SITUATION_Carga_Viral_Absolute",
+                "HOF_LAB_SITUATION_Carga_Viral_Date"
+              ],
+              "showDetailsButton":true,
+              "numberOfVisits":1,
+              "scope": "latest"
+            },
+            "expandedViewConfig":{
+              "conceptNames":[
+                "Clinical_History_Obs_Form"
+              ],
+              "numberOfVisits":2,
+              "showDetailsButton":true,
+              "pivotTable":{
+
+              }
+            }
+          },
             "whoStaging": {
                 "translationKey": "DASHBOARD_TITLE_WHO_STAGE",
                 "type": "vitals",
@@ -463,6 +508,18 @@
                     ]
                 }
             },
+          "history_obs_form": {
+            "title": "Historico de Observaçoes Clinicas",
+            "type": "observation",
+            "isObservation": true,
+            "dashboardConfig": {
+              "conceptNames": [
+                "Clinical_History_Obs_Form"
+              ],
+              "numberOfVisits": 2
+            }
+          },
+
             "Chronic Treatment Chart":{
                 "displayType":"Full-Page",
                 "title":"CHRONIC_TREATMENT_CHART",
