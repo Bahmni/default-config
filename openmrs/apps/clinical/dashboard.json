@@ -166,7 +166,7 @@
             },
 
           "historyObsFrom":{
-            "title":"Historico Teste",
+            "title":"Historico Clínico",
             "type":"vitals",
             "isObservation":true,
             "displayOrder":17,
@@ -508,17 +508,6 @@
                     ]
                 }
             },
-          "history_obs_form": {
-            "title": "Historico de Observaçoes Clinicas",
-            "type": "observation",
-            "isObservation": true,
-            "dashboardConfig": {
-              "conceptNames": [
-                "Clinical_History_Obs_Form"
-              ],
-              "numberOfVisits": 2
-            }
-          },
 
             "Chronic Treatment Chart":{
                 "displayType":"Full-Page",
