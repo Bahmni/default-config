@@ -395,6 +395,34 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
+    "HTC, WHO Staging" (formName, formFieldValues) {
+        var staging = formFieldValues["HTC, WHO Staging"];
+        if (staging === "WHO Stage I") {
+            return {
+                show: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION"],
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_II_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"]
+            }
+        } else if (staging === "WHO Stage II") {
+            return {
+                show: ["HOF_CLINICAL_SITUATION_STAGING_II_CONDITION"],
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"]
+            }
+        } if (staging === "WHO Stage III") {
+            return {
+                show: ["HOF_CLINICAL_SITUATION_STAGING_III_CONDITION"],
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"]
+            }
+        } if (staging === "WHO Stage IV") {
+            return {
+                show: ["HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"],
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION"]
+            }
+        } else {
+            return {
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"]
+            }
+        }
+    },
     'Systolic Data': function(formName, formFieldValues) {
         var systolic = formFieldValues['Systolic'];
         var diastolic = formFieldValues['Diastolic'];
@@ -423,6 +451,19 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     },
     "Reference_Eligible" (formName, formFieldValues) {
         var value = formFieldValues["Reference_Eligible"];
+
+        if (value) {
+            return {
+                show: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other"]
+            }
+        } else {
+            return {
+                hide: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other","Reference_MDC_Other_comments"]
+            }
+        }
+    },
+    "HOF_CLINICAL_SITUATION_Model_Type" (formName, formFieldValues) {
+        var value = formFieldValues["HOF_CLINICAL_SITUATION_Model_Type"];
         
         if (value) {
             return {

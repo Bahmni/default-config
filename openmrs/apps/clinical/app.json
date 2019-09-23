@@ -1,687 +1,764 @@
 {
-    "id": "bahmni.clinical",
-    "extensionPoints": [
-        {
-            "id": "org.bahmni.clinical.consultation.board",
-            "description": "Bahmni Clinical Consultation Page"
-        },
-        {
-            "id": "org.bahmni.clinical.conceptSetGroup.*",
-            "description": "Define conceptsets part of a conceptset group"
-        },
-        {
-            "id": "org.bahmni.clinical.orders",
-            "description": "Bahmni Orders Page"
-        },
-        {
-            "id": "org.bahmni.patient.search",
-            "description": "Bahmni Patient search, lookups Page"
-        }
-    ],
-    "contextModel": [
-        "patientUuid",
-        "visitUuid"
-    ],
-    "config": {
-        "hideConditions": false,
-        "enableLabOrderOptions":["Urgent", "NeedsPrint"],
-        "quickPrints":false,
-        "networkConnectivity" : {
-            "showNetworkStatusMessage": false,
-            "networkStatusCheckInterval": 20000,
-            "locales" : [
-                { "locale" : "fr", "css" : "offline-language-french"},
-                { "locale" : "es", "css": "offline-language-spanish"},
-                { "locale" : "pt", "css": "offline-language-portuguese-brazil"}
-            ]
-        },
-        "diagnosisStatus": "Inactivo",
-            "program": {
-                "patientInformation": {
-                    "ageLimit": 100
-                },
-                "ID_Number": {
-                    "required" : false
-                },
-                "Co-morbidites": {
-                    "excludeFrom": ["HIV","TB","TARV"]
-                },
-                "Doctor": {
-                    "excludeFrom": ["HIV","TB","TARV"]
-                },
-                "Stage": {
-                    "excludeFrom": ["HIV","TB","TARV"]
-                }
-            },
-            "patientContext": {
-                "programAttributes": [
-
-                ],
-                "personAttributes": [
-                    
-                ],
-                "additionalPatientIdentifiers": [
-                    
-            ],
-                "preferredIdentifier": "Id_Number"
-        },
-        "obsIgnoreList": [
-            "REGISTRATION FEES",
-            "COMMENTS",
-            "Patient file",
-            "Id_Number",
-            "Doctor",
-            "Stage"
-        
-        ],
-        "otherInvestigationsMap": {
-                    },
-        "allowConsultationWhenNoOpenVisit": false,
-        "defaultVisitType": "OPD",
-        "visitTypeForRetrospectiveEntries": "Special OPD",
-        "maxConceptSetLevels": 3,
-        "allowOnlyCodedDiagnosis": false,
-        "clinicalProviderForms": ["Clinical_Observation_form", "Group V-Screening / Prophylaxis", "Group_Priority_Population_obs_form", "Group IV-Anamneses", "Group_VIII_Family_Planning_obs_form", "Reference_Form","CONFIDENT_FORM","DI_Death Information Form", "Apss_Section_I_form", "Apss_Section_II_form", "Apss_Section_III_form", "Clinical_History_Obs_Form"],
-        "APSSProviderForms": ["CONFIDENT_FORM","Group_Priority_Population_obs_form", "Reference_Form", "Apss_Section_I_form", "Apss_Section_II_form", "Apss_Section_III_form", "Clinical_History_Obs_Form"],
-        "conceptSetUI": {
-            "Chief Complaint Data": {
-                "autocomplete":true,
-                "codedConceptName":"Chief Complaint",
-                "nonCodedConceptName":"Non-Coded Chief Complaint",
-                "durationRequired": false,
-                "allowAddMore": true
-            },
-             "PP_Key_population": {
-                  "disableAddNotes": true
-            },
-            "PP_If_Key_population_yes": {
-                  "disableAddNotes": true,
-                  "required": true
-            },
-            "PP_Vulnerable_Population": {
-                  "disableAddNotes": true
-            },
-            "PP_IF_Vulnerable_Population_Yes": {
-                  "disableAddNotes": true,
-                  "required": true
-            },
-            "WEIGHT": {
-                  "disableAddNotes": true
-            },
-            "HEIGHT": {
-                  "disableAddNotes": true
-            },
-            "Brachial_perimeter_new": {
-                  "disableAddNotes": true
-            },
-            "BMI": {
-            "disableAddNotes": true
-            },
-            "Nutritional_States_new": {
-
-                  "disableAddNotes": true
-            },
-            "Probable delivery date": {
-               "allowFutureDates":true,
-               "disableAddNotes": true
-            },
-            "Last Menstruation Date": {
-                "disableAddNotes": true
-            },
-            "Pregnancy_Yes_No": {
-                "disableAddNotes": true
-            },
-            "Pregnancy_Yes": {
-                "disableAddNotes": true
-            },
-            "Date of Delivery": {
-                "disableAddNotes": true
-            },
-            "Number of Alive Babies Born": {
-                "disableAddNotes": true
-            },
-            "Number of Still Babies Born": {
-                "disableAddNotes": true
-            },
-            "Breastfeeding_ANA": {
-                "disableAddNotes": true
-            },
-            "Pain during sexual intercourse": {
-                "disableAddNotes": true
-            },
-            "Vaginal bleeding after sexual intercourse": {
-                "disableAddNotes": true
-            },
-            "Vaginal bleeding between menstruation_NA": {
-                "disableAddNotes": true
-            },
-            "Pain below the belly_NA": {
-                "disableAddNotes": true
-            },
-            "Referred to for cervical cancer screening": {
-                "disableAddNotes": true
-            },
-            "Symptoms_Prophylaxis": {
-               "required": true,
-               "disableAddNotes": true,
-               "dropdown": true
-            },
-           "Symptoms Prophylaxis_New": {
-               "disableAddNotes": true,
-               "multiSelect" : true,
-               "required": true
-            },
-            "Date of Diagnosis": {
-               "disableAddNotes": true
-            },
-            "Treatment End Date": {
-               "disableAddNotes": true,
-               "buttonSelect": true
-            },
-            "Has STI Symptoms": {
-               "disableAddNotes": true
-            },
-            "TB Type is Extrapulmonary": {
-               "disableAddNotes": true,
-               "required": true,
-               "buttonSelect": true
-            },
-            "TB Type is Extrapulmonary_Sensitive": {
-               "disableAddNotes": true,
-               "required": true,
-               "buttonSelect": true
-            }, 
-           "TInfants Odema_Prophylaxis": {
-               "disableAddNotes": true,
-               "required": true,
-               "buttonSelect": true
-            }, 
-            "Nutrition Supplement": {
-               "disableAddNotes": true,
-               "buttonSelect": true
-            },
-           "Quantity of Nutritional Supplement": {
-               "disableAddNotes": true
-            }, 
-            "Type_Prophylaxis": {
-              "disableAddNotes": true,
-              "multiSelect" : false
-            },
-            "State_Prophylaxis": {
-               "disableAddNotes": true,
-               "required": true,
-           	   "buttonSelect": true
-            },
-            "State_Prophylaxis_CTZ": {
-               "disableAddNotes": true,
-               "required": true,
-               "buttonSelect": true
-            },
-           "State_Prophylaxis_Fluconazol": {
-               "disableAddNotes": true,
-               "required": true,
-               "buttonSelect": true
-            },
-           "Start Date_Prophylaxis": {
-               "disableAddNotes": true,
-               "required": true
-            },
-           "Start Date_Prophylaxis_CTZ": {
-               "disableAddNotes": true,
-               "required": true
-            },
-           "Start Date_Prophylaxis_Fluconazol": {
-               "disableAddNotes": true,
-               "required": true
-            },
-           "Received nutritional support": {
-               "disableAddNotes": true
-            },
-           "STI Diagnosis_Prophylaxis": {
-               "disableAddNotes": true,
-               "required": true,
-               "buttonSelect": true
-            }, 
-            "Syndromic Approach_STI": {
-               "disableAddNotes": true,
-               "required": true,
-               "buttonSelect": true
-            }, 
-            "TB Type": {
-               "disableAddNotes": true,
-               "dropdown": true
-            },
-             "Has TB Symptoms": {
-                "disableAddNotes": true
-            },
-            "TB_Type": {
-                "disableAddNotes": true
-            },
-            "TB Treatment": {
-              "disableAddNotes": true,
-              "dropdown": true
-            },
-            "SP_Treatment Start Date": {
-                "disableAddNotes": true
-            },
-            "SP_Treatment State": {
-                "disableAddNotes": true
-            },
-            "SP_Treatment End Date": {
-              "allowFutureDates":true,
-              "disableAddNotes": true
-            },
-            "End Date": {
-              "allowFutureDates":true,
-              "disableAddNotes": true
-            },
-            "End Date_CTZ": {
-              "allowFutureDates":true,
-              "disableAddNotes": true
-            },
-            "End Date_Fluconazol": {
-              "allowFutureDates":true,
-              "disableAddNotes": true
-            },
-            "Infants Odema_Prophylaxis": {
-                "disableAddNotes": true
-            },
-            "Received nutritional education": {
-                "disableAddNotes": true
-            },
-            "Unit of Measurement (Sachets)": {
-                "disableAddNotes": true
-            },
-            "Blood_Pressure_–_Diastolic_VSNew": {
-                "disableAddNotes": true
-            },
-            "Blood_Pressure_–_Systolic_VitalS": {
-                "disableAddNotes": true
-            },
-            "Heart_Rate_VS_VitalsNew": {
-                "disableAddNotes": true
-            },
-            "Temperature_VS1": {
-                "disableAddNotes": true
-            },
-            "Respiratory_frequency_VS1": {
-                "disableAddNotes": true,
-                "hideAbnormalButton": true
-            },
-            "Tuberculosis, Adverse Effects" :{
-                "multiSelect" : true,
-                "autocomplete" : true
-            },
-            "Posture": {
-                "buttonSelect": true
-            },
-            "P/A Presenting Part": {
-                "multiSelect": true
-            },
-            "FHS": {
-                "buttonSelect": true
-            },
-            "P/S (Per Speculum) - Cervix": {
-                "grid": true
-            },
-            "Anaemia, Stopped Since When": {
-                "conciseText": true
-            },
-            "Examination Notes": {
-                "conciseText": true
-            },
-            "Set1": {
-                "allowAddMore": true
-            },
-            "Set2": {
-                "allowAddMore": true
-            },
-            "Coded3": {
-                "multiSelect": true
-            },
-            "Image": {
-                "allowAddMore": true
-            },
-            "Gynaecology, Gravida": {
-                "stepper": true
-            },
-            "Accepted Family Planning methods": {
-                "multiSelect": true
-            },
-            "Staging_WHO Stages": {
-                "buttonSelect": true
-            }, 
-            "Name of Diseases_Group VII": {
-                "dropdown": true
-            },
-            "Conditions_WHO Stages": {
-                "dropdown": true
-            },
-            "Diagnosis_Group VII": {
-                "allowAddMore": true
-            },
-            "WHO Stages_New": {
-                "allowAddMore": true
-            },
-            "DI_List of cause": {
-                "dropdown": true
-            },
-            "Reference_CR": {
-                "disableAddNotes": true
-            },
-            "Reference_PC": {
-                "disableAddNotes": true
-            },
-            "Reference_AR": {
-                "disableAddNotes": true
-            },
-            "Reference_MPS": {
-                "disableAddNotes": true
-            },
-            "Reference_Other_Specify_Group": {
-                "disableAddNotes": true
-            },
-            "Reference_Other_Specify_Group_Other": {
-                "disableAddNotes": true
-            },
-            "Reference_GA": {
-                "disableAddNotes": true
-            },
-            "Reference_AF": {
-                "disableAddNotes": true
-            },
-            "Reference_CA": {
-                "disableAddNotes": true
-            },
-            "Reference_PU": {
-                "disableAddNotes": true
-            },
-            "Reference_FR": {
-                "disableAddNotes": true
-            },
-            "Reference_DT": {
-                "disableAddNotes": true
-            },
-            "Reference_DC": {
-                "disableAddNotes": true
-            },
-            "Reference_MDC_Other": {
-                "disableAddNotes": true
-            },
-            "Reference_Other_Services": {
-                "multiSelect" : true
-            },
-            "Reference_Eligible": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_PRES_Condom_button": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_PIL_Oral_Contraceptive_button": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_INJ_Injection_button": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_IMP_Implant_button": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_DIU_Intra_button": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_LT_Tubal_Ligation_button": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_VAS_Vasectomy_button": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_MAL_Lactational_Amenorrhea_Method_button": {
-                "disableAddNotes": true
-            },
-            "Family_Planning_Contraceptive_Methods_OUT_Other_button": {
-                "disableAddNotes": true
-            },
-            "CONFIDENT_NAME": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_SURNAME": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_AGE": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_AGE_TYPE": {
-                "disableAddNotes": true,
-                "dropdown": true,
-                "required": true
-             },
-             "CONFIDENT_RELATIONSHIP": {
-                "disableAddNotes": true,
-                "dropdown": true
-             },
-             "Apss_Adherence_follow_up_Has_informed_someone_RELATIONSHIP": {
-                "disableAddNotes": true,
-                "dropdown": true
-             },
-             "CONFIDENT_TELEPHONE1": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_TELEPHONE2": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_PROVINCE": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_DISTRICT": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_LOCALITY": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_BLOCK": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_STREET": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_POR": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_HIV_TEST": {
-                "disableAddNotes": true,
-                "buttonSelect": true
-             },
-             "CONFIDENT_HIV_CARE": {
-                "disableAddNotes": true,
-                "buttonSelect": true
-             },
-             "CONFIDENT_CCR": {
-                "disableAddNotes": true,
-                "buttonSelect": true
-             },
-             "CONFIDENT_NID": {
-                "disableAddNotes": true
-             },
-             "CONFIDENT_FAMILY_SITUATION": {
-                "allowAddMore": true
-             },
-            "Apss_Disclosure_Diagnosis_results_child_adolescent": {
-                  "disableAddNotes": true
-            },
-            "Apss_Pre_TARV_counselling": {
-                  "disableAddNotes": true
-            },
-            "Apss_Pre_TARV_counselling_comments": {
-                  "disableAddNotes": true
-            },
-            "Apss_Psychosocial_factors_affecting_adherence": {
-                  "disableAddNotes": true
-            },
-            "Apss_Psychosocial_factors_Reasons": {
-                  "disableAddNotes": true,
-                  "multiSelect" : true
-            },
-            "Apss_Psychosocial_factors_Details": {
-                  "disableAddNotes": true
-            },
-            "Apss_Positive_prevention_Alcohol_other_Drugs_consumption": {
-                  "disableAddNotes": true
-            },
-            "Apss_Positive_prevention_Disclosure_HIV_status_partner_encouragement_test": {
-                  "disableAddNotes": true
-            },
-            "Apss_Positive_prevention_Family_Planning": {
-                  "disableAddNotes": true
-            },
-            "Apss_Positive_prevention_Need_community_support": {
-                  "disableAddNotes": true
-            },
-            "Apss_Positive_prevention_Sexual_behavior": {
-                  "disableAddNotes": true
-            },
-            "Apss_Positive_prevention_Sexually_Transmitted_Infections": {
-                  "disableAddNotes": true
-            },
-            "Apss_Positive_prevention_importance_adherence": {
-                  "disableAddNotes": true
-            },
-            "Apss_Positive_prevention_Key_Population": {
-                  "disableAddNotes": true
-            },
-            "Apss_Adherence_follow_up_Has_informed_someone": {
-                  "disableAddNotes": true
-            },
-            "Apss_Adherence_follow_up_Has_informed_Relationship": {
-                  "disableAddNotes": true
-            },
-            "Apss_Adherence_follow_up_If_Child_Adolescent_Elderly_Disabled": {
-                  "disableAddNotes": true
-            },
-            "Apss_Adherence_follow_up_Who_administers_Full_Name": {
-                  "disableAddNotes": true
-            },
-            "Apss_Adherence_follow_up_Administers_ARV_Alone": {
-                  "disableAddNotes": true
-            },
-            "Apss_Adherence_follow_up_Adherence_Plan": {
-                "disableAddNotes": true
-            },
-            "Apss_Adherence_follow_up_Side_Effects": {
-                "disableAddNotes": true
-            },
-            "Apss_Adherence_follow_up_Adherence_TARV": {
-                "disableAddNotes": true
-            },
-            "Apss_Support_Groups_Disclosed_Children": {
-                  "disableAddNotes": true
-            },
-            "Apss_Support_Groups_Parents_Caregivers": {
-                  "disableAddNotes": true
-            },
-            "Apss_Support_Groups_Disclosed_Adolescents": {
-                  "disableAddNotes": true
-            },
-            "Apss_Support_Groups_Mother_Mother": {
-                  "disableAddNotes": true
-            },
-            "Apss_Support_Groups_Other": {
-                  "disableAddNotes": true
-            },
-            "Apss_Support_Groups_Specify_group": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_GAAC": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_Family_Approach": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_Adherence_Clubs": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_One_Stop": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_Fast_flow": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_Quarterly_dispensary": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_Community_Dispensary": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_Other": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_Specify Model": {
-                  "disableAddNotes": true
-            },
-            "Apss_Prepared_start_ARV_treatment": {
-                  "disableAddNotes": true
-            },
-            "Apss_Differentiated_Models_Name_Provider": {
-                  "disableAddNotes": true
-            },
-            "Apss_Agreement_Terms_Patient_Caregiver_agrees_contacted": {
-                  "disableAddNotes": true
-            },
-            "Apss_Agreement_Terms_Type_Contact": {
-                  "disableAddNotes": true,
-                  "multiSelect" : true
-            },
-            "Apss_Agreement_Terms_Confidant_agrees_contacted": {
-                  "disableAddNotes": true
-            },
-            "Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact": {
-                  "disableAddNotes": true,
-                  "multiSelect" : true
-            },
-            "Prophylaxis_Nutritional_Status": {
-                  "disableAddNotes": true
-            },
-            "Syndromic Approach_STI_M": {
-                  "disableAddNotes": true
-            },
-            "Syndromic Approach_STI_F": {
-                  "disableAddNotes": true
-            },
-            "SP_Side_Effects_INH": {
-                  "disableAddNotes": true
-            },
-            "SP_Side_Effects_CTZ": {
-                  "disableAddNotes": true
-            },
-            "SP_Side_Effects_Fluconazol": {
-                  "disableAddNotes": true
-            },
-            "SP_Measurement_Unit": {
-                  "disableAddNotes": true
-            },
-            "Apss_Reason_For_The_Visit": {
-                "disableAddNotes": true
-            },
-            "Tarv_Initial_Regime": {
-                "dropdown": true
-            },
-            "Regime_Change": {
-                "dropdown": true
-             },
-            "defaults": {
-                "Number of living children": 1,
-                "Accepted Family Planning methods": [
-                    "Condoms",
-                    "Pills"
-                ],
-                "Pain management given": true,
-                "Safe Abortion, Remarks": "Remarks",
-                "Malaria, Death Date": "2015-12-01"
-            }
-        },
-        "visitPage": {
-            "observationDisplay": {
-                "conceptNames": []
-            }
-        }
+  "id": "bahmni.clinical",
+  "extensionPoints": [
+    {
+      "id": "org.bahmni.clinical.consultation.board",
+      "description": "Bahmni Clinical Consultation Page"
+    },
+    {
+      "id": "org.bahmni.clinical.conceptSetGroup.*",
+      "description": "Define conceptsets part of a conceptset group"
+    },
+    {
+      "id": "org.bahmni.clinical.orders",
+      "description": "Bahmni Orders Page"
+    },
+    {
+      "id": "org.bahmni.patient.search",
+      "description": "Bahmni Patient search, lookups Page"
     }
+  ],
+  "contextModel": [
+    "patientUuid",
+    "visitUuid"
+  ],
+  "config": {
+    "hideConditions": false,
+    "enableLabOrderOptions": [
+      "Urgent",
+      "NeedsPrint"
+    ],
+    "quickPrints": false,
+    "networkConnectivity": {
+      "showNetworkStatusMessage": false,
+      "networkStatusCheckInterval": 20000,
+      "locales": [
+        {
+          "locale": "fr",
+          "css": "offline-language-french"
+        },
+        {
+          "locale": "es",
+          "css": "offline-language-spanish"
+        },
+        {
+          "locale": "pt",
+          "css": "offline-language-portuguese-brazil"
+        }
+      ]
+    },
+    "diagnosisStatus": "Inactivo",
+    "program": {
+      "patientInformation": {
+        "ageLimit": 100
+      },
+      "ID_Number": {
+        "required": false
+      },
+      "Co-morbidites": {
+        "excludeFrom": [
+          "HIV",
+          "TB",
+          "TARV"
+        ]
+      },
+      "Doctor": {
+        "excludeFrom": [
+          "HIV",
+          "TB",
+          "TARV"
+        ]
+      },
+      "Stage": {
+        "excludeFrom": [
+          "HIV",
+          "TB",
+          "TARV"
+        ]
+      }
+    },
+    "patientContext": {
+      "programAttributes": [
+      ],
+      "personAttributes": [
+      ],
+      "additionalPatientIdentifiers": [
+      ],
+      "preferredIdentifier": "Id_Number"
+    },
+    "obsIgnoreList": [
+      "REGISTRATION FEES",
+      "COMMENTS",
+      "Patient file",
+      "Id_Number",
+      "Doctor",
+      "Stage"
+    ],
+    "otherInvestigationsMap": {
+    },
+    "allowConsultationWhenNoOpenVisit": false,
+    "defaultVisitType": "OPD",
+    "visitTypeForRetrospectiveEntries": "Special OPD",
+    "maxConceptSetLevels": 3,
+    "allowOnlyCodedDiagnosis": false,
+    "clinicalProviderForms": [
+      "Clinical_Observation_form",
+      "Group V-Screening / Prophylaxis",
+      "Group_Priority_Population_obs_form",
+      "Group IV-Anamneses",
+      "Group_VIII_Family_Planning_obs_form",
+      "Reference_Form",
+      "CONFIDENT_FORM",
+      "DI_Death Information Form",
+      "Apss_Section_I_form",
+      "Apss_Section_II_form",
+      "Apss_Section_III_form",
+      "Clinical_History_Obs_Form"
+    ],
+    "APSSProviderForms": [
+      "CONFIDENT_FORM",
+      "Group_Priority_Population_obs_form",
+      "Reference_Form",
+      "Apss_Section_I_form",
+      "Apss_Section_II_form",
+      "Apss_Section_III_form",
+      "Clinical_History_Obs_Form"
+    ],
+    "conceptSetUI": {
+      "Chief Complaint Data": {
+        "autocomplete": true,
+        "codedConceptName": "Chief Complaint",
+        "nonCodedConceptName": "Non-Coded Chief Complaint",
+        "durationRequired": false,
+        "allowAddMore": true
+      },
+      "PP_Key_population": {
+        "disableAddNotes": true
+      },
+      "PP_If_Key_population_yes": {
+        "disableAddNotes": true,
+        "required": true
+      },
+      "PP_Vulnerable_Population": {
+        "disableAddNotes": true
+      },
+      "PP_IF_Vulnerable_Population_Yes": {
+        "disableAddNotes": true,
+        "required": true
+      },
+      "WEIGHT": {
+        "disableAddNotes": true
+      },
+      "HEIGHT": {
+        "disableAddNotes": true
+      },
+      "Brachial_perimeter_new": {
+        "disableAddNotes": true
+      },
+      "BMI": {
+        "disableAddNotes": true
+      },
+      "Nutritional_States_new": {
+        "disableAddNotes": true
+      },
+      "Probable delivery date": {
+        "allowFutureDates": true,
+        "disableAddNotes": true
+      },
+      "Last Menstruation Date": {
+        "disableAddNotes": true
+      },
+      "Pregnancy_Yes_No": {
+        "disableAddNotes": true
+      },
+      "Pregnancy_Yes": {
+        "disableAddNotes": true
+      },
+      "Date of Delivery": {
+        "disableAddNotes": true
+      },
+      "Number of Alive Babies Born": {
+        "disableAddNotes": true
+      },
+      "Number of Still Babies Born": {
+        "disableAddNotes": true
+      },
+      "Breastfeeding_ANA": {
+        "disableAddNotes": true
+      },
+      "Pain during sexual intercourse": {
+        "disableAddNotes": true
+      },
+      "Vaginal bleeding after sexual intercourse": {
+        "disableAddNotes": true
+      },
+      "Vaginal bleeding between menstruation_NA": {
+        "disableAddNotes": true
+      },
+      "Pain below the belly_NA": {
+        "disableAddNotes": true
+      },
+      "Referred to for cervical cancer screening": {
+        "disableAddNotes": true
+      },
+      "Symptoms_Prophylaxis": {
+        "required": true,
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "Symptoms Prophylaxis_New": {
+        "disableAddNotes": true,
+        "multiSelect": true,
+        "required": true
+      },
+      "Date of Diagnosis": {
+        "disableAddNotes": true
+      },
+      "Treatment End Date": {
+        "disableAddNotes": true,
+        "buttonSelect": true
+      },
+      "Has STI Symptoms": {
+        "disableAddNotes": true
+      },
+      "TB Type is Extrapulmonary": {
+        "disableAddNotes": true,
+        "required": true,
+        "buttonSelect": true
+      },
+      "TB Type is Extrapulmonary_Sensitive": {
+        "disableAddNotes": true,
+        "required": true,
+        "buttonSelect": true
+      },
+      "TInfants Odema_Prophylaxis": {
+        "disableAddNotes": true,
+        "required": true,
+        "buttonSelect": true
+      },
+      "Nutrition Supplement": {
+        "disableAddNotes": true,
+        "buttonSelect": true
+      },
+      "Quantity of Nutritional Supplement": {
+        "disableAddNotes": true
+      },
+      "Type_Prophylaxis": {
+        "disableAddNotes": true,
+        "multiSelect": false
+      },
+      "State_Prophylaxis": {
+        "disableAddNotes": true,
+        "required": true,
+        "buttonSelect": true
+      },
+      "State_Prophylaxis_CTZ": {
+        "disableAddNotes": true,
+        "required": true,
+        "buttonSelect": true
+      },
+      "State_Prophylaxis_Fluconazol": {
+        "disableAddNotes": true,
+        "required": true,
+        "buttonSelect": true
+      },
+      "Start Date_Prophylaxis": {
+        "disableAddNotes": true,
+        "required": true
+      },
+      "Start Date_Prophylaxis_CTZ": {
+        "disableAddNotes": true,
+        "required": true
+      },
+      "Start Date_Prophylaxis_Fluconazol": {
+        "disableAddNotes": true,
+        "required": true
+      },
+      "Received nutritional support": {
+        "disableAddNotes": true
+      },
+      "STI Diagnosis_Prophylaxis": {
+        "disableAddNotes": true,
+        "required": true,
+        "buttonSelect": true
+      },
+      "Syndromic Approach_STI": {
+        "disableAddNotes": true,
+        "required": true,
+        "buttonSelect": true
+      },
+      "TB Type": {
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "Has TB Symptoms": {
+        "disableAddNotes": true
+      },
+      "TB_Type": {
+        "disableAddNotes": true
+      },
+      "TB Treatment": {
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "SP_Treatment Start Date": {
+        "disableAddNotes": true
+      },
+      "SP_Treatment State": {
+        "disableAddNotes": true
+      },
+      "SP_Treatment End Date": {
+        "allowFutureDates": true,
+        "disableAddNotes": true
+      },
+      "End Date": {
+        "allowFutureDates": true,
+        "disableAddNotes": true
+      },
+      "End Date_CTZ": {
+        "allowFutureDates": true,
+        "disableAddNotes": true
+      },
+      "End Date_Fluconazol": {
+        "allowFutureDates": true,
+        "disableAddNotes": true
+      },
+      "Infants Odema_Prophylaxis": {
+        "disableAddNotes": true
+      },
+      "Received nutritional education": {
+        "disableAddNotes": true
+      },
+      "Unit of Measurement (Sachets)": {
+        "disableAddNotes": true
+      },
+      "Blood_Pressure_–_Diastolic_VSNew": {
+        "disableAddNotes": true
+      },
+      "Blood_Pressure_–_Systolic_VitalS": {
+        "disableAddNotes": true
+      },
+      "Heart_Rate_VS_VitalsNew": {
+        "disableAddNotes": true
+      },
+      "Temperature_VS1": {
+        "disableAddNotes": true
+      },
+      "Respiratory_frequency_VS1": {
+        "disableAddNotes": true,
+        "hideAbnormalButton": true
+      },
+      "Tuberculosis, Adverse Effects": {
+        "multiSelect": true,
+        "autocomplete": true
+      },
+      "Posture": {
+        "buttonSelect": true
+      },
+      "P/A Presenting Part": {
+        "multiSelect": true
+      },
+      "FHS": {
+        "buttonSelect": true
+      },
+      "P/S (Per Speculum) - Cervix": {
+        "grid": true
+      },
+      "Anaemia, Stopped Since When": {
+        "conciseText": true
+      },
+      "Examination Notes": {
+        "conciseText": true
+      },
+      "Set1": {
+        "allowAddMore": true
+      },
+      "Set2": {
+        "allowAddMore": true
+      },
+      "Coded3": {
+        "multiSelect": true
+      },
+      "Image": {
+        "allowAddMore": true
+      },
+      "Gynaecology, Gravida": {
+        "stepper": true
+      },
+      "Accepted Family Planning methods": {
+        "multiSelect": true
+      },
+      "Staging_WHO Stages": {
+        "buttonSelect": true
+      },
+      "Name of Diseases_Group VII": {
+        "dropdown": true
+      },
+      "Conditions_WHO Stages": {
+        "dropdown": true
+      },
+      "Diagnosis_Group VII": {
+        "allowAddMore": true
+      },
+      "WHO Stages_New": {
+        "allowAddMore": true
+      },
+      "DI_List of cause": {
+        "dropdown": true
+      },
+      "Reference_CR": {
+        "disableAddNotes": true
+      },
+      "Reference_PC": {
+        "disableAddNotes": true
+      },
+      "Reference_AR": {
+        "disableAddNotes": true
+      },
+      "Reference_MPS": {
+        "disableAddNotes": true
+      },
+      "Reference_Other_Specify_Group": {
+        "disableAddNotes": true
+      },
+      "Reference_Other_Specify_Group_Other": {
+        "disableAddNotes": true
+      },
+      "Reference_GA": {
+        "disableAddNotes": true
+      },
+      "Reference_AF": {
+        "disableAddNotes": true
+      },
+      "Reference_CA": {
+        "disableAddNotes": true
+      },
+      "Reference_PU": {
+        "disableAddNotes": true
+      },
+      "Reference_FR": {
+        "disableAddNotes": true
+      },
+      "Reference_DT": {
+        "disableAddNotes": true
+      },
+      "Reference_DC": {
+        "disableAddNotes": true
+      },
+      "Reference_MDC_Other": {
+        "disableAddNotes": true
+      },
+      "Reference_Other_Services": {
+        "multiSelect": true
+      },
+      "Reference_Eligible": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_PRES_Condom_button": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_PIL_Oral_Contraceptive_button": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_INJ_Injection_button": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_IMP_Implant_button": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_DIU_Intra_button": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_LT_Tubal_Ligation_button": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_VAS_Vasectomy_button": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_MAL_Lactational_Amenorrhea_Method_button": {
+        "disableAddNotes": true
+      },
+      "Family_Planning_Contraceptive_Methods_OUT_Other_button": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_NAME": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_SURNAME": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_AGE": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_AGE_TYPE": {
+        "disableAddNotes": true,
+        "dropdown": true,
+        "required": true
+      },
+      "CONFIDENT_RELATIONSHIP": {
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "Apss_Adherence_follow_up_Has_informed_someone_RELATIONSHIP": {
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "CONFIDENT_TELEPHONE1": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_TELEPHONE2": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_PROVINCE": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_DISTRICT": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_LOCALITY": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_BLOCK": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_STREET": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_POR": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_HIV_TEST": {
+        "disableAddNotes": true,
+        "buttonSelect": true
+      },
+      "CONFIDENT_HIV_CARE": {
+        "disableAddNotes": true,
+        "buttonSelect": true
+      },
+      "CONFIDENT_CCR": {
+        "disableAddNotes": true,
+        "buttonSelect": true
+      },
+      "CONFIDENT_NID": {
+        "disableAddNotes": true
+      },
+      "CONFIDENT_FAMILY_SITUATION": {
+        "allowAddMore": true
+      },
+      "Apss_Disclosure_Diagnosis_results_child_adolescent": {
+        "disableAddNotes": true
+      },
+      "Apss_Pre_TARV_counselling": {
+        "disableAddNotes": true
+      },
+      "Apss_Pre_TARV_counselling_comments": {
+        "disableAddNotes": true
+      },
+      "Apss_Psychosocial_factors_affecting_adherence": {
+        "disableAddNotes": true
+      },
+      "Apss_Psychosocial_factors_Reasons": {
+        "disableAddNotes": true,
+        "multiSelect": true
+      },
+      "Apss_Psychosocial_factors_Details": {
+        "disableAddNotes": true
+      },
+      "Apss_Positive_prevention_Alcohol_other_Drugs_consumption": {
+        "disableAddNotes": true
+      },
+      "Apss_Positive_prevention_Disclosure_HIV_status_partner_encouragement_test": {
+        "disableAddNotes": true
+      },
+      "Apss_Positive_prevention_Family_Planning": {
+        "disableAddNotes": true
+      },
+      "Apss_Positive_prevention_Need_community_support": {
+        "disableAddNotes": true
+      },
+      "Apss_Positive_prevention_Sexual_behavior": {
+        "disableAddNotes": true
+      },
+      "Apss_Positive_prevention_Sexually_Transmitted_Infections": {
+        "disableAddNotes": true
+      },
+      "Apss_Positive_prevention_importance_adherence": {
+        "disableAddNotes": true
+      },
+      "Apss_Positive_prevention_Key_Population": {
+        "disableAddNotes": true
+      },
+      "Apss_Adherence_follow_up_Has_informed_someone": {
+        "disableAddNotes": true
+      },
+      "Apss_Adherence_follow_up_Has_informed_Relationship": {
+        "disableAddNotes": true
+      },
+      "Apss_Adherence_follow_up_If_Child_Adolescent_Elderly_Disabled": {
+        "disableAddNotes": true
+      },
+      "Apss_Adherence_follow_up_Who_administers_Full_Name": {
+        "disableAddNotes": true
+      },
+      "Apss_Adherence_follow_up_Administers_ARV_Alone": {
+        "disableAddNotes": true
+      },
+      "Apss_Adherence_follow_up_Adherence_Plan": {
+        "disableAddNotes": true
+      },
+      "Apss_Adherence_follow_up_Side_Effects": {
+        "disableAddNotes": true
+      },
+      "Apss_Adherence_follow_up_Adherence_TARV": {
+        "disableAddNotes": true
+      },
+      "Apss_Support_Groups_Disclosed_Children": {
+        "disableAddNotes": true
+      },
+      "Apss_Support_Groups_Parents_Caregivers": {
+        "disableAddNotes": true
+      },
+      "Apss_Support_Groups_Disclosed_Adolescents": {
+        "disableAddNotes": true
+      },
+      "Apss_Support_Groups_Mother_Mother": {
+        "disableAddNotes": true
+      },
+      "Apss_Support_Groups_Other": {
+        "disableAddNotes": true
+      },
+      "Apss_Support_Groups_Specify_group": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_GAAC": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_Family_Approach": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_Adherence_Clubs": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_One_Stop": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_Fast_flow": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_Quarterly_dispensary": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_Community_Dispensary": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_Other": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_Specify Model": {
+        "disableAddNotes": true
+      },
+      "Apss_Prepared_start_ARV_treatment": {
+        "disableAddNotes": true
+      },
+      "Apss_Differentiated_Models_Name_Provider": {
+        "disableAddNotes": true
+      },
+      "Apss_Agreement_Terms_Patient_Caregiver_agrees_contacted": {
+        "disableAddNotes": true
+      },
+      "Apss_Agreement_Terms_Type_Contact": {
+        "disableAddNotes": true,
+        "multiSelect": true
+      },
+      "Apss_Agreement_Terms_Confidant_agrees_contacted": {
+        "disableAddNotes": true
+      },
+      "Apss_Agreement_Terms_Confidant_agrees_contacted_Type_of_TC_Contact": {
+        "disableAddNotes": true,
+        "multiSelect": true
+      },
+      "Prophylaxis_Nutritional_Status": {
+        "disableAddNotes": true
+      },
+      "Syndromic Approach_STI_M": {
+        "disableAddNotes": true
+      },
+      "Syndromic Approach_STI_F": {
+        "disableAddNotes": true
+      },
+      "SP_Side_Effects_INH": {
+        "disableAddNotes": true
+      },
+      "SP_Side_Effects_CTZ": {
+        "disableAddNotes": true
+      },
+      "SP_Side_Effects_Fluconazol": {
+        "disableAddNotes": true
+      },
+      "SP_Measurement_Unit": {
+        "disableAddNotes": true
+      },
+      "Apss_Reason_For_The_Visit": {
+        "disableAddNotes": true
+      },
+      "Tarv_Initial_Regime": {
+        "dropdown": true
+      },
+      "Regime_Change": {
+        "dropdown": true
+      },
+      "HOF_CLINICAL_SITUATION_STAGING_I_CONDITION": {
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION": {
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION": {
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION": {
+        "disableAddNotes": true,
+        "dropdown": true
+      },
+      "HOF_CLINICAL_SITUATION_TB_Antecedent": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_TB_Treatment_Start_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_TB_Treatment_End_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_Breastfeeding": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_Registered_to_Some_MDS": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_Registered_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_Model_Type": {
+        "disableAddNotes": true
+      },
+      "defaults": {
+        "Number of living children": 1,
+        "Accepted Family Planning methods": [
+          "Condoms",
+          "Pills"
+        ],
+        "Pain management given": true,
+        "Safe Abortion, Remarks": "Remarks",
+        "Malaria, Death Date": "2015-12-01"
+      }
+    },
+    "visitPage": {
+      "observationDisplay": {
+        "conceptNames": []
+      }
+    }
+  }
 }
