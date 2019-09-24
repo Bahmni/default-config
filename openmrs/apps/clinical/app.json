@@ -732,6 +732,10 @@
       "HOF_CLINICAL_SITUATION_TB_Treatment_End_Date": {
         "disableAddNotes": true
       },
+      "HOF_CLINICAL_SITUATION_Actual_diagnosis": {
+        "disableAddNotes": true,
+        "autocomplete": true
+      },
       "HOF_CLINICAL_SITUATION_Breastfeeding": {
         "disableAddNotes": true
       },
