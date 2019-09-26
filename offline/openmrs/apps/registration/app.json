@@ -17,69 +17,122 @@
             "activeVisitUuid"
         ],
         "config" : {
+            "afterVisitSaveForwardUrl" : "../clinical/#/default/patient/{{patientUuid}}/dashboard",
             "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
+                "registrantInformation": {
+                    "title": "Registrant Information",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
-                    ]
+                        "HealthFacilityName",
+                        "TodaysDate",
+                        "RegistrantName"
+                    ],
+					"expand": true,
+					"order": 1
                 },
-                "hidden": {
+                "registerNewPatient1": {
+                    "title": "Register A New Patient",
                     "attributes": [
-                        "primaryContact"
-                    ]
+                        "TypeofPatient",
+						"Walk-InReason"
+                    ],
+					"expand": true,
+					"order": 2
                 },
-                "defaults":  {
-                    "class": "General",
-                    "landHolding": 2
+                "registerNewPatient2": {
+                    "title": "Not shown",
+                    "attributes": [
+						"UniqueArtNo",
+                        "HIVExposedInfant(HEI)No"
+                    ],
+					"expand": true,
+					"order": 3
+                },
+                "registerNewPatient3": {
+                    "title": "Not shown",
+                    "attributes": [
+						"MaritalStatus"
+                    ],
+					"expand": true,
+					"order": 4
+                },
+                "registerNewPatient5": {
+                    "title": "Not shown",
+                    "attributes": [
+						"MobileCountryCode",
+						"MobileNumber",
+						"AlternativeNumber"
+                    ],
+					"expand": true,
+					"order": 5
+                },
+                "CaregiverFollowUp": {
+                    "title": "Mother Follow Up Information",
+                    "attributes": [
+						"HeiChildMothersName",
+						"MotherInCareAtArtClinic",
+						"MothersArtNo",
+						"FacilityName",
+                        "MothersContactNumber"
+                    ],
+					"expand": true,
+					"order": 6
+                },
+                "alternateContactInformation": {
+                    "title": "Alternative Caregiver",
+                    "attributes": [
+						"AlternateContactPerson",
+						"TelephoneNo",
+						"AlternateContactPersonLocation",
+						"AlternateContactPersonRelationship",
+						"ContactPersonDisclosedTo"
+                    ],
+					"expand": true,
+					"order": 7
+                },
+                "treatmentSupporter": {
+                    "title": "Treatment Supporter",
+                    "attributes": [
+                        "TreatmentSupporterFirstName",
+                        "TreatmentSupporterLastName",
+						"TreatmentSupporterTelephoneNumber",
+						"TreatmentSupporterAddress",
+						"HomeCareProvidedBy"
+                    ],
+					"expand": true,
+					"order": 8
+                },
+				"defaults":  {
+                    "MobileCountryCode": "South Sudan"
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
+                "showAddressFieldsTopDown": true,
+                "strictAutocompleteFromLevel": "address1"
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
                 "Parent":"patient"
             },
 
-            "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
+			"disablePhotoCapture": true,
+			"showEnterID": false,
+			"dobMandatory": true,
+            "autoCompleteFields":["familyName", "givenName"],
             "defaultVisitType": "OPD",
-            "showLastName": true,
-            "isLastNameMandatory": true,
-            "disablePhotoCapture": true,
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
-            "showBirthTime": true,
+            "showLastName": true,
+            "isLastNameMandatory": false,
+            "showSaveConfirmDialog": false,
+            "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
                     "shortcutKey": "l"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-                    "shortcutKey": "p"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
-                    "shortcutKey": "c"
                 }
+               
             ],
             "conceptSetUI": {
                 "FHS": {
@@ -95,19 +148,20 @@
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address1" : {"pattern" : "[a-zA-Z0-9]{3}", "errorMessage" : "Should contain 3 characters"}
+                "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"},
+				"TreatmentSupporterTelephoneNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"},
+				"TelephoneNo" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"},
+				"MothersContactNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"},
+				"MobileNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"},
+				"AlternativeNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"}
             },
             "patientSearch": {
-                "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "Unique Art No.",
+                    "placeholder": "Enter Unique Art No",
+                    "fields": ["UniqueArtNo","MaritalStatus","Cohort"]
                 }
             }
+            
         }
 }
