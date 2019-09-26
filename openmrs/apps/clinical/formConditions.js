@@ -395,8 +395,8 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
-    "HTC, WHO Staging" (formName, formFieldValues) {
-        var staging = formFieldValues["HTC, WHO Staging"];
+    "HOF_CLINICAL_SITUATION_WHO_Staging" (formName, formFieldValues) {
+        var staging = formFieldValues["HOF_CLINICAL_SITUATION_WHO_Staging"];
         if (staging === "WHO Stage I") {
             return {
                 show: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION"],

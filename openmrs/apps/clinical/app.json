@@ -701,10 +701,12 @@
       "Apss_Reason_For_The_Visit": {
         "disableAddNotes": true
       },
-      "Tarv_Initial_Regime": {
+      "HOF_TARV_PROPHILAXIS_Tarv_Initial_Regime": {
+        "disableAddNotes": true,
         "dropdown": true
       },
-      "Regime_Change": {
+      "HOF_TARV_PROPHILAXIS_Regime_Change": {
+        "disableAddNotes": true,
         "dropdown": true
       },
       "HOF_CLINICAL_SITUATION_STAGING_I_CONDITION": {
@@ -746,6 +748,159 @@
         "disableAddNotes": true
       },
       "HOF_CLINICAL_SITUATION_Model_Type": {
+        "disableAddNotes": true
+      },
+      "HOF_TARV_PROPHILAXIS_Change_Motivation": {
+        "disableAddNotes": true
+      },
+      "HOF_TARV_PROPHILAXIS_Date_Of_Change": {
+        "disableAddNotes": true
+      },
+      "HOF_TARV_PROPHILAXIS_Type_Prophylaxis": {
+        "disableAddNotes": true
+      },
+      "HOF_TARV_PROPHILAXIS_Start_Date_Prophylaxis": {
+        "disableAddNotes": true
+      },
+      "HOF_TARV_PROPHILAXIS_End_Date_Prophylaxis": {
+        "disableAddNotes": true
+      },
+      "HOF_TARV_PROPHILAXIS_Date_Of_Tarv": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_WEIGHT": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_HEIGHT": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_WHO_Staging": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_pregnancy": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_Last_Clinical_Visit_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_TARV_PROPHILAXIS_Patient_Date_Of_Tarv": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Glicemia": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Glicemia2": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_Last_Drug_Pickup_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_Next_Clinical_Visit_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_CLINICAL_SITUATION_Next_Drug_Pickup_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Glicemia_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Glicemia_Date2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_CD4_value": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_CD4_value2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_CD4_Percent": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_CD4_Percent2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_CD4_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_CD4_Date2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Carga_Viral": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Carga_Viral2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Carga_Viral_Qualitativo": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Carga_Viral_Qualitativo2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Carga_Viral_Absolute": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Carga_Viral_Absolute2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Carga_Viral_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Carga_Viral_Date2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_HB": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_HB2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_HB_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_HB_Date2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_ALT": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_ALT2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_ALT_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_ALT_Date2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_AST": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_AST2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_AST_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_AST_Date2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Other": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Other2": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Other_Date": {
+        "disableAddNotes": true
+      },
+      "HOF_LAB_SITUATION_Other_Date2": {
+        "disableAddNotes": true
+      },
+      "HOF_Other_Info_Provider": {
+        "disableAddNotes": true
+      },
+      "HOF_Other_Info_Contact": {
         "disableAddNotes": true
       },
       "defaults": {

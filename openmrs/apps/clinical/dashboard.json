@@ -166,7 +166,7 @@
             },
 
           "historyObsFrom":{
-            "title":"Historico Clínico",
+            "title":"Guia de Referência",
             "type":"vitals",
             "isObservation":true,
             "displayOrder":17,
@@ -187,16 +187,18 @@
                 "HOF_CLINICAL_SITUATION_Registered_to_Some_MDS",
                 "HOF_CLINICAL_SITUATION_Model_Type",
                 "HOF_LAB_SITUATION_CD4_value",
-                "CD4 %",
+                "HOF_LAB_SITUATION_CD4_value2",
+                "HOF_LAB_SITUATION_CD4_Percent",
+                "HOF_LAB_SITUATION_CD4_Percent2",
                 "HOF_LAB_SITUATION_CD4_Date",
                 "HOF_LAB_SITUATION_Carga_Viral",
+                "HOF_LAB_SITUATION_Carga_Viral2",
                 "HOF_LAB_SITUATION_Carga_Viral_Qualitativo",
                 "HOF_LAB_SITUATION_Carga_Viral_Absolute",
                 "HOF_LAB_SITUATION_Carga_Viral_Date"
               ],
               "showDetailsButton":true,
-              "numberOfVisits":1,
-              "scope": "latest"
+              "numberOfVisits":1
             },
             "expandedViewConfig":{
               "conceptNames":[
