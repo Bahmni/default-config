@@ -32,7 +32,8 @@
                 "registerNewPatient1": {
                     "title": "Register A New Patient",
                     "attributes": [
-                        "TypeofPatient"
+                        "TypeofPatient",
+						"Walk-InReason"
                     ],
 					"expand": true,
 					"order": 2
@@ -106,7 +107,7 @@
             },
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
-                "strictAutocompleteFromLevel": "address0"
+                "strictAutocompleteFromLevel": "address1"
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
