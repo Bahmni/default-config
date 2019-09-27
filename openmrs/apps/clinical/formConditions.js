@@ -165,9 +165,38 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             hide: returnHideValue
         }
     }
+},
+    "HOF_TARV_PROPHILAXIS_Type_Prophylaxis" (formName, formFieldValues) {
+    var dia = formFieldValues["HOF_TARV_PROPHILAXIS_Type_Prophylaxis"];
+    var returnShowValue = [];
+    var returnHideValue = [];
+        if (dia === "INH") {
+            returnShowValue.push("HOF_TARV_PROPHILAXIS_INH_Details");
 
-    
-    
+        } else {
+            returnHideValue.push("HOF_TARV_PROPHILAXIS_INH_Details");
+
+        }
+        if (dia === "CTZ") {
+            returnShowValue.push("HOF_TARV_PROPHILAXIS_CTZ_Details");
+
+        } else {
+            returnHideValue.push("HOF_TARV_PROPHILAXIS_CTZ_Details");
+        }
+        if (dia === "Fluconazol") {
+            returnShowValue.push("HOF_TARV_PROPHILAXIS_Fluconazol_Details");
+
+        } else {
+            returnHideValue.push("HOF_TARV_PROPHILAXIS_Fluconazol_Details");
+
+        }
+
+
+        return {
+
+            show: returnShowValue,
+            hide: returnHideValue
+        }
 },
 "SP_Side_Effects_INH" (formName, formFieldValues, patient) {
     var answer = formFieldValues["SP_Side_Effects_INH"];
@@ -462,10 +491,10 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
-    "HOF_CLINICAL_SITUATION_Model_Type" (formName, formFieldValues) {
-        var value = formFieldValues["HOF_CLINICAL_SITUATION_Model_Type"];
+    "HOF_CLINICAL_SITUATION_Registered_to_Some_MDS" (formName, formFieldValues) {
+        var value = formFieldValues["HOF_CLINICAL_SITUATION_Registered_to_Some_MDS"];
         
-        if (value) {
+        if (value === "HOF_CLINICAL_SITUATION_Registered_to_Some_MDS_Yes") {
             return {
                 show: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other"]
             }
