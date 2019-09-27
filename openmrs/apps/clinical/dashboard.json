@@ -172,15 +172,15 @@
             "displayOrder":17,
             "dashboardConfig":{
               "conceptNames":[
-                "Date_Of_Test",
+                "HOF_TARV_PROPHILAXIS_Patient_Date_Of_Tarv",
                 "HOF_CLINICAL_SITUATION_WEIGHT",
                 "HOF_CLINICAL_SITUATION_HEIGHT",
-                "Tarv_Initial_Regime",
-                "Regime_Change",
-                "Change_Motivation",
-                "Date_Of_Change",
-                "Type_Prophylaxis",
-                "HTC, WHO Staging",
+                "HOF_TARV_PROPHILAXIS_Tarv_Initial_Regime",
+                "HOF_TARV_PROPHILAXIS_Regime_Change",
+                "HOF_TARV_PROPHILAXIS_Change_Motivation",
+                "HOF_TARV_PROPHILAXIS_Date_Of_Change",
+                "HOF_TARV_PROPHILAXIS_Type_Prophylaxis",
+                "HOF_CLINICAL_SITUATION_WHO_Staging",
                 "HOF_CLINICAL_SITUATION_STAGING_I_CONDITION",
                 "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION",
                 "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION",
@@ -193,6 +193,7 @@
                 "HOF_LAB_SITUATION_CD4_Percent",
                 "HOF_LAB_SITUATION_CD4_Percent2",
                 "HOF_LAB_SITUATION_CD4_Date",
+                "HOF_LAB_SITUATION_CD4_Date2",
                 "HOF_LAB_SITUATION_Carga_Viral",
                 "HOF_LAB_SITUATION_Carga_Viral2",
                 "HOF_LAB_SITUATION_Carga_Viral_Qualitativo",
@@ -200,7 +201,7 @@
                 "HOF_LAB_SITUATION_Carga_Viral_Date"
               ],
               "showDetailsButton":true,
-              "numberOfVisits":1
+              "numberOfVisits":2
             },
             "expandedViewConfig":{
               "conceptNames":[
