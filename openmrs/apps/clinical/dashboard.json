@@ -173,6 +173,8 @@
             "dashboardConfig":{
               "conceptNames":[
                 "Date_Of_Test",
+                "HOF_CLINICAL_SITUATION_WEIGHT",
+                "HOF_CLINICAL_SITUATION_HEIGHT",
                 "Tarv_Initial_Regime",
                 "Regime_Change",
                 "Change_Motivation",
