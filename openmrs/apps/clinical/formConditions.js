@@ -169,6 +169,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
         if(currentfp == true){
             return{
                 show: ["FP Method"]
+
             }
         }else {
             return{

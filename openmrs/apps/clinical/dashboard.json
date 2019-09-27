@@ -19,14 +19,7 @@
                     "countyDistrict"
                 ]
             },
-            "diagnosis":{  
-                "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "type":"diagnosis",
-                "showCertainty":true,
-                "showOrder":true,
-                "showDetailsButton":true,
-                "displayOrder":1
-            },
+           
             "navigationLinksControl":{  
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type":"navigationLinksControl",
@@ -82,11 +75,7 @@
                     "showDetailsButton":true
                 }
             },
-            "programs":{  
-                "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
-                "type":"programs",
-                "displayOrder":10
-            },
+        
             "radiologyOrders":{  
                 "orderType":"Radiology Order",
                 "type":"ordersControl",
@@ -145,7 +134,7 @@
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":11,
+                "displayOrder":2,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "HEIGHT",
@@ -163,7 +152,7 @@
                         "BMI",
                         "BMI STATUS"
                     ],
-                    "numberOfVisits":2,
+                    "numberOfVisits":24,
                     "scope":"latest",
                     "showDetailsButton":true,
                     "pivotTable":{  
@@ -438,7 +427,7 @@
                 "type":"drugOrderDetails",
                 "displayType":"Full-Page",
                 "showDetailsButton":true,
-                "displayOrder":24,
+                "displayOrder":1,
                 "dashboardConfig":{  
                     "showOnlyActive":true,
                     "drugConceptSet":"All Other Drugs"

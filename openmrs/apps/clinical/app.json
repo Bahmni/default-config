@@ -230,9 +230,6 @@
             "ANC, ART Start Date":{
                 "required":true
             },
-            "ART ,Stop Date":{
-                "required":true
-            },
             "CTX or Dapose Start Date":{
                 "required":true
             },
