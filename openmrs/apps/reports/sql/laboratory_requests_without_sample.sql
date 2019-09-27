@@ -22,7 +22,8 @@ select
    string_agg(DISTINCT(case when ap.part_name = 'level2' then pa.value end), ' ') as "Distrito",
    string_agg(DISTINCT(case when ap.part_name = 'level3' then pa.value end), ' ') as "Administrativa",
    string_agg(DISTINCT(case when ap.part_name = 'level1' then pa.value end), ' ') as "Localidade/Bairro",
-   string_agg(DISTINCT(case when ap.part_name = 'level4' then pa.value end), ' ') as "Quarteirão" 
+   string_agg(DISTINCT(case when ap.part_name = 'level4' then pa.value end), ' ') as "Quarteirão",
+   test_table.name as "Nome do Teste"
    from
          person p
          inner join 
@@ -47,6 +48,16 @@ select
             person_address pa
             on p.id = pa.person_id
          inner join
+            sample_item si
+            on s.id = si.samp_id
+         inner join
+            analysis a
+            on a.sampitem_id = si.id
+         inner join
+            test test_table
+            on test_table.id=a.test_id
+         inner join
             address_part ap
             on pa.address_part_id=ap.id
-            group by p.id,pi.id,pt.id,sh.patient_id;
+            group by p.id,pi.id,pt.id,sh.patient_id,test_table.id
+            order by p.first_name;
