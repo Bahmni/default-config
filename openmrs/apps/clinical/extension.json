@@ -224,6 +224,16 @@
     },
     "order":9,
     "requiredPrivilege": "app:clinical"
+  },  "bahmniClinicalConceptSetGroupObservationsClinicalHistoryObs": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.ClinicalHistoryObs",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Clinical_History_Obs_Form"
+    },
+    "order":9,
+    "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsApssSectionIII": {
     "id": "bahmni.clinical.conceptSetGroup.observations.ApssSectionIII",

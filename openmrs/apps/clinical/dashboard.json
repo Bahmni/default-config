@@ -164,6 +164,56 @@
                     }
                 }
             },
+
+          "historyObsFrom":{
+            "title":"Guia de Referência",
+            "type":"vitals",
+            "isObservation":true,
+            "displayOrder":17,
+            "dashboardConfig":{
+              "conceptNames":[
+                "HOF_TARV_PROPHILAXIS_Patient_Date_Of_Tarv",
+                "HOF_CLINICAL_SITUATION_WEIGHT",
+                "HOF_CLINICAL_SITUATION_HEIGHT",
+                "HOF_TARV_PROPHILAXIS_Tarv_Initial_Regime",
+                "HOF_TARV_PROPHILAXIS_Regime_Change",
+                "HOF_TARV_PROPHILAXIS_Change_Motivation",
+                "HOF_TARV_PROPHILAXIS_Date_Of_Change",
+                "HOF_TARV_PROPHILAXIS_Type_Prophylaxis",
+                "HOF_CLINICAL_SITUATION_WHO_Staging",
+                "HOF_CLINICAL_SITUATION_STAGING_I_CONDITION",
+                "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION",
+                "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION",
+                "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION",
+                "HOF_CLINICAL_SITUATION_TB_Antecedent",
+                "HOF_CLINICAL_SITUATION_Registered_to_Some_MDS",
+                "HOF_CLINICAL_SITUATION_Model_Type",
+                "HOF_LAB_SITUATION_CD4_value",
+                "HOF_LAB_SITUATION_CD4_value2",
+                "HOF_LAB_SITUATION_CD4_Percent",
+                "HOF_LAB_SITUATION_CD4_Percent2",
+                "HOF_LAB_SITUATION_CD4_Date",
+                "HOF_LAB_SITUATION_CD4_Date2",
+                "HOF_LAB_SITUATION_Carga_Viral",
+                "HOF_LAB_SITUATION_Carga_Viral2",
+                "HOF_LAB_SITUATION_Carga_Viral_Qualitativo",
+                "HOF_LAB_SITUATION_Carga_Viral_Absolute",
+                "HOF_LAB_SITUATION_Carga_Viral_Date"
+              ],
+              "showDetailsButton":true,
+              "numberOfVisits":2
+            },
+            "expandedViewConfig":{
+              "conceptNames":[
+                "Clinical_History_Obs_Form"
+              ],
+              "numberOfVisits":2,
+              "showDetailsButton":true,
+              "pivotTable":{
+
+              }
+            }
+          },
             "whoStaging": {
                 "translationKey": "DASHBOARD_TITLE_WHO_STAGE",
                 "type": "vitals",
@@ -447,6 +497,23 @@
                     "drugConceptSet":"All Other Drugs"
                 }
             },
+            "malaria":{
+                "title":"Malaria",
+                "type":"obsToObsFlowSheet",
+                "displayType":"Full-Page",
+                "displayOrder":26,
+                "dashboardConfig":{
+                    "groupByConcept":"Malaria, Treatment Start Date",
+                    "templateName":"Malaria",
+                    "conceptNames":[
+                        "Malaria, Parents Name",
+                        "Malaria, drug regimen",
+                        "Malaria, Malaria Type",
+                        "Malaria, Source"
+                    ]
+                }
+            },
+
             "Chronic Treatment Chart":{
                 "displayType":"Full-Page",
                 "title":"CHRONIC_TREATMENT_CHART",

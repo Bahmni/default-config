@@ -130,8 +130,8 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     var dia = formFieldValues["Type_Prophylaxis"];
     var returnShowValue = [];
     var returnHideValue = [];
-    if (dia === "INH") {
-
+    if(formName !== "Clinical_History_Obs_Form" && formName !== "Tarv_and_Prophilaxis") {
+        if (dia === "INH") {
             returnShowValue.push("INH_Details");
             returnHideValue.push("Secondary effects_INH");
 
@@ -148,7 +148,7 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             returnHideValue.push("CTZ_Details");
 
         }
-        if (dia ==="Fluconazol") {
+        if (dia === "Fluconazol") {
 
             returnShowValue.push("Fluconazol_Details");
             returnHideValue.push("Secondary effects_Fluconazol");
@@ -158,14 +158,45 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
 
         }
 
+
         return {
 
             show: returnShowValue,
             hide: returnHideValue
         }
+    }
+},
+    "HOF_TARV_PROPHILAXIS_Type_Prophylaxis" (formName, formFieldValues) {
+    var dia = formFieldValues["HOF_TARV_PROPHILAXIS_Type_Prophylaxis"];
+    var returnShowValue = [];
+    var returnHideValue = [];
+        if (dia === "INH") {
+            returnShowValue.push("HOF_TARV_PROPHILAXIS_INH_Details");
 
-    
-    
+        } else {
+            returnHideValue.push("HOF_TARV_PROPHILAXIS_INH_Details");
+
+        }
+        if (dia === "CTZ") {
+            returnShowValue.push("HOF_TARV_PROPHILAXIS_CTZ_Details");
+
+        } else {
+            returnHideValue.push("HOF_TARV_PROPHILAXIS_CTZ_Details");
+        }
+        if (dia === "Fluconazol") {
+            returnShowValue.push("HOF_TARV_PROPHILAXIS_Fluconazol_Details");
+
+        } else {
+            returnHideValue.push("HOF_TARV_PROPHILAXIS_Fluconazol_Details");
+
+        }
+
+
+        return {
+
+            show: returnShowValue,
+            hide: returnHideValue
+        }
 },
 "SP_Side_Effects_INH" (formName, formFieldValues, patient) {
     var answer = formFieldValues["SP_Side_Effects_INH"];
@@ -393,6 +424,34 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
             }
         }
     },
+    "HOF_CLINICAL_SITUATION_WHO_Staging" (formName, formFieldValues) {
+        var staging = formFieldValues["HOF_CLINICAL_SITUATION_WHO_Staging"];
+        if (staging === "WHO Stage I") {
+            return {
+                show: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION"],
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_II_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"]
+            }
+        } else if (staging === "WHO Stage II") {
+            return {
+                show: ["HOF_CLINICAL_SITUATION_STAGING_II_CONDITION"],
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"]
+            }
+        } if (staging === "WHO Stage III") {
+            return {
+                show: ["HOF_CLINICAL_SITUATION_STAGING_III_CONDITION"],
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"]
+            }
+        } if (staging === "WHO Stage IV") {
+            return {
+                show: ["HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"],
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION"]
+            }
+        } else {
+            return {
+                hide: ["HOF_CLINICAL_SITUATION_STAGING_I_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_II_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_III_CONDITION", "HOF_CLINICAL_SITUATION_STAGING_IV_CONDITION"]
+            }
+        }
+    },
     'Systolic Data': function(formName, formFieldValues) {
         var systolic = formFieldValues['Systolic'];
         var diastolic = formFieldValues['Diastolic'];
@@ -421,8 +480,21 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
     },
     "Reference_Eligible" (formName, formFieldValues) {
         var value = formFieldValues["Reference_Eligible"];
-        
+
         if (value) {
+            return {
+                show: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other"]
+            }
+        } else {
+            return {
+                hide: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other","Reference_MDC_Other_comments"]
+            }
+        }
+    },
+    "HOF_CLINICAL_SITUATION_Registered_to_Some_MDS" (formName, formFieldValues) {
+        var value = formFieldValues["HOF_CLINICAL_SITUATION_Registered_to_Some_MDS"];
+        
+        if (value === "HOF_CLINICAL_SITUATION_Registered_to_Some_MDS_Yes") {
             return {
                 show: ["Reference_GA","Reference_AF","Reference_CA","Reference_PU","Reference_FR","Reference_DT","Reference_DC","Reference_MDC_Other"]
             }
@@ -565,6 +637,45 @@ Bahmni.ConceptSet.FormConditions.rulesOverride = {
                 disable: ["CONFIDENT_AGE_TYPE"]
             }
         }
-    }
+    },
 
+    "HOF_LAB_SITUATION_Carga_Viral" (formName, formFieldValues) {
+        var yes = formFieldValues["HOF_LAB_SITUATION_Carga_Viral"];
+        if (yes === "HOF_LAB_SITUATION_Carga_Viral_Qualitativo_option")   {
+            return {
+                show: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo"],
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Absolute"]
+            }
+        }  else if (yes === "HOF_LAB_SITUATION_Carga_Viral_Absolute_option") {
+            return {
+                show: ["HOF_LAB_SITUATION_Carga_Viral_Absolute"],
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo"]
+            }
+        }
+        else {
+            return {
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo","HOF_LAB_SITUATION_Carga_Viral_Absolute"]
+            }
+        }
+    },
+
+    "HOF_LAB_SITUATION_Carga_Viral2" (formName, formFieldValues) {
+        var yes = formFieldValues["HOF_LAB_SITUATION_Carga_Viral2"];
+        if (yes === "HOF_LAB_SITUATION_Carga_Viral_Qualitativo_option2")   {
+            return {
+                show: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo2"],
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Absolute2"]
+            }
+        }  else if (yes === "HOF_LAB_SITUATION_Carga_Viral_Absolute_option2") {
+            return {
+                show: ["HOF_LAB_SITUATION_Carga_Viral_Absolute2"],
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo2"]
+            }
+        }
+        else {
+            return {
+                hide: ["HOF_LAB_SITUATION_Carga_Viral_Qualitativo2","HOF_LAB_SITUATION_Carga_Viral_Absolute2"]
+            }
+        }
+    },
 };
