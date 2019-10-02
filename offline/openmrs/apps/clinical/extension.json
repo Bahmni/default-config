@@ -11,6 +11,49 @@
     "order": 1,
     "requiredPrivilege": "app:clinical:observationTab"
   },
+  "diagnosis": {
+    "id": "bahmni.clinical.consultation.diagnosis",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Diagnosis",
+    "translationKey":"DIAGNOSIS_BOARD_LABEL_KEY",
+    "url": "diagnosis",
+    "icon": "fa-user-md",
+    "order": 2,
+    "requiredPrivilege": "app:clinical:diagnosisTab"
+  },
+  "disposition": {
+    "id": "bahmni.clinical.consultation.disposition",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Disposition",
+    "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
+    "url": "disposition",
+    "icon": "fa-user-md",
+    "order": 3,
+    "requiredPrivilege": "app:clinical:dispositionTab"
+  },
+  "consultationSummary": {
+    "id": "bahmni.clinical.consultation.summary",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Consultation",
+    "translationKey":"CONSULTATION_BOARD_LABEL_KEY",
+    "url": "consultation",
+    "icon": "fa-user-md",
+    "order": 5,
+    "requiredPrivilege": "app:clinical:consultationTab"
+  },
+  "bahmniClinicalOrdersPending": {
+    "id": "bahmni.clinical.orders.pending",
+    "extensionPointId": "org.bahmni.clinical.orders",
+    "type": "link",
+    "label": "Pending Orders",
+    "url": "pendingOrders",
+    "icon": "fa-user-md",
+    "order": 5,
+    "requiredPrivilege": "app:radiologyOrders"
+  },
   "bahmniClinicalPatientsSearchAllActivePatients": {
     "id": "bahmni.clinical.patients.search.allActivePatients",
     "extensionPointId": "org.bahmni.patient.search",
@@ -88,26 +131,169 @@
     "order": 5,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmniClinicalConceptSetGroupObservationsHistory": {
+  "bahmniClinicalConceptSetGroupObservationsHIV": {
     "id": "bahmni.clinical.conceptSetGroup.observations.history",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
-      "conceptName": "History and Examination",
+      "conceptName": "HIV AND PERSONAL HISTORY FORM",
       "default": true
     },
     "order": 1,
     "requiredPrivilege": "app:clinical:history"
   },
-  "bahmniClinicalConceptSetGroupObservationsVitals": {
+  "bahmniClinicalConceptSetGroupObservationsARTHistory": {
     "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
       "default": true,
-      "conceptName": "Vitals"
+      "conceptName": "ART History And Clinical Milestone"
+    },
+    "order": 3,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsFamilyHistory": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "HIV CARE - Family History Data"
     },
     "order": 2,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsInterruption": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "ART Treatment And Interruption Form"
+    },
+    "order": 4,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsHIVART": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "HIV AND ART FOLLOW UP FORM"
+    },
+    "order": 5,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsTB": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "TB FORM"
+    },
+    "order": 6,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsEndTB": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "End Of Follow Up Form"
+    },
+    "order": 7,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsANCCARD": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "ANC CARD FORM"
+    },
+    "order": 9,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsViralLoad": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Viral Load Lab Request Form"
+    },
+    "order": 8,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsHEIEnrollment": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "HEI Enrollment Form"
+    },
+    "order": 10,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsInfantFollowup": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Infant Clinical Follow Up Form"
+    },
+    "order": 12,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsHEITesting": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "HEI TESTING INFORMATION"
+    },
+    "order": 11,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsHEIEndOfFollowup": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "HEI END OF FOLLOW UP FORM"
+    },
+    "order": 13,
+    "requiredPrivilege": "app:clinical"
+  }, 
+  "bahmniClinicalConceptSetGroupObsertionsTbScreeningForm": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "TB SCREENING FORM"
+    },
+    "order": 14,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObsertionsARTTreatment": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "ART Treatment And Interruptions Form"
+    },
+    "order": 4,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
@@ -125,5 +311,75 @@
     },
     "order": 3,
     "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsObstetrics": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.obstetrics",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "conceptName": "Obstetrics"
+    },
+    "order": 4,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsGynaecology": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.gynaecology",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "conceptName": "Gynaecology"
+    },
+    "order": 5,
+    "requiredPrivilege": "app:clinical"
+  },
+  "bahmniClinicalConceptSetGroupObservationsDischargeSummary": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.dischargeSummary",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "conceptName": "Discharge Summary"
+    },
+    "order": 6,
+    "requiredPrivilege": "Discharge Summary"
+  },
+  "bahmniClinicalBillingTreatment": {
+    "id": "bahmni.clinical.billing.treatment",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Medications",
+    "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
+    "extensionParams":{
+      "tabConfigName": "allMedicationTabConfig"
+    },
+    "url": "treatment",
+    "icon": "fa-user-md",
+    "order": 7,
+    "requiredPrivilege": "app:clinical:treatmentTab"
+  },
+  "bahmniClinicalConsultationOrders": {
+    "id": "bahmni.clinical.consultation.orders",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Orders",
+    "translationKey":"ORDERS_BOARD_LABEL_KEY",
+    "url": "orders",
+    "icon": "icon-user-md",
+    "order": 6,
+    "requiredPrivilege": "app:clinical:ordersTab"
+  },
+  "bahmniClinicalConsultationBacteriology": {
+    "id": "bahmni.clinical.consultation.bacteriology",
+    "extensionPointId": "org.bahmni.clinical.consultation.board",
+    "type": "link",
+    "label": "Bacteriology",
+    "translationKey":"BACTERIOLOGY_BOARD_LABEL_KEY",
+    "url": "bacteriology",
+    "icon": "icon-user-md",
+    "order": 7,
+    "requiredPrivilege": "app:clinical:bacteriologyTab"
   }
+  
+
+  
 }
+
