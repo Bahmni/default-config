@@ -111,7 +111,7 @@
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
-                "Parent":"patient"
+                "Mother":"patient"
             },
 
 			"disablePhotoCapture": true,
@@ -122,7 +122,7 @@
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
             "showLastName": true,
-            "isLastNameMandatory": false,
+            "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
             "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
