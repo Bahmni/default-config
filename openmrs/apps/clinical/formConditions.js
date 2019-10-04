@@ -597,20 +597,37 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    // "Hei End Of Follow up (First Attempt Date)": function (formName, formFieldValues) {
-    //     var firstattdate= formFieldValues["Hei End Of Follow up (First Attempt Date)"];
-    //     if (firstattdate == null) {
-    //         return {
-    //             show:["First Attempt Method"]
-    //         }
-    //     } else {
-    //         return {
-    //             hide:["First Attempt Method"]
-    //         }
-    //     }
-    // },
-    
-    
+    "ARVs Adherence": function (formName, formFieldValues) {
+        var arvsadherence = formFieldValues["ARVs Adherence"];
+        if (arvsadherence === "Adherence Fair") {
+            return {
+                show: ["Reason why Adherence is Fair"],
+                hide: ["Reason why Adherence is Poor"]
+            }
+        } else if (arvsadherence === "Adherence Poor") {
+            return {
+                show: ["Reason why Adherence is Poor"],
+                hide: ["Reason why Adherence is Fair"]
+
+            }
+        } else {
+            return{
+                hide: ["Reason why Adherence is Fair","Reason why Adherence is Poor"]
+            }
+        }
+    },
+    "Is Family Member in ART Care?": function (formName, formFieldValues) {
+        var memberinclinic = formFieldValues["Is Family Member in ART Care?"];
+        if (memberinclinic == true) {
+            return {
+                show:["Family Member ART Number"]
+            }
+        } else {
+            return {
+                hide:["Family Member ART Number"]
+            }
+        }
+    },
     
  };
 

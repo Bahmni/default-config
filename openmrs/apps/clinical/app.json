@@ -320,6 +320,14 @@
             "Follow up Outcome Others Specify(Fourth Attempt)":{
                 "required":true
             },
+            "Reason why Adherence is Poor":{
+                "required":true
+            },
+            "Reason why Adherence is Fair":{
+                "required":true
+            },
+
+
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
