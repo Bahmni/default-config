@@ -75,61 +75,6 @@
                     "showDetailsButton":true
                 }
             },
-        
-            "radiologyOrders":{  
-                "orderType":"Radiology Order",
-                "type":"ordersControl",
-                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
-                "displayOrder":17,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Summary"
-                    ],
-                    "numberOfVisits":4
-                }
-            },
-            "labOrdersDisplayControl":{  
-                "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "type":"ordersControl",
-                "orderType":"Lab Order",
-                "showDetailsButton":true,
-                "displayOrder":9,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ],
-                    "showDetailsButton":true
-                }
-            },
-            "labResults":{  
-                "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
-                "type":"labOrders",
-                "displayOrder":6,
-                "dashboardConfig":{  
-                    "title":null,
-                    "numberOfVisits":6,
-                    "showChart":false,
-                    "showTable":true,
-                    "showNormalLabResults": true,
-                    "showCommentsExpanded": true,
-                    "showAccessionNotes": true,
-                    "showDetailsButton":false
-                },
-                "expandedViewConfig":{  
-                    "numberOfVisits":10
-                }
-            },
             "nutritionalValues":{  
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type":"vitals",
@@ -161,20 +106,22 @@
                 }
             },
             "vlresults":{  
-                "translationKey":"DASHBOARD_TITLE_VIRAL_LOAD_RESULTS_KEY",
+                "translationKey":"DASHBOARD_TITLE_VIRAL_LOAD_AND_EAC_RESULTS_KEY",
                 "type":"vitals",
                 "isObservation":true,
                 "displayOrder":2,
                 "dashboardConfig":{  
                     "conceptNames":[  
-                        "VL Results"                
+                        "VL Results",
+                        "EAC Results"                
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
-                        "VL Results"
+                        "VL Results",
+                        "EAC Results"
                     ],
                     "numberOfVisits":24,
                     "scope":"latest",
@@ -215,29 +162,6 @@
                         "labConcepts":[  
 
                         ]
-                    }
-                }
-            },
-            "secondVitals":{  
-                "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
-                "type":"second vitals",
-                "isObservation":true,
-                "displayOrder":13,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
                     }
                 }
             },

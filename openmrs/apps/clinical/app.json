@@ -329,6 +329,15 @@
             "Reason why Adherence is Fair":{
                 "required":true
             },
+            "was counselling done?":{
+                "required":true
+            },
+            "Counselling Date":{
+                "required":true
+            },
+            "EAC Results":{
+                "required":true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
