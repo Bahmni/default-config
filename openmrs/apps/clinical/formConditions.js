@@ -298,11 +298,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         if(vlresults >= 1000){ 
             alert("Patient Required Enhanced Adherence Counselling");    
             return{
-           show:["Classification Of Adherence"]            
+           show:["was counselling done?"]            
             }
         }else {
             return{
-                hide:["Classification Of Adherence"]
+                hide:["was counselling done?"]
             }
         }    
     }, 
@@ -490,14 +490,12 @@ Bahmni.ConceptSet.FormConditions.rules = {
     "ART Follow up - Information": function (formName , formFieldValues, patient){ 
         if(patient.age < 15){
             return{
-                show: ["TB Regimen For Children"],
-                hide: ["TB Regimen On"]
+                show: ["TB Regimen For Children"]
               
             }
         }else {
             return{
-                hide: ["TB Regimen For Children"],
-                show: ["TB Regimen On"]
+                hide: ["TB Regimen For Children"]
             }
         } 
     },
@@ -625,6 +623,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
         } else {
             return {
                 hide:["Family Member ART Number"]
+            }
+        }
+    },
+    "was counselling done?": function (formName, formFieldValues) {
+        var counsellingdone = formFieldValues["was counselling done?"];
+        if (counsellingdone == true) {
+            return {
+                show:["Counselling Date","EAC Results"]
+            }
+        } else {
+            return {
+                hide:["Counselling Date","EAC Results"]
             }
         }
     },
