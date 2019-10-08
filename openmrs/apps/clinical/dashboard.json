@@ -160,6 +160,30 @@
                     }
                 }
             },
+            "vlresults":{  
+                "translationKey":"DASHBOARD_TITLE_VIRAL_LOAD_RESULTS_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":2,
+                "dashboardConfig":{  
+                    "conceptNames":[  
+                        "VL Results"                
+                    ],
+                    "showDetailsButton":true,
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{  
+                    "conceptNames":[  
+                        "VL Results"
+                    ],
+                    "numberOfVisits":24,
+                    "scope":"latest",
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+
+                    }
+                }
+            },
             "vitals":{  
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                 "type":"vitals",
