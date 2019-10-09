@@ -630,11 +630,23 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var counsellingdone = formFieldValues["was counselling done?"];
         if (counsellingdone == true) {
             return {
-                show:["Counselling Date","EAC Results"]
+                show:["First EAC Session Date","Classification Of Adherence(First session)"]
             }
         } else {
             return {
-                hide:["Counselling Date","EAC Results"]
+                hide:["First EAC Session Date","Classification Of Adherence(First session)"]
+            }
+        }
+    },
+    "MDT Held?": function (formName, formFieldValues) {
+        var mdtheld = formFieldValues["MDT Held?"];
+        if (mdtheld == true) {
+            return {
+                show:["Date MDT Held"]
+            }
+        } else {
+            return {
+                hide:["Date MDT Held"]
             }
         }
     },

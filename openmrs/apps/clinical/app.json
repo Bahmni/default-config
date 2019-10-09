@@ -332,10 +332,16 @@
             "was counselling done?":{
                 "required":true
             },
-            "Counselling Date":{
+            "EAC Results":{
                 "required":true
             },
-            "EAC Results":{
+            "First EAC Session Date":{
+                "required":true
+            },
+            "Classification Of Adherence(First session)":{
+                "required":true
+            },
+            "Date MDT Held":{
                 "required":true
             },
             "defaults": {
