@@ -298,7 +298,7 @@ FROM (
 UNION ALL
 
 SELECT 
-  '40-49 YRS' as 'Age Group',
+  '40-44 YRS' as 'Age Group',
   count(maleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Male',
   count(femaleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Female',
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
@@ -310,15 +310,15 @@ SELECT
   count(totalGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Total'
 FROM (
   SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and gender = 'M' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END maleGenderPreviousReportingPeriod,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and gender = 'F' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END femaleGenderPreviousReportingPeriod,
-	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
-	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
-	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 49 and artStartDate is not NULL) THEN 1 END totalGenderSoFar
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'M' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END maleGenderPreviousReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END femaleGenderPreviousReportingPeriod,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and artStartDate is not NULL) THEN 1 END totalGenderSoFar
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'artStartDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="ANC, ART Start Date" and o.concept_id = cn.concept_id) 
@@ -331,7 +331,7 @@ FROM (
 UNION ALL
 
 SELECT 
-  '50+ YRS' as 'Age Group',
+  '45-49 YRS' as 'Age Group',
   count(maleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Male',
   count(femaleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Female',
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
@@ -343,15 +343,81 @@ SELECT
   count(totalGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Total'
 FROM (
   SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and gender = 'M' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END maleGenderPreviousReportingPeriod,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and gender = 'F' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END femaleGenderPreviousReportingPeriod,
-	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
-	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
-	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 50 and artStartDate is not NULL) THEN 1 END totalGenderSoFar
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'M' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END maleGenderPreviousReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END femaleGenderPreviousReportingPeriod,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and artStartDate is not NULL) THEN 1 END totalGenderSoFar
+  FROM person 
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'artStartDate' FROM obs o 
+	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="ANC, ART Start Date" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+) p  
+
+UNION ALL
+
+SELECT 
+  '50-54 YRS' as 'Age Group',
+  count(maleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Male',
+  count(femaleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Female',
+  count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
+  count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
+  count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
+  count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
+  count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
+  count(totalGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Total'
+FROM (
+  SELECT
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'M' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END maleGenderPreviousReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END femaleGenderPreviousReportingPeriod,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and artStartDate is not NULL) THEN 1 END totalGenderSoFar
+  FROM person 
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'artStartDate' FROM obs o 
+	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="ANC, ART Start Date" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+) p  
+
+UNION ALL
+
+SELECT 
+  '55+ YRS' as 'Age Group',
+  count(maleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Male',
+  count(femaleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Female',
+  count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
+  count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
+  count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
+  count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
+  count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
+  count(totalGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Total'
+FROM (
+  SELECT
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'M' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END maleGenderPreviousReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END femaleGenderPreviousReportingPeriod,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
+	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and artStartDate is not NULL) THEN 1 END totalGenderSoFar
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'artStartDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="ANC, ART Start Date" and o.concept_id = cn.concept_id) 
