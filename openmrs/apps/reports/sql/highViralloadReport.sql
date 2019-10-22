@@ -4,7 +4,7 @@ tFirstEACsessionDate.FirstEACSession as 'First EAC Session', tSecondEACDate.Seco
 tThirdEACDate.ThirdEACSession as 'Third EAC Session' , tadherence.Adherence_status as 'Classification of Adherence After EAC' ,
 tRepeatViralCollDate.samplecolldaterviral as 'Sample Collection Date (Repeat Viral)' , tResultsarrivaldate.arrivalresultsrepeatviral as 'Results Arrival Date (Repeat Viral)',
 tRepeatviralresults.repeatviralresults as 'Results(Repeat Viral) copies/ml' ,  tadherence.Adherence_status as 'Classification of Adherence After EAC',
-tadherenceOutcome.Adherence_outcome as 'Adherence Outcome' , tMdtheld.mdtheldQstn as 'MDT HELD?' , tDateMDTHeld.dateMdtHeld as 'Date MDT HELD'
+tadherenceOutcome.Adherence_outcome as 'Adherence Outcome' , tMdtheld.mdtheldQstn as 'MDT HELD?' , tregimenSwitched.regimenSwitched as 'Was Regimen Switched?' , tregimenSwitched.actualRegimenSwitchedDate as 'Actual Regimen Change Date'
 FROM
 (
 select pa.person_id, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', e2.value as 'ClientsContact' ,
@@ -20,7 +20,7 @@ inner join
 (select  o.person_id, cn.concept_id  , cn.name , cn.concept_name_type , o.value_numeric as VLResults , o.obs_datetime as 'registrationdate'
 from concept_name cn
 left join obs o on cn.concept_id = o.concept_id where cn.name  = 'VL Results' and cn.concept_name_type = 'FULLY_SPECIFIED' 
-and o.voided = false and o.status = 'final' and o.value_numeric >= 1000 and o.obs_datetime between '#startDate#' and '#endDate#' ) tVlresults 
+and o.voided = false and o.status = 'final' and o.value_numeric >= 1000 and o.obs_datetime between '#startDate#' and '#endDate#') tVlresults 
 on  tVlresults.person_id = tDemographics.person_id 
 LEFT JOIN   
 (select  o.person_id, cn.concept_id  , cn.name , cn.concept_name_type , o.value_datetime as DateSampleCollected
@@ -152,3 +152,15 @@ from concept_name cn
 left join obs o on cn.concept_id = o.concept_id where cn.name  = 'Date MDT Held' and
  cn.concept_name_type = 'FULLY_SPECIFIED' and o.voided = false and o.status = 'final') tDateMDTHeld 
 on tVlresults.person_id = tDateMDTHeld.person_id 
+LEFT JOIN 
+(
+select  dr.dosage_form, o.patient_id ,
+(case when dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen') then count(distinct(cn.concept_id)) else null end) as 'Count',
+(case when ((case when dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen') then count(distinct(cn.concept_id)) else null end)) > 1 then 'True' else 'False' end) as 'regimenSwitched',
+(case when ((case when dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen') then count(distinct(cn.concept_id)) else null end)) > 1 then max(o.date_created) else 'N/A' end) as 'actualRegimenSwitchedDate'
+from concept_name cn 
+left join orders o on cn.concept_id = o.concept_id
+left join drug dr on o.concept_id = dr.concept_id
+where concept_name_type = 'FULLY_SPECIFIED' and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen') group by o.patient_id) tregimenSwitched
+on tVlresults.person_id = tregimenSwitched.patient_id 
+
