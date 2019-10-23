@@ -105,6 +105,14 @@
                     "MobileCountryCode": "South Sudan"
                 }
             },
+            "forwardUrlsForVisitTypes": [
+                {
+                    "visitType": "HEI",
+                    "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/dashboard/treatment?tabConfigName=allMedicationTabConfig", 
+                    "translationKey": "HEI",
+                    "shortcutKey": "c"
+                }
+            ],
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
                 "strictAutocompleteFromLevel": "address1"
