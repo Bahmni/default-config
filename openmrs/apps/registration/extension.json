@@ -58,18 +58,5 @@
         },
         "order": 4,
         "requiredPrivilege": "Edit Visits"
-    },
-	"enterConsultation": {	
-        "id": "bahmni.patient.registration.next",	
-        "extensionPointId": "org.bahmni.registration.patient.next",	
-        "type": "config",	
-        "extensionParams" : {	
-           "display": "Start Consultation",	
-           "shortcutKey": "c",	
-           "forwardUrl": "../registration/#/patient/{{patientUuid}}/visit"	
-		  
-        },	
-        "order": 1,	
-        "requiredPrivilege": "Edit Patients"	
-     }
+    }
 }
