@@ -344,6 +344,9 @@
             "Date MDT Held":{
                 "required":true
             },
+            "MDT Outcome":{
+                "required":true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
