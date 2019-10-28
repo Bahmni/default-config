@@ -323,47 +323,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
             
         }
     },
-    "ART Regimen - Substitution within 1st Line" : function (formName , formFieldValues, patient){
-        if(patient.age < 15){     
-            return{
-                show: ["Child Regimens (First Line)"],
-                hide:["Substitution Regimen For Adults(First Line)"]
-            }
-        }else {
-            return{
-                hide: ["Child Regimens (First Line)"],
-                show: ["Substitution Regimen For Adults(First Line)"]
-            }
-        }    
-    },  
-    "ART Regimen(Switch to 2nd Line)" : function (formName , formFieldValues, patient){
-        if(patient.age < 15){     
-            return{
-                show: ["Children Second Line Regimens"],
-                hide:["Substitution Regimen (2nd Line Adults)"]
-            }
-        }else {
-            return{
-                hide: ["Children Second Line Regimens"],
-                show:["Substitution Regimen (2nd Line Adults)"]
-            }
-        }    
-    }, 
-    "AntiRetroviral Treatment" : function (formName , formFieldValues, patient){
-        if(patient.age < 15){     
-            return{
-                show: ["Initial ART Regimen For Children"],
-                hide:["Initial ART Regimen (Adult)"]
-                
-            }
-        }else {
-            return{
-                hide: ["Initial ART Regimen For Children"],
-                show:["Initial ART Regimen (Adult)"]
-                
-            }
-        }    
-    }, 
+
     "Is there an immunization not Given?" : function (formName , formFieldValues){
         var immunizationgiven = formFieldValues["Is there an immunization not Given?"];
             if(immunizationgiven == true){ 
@@ -642,11 +602,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var mdtheld = formFieldValues["MDT Held?"];
         if (mdtheld == true) {
             return {
-                show:["Date MDT Held"]
+                show:["Date MDT Held","MDT Outcome"]
             }
         } else {
             return {
-                hide:["Date MDT Held"]
+                hide:["Date MDT Held","MDT Outcome"]
             }
         }
     },
