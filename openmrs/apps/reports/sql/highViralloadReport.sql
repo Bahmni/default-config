@@ -3,7 +3,7 @@ tSampleCollectDate.DateSampleCollected as 'Date Sample Collected' , tSampleRecei
 tFirstEACsessionDate.FirstEACSession as 'First EAC Session', tSecondEACDate.SecondEACSession as 'Second EAC Session', 
 tThirdEACDate.ThirdEACSession as 'Third EAC Session' , tadherence.Adherence_status as 'Classification of Adherence After EAC' ,
 tRepeatViralCollDate.samplecolldaterviral as 'Sample Collection Date (Repeat Viral)' , tResultsarrivaldate.arrivalresultsrepeatviral as 'Results Arrival Date (Repeat Viral)',
-tRepeatviralresults.repeatviralresults as 'Results(Repeat Viral) copies/ml' ,  tadherence.Adherence_status as 'Classification of Adherence After EAC',
+tRepeatviralresults.repeatviralresults as 'Results(Repeat Viral) copies/ml' ,
 tadherenceOutcome.Adherence_outcome as 'Adherence Outcome' , tMdtheld.mdtheldQstn as 'MDT HELD?' , tregimenSwitched.regimenSwitched as 'Was Regimen Switched?' , tregimenSwitched.actualRegimenSwitchedDate as 'Actual Regimen Change Date'
 FROM
 (
