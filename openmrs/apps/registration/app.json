@@ -92,8 +92,7 @@
                 "treatmentSupporter": {
                     "title": "Treatment Supporter",
                     "attributes": [
-                        "TreatmentSupporterFirstName",
-                        "TreatmentSupporterLastName",
+                        "TreatmentSupporterName",
 						"TreatmentSupporterTelephoneNumber",
 						"TreatmentSupporterAddress",
 						"HomeCareProvidedBy"
