@@ -297,13 +297,6 @@ Bahmni.ConceptSet.FormConditions.rules = {
     var vlresults = formFieldValues["VL Results"];
         if(vlresults >= 1000){ 
             alert("Patient Required Enhanced Adherence Counselling");    
-            return{
-           show:["was counselling done?"]            
-            }
-        }else {
-            return{
-                hide:["was counselling done?"]
-            }
         }    
     }, 
     "FP Pregnant" : function (formName , formFieldValues){
@@ -555,14 +548,14 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    "ARVs Adherence": function (formName, formFieldValues) {
-        var arvsadherence = formFieldValues["ARVs Adherence"];
-        if (arvsadherence === "Adherence Fair") {
+    "CTX Adherence": function (formName, formFieldValues) {
+        var ctxsadherence = formFieldValues["CTX Adherence"];
+        if (ctxsadherence === "Adherence Fair") {
             return {
                 show: ["Reason why Adherence is Fair"],
                 hide: ["Reason why Adherence is Poor"]
             }
-        } else if (arvsadherence === "Adherence Poor") {
+        } else if (ctxsadherence === "Adherence Poor") {
             return {
                 show: ["Reason why Adherence is Poor"],
                 hide: ["Reason why Adherence is Fair"]
@@ -586,18 +579,6 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    "was counselling done?": function (formName, formFieldValues) {
-        var counsellingdone = formFieldValues["was counselling done?"];
-        if (counsellingdone == true) {
-            return {
-                show:["First EAC Session Date","Classification Of Adherence(First session)"]
-            }
-        } else {
-            return {
-                hide:["First EAC Session Date","Classification Of Adherence(First session)"]
-            }
-        }
-    },
     "MDT Held?": function (formName, formFieldValues) {
         var mdtheld = formFieldValues["MDT Held?"];
         if (mdtheld == true) {
@@ -610,5 +591,90 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
+    "On TB Treatment" : function (formName , formFieldValues){
+        var ontbtreatment = formFieldValues["On TB Treatment"];
+        if(ontbtreatment == true){
+            return{
+                show: ["TB Unit Number","Date Started TB Treatment","TB Clinic Enrolled"]
+            }
+        }else {
+            return{
+                hide: ["TB Unit Number","Date Started TB Treatment","TB Clinic Enrolled"]
+            }
+        }    
+    },
+    "Classification Of Adherence(First EAC session)" : function (formName , formFieldValues){
+        var firstclassification = formFieldValues["Classification Of Adherence(First EAC session)"];
+        if((firstclassification === "Adherence Fair") || (firstclassification === "Adherence Poor")) {
+            return{
+                show: ["First EAC Service","First EAC Tools"]
+            }
+        }else {
+            return{
+                hide: ["First EAC Service","First EAC Tools"]
+            }
+        }    
+    },
+    "First EAC Tools" : function (formName , formFieldValues){
+        var firsteactools = formFieldValues["First EAC Tools"];
+        if(firsteactools === "Other Tools for First EAC") {
+            return{
+                show: ["Specify Other Tools for First EAC"]
+            }
+        }else {
+            return{
+                hide: ["Specify Other Tools for First EAC"]
+            }
+        }    
+    },
+    "Classification Of Adherence(Second EAC session)" : function (formName , formFieldValues){
+        var secondclassification = formFieldValues["Classification Of Adherence(Second EAC session)"];
+        if((secondclassification === "Adherence Fair") || (secondclassification === "Adherence Poor")) {
+            return{
+                show: ["Second EAC Service","Second EAC Tools"]
+            }
+        }else {
+            return{
+                hide: ["Second EAC Service","Second EAC Tools"]
+            }
+        }    
+    },
+    "Second EAC Tools" : function (formName , formFieldValues){
+        var secondeactools = formFieldValues["Second EAC Tools"];
+        if(secondeactools === "Other Tools for Second EAC") {
+            return{
+                show: ["Specify Other Tools for Second EAC"]
+            }
+        }else {
+            return{
+                hide: ["Specify Other Tools for Second EAC"]
+            }
+        }    
+    },
+    "Classification Of Adherence(Third EAC session)" : function (formName , formFieldValues){
+        var thirdclassification = formFieldValues["Classification Of Adherence(Third EAC session)"];
+        if((thirdclassification === "Adherence Fair") || (thirdclassification === "Adherence Poor")) {
+            return{
+                show: ["Third EAC Service","Third EAC Tools"]
+            }
+        }else {
+            return{
+                hide: ["Third EAC Service","Third EAC Tools"]
+            }
+        }    
+    },
+    "Third EAC Tools" : function (formName , formFieldValues){
+        var thirdeactools = formFieldValues["Third EAC Tools"];
+        if(thirdeactools === "Other Tools For Third EAC") {
+            return{
+                show: ["Specify Other Tools for Third EAC"]
+            }
+        }else {
+            return{
+                hide: ["Specify Other Tools for Third EAC"]
+            }
+        }    
+    },
+   
  };
 

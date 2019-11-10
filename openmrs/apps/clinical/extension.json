@@ -323,6 +323,17 @@
     "order": 4,
     "requiredPrivilege": "app:clinical"
   },
+  "bahmniClinicalConceptSetGroupObsertionsEACForm": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "ENHANCED ADHERENCE COUNSELLING FORM"
+    },
+    "order": 9,
+    "requiredPrivilege": "app:clinical"
+  },
   "bahmniClinicalConceptSetGroupObservationsSecondVitals": {
     "id": "bahmni.clinical.conceptSetGroup.observations.secondVitals",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
