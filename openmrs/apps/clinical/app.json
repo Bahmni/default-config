@@ -347,6 +347,36 @@
             "MDT Outcome":{
                 "required":true
             },
+            "First EAC Service":{
+                "required":true
+            },
+            "First EAC Tools":{
+                "required":true
+            },
+            "Specify Other Tools for First EAC":{
+                "required":true
+            },
+            "Second EAC Service":{
+                "required":true
+            },
+            "Second EAC Tools":{
+                "required":true
+            },
+            "Specify Other Tools for Second EAC":{
+                "required":true
+            },
+            "Third EAC Service":{
+                "required":true
+            },
+            "Third EAC Tools":{
+                "required":true
+            },
+            "Specify Other Tools for Third EAC":{
+                "required":true
+            },
+            "Date Started TB Treatment":{
+                "required":true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
