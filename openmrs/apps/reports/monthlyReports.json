@@ -41,6 +41,22 @@
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfants.sql"
 		}
+	},
+
+	"pmtctAncandHIVreports": {
+		"name": "PMTCT ANC And HIV Reporting",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtctAncvisitandHivcouselling.sql"
+		}
+	},
+
+	"pmtctArtandHIVreports": {
+		"name": "PMTCT ART And Tb Reporting",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtctArtandTb.sql"
+		}
 	}
 
 }
