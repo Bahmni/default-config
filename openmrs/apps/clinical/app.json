@@ -27,6 +27,11 @@
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
         "quickPrints":false,
+        "enableProviderTypeBasedFormsAccess": false,
+        "providerTypeBasedFormsAccess" : {
+            "provider1": ["History and Examination", "Obstetrics"],
+            "provider2": ["Vitals","Second Vitals"]
+        },
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
             "networkStatusCheckInterval": 20000,
