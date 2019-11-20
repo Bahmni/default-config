@@ -411,9 +411,7 @@
             "patientInformation":{  
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type":"patientInformation",
-                "patientAttributes":[  
-                    "caste",
-                    "class",
+                "patientAttributes":[
                     "education",
                     "occupation",
                     "debt",

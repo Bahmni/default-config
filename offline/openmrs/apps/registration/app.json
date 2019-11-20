@@ -21,23 +21,22 @@
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
+                      "distanceFromCenter",
+                      "isUrban",
+                      "RationCard",
+                      "familyIncome",
+                      "debt",
+                      "landHolding"
                     ]
                 },
                 "hidden": {
                     "attributes": [
-                        "primaryContact"
+
                     ]
                 },
                 "defaults":  {
                     "class": "General",
-                    "landHolding": 2
+                    "landHolding": 0
                 }
             },
             "addressHierarchy": {
@@ -59,6 +58,7 @@
             "showMiddleName": true,
             "showBirthTime": true,
             "showCasteSameAsLastNameCheckbox": false,
+            "mandatoryPersonAttributes": ["primaryContact", "emergencyContPhone", "emergencyContName"],
             "printOptions": [
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
@@ -95,7 +95,7 @@
             },
             "fieldValidation" : {
                 "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
-                "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
+                "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 0 to 999 Hectares"},
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
@@ -108,8 +108,8 @@
                     "field": "address2"
                 },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
+                  "placeholder": "የታካሚ ስም",
+                  "label": "የታካሚ ስም"
                     "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
                 }
             }
