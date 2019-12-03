@@ -92,6 +92,13 @@
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ArtCohortAnalysisForm.sql"
 		}
+	},
+	   "Maternity": {
+		"name": "Maternity PMTCT",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/maternitypmtct.sql"
+		}
 	}
 
 }
