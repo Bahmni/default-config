@@ -377,6 +377,32 @@
             "Date Started TB Treatment":{
                 "required":true
             },
+            "First EAC Adherence Barriers":{
+                "required":true
+            },
+            "Second EAC Adherence Barriers":{
+                "required":true
+            },
+            "Third EAC Adherence Barriers":{
+                "required":true
+            },
+            "First EAC Barrier Reason Specify":{
+                "required":true
+            }, 
+            "Second EAC Barrier Reason Specify":{
+                "required":true
+            }, 
+            "Third EAC Barrier Reason Specify":{
+                "required":true
+            }, 
+            "Sexual Partner Relationship":{
+                "required":true
+            }, 
+            "Other sexual Partner Relationship Specify":{
+                "required":true
+            }, 
+            
+
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [

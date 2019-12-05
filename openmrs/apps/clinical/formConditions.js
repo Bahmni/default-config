@@ -607,11 +607,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var firstclassification = formFieldValues["Classification Of Adherence(First EAC session)"];
         if((firstclassification === "Adherence Fair") || (firstclassification === "Adherence Poor")) {
             return{
-                show: ["First EAC Service","First EAC Tools"]
+                show: ["First EAC Service","First EAC Tools","First EAC Adherence Barriers"]
             }
         }else {
             return{
-                hide: ["First EAC Service","First EAC Tools"]
+                hide: ["First EAC Service","First EAC Tools","First EAC Adherence Barriers"]
             }
         }    
     },
@@ -631,11 +631,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var secondclassification = formFieldValues["Classification Of Adherence(Second EAC session)"];
         if((secondclassification === "Adherence Fair") || (secondclassification === "Adherence Poor")) {
             return{
-                show: ["Second EAC Service","Second EAC Tools"]
+                show: ["Second EAC Service","Second EAC Tools","Second EAC Adherence Barriers"]
             }
         }else {
             return{
-                hide: ["Second EAC Service","Second EAC Tools"]
+                hide: ["Second EAC Service","Second EAC Tools","Second EAC Adherence Barriers"]
             }
         }    
     },
@@ -655,11 +655,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var thirdclassification = formFieldValues["Classification Of Adherence(Third EAC session)"];
         if((thirdclassification === "Adherence Fair") || (thirdclassification === "Adherence Poor")) {
             return{
-                show: ["Third EAC Service","Third EAC Tools"]
+                show: ["Third EAC Service","Third EAC Tools","Third EAC Adherence Barriers"]
             }
         }else {
             return{
-                hide: ["Third EAC Service","Third EAC Tools"]
+                hide: ["Third EAC Service","Third EAC Tools","Third EAC Adherence Barriers"]
             }
         }    
     },
@@ -675,6 +675,69 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+    "First EAC Adherence Barriers" : function (formName , formFieldValues){
+        var firsteacbarriers = formFieldValues["First EAC Adherence Barriers"];
+        if(firsteacbarriers === "Other First EAC Barrier Reason") {
+            return{
+                show: ["First EAC Barrier Reason Specify"]
+            }
+        }else {
+            return{
+                hide: ["First EAC Barrier Reason Specify"]
+            }
+        }    
+    },
+    "Second EAC Adherence Barriers" : function (formName , formFieldValues){
+        var secondeacbarriers = formFieldValues["Second EAC Adherence Barriers"];
+        if(secondeacbarriers === "Other Second EAC Barrier Reason") {
+            return{
+                show: ["Second EAC Barrier Reason Specify"]
+            }
+        }else {
+            return{
+                hide: ["Second EAC Barrier Reason Specify"]
+            }
+        }    
+    },
+    "Third EAC Adherence Barriers" : function (formName , formFieldValues){
+        var thirdeacbarriers = formFieldValues["Third EAC Adherence Barriers"];
+        if(thirdeacbarriers === "Other Third EAC Barrier Reason") {
+            return{
+                show: ["Third EAC Barrier Reason Specify"]
+            }
+        }else {
+            return{
+                hide: ["Third EAC Barrier Reason Specify"]
+            }
+        }    
+    },
+    "Sexual Partner?" : function (formName , formFieldValues){
+        var sexualpartner = formFieldValues["Sexual Partner?"];
+        if(sexualpartner ==  true) {
+            return{
+                show: ["Sexual Partner Relationship"]
+            }
+        }else {
+            return{
+                hide: ["Sexual Partner Relationship"]
+            }
+        }    
+    },
+    "Sexual Partner Relationship" : function (formName , formFieldValues){
+        var sexualpartnerrelationship = formFieldValues["Sexual Partner Relationship"];
+        if(sexualpartnerrelationship ===  "Specify other sexual Partners") {
+            return{
+                show: ["Other sexual Partner Relationship Specify"]
+            }
+        }else {
+            return{
+                hide: ["Other sexual Partner Relationship Specify"]
+            }
+        }    
+    },
+    
+
+
    
  };
 
