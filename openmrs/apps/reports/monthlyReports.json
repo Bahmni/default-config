@@ -49,7 +49,6 @@
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfants.sql"
 		}
 	},
-
 	"PMTCTAllreports": {
 		"name": "PMTCT All Reporting",
 		"type": "concatenated",
@@ -93,20 +92,40 @@
 			]
 		}
 	},
-        "ArtCohortAnalysisForm": {
+    "ArtCohortAnalysisForm": {
 		"name": "ART Cohort Analysis Form",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ArtCohortAnalysisForm.sql"
 		}
 	},
-	   "Maternity": {
+	"Maternity": {
 		"name": "Maternity PMTCT",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/maternitypmtct.sql"
 		}
+	},
+	"hivExposedInfantRegisterReport": {
+		"name": "HIV Exposed Infant Register Report",
+		"type": "concatenated",
+		"config": {
+		"reports": [
+				{
+					"name": "HIV Exposed Infant Register Report Page 1",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfantRegisterReportTabFirst.sql"
+					}
+				},
+				{
+					"name": "HIV Exposed Infant Register Report Page 2",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfantRegisterReportTabSecond.sql"
+					}
+				}
+			]
+		}
 	}
-
 }
-
