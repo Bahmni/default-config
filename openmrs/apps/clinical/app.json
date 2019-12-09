@@ -401,7 +401,21 @@
             "Other sexual Partner Relationship Specify":{
                 "required":true
             }, 
-            
+            "ART Treatment Stop/Lost Date":{
+                "required":true
+            },
+            "Initial ART Regimen (Adult)":{
+                "required":true
+            },
+            "Date If Restarted":{
+                "required":true
+            },
+            "Regimen Changed to(Adults)":{
+                "required":true
+            },
+            "Initial Regimen Change Reason":{
+                "required":true
+            },
 
             "defaults": {
                 "Number of living children": 1,
