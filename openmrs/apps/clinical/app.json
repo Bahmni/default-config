@@ -237,7 +237,8 @@
                 "required":true
             },
             "EDD":{
-                "required":true
+                "required":true,
+                "allowFutureDates": true
             },
             "PMTCT - HIV & ART Follow up":{
                 "required":true
@@ -416,7 +417,7 @@
             "Initial Regimen Change Reason":{
                 "required":true
             },
-
+        
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
