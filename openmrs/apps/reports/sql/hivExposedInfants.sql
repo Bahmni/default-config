@@ -25,7 +25,7 @@ FROM (
 UNION ALL
 
 SELECT
-  'Number Of HIV-Exposed Infants New And Old' as 'Title',
+  'Number Of HIV-Exposed Infants seen (New And Old)' as 'Title',
   count(maleGender) as 'Male',
   count(femaleGender) as 'Female',
   count(totalAll) as 'Total'
@@ -50,7 +50,7 @@ FROM (
 UNION ALL
 
 SELECT
-   'PCR HIV-Exposed Infants Upto 2 Months' as 'Title',
+   'PCR test for HIV-Exposed Infants Upto 2 Months of age' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -79,7 +79,7 @@ SELECT
  UNION ALL
 
 SELECT
-   'PCR HIV-Exposed Infants Upto 2-12 Months' as 'Title',
+   'PCR test for HIV-Exposed Infants between 2-12 Months of age' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -121,15 +121,15 @@ SELECT
 UNION ALL
 
 SELECT
-   'PCR HIV-Exposed Infants Upto 2-18 Months' as 'Title',
+   'PCR test for HIV-Exposed Infants between 12-18 Months of age' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
   FROM(
   SELECT
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 18) and gender = 'M'  and pcrResult is not null and rapidTestresult is not null and secondresult is not null and repeatresult is not null and 18repeatresult is not null) THEN 1 END maleGender,
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 18) and gender = 'F' and pcrResult is not null and rapidTestresult is not null and secondresult is not null and repeatresult is not null and 18repeatresult is not null ) THEN 1 END femaleGender,
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 18) and pcrResult is not null and rapidTestresult is not null and secondresult is not null and repeatresult is not null and 18repeatresult is not null ) THEN 1 END totalAll 
+    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and gender = 'M'  and pcrResult is not null and rapidTestresult is not null and secondresult is not null and repeatresult is not null and 18repeatresult is not null) THEN 1 END maleGender,
+    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and gender = 'F' and pcrResult is not null and rapidTestresult is not null and secondresult is not null and repeatresult is not null and 18repeatresult is not null ) THEN 1 END femaleGender,
+    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and pcrResult is not null and rapidTestresult is not null and secondresult is not null and repeatresult is not null and 18repeatresult is not null ) THEN 1 END totalAll 
   
   FROM person pn 
   JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship"))
@@ -165,41 +165,11 @@ SELECT
   GROUP BY v.patient_id 
   ORDER BY v.visit_id DESC) AS rs ON (rs.visitPatientId = pn.person_id)
  ) p
- 
- 
-UNION ALL
-
-SELECT
-   'PCR HIV-Exposed Infants Upto 12-18 Months' as 'Title',
-   count(maleGender) as 'Male',
-   count(femaleGender) as 'Female',
-   count(totalAll) as 'Total'
-  FROM(
-  SELECT
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and gender = 'M' and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and MONTH(heiResultDate) = MONTH(CURDATE()) AND YEAR(heiResultDate) = YEAR(CURDATE()) and heiResult = "HEI Results Positive") THEN 1 END maleGender,
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and gender = 'F' and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and MONTH(heiResultDate) = MONTH(CURDATE()) AND YEAR(heiResultDate) = YEAR(CURDATE()) and heiResult = "HEI Results Positive") THEN 1 END femaleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and MONTH(heiResultDate) = MONTH(CURDATE()) AND YEAR(heiResultDate) = YEAR(CURDATE()) and heiResult = "HEI Results Positive") THEN 1 END totalAll 
-  FROM person pn 
-  JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship"))
-  JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient") 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate', o.value_datetime AS 'pcrDateResult' FROM obs o 
-  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (First PCR Test Date)" AND o.concept_id = cn.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id)
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'heiResultDate', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'heiResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (First PCR Results)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
- ) p
 
 UNION ALL
 
 SELECT
-   'Total Public Health laboratory(sample collected)' as 'Title',
+   'Total number of results received from Public Health laboratory\n(regardless sample collected)' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -224,7 +194,7 @@ SELECT
 UNION ALL
 
 SELECT
-   'Total Public Health laboratory(sample collected)' as 'Title',
+   'Number of results received from Public Health Laboratory\n (Only from sample collected this month)' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -249,7 +219,7 @@ SELECT
 UNION ALL
 
 SELECT
-   'Total number of positive results received\n(regardless of sample collection months)' as 'Title',
+   'Total number of positive results received' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -298,7 +268,7 @@ SELECT
 UNION ALL
 
 SELECT
-   'Total number of positive results received\n(only from samples collected this reporting month)s' as 'Title',
+   'Total number of positive results received\n(only from samples collected this reporting months)' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -422,7 +392,7 @@ SELECT
 UNION ALL
 
 SELECT
-   'HIV-Exposed Infants Upto 2 Months Cotrimoxazole' as 'Title',
+   'HIV-Exposed Infants Upto 2 Months on Cotrimoxazole' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -499,35 +469,6 @@ SELECT
   GROUP BY v.patient_id 
   ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
  ) p
- 
-UNION ALL
- 
-SELECT
-   'Number HIV-exposed infants ARV Prophylaxils (NVP and AZT+NVP)' as 'Title',
-   count(maleGender) as 'Male',
-   count(femaleGender) as 'Female',
-   count(totalAll) as 'Total'
-  FROM(
-  SELECT
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 2) and gender = 'M' and  MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and aztnvpDateResult is not null and MONTH(aztnvpResultDate) = MONTH(CURDATE()) AND YEAR(aztnvpResultDate) = YEAR(CURDATE()) and aztnvpResult  in ("AZT+NV", "Daily NVP")) THEN 1 END maleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 2) and gender = 'F' and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and aztnvpDateResult is not null and MONTH(aztnvpResultDate) = MONTH(CURDATE()) AND YEAR(aztnvpResultDate) = YEAR(CURDATE()) and aztnvpResult  in ("AZT+NV", "Daily NVP")) THEN 1 END femaleGender,
-   CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 2) and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and aztnvpDateResult is not null and MONTH(aztnvpResultDate) = MONTH(CURDATE()) AND YEAR(aztnvpResultDate) = YEAR(CURDATE()) and aztnvpResult  in ("AZT+NV", "Daily NVP")) THEN 1 END totalAll 	
-  FROM person pn 
-  LEFT JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship"))
-  LEFT JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient") 
-  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate', o.value_datetime AS 'aztnvpDateResult' FROM obs o 
-  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name IN ("AZT+NV Date", "Daily NVP Date") AND o.concept_id = cn.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id)
-  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'aztnvpResultDate', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED") AS 'aztnvpResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Infant's PMTCT ARVS" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
- ) p
 
 UNION ALL
 
@@ -582,20 +523,67 @@ SELECT
   count(totalAll) as 'Total'
 FROM (
   SELECT
-    CASE WHEN ((pa.value = (select concept_id from concept_name where name = "HeiRelationship") or pa.value = (select concept_id from concept_name where name = "ExistingHeiRelationship")) and (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12 and gender = 'M') )  THEN 1 END maleGender,
-    CASE WHEN ((pa.value = (select concept_id from concept_name where name = "HeiRelationship") or pa.value = (select concept_id from concept_name where name = "ExistingHeiRelationship")) and (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12 and gender = 'F') )  THEN 1 END femaleGender,
-    CASE WHEN ((pa.value = (select concept_id from concept_name where name = "HeiRelationship") or pa.value = (select concept_id from concept_name where name = "ExistingHeiRelationship")) and (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12) )  THEN 1 END totalAll
-  FROM visit v 
-  LEFT JOIN person p1 on p1.person_id = v.patient_id
-  LEFT JOIN person_attribute pa on pa.person_id = p1.person_id
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12 and gender = 'M' and rapidTestResult is not null) THEN 1 END maleGender,
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12 and gender = 'F' and rapidTestResult is not null) THEN 1 END femaleGender,
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12 and rapidTestResult is not null) THEN 1 END totalAll 
+  FROM visit v
+  JOIN person pn on pn.person_id = v.patient_id 
+  JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship" ))
   JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient")
+  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'rapidTestResult' FROM obs o 
+  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (First PCR Results)" AND o.concept_id = cn.concept_id) 
+  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+  JOIN visit v ON v.visit_id = enc.visit_id 
+  GROUP BY v.patient_id 
+  ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id)
 ) p
 
+UNION ALL
+
+SELECT
+  'Received rapid HIV antibody test 9 months' as 'Title',
+  count(maleGender) as 'Male',
+  count(femaleGender) as 'Female',
+  count(totalAll) as 'Total'
+FROM (
+  SELECT
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 9 and gender = 'M' and rapidTestResult is not null) THEN 1 END maleGender,
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 9 and gender = 'F' and rapidTestResult is not null) THEN 1 END femaleGender,
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 9 and rapidTestResult is not null) THEN 1 END totalAll 
+  FROM visit v
+  JOIN person pn on pn.person_id = v.patient_id 
+  JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship" ))
+  JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient")
+  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'rapidTestResult' FROM obs o 
+  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (18Months Rapid Test  Results)" AND o.concept_id = cn.concept_id) 
+  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+  JOIN visit v ON v.visit_id = enc.visit_id 
+  GROUP BY v.patient_id 
+  ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id)
+  ) p
 
 UNION ALL
 
 SELECT
   'Total HIV-exposed infants turned\n18 months in this reporting period' as 'Title',
+  count(maleGender) as 'Male',
+  count(femaleGender) as 'Female',
+  count(totalAll) as 'Total'
+FROM (
+  SELECT
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18 and gender = 'M' ) THEN 1 END maleGender,
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18 and gender = 'F' ) THEN 1 END femaleGender,
+    CASE WHEN (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18 ) THEN 1 END totalAll 
+  FROM visit v
+  JOIN person pn on pn.person_id = v.patient_id 
+  JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship" ))
+  JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient")
+  ) p 
+
+UNION ALL
+
+SELECT
+  'Total number of children tested using Anti body rapid teast at 18 months' as 'Title',
   count(maleGender) as 'Male',
   count(femaleGender) as 'Female',
   count(totalAll) as 'Total'
@@ -608,18 +596,18 @@ FROM (
   JOIN person pn on pn.person_id = v.patient_id 
   JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship" ))
   JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient")
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate', o.value_coded AS 'rapidTestResult' FROM obs o 
-  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (18Months Rapid Test Results)" AND o.concept_id = cn.concept_id) 
+  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'rapidTestResult' FROM obs o 
+  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (18Months Rapid Test  Results)" AND o.concept_id = cn.concept_id) 
   JOIN encounter enc ON enc.encounter_id = o.encounter_id 
   JOIN visit v ON v.visit_id = enc.visit_id 
   GROUP BY v.patient_id 
   ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id)
-  ) p 
+  ) p
 
 UNION ALL
 
 SELECT
-   'HIV-positive' as 'Title',
+   'Number of children tested HIV-positive' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -669,7 +657,7 @@ SELECT
 UNION ALL
 
 SELECT
-   'HIV- negative and breastfeeding' as 'Title',
+   'Number of children tested HIV- negative and breastfeeding' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -744,7 +732,7 @@ SELECT
 UNION ALL
 
 SELECT
-   'HIV- negative and no longer breastfeeding' as 'Title',
+   'Number of children tested HIV- negative and no longer breastfeeding' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
