@@ -193,11 +193,25 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var interruptiontype = formFieldValues["Interruption Type"];
         if(interruptiontype === "Stop"){
             return{
-                show: ["ART Treatment Reasons For Stop"]
+                show: ["ART Treatment Reasons For Stop","ART Treatment Stop/Lost Date","Date If Restarted"],
+                hide:["Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","Other Reason(First Line Regimen Change)"]
             }
-        }else {
+        } else if (interruptiontype === "Changed Regimen"){
             return{
-                hide: ["ART Treatment Reasons For Stop"]
+                show: ["Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","Other Reason(First Line Regimen Change)"],
+                hide:["ART Treatment Stop/Lost Date"]
+            }
+        } 
+        else if (interruptiontype === "Lost"){
+            return{
+                 show: ["Date If Restarted"],
+                 hide: ["ART Treatment Reasons For Stop","Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","ART Treatment Stop/Lost Date","Regimen Change Date","Other Reason(First Line Regimen Change)"]
+            }
+        }  
+        else {
+            return{
+                hide: ["ART Treatment Reasons For Stop","Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","ART Treatment Stop/Lost Date","Regimen Change Date","Date If Restarted","Other Reason(First Line Regimen Change)","Date when ART Drugs Lost"]
+                
             }
         }    
     },
@@ -735,7 +749,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
-    
+    "Initial Regimen Change Reason" : function (formName , formFieldValues){
+        var initialregimen = formFieldValues["Initial Regimen Change Reason"];
+        if(initialregimen ===  "Other Reason For Regimen Change(First Line)") {
+            return{
+                show: ["Other Reason(First Line Regimen Change)"]
+            }
+        }else {
+            return{
+                hide: ["Other Reason(First Line Regimen Change)"]
+            }
+        }    
+    },
 
 
    
