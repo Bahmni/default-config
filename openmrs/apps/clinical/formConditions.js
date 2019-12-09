@@ -761,6 +761,21 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+    "PMTCT - HIV & ART Follow up" : function (formName , formFieldValues){
+        var pmtct = formFieldValues["PMTCT - HIV & ART Follow up"];
+        if(pmtct == false) {
+            alert("Please Enroll this Patient To PMTCT");
+            return{
+            
+                show: ["Enroll Patient To PMTCT"]            
+                
+            }
+        }else {
+            return{
+                hide: ["Enroll Patient To PMTCT"]
+            }
+        }    
+    },
 
 
    
