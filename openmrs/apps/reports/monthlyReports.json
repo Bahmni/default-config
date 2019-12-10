@@ -27,7 +27,7 @@
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artMonthlyViralLoadReport.sql"
 		}
 	},
-          "ancMonthlyReport": {
+    "ancMonthlyReport": {
            "name": "ANC PMTCT Register",
 		"type": "MRSGeneric",
 		"config": {
@@ -40,8 +40,7 @@
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/highViralloadReport.sql"
 		}
-	},		
-
+	},
     "hivExposedInfants": {
 		"name": "HIV Exposed Infant Monthly Reporting",
 		"type": "MRSGeneric",
