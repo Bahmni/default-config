@@ -7,6 +7,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -18,6 +20,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'M' and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -29,6 +33,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id) 
 ) p 
 
 UNION ALL
@@ -40,6 +54,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -51,6 +67,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 1 and 4 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 1 and 4 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 1 and 4 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 1 and 4 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 1 and 4 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 1 and 4 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 1 and 4 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 1 and 4 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -62,6 +80,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -73,6 +101,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -84,6 +114,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -95,6 +127,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p 
 
 UNION ALL
@@ -106,6 +148,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -117,6 +161,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -128,6 +174,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -139,6 +195,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -150,6 +208,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -161,6 +221,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p 
 
 UNION ALL
@@ -172,6 +242,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -183,6 +255,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -194,6 +268,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -205,6 +289,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -216,6 +302,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -227,6 +315,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -238,6 +336,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -249,6 +349,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -260,6 +362,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -271,6 +383,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -282,6 +396,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -293,6 +409,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -304,6 +430,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -315,6 +443,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -326,6 +456,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -337,6 +477,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -348,6 +490,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -359,6 +503,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -370,6 +524,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -381,6 +537,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -392,6 +550,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -403,6 +571,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -414,6 +584,8 @@ FROM (
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 AND TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'M'  and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F'  and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -425,6 +597,16 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
 ) p  
 
 UNION ALL
@@ -436,6 +618,8 @@ SELECT
   count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
   count(maleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
   count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
+  count(pregnantWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Pregnant',
+  count(breastFeedingWomens) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n Breastfeeding',
   count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
   count(maleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
   count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
@@ -447,6 +631,8 @@ FROM (
 	CASE WHEN (MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
     CASE WHEN (gender = 'M' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END maleGenderCurrentReportingPeriod,
     CASE WHEN (gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
+    CASE WHEN (pregnant = 1 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END pregnantWomens,
+    CASE WHEN (breastFeeding = 1 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END breastFeedingWomens,
 	CASE WHEN (MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
     CASE WHEN (gender = 'M' and artStartDate is not NULL) THEN 1 END maleGenderSoFar,
     CASE WHEN (gender = 'F' and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
@@ -458,40 +644,15 @@ FROM (
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id) 
-	where birthdate is not NULL  
-) p 
-
-UNION ALL
-
-SELECT 
-  'Pregnant' as 'Age Group',
-  '' as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Male',
-  count(femaleGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Female',
-  count(totalGenderPreviousReportingPeriod) as 'Cumulative number of persons ever started on ART at this facility\nat the end of the previous reporting period\n Total',
-  '' as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Male',
-  count(femaleGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Female',
-  count(totalGenderCurrentReportingPeriod) as 'New persons started on ART at this facility\nduring the reporting period (Month)\n  Total',
-  '' as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Male',
-  count(femaleGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Female',
-  count(totalGenderSoFar) as 'Cumulative number of persons ever started on ART at this facility\nat end of the current reporting  period (Month)\n Total'
-FROM (
-  SELECT
-    CASE WHEN (pregnant = 1 and gender = 'F' and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END femaleGenderPreviousReportingPeriod,
-	CASE WHEN (pregnant = 1 and MONTH(artStartDate) < MONTH(CURDATE())) THEN 1 END totalGenderPreviousReportingPeriod,
-    CASE WHEN (pregnant = 1 and gender = 'F' and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END femaleGenderCurrentReportingPeriod,
-	CASE WHEN (pregnant = 1 and MONTH(artStartDate) = MONTH(CURDATE()) AND YEAR(artStartDate) = YEAR(CURDATE())) THEN 1 END totalGenderCurrentReportingPeriod,
-    CASE WHEN (pregnant = 1 and gender = 'F' and artStartDate is not NULL) THEN 1 END femaleGenderSoFar,
-	CASE WHEN (pregnant = 1 and artStartDate is not NULL) THEN 1 END totalGenderSoFar
-  FROM person 
-  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'artStartDate' FROM obs o 
-	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="ANC, ART Start Date" and o.concept_id = cn.concept_id) 
-	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-	JOIN visit v ON v.visit_id = enc.visit_id  
-	GROUP BY v.patient_id 
-	ORDER BY v.visit_id DESC) AS asd ON (asd.visitPatientId = person_id)
-  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Malaria, Pregnant" and o.concept_id = cn.concept_id) 
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'pregnant' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="FP Pregnant" and o.concept_id = cn.concept_id) 
 	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
 	JOIN visit v ON v.visit_id = enc.visit_id  
 	GROUP BY v.patient_id 
 	ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = person_id)
-) p;
+  LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_coded AS 'breastFeeding' FROM obs o JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Currently Breastfeeding?" and o.concept_id = cn.concept_id) 
+	JOIN encounter enc ON enc.encounter_id = o.encounter_id 
+	JOIN visit v ON v.visit_id = enc.visit_id  
+	GROUP BY v.patient_id 
+	ORDER BY v.visit_id DESC) AS bf ON (bf.visitPatientId = person_id)
+) p; 
+ 
