@@ -113,7 +113,9 @@
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "VL Results",
-                        "EAC Results"                
+                        "First EAC Session Date",
+                        "Second EAC Session Date",
+                        "Third EAC Session Date"                
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
@@ -121,7 +123,57 @@
                 "expandedViewConfig":{  
                     "conceptNames":[  
                         "VL Results",
-                        "EAC Results"
+                        "First EAC Session Date",
+                        "Second EAC Session Date",
+                        "Third EAC Session Date"
+                    ],
+                    "numberOfVisits":24,
+                    "scope":"latest",
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+
+                    }
+                }
+            },
+               "CD4results":{  
+                "translationKey":"DASHBOARD_TITLE_CD4_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":3,
+                "dashboardConfig":{  
+                    "conceptNames":[  
+                       "CD4 Details"             
+                    ],
+                    "showDetailsButton":true,
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{  
+                    "conceptNames":[  
+                        "CD4 Details"
+                    ],
+                    "numberOfVisits":24,
+                    "scope":"latest",
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+
+                    }
+                }
+            },
+            "TBDiognized":{  
+                "translationKey":"DASHBOARD_TITLE_TB_DIAGNOSIS",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":3,
+                "dashboardConfig":{  
+                    "conceptNames":[  
+                       "TB Diagnosed?"             
+                    ],
+                    "showDetailsButton":true,
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{  
+                    "conceptNames":[  
+                        "TB Diagnosed?"
                     ],
                     "numberOfVisits":24,
                     "scope":"latest",
@@ -191,7 +243,7 @@
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":3,
+                "displayOrder":2,
                 "dashboardConfig":{  
                     "title":null,
                     "maximumNoOfVisits":8,
