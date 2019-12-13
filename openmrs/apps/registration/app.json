@@ -93,6 +93,7 @@
                     "title": "Treatment Supporter",
                     "attributes": [
                         "TreatmentSupporterName",
+						"TreatmentSupporterRelationship",
 						"TreatmentSupporterTelephoneNumber",
 						"TreatmentSupporterAddress",
 						"HomeCareProvidedBy"
@@ -114,7 +115,7 @@
             ],
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
-                "strictAutocompleteFromLevel": "address1"
+                "strictAutocompleteFromLevel": "address0"
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
