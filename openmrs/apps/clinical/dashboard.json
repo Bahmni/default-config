@@ -115,7 +115,7 @@
                         "VL Results",
                         "First EAC Session Date",
                         "Second EAC Session Date",
-                        "Third EAC Session Date"                
+                        "Third EAC Session Date"               
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
@@ -165,8 +165,9 @@
                 "isObservation":true,
                 "displayOrder":3,
                 "dashboardConfig":{  
-                    "conceptNames":[  
-                       "TB Diagnosed?"             
+                    "conceptNames":[ 
+                        "IPT Status - TB Screening"
+                               
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
@@ -174,6 +175,33 @@
                 "expandedViewConfig":{  
                     "conceptNames":[  
                         "TB Diagnosed?"
+                       
+                    ],
+                    "numberOfVisits":24,
+                    "scope":"latest",
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+
+                    }
+                }
+            },
+            "IPTStatus":{  
+                "translationKey":"DASHBOARD_TITLE_TB_IPT_STATUS",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":3,
+                "dashboardConfig":{  
+                    "conceptNames":[ 
+                    "IPT Status - TB Screening"
+                               
+                    ],
+                    "showDetailsButton":true,
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{  
+                    "conceptNames":[  
+                    "IPT Status - TB Screening"
+                       
                     ],
                     "numberOfVisits":24,
                     "scope":"latest",
