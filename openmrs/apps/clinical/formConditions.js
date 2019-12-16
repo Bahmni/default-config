@@ -194,18 +194,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
         if(interruptiontype === "Stop"){
             return{
                 show: ["ART Treatment Reasons For Stop","ART Treatment Stop/Lost Date","Date If Restarted"],
-                hide:["Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","Other Reason(First Line Regimen Change)"]
+                hide:["Regimen Change Date","Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","Other Reason(First Line Regimen Change)"]
             }
         } else if (interruptiontype === "Changed Regimen"){
             return{
-                show: ["Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","Other Reason(First Line Regimen Change)"],
-                hide:["ART Treatment Stop/Lost Date"]
+                show: ["Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","Other Reason(First Line Regimen Change)","Regimen Change Date"],
+                hide:["ART Treatment Stop/Lost Date","ART Treatment Reasons For Stop","Date If Restarted","Date when ART Drugs Lost"]
             }
         } 
         else if (interruptiontype === "Lost"){
             return{
                  show: ["Date If Restarted"],
-                 hide: ["ART Treatment Reasons For Stop","Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","ART Treatment Stop/Lost Date","Regimen Change Date","Other Reason(First Line Regimen Change)"]
+                 hide: ["Regimen Change Date","ART Treatment Reasons For Stop","Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","ART Treatment Stop/Lost Date","Regimen Change Date","Other Reason(First Line Regimen Change)"]
             }
         }  
         else {
