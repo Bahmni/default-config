@@ -417,6 +417,19 @@
             "Initial Regimen Change Reason":{
                 "required":true
             },
+            "Reason For Blood Transfusion":{
+                "required":true
+            },
+            "Reason For not Using FP":{
+                "required":true
+
+            },
+            "Date Started FP":{
+                "required":true
+            },
+            "Specify Other Modes Of transport":{
+                "required":true
+            },
         
             "defaults": {
                 "Number of living children": 1,

@@ -776,6 +776,48 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+    "Blood Transfusion" : function (formName , formFieldValues){
+        var bloodtransfusion = formFieldValues["Blood Transfusion"];
+        if(bloodtransfusion == true) {
+            return{
+            
+                show: ["Reason For Blood Transfusion"]            
+                
+            }
+        }else {
+            return{
+                hide: ["Reason For Blood Transfusion"]
+            }
+        }    
+    },
+    "FP Method" : function (formName , formFieldValues){
+        var fpmethod = formFieldValues["FP Method"];
+        if(fpmethod === "None/Never") {
+            return{
+            
+                show: ["Reason For not Using FP"]            
+                
+            }
+        }else {
+            return{
+                hide: ["Reason For not Using FP"]
+            }
+        }    
+    },
+    "Mode of Getting to Delivery Place" : function (formName , formFieldValues){
+        var modeoftransport = formFieldValues["Mode of Getting to Delivery Place"];
+        if(modeoftransport === "Other Modes Of Transport") {
+            return{
+            
+                show: ["Specify Other Modes Of transport"]            
+                
+            }
+        }else {
+            return{
+                hide: ["Specify Other Modes Of transport"]
+            }
+        }    
+    },
 
 
    
