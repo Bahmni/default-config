@@ -790,8 +790,8 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
-    "FP Method" : function (formName , formFieldValues){
-        var fpmethod = formFieldValues["FP Method"];
+    "ANC,FP Method" : function (formName , formFieldValues){
+        var fpmethod = formFieldValues["ANC,FP Method"];
         if(fpmethod === "None/Never") {
             return{
             
