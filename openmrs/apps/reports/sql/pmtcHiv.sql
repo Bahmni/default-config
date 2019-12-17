@@ -343,17 +343,17 @@ SELECT
 
   FROM (
   SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 100 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END unkownage,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END tenTofourteen,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END fifteenTonineteen,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END twentyTotwentyfour,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END twentyfiveTotwentynine,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END thirtyTothirtyfour,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END thirtyfiveTothirtynine,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END fourtyToFourtyfour,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END fourtyfiveToFourtynine,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 100 and gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True" ) THEN 1 END overFifty,
-    CASE WHEN (gender = 'F' and entrypoint not in ("ANC Clinic") and pregResult = "True") THEN 1 END totalAll
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 100 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END unkownage,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END tenTofourteen,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END fifteenTonineteen,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END twentyTotwentyfour,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END twentyfiveTotwentynine,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END thirtyTothirtyfour,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END thirtyfiveTothirtynine,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END fourtyToFourtyfour,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END fourtyfiveToFourtynine,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 100 and gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True" ) THEN 1 END overFifty,
+    CASE WHEN (gender = 'F' and entrypoint = "ANC Clinic" and pregResult = "True") THEN 1 END totalAll
    
   FROM person pn 
   JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'entrypoint' FROM obs o 
