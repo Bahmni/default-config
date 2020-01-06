@@ -854,6 +854,40 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         
         }
-    }
+    },
+    "Infant HIV Status" : function (formName , formFieldValues){
+        var infanthivstatus = formFieldValues["Infant HIV Status"];
+        if(infanthivstatus === "Negative") {
+            return {             
+                show:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","Infant's Final Status","ARV Baby Discharged with"],
+                hide:["Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+            }
+        } else if(infanthivstatus === "Positive"){ 
+            return {
+                hide:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","ARV Baby Discharged with","Infant's Final Status"],
+                show:["Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+        }
+        } else {
+            return {
+                hide:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","ARV Baby Discharged with","Infant's Final Status","Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+                
+            }  
+        }
+    },
+    "Infant's Risk Status" : function (formName , formFieldValues){
+        var infantriskstatus = formFieldValues["Infant's Risk Status"];
+        if(infantriskstatus === "High Risk Infant") {
+            return {             
+               show:["High Risk Infant Classification"]
+            }
+        } else {
+            return {
+                hide:["High Risk Infant Classification"]
+                
+            }  
+        }
+    },
+    
+
  };
 
