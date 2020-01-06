@@ -818,8 +818,42 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+    "Maternity card, Mother tested in Maternity" : function (formName , formFieldValues){
+        var mothertestedinmaternity = formFieldValues["Maternity card, Mother tested in Maternity"];
+        if(mothertestedinmaternity == true) {
+            return{
+            
+                show: ["Maternity card, Date tested in Maternity","Maternity card, Status After Testing HIV"]            
+                
+            }
+        }else {
+            return{
+                hide: ["Maternity card, Date tested in Maternity","Maternity card, Status After Testing HIV"]
+            }
+        }    
+    },
+    "Maternity card, Status After Testing HIV" : function (formName , formFieldValues){
+        var statusaftertesting = formFieldValues["Maternity card, Status After Testing HIV"];
+        if(statusaftertesting === "Positive") {
+            return {             
+                show:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        } else if( statusaftertesting === "Negative"){ 
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+        }
 
-
-   
+        }else if (statusaftertesting === "Hiv Test, inconclusive"){
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        }
+        else {
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        
+        }
+    }
  };
 

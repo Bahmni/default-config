@@ -433,6 +433,9 @@
             "Regimen Change Date":{
                 "required":true
             },
+            "Maternity card, Date tested in Maternity":{
+                "required":true
+            },
         
             "defaults": {
                 "Number of living children": 1,
