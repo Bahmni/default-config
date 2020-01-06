@@ -29,14 +29,24 @@
 					"expand": true,
 					"order": 1
                 },
-                "registerNewPatient1": {
+				"registerNewPatient0": {
                     "title": "Register A New Patient",
                     "attributes": [
-                        "TypeofPatient",
-						"Walk-InReason"
+						"Walk-InReason",
+						"TypeofPatient"
                     ],
 					"expand": true,
 					"order": 2
+                },
+                "registerNewPatient1": {
+                    "title": "ART Transfer Information",
+                    "attributes": [
+						"TransferredOnART",
+						"DateTransferredIn",
+						"NameOfClinic"
+                    ],
+					"expand": true,
+					"order": 3
                 },
                 "registerNewPatient2": {
                     "title": "Not shown",
@@ -45,7 +55,7 @@
                         "HIVExposedInfant(HEI)No"
                     ],
 					"expand": true,
-					"order": 3
+					"order": 4
                 },
                 "registerNewPatient3": {
                     "title": "Not shown",
@@ -53,7 +63,7 @@
 						"MaritalStatus"
                     ],
 					"expand": true,
-					"order": 4
+					"order": 5
                 },
                 "registerNewPatient5": {
                     "title": "Not shown",
@@ -63,7 +73,7 @@
 						"AlternativeNumber"
                     ],
 					"expand": true,
-					"order": 5
+					"order": 6
                 },
                 "CaregiverFollowUp": {
                     "title": "Mother Follow Up Information",
@@ -75,7 +85,7 @@
                         "MothersContactNumber"
                     ],
 					"expand": true,
-					"order": 6
+					"order": 7
                 },
                 "alternateContactInformation": {
                     "title": "Alternative Caregiver",
@@ -87,7 +97,7 @@
 						"ContactPersonDisclosedTo"
                     ],
 					"expand": true,
-					"order": 7
+					"order": 8
                 },
                 "treatmentSupporter": {
                     "title": "Treatment Supporter",
@@ -99,7 +109,7 @@
 						"HomeCareProvidedBy"
                     ],
 					"expand": true,
-					"order": 8
+					"order": 9
                 },
 				"defaults":  {
                     "MobileCountryCode": "South Sudan"
