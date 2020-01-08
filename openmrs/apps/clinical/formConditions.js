@@ -818,6 +818,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+
     "IPT Schedule(6months)" : function (formName , formFieldValues){
         var scheduledipt = formFieldValues["IPT Schedule(6months)"];
         if(scheduledipt == true) {
@@ -828,12 +829,67 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }else {
             return{
+
                 hide: ["IPT Status - TB Screening","HIVTC, HIV care IPT start date","IPT Stop Date"]   
             }
         }    
     },
+    "Maternity card, Status After Testing HIV" : function (formName , formFieldValues){
+        var statusaftertesting = formFieldValues["Maternity card, Status After Testing HIV"];
+        if(statusaftertesting === "Positive") {
+            return {             
+                show:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        } else if( statusaftertesting === "Negative"){ 
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+        }
 
+        }else if (statusaftertesting === "Hiv Test, inconclusive"){
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        }
+        else {
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        
+        }
+    },
+    "Infant HIV Status" : function (formName , formFieldValues){
+        var infanthivstatus = formFieldValues["Infant HIV Status"];
+        if(infanthivstatus === "Negative") {
+            return {             
+                show:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","Infant's Final Status","ARV Baby Discharged with"],
+                hide:["Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+            }
+        } else if(infanthivstatus === "Positive"){ 
+            return {
+                hide:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","ARV Baby Discharged with","Infant's Final Status"],
+                show:["Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+        }
+        } else {
+            return {
+                hide:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","ARV Baby Discharged with","Infant's Final Status","Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+                
+            }  
+        }
+    },
+    "Infant's Risk Status" : function (formName , formFieldValues){
+        var infantriskstatus = formFieldValues["Infant's Risk Status"];
+        if(infantriskstatus === "High Risk Infant") {
+            return {             
+               show:["High Risk Infant Classification"]
+            }
+        } else {
+            return {
+                hide:["High Risk Infant Classification"]
+                
+            }  
+        }
+    },
+    
 
-   
  };
 

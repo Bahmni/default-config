@@ -1162,3 +1162,36 @@ FROM person pn
   ORDER BY v.visit_id DESC) AS nr ON (nr.visitPatientId = pn.person_id)
 ) p
 
+UNION All
+
+SELECT
+  'Not Assesed' as 'Title',
+  '' as 'Unknown age',
+  ''as '10-14 YRS',
+  '' as '15-19 YRS',
+  '' as '20-24 YRS',
+  '' as '25-29 YRS',
+  '' as '30-34 YRS',
+  '' as '35-39 YRS',
+  '' as '40-44 YRS',
+  '' as '45-49 YRS',
+  '' as '50+ YRS',
+  '' as 'Total'
+from  dual
+
+UNION ALL
+
+SELECT
+  'TB RX' as 'Title',
+  '' as 'Unknown age',
+  ''as '10-14 YRS',
+  '' as '15-19 YRS',
+  '' as '20-24 YRS',
+  '' as '25-29 YRS',
+  '' as '30-34 YRS',
+  '' as '35-39 YRS',
+  '' as '40-44 YRS',
+  '' as '45-49 YRS',
+  '' as '50+ YRS',
+  '' as 'Total'
+from  dual
