@@ -818,17 +818,19 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
-    "Maternity card, Mother tested in Maternity" : function (formName , formFieldValues){
-        var mothertestedinmaternity = formFieldValues["Maternity card, Mother tested in Maternity"];
-        if(mothertestedinmaternity == true) {
+
+    "IPT Schedule(6months)" : function (formName , formFieldValues){
+        var scheduledipt = formFieldValues["IPT Schedule(6months)"];
+        if(scheduledipt == true) {
             return{
             
-                show: ["Maternity card, Date tested in Maternity","Maternity card, Status After Testing HIV"]            
+                show: ["IPT Status - TB Screening","HIVTC, HIV care IPT start date","IPT Stop Date"]            
                 
             }
         }else {
             return{
-                hide: ["Maternity card, Date tested in Maternity","Maternity card, Status After Testing HIV"]
+
+                hide: ["IPT Status - TB Screening","HIVTC, HIV care IPT start date","IPT Stop Date"]   
             }
         }    
     },
