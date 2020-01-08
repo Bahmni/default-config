@@ -235,6 +235,17 @@
     "order": 7,
     "requiredPrivilege": "app:clinical"
   },
+  "bahmniClinicalConceptSetGroupObsertionsMaternityForm": {
+    "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
+    "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+    "type": "config",
+    "extensionParams": {
+      "default": true,
+      "conceptName": "Maternity Form"
+    },
+    "order": 9,
+    "requiredPrivilege": "app:clinical"
+  },
   "bahmniClinicalConceptSetGroupObsertionsANCCARD": {
     "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
@@ -243,7 +254,7 @@
       "default": true,
       "conceptName": "ANC CARD FORM"
     },
-    "order": 9,
+    "order": 10,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsViralLoad": {
@@ -265,7 +276,7 @@
       "default": true,
       "conceptName": "HEI Enrollment Form"
     },
-    "order": 10,
+    "order": 11,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsInfantFollowup": {
@@ -276,7 +287,7 @@
       "default": true,
       "conceptName": "Infant Clinical Follow Up Form"
     },
-    "order": 12,
+    "order": 13,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsHEITesting": {
@@ -287,7 +298,7 @@
       "default": true,
       "conceptName": "HEI TESTING INFORMATION"
     },
-    "order": 11,
+    "order": 12,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsHEIEndOfFollowup": {
@@ -298,7 +309,7 @@
       "default": true,
       "conceptName": "HEI END OF FOLLOW UP FORM"
     },
-    "order": 13,
+    "order": 14,
     "requiredPrivilege": "app:clinical"
   }, 
   "bahmniClinicalConceptSetGroupObsertionsTbScreeningForm": {
@@ -309,7 +320,7 @@
       "default": true,
       "conceptName": "TB SCREENING FORM"
     },
-    "order": 14,
+    "order": 15,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObsertionsARTTreatment": {

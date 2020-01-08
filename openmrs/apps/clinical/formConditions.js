@@ -818,6 +818,20 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+    "IPT Schedule(6months)" : function (formName , formFieldValues){
+        var scheduledipt = formFieldValues["IPT Schedule(6months)"];
+        if(scheduledipt == true) {
+            return{
+            
+                show: ["IPT Status - TB Screening","HIVTC, HIV care IPT start date","IPT Stop Date"]            
+                
+            }
+        }else {
+            return{
+                hide: ["IPT Status - TB Screening","HIVTC, HIV care IPT start date","IPT Stop Date"]   
+            }
+        }    
+    },
 
 
    
