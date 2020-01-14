@@ -889,6 +889,32 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }  
         }
     },
+    "Maternity card, Mother tested in Maternity" : function (formName , formFieldValues){
+        var mothertestedinmaternity = formFieldValues["Maternity card, Mother tested in Maternity"];
+        if(mothertestedinmaternity == true) {
+            return {             
+               show:["Maternity card, Date tested in Maternity","Maternity card, Status After Testing HIV"]
+            }
+        } else {
+            return {
+                hide:["Maternity card, Date tested in Maternity","Maternity card, Status After Testing HIV"]
+                
+            }  
+        }
+    },
+    "End of Follow up,Patient Outcome" : function (formName , formFieldValues){
+        var patientOutcome = formFieldValues["End of Follow up,Patient Outcome"];
+        if(patientOutcome === "Self transfer(Silent Transfer)") {
+            return {             
+               show:["Self Transfer Date"]
+            }
+        } else {
+            return {
+                hide:["Self Transfer Date"]
+                
+            }  
+        }
+    },
     
 
  };
