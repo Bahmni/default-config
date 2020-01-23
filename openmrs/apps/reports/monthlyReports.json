@@ -35,7 +35,7 @@
 		}
 	},
     "highViralloadReport": {
-		"name": "High Viral Load Monthly Report",
+		"name": "High Viral Load Register",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/highViralloadReport.sql"
