@@ -317,6 +317,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var fppregnant = formFieldValues["FP Pregnant"];
             if(fppregnant == true){     
                 alert("Enroll This Patient To PMTCT Clinic");
+    
             }    
         }, 
    
@@ -445,7 +446,8 @@ Bahmni.ConceptSet.FormConditions.rules = {
         if (patientpreg == true) {
             return {
                 show: ["EDD","PMTCT - HIV & ART Follow up"],
-                hide:["Current on FP"]
+                hide:["Current on FP"],
+                
             }
         } else {
             return {
@@ -765,6 +767,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var pmtct = formFieldValues["PMTCT - HIV & ART Follow up"];
         if(pmtct == false) {
             alert("Please Enroll this Patient To PMTCT");
+
             return{
             
                 show: ["Enroll Patient To PMTCT"]            
@@ -915,7 +918,16 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }  
         }
     },
-    
-
+    "EDD" : function (formName , formFieldValues){
+        var edd = formFieldValues["EDD"];
+        var edddate = new Date(edd);
+        var today = new Date();  
+        if (edddate < today) {
+            alert("EDD should be a date in the Future");
+            
+        }
+        
+        
+    }
  };
 
