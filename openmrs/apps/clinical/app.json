@@ -439,7 +439,9 @@
             "High Risk Infant Classification":{
                 "required":true
             },
-        
+            "Past Obstetric/Gynecological History":{
+                "allowAddMore": true
+            },      
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
