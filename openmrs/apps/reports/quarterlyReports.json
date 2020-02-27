@@ -33,5 +33,12 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quarterly_pmtct_art.sql"
     }
+  },
+  "pmtct_eid_quarterly": {
+    "name": "PMTCT EID - Quarterly Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quarterly_pmtct_eid.sql"
+    }
   }
 }
