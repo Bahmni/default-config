@@ -40,5 +40,12 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quarterly_pmtct_eid.sql"
     }
+  },
+  "pmtct_hei_pos_quarterly": {
+    "name": "PMTCT HEI POS - Quarterly Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quarterly_pmtct_hei_pos.sql"
+    }
   }
 }
