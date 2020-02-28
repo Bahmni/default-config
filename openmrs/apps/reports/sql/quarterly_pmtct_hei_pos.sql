@@ -11,9 +11,9 @@ SELECT  CONCAT('Reporting Month : ',CONCAT(quarter.start_mon, '-' , quarter.mont
         NULL AS 'Reason if HIV infected infant not initiated on ART'
 FROM  (
 	SELECT MONTHNAME(DATE_SUB('#startDate#', INTERVAL DAYOFMONTH('#startDate#')-1 DAY)) as start_mon, 
-		MONTHNAME(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 3 MONTH))) as month) quarter
+		MONTHNAME(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 2 MONTH))) as month) quarter
 	JOIN (
-			SELECT YEAR(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 3 MONTH))) as year
+			SELECT YEAR(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 2 MONTH))) as year
          )year_q
          
 UNION ALL 
@@ -44,7 +44,7 @@ FROM
 		ON date_delivered.encounter_id = e.encounter_id
         AND date_delivered.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'EID - Date result was delivered to the facility')
         AND date_delivered.voided = 0
-        AND date_delivered.value_datetime BETWEEN DATE_SUB('#startDate#', INTERVAL DAYOFMONTH('#startDate#')-1 DAY) AND LAST_DAY(DATE_ADD('#startDate#', INTERVAL 3 MONTH))
+        AND date_delivered.value_datetime BETWEEN DATE_SUB('#startDate#', INTERVAL DAYOFMONTH('#startDate#')-1 DAY) AND LAST_DAY(DATE_ADD('#startDate#', INTERVAL 2 MONTH))
         AND TIMESTAMPDIFF( MONTH, p.birthdate, date_delivered.value_datetime) <=12 -- Filter out samples collected after 12 months age
 	LEFT JOIN obs eid_number
 		ON eid_number.person_id = p.person_id
