@@ -1,15 +1,20 @@
-SELECT DISTINCT IFNULL(DATE_FORMAT(artStartDate, "%d/%m/%Y"), '') AS "ART Start Date", 
-IFNULL(IF(retestBeforeArt IS NULL OR retestBeforeArt = '', '0', '1'), '') AS "HIV Retesting for ART initiation", 
-IFNULL(pUART.UniqueArtNo, '') AS "Unique ART Number", concat(pn.given_name, ' ', IF(pn.middle_name IS NULL OR pn.middle_name = '', '', concat(pn.middle_name, ' ')), 
-IF(pn.family_name IS NULL OR pn.family_name = '', '', pn.family_name)) AS "Name in full", IFNULL(pai.identifier, '') AS "patient ID", IFNULL(pMobile.telephoneNo, '') AS "Telephone No.", IFNULL(p.gender, '') AS "Gender",
-TIMESTAMPDIFF(YEAR, p.birthdate, CURDATE()) AS "Age", IFNULL(DATE_FORMAT(v.date_started, "%d/%m/%Y"), '') AS "Appointment Date", IFNULL(HEIGHT, '') HEIGHT, IFNULL(WEIGHT, '') WEIGHT, IFNULL(BMI, '') BMI, IFNULL(CD4, '') CD4,
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = WHOS), '') WHOS, IFNULL(CTX, '') CTX, IFNULL(date_startedTBRX, '') "Date Started TB RX",
-IFNULL(Breastfeeding, '') "Breast feeding", IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = SR1stLA ), '') "Substitution Regimen (1st  Line Adults)", 
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = RFRC), '') "Reason For Regimen Change",
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = ARSW1L), '') "ART Regimen - Substitution within 1st Line",
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = SR2LA), '') "Substitution Regimen (2nd Line Adults)", 
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = C1LR), '') "Child 1st Line Regimens", 
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = C2LR), '') "Child 2nd Line Regimens"
+select distinct(Unique_ART_Number) as 'Unique ART Number', ART_Start_Date as 'ART Start Date' , HIV_Retesting_for_ART_initiation as 'HIV Retesting for ART initiation' , Name_in_full as 'Name in Full', Telephone_No ,Gender , Age , Appointment_Date,HEIGHT, WEIGHT,BMI, CD4,
+WHOS, CTX ,Date_Started_TB_RX as 'DateStarted TB RX', Breast_feeding as 'Breast feeding' , Substitution_Regimen_first_line_Adults as 'Substitution Regimen first line Adults' , Reason_For_Regimen_Change 
+as 'Reason For Regimen Change', Substitution_within_1st_Line as 'Substitution within 1st Line', Substitution_Regimen_second_line_adults as 'Substitution Regimen second line adults', 
+Child_1st_Line_Regimens as 'Child 1st Line Regimens', Child_2nd_Line_Regimens as 'Child 2nd Line Regimens '
+ from (
+SELECT DISTINCT IFNULL(DATE_FORMAT(artStartDate, '%Y-%m-%d'), '') AS "ART_Start_Date", 
+IFNULL(IF(retestBeforeArt IS NULL OR retestBeforeArt = '', '0', '1'), '') AS "HIV_Retesting_for_ART_initiation", 
+IFNULL(pUART.UniqueArtNo, '') AS "Unique_ART_Number", concat(pn.given_name, ' ', IF(pn.middle_name IS NULL OR pn.middle_name = '', '', concat(pn.middle_name, ' ')), 
+IF(pn.family_name IS NULL OR pn.family_name = '', '', pn.family_name)) AS "Name_in_full", IFNULL(pai.identifier, '') AS "patient ID", IFNULL(pMobile.telephoneNo, '') AS "Telephone_No", IFNULL(p.gender, '') AS "Gender",
+TIMESTAMPDIFF(YEAR, p.birthdate, CURDATE()) AS "Age", IFNULL(DATE_FORMAT(v.date_started, "%d/%m/%Y"), '') AS "Appointment_Date", IFNULL(HEIGHT, '') HEIGHT, IFNULL(WEIGHT, '') WEIGHT, IFNULL(BMI, '') BMI, IFNULL(CD4, '') CD4,
+IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = WHOS), '') WHOS, IFNULL(CTX, '') CTX, IFNULL(date_startedTBRX, '') "Date_Started_TB_RX",
+IFNULL(Breastfeeding, '') "Breast_feeding", IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = SR1stLA ), '') "Substitution_Regimen_first_line_Adults", 
+IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = RFRC), '') "Reason_For_Regimen_Change",
+IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = ARSW1L), '') "Substitution_within_1st_Line",
+IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = SR2LA), '') "Substitution_Regimen_second_line_adults", 
+IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = C1LR), '') "Child_1st_Line_Regimens", 
+IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = C2LR), '') "Child_2nd_Line_Regimens"
 FROM visit v 
 LEFT JOIN person p ON p.person_id = v.patient_id AND v.voided IS FALSE 
 LEFT JOIN person_name pn ON p.person_id = pn.person_id AND pn.voided IS FALSE
@@ -44,7 +49,9 @@ LEFT JOIN (
     REPLACE(Group_concat(IF (obs.concept_id = 3958, obs.value_coded, "")), ",", "") AS C1LR,
     REPLACE(Group_concat(IF (obs.concept_id = 3968, obs.value_coded, "")), ",", "") AS C2LR
     FROM obs 
-    WHERE obs.concept_id IN ( 3731, 3767, 118, 119, 120,1187, 3767, 3764, 3782, 2041, 3652, 3654, 3679, 3663, 3664, 3958, 3968) and obs.voided=0
+    WHERE obs.concept_id IN ( 3731, 3767, 118, 119, 120,1187, 3767, 3764, 3782, 2041, 3652, 3654, 3679, 3663, 3664, 3958, 3968) and obs.voided=0 
     GROUP BY person_id, encounter_id
-) AS nutvalues ON e.encounter_id = nutvalues.encounter_id; 
--- WHERE pa.start_date_time BETWEEN '#startDate#' AND '#endDate#' ORDER BY pa.start_date_time DESC;
+) AS nutvalues ON e.encounter_id = nutvalues.encounter_id 
+)tt where ART_Start_Date between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')
+group by Unique_ART_Number
+-- WHERE pa.start_date_time BETWEEN '20202-01-01' AND '20202-02-01' ORDER BY pa.start_date_time DESC
