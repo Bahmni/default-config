@@ -45,14 +45,22 @@
 			        "config": {
 			        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/AncPmtctReportTabOne.sql"
 				              }
-				 },
+				 }, 
 				 {
                     "name": "ANC PMTCT CONTINUATION",
 			        "type": "MRSGeneric",
 			        "config": {
 			        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/AncPmtctReportTabSecond.sql"
 				              }
+                 },
+                  {
+                    "name": "ANC PMTCT Discharge Information",
+			        "type": "MRSGeneric",
+			        "config": {
+			        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ancpmtctDischargeTab.sql"
+				              }
                  }
+
                       
       ]		
 		}
