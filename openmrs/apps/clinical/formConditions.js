@@ -731,12 +731,12 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var sexualpartner = formFieldValues["Sexual Partner?"];
         if(sexualpartner ==  true) {
             return{
-                show: ["Sexual Partner Relationship"],
+                show: ["Sexual Partner Relationship","Sexual partner names"],
                 hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status"]
             }
         }else {
             return{
-                hide: ["Sexual Partner Relationship"],
+                hide: ["Sexual Partner Relationship","Sexual partner names"],
                 show:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status"]
                
             }
