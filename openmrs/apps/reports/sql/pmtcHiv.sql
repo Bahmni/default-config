@@ -1,7 +1,7 @@
 
 
 SELECT
-  'Known positive status (at entry into) - ANC' as 'Title',
+  'Known positive status (at entry into ANC) - a' as 'Title',
   count(unkownage) as 'Unknown age',
   count(tenTofourteen) as '10-14 YRS',
   count(fifteenTonineteen) as '15-19 YRS',
@@ -85,7 +85,7 @@ FROM (
 UNION ALL
 
 SELECT
-  'Women of unknown status tested for HIV (1st ANC Visit)' as 'Title',
+  'Women of unknown status tested for HIV (1st ANC Visit) -b' as 'Title',
   count(unkownage) as 'Unknown age',
   count(tenTofourteen) as '10-14 YRS',
   count(fifteenTonineteen) as '15-19 YRS',
