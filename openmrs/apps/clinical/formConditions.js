@@ -742,6 +742,19 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+    "Result" : function (formName , formFieldValues){
+        var results = formFieldValues["Result"];
+        if(results ===  "Positive") {
+            return{
+                show: ["Is Family Member in ART Care?"]
+            }
+        }else {
+            return{
+                hide: ["Is Family Member in ART Care?"]
+               
+            }
+        }    
+    },
     "Sexual Partner Relationship" : function (formName , formFieldValues){
         var sexualpartnerrelationship = formFieldValues["Sexual Partner Relationship"];
         if(sexualpartnerrelationship ===  "Specify other sexual Partners") {
