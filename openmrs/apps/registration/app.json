@@ -93,7 +93,7 @@
 						"AlternateContactPerson",
 						"TelephoneNo",
 						"AlternateContactPersonLocation",
-						"AlternateContactPersonRelationship",
+                        "AlternateContactPersonRelationship",
 						"ContactPersonDisclosedTo"
                     ],
 					"expand": true,
@@ -103,7 +103,8 @@
                     "title": "Treatment Supporter",
                     "attributes": [
                         "TreatmentSupporterName",
-						"TreatmentSupporterRelationship",
+                        "TreatmentSupporterRelationship",
+                        "SpecifyOtherSupporterRelationship",
 						"TreatmentSupporterTelephoneNumber",
 						"TreatmentSupporterAddress",
 						"HomeCareProvidedBy"
