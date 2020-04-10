@@ -76,4 +76,22 @@
     <changeSet id="202001281055" author="Srivathsala">
         <addForeignKeyConstraint baseColumnNames="test_status_id" baseTableName="test_status" constraintName="test_status_fk" onDelete="SET NULL" referencedColumnNames="id" referencedTableName="type_of_test_status" />
     </changeSet>
+    <changeSet author="buvaneswari" id="21">
+	<preConditions onFail="MARK_RAN">
+		<sqlCheck expectedResult="0">
+			select count(*) from clinlims.site_information where name = 'flagForShowingTestStatus';
+		</sqlCheck>
+	</preConditions>
+	<comment>Adds TrainingInstallation to any DB which does not already have it</comment>
+	<insert schemaName="clinlims" tableName="site_information">
+		<column name="id" valueNumeric=" nextval( 'site_information_seq' ) "/>
+		<column name="name" value="flagForShowingTestStatus"/>
+		<column name="description" value="This flag needs to be set to true to see the test status drop down"/>
+		<column name="value_type" value="boolean"/>
+		<column name="value" value="false"/>
+		<column name="domain_id"
+				valueNumeric=" (select id from clinlims.site_information_domain where name = 'resultConfiguration' ) "/>
+		<column name="lastupdated" valueDate=" now() "/>
+	</insert>
+     </changeSet>
 </databaseChangeLog>
