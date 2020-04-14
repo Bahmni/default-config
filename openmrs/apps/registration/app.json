@@ -43,7 +43,10 @@
                     "attributes": [
 						"TransferredOnART",
 						"DateTransferredIn",
-						"NameOfClinic"
+                        "NameOfClinic",
+                        "TransferInformation",
+                        "OnART?",
+                        "TransferInTreatmentStatus"
                     ],
 					"expand": true,
 					"order": 3
@@ -114,6 +117,7 @@
                 },
 				"defaults":  {
                     "MobileCountryCode": "South Sudan"
+                    
                 }
             },
             "forwardUrlsForVisitTypes": [
@@ -132,7 +136,7 @@
                 "Doctor":"provider",
                 "Mother":"patient"
             },
-
+        
 			"disablePhotoCapture": true,
 			"showEnterID": false,
 			"dobMandatory": true,
@@ -171,8 +175,7 @@
 				"TreatmentSupporterTelephoneNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"},
 				"TelephoneNo" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"},
 				"MothersContactNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"},
-				"MobileNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"},
-				"AlternativeNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"}
+				"MobileNumber" : {"pattern" : "[0-9]{0,10}", "errorMessage" : "Should be 10 digits"}
             },
             "patientSearch": {
                 "customAttributes": {
