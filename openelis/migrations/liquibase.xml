@@ -90,7 +90,7 @@
 		<column name="value_type" value="boolean"/>
 		<column name="value" value="false"/>
 		<column name="domain_id"
-				valueNumeric=" (select id from clinlims.site_information_domain where name = 'resultConfiguration' ) "/>
+				valueNumeric=" (select id from clinlims.site_information_domain where name = 'siteIdentity' ) "/>
 		<column name="lastupdated" valueDate=" now() "/>
 	</insert>
      </changeSet>
