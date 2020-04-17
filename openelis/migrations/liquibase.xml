@@ -80,7 +80,7 @@
 			select count(*) from clinlims.site_information where name = 'flagForShowingTestStatus';
 		</sqlCheck>
 	</preConditions>
-	<comment>Adds TrainingInstallation to any DB which does not already have it</comment>
+	<comment>Adds a flag to control type of test status visibility</comment>
 	<insert schemaName="clinlims" tableName="site_information">
 		<column name="id" valueNumeric=" nextval( 'site_information_seq' ) "/>
 		<column name="name" value="flagForShowingTestStatus"/>
