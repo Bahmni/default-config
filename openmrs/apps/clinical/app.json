@@ -441,6 +441,9 @@
             },
             "Past Obstetric/Gynecological History":{
                 "allowAddMore": true
+            },
+            "Place Delivered, specify":{
+                "required": true
             },      
             "defaults": {
                 "Number of living children": 1,
