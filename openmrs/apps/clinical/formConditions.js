@@ -942,8 +942,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
             alert("EDD should be a date in the Future");
             
         }
-        
-        
-    }
+    },
+    "Post Natal ,Place Delivery" : function (formName , formFieldValues){
+        var plannedplaceofdilivery = formFieldValues["Post Natal ,Place Delivery"];
+        if(plannedplaceofdilivery === "Place Delivered, Other facility") {
+            return{
+                show: ["Place Delivered, specify"]
+            }
+        }else {
+            return{
+                hide: ["Place Delivered, specify"]
+            }
+        }    
+    },
  };
 

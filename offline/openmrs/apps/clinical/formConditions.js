@@ -674,7 +674,6 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 hide: ["Specify Other Tools for Third EAC"]
             }
         }    
-    },
-   
+    }, 
  };
 
