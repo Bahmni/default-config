@@ -429,18 +429,6 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    "Is Patient on CTX or Dapose?": function (formName, formFieldValues) {
-        var patientondapose = formFieldValues["Is Patient on CTX or Dapose?"];
-        if (patientondapose == true) {
-            return {
-                show: ["CTX or Dapose Start Date"]
-            }
-        } else {
-            return {
-                hide: ["CTX or Dapose Start Date"]
-            }
-        }
-    },
     "FP Pregnant": function (formName, formFieldValues) {
         var patientpreg = formFieldValues["FP Pregnant"];
         if (patientpreg == true) {
