@@ -802,12 +802,14 @@ Bahmni.ConceptSet.FormConditions.rules = {
         if(fpmethod === "None/Never") {
             return{
             
-                show: ["Reason For not Using FP"]            
+                show: ["Reason For not Using FP"],
+                hide:["Date Started FP"]            
                 
             }
         }else {
             return{
-                hide: ["Reason For not Using FP"]
+                hide: ["Reason For not Using FP"],
+                show: ["Date Started FP"]
             }
         }    
     },
@@ -940,6 +942,57 @@ Bahmni.ConceptSet.FormConditions.rules = {
         }else {
             return{
                 hide: ["Place Delivered, specify"]
+            }
+        }    
+    },
+    "Abortion" : function (formName , formFieldValues){
+        var abortion = formFieldValues["Abortion"];
+        if(abortion == true) {
+            return{
+                hide: ["Gestation(Weeks)","Place of Delivery","Mode Of Delivery","Sex Of Baby","Outcome Of Foetus","Antepartum haemorrhage (APH)","PPH"]
+            }
+        }else {
+            return{
+                show: ["Gestation(Weeks)","Place of Delivery","Mode Of Delivery","Sex Of Baby","Outcome Of Foetus","Antepartum haemorrhage (APH)","PPH"]
+            }
+        }    
+    },
+    "ANC, HIV Test Result" : function (formName , formFieldValues){
+        var hivtest = formFieldValues["ANC, HIV Test Result"];
+        if((hivtest === "Positive") || (hivtest === "Negative")) {
+            return{
+                show:["ANC, HIV Test Date"]
+            }
+        }else {
+            return{
+                hide:["ANC, HIV Test Date"]
+                
+            }
+        }    
+    },
+    "RPR/VDRL" : function (formName , formFieldValues){
+        var rprvdrl = formFieldValues["RPR/VDRL"];
+        if((rprvdrl === "Positive") || (rprvdrl === "Negative")) {
+            return{
+                show:["RPR/VDRL Test Date"]
+            }
+        }else {
+            return{
+                hide:["RPR/VDRL Test Date"]
+                
+            }
+        }    
+    },
+    "HB Test" : function (formName , formFieldValues){
+        var hbtest = formFieldValues["HB Test"];
+        if(hbtest == true) {
+            return{
+                show:["HB"]
+            }
+        }else {
+            return{
+                hide:["HB"]
+                
             }
         }    
     },

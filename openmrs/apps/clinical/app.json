@@ -92,6 +92,12 @@
             "P/A Presenting Part": {
                 "multiSelect": true
             },
+            "Past Family History":{
+                "multiSelect": true
+            },
+            "Social History":{
+                "multiSelect": true
+            },
             "FHS": {
                 "buttonSelect": true
             },
