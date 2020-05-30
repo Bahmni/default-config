@@ -719,14 +719,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var sexualpartner = formFieldValues["Sexual Partner?"];
         if(sexualpartner ==  true) {
             return{
-                show: ["Sexual Partner Relationship","Sexual partner names"],
-                hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status"]
+                show: ["Sexual Partner Relationship","Sexual partner names","Phone Number","Sexual contact,Contacted"],
+                 hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status" ,"Family Member Contacts Tested","Family Member Contacts Status","Family Member - Age"]
+            }
+        }else if (sexualpartner ==  false){
+            return{
+                hide: ["Sexual Partner Relationship","Sexual partner names","Sexual contact,Contacted"],
+                show:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status" ,"Family Member Contacts Tested","Family Member Contacts Status","Family Member - Age"]
+               
             }
         }else {
-            return{
-                hide: ["Sexual Partner Relationship","Sexual partner names"],
-                show:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status"]
-               
+            return {
+                hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status" ,"Family Member Contacts Tested","Family Member Contacts Status" ,"Sexual Partner Relationship","Sexual partner names","Family Member - Age","Phone Number","Sexual contact,Contacted"]
             }
         }    
     },
