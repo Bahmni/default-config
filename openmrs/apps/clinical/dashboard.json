@@ -159,6 +159,31 @@
                     }
                 }
             },
+            "Contacts":{  
+                "translationKey":"DASHBOARD_TITLE_CONTACTS_INFO",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":3,
+                "dashboardConfig":{  
+                    "conceptNames":[  
+                       "Number of Contacts Elicited(Brought)",
+                       "Number of contacts tested"             
+                    ],
+                    "showDetailsButton":true,
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{  
+                    "conceptNames":[  
+                        "CD4 Details"
+                    ],
+                    "numberOfVisits":24,
+                    "scope":"latest",
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+
+                    }
+                }
+            },
             "TBDiognized":{  
                 "translationKey":"DASHBOARD_TITLE_TB_DIAGNOSIS",
                 "type":"vitals",
