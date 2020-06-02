@@ -1,26 +1,25 @@
-SELECT tVlresults.registrationdate as 'Registration Date', tDemographics.artnumber as 'ART Number', tDemographics.ClientName as 'Client Fullnames' , tDemographics.ClientsContact as 'Clients Contacts',tDemographics.sex as 'Sex', tDemographics.Age as 'Age',  
-tSampleCollectDate.DateSampleCollected as 'Date Sample Collected' , tSampleReceived.DateSampleReceived, tVlresults.VLResults as 'Results(Copies/ml)' ,
+SELECT tVlresults.registrationdate as 'Registration Date', tDemographics.artnumber as 'ART Number', tDemographics.ClientName as 'Client Fullnames' , tClientContacts.value as 'Client Contacts' ,tDemographics.sex as 'Sex', tDemographics.Age as 'Age',  
+tSampleCollectDate.DateSampleCollected as 'Date Sample Collected' , tSampleReceived.DateSampleReceived as 'Date Sample Received', tVlresults.VLResults as 'Results (Copies/ml)' ,
 tFirstEACsessionDate.FirstEACSession as 'First EAC Session', tSecondEACDate.SecondEACSession as 'Second EAC Session', 
 tThirdEACDate.ThirdEACSession as 'Third EAC Session' , tadherence.Adherence_status as 'Classification of Adherence After EAC' ,
 tRepeatViralCollDate.samplecolldaterviral as 'Sample Collection Date (Repeat Viral)' , tResultsarrivaldate.arrivalresultsrepeatviral as 'Results Arrival Date (Repeat Viral)',
 tRepeatviralresults.repeatviralresults as 'Results(Repeat Viral) copies/ml' ,
-tadherenceOutcome.Adherence_outcome as 'Adherence Outcome' , tMdtheld.mdtheldQstn as 'MDT HELD?' , tregimenSwitched.regimenSwitched as 'Was Regimen Switched?' , tregimenSwitched.actualRegimenSwitchedDate as 'Actual Regimen Change Date'
+tadherenceOutcome.Adherence_outcome as 'Adherence Outcome' , tMdtheld.mdtheldQstn as 'MDT HELD?' , tregimenSwitched.regimenSwitched as 'Was Regimen Switched?' , tregimenSwitched.actualRegimenSwitchedDate as 'Actual Regimen Change Date' 
 FROM
 (
-select pa.person_id, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', e2.value as 'ClientsContact' ,
+select pa.person_id, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
 gender as sex ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age'
 from person_attribute as pa 
 INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
 INNER JOIN person as p on pa.person_id = p.person_id 
 LEFT JOIN person_name as pn on p.person_id = pn.person_id 
 LEFT JOIN patient as pt on p.person_id = pt.patient_id
-inner join person_attribute e2 on pa.person_id = e2.person_id
-where pa.person_attribute_type_id = 29  and e2.person_attribute_type_id =32 ) tDemographics
+where pa.person_attribute_type_id = 29 ) tDemographics
 inner join 
 (select  o.person_id, cn.concept_id  , cn.name , cn.concept_name_type , o.value_numeric as VLResults , o.obs_datetime as 'registrationdate'
 from concept_name cn
 left join obs o on cn.concept_id = o.concept_id where cn.name  = 'VL Results' and cn.concept_name_type = 'FULLY_SPECIFIED' 
-and o.voided = false and o.status = 'final' and o.value_numeric >= 1000 and o.obs_datetime between '#startDate#' and '#endDate#') tVlresults 
+and o.voided = false and o.status = 'final' and o.value_numeric >= 1000 and o.obs_datetime >= '#startDate#' and o.obs_datetime <= (DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59'))) tVlresults 
 on  tVlresults.person_id = tDemographics.person_id 
 LEFT JOIN   
 (select  o.person_id, cn.concept_id  , cn.name , cn.concept_name_type , o.value_datetime as DateSampleCollected
@@ -28,6 +27,12 @@ from concept_name cn
 left join obs o on cn.concept_id = o.concept_id
 where cn.name  = 'Date VL Sample Collected?' and cn.concept_name_type = 'FULLY_SPECIFIED' and o.voided = false and o.status = 'final') tSampleCollectDate
 ON tVlresults.person_id=tSampleCollectDate.person_id
+LEFT JOIN 
+(
+select pa.person_id, pa.person_attribute_type_id , pa.value from person_attribute pa
+left join person_attribute_type pat on pa.person_attribute_type_id = pat.person_attribute_type_id
+where pat.name = 'MobileNumber'
+)tClientContacts ON tVlresults.person_id=tClientContacts.person_id
 LEFT JOIN  
 (   
 select  o.person_id, cn.concept_id  , cn.name , cn.concept_name_type , o.value_datetime as 'DateSampleReceived'
