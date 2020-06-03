@@ -1,6 +1,5 @@
-
 select tDateRegisteredToANC.Date_Registered_into_ANC as 'Date Registered into ANC', concat(coalesce(given_name,''),' ', coalesce(middle_name,'') ,' ',coalesce(family_name,'') ) as 'Full Names',  tOccupation.Occupation ,tANCNumber.ANC_Number as 'ANC Number/Surveillance ID' ,tEntryTopmtct.Entry_to_PMTCT as 'Entry to PMTCT' , tTreatmentStatus.treatment_status as 'Treatment status',
-tRetestingDate.Retesting as 'HIV Retesting for ART initiation?' ,value as 'Unique ART No.' ,tARTStartDate.ARTStartDate as 'ART Start Date', tUniqueART.Age as 'Age' , tMobileNumber.mobile as 'Telephone Number' ,
+tRetestingDate.Retesting as 'HIV Retesting for ART initiation?' ,value as 'Unique ART No.' ,tARTStartDate.ARTStartDate as 'ART Start Date', tCohort.Cohort as 'Cohort' ,tUniqueART.Age as 'Age' , concat(tpatientAddrress.Address," ","\n",concat("Mobile Number: ",tMobileNumber.mobile)) as 'Address',
 tLNMPDate.LNMP as 'LNMP' , tEDDDate.EDD as 'EDD' , tGestationPeriod.Gestationalage as 'Gestational age in weeks (GA)', tWeight.weight as 'Weight(Kg)', tMUAC.muac as 'Mid-Upper Arm Circumference (MUAC)',
 tTBDiagnosd.TBStatus , tWHOStage.whostage as 'WHO Stage' , tCdfour.cdfour as 'CD4 COUNT', tHivResult.partnerResult as 'Partner Result', tCotrimoxazole.Cotrimoxazole as 'CTX=Contrimoxazole  or DAP=Dapsone',
 tBrx.tbrx as 'Date Started TBrx', tbRegNumber.tbRegNo as 'TB Reg No.', tDateVLCollected.dateVLSampleCollected as 'Date VL SampleCollected' , tVLResults.VLResults as 'VL result (Value)', 
@@ -17,7 +16,7 @@ where pa.person_attribute_type_id
 and concept_id = (select concept_id from concept_name where name = 'HIV - Entry Point' 
 and concept_name_type = 'fully_specified'  ) and 
 value_coded = (select concept_id from concept_name where name = 'ANC Clinic' and concept_name_type = 'fully_specified')
-and ob.date_created between '#startDate#' and '#endDate#'
+and ob.date_created >= '#startDate#' and  ob.date_created <= (DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59'))
 )tUniqueART
 left join(
 select pid , mobile from (
@@ -31,8 +30,15 @@ left join
 select obs.person_id,obs.concept_id , obs.value_datetime as 'Date_Registered_into_ANC' 
 from obs obs
 left join concept_name cn on obs.concept_id = cn.concept_id
-where cn.name = 'Date Transferred in' and cn.concept_name_type = 'fully_specified' and obs.voided = 0 group by obs.person_id
+where cn.name = 'ANC Clinic Registration Date' and cn.concept_name_type = 'fully_specified' and obs.voided = 0 group by obs.person_id
 )tDateRegisteredToANC on tUniqueART.personid = tDateRegisteredToANC.person_id
+left join 
+(
+select obs.person_id,obs.concept_id , TIMESTAMPDIFF(MONTH,obs.value_datetime , curdate()) as 'Cohort'
+from obs obs
+left join concept_name cn on obs.concept_id = cn.concept_id
+where cn.name = 'ANC, ART Start Date' and cn.concept_name_type = 'fully_specified' and obs.voided = 0 group by obs.person_id
+)tCohort on tUniqueART.personid = tCohort.person_id 
 left join
 (
 select distinct(person_id) , concept_short_name as 'Occupation' from(
@@ -92,7 +98,7 @@ where t1.date_created =
 (select MAX(t2.date_created) from obs t2 where t2.person_id = t1.person_id and t2.concept_id = 
 (select concept_id from concept_name where name = 'weight' and concept_name_type = 'fully_specified')) and t1.concept_id = 
 (select concept_id from concept_name where name = 'weight' and concept_name_type = 'fully_specified') 
-and t1.date_created between DATE_FORMAT('2019-03-10','%Y-%m-01') and DATE_FORMAT(LAST_DAY('2020-03-10'),'%Y-%m-%d 23:59:59') 
+and t1.date_created between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59') 
 )tWeight on tUniqueART.personid = tWeight.person_id 
 left join
 (
@@ -123,7 +129,7 @@ where t1.date_created =
 (select MAX(t2.date_created) from obs t2 where t2.person_id = t1.person_id and t2.concept_id = 
 (select concept_id from concept_name where name = 'CD4' and concept_name_type = 'fully_specified')) and t1.concept_id = 
 (select concept_id from concept_name where name = 'CD4' and concept_name_type = 'fully_specified') 
-and t1.date_created between DATE_FORMAT('2019-03-10','%Y-%m-01') and DATE_FORMAT(LAST_DAY('2020-03-10'),'%Y-%m-%d 23:59:59') 
+and t1.date_created between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59') 
 )tCdfour on tUniqueART.personid = tCdfour.person_id
 left join
 (
@@ -193,7 +199,11 @@ inner join concept_view on obs.value_coded=concept_view.concept_id inner join co
 where concept.concept_id= (select concept_id from concept_name where name = 'Post Natal ,Place Delivery' and concept_name_type = 'Fully_specified') and obs.voided = 0
 )placeofDelivery
 )tplaceofDelivery on tUniqueART.personid = tplaceofDelivery.person_id
-left join
+left join (
+select  person_id , concat(coalesce(concat("State: ",address1) , "N/A"), "    " ,coalesce(concat("Boma: ",address4), ""), "     ",coalesce(concat("Village: ",address5) , "")) 
+as Address from person_address 
+) tpatientAddrress on tUniqueART.personid = tpatientAddrress.person_id
+left join 
 (
 select distinct(person_id) , concept_short_name as 'delivery_outcome' from(
 select obs.person_id , obs.value_coded,concept_view.concept_short_name,obs.obs_id , obs.encounter_id
@@ -313,10 +323,4 @@ and cn.concept_name_type = 'Fully_specified' and
 and cn.concept_name_type = 'Fully_specified'
 ) tst on tt.patient_id = tst.patient_id 
 ) tSwitchedSecondlineRegimen on tUniqueART.personid = tSwitchedSecondlineRegimen.patient_id
-
-
-
-
-
-
 

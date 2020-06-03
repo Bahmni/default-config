@@ -1,7 +1,7 @@
-select  concat(coalesce(given_name,''),' ', coalesce(middle_name,'') ,' ',coalesce(family_name,'') ) as 'Full Names', concat('(Follow up status)',"\n",'     -----------',"\n",'(TB Status)') as 'Month of Starting PMTCT' ,
+select  concat(coalesce(given_name,''),' ', coalesce(middle_name,'') ,' ',coalesce(family_name,'') ) as 'Full Names', concat('Follow up status: ',"\n",'     -----------',"\n",'TB Status :') as 'Month of Starting PMTCT' ,
 concat(cd4month0,"\n",'------',"\n",weightMonth0) as '0',
 concat(cd4month1,"\n",'------',"\n",weightMonth1) as '1', concat(cd4month2,"\n",'------',"\n",weightMonth2) as '2', 
-concat('(Follow up status)  wt(kg)',"\n",'----------',"\n",'(TB Status)  CD4/Vl') as 'Month',
+concat('Follow up status:wt(kg)',"\n",'----------',"\n",'TB Status: CD4/Vl') as 'Month',
 concat(cd4month3,"\n",'------',"\n",weightMonth3) as '3',
 concat(cd4month4,"\n",'------',"\n",weightMonth4) as '4', concat(cd4month5,"\n",'------',"\n",weightMonth5) as '5',
 concat(cd4month6,"\n",'------',"\n",weightMonth6) as '6',concat(cd4month7,"\n",'------',"\n",weightMonth7) as '7',
@@ -21,7 +21,7 @@ where pa.person_attribute_type_id
 and concept_id = (select concept_id from concept_name where name = 'HIV - Entry Point' 
 and concept_name_type = 'fully_specified'  ) and 
 value_coded = (select concept_id from concept_name where name = 'ANC Clinic' and concept_name_type = 'fully_specified')
-and ob.date_created between '#startDate#' and '#endDate#'
+and ob.date_created between '#startDate#' and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tpersonDemographics
 left join(
 select person_id, 
@@ -117,7 +117,7 @@ where pa.person_attribute_type_id
 and concept_id = (select concept_id from concept_name where name = 'HIV - Entry Point' 
 and concept_name_type = 'fully_specified'  ) and 
 value_coded = (select concept_id from concept_name where name = 'ANC Clinic' and concept_name_type = 'fully_specified')
-and ob.date_created between '#startDate#' and '#endDate#'
+and ob.date_created between '#startDate#' and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tPersonDemographicscd415
 left join(
 select person_id, 

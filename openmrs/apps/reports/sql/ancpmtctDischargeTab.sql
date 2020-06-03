@@ -11,7 +11,7 @@ where pa.person_attribute_type_id
 and concept_id = (select concept_id from concept_name where name = 'HIV - Entry Point' 
 and concept_name_type = 'fully_specified'  ) and 
 value_coded = (select concept_id from concept_name where name = 'ANC Clinic' and concept_name_type = 'fully_specified')
-and ob.date_created between '#startDate#' and '#endDate#'
+and ob.date_created between '#startDate#' and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tUniqueART 
 left join 
 (
