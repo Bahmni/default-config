@@ -66,14 +66,59 @@ Bahmni.ConceptSet.FormConditions.rules = {
     },
     "HIV - Entry Point" : function (formName , formFieldValues){
         var entrypoint = formFieldValues["HIV - Entry Point"];
-
         if(entrypoint === "Other Entry Point (Specify)"){
             return{
-                show: ["Other Entry Point"]
+                show: ["Other Entry Point"],
+                hide: ["VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"]
+            }
+        }else if(entrypoint === "VCT Clinic") {
+            return {
+               show: ["VCT Clinic registration Date"],
+               hide: ["Other Entry Point","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "TB Clinic") {
+            return {
+               show: ["TB Clincic Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "STI Clinic") {
+            return {
+               show: ["STI Clinic Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "ANC Clinic") {
+            return {
+               show: ["ANC Clinic Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "In Patient") {
+            return {
+               show: ["In Patient Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "Pediatric Clinic") {
+            return {
+               show: ["Pediatric Clinic Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "Entry Point - OPD") {
+            return {
+               show: ["OPD Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "CBTC") {
+            return {
+               show: ["CBTC Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date"] 
+            }
+        }else if(entrypoint === "Index Testing") {
+            return {
+               show: ["Index Testing Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","CBTC Registration Date"] 
             }
         }else {
             return{
-                hide: ["Other Entry Point"]
+                hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"]
             }
         }     
     },
