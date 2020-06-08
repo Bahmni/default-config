@@ -64,6 +64,7 @@
             "showMiddleName": true,
             "showLastName": true,
             "isLastNameMandatory": true,
+            "patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
             "showSaveConfirmDialog": false,
             "showBirthTime": true,
             "showCasteSameAsLastNameCheckbox": false,
