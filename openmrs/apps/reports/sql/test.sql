@@ -53,9 +53,9 @@ and obs.concept_id = (select concept_id from concept_name where name = 'Transfer
 and obs.status = 'FINAL') group by o.patient_id
 )tTransferOut
 union all
-select 'Net Current Cohort', CEIL(@initial1 + @tranferIn1 - @transferOut1) as 'start' , CEIL(@initial2 + @tranferIn2 - @transferOut2) as '6mo' , CEIL(@initial3 + @tranferIn3 - @transferOut3) as '12mo'
-,CEIL(@initial4 + @tranferIn4 - @transferOut4) as '24mo', CEIL(@initial5 + @tranferIn5 - @transferOut5) as '36mo', CEIL(@initial6 + @tranferIn6 - @transferOut6) as '48mo'
-,CEIL(@initial7 + @tranferIn7 - @transferOut7) as '60mo'
+select 'Net Current Cohort', (@initial1 + @tranferIn1 - @transferOut1) as 'start' , (@initial2 + @tranferIn2 - @transferOut2) as '6mo' , (@initial3 + @tranferIn3 - @transferOut3) as '12mo'
+,(@initial4 + @tranferIn4 - @transferOut4) as '24mo', (@initial5 + @tranferIn5 - @transferOut5) as '36mo', (@initial6 + @tranferIn6 - @transferOut6) as '48mo'
+,(@initial7 + @tranferIn7 - @transferOut7) as '60mo'
 from (
 select
 @initial1 := (case when startdate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',

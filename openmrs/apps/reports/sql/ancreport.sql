@@ -201,7 +201,7 @@ where concept.concept_id= (select concept_id from concept_name where name = 'Pos
 )tplaceofDelivery on tUniqueART.personid = tplaceofDelivery.person_id
 left join (
 select  person_id , concat(coalesce(concat("State: ",address1) , "N/A"), "    " ,coalesce(concat("Boma: ",address4), ""), "     ",coalesce(concat("Village: ",address5) , "")) 
-as Address from person_address 
+as Address from person_address where preferred = 1
 ) tpatientAddrress on tUniqueART.personid = tpatientAddrress.person_id
 left join 
 (
