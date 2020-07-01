@@ -1,4 +1,4 @@
-select Unique_ART_Number as'Unique ART Number', Client_Name as 'Client Name' , mobileNumber as 'Client Contacts' , Sex , Age , Date , RegimenNames , CTXDapsone , OtherDrugs   from (
+select Unique_ART_Number as'Unique ART Number', Client_Name as 'Client Name' , mobileNumber as 'Client Contacts' , Sex , Age , Date , RegimenNames as 'Regimen / Quantity' , CTXDapsone as 'CTX / Dapsone' , OtherDrugs as 'Other Drugs'   from (
 select o.patient_id, pa.value as 'Unique_ART_Number' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), '', coalesce(family_name , '') )
  as 'Client_Name', 
  gender as sex ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age', o.date_created As Date,
