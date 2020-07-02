@@ -450,10 +450,7 @@
             },
             "Place Delivered, specify":{
                 "required": true
-            },
-            "Sexual Partner?":{
-                "required" : true
-            },     
+            },    
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
