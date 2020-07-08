@@ -1,6 +1,6 @@
 {
 	"artRegisterReport": {
-		"name": "ART Register Report",
+		"name": "ART Register",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artRegister.sql"
@@ -14,7 +14,7 @@
 		}
 	},
 	"artMonthlyStartedOnArtReport": {
-		"name": "ART Monthly Report - Started on ART (New and cumulative number of persons)",
+		"name": "ART Monthly report",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artMonthlyStartedOnArtReport.sql"
@@ -73,14 +73,14 @@
 		}
 	},
     "hivExposedInfants": {
-		"name": "HIV Exposed Infant Monthly Reporting",
+		"name": "HIV Exposed Infant Monthly Report",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfants.sql"
 		}
 	},
 	"PMTCTAllreports": {
-		"name": "PMTCT All Reporting",
+		"name": "PMTCT Monthly report",
 		"type": "concatenated",
 		"config": {
 		"reports": [
@@ -130,26 +130,26 @@
 		}
 	},
 	"Maternity": {
-		"name": "Maternity PMTCT",
+		"name": "Maternity PMTCT Register",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/maternitypmtct.sql"
 		}
 	},
 	"hivExposedInfantRegisterReport": {
-		"name": "HIV Exposed Infant Register Report",
+		"name": "Exposed Infant Register",
 		"type": "concatenated",
 		"config": {
 		"reports": [
 				{
-					"name": "HIV Exposed Infant Register Report Page 1",
+					"name": "Exposed Infant Register Page 1",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfantRegisterReportTabFirst.sql"
 					}
 				},
 				{
-					"name": "HIV Exposed Infant Register Report Page 2",
+					"name": "Exposed Infant Register Page 2",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfantRegisterReportTabSecond.sql"
