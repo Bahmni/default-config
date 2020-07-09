@@ -57,6 +57,7 @@
         }],
         "showMiddleName": true,
         "showLastName": true,
+	"patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
         "defaultVisitType": "General",
         "conceptSetUI": {
             "Department Sent To": {

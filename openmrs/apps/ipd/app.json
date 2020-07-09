@@ -12,6 +12,9 @@
         "visitUuid"
     ],
     "config": {
+        "wardListPrintEnabled": false,
+        "wardListPrintViewTemplateUrl": "/bahmni_config/openmrs/apps/ipd/wardListPrint.html",
+        "wardListPrintAttributes":[],
         "wardListSqlSearchHandler": "bedManagement.sqlGet.patientListForAdmissionLocation",
         "diagnosisStatus": "Inactive",
         "onAdmissionForwardTo": "#",
