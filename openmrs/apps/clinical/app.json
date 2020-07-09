@@ -258,6 +258,9 @@
             "GeneXpert , Result":{
                 "dropdown":true 
             },
+            "Delivery Personnel or Person":{
+                "dropdown":true 
+            },
             "AFB Microscopic, Results":{
                 "dropdown":true 
             },

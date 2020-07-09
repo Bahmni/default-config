@@ -902,17 +902,15 @@ Bahmni.ConceptSet.FormConditions.rules = {
     },
     "ANC,FP Method" : function (formName , formFieldValues){
         var fpmethod = formFieldValues["ANC,FP Method"];
-        if(fpmethod === "None/Never") {
+        if(fpmethod != "None/Never") {
             return{
-            
-                show: ["Reason For not Using FP"],
-                hide:["Date Started FP"]            
-                
+                 hide: ["Reason For not Using FP"],
+                 show:["Date Started FP","Reason For Discontinuation"]                     
             }
         }else {
             return{
-                hide: ["Reason For not Using FP"],
-                show: ["Date Started FP"]
+                 show: ["Reason For not Using FP"],
+                 hide:["Date Started FP","Reason For Discontinuation"]    
             }
         }    
     },
@@ -1052,11 +1050,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var abortion = formFieldValues["Abortion"];
         if(abortion == true) {
             return{
-                hide: ["Gestation(Weeks)","Place of Delivery","Mode Of Delivery","Sex Of Baby","Outcome Of Foetus","Antepartum haemorrhage (APH)","PPH"]
+                hide: ["Place of Delivery","Mode Of Delivery","Sex Of Baby","Foetus Outcome","Antepartum haemorrhage (APH)","PPH"]
             }
         }else {
             return{
-                show: ["Gestation(Weeks)","Place of Delivery","Mode Of Delivery","Sex Of Baby","Outcome Of Foetus","Antepartum haemorrhage (APH)","PPH"]
+                show: ["Place of Delivery","Mode Of Delivery","Sex Of Baby","Foetus Outcome","Antepartum haemorrhage (APH)","PPH"]
             }
         }    
     },
@@ -1098,6 +1096,51 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 
             }
         }    
+    }, 
+    "Urine Test" : function (formName , formFieldValues){
+        var urinetest = formFieldValues["Urine Test"];
+        if(urinetest == true) {
+            return{
+                show:["Urine Test Date","Urine Test Results"]
+            }
+        }else {
+            return{
+                hide:["Urine Test Date","Urine Test Results"]
+                
+            }
+        }    
+    }, 
+    "HBV" : function (formName , formFieldValues){
+        var hbv = formFieldValues["HBV"];
+        if((hbv === "Positive") || (hbv === "Negative")){
+            return{
+                show:["HBV Test Date"]
+            }
+        }else {
+            return{
+                hide:["HBV Test Date"]
+                
+            }
+        }    
+    }, 
+    "Visit Number" : function (formName , formFieldValues){
+        var visitnumber = formFieldValues["Visit Number"];
+        if(visitnumber === "1 = First Contact"){
+                alert("Mother for ANC sentinel surveillance");
+        }    
+    },
+    "Delivery Personnel or Person" : function (formName , formFieldValues){
+        var deliverypersonal = formFieldValues["Delivery Personnel or Person"];
+        if(deliverypersonal === "Other Delivery Personnel"){
+            return {
+               show: ["Specify Other Delivery Personnel"]
+            }      
+        } else {
+            return{
+               hide: ["Specify Other Delivery Personnel"]
+            }
+        }   
     },
  };
 
+a
