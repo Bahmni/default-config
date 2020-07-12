@@ -9,6 +9,14 @@
         {
             "id": "org.bahmni.registration.patient.next",
             "description": "After Bahmni Patient Registration, forward url configuration"
+        },
+        {
+            "id": "org.bahmni.registration.navigation",
+            "description": "Navigation within regsitration first and second page"
+        },
+        {
+            "id": "org.bahmni.registration.conceptSetGroup.observations",
+            "description": "Registration Second Page Forms"
         }
     ],
     "contextModel": [
@@ -49,6 +57,7 @@
         }],
         "showMiddleName": true,
         "showLastName": true,
+	"patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
         "defaultVisitType": "General",
         "conceptSetUI": {
             "Department Sent To": {

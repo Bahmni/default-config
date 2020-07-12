@@ -15,6 +15,14 @@
             "Coded3": {
                 "multiSelect": true
             }
+      },
+      "sections": {
+        "title": "Radiology Order FulFillment Form",
+        "name": "Radiology Results",
+        "isObservation": true,
+        "conceptNames": ["Radiology Notes"],
+        "numberOfVisits": 2,
+        "scope": "latest"
         }
     }
 }
