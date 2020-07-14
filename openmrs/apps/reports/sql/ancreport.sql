@@ -4,8 +4,8 @@ tLNMPDate.LNMP as 'LNMP' , tEDDDate.EDD as 'EDD' , tGestationPeriod.Gestationala
 tTBDiagnosd.TBStatus , tWHOStage.whostage as 'WHO Stage' , tCdfour.cdfour as 'CD4 COUNT', tHivResult.partnerResult as 'Partner Result', tCotrimoxazole.Cotrimoxazole as 'CTX=Contrimoxazole  or DAP=Dapsone',
 tBrx.tbrx as 'TB Rx start', tbRegNumber.tbRegNo as 'TB Reg No.', tDateVLCollected.dateVLSampleCollected as 'Date VL SampleCollected' , tVLResults.VLResults as 'VL result (Value)', 
 
- tOriginaFirstlineRegimen.originalfirstlineregimen as 'Original Firstline Regimen' , tFirstlineRegimenswitchedto.originalfirstlineregimen as 'Substitutions within 1st line', 
-tSecondlineOriginalRegimen.originalSecondline as '2nd line regimen switched', tSwitchedSecondlineRegimen.secondlineregimenchanged as '2nd: Substitution drug code', tDateOfDelivery.Date_Of_Delivery as 'Date Of Delivery', tplaceofDelivery.place_of_delivery as 'Place of Delivery',
+ tOriginaFirstlineRegimen.originalfirstlineregimen as 'Original Firstline Regimen' , tFirstlineRegimenswitchedto.originalfirstlineregimen as 'Substitutions within 1st line', tFirstlineRegimenswitchedto.originalfirstlineregimen as 'Substitutions Change within 1st line',
+tSecondlineOriginalRegimen.originalSecondline as '2nd line regimen switched', tSwitchedSecondlineRegimen.secondlineregimenchanged as 'First Substitution drug code within Second Line', tSwitchedSecondlineRegimen.secondlineregimenchanged as '2nd: Substitution drug code', tDateOfDelivery.Date_Of_Delivery as 'Date Of Delivery', tplaceofDelivery.place_of_delivery as 'Place of Delivery',
 tdeliveryoutcome.delivery_outcome as 'Delivery Outcome' , tInfantReceivedProphylaxis.InfantReceivedProphylaxis as 'Infant Received Prophylaxis?' ,  tHeiNumber.HeiNumber as 'Exposed Infant Number'
  from (
 select distinct(pn.person_id) as 'personid', pn.given_name, pn.middle_name, pn.family_name, pa.value , p.gender as 'gender' , TIMESTAMPDIFF(YEAR,birthdate,NOW()) as 'Age' from person_name pn 
