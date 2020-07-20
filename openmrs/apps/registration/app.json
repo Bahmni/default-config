@@ -45,7 +45,7 @@
                 }
             },
         "mandatoryPersonAttributes": [
-            "Caste","NHIS Number"
+            "Caste"
         ],
         "autoCompleteFields": [
             "familyName"
