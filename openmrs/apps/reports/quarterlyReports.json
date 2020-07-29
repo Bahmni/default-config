@@ -54,5 +54,12 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/tbARTdatacollectiontool.sql"
     }
+  },
+  "pmtct_quartely_report": {
+    "name": "PMTCT - Quartely Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtct_fo_quarterly_report.sql"
+    }
   }
 }
