@@ -61,5 +61,12 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtct_fo_quarterly_report.sql"
     }
+  },
+  "viral_load_report": {
+    "name": "Viral Load - Quartely Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quartely_viral_load_report.sql"
+    }
   }
 }

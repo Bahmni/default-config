@@ -17,7 +17,7 @@ select  person_id, concept_id, obs_datetime , encounter_id , value_numeric as 'e
 (select concept_id from concept_name where name = 'EID Number' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
 and obs_datetime <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
-(select concept_id from concept_name where name = 'EID Number' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime <= DATE_FORMAT(('2020-07-29'),'%Y-%m-%d 23:59:59') group by pid) c on 
+(select concept_id from concept_name where name = 'EID Number' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
 a.person_id = c.pid and a.encounter_id = c.maxdate 
 )tHeinumber on tDemogrpahics.person_id = tHeinumber.person_id
 left join
