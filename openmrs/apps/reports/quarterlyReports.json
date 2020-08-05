@@ -68,5 +68,12 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quartely_viral_load_report.sql"
     }
+  },
+  "tx_ml_quartely_report": {
+    "name": "TX ML - Quartely Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quartely_tx_ml.sql"
+    }
   }
 }
