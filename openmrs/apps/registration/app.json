@@ -29,18 +29,24 @@
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
                     ]
                 },
                 "hidden": {
                     "attributes": [
-                        "primaryContact"
+                        "cluster",
+                        "landHolding",
+                        "secondaryContact",
+                        "distanceFromCenter",
+                        "class",
+                        "cluster",
+                        "familyIncome",
+                        "RationCard",
+                        "debt",
+                        "isUrban",
+                        "occupation",
+                        "secondaryIdentifier",
+                        "education",
+                        "caste"
                     ]
                 },
                 "defaults":  {
@@ -49,8 +55,8 @@
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
+                "showAddressFieldsTopDown": true,
+                "strictAutocompleteFromLevel": ""
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
@@ -112,15 +118,15 @@
             },
             "patientSearch": {
                 "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
+                  "label": "Woreda/Subcity",
+                  "placeholder": "ወረዳ/ክፍለ ከተማ ",
+                  "field": "City_Village"
                 },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                  "label": "Phone Number",
+                  "placeholder": "ስልክ ቁጥር",
+                  "fields": ["PhoneNumber"]
                 }
-            }
+              }
         }
 }
