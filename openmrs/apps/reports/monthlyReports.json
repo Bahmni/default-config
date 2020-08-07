@@ -85,35 +85,35 @@
 		"config": {
 		"reports": [
 				{
-					"name": "PMTCT ANC Reporting",
+					"name": "ANC visits, Syphilis and HBV Testing",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtctAnc.sql"
 					}
 				},
 				{
-					"name": "PMTCT HIV Reporting",
+					"name": "HIV Counseling and Testing at the ANC Clinic",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtcHiv.sql"
 					}
 				},
 				{
-					"name": "PMTCT ART And Tb Reporting",
+					"name": "ANC Partner/Index contact HIV Counseling and testing",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtctArtandTb.sql"
 					}
 				},
 				{
-					"name": "PMTCT ANC Partner-Index contact HIV Counseling and testing",
+					"name": "HIV Counseling and Testing at Maternity",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtcANCpartnerindex.sql"
 					}
 				},
 				{
-					"name": "PMTCT HIV Counseling  and Testing at Maternity",
+					"name": "Number of PMTCT clients who received ART during the reporting period by regimen",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtctHIVcounselling.sql"

@@ -1,11 +1,9 @@
 SELECT DISTINCT 
-	 pai.identifier AS 'patient ID',
+	 pai.identifier AS 'Patient ID',
      pn.given_name AS 'First Name', 
 	 ifnull(pn.family_name,'') AS 'Last Name',
 	 pMobile.telephoneNo AS 'Telephone No.',
 	 p.gender AS 'Gender',
-	 pSupporter.paSupporterName AS 'Treatment Supporter Name',
-	 pSupPhone.paSupPhoneNumber AS 'Treatment Supporter PhoneNumber',
 	 DATE_FORMAT(obsConcept.artStartDate, "%d/%m/%Y") AS 'ART Start Date',
 	 DATE_FORMAT(start_date_time, "%d/%m/%Y") AS 'Appointment Date' 
 FROM patient_appointment pa 
