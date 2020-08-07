@@ -75,5 +75,27 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quartely_tx_ml.sql"
     }
-  }
+  },
+  "tx_tb_and_tb_prev": {
+		"name": "TX TB and TB PREV - Quartely Report",
+		"type": "concatenated",
+		"config": {
+		"reports": [
+				{
+					"name": "Newly started on ART",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/tx_tb_ and_tb_prev_newly_started.sql"
+					}
+				},
+				{
+					"name": "Previously on ART",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/tx_tb_ and_tb_prev_previously_started_on_art.sql"
+					}
+				}
+			]
+		}
+	}
 }
