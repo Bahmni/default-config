@@ -1,5 +1,5 @@
 SELECT DISTINCT 
-	 pai.identifier AS 'patient ID',
+	 pai.identifier AS 'Patient ID',
      pn.given_name AS 'First Name', 
 	 ifnull(pn.family_name,'') AS 'Last Name',
 	 DATE_FORMAT(pa.start_date_time, "%d/%m/%Y") AS 'Appointment Date', 
