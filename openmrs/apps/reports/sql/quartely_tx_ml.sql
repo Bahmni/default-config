@@ -10,7 +10,7 @@ count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOth
 count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age < 1 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
 count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age < 1 then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -135,18 +135,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '1 to 4 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 1 and age < 4  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 1 and age < 4   then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 1 and age < 4  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 1 and age < 4  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 1 and age < 4  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 1 and age < 4  then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 1 and age < 4  then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 1 and age < 4  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 1 and age < 4 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 1 and age < 4  then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 1 and age < 5  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 1 and age < 5   then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 1 and age < 5  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age >= 1 and age < 5  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 1 and age < 5  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 1 and age < 5  then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 1 and age < 5  then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 1 and age < 5  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 1 and age < 5 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 1 and age < 5  then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -271,18 +271,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '5 to 9 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 5 and age < 9  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 5 and age < 9    then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 5 and age < 9   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 5 and age < 9   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 5 and age < 9  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 5 and age < 9   then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 5 and age < 9   then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 5 and age < 9  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 5 and age < 9  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 5 and age < 9  then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 5 and age < 10  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 5 and age < 10    then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 5 and age < 10   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age >= 5 and age < 10   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 5 and age < 10  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 5 and age < 10   then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 5 and age < 10   then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 5 and age < 10  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 5 and age < 10  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 5 and age < 10  then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -407,18 +407,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '10 to 14 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 10 and age < 14  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 10 and age < 14    then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 10 and age < 14   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 10 and age < 14   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 10 and age < 14  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 10 and age < 14   then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 10 and age < 14   then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 10 and age < 14  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 10 and age < 14  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 10 and age < 14  then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 10 and age < 15  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 10 and age < 15    then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 10 and age < 15   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age > 10 and age < 15   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 10 and age < 15  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 10 and age < 15   then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 10 and age < 15   then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 10 and age < 15  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 10 and age < 15  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 10 and age < 15  then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -543,18 +543,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '15 to 19 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 15 and age < 19  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 15 and age < 19    then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 15 and age < 19   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 15 and age < 19   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 15 and age < 19  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 15 and age < 19   then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 15 and age < 19   then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 15 and age < 19  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 15 and age < 19  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 15 and age < 19  then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 15 and age < 20  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 15 and age < 20    then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 15 and age < 20   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age > 15 and age < 20   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 15 and age < 20  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 15 and age < 20   then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 15 and age < 20   then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 15 and age < 20  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 15 and age < 20  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 15 and age < 20  then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -679,18 +679,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '20 to 24 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 20 and age < 24  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 20 and age < 24    then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 20 and age < 24   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 20 and age < 24   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 20 and age < 24  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 20 and age < 24   then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 20 and age < 24   then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 20 and age < 24  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 20 and age < 24  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 20 and age < 24  then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 20 and age < 25  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 20 and age < 25    then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 20 and age < 25   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age > 20 and age < 25   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 20 and age < 25  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 20 and age < 25   then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 20 and age < 25   then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 20 and age < 25  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 20 and age < 25  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 20 and age < 25  then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -815,18 +815,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '25 to 29 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 25 and age < 29  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 25 and age < 29    then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 25 and age < 29   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 25 and age < 29   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 25 and age < 29  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 25 and age < 29   then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 25 and age < 29   then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 25 and age < 29  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 25 and age < 29  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 25 and age < 29  then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 25 and age < 30  then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 25 and age < 30    then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 25 and age < 30   then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age >= 25 and age < 30   then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 25 and age < 30  then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 25 and age < 30   then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 25 and age < 30   then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 25 and age < 30  then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 25 and age < 30  then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 25 and age < 30  then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -951,18 +951,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '30 to 34 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 30 and age < 34 then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 30 and age < 34   then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 30 and age < 34  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 30 and age < 34  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 30 and age < 34 then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 30 and age < 34  then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 30 and age < 34  then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 30 and age < 34 then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 30 and age < 34 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 30 and age < 34 then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 30 and age < 35 then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 30 and age < 35   then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 30 and age < 35  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age >= 30 and age < 35  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 30 and age < 35 then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 30 and age < 35  then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 30 and age < 35  then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 30 and age < 35 then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 30 and age < 35 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 30 and age < 35 then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -1087,18 +1087,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '35 to 39 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 35 and age < 39 then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 35 and age < 39   then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 35 and age < 39  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 35 and age < 39  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 35 and age < 39 then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 35 and age < 39  then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 35 and age < 39  then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 35 and age < 39 then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 35 and age < 39 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 35 and age < 39 then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 35 and age < 40 then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 35 and age < 40   then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 35 and age < 40  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age >= 35 and age < 40  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 35 and age < 40 then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 35 and age < 40  then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 35 and age < 40  then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 35 and age < 40 then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 35 and age < 40 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 35 and age < 40 then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -1223,18 +1223,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '40 to 44 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 40 and age < 44 then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 40 and age < 44   then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 40 and age < 44  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 40 and age < 44  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 40 and age < 44 then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 40 and age < 44  then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 40 and age < 44  then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 40 and age < 44 then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 40 and age < 44 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 40 and age < 44 then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 40 and age < 45 then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 40 and age < 45   then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 40 and age < 45  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age >= 40 and age < 45  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 40 and age < 45 then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 40 and age < 45  then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 40 and age < 45  then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 40 and age < 45 then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 40 and age < 45 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 40 and age < 45 then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -1359,18 +1359,18 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tPatientDied on  tLostTofollowup.pid = tPatientDied.person_id group by sex
 union all
 select '45 to 49 Years' as 'Age groups' ,sex,
-count(distinct(case when pid is not null and age > 45 and age < 49 then pid end)) as 'ART patients with no clinical contact since their last expected contact',
-count(distinct(case when outcomedied is not null and age > 45 and age < 49   then pid end)) as 'Patient outcome - Died',
-count(distinct(case when outcomeselftransfer is not null and age > 45 and age < 49  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
-count(distinct(case when tracedpatientunabletolocate is not null and age > 45 and age < 49  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
-count(distinct(case when didnottrace is not null and age > 45 and age < 49 then pid end)) as 'Patient outcome - Did not attempt to trace patient',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age > 45 and age < 49  then pid end)) as 'Cause of death - TB',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age > 45 and age < 49  then pid end)) as 'Cause of death - Cancer',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age > 45 and age < 49 then pid end)) as 'Cause of death - Other infectious and parasitic disease',
-count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age > 45 and age < 49 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
-count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age > 45 and age < 49 then pid end)) as 'Cause of death - Unknown Cause'
+count(distinct(case when pid is not null and age >= 45 and age < 50 then pid end)) as 'ART patients with no clinical contact since their last expected contact',
+count(distinct(case when outcomedied is not null and age >= 45 and age < 50   then pid end)) as 'Patient outcome - Died',
+count(distinct(case when outcomeselftransfer is not null and age >= 45 and age < 50  then pid end)) as 'Patient outcome - Self transfer (silent transfer)',
+count(distinct(case when tracedpatientunabletolocate is not null and age > 45 and age < 50  then pid end)) as 'Patient outcome - Traced patient (unable to locate)', 
+count(distinct(case when didnottrace is not null and age >= 45 and age < 50 then pid end)) as 'Patient outcome - Did not attempt to trace patient',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathTB is not null and age >= 45 and age < 50  then pid end)) as 'Cause of death - TB',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathCancer is not null and age >= 45 and age < 50  then pid end)) as 'Cause of death - Cancer',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOtherinfecetious is not null and age >= 45 and age < 50 then pid end)) as 'Cause of death - Other infectious and parasitic disease',
+count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and age >= 45 and age < 50 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
+count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and age >= 45 and age < 50 then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
@@ -1506,7 +1506,7 @@ count(distinct(case when endoffollowupduetodeath is not null and causeofdeathOth
 count(distinct(case when endoffollowupduetodeath is not null and causeofdeathNonNaturalCauses is not null and Age  >= 50 then pid end)) as 'Cause of death - Non-natural causes (accident/war)',
 count(distinct(case when endoffollowupduetodeath is not null and causeofUnknowCause is not null and Age  >= 50 then pid end)) as 'Cause of death - Unknown Cause'
  from (
-select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status = 'LostToFollowUp' and voided = 0 and end_date_time
+select distinct(patient_id) as pid, end_date_time , status, voided from patient_appointment where status  in ('LostToFollowUp', 'Missed') and voided = 0 and end_date_time
 between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tLostTofollowup
 inner join(
