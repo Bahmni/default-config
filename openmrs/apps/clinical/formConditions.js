@@ -1088,11 +1088,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var hbtest = formFieldValues["HB Test"];
         if(hbtest == true) {
             return{
-                show:["HB"]
+                show:["HB","HB Test Date"]
             }
         }else {
             return{
-                hide:["HB"]
+                hide:["HB","HB Test Date"]
                 
             }
         }    
@@ -1138,6 +1138,26 @@ Bahmni.ConceptSet.FormConditions.rules = {
         } else {
             return{
                hide: ["Specify Other Delivery Personnel"]
+            }
+        }   
+    },
+    "Infant's PMTCT ARVS" : function (formName , formFieldValues){
+        var infantpmtct = formFieldValues["Infant's PMTCT ARVS"];
+        if(infantpmtct === "Daily NVP"){
+            return {
+               show: ["Daily NVP Date"],
+               hide:["AZT+NVP Date"]
+            }      
+        } else if(infantpmtct === "AZT+NVP"){
+            return{
+               show: ["AZT+NVP Date"],
+               hide:["Daily NVP Date"]
+            }
+        }
+        else {
+            return {
+                hide:["Daily NVP Date","AZT+NVP Date"]
+
             }
         }   
     },
