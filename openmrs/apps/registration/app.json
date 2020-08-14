@@ -29,6 +29,9 @@
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
+                        "Name",
+                        "Phone",
+                        "Address"
                     ]
                 },
                 "hidden": {
