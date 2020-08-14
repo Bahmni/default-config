@@ -1,4 +1,4 @@
-<title>Bahmni - Appointment Scheduling</title>
+<title>Appointment Scheduling</title>
 <style>
     h4, p, h5 {
         text-align: center;
@@ -38,13 +38,15 @@
                 <th>{{::'APPOINTMENT_PATIENT_ID' |translate}}</th>
                 <th class="table-mid-width">{{::'APPOINTMENT_PATIENT_NAME' |translate}}</th>
                 <th ng-if="searchedPatient" class="width-change">{{::'APPOINTMENT_DATE' |translate}}</th>
-                <th class="width-change">{{::'APPOINTMENT_START_TIME_KEY' |translate}}</th>
-                <th class="width-change">{{::'APPOINTMENT_END_TIME_KEY' |translate}}</th>
+                <!-- <th class="width-change">{{::'APPOINTMENT_START_TIME_KEY' |translate}}</th>
+                <th class="width-change">{{::'APPOINTMENT_END_TIME_KEY' |translate}}</th> -->
                 <th class="table-mid-width">{{::'APPOINTMENT_PROVIDER' |translate}}</th>
                 <th>{{::'APPOINTMENT_SERVICE' |translate}}</th>
-                <th class="table-mid-width" ng-if="enableServiceTypes">{{::'APPOINTMENT_SERVICE_TYPE_FULL' |translate}}</th>
-                <th class="table-mid-width">{{::'APPOINTMENT_SERVICE_LOCATION_KEY' |translate}}</th>
+                <!-- <th class="table-mid-width" ng-if="enableServiceTypes">{{::'APPOINTMENT_SERVICE_TYPE_FULL' |translate}}</th>
+                <th class="table-mid-width">{{::'APPOINTMENT_SERVICE_LOCATION_KEY' |translate}}</th> -->
                 <th>{{::'APPOINTMENT_STATUS' |translate}}</th>
+                <th>{{::'APPOINTMENT_CREATOR' |translate}}</th>
+                <th>{{::'APPOINTMENT_DATE_CREATED' |translate}}</th>
                 <!--<th class="notes">{{::'APPOINTMENT_COMMENTS' |translate}}</th>-->
             </tr>
             </thead>
@@ -53,13 +55,15 @@
                 <td>{{::appointment.patient.identifier}}</td>
                 <td class="table-mid-width">{{::appointment.patient.name | titleCase}}</td>
                 <td ng-if="searchedPatient">{{::appointment.startDateTime | bahmniDate}}</td>
-                <td>{{::appointment.startDateTime | bahmniTime}}</td>
-                <td>{{::appointment.endDateTime | bahmniTime}}</td>
+                <!-- <td>{{::appointment.startDateTime | bahmniTime}}</td>
+                <td>{{::appointment.endDateTime | bahmniTime}}</td> -->
                 <td class="table-mid-width">{{::appointment.provider.name}}</td>
                 <td>{{::appointment.service.name}}</td>
-                <td class="table-mid-width" ng-if="enableServiceTypes">{{::appointment.serviceType && (appointment.serviceType.name + ' [' + appointment.serviceType.duration + ' min]')}}</td>
-                <td class="table-mid-width">{{::appointment.location.name}}</td>
+                <!-- <td class="table-mid-width" ng-if="enableServiceTypes">{{::appointment.serviceType && (appointment.serviceType.name + ' [' + appointment.serviceType.duration + ' min]')}}</td>
+                <td class="table-mid-width">{{::appointment.location.name}}</td> -->
                 <td>{{::appointment.status}}</td>
+                <td>{{::appointment.creator.name}}</td>
+                <td>{{::appointment.createDate | bahmniDate}}</td>
                 <!--<td class="notes">{{::appointment.comments}}</td>-->
             </tr>
             </tbody>
