@@ -1,91 +1,251 @@
-SELECT  @a:=@a+1 Serial,
-(DATE_FORMAT(v.date_started, "%d/%m/%Y")) as "Date of visit",
-IFNULL(pa.value ,' ') as "Mother Name",
-IFNULL(pa1.value ,' ') as "Mothers Number",
-CONCAT (TIMESTAMPDIFF(Year, p.birthdate, CURDATE()) , 'Y ' ,TIMESTAMPDIFF(Month, p.birthdate, CURDATE()) , 'M') AS "Age",
-CONCAT(IF(paddr.country IS NULL OR paddr.country = '', '',CONCAT(paddr.country, ', ')), 
-IF(paddr.address4 IS NULL OR paddr.address4 = '', '', CONCAT(paddr.address4, ', ')), 
-	IF(paddr.address3 IS NULL OR paddr.address3 = '', '', CONCAT(paddr.address3, ', ')), 
-	IF(paddr.address2 IS NULL OR paddr.address2 = '', '', CONCAT(paddr.address2, ', ')), 
-	IF(paddr.address1 IS NULL OR paddr.address1 = '', '', CONCAT(paddr.address1, ', ')), 
-	IF(paddr.address5 IS NULL OR paddr.address5 = '', '', CONCAT(paddr.address5, ', ')), 
-	IF(paddr.address6 IS NULL OR paddr.address6 = '', '', CONCAT(paddr.address6, ', ')), 
-	IF(paddr.city_village IS NULL OR paddr.city_village = '', '', paddr.city_village)) AS 'Name of village or Address',
-IFNULL(pa2.value ,' ') as "Next of Kin and Phone Number",
-'' as "ANC Number",
-'' as "Maternity No.",
-pai.identifier as "ART NO.",
-'' as "Previous HIV test result  (recent/ within 6 months) \n Test result",
-'' as "Place Tested",
-'' as "Date tested",
-'' as "Date Tested in Maternity",
-'' as "Final Test result at maternity \n (Neg = Negative Pos = Positive INC = Inconclusive)",
-IFNULL(motherArt,' ') as "ART  Regimen During Pregnancy",
-IFNULL(durationArt ,' ') as "Duration on ART During Pregnancy",
-'' as "Infant's risk status (Low or High)",
-'' as "ART: Newly started in Labor",
-IFNULL(infantArvs ,' ') as "Infant ARV Prophylaxis and Date   1=NVP  2=AZT+NVP",
-CONCAT((IFNULL(nvpDate,' ')),'/',(IFNULL(AZTDate,' '))) as "NVP/AZT Date given",
-'' as "ARV Baby Discharged with \n 1=NVP  2=AZT+NVP",
-IFNULL(infantFeed ,' ') as "Infant Feeding practice 1=EBF 2= RF 3=MF",
-IFNULL(pa3.value ,' ') as "Exposed Infant Number",
-'' as "Comments",
-'' as "Provider initials"
-From person p
-JOIN (SELECT @a:= 0) a
-JOIN person_name pn on pn.person_id= p.person_id
-LEFT JOIN visit v on v.patient_id=p.person_id
-LEFT JOIN patient_identifier pai ON (pai.patient_id = v.patient_id AND pai.preferred = 1)
-JOIN person_attribute par on par.person_id = p.person_id and par.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship" ))
-JOIN person_attribute_type patr on (patr.person_attribute_type_id = par.person_attribute_type_id and patr.retired = 0 and patr.name = "TypeofPatient")
-LEFT JOIN person_address paddr ON (p.person_id = paddr.person_id AND paddr.voided = 0 )
-Left JOIN person_attribute pa on p.person_id=pa.person_id
-JOIN person_attribute_type pat on pat.person_attribute_type_id = pa.person_attribute_type_id And pat.name = "HeiChildMothersName"
-Left JOIN person_attribute pa1 on p.person_id=pa1.person_id
-JOIN person_attribute_type pat1 on pat1.person_attribute_type_id = pa1.person_attribute_type_id And pat1.name = "MothersContactNumber"
-Left JOIN person_attribute pa2 on p.person_id=pa2.person_id
-JOIN person_attribute_type pat2 on pat1.person_attribute_type_id = pa2.person_attribute_type_id And pat2.name = "TreatmentSupporterTelephoneNumber"
-Left JOIN person_attribute pa3 on p.person_id=pa3.person_id
-JOIN person_attribute_type pat3 on pat3.person_attribute_type_id = pa3.person_attribute_type_id And pat3.name = "HIVExposedInfant(HEI)No"
-LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'motherArt' FROM obs o
-  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Mother's ART Regimen" 
-  and o.concept_id = cn.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id  
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = p.person_id)
-LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'durationArt' FROM obs o
-  JOIN concept_name cn1 ON (cn1.concept_name_type = "FULLY_SPECIFIED" AND cn1.voided is false AND cn1.name="Duration on ART?" 
-  and o.concept_id = cn1.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id  
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr1 ON (vr1.visitPatientId = p.person_id)
-LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'infantArvs' FROM obs o
-  JOIN concept_name cn2 ON (cn2.concept_name_type = "FULLY_SPECIFIED" AND cn2.voided is false AND cn2.name="Infant's PMTCT ARVS" 
-  and o.concept_id = cn2.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id  
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr2 ON (vr2.visitPatientId = p.person_id)
-LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'infantFeed' FROM obs o
-  JOIN concept_name cn3 ON (cn3.concept_name_type = "FULLY_SPECIFIED" AND cn3.voided is false AND cn3.name="Infant Feeding" 
-  and o.concept_id = cn3.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id  
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr3 ON (vr3.visitPatientId = p.person_id)
-LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'nvpDate' FROM obs o
-  JOIN concept_name cn4 ON (cn4.concept_name_type = "FULLY_SPECIFIED" AND cn4.voided is false AND cn4.name="Daily NVP Date" 
-  and o.concept_id = cn4.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr4 ON (vr4.visitPatientId = p.person_id)
-LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'AZTDate' FROM obs o
-  JOIN concept_name cn5 ON (cn5.concept_name_type = "FULLY_SPECIFIED" AND cn5.voided is false AND cn5.name="AZT+NV Date" 
-  and o.concept_id = cn5.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr5 ON (vr5.visitPatientId = p.person_id)
+select  @a:=@a+1 'Serial Number' , dateMotherVisitedMaternity as 'Date of visit' , ClientName as 'Mothers Name' , Age , ancnummber
+as 'ANC Number' , maternitynumber as 'Maternity Number' , artnumber as 'ART No' , results as 'Previous HIV test result (recent/ within 6 months)\nTest Result' , 
+placetestedhiv  as 'Previous HIV test result (recent/ within 6 months)\nPlace Tested' , datetestedhiv as 'Previous HIV test result (recent/ within 6 months)\nDate Tested' , 
+(case when ismothertestedinmaternity = 1 then datetestedinmaternity else 'N/A' end) as 'Date tested in Maternity' , finalresultaftertestinginmaternity  as 'Final Result After testing \nin maternity', 
+(case when finalresultaftertestinginmaternity = 'Positive' then artRegimenDuringPregnancyResults else 'N/A' end) as 'ART Regimen During Pregnancy',
+(case when finalresultaftertestinginmaternity = 'Positive' then durationinartResults else 'N/A' end)  as 'Duration on ART' ,
+ infantriskstatusResults as "Infant's Risk Status" , 
+(case when finalresultaftertestinginmaternity = 'Positive' then ARTNewlystartedinLabor else 'N/A' end) as 'ART: Newly Started in Labour' 
+from (
+select  (SELECT @a:= 0) AS a ,person_id as pid, dateMotherVisitedMaternity 
+ from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_datetime as 'dateMotherVisitedMaternity', voided from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Maternity card, Date tested in Maternity' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')
+ and voided = 0 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Maternity card, Date tested in Maternity' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+ and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tMaternityVisitDate left join
+(
+select person_b as 'mother_id' , relationship , person_a as 'hei_id' from relationship where 
+relationship = (select relationship_type_id from relationship_type where a_is_to_b = 'Mother' and retired = 0) and voided = 0
+)texposedInfantNumber on tMaternityVisitDate.pid = texposedInfantNumber.mother_id
+left join
+(
+select pa.person_id, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex , floor(datediff(curdate(),p.birthdate) / 365) as 'Age'
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'UniqueArtNo') and gender = 'F' and gender is not null
+)tDemogrpahics on tMaternityVisitDate.pid = tDemogrpahics.person_id
+left join (
+select person_id, ancnummber from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_text as 'ancnummber', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'ANC No' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_text is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'ANC No' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tAncNumber on  tMaternityVisitDate.pid = tAncNumber.person_id
+left join(
+select person_id, maternitynumber from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_text as 'maternitynumber', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'ANC No' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_text is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'ANC No' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tMaternityNumber on tMaternityVisitDate.pid = tMaternityNumber.person_id
+left join (
+select person_id , results from (
+select person_id, testResultWithin6months from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'testResultWithin6months', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Previous HIV test result(Within 6 months)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Previous HIV test result(Within 6 months)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'results' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.testResultWithin6months = tConceptname.concept_id
+)tResultswithin6Months on tMaternityVisitDate.pid = tResultswithin6Months.person_id
+left join (
+select person_id, placetestedhiv from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_text as 'placetestedhiv', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Maternity card, Place Test Hiv' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_text is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Maternity card, Place Test Hiv' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tplaceTestedHiv on tMaternityVisitDate.pid = tplaceTestedHiv.person_id
+left join (
+select person_id , datetestedhiv from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_datetime as 'datetestedhiv', voided from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Maternity card, Date Test Hiv' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')
+ and voided = 0 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Maternity card, Date Test Hiv' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+ and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tDateTestedHiv on tMaternityVisitDate.pid = tDateTestedHiv.person_id
+left join (
+select person_id , ismothertestedinmaternity from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'ismothertestedinmaternity', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Maternity card, Mother tested in Maternity' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Maternity card, Mother tested in Maternity' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tIsmothertestedinmaternity on tMaternityVisitDate.pid = tIsmothertestedinmaternity.person_id
+left join (
+select person_id , datetestedinmaternity from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_datetime as 'datetestedinmaternity', voided from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Maternity card, Date tested in Maternity' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')
+ and voided = 0 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Maternity card, Date tested in Maternity' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+ and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tDateTestedinMaternity on tMaternityVisitDate.pid = tDateTestedinMaternity.person_id
+left join (
+select person_id , finalresultaftertestinginmaternity from (
+select person_id, finalmaternityresults from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'finalmaternityresults', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Maternity card, Status After Testing HIV' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Maternity card, Status After Testing HIV' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'finalresultaftertestinginmaternity' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.finalmaternityresults = tConceptname.concept_id
+)tFinalResultAfterTestingInmaternity on tMaternityVisitDate.pid = tFinalResultAfterTestingInmaternity.person_id
+left join(
+select person_id , artRegimenDuringPregnancyResults from (
+select person_id, artregimenduringpregnancy from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'artregimenduringpregnancy', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Maternity card, ART Regimen During Pregnacy' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Maternity card, ART Regimen During Pregnacy' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'artRegimenDuringPregnancyResults' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.artregimenduringpregnancy = tConceptname.concept_id
+)tArtRegimenDuringPRegnancy on tMaternityVisitDate.pid = tArtRegimenDuringPRegnancy.person_id
+left join (
+select person_id , durationinartResults from (
+select person_id, durationinart from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'durationinart', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Duration on ART?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Duration on ART?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'durationinartResults' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.durationinart = tConceptname.concept_id
+)tDurationOnArts on texposedInfantNumber.hei_id = tDurationOnArts.person_id
+left join (
+select person_id , infantriskstatusResults from (
+select person_id, infantriskstatus from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'infantriskstatus', voided from obs where concept_id =
+(select concept_id from concept_name where name = "Infant's Risk Status" and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = "Infant's Risk Status" and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'infantriskstatusResults' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.infantriskstatus = tConceptname.concept_id
+)tInfantsRiskStatus on tMaternityVisitDate.pid = tInfantsRiskStatus.person_id
+left join (
+select person_id , ARTNewlystartedinLabor from (
+select person_id, artNewlyStarted from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'artNewlyStarted', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Maternity card,ART Newly Started in Labor' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Maternity card,ART Newly Started in Labor' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'ARTNewlystartedinLabor' from concept_name where concept_name_type = 'FULLY_SPECIFIED' and voided = 0
+)tConceptname on tresults.artNewlyStarted = tConceptname.concept_id
+)tArtStartedInLabour on tMaternityVisitDate.pid = tArtStartedInLabour.person_id
+left join (
+select person_id , infantpmtctarvsresults from (
+select person_id, infantpmtctarvs from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'infantpmtctarvs', voided from obs where concept_id =
+(select concept_id from concept_name where name = "Infant's PMTCT ARVS" and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = "Infant's PMTCT ARVS" and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'infantpmtctarvsresults' from concept_name where concept_name_type = 'FULLY_SPECIFIED' and voided = 0
+)tConceptname on tresults.infantpmtctarvs = tConceptname.concept_id
+)tInfantPmtctARV on texposedInfantNumber.hei_id = tInfantPmtctARV.person_id
+left join (
+select person_id , nvpDate from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_datetime as 'nvpDate', voided from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Daily NVP Date' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')
+ and voided = 0 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Daily NVP Date' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+ and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tNvpDate on texposedInfantNumber.hei_id = tNvpDate.person_id
+left join (
+select person_id , aztnvpDate from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_datetime as 'aztnvpDate', voided from obs where concept_id = 
+(select concept_id from concept_name where name  = 'AZT+NVP Date' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')
+ and voided = 0 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name  = 'AZT+NVP Date' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+ and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tAztnvpDate on texposedInfantNumber.hei_id = tAztnvpDate.person_id
+left join (
+select person_id , infantdeedingResults from (
+select person_id, infantdeeding from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'infantdeeding', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Infant Feeding' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59')  and value_coded is not null and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Infant Feeding' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#stopDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'infantdeedingResults' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.infantdeeding = tConceptname.concept_id
+)tInfantFeeding on texposedInfantNumber.hei_id = tInfantFeeding.person_id
+left join (
+select mother_id, eid , heinumber from (
+select person_b as 'mother_id' , relationship , person_a as 'hei_id' from relationship where 
+relationship = (select relationship_type_id from relationship_type where a_is_to_b = 'Mother' and retired = 0) and voided = 0
+)heiRelationship
+left join(
+select pa.person_id as 'eid', pa.value as 'heinumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex , floor(datediff(curdate(),p.birthdate) / 365) as 'Age'
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'HIVExposedInfant(HEI)No') and gender is not null
+)tHeiDemographics on heiRelationship.hei_id = tHeiDemographics.eid
+)tHeiNumber on tMaternityVisitDate.pid = tHeiNumber.mother_id
+
