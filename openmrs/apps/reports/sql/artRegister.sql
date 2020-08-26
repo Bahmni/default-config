@@ -1,57 +1,263 @@
-select distinct(Unique_ART_Number) as 'Unique ART Number', ART_Start_Date as 'ART Start Date' , HIV_Retesting_for_ART_initiation as 'HIV Retesting for ART initiation' , Name_in_full as 'Name in Full', Telephone_No ,Gender , Age , Appointment_Date,HEIGHT, WEIGHT,BMI, CD4,
-WHOS, CTX ,Date_Started_TB_RX as 'DateStarted TB RX', Breast_feeding as 'Breast feeding' , Substitution_Regimen_first_line_Adults as 'Substitution Regimen first line Adults' , Reason_For_Regimen_Change 
-as 'Reason For Regimen Change', Substitution_within_1st_Line as 'Substitution within 1st Line', Substitution_Regimen_second_line_adults as 'Substitution Regimen second line adults', 
-Child_1st_Line_Regimens as 'Child 1st Line Regimens', Child_2nd_Line_Regimens as 'Child 2nd Line Regimens '
+select artnumber as 'Unique ART Number' , datestartedart as 'ART Start Date',
+(case when HIV_Retesting_for_ART_initiation is not null then '1' else '0' end) as 'HIV Retesting for ART initiation. 0=No 1=Yes',
+ ClientName as 'Name in Full' , mobile as "Client's Address - Mobile" ,  Age as 'Age (years)', sex as 'Sex (M or F)',
+WEIGHT as 'Weight (kg)' , HEIGHT as 'Height /Length  for Child < 2 years  (cm)', BMI as 'Body Mass Index (BMI) (kg/mSq)', whostage as 'WHO clinical stage', 
+  CD4  as 'CD4 count or (if child <5 years indicate  CD4%)', dateStartedCTXorDapsone as 'CTX  or Dapsone start month/year' , date_started_tbrx as 'TB RX start Month/year
+and TB reg No.', 
+(case when currently_breastfeeding = 'YES' then '1' else '0' end) as 'Breastfeeding (0=No; 1=Yes; 2=N/A)',
+firstregimen as '1st Line Regimen - Original Regimen', firstsubstitutionregimen as '1st Line Regimen - 1st: Substitution drug code' , secondswitchwithinfirstline as '1st Line Regimen - 2nd: Substitution drug code' , secondlinefirst as '2nd Line Regimen - 2nd Line Regimen switched to',
+firstsubstitutionwithinsecond as '2nd Line Regimen - 1st:  Substitution drug code',
+secondsubstitutionwithinsecondline as '2nd Line Regimen - 2nd: Substitution drug code' , tchildfirstregimen as 'Child 1st Line Regimens' , tChildSecondLine as 'Child 2nd Line Regimens'
  from (
-SELECT DISTINCT IFNULL(DATE_FORMAT(artStartDate, '%Y-%m-%d'), '') AS "ART_Start_Date", 
-IFNULL(IF(retestBeforeArt IS NULL OR retestBeforeArt = '', '0', '1'), '') AS "HIV_Retesting_for_ART_initiation", 
-IFNULL(pUART.UniqueArtNo, '') AS "Unique_ART_Number", concat(pn.given_name, ' ', IF(pn.middle_name IS NULL OR pn.middle_name = '', '', concat(pn.middle_name, ' ')), 
-IF(pn.family_name IS NULL OR pn.family_name = '', '', pn.family_name)) AS "Name_in_full", IFNULL(pai.identifier, '') AS "patient ID", IFNULL(pMobile.telephoneNo, '') AS "Telephone_No", IFNULL(p.gender, '') AS "Gender",
-TIMESTAMPDIFF(YEAR, p.birthdate, CURDATE()) AS "Age", IFNULL(DATE_FORMAT(v.date_started, "%d/%m/%Y"), '') AS "Appointment_Date", IFNULL(HEIGHT, '') HEIGHT, IFNULL(WEIGHT, '') WEIGHT, IFNULL(BMI, '') BMI, IFNULL(CD4, '') CD4,
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = WHOS), '') WHOS, IFNULL(CTX, '') CTX, IFNULL(date_startedTBRX, '') "Date_Started_TB_RX",
-IFNULL(Breastfeeding, '') "Breast_feeding", IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = SR1stLA ), '') "Substitution_Regimen_first_line_Adults", 
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = RFRC), '') "Reason_For_Regimen_Change",
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = ARSW1L), '') "Substitution_within_1st_Line",
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = SR2LA), '') "Substitution_Regimen_second_line_adults", 
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = C1LR), '') "Child_1st_Line_Regimens", 
-IFNULL((select name from concept_name where concept_name_type="FULLY_SPECIFIED" and concept_id = C2LR), '') "Child_2nd_Line_Regimens"
-FROM visit v 
-LEFT JOIN person p ON p.person_id = v.patient_id AND v.voided IS FALSE 
-LEFT JOIN person_name pn ON p.person_id = pn.person_id AND pn.voided IS FALSE
-LEFT JOIN patient_identifier pai ON (pai.patient_id = v.patient_id AND pai.preferred = 1)
-LEFT JOIN encounter e ON e.visit_id = v.visit_id 
-LEFT JOIN (select paMobile.person_id as 'pMobilePersonId', paMobile.value AS 'telephoneNo'  from person_attribute paMobile
-JOIN person_attribute_type patMobile ON patMobile.name = "MobileNumber" AND patMobile.retired IS FALSE AND patMobile.person_attribute_type_id = paMobile.person_attribute_type_id) AS pMobile ON v.patient_id = pMobile.pMobilePersonId
-LEFT JOIN (select paUART.person_id as 'pUARTPersonId', paUART.value AS 'UniqueArtNo'  from person_attribute paUART 
-JOIN person_attribute_type patUART ON patUART.name = "UniqueArtNo" AND patUART.retired IS FALSE AND patUART.person_attribute_type_id = paUART.person_attribute_type_id) AS pUART ON v.patient_id = pUART.pUARTPersonId 
-LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'artStartDate' FROM obs o 
-JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="ANC, ART Start Date" and o.concept_id = cn.concept_id) 
-JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-JOIN visit v ON v.visit_id = enc.visit_id  
-GROUP BY v.patient_id 
-ORDER BY v.visit_id DESC) AS obsConcept ON obsConcept.visitPatientId = v.patient_id 
-LEFT JOIN (
-	SELECT obs.person_id, obs.encounter_id,
-	REPLACE(Group_concat(IF (obs.concept_id = 3731, obs.value_coded, "")), ",", "") AS retestBeforeArt,
-	REPLACE(Group_concat(IF (obs.concept_id = 3767, obs.value_coded, "")), ",", "") AS WHOS,
-    REPLACE(Group_concat(IF (obs.concept_id = 118, obs.value_numeric, "")), ",", "") AS HEIGHT, 
-    REPLACE(Group_concat(IF (obs.concept_id = 119, obs.value_numeric, "")), ",", "") AS WEIGHT,
-    REPLACE(Group_concat(IF (obs.concept_id = 120, obs.value_numeric, "")), ",", "") AS BMI,
-    REPLACE(Group_concat(IF (obs.concept_id = 1187, obs.value_numeric, "")), ",", "") AS CD4,
-    REPLACE(Group_concat(IF (obs.concept_id = 3764, obs.value_datetime, "")), ",", "") AS CTX, 
-    REPLACE(Group_concat(IF (obs.concept_id = 3782, obs.value_datetime, "")), ",", "") AS date_startedTBRX,
-    REPLACE(Group_concat(IF (obs.concept_id = 2041, obs.value_numeric, "")), ",", "") AS Breastfeeding,
-    REPLACE(Group_concat(IF (obs.concept_id = 3652, obs.value_coded, "")), ",", "") AS SR1stLA,
-    REPLACE(Group_concat(IF (obs.concept_id = 3654, obs.value_coded, "")), ",", "") AS RFRC,
-    REPLACE(Group_concat(IF (obs.concept_id = 3679, obs.value_coded, "")), ",", "") AS ARSW1L,
-    REPLACE(Group_concat(IF (obs.concept_id = 3663, obs.value_coded, "")), ",", "") AS SR2LA,
-    REPLACE(Group_concat(IF (obs.concept_id = 3664, obs.value_coded, "")), ",", "") AS ARS2L,
-    REPLACE(Group_concat(IF (obs.concept_id = 3958, obs.value_coded, "")), ",", "") AS C1LR,
-    REPLACE(Group_concat(IF (obs.concept_id = 3968, obs.value_coded, "")), ",", "") AS C2LR
-    FROM obs 
-    WHERE obs.concept_id IN ( 3731, 3767, 118, 119, 120,1187, 3767, 3764, 3782, 2041, 3652, 3654, 3679, 3663, 3664, 3958, 3968) and obs.voided=0 
-    GROUP BY person_id, encounter_id
-) AS nutvalues ON e.encounter_id = nutvalues.encounter_id 
-)tt where ART_Start_Date between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')
-group by Unique_ART_Number
--- WHERE pa.start_date_time BETWEEN '20202-01-01' AND '20202-02-01' ORDER BY pa.start_date_time DESC
+select patient_id, min(date_created) as datestartedart
+from (
+select o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)a group by patient_id
+)tDateStartedArt inner join
+(
+select * from (
+select person_id as 'pid' , value as 'newpatientid' from person_attribute where person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient'
+)  and value =(select concept_id  from concept_name where name = 'NewPatient' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and voided = 0
+)tNewPatient
+inner join (
+select pa.person_id, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age'
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'UniqueArtNo')
+)tDemographics on tNewPatient.pid = tDemographics.person_id
+)tNewPatientDemographics on tDateStartedArt.patient_id = tNewPatientDemographics.pid
+left join (
+select pn.person_id as 'pid', pn.given_name, pn.middle_name, pa.value as 'mobile' from person_name pn
+left join person_attribute pa on pn.person_id = pa.person_id where pa.person_attribute_type_id 
+=(select person_attribute_type_id from person_attribute_type where name = 'MobileNumber')
+)tMobile on tNewPatientDemographics.pid =  tMobile.pid
+left join (
+select * from (
+select  person_id, concept_id, obs_datetime as 'HIV_Retesting_for_ART_initiation' , encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Date of HIV Retesting Before ART' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Date of HIV Retesting Before ART' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tDateRestedHivbeforeARTinit on tNewPatientDemographics.pid =  tDateRestedHivbeforeARTinit.person_id
+left join (
+select * from (
+select  person_id, concept_id, obs_datetime , value_numeric as 'HEIGHT',encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEIGHT' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEIGHT' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tHeight on tNewPatientDemographics.pid =  tHeight.person_id
+left join (
+select * from (
+select  person_id, concept_id, obs_datetime , value_numeric as 'WEIGHT',encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'WEIGHT' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'WEIGHT' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 	
+)tWeight on tNewPatientDemographics.pid =  tWeight.person_id
+left join (
+select * from (
+select  person_id, concept_id, obs_datetime , value_numeric as 'BMI',encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'BMI' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'BMI' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 	
+)tBMI on tNewPatientDemographics.pid =  tBMI.person_id
+left join (
+select * from (
+select  person_id, concept_id, obs_datetime , value_numeric as 'CD4',encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'CD4' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'CD4' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCDFour on tNewPatientDemographics.pid =  tCDFour.person_id 
+left join(
+select * from (
+select  person_id, concept_id, obs_datetime as 'date_started_tbrx' , encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Date Started TB RX' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id =
+ (select concept_id from concept_name where name = 'Date Started TB RX' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+ and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tDatestartedtbrx on tNewPatientDemographics.pid =  tDatestartedtbrx.person_id
+left join(
+select pid , tConceptname.name as 'whostage' from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'WHO Stage' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'WHO Stage' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'FULLY_SPECIFIED' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)tWhoStage on tNewPatientDemographics.pid =  tWhoStage.pid
+left join(
+
+select pid, min(date_created) as dateStartedCTXorDapsone
+from (
+select o.patient_id as pid, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form in (
+(select concept_id from concept_name where name = 'CTX Drug' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0),
+(select concept_id from concept_name where name = 'Dapsone Drugs' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+)
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)a group by pid
+)tDateStartedCTxorDapsone on  tNewPatientDemographics.pid =  tDateStartedCTxorDapsone.pid
+left join (
+select person_id ,
+(case when value_coded = 1 then 'Yes' else 'No' end) as 'currently_breastfeeding'
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCurrentlyBreastfeeeding on tNewPatientDemographics.pid =  tCurrentlyBreastfeeeding.person_id
+left join(
+select distinct(pid), firstregimen from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'firstregimen' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 1
+)tfirstlinereg
+)tfirstlineregimen on tNewPatientDemographics.pid =  tfirstlineregimen.pid 
+left join (
+select distinct(pid), firstsubstitutionregimen from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'firstsubstitutionregimen' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 2
+)tSubRegimen
+)tFirstSubstitituionregime on tNewPatientDemographics.pid =  tFirstSubstitituionregime.pid 
+left join (
+select distinct(pid), secondswitchwithinfirstline from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'secondswitchwithinfirstline' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 3
+)tsecoondfirstswithc
+)tSecondSubstitutionfirstline on tNewPatientDemographics.pid =  tSecondSubstitutionfirstline.pid
+ left join (
+ select distinct(pid), secondlinefirst from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'secondlinefirst' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=TDF/3TC+ATV/r',
+'2e=TDF/FTC-LPV/r','2f=TDF/FTC-ATV/r','2g=AZT/3TC+LPV/r', '2h=AZT/3TC+ATV/r','2i=ABC/3TC+LPV/r','2j=ABC/3TC+ATV/r','2k=TDF/3TC/DTG')
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 1
+)secondlinefirst
+)tSecondlineoriginal on tNewPatientDemographics.pid =  tSecondlineoriginal.pid
+left join (
+select distinct(pid), firstsubstitutionwithinsecond from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'firstsubstitutionwithinsecond' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=TDF/3TC+ATV/r',
+'2e=TDF/FTC-LPV/r','2f=TDF/FTC-ATV/r','2g=AZT/3TC+LPV/r', '2h=AZT/3TC+ATV/r','2i=ABC/3TC+LPV/r','2j=ABC/3TC+ATV/r','2k=TDF/3TC/DTG')
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 2
+)firstsubstitutionwithinsecond
+)tfirstsubstitutionwithinsecondline on tNewPatientDemographics.pid =  tfirstsubstitutionwithinsecondline.pid
+left join (
+select distinct(pid), secondsubstitutionwithinsecondline from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'secondsubstitutionwithinsecondline' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=TDF/3TC+ATV/r',
+'2e=TDF/FTC-LPV/r','2f=TDF/FTC-ATV/r','2g=AZT/3TC+LPV/r', '2h=AZT/3TC+ATV/r','2i=ABC/3TC+LPV/r','2j=ABC/3TC+ATV/r','2k=TDF/3TC/DTG')
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 3
+)secondsubstitutionwithinsecondline
+)tsecondsubstitutionwithinsecondline on tNewPatientDemographics.pid =  tsecondsubstitutionwithinsecondline.pid
+left join (
+select distinct(pid), tchildfirstregimen from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'tchildfirstregimen' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('4a = AZT/3TC+NVP','4b = AZT/3TC +EFV','4c = TDF/3TC (120/60) + LPV/r','4d = ABC/3TC (120/60) +DTG',
+'4f = ABC/3TC +NVP','4g = TDF/3TC (120/60) + EFV (200mg)','4h = TDF/FTC/EFV','4i = ABC/3TC +LPV/r','4J = AZT/3TC (60/30)+LPV/r',
+'4k = TDF/3TC+NVP','4i = ABC/3TC +AZT','ABC/3TC+LPV/r','ABC/3TC+DTG','TDF/3TC/DTG','AZT+NVP','AZT+3TC+LPV/r','AZT+3TC+NVP','ABC+3TC+LPV/r','ABC+3TC+EFV','AZT+3TC+RAL',
+'ABC+3TC+RAL','AZT+3TC+EFV','ABC+3TC+DTG','AZT+ 3TC+EFV','TDF+3TC+DTG','AZT/3TC+EFV','ABC/3TC AZT','ABC/3TC+LPV/r+RTV',
+'ABC/3TC+double dose DTG*','ABC/3TC+EFV','ABC/3TC+AZT')
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 1
+)childfirstregimen
+)tChildfirstregimen on tNewPatientDemographics.pid =  tChildfirstregimen.pid
+left join (
+select distinct(pid), tChildSecondLine from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'tChildSecondLine' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and dr.name in ('5a = AZT/3TC+LPV/r','5b = AZT/3TC +RAL','5c = ABC/3TC (120/60) + RAL' , '5d = AZT/3TC +ATV/r' , '5e = ABC/3TC + ATV/r' , '5f = TDF/3TC + ATV/r',
+'5g = AZT/3TC +DTG','5h = ABC/3TC + DTG*' , '5i = ABC/3TC +LPV/r')
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 1
+)tChildSecondLine
+)tChildSecondLineRegimen on tNewPatientDemographics.pid =  tChildSecondLineRegimen.pid

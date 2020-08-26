@@ -3,9 +3,10 @@ tRetestingDate.Retesting as 'HIV Retesting for ART initiation?' ,value as 'Uniqu
 tLNMPDate.LNMP as 'LNMP' , tEDDDate.EDD as 'EDD' , tGestationPeriod.Gestationalage as 'Gestational age in weeks (GA)', tWeight.weight as 'Weight(Kg)', tMUAC.muac as 'Mid-Upper Arm Circumference (MUAC)',
 tTBDiagnosd.TBStatus , tWHOStage.whostage as 'WHO Stage' , tCdfour.cdfour as 'CD4 COUNT', tHivResult.partnerResult as 'Partner Result', tCotrimoxazole.Cotrimoxazole as 'CTX=Contrimoxazole  or DAP=Dapsone',
 tBrx.tbrx as 'TB Rx start', tbRegNumber.tbRegNo as 'TB Reg No.', tDateVLCollected.dateVLSampleCollected as 'Date VL SampleCollected' , tVLResults.VLResults as 'VL result (Value)', 
-
- tOriginaFirstlineRegimen.originalfirstlineregimen as 'Original Firstline Regimen' , tFirstlineRegimenswitchedto.originalfirstlineregimen as 'Substitutions within 1st line', tFirstlineRegimenswitchedto.originalfirstlineregimen as 'Substitutions Change within 1st line',
-tSecondlineOriginalRegimen.originalSecondline as '2nd line regimen switched', tSwitchedSecondlineRegimen.secondlineregimenchanged as 'First Substitution drug code within Second Line', tSwitchedSecondlineRegimen.secondlineregimenchanged as '2nd: Substitution drug code', tDateOfDelivery.Date_Of_Delivery as 'Date Of Delivery', tplaceofDelivery.place_of_delivery as 'Place of Delivery',
+firstregimen as '1st Line Regimen - Original Regimen', firstsubstitutionregimen as '1st Line Regimen - 1st: Substitution drug code' , secondswitchwithinfirstline as '1st Line Regimen - 2nd: Substitution drug code' , secondlinefirst as '2nd Line Regimen - 2nd Line Regimen switched to',
+firstsubstitutionwithinsecond as '2nd Line Regimen - 1st:  Substitution drug code',
+secondsubstitutionwithinsecondline as '2nd Line Regimen - 2nd: Substitution drug code' , 
+tDateOfDelivery.Date_Of_Delivery as 'Date Of Delivery', tplaceofDelivery.place_of_delivery as 'Place of Delivery',
 tdeliveryoutcome.delivery_outcome as 'Delivery Outcome' , tInfantReceivedProphylaxis.InfantReceivedProphylaxis as 'Infant Received Prophylaxis?' ,  tHeiNumber.HeiNumber as 'Exposed Infant Number'
  from (
 select distinct(pn.person_id) as 'personid', pn.given_name, pn.middle_name, pn.family_name, pa.value , p.gender as 'gender' , TIMESTAMPDIFF(YEAR,birthdate,NOW()) as 'Age' from person_name pn 
@@ -17,8 +18,8 @@ where pa.person_attribute_type_id
 and concept_id = (select concept_id from concept_name where name = 'HIV - Entry Point' 
 and concept_name_type = 'fully_specified'  ) and 
 value_coded = (select concept_id from concept_name where name = 'ANC Clinic' and concept_name_type = 'fully_specified')
-and ob.date_created >= '#startDate#' and  ob.date_created <= (DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59'))
-)tUniqueART
+and ob.date_created >= '#startDate#' and  ob.date_created <= (DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')) 
+)tUniqueART 
 left join(
 select pid , mobile from (
 select pn.person_id as 'pid', pn.given_name, pn.middle_name, pa.value as 'mobile' from person_name pn
@@ -225,28 +226,6 @@ inner join concept_view on obs.value_coded=concept_view.concept_id inner join co
 where concept.concept_id= (select concept_id from concept_name where name = 'Infant Received ARV Prophylaxis at Birth' and concept_name_type = 'Fully_specified') and obs.voided = 0
 )infantReceivedProphylaxis 
 )tInfantReceivedProphylaxis on tUniqueART.personid = tInfantReceivedProphylaxis.person_id
-left join
-(
-select pid , originalfirstlineregimen  from (
-select o.patient_id as pid, o.concept_id  , o.encounter_id, dr.dosage_form  , cn.name as 'originalfirstlineregimen' from orders  o
-left join drug dr on o.concept_id = dr.concept_id
-inner join concept_name cn on o.concept_id = cn.concept_id
-where cn.name in  ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
-'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
-and cn.concept_name_type = 'Fully_specified' 
-and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified')
-) firstline
-inner join (select patient_id , concept_id , max(encounter_id) maxencounter from orders group by patient_id) b on firstline.pid = b.patient_id and firstline.encounter_id = b.maxencounter
-)tFirstlineRegimenswitchedto on tUniqueART.personid = tFirstlineRegimenswitchedto.pid
-left join 
-(
-select o.patient_id, o.concept_id  , dr.dosage_form , min(o.date_created) as 'mindate' , cn.name as 'originalSecondline' from orders  o
-left join drug dr on o.concept_id = dr.concept_id
-inner join concept_name cn on o.concept_id = cn.concept_id
-where cn.name in  ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=TDF/3TC+ATV/r',
-'2e=TDF/FTC-LPV/r','2f=TDF/FTC-ATV/r','2g=AZT/3TC+LPV/r', '2h=AZT/3TC+ATV/r','2i=ABC/3TC+LPV/r','2j=ABC/3TC+ATV/r','2k=TDF/3TC/DTG') and cn.concept_name_type = 'Fully_specified' and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified')
-group by o.patient_id having count(o.patient_id) >= 1
-)tSecondlineOriginalRegimen on tUniqueART.personid = tSecondlineOriginalRegimen.patient_id
 left join(
 select distinct(person_id) , concept_short_name as 'treatment_status' from(
 select obs.person_id , obs.value_coded,concept_view.concept_short_name,obs.obs_id , obs.encounter_id
@@ -265,63 +244,95 @@ inner join concept_view on obs.value_coded=concept_view.concept_id inner join co
 where concept.concept_id= (select concept_id from concept_name where name = 'Entry to PMTCT' and concept_name_type = 'Fully_specified') and obs.voided = 0
 )entryTopmtct
 )tEntryTopmtct on tUniqueART.personid = tEntryTopmtct.person_id
-left join 
-(
-select o.patient_id, o.concept_id  , dr.dosage_form , min(o.date_created) as 'mindate' , cn.name as 'originalfirstlineregimen' from orders  o
+
+left join(
+select distinct(pid), firstregimen from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'firstregimen' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
 left join drug dr on o.concept_id = dr.concept_id
-inner join concept_name cn on o.concept_id = cn.concept_id
-where cn.name in  ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
-'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') and cn.concept_name_type = 'Fully_specified' and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified')
-group by o.patient_id having count(o.patient_id) >= 1
-)tOriginaFirstlineRegimen on tUniqueART.personid = tOriginaFirstlineRegimen.patient_id
-left join
-(
-select ts.patient_id , ts.name as 'substitutionwithinfirstregimen' from (
-select o.patient_id, o.concept_id  , dr.dosage_form  , cn.name , max(o.date_created)
-from  orders  o
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 1
+)tfirstlinereg
+)tfirstlineregimen on tUniqueART.personid =  tfirstlineregimen.pid 
+left join (
+select distinct(pid), firstsubstitutionregimen from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'firstsubstitutionregimen' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
 left join drug dr on o.concept_id = dr.concept_id
-inner join concept_name cn on o.concept_id = cn.concept_id
-where cn.name in  ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
 '1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
-and cn.concept_name_type = 'Fully_specified' and
- dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified')
- group by o.patient_id having count(o.patient_id)> 1
- ) tt
- left join
- (
- select o.patient_id , o.concept_id ,o.date_created , cn.name from orders o
- left join drug dr on o.concept_id = dr.concept_id
- left join concept_name cn on o.concept_id = cn.concept_id
- inner join (select patient_id, concept_id , max(date_created) maxdate from orders group by patient_id ) b on o.patient_id = b.patient_id and o.date_created = b.maxdate
- where dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified') 
- and cn.name in  ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
-'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
-and cn.concept_name_type = 'Fully_specified'
-) ts on tt.patient_id = ts.patient_id 
-)tOriginalRegimen on tUniqueART.personid=  tOriginalRegimen.patient_id 
-left join
-(
-select tst.patient_id , tst.name as 'secondlineregimenchanged' from (
-select o.patient_id, o.concept_id  , dr.dosage_form  , cn.name , max(o.date_created)
-from  orders  o
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 2
+)tSubRegimen
+)tFirstSubstitituionregime on tUniqueART.personid =  tFirstSubstitituionregime.pid 
+left join (
+select distinct(pid), secondswitchwithinfirstline from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'secondswitchwithinfirstline' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
 left join drug dr on o.concept_id = dr.concept_id
-inner join concept_name cn on o.concept_id = cn.concept_id
-where cn.name in  ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
 '1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
-and cn.concept_name_type = 'Fully_specified' and
- dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified')
- group by o.patient_id having count(o.patient_id) > 0
- ) tt
- left join
- (
- select o.patient_id , o.concept_id ,o.date_created , cn.name from orders o
- left join drug dr on o.concept_id = dr.concept_id
- left join concept_name cn on o.concept_id = cn.concept_id
- inner join (select patient_id, concept_id , max(date_created) maxdate from orders group by patient_id ) b on o.patient_id = b.patient_id and o.date_created = b.maxdate
- where dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified') 
- and cn.name in  ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=TDF/3TC+ATV/r',
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 3
+)tsecoondfirstswithc
+)tSecondSubstitutionfirstline on tUniqueART.personid =  tSecondSubstitutionfirstline.pid
+ left join (
+ select distinct(pid), secondlinefirst from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'secondlinefirst' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=TDF/3TC+ATV/r',
 '2e=TDF/FTC-LPV/r','2f=TDF/FTC-ATV/r','2g=AZT/3TC+LPV/r', '2h=AZT/3TC+ATV/r','2i=ABC/3TC+LPV/r','2j=ABC/3TC+ATV/r','2k=TDF/3TC/DTG')
-and cn.concept_name_type = 'Fully_specified'
-) tst on tt.patient_id = tst.patient_id 
-) tSwitchedSecondlineRegimen on tUniqueART.personid = tSwitchedSecondlineRegimen.patient_id
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 1
+)secondlinefirst
+)tSecondlineoriginal on tUniqueART.personid =  tSecondlineoriginal.pid
+left join (
+select distinct(pid), firstsubstitutionwithinsecond from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'firstsubstitutionwithinsecond' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=TDF/3TC+ATV/r',
+'2e=TDF/FTC-LPV/r','2f=TDF/FTC-ATV/r','2g=AZT/3TC+LPV/r', '2h=AZT/3TC+ATV/r','2i=ABC/3TC+LPV/r','2j=ABC/3TC+ATV/r','2k=TDF/3TC/DTG')
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 2
+)firstsubstitutionwithinsecond
+)tfirstsubstitutionwithinsecondline on tUniqueART.personid =  tfirstsubstitutionwithinsecondline.pid
+left join (
+select distinct(pid), secondsubstitutionwithinsecondline from (
+select distinct(patient_id) as pid,row_num,  date_activated , name  as 'secondsubstitutionwithinsecondline' from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=TDF/3TC+ATV/r',
+'2e=TDF/FTC-LPV/r','2f=TDF/FTC-ATV/r','2g=AZT/3TC+LPV/r', '2h=AZT/3TC+ATV/r','2i=ABC/3TC+LPV/r','2j=ABC/3TC+ATV/r','2k=TDF/3TC/DTG')
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b where row_num = 3
+)secondsubstitutionwithinsecondline
+)tsecondsubstitutionwithinsecondline on tUniqueART.personid =  tsecondsubstitutionwithinsecondline.pid
 
