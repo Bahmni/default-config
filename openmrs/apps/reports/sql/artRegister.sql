@@ -41,7 +41,7 @@ left join person_attribute pa on pn.person_id = pa.person_id where pa.person_att
 )tMobile on tNewPatientDemographics.pid =  tMobile.pid
 left join (
 select * from (
-select  person_id, concept_id, obs_datetime as 'HIV_Retesting_for_ART_initiation' , encounter_id , voided from obs where concept_id =
+select  person_id, concept_id, value_datetime as 'HIV_Retesting_for_ART_initiation' , encounter_id , voided from obs where concept_id =
 (select concept_id from concept_name where name = 'Date of HIV Retesting Before ART' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
 and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
@@ -86,7 +86,7 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tCDFour on tNewPatientDemographics.pid =  tCDFour.person_id 
 left join(
 select * from (
-select  person_id, concept_id, obs_datetime as 'date_started_tbrx' , encounter_id , voided from obs where concept_id =
+select  person_id, concept_id, value_datetime as 'date_started_tbrx' , encounter_id , voided from obs where concept_id =
 (select concept_id from concept_name where name = 'Date Started TB RX' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
 and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id =
