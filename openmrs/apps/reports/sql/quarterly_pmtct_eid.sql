@@ -1,103 +1,119 @@
-SELECT  CONCAT('Reporting Month : ',CONCAT(quarter.start_mon, '-' , quarter.month)) AS 'Serial \#', 
-		year_q.year AS 'Date DBS sample collected', 
-        NULL AS 'EID Number', 
-        NULL AS 'Sex', 
-        NULL AS 'Age at enrolment ' ,
-        NULL AS '0-≤2 months of age',
-        NULL AS ' 2-12 months of age',
-        NULL AS 'Date result was delivered to the facility',
-        NULL AS 'HIV Status (0=Negative, 1=Positive, 2=Unknown) ',
-        NULL AS 'Date result given to the parent/ care giver',
-        NULL AS 'Linkage status for HIV positives (1. Linked to ART; 2 Died; 3. TO ;4. Un known)',
-        NULL AS 'Unique ART \#'
-FROM  (
-	SELECT MONTHNAME(DATE_SUB('#startDate#', INTERVAL DAYOFMONTH('#startDate#')-1 DAY)) as start_mon, 
-		MONTHNAME(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 2 MONTH))) as month) quarter
-	JOIN (
-			SELECT YEAR(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 2 MONTH))) as year
-         )year_q
-         
-UNION ALL 
+select  @a:=@a+1 as 'Serial Number', dateSampleCollectedFirstPCR as 'Date DBS sample collected' ,HEI_Number as 'EID Number', Sex ,
+(case when enrolledatArtClinic = 'TRUE' THEN (TIMESTAMPDIFF(MONTH,birthdate,enrollmentdateatart)) else 'N/A' end) as 'Age at enrolment(Months)',
+(case when (TIMESTAMPDIFF(MONTH,birthdate,enrollmentdateatart)) <= 2 then '1' when (TIMESTAMPDIFF(MONTH,birthdate,enrollmentdateatart)) is null then 'N/A' else '0'  end) as 'Age of child at first DBS sample collection (put 1 where the age belongs)\n0-≤2 months of age' ,
+(case when (TIMESTAMPDIFF(MONTH,birthdate,enrollmentdateatart)) > 2  and (TIMESTAMPDIFF(MONTH,birthdate,enrollmentdateatart)) <= 12  then '1' when (TIMESTAMPDIFF(MONTH,birthdate,enrollmentdateatart)) is null then 'N/A' else '0'  end) as 'Age of child at first DBS sample collection (put 1 where the age belongs)\n2-12 months of age',
+dateResultRecivedinFacility as 'Date result was delivered to the facility'  , 
+(case when infantStatus = 'Negative' then '0' when infantStatus = 'Positive' then '1' else '2' end) as 'HIV Status \n(0=Negative 1=Positive ,2=Unknown)' , 
+dateResultGivenToCaregiver as 'Date result given to the parent/care giver', 
+(case when infantStatus = 'Positive' and finalstatusforhippositives = 'Referred To ART Clinic' then '1' when infantStatus = 'Positive' and finalstatusforhippositives = 'Died' then '2' when infantStatus = 'Positive' and finalstatusforhippositives = 'Lost' then '3' when infantStatus = 'Positive' and finalstatusforhippositives = 'Unknown' then '4' else 'N/A' end) as 'Linkage status for HIV positives/n(1. Linked to ART; 2 Died; 3. TO ;4.Unknown)',
+HEI_Number as 'Unique ART' 
+from (
+select * from (
+select  person_id, (SELECT @a:= 0) AS a , concept_id, value_datetime as 'dateSampleCollectedFirstPCR' , encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Date Sample Dispatched to PHL(First PCR Test)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Date Sample Dispatched to PHL(First PCR Test)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tDateSampleCollectedFirstPCR 
+inner join(
+select pa.person_id , pa.value as 'HEI_Number' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age' , p.birthdate
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'HIVExposedInfant(HEI)No')
+and floor(datediff('#endDate#',p.birthdate) / 365) < 1
+)tHeiDemographics on tDateSampleCollectedFirstPCR.person_id = tHeiDemographics.person_id
+left join (
+select person_id as pid ,enrollmentdateatart  from (
+select  person_id, concept_id, value_datetime as 'enrollmentdateatart' , encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Treatment - Enrolled AT ART Date' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Treatment - Enrolled AT ART Date' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tHeiEnrollmentDate on tDateSampleCollectedFirstPCR.person_id = tHeiEnrollmentDate.pid
+left join (
+select pid , tConceptname.name as 'enrolledatArtClinic' from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Treatment - Enrolled AT ART Clinic' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Treatment - Enrolled AT ART Clinic' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'FULLY_SPECIFIED' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)isHeiEnrolledInART on tDateSampleCollectedFirstPCR.person_id = isHeiEnrolledInART.pid
+left join (
+select * from (
+select  person_id, concept_id, value_datetime as 'dateResultRecivedinFacility' , encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'First PCR,Date results delivered to facility' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'First PCR,Date results delivered to facility' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tDateResultsReceivedFacility on tDateSampleCollectedFirstPCR.person_id = tDateResultsReceivedFacility.person_id
+left join (
+select distinct(person_b) as 'mother_id' , relationship , person_a as 'hei_id' from relationship where 
+relationship = (select relationship_type_id from relationship_type where a_is_to_b = 'Mother' and retired = 0) and voided = 0
+)tHeiToMotherRelationship on tDateSampleCollectedFirstPCR.person_id = tHeiToMotherRelationship.hei_id
+left join (
+select pid , tConceptname.name as 'infantStatus' from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = "Infant HIV Status" and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = "Infant HIV Status" and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'FULLY_SPECIFIED' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)tInfantStatus on tHeiToMotherRelationship.mother_id = tInfantStatus.pid
+left join(
+select * from (
+select  person_id, concept_id, value_datetime as 'dateResultGivenToCaregiver' , encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Testing (First PCR Date Result Given to Caregiver)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Testing (First PCR Date Result Given to Caregiver)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tResultsGivenToCareGiver on tDateSampleCollectedFirstPCR.person_id = tResultsGivenToCareGiver.person_id
+left join(
+select pid , tConceptname.name as 'finalstatusforhippositives' from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = "Final Status" and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = "Final Status" and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'FULLY_SPECIFIED' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)tInfantLinkageForHivpositives on tDateSampleCollectedFirstPCR.person_id = tInfantLinkageForHivpositives.pid
 
-SELECT  NULL AS 'Serial \#', 
-		    DATE_FORMAT(dbs.value_datetime, "%d/%m/%Y") AS 'Date DBS sample collected',
-        hei_no.value AS 'EID Number', 
-        p.gender AS 'Sex', 
-        CONCAT( IF(  TIMESTAMPDIFF( YEAR, p.birthdate, enrolled.value_datetime)>0, CONCAT(TIMESTAMPDIFF( YEAR, p.birthdate, enrolled.value_datetime),' Years'),''  ), 
-        IF(  TIMESTAMPDIFF( MONTH, p.birthdate, enrolled.value_datetime)% 12 >0, CONCAT(TIMESTAMPDIFF( MONTH, p.birthdate, enrolled.value_datetime)% 12 ,' Months'),''  )) AS 'Age at enrolment ' ,
-        IF(first_age.value_numeric IS NOT NULL AND first_age.value_numeric <=2, 1,
-			IF(dbs.value_datetime IS NOT NULL AND TIMESTAMPDIFF( MONTH, p.birthdate, dbs.value_datetime) <=2 , 1 , '')) AS '0-≤2 months of age',
-        IF(first_age.value_numeric IS NOT NULL AND first_age.value_numeric BETWEEN 3 AND 12 , 1,
-			IF(dbs.value_datetime IS NOT NULL AND TIMESTAMPDIFF( MONTH, p.birthdate, dbs.value_datetime) BETWEEN 3 AND 12 , 1 , '')) AS ' 2-12 months of age',
-        DATE_FORMAT(date_delivered.value_datetime, "%d/%m/%Y") AS 'Date result was delivered to the facility',
-        hiv_status.hiv_status AS 'HIV Status (0=Negative, 1=Positive, 2=Unknown) ',
-        DATE_FORMAT(results_given.value_datetime, "%d/%m/%Y") AS 'Date result given to the parent/ care giver',
-        CASE 
-			WHEN link_status.value_coded = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'Referred To ART Clinic') THEN 1
-            WHEN link_status.value_coded = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'Died') THEN 2
-            WHEN link_status.value_coded = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'Final Status(Transferred)') THEN 3
-            WHEN link_status.value_coded = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'Unknown') THEN 4
-		END
-        AS 'Linkage status for HIV positives (1. Linked to ART; 2 Died; 3. TO ;4. Un known)',
-        pid.identifier AS 'Unique ART \#'
-        
-FROM 
-	patient pt
-    INNER JOIN
-		person p ON p.person_id = pt.patient_id
-        AND p.voided = 0
-        AND pt.voided =  0
-	-- Inner join HEI patient types and get HEI number
-	INNER JOIN person_attribute pa
-		ON pa.person_id = p.person_id 
-		AND pa.person_attribute_type_id = (select pat.person_attribute_type_id from person_attribute_type pat where name='TypeofPatient')
-		AND pa.value = (select concept_id from concept_view where concept_full_name='HeiRelationship')
-	INNER JOIN person_attribute hei_no
-		ON hei_no.person_id = p.person_id 
-		AND hei_no.person_attribute_type_id = (select pat.person_attribute_type_id from person_attribute_type pat where name='HIVExposedInfant(HEI)No')
-	-- Must have first PCR date recorded
-	INNER JOIN obs dbs
-		ON dbs.person_id = p.person_id
-        AND dbs.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'HEI Testing (First PCR Test Date)')
-        AND dbs.voided = 0
-        AND dbs.value_datetime BETWEEN DATE_SUB('#startDate#', INTERVAL DAYOFMONTH('#startDate#')-1 DAY) AND LAST_DAY(DATE_ADD('#startDate#', INTERVAL 2 MONTH))
-	      AND TIMESTAMPDIFF( MONTH, p.birthdate, dbs.value_datetime) <=12 -- Filter out samples collected after 12 months age
-	LEFT JOIN obs enrolled
-		ON enrolled.person_id = p.person_id
-        AND enrolled.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'HEI Treatment - Enrolled AT ART Date')
-        AND enrolled.voided = 0
-	LEFT JOIN obs first_age
-		ON first_age.person_id = p.person_id
-        AND first_age.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'Age at 1st DBS(Months)')
-        AND first_age.voided = 0
-	LEFT JOIN obs date_delivered
-		ON date_delivered.person_id = p.person_id
-        AND date_delivered.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'First PCR,Date results delivered to facility')
-        AND date_delivered.voided = 0
-	-- TODO : Review what hei patient shiv tatus is captured
-	LEFT JOIN (
-		SELECT e.patient_id as patient_id,
-			IF(pcr_results.value_coded = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'HEI Results Positive'), 1, 
-            IF(pcr_results.value_coded = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'HEI Results Negative'), 0, 2)) AS hiv_status
-        FROM encounter e 
-        INNER JOIN obs pcr_results
-			ON pcr_results.encounter_id = e.encounter_id
-            AND pcr_results.voided = 0
-            AND pcr_results.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'HEI Testing (First PCR Results)')
-		WHERE 
-			e.voided = 0
-    )hiv_status ON hiv_status.patient_id = pt.patient_id
-    LEFT JOIN obs results_given
-		ON results_given.person_id = p.person_id
-        AND results_given.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'HEI Testing (First PCR Date Result Given to Caregiver)')
-        AND results_given.voided = 0
-	LEFT JOIN obs link_status
-		ON link_status.person_id = p.person_id
-        AND link_status.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'Final Status')
-        AND link_status.value_coded IS NOT NULL
-        AND link_status.voided = 0
-	-- Primary patient identifier doubles up as ART number
-	LEFT JOIN patient_identifier pid
-		ON pid.patient_id = pt.patient_id
-        AND pid.identifier_type = (SELECT pit.patient_identifier_type_id FROM patient_identifier_type pit WHERE pit.name = 'Patient Identifier')
-        AND pid.voided = 0
