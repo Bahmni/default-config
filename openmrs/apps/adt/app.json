@@ -37,18 +37,25 @@
                 "vitals":{
                     "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                     "type": "vitals",
-                    "displayOrder": 0,
+                    "displayOrder": 2,
                     "isObservation": true,
                     "dashboardConfig": {
                         "conceptNames": ["Vitals"],
                         "numberOfVisits": 2
                     }
                 },
+                "patientInformation":{
+                    "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                    "type": "patientInformation",
+                    "displayOrder": 1,
+                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                    "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
+                },
                 "disposition":{
                     "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
                     "type": "disposition",
                     "numberOfVisits": 1,
-                    "displayOrder": 1
+                    "displayOrder": 2
                 },
                 "diagnosis":{
                     "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
@@ -57,13 +64,7 @@
                     "showDetailsButton":true,
                     "displayOrder": 2
                 },
-                "patientInformation":{
-                    "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                    "type": "patientInformation",
-                    "displayOrder": 3,
-                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                    "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
-                },
+                
                 "admissionDetails":{
                     "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                     "type":"admissionDetails",
@@ -72,8 +73,8 @@
                 "navigationLinksControl":{
                     "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                     "type": "navigationLinksControl",
-                    "displayOrder": 5,
-                    "showLinks" : ["home", "visit", "registration", "inpatient", "enrolment", "visitAttribute"]
+                    "displayOrder": 0,
+                    "showLinks" : ["home", "visit", "registration", "inpatient", "enrolment", "visitAttribute", "trends"]
                 },
                 "conditions": {
                     "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",

@@ -357,6 +357,20 @@
                 },
                 "displayOrder":2
             },
+            "Vital":{  
+                "type":"observationGraph",
+                
+                "config":{  
+                    "yAxisConcepts":[  
+                        "SPO2 Data",
+                        "Temperature Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":2,
+                "title": "Vital Sign"
+            },
             "weight/BMI":{  
                 "type":"observationGraph",
                 "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
@@ -369,6 +383,30 @@
                     "numberOfVisits":10
                 },
                 "displayOrder":3
+            },
+            "AST": {
+                "type": "observationGraph",
+                "config": {
+                    "yAxisConcepts": [
+                        "Lab, AST"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 8,
+                "title": "AST"
+            },
+            "Lab, Hemoglobin test result": {
+                "type": "observationGraph",
+                "config": {
+                    "yAxisConcepts": [
+                        "Haemoglobin"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 6,
+                "title": "Hemoglobin"
             },
             "diabetes/BloodSugar":{  
                 "type":"observationGraph",

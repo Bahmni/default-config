@@ -11,7 +11,7 @@
         "sections": {
             "pivotTable":{
                 "type": "pivotTable",
-                "displayOrder": 0,
+                "displayOrder": 10,
                 "title": "Vitals Flowsheet",
                 "config": {
                     "groupBy": "encounters",
@@ -42,6 +42,103 @@
                 "type": "conditionsList",
                 "displayOrder": 2,
                 "config": { }
+            }
+        }
+    },
+    "trends":{
+        "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
+        "printing": {
+            "title": "Bahmni",
+            "header": "Trends",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "sections": {
+            "PatientInformation":{
+                "type": "patientInformation",
+                "displayOrder": 0,
+                "config": {
+                    "title": "PatientInformation",
+                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                    "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
+                }
+            },
+            "BP":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_BLOOD_PRESSURE",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Systolic Data",
+                        "Diastolic Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":1
+            },
+            "Vital":{  
+                "type":"observationGraph",
+                
+                "config":{  
+                    "yAxisConcepts":[  
+                        "SPO2 Data",
+                        "Temperature Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":2,
+                "title": "Vital Sign"
+            },
+            "weight/BMI":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Weight",
+                        "BMI"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":3
+            },
+           
+            "Lab, Hemoglobin test result": {
+                "type": "observationGraph",
+                "config": {
+                    "yAxisConcepts": [
+                        "Haemoglobin"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 6,
+                "title": "Hemoglobin"
+            },
+            "diabetes/BloodSugar":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_DIABETES_BLOOD_SUGAR",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Blood Sugar Fasting",
+                        "Blood Sugar P.P"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":4
+            },
+            "observationGraph":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_PULSE",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Pulse Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":5
             }
         }
     },
