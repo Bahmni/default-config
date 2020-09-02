@@ -85,4 +85,10 @@
             INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id, @location_tag_id);
         </sql>
     </changeSet>
+    <changeSet id="default-202009011116" author="Deedee Lee">
+        <comment> Add email address in registration page </comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, uuid) VALUES ('email', 'Email Address', 'java.lang.String', '1', 1, now(), 0, uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>
