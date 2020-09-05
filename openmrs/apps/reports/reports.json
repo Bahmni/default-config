@@ -188,6 +188,13 @@
           "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/qsmt_emergency_report.sql"
         }
     },
+    "qsmtWardReport": {
+        "name": "TBGH 24 hours QSMT Ward Report list",
+        "type": "MRSGeneric",
+        "config": {
+        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/liaisonReport.sql"
+        }
+    },
     "qrstReport":{
         "name": "TBGH 24 hours QSMT Ward report",
         "type": "MRSGeneric",
