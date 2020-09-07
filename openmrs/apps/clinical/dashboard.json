@@ -25,12 +25,12 @@
                 "showCertainty":true,
                 "showOrder":true,
                 "showDetailsButton":true,
-                "displayOrder":1
+                "displayOrder":2
             },
             "navigationLinksControl":{  
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type":"navigationLinksControl",
-                "displayOrder":2,
+                "displayOrder":0,
                 "showLinks":[  
                     "home",
                     "visit",
@@ -46,12 +46,12 @@
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":1,
-                "displayOrder":7
+                "displayOrder":15
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
-                "displayOrder":4,
+                "displayOrder":10,
                 "dashboardConfig":{  
                     "showFlowSheet":true,
                     "showListView":true,
@@ -76,12 +76,12 @@
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "type":"radiology",
                 "showDetailsButton":true,
-                "displayOrder":5
+                "displayOrder":8
             },
             "programs":{  
                 "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
                 "type":"programs",
-                "displayOrder":10
+                "displayOrder":12
             },
             "radiologyOrders":{  
                 "orderType":"Radiology Order",
@@ -92,7 +92,7 @@
                     "conceptNames":[  
                         "Summary"
                     ],
-                    "numberOfVisits":4
+                    "numberOfVisits":7
                 }
             },
             
@@ -101,7 +101,7 @@
                 "type":"ordersControl",
                 "orderType":"Lab Order",
                 "showDetailsButton":true,
-                "displayOrder":9,
+                "displayOrder":5,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "Systolic",
@@ -143,7 +143,7 @@
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":11,
+                "displayOrder":9,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "HEIGHT",
@@ -173,7 +173,7 @@
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":12,
+                "displayOrder":3,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -208,7 +208,7 @@
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":14,
+                "displayOrder":4,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -232,7 +232,7 @@
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":3,
+                "displayOrder":1,
                 "dashboardConfig":{  
                     "title":null,
                     "maximumNoOfVisits":8,
@@ -281,13 +281,13 @@
             "admissionDetails":{  
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type":"admissionDetails",
-                "displayOrder":19,
+                "displayOrder":13,
                 "showDetailsButton":true
             },
             
             "formsDisplay": {
                 "type": "forms",
-                "displayOrder": 21,
+                "displayOrder": 11,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10
@@ -297,7 +297,7 @@
             },
             "patientAppointments": {
                 "type": "custom",
-                "displayOrder": 22,
+                "displayOrder": 14,
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
