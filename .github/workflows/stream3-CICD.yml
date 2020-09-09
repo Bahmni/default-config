@@ -16,9 +16,10 @@ jobs:
       - name: fake-build   
         run: | 
           mkdir dist
-          cp offline dist
-          cp openelis dist
-          cp openmrs dist
+          cp -r offline dist
+          cp -r openelis dist
+          cp -r openmrs dist
+          ls -laR dist
 
       - name: package
         run: |
