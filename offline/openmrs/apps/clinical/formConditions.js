@@ -1162,5 +1162,3 @@ Bahmni.ConceptSet.FormConditions.rules = {
         }   
     },
  };
-
-a
