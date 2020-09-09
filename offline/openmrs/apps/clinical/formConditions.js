@@ -66,14 +66,59 @@ Bahmni.ConceptSet.FormConditions.rules = {
     },
     "HIV - Entry Point" : function (formName , formFieldValues){
         var entrypoint = formFieldValues["HIV - Entry Point"];
-
         if(entrypoint === "Other Entry Point (Specify)"){
             return{
-                show: ["Other Entry Point"]
+                show: ["Other Entry Point"],
+                hide: ["VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"]
+            }
+        }else if(entrypoint === "VCT Clinic") {
+            return {
+               show: ["VCT Clinic registration Date"],
+               hide: ["Other Entry Point","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "TB Clinic") {
+            return {
+               show: ["TB Clincic Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "STI Clinic") {
+            return {
+               show: ["STI Clinic Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "ANC Clinic") {
+            return {
+               show: ["ANC Clinic Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "In Patient") {
+            return {
+               show: ["In Patient Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "Pediatric Clinic") {
+            return {
+               show: ["Pediatric Clinic Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "Entry Point - OPD") {
+            return {
+               show: ["OPD Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","Index Testing Date","CBTC Registration Date"] 
+            }
+        }else if(entrypoint === "CBTC") {
+            return {
+               show: ["CBTC Registration Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date"] 
+            }
+        }else if(entrypoint === "Index Testing") {
+            return {
+               show: ["Index Testing Date"],
+               hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","CBTC Registration Date"] 
             }
         }else {
             return{
-                hide: ["Other Entry Point"]
+                hide: ["Other Entry Point","VCT Clinic registration Date","TB Clincic Registration Date","STI Clinic Registration Date","ANC Clinic Registration Date","In Patient Registration Date","Pediatric Clinic Registration Date","OPD Registration Date","Index Testing Date","CBTC Registration Date"]
             }
         }     
     },
@@ -193,11 +238,25 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var interruptiontype = formFieldValues["Interruption Type"];
         if(interruptiontype === "Stop"){
             return{
-                show: ["ART Treatment Reasons For Stop"]
+                show: ["ART Treatment Reasons For Stop","ART Treatment Stop/Lost Date","Date If Restarted"],
+                hide:["Regimen Change Date","Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","Other Reason(First Line Regimen Change)"]
             }
-        }else {
+        } else if (interruptiontype === "Changed Regimen"){
             return{
-                hide: ["ART Treatment Reasons For Stop"]
+                show: ["Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","Other Reason(First Line Regimen Change)","Regimen Change Date"],
+                hide:["ART Treatment Stop/Lost Date","ART Treatment Reasons For Stop","Date If Restarted","Date when ART Drugs Lost"]
+            }
+        } 
+        else if (interruptiontype === "Lost"){
+            return{
+                 show: ["Date If Restarted"],
+                 hide: ["Regimen Change Date","ART Treatment Reasons For Stop","Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","ART Treatment Stop/Lost Date","Regimen Change Date","Other Reason(First Line Regimen Change)"]
+            }
+        }  
+        else {
+            return{
+                hide: ["ART Treatment Reasons For Stop","Initial ART Regimen (Adult)","Regimen Changed to(Adults)","Initial Regimen Change Reason","ART Treatment Stop/Lost Date","Regimen Change Date","Date If Restarted","Other Reason(First Line Regimen Change)","Date when ART Drugs Lost"]
+                
             }
         }    
     },
@@ -274,11 +333,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var hivstatus = formFieldValues["Family Member - HIV Status"];
         if(hivstatus === "Known"){
             return{
-                show: ["Result","Date Tested HIV","Result of HTS","Unique ART No/HEI No"]
+                show: ["Result","Date Tested HIV","Result of HTS"]
             }
         }else {
             return{
-                hide: ["Result","Date Tested HIV","Result of HTS","Unique ART No/HEI No"]
+                hide: ["Result","Date Tested HIV","Result of HTS"]
             }
         }    
     },
@@ -303,6 +362,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var fppregnant = formFieldValues["FP Pregnant"];
             if(fppregnant == true){     
                 alert("Enroll This Patient To PMTCT Clinic");
+    
             }    
         }, 
    
@@ -414,24 +474,13 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-    "Is Patient on CTX or Dapose?": function (formName, formFieldValues) {
-        var patientondapose = formFieldValues["Is Patient on CTX or Dapose?"];
-        if (patientondapose == true) {
-            return {
-                show: ["CTX or Dapose Start Date"]
-            }
-        } else {
-            return {
-                hide: ["CTX or Dapose Start Date"]
-            }
-        }
-    },
     "FP Pregnant": function (formName, formFieldValues) {
         var patientpreg = formFieldValues["FP Pregnant"];
         if (patientpreg == true) {
             return {
                 show: ["EDD","PMTCT - HIV & ART Follow up"],
-                hide:["Current on FP"]
+                hide:["Current on FP"],
+                
             }
         } else {
             return {
@@ -607,11 +656,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var firstclassification = formFieldValues["Classification Of Adherence(First EAC session)"];
         if((firstclassification === "Adherence Fair") || (firstclassification === "Adherence Poor")) {
             return{
-                show: ["First EAC Service","First EAC Tools"]
+                show: ["First EAC Service","First EAC Tools","First EAC Adherence Barriers"]
             }
         }else {
             return{
-                hide: ["First EAC Service","First EAC Tools"]
+                hide: ["First EAC Service","First EAC Tools","First EAC Adherence Barriers"]
             }
         }    
     },
@@ -631,11 +680,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var secondclassification = formFieldValues["Classification Of Adherence(Second EAC session)"];
         if((secondclassification === "Adherence Fair") || (secondclassification === "Adherence Poor")) {
             return{
-                show: ["Second EAC Service","Second EAC Tools"]
+                show: ["Second EAC Service","Second EAC Tools","Second EAC Adherence Barriers"]
             }
         }else {
             return{
-                hide: ["Second EAC Service","Second EAC Tools"]
+                hide: ["Second EAC Service","Second EAC Tools","Second EAC Adherence Barriers"]
             }
         }    
     },
@@ -655,11 +704,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var thirdclassification = formFieldValues["Classification Of Adherence(Third EAC session)"];
         if((thirdclassification === "Adherence Fair") || (thirdclassification === "Adherence Poor")) {
             return{
-                show: ["Third EAC Service","Third EAC Tools"]
+                show: ["Third EAC Service","Third EAC Tools","Third EAC Adherence Barriers"]
             }
         }else {
             return{
-                hide: ["Third EAC Service","Third EAC Tools"]
+                hide: ["Third EAC Service","Third EAC Tools","Third EAC Adherence Barriers"]
             }
         }    
     },
@@ -674,6 +723,444 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 hide: ["Specify Other Tools for Third EAC"]
             }
         }    
+    },
+    "First EAC Adherence Barriers" : function (formName , formFieldValues){
+        var firsteacbarriers = formFieldValues["First EAC Adherence Barriers"];
+        if(firsteacbarriers === "Other First EAC Barrier Reason") {
+            return{
+                show: ["First EAC Barrier Reason Specify"]
+            }
+        }else {
+            return{
+                hide: ["First EAC Barrier Reason Specify"]
+            }
+        }    
+    },
+    "Second EAC Adherence Barriers" : function (formName , formFieldValues){
+        var secondeacbarriers = formFieldValues["Second EAC Adherence Barriers"];
+        if(secondeacbarriers === "Other Second EAC Barrier Reason") {
+            return{
+                show: ["Second EAC Barrier Reason Specify"]
+            }
+        }else {
+            return{
+                hide: ["Second EAC Barrier Reason Specify"]
+            }
+        }    
+    },
+    "Third EAC Adherence Barriers" : function (formName , formFieldValues){
+        var thirdeacbarriers = formFieldValues["Third EAC Adherence Barriers"];
+        if(thirdeacbarriers === "Other Third EAC Barrier Reason") {
+            return{
+                show: ["Third EAC Barrier Reason Specify"]
+            }
+        }else {
+            return{
+                hide: ["Third EAC Barrier Reason Specify"]
+            }
+        }    
+    },
+    "Sexual Partner?" : function (formName , formFieldValues){
+        var sexualpartner = formFieldValues["Sexual Partner?"];
+        if(sexualpartner ==  true) {
+            return{
+                show: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV"],
+                 hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age","Specify other Family Member Relationship"]
+            }
+        }else if (sexualpartner ==  false){
+            return{
+                hide: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Specify other Family Member Relationship"],
+                show:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age"]
+               
+            }
+        }else {
+            return {
+                hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Sexual Partner Relationship","Sexual partner names","Family Member - Age","Phone Number","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV"]
+                
+            }
+        }    
+    },
+    "Result" : function (formName , formFieldValues){
+        var results = formFieldValues["Result"];
+        if(results ===  "Positive") {
+            return{
+                show: ["Is Family Member in ART Care?"]
+            }
+        }else {
+            return{
+                hide: ["Is Family Member in ART Care?"]
+               
+            }
+        }    
+    },
+    "Sexual Partner - HIV Status" : function (formName , formFieldValues){
+        var partnerstatus = formFieldValues["Sexual Partner - HIV Status"];
+        if(partnerstatus !==  "Known") {
+            return{
+                hide: ["Sexual Partner - HIV Result","Sexual Partner - Date Tested HIV"]
+            }
+        }else {
+            return{
+                show: ["Sexual Partner - HIV Result","Sexual Partner - Date Tested HIV"]
+               
+            }
+        }    
+    },
+    "Sexual Partner - HIV Result" : function (formName , formFieldValues){
+        var partnerrresults = formFieldValues["Sexual Partner - HIV Result"];
+        if(partnerrresults ===  "Positive") {
+            return{
+                show: ["Is Sexual Partner in ART Care?"]
+            }
+        }else {
+            return{
+                hide: ["Is Sexual Partner in ART Care?"]
+               
+            }
+        }    
+    },
+    "Is Sexual Partner in ART Care?" : function (formName , formFieldValues){
+        var inartcare = formFieldValues["Is Sexual Partner in ART Care?"];
+        if(inartcare  == true ) {
+            return{
+                show: ["Sexual Partner - ART Number"]
+            }
+        }else {
+            return{
+                hide: ["Sexual Partner - ART Number"]
+               
+            }
+        }    
+    },
+    "Family Member - Relationship" : function (formName , formFieldValues){
+        var relationship = formFieldValues["Family Member - Relationship"];
+        if(relationship  === "Other Family Member Relationship specify") {
+            return{
+                show: ["Specify other Family Member Relationship"]
+            }
+        }else {
+            return{
+                hide: ["Specify other Family Member Relationship"]
+               
+            }
+        }    
+    },
+
+    "Sexual Partner Relationship" : function (formName , formFieldValues){
+        var sexualpartnerrelationship = formFieldValues["Sexual Partner Relationship"];
+        if(sexualpartnerrelationship ===  "Specify other sexual Partners") {
+            return{
+                show: ["Other sexual Partner Relationship Specify"]
+            }
+        }else {
+            return{
+                hide: ["Other sexual Partner Relationship Specify"]
+            }
+        }    
+    },
+    "Initial Regimen Change Reason" : function (formName , formFieldValues){
+        var initialregimen = formFieldValues["Initial Regimen Change Reason"];
+        if(initialregimen ===  "Other Reason For Regimen Change(First Line)") {
+            return{
+                show: ["Other Reason(First Line Regimen Change)"]
+            }
+        }else {
+            return{
+                hide: ["Other Reason(First Line Regimen Change)"]
+            }
+        }    
+    },
+    "PMTCT - HIV & ART Follow up" : function (formName , formFieldValues){
+        var pmtct = formFieldValues["PMTCT - HIV & ART Follow up"];
+        if(pmtct == false) {
+            alert("Please Enroll this Patient To PMTCT");
+
+            return{
+            
+                show: ["Enroll Patient To PMTCT"]            
+                
+            }
+        }else {
+            return{
+                hide: ["Enroll Patient To PMTCT"]
+            }
+        }    
+    },
+    "Blood Transfusion" : function (formName , formFieldValues){
+        var bloodtransfusion = formFieldValues["Blood Transfusion"];
+        if(bloodtransfusion == true) {
+            return{
+            
+                show: ["Reason For Blood Transfusion"]            
+                
+            }
+        }else {
+            return{
+                hide: ["Reason For Blood Transfusion"]
+            }
+        }    
+    },
+    "ANC,FP Method" : function (formName , formFieldValues){
+        var fpmethod = formFieldValues["ANC,FP Method"];
+        if(fpmethod != "None/Never") {
+            return{
+                 hide: ["Reason For not Using FP"],
+                 show:["Date Started FP","Reason For Discontinuation"]                     
+            }
+        }else {
+            return{
+                 show: ["Reason For not Using FP"],
+                 hide:["Date Started FP","Reason For Discontinuation"]    
+            }
+        }    
+    },
+    "Mode of Getting to Delivery Place" : function (formName , formFieldValues){
+        var modeoftransport = formFieldValues["Mode of Getting to Delivery Place"];
+        if(modeoftransport === "Other Modes Of Transport") {
+            return{
+            
+                show: ["Specify Other Modes Of transport"]            
+                
+            }
+        }else {
+            return{
+                hide: ["Specify Other Modes Of transport"]
+            }
+        }    
+    },
+
+    "IPT Schedule(6months)" : function (formName , formFieldValues){
+        var scheduledipt = formFieldValues["IPT Schedule(6months)"];
+        if(scheduledipt == true) {
+            return{
+            
+                show: ["IPT Status - TB Screening","HIVTC, HIV care IPT start date","IPT Stop Date"]            
+                
+            }
+        }else {
+            return{
+
+                hide: ["IPT Status - TB Screening","HIVTC, HIV care IPT start date","IPT Stop Date"]   
+            }
+        }    
+    },
+    "Maternity card, Status After Testing HIV" : function (formName , formFieldValues){
+        var statusaftertesting = formFieldValues["Maternity card, Status After Testing HIV"];
+        if(statusaftertesting === "Positive") {
+            return {             
+                show:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        } else if( statusaftertesting === "Negative"){ 
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+        }
+
+        }else if (statusaftertesting === "Hiv Test, inconclusive"){
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        }
+        else {
+            return {
+                hide:["Maternity Card, Known +ve On ART","Maternity card, New On ART","Maternity card, Date Started ART","Maternity card, ART Regimen During Pregnacy","Maternity card, ART Regimen During Delivery","Maternity card,ART Newly Started in Labor"]
+            }
+        
+        }
+    },
+    "Infant HIV Status" : function (formName , formFieldValues){
+        var infanthivstatus = formFieldValues["Infant HIV Status"];
+        if(infanthivstatus === "Negative") {
+            return {             
+                show:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","Infant's Final Status","ARV Baby Discharged with"],
+                hide:["Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+            }
+        } else if(infanthivstatus === "Positive"){ 
+            return {
+                hide:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","ARV Baby Discharged with","Infant's Final Status"],
+                show:["Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+        }
+        } else {
+            return {
+                hide:["Infant Received ARV Prophylaxis at Birth","Infant's Risk Status","High Risk Infant Classification","ARV Baby Discharged with","Infant's Final Status","Infants ART Number(For Confimed Positive Infants)","Infant's Final Status(Positive infants)"]
+                
+            }  
+        }
+    },
+    "Infant's Risk Status" : function (formName , formFieldValues){
+        var infantriskstatus = formFieldValues["Infant's Risk Status"];
+        if(infantriskstatus === "High Risk Infant") {
+            return {             
+               show:["High Risk Infant Classification"]
+            }
+        } else {
+            return {
+                hide:["High Risk Infant Classification"]
+                
+            }  
+        }
+    },
+    "Maternity card, Mother tested in Maternity" : function (formName , formFieldValues){
+        var mothertestedinmaternity = formFieldValues["Maternity card, Mother tested in Maternity"];
+        if(mothertestedinmaternity == true) {
+            return {             
+               show:["Maternity card, Date tested in Maternity","Maternity card, Status After Testing HIV"]
+            }
+        } else {
+            return {
+                hide:["Maternity card, Date tested in Maternity","Maternity card, Status After Testing HIV"]
+                
+            }  
+        }
+    },
+    "End of Follow up,Patient Outcome" : function (formName , formFieldValues){
+        var patientOutcome = formFieldValues["End of Follow up,Patient Outcome"];
+        if(patientOutcome === "Self transfer(Silent Transfer)") {
+            return {             
+               show:["Self Transfer Date"]
+            }
+        } else {
+            return {
+                hide:["Self Transfer Date"]
+                
+            }  
+        }
+    },
+    "EDD" : function (formName , formFieldValues){
+        var edd = formFieldValues["EDD"];
+        var edddate = new Date(edd);
+        var today = new Date();  
+        if (edddate < today) {
+            alert("EDD should be a date in the Future");
+            
+        }
+    },
+    "Post Natal ,Place Delivery" : function (formName , formFieldValues){
+        var plannedplaceofdilivery = formFieldValues["Post Natal ,Place Delivery"];
+        if(plannedplaceofdilivery === "Place Delivered, Other facility") {
+            return{
+                show: ["Place Delivered, specify"]
+            }
+        }else {
+            return{
+                hide: ["Place Delivered, specify"]
+            }
+        }    
+    },
+    "Abortion" : function (formName , formFieldValues){
+        var abortion = formFieldValues["Abortion"];
+        if(abortion == true) {
+            return{
+                hide: ["Place of Delivery","Mode Of Delivery","Sex Of Baby","Foetus Outcome","Antepartum haemorrhage (APH)","PPH"]
+            }
+        }else {
+            return{
+                show: ["Place of Delivery","Mode Of Delivery","Sex Of Baby","Foetus Outcome","Antepartum haemorrhage (APH)","PPH"]
+            }
+        }    
+    },
+    "ANC, HIV Test Result" : function (formName , formFieldValues){
+        var hivtest = formFieldValues["ANC, HIV Test Result"];
+        if((hivtest === "Positive") || (hivtest === "Negative")) {
+            return{
+                show:["ANC, HIV Test Date"]
+            }
+        }else {
+            return{
+                hide:["ANC, HIV Test Date"]
+                
+            }
+        }    
+    },
+    "RPR/VDRL" : function (formName , formFieldValues){
+        var rprvdrl = formFieldValues["RPR/VDRL"];
+        if((rprvdrl === "Positive") || (rprvdrl === "Negative")) {
+            return{
+                show:["RPR/VDRL Test Date"]
+            }
+        }else {
+            return{
+                hide:["RPR/VDRL Test Date"]
+                
+            }
+        }    
+    },
+    "HB Test" : function (formName , formFieldValues){
+        var hbtest = formFieldValues["HB Test"];
+        if(hbtest == true) {
+            return{
+                show:["HB","HB Test Date"]
+            }
+        }else {
+            return{
+                hide:["HB","HB Test Date"]
+                
+            }
+        }    
     }, 
+    "Urine Test" : function (formName , formFieldValues){
+        var urinetest = formFieldValues["Urine Test"];
+        if(urinetest == true) {
+            return{
+                show:["Urine Test Date","Urine Test Results"]
+            }
+        }else {
+            return{
+                hide:["Urine Test Date","Urine Test Results"]
+                
+            }
+        }    
+    }, 
+    "HBV" : function (formName , formFieldValues){
+        var hbv = formFieldValues["HBV"];
+        if((hbv === "Positive") || (hbv === "Negative")){
+            return{
+                show:["HBV Test Date"]
+            }
+        }else {
+            return{
+                hide:["HBV Test Date"]
+                
+            }
+        }    
+    }, 
+    "Visit Number" : function (formName , formFieldValues){
+        var visitnumber = formFieldValues["Visit Number"];
+        if(visitnumber === "1 = First Contact"){
+                alert("Mother for ANC sentinel surveillance");
+        }    
+    },
+    "Delivery Personnel or Person" : function (formName , formFieldValues){
+        var deliverypersonal = formFieldValues["Delivery Personnel or Person"];
+        if(deliverypersonal === "Other Delivery Personnel"){
+            return {
+               show: ["Specify Other Delivery Personnel"]
+            }      
+        } else {
+            return{
+               hide: ["Specify Other Delivery Personnel"]
+            }
+        }   
+    },
+    "Infant's PMTCT ARVS" : function (formName , formFieldValues){
+        var infantpmtct = formFieldValues["Infant's PMTCT ARVS"];
+        if(infantpmtct === "Daily NVP"){
+            return {
+               show: ["Daily NVP Date"],
+               hide:["AZT+NVP Date"]
+            }      
+        } else if(infantpmtct === "AZT+NVP"){
+            return{
+               show: ["AZT+NVP Date"],
+               hide:["Daily NVP Date"]
+            }
+        }
+        else {
+            return {
+                hide:["Daily NVP Date","AZT+NVP Date"]
+
+            }
+        }   
+    },
  };
 
+a
