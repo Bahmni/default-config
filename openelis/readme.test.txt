@@ -1,1 +1,1 @@
-Hello Octopus.
+Hello Octopus automatic release creation.
