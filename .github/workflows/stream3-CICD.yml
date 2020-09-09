@@ -26,7 +26,7 @@ jobs:
           export PACKAGE_FILENAME=default_config.0.0.${{ github.run_number }}.zip
           echo "::set-env name=PACKAGE_FILENAME::$PACKAGE_FILENAME"
           echo "PACKAGE_FILENAME '$PACKAGE_FILENAME'"
-          zip $PACKAGE_FILENAME dist 
+          zip -r $PACKAGE_FILENAME dist/* 
 
       - name: publish
         run: |
