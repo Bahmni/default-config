@@ -1,0 +1,33 @@
+name: Stream 3 CI/CD
+
+on:
+  push:
+    branches: [ stream3/master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: fake-build   
+        run: | 
+          mkdir dist
+          cp offline dist
+          cp openelis dist
+          cp openmrs dist
+
+      - name: package
+        run: |
+          export PACKAGE_FILENAME=default_config.0.0.${{ github.run_number }}.zip
+          echo "::set-env name=PACKAGE_FILENAME::$PACKAGE_FILENAME"
+          echo "PACKAGE_FILENAME '$PACKAGE_FILENAME'"
+          zip $PACKAGE_FILENAME dist 
+
+      - name: publish
+        run: |
+          echo "PACKAGE_FILENAME '$PACKAGE_FILENAME'"
+          ./pipeline/push_to_octopus.sh ${{ secrets.OCTOPUS_ORG }} ${{ secrets.OCTOPUS_SPACE_FRAGMENT }} ${{ secrets.OCTOPUS_API_KEY }} $PACKAGE_FILENAME
