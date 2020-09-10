@@ -46,7 +46,7 @@ jobs:
       - name: Publish to octopus
         run: |
           echo "PACKAGE_FILENAME '$PACKAGE_FILENAME'"
-          octo push --package="$PACKAGE_FILENAME" --server="$OCTOPUS_SERVER" --apiKey="${{ secrets.OCTOPUS_API_KEY }}"
+          octo push --package="$PACKAGE_FILENAME" --server="$OCTOPUS_SERVER" --apiKey="${{ secrets.OCTOPUS_API_KEY }}" --space="${{ secrets.OCTOPUS_SPACE_FRAGMENT }}"
 
       - name: Create Release and Deploy
         run: |
