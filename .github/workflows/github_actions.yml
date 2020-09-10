@@ -21,6 +21,8 @@ jobs:
           export OCTOPUS_SERVER=https://${{ secrets.OCTOPUS_ORG }}.octopus.app/
           echo "::set-env name=OCTOPUS_SERVER::$OCTOPUS_SERVER"
 
+          echo "::set-env name=OCTOPUS_ENVIROMENT::QA-DEMO"
+
       - name: build
         run: | 
           mkdir dist
@@ -48,4 +50,4 @@ jobs:
 
       - name: Create Release and Deploy
         run: |
-          octo create-release --project="default-config" --packageVersion="$PACKAGE_VERSION" --releaseNumber="0.0.${{ github.run_number }}" --server="$OCTOPUS_SERVER" --apiKey="${{ secrets.OCTOPUS_API_KEY }}" --space="${{ secrets.OCTOPUS_SPACE_FRAGMENT }}" --deployTo="DEMO"
+          octo create-release --project="default-config" --packageVersion="$PACKAGE_VERSION" --releaseNumber="0.0.${{ github.run_number }}" --server="$OCTOPUS_SERVER" --apiKey="${{ secrets.OCTOPUS_API_KEY }}" --space="${{ secrets.OCTOPUS_SPACE_FRAGMENT }}" --deployTo="$OCTOPUS_ENVIROMENT"
