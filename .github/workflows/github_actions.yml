@@ -10,6 +10,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: define variables
+        run: |
+          export PACKAGE_VERSION=0.0.${{ github.run_number }}
+          echo "::set-env name=PACKAGE_VERSION::$PACKAGE_VERSION"
+
+          export PACKAGE_FILENAME=default_config.$PACKAGE_VERSION.zip
+          echo "::set-env name=PACKAGE_FILENAME::$PACKAGE_FILENAME"
+
+          export OCTOPUS_SERVER=https://${{ secrets.OCTOPUS_ORG }}.octopus.app/
+          echo "::set-env name=OCTOPUS_SERVER::$OCTOPUS_SERVER"
+
       - name: build
         run: | 
           mkdir dist
@@ -20,8 +31,6 @@ jobs:
 
       - name: package
         run: |
-          export PACKAGE_FILENAME=default_config.0.0.${{ github.run_number }}.zip
-          echo "::set-env name=PACKAGE_FILENAME::$PACKAGE_FILENAME"
           echo "PACKAGE_FILENAME '$PACKAGE_FILENAME'"
           zip -r $PACKAGE_FILENAME dist/* 
 
