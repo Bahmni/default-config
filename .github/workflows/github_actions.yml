@@ -18,8 +18,9 @@ jobs:
           echo "::set-env name=OCTOPUS_SERVER::https://${{ secrets.OCTOPUS_ORG }}.octopus.app/"
           echo "::set-env name=OCTOPUS_ENVIROMENT::QA-DEMO"
 
+      # TODO: replace dummy build step with real build step.
       - name: build
-        run: | 
+        run: |           
           mkdir dist
           cp -r offline dist
           cp -r openelis dist
