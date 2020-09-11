@@ -18,19 +18,12 @@ jobs:
           echo "::set-env name=OCTOPUS_SERVER::https://${{ secrets.OCTOPUS_ORG }}.octopus.app/"
           echo "::set-env name=OCTOPUS_ENVIROMENT::QA-DEMO"
 
-      # TODO: replace dummy build step with real build step.
-      - name: build
-        run: |           
-          mkdir dist
-          cp -r offline dist
-          cp -r openelis dist
-          cp -r openmrs dist
-          ls -laR dist
-
-      - name: package
+      - name: Package
         run: |
           echo "PACKAGE_FILENAME '$PACKAGE_FILENAME'"
-          zip -r $PACKAGE_FILENAME dist/* 
+          zip -r $PACKAGE_FILENAME offline
+          zip -r $PACKAGE_FILENAME openelis
+          zip -r $PACKAGE_FILENAME openmrs
 
       - name: Install Octopus CLI
         run: |
