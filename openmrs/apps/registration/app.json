@@ -104,7 +104,7 @@
                 }
             },
             "fieldValidation" : {
-                "email" : {"pattern" : "^\\w+@[a-zA-Z_]+?.[a-zA-Z]{2,3}$", "errorMessage" : "Should be in email format"},
+                "email" : {"pattern" : "^[0-9?A-z0-9?]+(\\.)?[0-9?A-z0-9?]+@[A-z]+\\.[A-z]{3}.?[A-z]{0,3}$", "errorMessage" : "Should be in email format"},
                 "primaryContact" : {"pattern" : "[0-9]{0,20}", "errorMessage" : "Should only contain numbers"},
                 "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
