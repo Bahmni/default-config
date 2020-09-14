@@ -21,9 +21,8 @@ jobs:
       - name: Package
         run: |
           echo "PACKAGE_FILENAME '$PACKAGE_FILENAME'"
-          zip -r $PACKAGE_FILENAME offline
-          zip -r $PACKAGE_FILENAME openelis
-          zip -r $PACKAGE_FILENAME openmrs
+          ./scripts/package.sh
+          cp ./targets/default_config.zip $PACKAGE_FILENAME
 
       - name: Install Octopus CLI
         run: |
