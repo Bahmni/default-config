@@ -1,6 +1,7 @@
 name: Default config - Github actions CI/CD
 
 on:
+  workflow_dispatch:
   push:
     branches: [ stream3/master ]
 
