@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: define variables
+      - name: Define variables
         run: |
           PACKAGE_VERSION=0.0.${{ github.run_number }}
           echo "::set-env name=PACKAGE_VERSION::$PACKAGE_VERSION"
@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "PACKAGE_FILENAME '$PACKAGE_FILENAME'"
           ./scripts/package.sh
-          cp ./targets/default_config.zip $PACKAGE_FILENAME
+          cp ./target/default_config.zip $PACKAGE_FILENAME
 
       - name: Install Octopus CLI
         run: |
