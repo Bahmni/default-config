@@ -24,6 +24,7 @@
     ],
     "config": {
         "hideConditions": false,
+        "recentPatientsDuration": 7,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
         "quickPrints":false,
