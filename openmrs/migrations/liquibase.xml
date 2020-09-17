@@ -85,4 +85,5 @@
             INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id, @location_tag_id);
         </sql>
     </changeSet>
+    <include file ="addObsPathSplitterProperty.xml"/>
 </databaseChangeLog>
