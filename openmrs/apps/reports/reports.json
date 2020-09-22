@@ -24,7 +24,15 @@
                 "PHARMACY VISIT",
                 "OPD"
             ]
-        }
+        },
+        "art_quarterly": {
+            "name": "ART Treatment - Quarterly Report",
+            "DHISProgram": true,
+            "type": "MRSGeneric",
+            "config": {
+              "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/quarterly_art.sql"
+           }
+      }
     },
     "patientReport": {
         "name": "Patient Information",
