@@ -1,3 +1,4 @@
+
 select 'Started ART In this Clinic (original Cohort)',
 (case when startdate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
 SUM(CASE WHEN startdate between DATE_FORMAT('#startDate#' - INTERVAL 6 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 6 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '6mo',
@@ -479,3 +480,20 @@ and ob.concept_id = (select concept_id from concept_name where name = 'On TB Tre
 and ob.value_coded = (select concept_id from concept_name where name = 'True' and concept_name_type = 
 'fully_specified')
 group by o.patient_id having count(o.patient_id) > 0) tPresumptiveTb
+union all
+select 'Currently on TB treatment (TBRx)',
+count(distinct(case when person_id is not null and obs_datetime > DATE_FORMAT('#startDate#','%Y-%m-01') and  obs_datetime <= DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then person_id end)) as 'start',
+count(distinct(case when person_id is not null and obs_datetime > DATE_FORMAT('#startDate#' - INTERVAL 6 MONTH ,'%Y-%m-01') and  obs_datetime <= DATE_FORMAT(LAST_DAY('#startDate#') - INTERVAL 6 MONTH,'%Y-%m-%d 23:59:59') then person_id end)) as '6mo',
+count(distinct(case when person_id is not null and obs_datetime > DATE_FORMAT('#startDate#' - INTERVAL 12 MONTH ,'%Y-%m-01') and  obs_datetime <= DATE_FORMAT(LAST_DAY('#startDate#') - INTERVAL 12 MONTH,'%Y-%m-%d 23:59:59') then person_id end)) as '12mo',
+count(distinct(case when person_id is not null and obs_datetime > DATE_FORMAT('#startDate#' - INTERVAL 24 MONTH ,'%Y-%m-01') and  obs_datetime <= DATE_FORMAT(LAST_DAY('#startDate#') - INTERVAL 24 MONTH,'%Y-%m-%d 23:59:59') then person_id end)) as '24mo',
+count(distinct(case when person_id is not null and obs_datetime > DATE_FORMAT('#startDate#' - INTERVAL 36 MONTH ,'%Y-%m-01') and  obs_datetime <= DATE_FORMAT(LAST_DAY('#startDate#') - INTERVAL 36 MONTH,'%Y-%m-%d 23:59:59') then person_id end)) as '36mo',
+count(distinct(case when person_id is not null and obs_datetime > DATE_FORMAT('#startDate#' - INTERVAL 48 MONTH ,'%Y-%m-01') and  obs_datetime <= DATE_FORMAT(LAST_DAY('#startDate#') - INTERVAL 48 MONTH,'%Y-%m-%d 23:59:59') then person_id end)) as '48mo',
+count(distinct(case when person_id is not null and obs_datetime > DATE_FORMAT('#startDate#' - INTERVAL 60 MONTH ,'%Y-%m-01') and  obs_datetime <= DATE_FORMAT(LAST_DAY('#startDate#') - INTERVAL 60 MONTH,'%Y-%m-%d 23:59:59') then person_id end)) as '60mo'
+from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_datetime as 'dataStartedTBrx', voided from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Date Started TB RX' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+ and voided = 0 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name  = 'Date Started TB RX' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+
+
