@@ -7,7 +7,7 @@ tRepeatviralresults.repeatviralresults as 'Results(Repeat Viral) copies/ml' ,
 tadherenceOutcome.Adherence_outcome as 'Adherence Outcome' , tMdtheld.mdtheldQstn as 'MDT HELD?' , tregimenSwitched.regimenSwitched as 'Was Regimen Switched?' , tregimenSwitched.actualRegimenSwitchedDate as 'Actual Regimen Change Date' 
 FROM
 (
-select pa.person_id, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+select distinct(pa.person_id), pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
 gender as sex ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age'
 from person_attribute as pa 
 INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
