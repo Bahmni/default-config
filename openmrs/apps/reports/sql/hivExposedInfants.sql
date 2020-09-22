@@ -607,7 +607,7 @@ FROM (
 UNION ALL
 
 SELECT
-   'Number of children tested HIV-positive' as 'Title',
+   'Exposed infant at 18months HIV- positive' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -657,7 +657,7 @@ SELECT
 UNION ALL
 
 SELECT
-   'Number of children tested HIV- negative and breastfeeding' as 'Title',
+   'Exposed infant at 18months HIV- negative and breastfeeding' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
@@ -732,7 +732,7 @@ SELECT
 UNION ALL
 
 SELECT
-   'Number of children tested HIV- negative and no longer breastfeeding' as 'Title',
+   'Exposed infant at 18months HIV- negative and no longer breastfeeding' as 'Title',
    count(maleGender) as 'Male',
    count(femaleGender) as 'Female',
    count(totalAll) as 'Total'
