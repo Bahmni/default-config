@@ -472,6 +472,36 @@ SELECT
 
 UNION ALL
 
+
+select 'Number HIV-exposed infants received ARV prophylaxis\n(NVP and AZT + NVP) within first 6 weeks',
+count(distinct(case when pid is not null and sex = 'M' then pid end)) as 'Male',
+count(distinct(case when pid is not null and sex = 'F' then pid end)) as 'Female',
+count(distinct(case when pid is not null and sex in ('M','F') then pid end)) as 'Total'
+from (
+select person_id  , dateStartedProphylaxis from (
+select  person_id, (SELECT @a:= 0) AS a , concept_id, value_datetime as 'dateStartedProphylaxis' , encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Date of ARV Prophylaxis Start' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and value_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Date of ARV Prophylaxis Start' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and value_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tDateStartedProphylaxis
+inner join (
+select pa.person_id as pid, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age' 
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'HIVExposedInfant(HEI)No') 
+and (datediff(curdate(),p.birthdate) / 365) < 2 and (datediff(DATE_FORMAT('#startDate#','%Y-%m-01'),p.birthdate) / 7) <= 6
+)tDemogrpahics on tDateStartedProphylaxis.person_id = tDemogrpahics.pid
+
+
+UNION ALL
+
 SELECT
   'HIV-exposed infants whose \n feeding practice was assessed' as 'Title',
   count(maleGender) as 'Male',
