@@ -157,5 +157,21 @@
 				}
 			]
 		}
+	},
+	"dhisSampleReportTest": {
+		"name": "Dhis Sample Report",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+		"reports": [
+				{
+					"name": "High Viral Load Patients",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/dhisSampleRepportTest.sql"
+					}
+				}
+			]
+		}
 	}
 }
