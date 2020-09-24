@@ -160,7 +160,6 @@
 	},
 	"dhisSampleReportTest": {
 		"name": "Dhis Sample Report",
-		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
 		"reports": [
