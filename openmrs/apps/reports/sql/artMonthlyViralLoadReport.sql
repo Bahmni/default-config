@@ -17,11 +17,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -39,11 +39,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE())< 1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -87,11 +87,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -109,11 +109,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -157,11 +157,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -179,11 +179,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 5 and 9 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -227,11 +227,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -249,11 +249,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 14 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -297,11 +297,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -319,11 +319,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 19 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -367,11 +367,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -389,11 +389,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 20 and 24 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -437,11 +437,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -459,11 +459,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 25 and 29 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -507,11 +507,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -529,11 +529,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 30 and 34 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -577,11 +577,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -599,11 +599,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 35 and 39 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -647,11 +647,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -669,11 +669,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 40 and 44 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -717,11 +717,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -739,11 +739,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 45 and 49 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -787,11 +787,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -809,11 +809,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 54 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -857,11 +857,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -879,11 +879,11 @@ FROM (
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) >= 55 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 
@@ -927,11 +927,11 @@ SELECT
   count(pregnantWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Pregnant',
   count(breastFeedingWomensResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Breastfeeding',
   count(totalResultCollected1000) as 'Results Received\n >=1000 copies/ml \n Total',
-  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Male',
-  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Female',
-  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Pregnant',
-  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Breastfeeding',
-  count(totalResultCollected11000) as 'Clients with high VL\n (>=11000copies/ml) Traced \n Total'
+  count(maleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Male',
+  count(femaleGenderResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Female',
+  count(pregnantWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Pregnant',
+  count(breastFeedingWomensResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Breastfeeding',
+  count(totalResultCollected11000) as 'Clients with high VL\n (>=1000copies/ml) Traced \n Total'
 FROM (
   SELECT
     CASE WHEN (gender = 'M' and MONTH(viralSampleDate) = MONTH(CURDATE()) AND YEAR(viralSampleDate) = YEAR(CURDATE())) THEN 1 END maleGenderSampleCollected,
@@ -949,11 +949,11 @@ FROM (
     CASE WHEN (gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected1000,
     CASE WHEN (gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected1000,
     CASE WHEN (MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected1000,
-    CASE WHEN (gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END maleGenderResultCollected11000,
-    CASE WHEN (gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END femaleGenderResultCollected11000,
-    CASE WHEN (gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END pregnantWomensResultCollected11000,
-    CASE WHEN (gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END breastFeedingWomensResultCollected11000,
-    CASE WHEN (MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 11000) THEN 1 END totalResultCollected11000
+    CASE WHEN (gender = 'M' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END maleGenderResultCollected11000,
+    CASE WHEN (gender = 'F' and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END femaleGenderResultCollected11000,
+    CASE WHEN (gender = 'F' and pregnant=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END pregnantWomensResultCollected11000,
+    CASE WHEN (gender = 'F' and breastFeeding=1 and MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END breastFeedingWomensResultCollected11000,
+    CASE WHEN (MONTH(vlResultDate) = MONTH(CURDATE()) AND YEAR(vlResultDate) = YEAR(CURDATE()) and vlResult >= 1000) THEN 1 END totalResultCollected11000
   FROM person 
   LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.value_datetime AS 'viralSampleDate' FROM obs o 
 	JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="Date VL Sample Collected?" and o.concept_id = cn.concept_id) 

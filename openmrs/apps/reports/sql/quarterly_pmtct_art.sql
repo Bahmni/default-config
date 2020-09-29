@@ -319,7 +319,8 @@ FROM
 							ON obs2.encounter_id = e.encounter_id 
 							AND obs2.voided=0 AND obs2.concept_id IN (select concept_id from  concept_view where concept_full_name ='ANC, ART Start Date') 
                 )started_art ON started_art.patient_id = pt.patient_id AND started_art.date_started < DATE_SUB(obs.value_datetime, INTERVAL 9 MONTH)
-    )already_art_before_pregnncy ON already_art_before_pregnncy.patient_id = pt.patient_id
+    )already_art_before_pregnncy ON already_art_before_pregnncy.patient_id = pt.patient_id where 
+	observed_age_group.name not in ('<1 yr M','<1 yr F','1-4 yr M','1-4 yr F','5-9 yr M','5-9 yr F','< 10 yr M','10-14 yr M','Total F') and observed_age_group.sex <> 'M'
 GROUP BY observed_age_group.id
    
 UNION ALL
@@ -635,7 +636,8 @@ FROM
 							AND obs2.voided=0 AND obs2.concept_id IN (select concept_id from  concept_view where concept_full_name ='ANC, ART Start Date') 
                 )started_art ON started_art.patient_id = pt.patient_id AND started_art.date_started < DATE_SUB(obs.value_datetime, INTERVAL 9 MONTH)
     )already_art_before_pregnncy ON already_art_before_pregnncy.patient_id = pt.patient_id
-        
+       where 
+	observed_age_group.name not in ('<1 yr M','<1 yr F','1-4 yr M','1-4 yr F','5-9 yr M','5-9 yr F','< 10 yr M','10-14 yr M','Total F') and observed_age_group.sex <> 'M' 
         
 GROUP BY observed_age_group.id
 
@@ -955,4 +957,6 @@ FROM
 							AND obs2.voided=0 AND obs2.concept_id IN (select concept_id from  concept_view where concept_full_name ='ANC, ART Start Date') 
                 )started_art ON started_art.patient_id = pt.patient_id AND started_art.date_started < DATE_SUB(obs.value_datetime, INTERVAL 9 MONTH)
     )already_art_before_pregnncy ON already_art_before_pregnncy.patient_id = pt.patient_id
+	where 
+	observed_age_group.name not in ('<1 yr M','<1 yr F','1-4 yr M','1-4 yr F','5-9 yr M','5-9 yr F','< 10 yr M','10-14 yr M','Total F') and observed_age_group.sex <> 'M'
 GROUP BY observed_age_group.id
