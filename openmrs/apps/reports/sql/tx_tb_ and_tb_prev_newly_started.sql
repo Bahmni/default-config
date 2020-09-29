@@ -5,6 +5,8 @@ count(distinct(case when tbscreeningCurrentCough = 1 and tbscreeningfever  = 1 a
 count(distinct(case when afbMicroscropicdateresultreceived is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'Specimen Sent to Lab - AFB Microscopy',
 count(distinct(case when geneXpertdateresultreceived is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'Specimen Sent to Lab - GeneXpert',
 count(distinct(case when crxdateresultreceived is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'Specimen Sent to Lab - Other: X-Ray',
+count(distinct(case when istbdiagnosed is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'TB Case',
+count(distinct(case when onTBTreatment is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'Treated for TB',
 count(distinct(case when scheduledipt is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'No. of ART patients who are scheduled to complete  6 months of IPT/TPT',
 count(distinct(case when iptCompleted is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'No. of ART patients  who completed 6 months of IPT/TPT'
 from (
@@ -137,6 +139,8 @@ count(distinct(case when tbscreeningCurrentCough = 1 and tbscreeningfever  = 1 a
 count(distinct(case when afbMicroscropicdateresultreceived is not null and age >= 15 then pid end)) as 'Specimen Sent to Lab - AFB Microscopy',
 count(distinct(case when geneXpertdateresultreceived is not null and age >= 15 then pid end)) as 'Specimen Sent to Lab - GeneXpert',
 count(distinct(case when crxdateresultreceived is not null and age >= 15 then pid end)) as 'Specimen Sent to Lab - Other: X-Ray',
+count(distinct(case when istbdiagnosed is not null and age >= 15 and sex in ('F', 'M') then pid end)) as 'TB Case',
+count(distinct(case when onTBTreatment is not null and age >= 15 and sex in ('F', 'M') then pid end)) as 'Treated for TB',
 count(distinct(case when scheduledipt is not null and age >= 15 then pid end)) as 'No. of ART patients who are scheduled to complete  6 months of IPT/TPT',
 count(distinct(case when iptCompleted is not null and age >= 15 then pid end)) as 'No. of ART patients  who completed 6 months of IPT/TPT'
 from (
