@@ -1,5 +1,5 @@
-SELECT  CONCAT('Reporting Month : ',quarter.month) AS 'Testing point',
-        year_q.year  'Age Groups',
+SELECT  "" AS 'Testing point',
+        CONCAT('Reporting Period : ',quarter.month,' ',year_q.year) 'Age Groups',
         '' AS '\# of pregnant woman  newly attended ANC (ANC 1)',
         '' AS '\# of known HIV positives at entry',
         '' AS '\# tested in the reporting period',
@@ -12,8 +12,13 @@ FROM  (
 	SELECT MONTHNAME(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 0 MONTH))) as month) quarter
 		 JOIN (SELECT YEAR(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 0 MONTH))) as year
          )year_q
+
+UNION  ALL
+SELECT  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL , NULL
+FROM  DUAL
          
 UNION ALL 
+
 
 SELECT DISTINCT  if(observed_age_group.name = '25-29 yr M', 'PMTCT_STAT (ANC 1)','') AS 'Testing point',
         observed_age_group.report_group_name  AS  'Age Groups',
@@ -256,14 +261,16 @@ FROM
                     AND tested.value_coded = (select concept_id from  concept_view where concept_full_name ='Negative') 
                     AND MONTH(e2.encounter_datetime) = MONTH(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 0 MONTH)))
                     AND YEAR(e2.encounter_datetime) = YEAR(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 0 MONTH)))
-    )newly_tested_negative ON newly_tested_negative.patient_id = pt.patient_id
-        
-        GROUP BY observed_age_group.id
+    )newly_tested_negative ON newly_tested_negative.patient_id = pt.patient_id where observed_age_group.name not in ('<1 yr M','<1 yr F','1-4 yr M','1-4 yr F','5-9 yr F','5-9 yr M','Total M','Total F')
+		GROUP BY observed_age_group.id
         
 UNION ALL
+SELECT  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL , NULL
+FROM  DUAL
+UNION ALL         
 
-SELECT  CONCAT('Reporting Month : ',quarter.month) AS 'Testing point',
-        year_q.year  'Age Groups',
+SELECT  "" AS 'Testing point',
+        CONCAT('Reporting Period : ',quarter.month,' ',year_q.year) 'Age Groups',
         '' AS '\# of pregnant woman  newly attended ANC (ANC 1)',
         '' AS '\# of known HIV positives at entry',
         '' AS '\# tested in the reporting period',
@@ -278,6 +285,9 @@ FROM  (
          )year_q
          
 UNION ALL 
+SELECT  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL , NULL
+FROM  DUAL
+UNION ALL         
 
 SELECT DISTINCT  if(observed_age_group.name = '25-29 yr M', 'PMTCT_STAT (ANC 1)','') AS 'Testing point',
         observed_age_group.report_group_name  AS  'Age Groups',
@@ -521,13 +531,16 @@ FROM
                     AND MONTH(e2.encounter_datetime) = MONTH(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 1 MONTH)))
                     AND YEAR(e2.encounter_datetime) = YEAR(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 1 MONTH)))
     )newly_tested_negative ON newly_tested_negative.patient_id = pt.patient_id
-        
+        where observed_age_group.name not in  ('<1 yr M','<1 yr F','1-4 yr M','1-4 yr F','5-9 yr F','5-9 yr M','Total M','Total F')
         GROUP BY observed_age_group.id
         
 UNION ALL
+SELECT  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL , NULL
+FROM  DUAL
+UNION ALL         
 
-SELECT  CONCAT('Reporting Month : ',quarter.month) AS 'Testing point',
-        year_q.year  'Age Groups',
+SELECT  "" AS 'Testing point',
+        CONCAT('Reporting Period : ',quarter.month,' ',year_q.year) 'Age Groups',
         '' AS '\# of pregnant woman  newly attended ANC (ANC 1)',
         '' AS '\# of known HIV positives at entry',
         '' AS '\# tested in the reporting period',
@@ -542,6 +555,9 @@ FROM  (
          )year_q
          
 UNION ALL 
+SELECT  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL , NULL
+FROM  DUAL
+UNION ALL         
 
 SELECT DISTINCT  if(observed_age_group.name = '25-29 yr M', 'PMTCT_STAT (ANC 1)','') AS 'Testing point',
         observed_age_group.report_group_name  AS  'Age Groups',
@@ -785,5 +801,5 @@ FROM
                     AND MONTH(e2.encounter_datetime) = MONTH(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 2 MONTH)))
                     AND YEAR(e2.encounter_datetime) = YEAR(LAST_DAY(DATE_ADD('#startDate#', INTERVAL 2 MONTH)))
     )newly_tested_negative ON newly_tested_negative.patient_id = pt.patient_id
-        
+        where observed_age_group.name not in  ('<1 yr M','<1 yr F','1-4 yr M','1-4 yr F','5-9 yr F','5-9 yr M','Total M','Total F')
         GROUP BY observed_age_group.id

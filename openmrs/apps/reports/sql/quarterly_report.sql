@@ -16,7 +16,7 @@ FROM
 	RIGHT OUTER  JOIN reporting_age_group observed_age_group
 		ON DATE(now()) BETWEEN (DATE_ADD(DATE_ADD(p.birthdate, INTERVAL observed_age_group.min_years YEAR), INTERVAL observed_age_group.min_days DAY))
 		AND (DATE_ADD(DATE_ADD(p.birthdate, INTERVAL observed_age_group.max_years YEAR), INTERVAL observed_age_group.max_days DAY))
-		AND  CASE WHEN observed_age_group.report_group_name = 'Total All' THEN observed_age_group.sex = ('M' OR 'F') else observed_age_group.sex = p.gender  END
+		AND  CASE WHEN observed_age_group.report_group_name = 'Total All' THEN observed_age_group.sex in ('M','F') else observed_age_group.sex = p.gender  END
 	LEFT JOIN (
 		SELECT
         pt.patient_id AS patient_id,
@@ -98,9 +98,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='Index Testing')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 UNION  ALL
@@ -209,9 +206,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='Emergency, entry point')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 UNION  ALL
@@ -320,9 +314,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='In Patient')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 UNION  ALL
@@ -431,9 +422,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='Entry Point - OPD')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 
@@ -544,9 +532,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='Malnutrition Facilities')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 UNION  ALL
@@ -656,9 +641,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='Padeatric')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 UNION  ALL
@@ -768,9 +750,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='ANC Clinic')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 UNION  ALL
@@ -880,9 +859,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='ANC Clinic')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 UNION  ALL
@@ -991,9 +967,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='TB Clinic')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 UNION  ALL
@@ -1102,9 +1075,6 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='VCT Clinic')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
 
 
@@ -1214,7 +1184,4 @@ FROM
 					AND testing_point.concept_id = (select concept_id from  concept_view where concept_full_name ='HIV - Entry Point')
 					AND testing_point.value_coded = (select concept_id from  concept_view where concept_full_name ='Other Entry Point (Specify)')
     ) AS dead ON dead.patient_id  = pt.patient_id
-
-	WHERE
-    pt.voided = 0
     GROUP BY observed_age_group.id
