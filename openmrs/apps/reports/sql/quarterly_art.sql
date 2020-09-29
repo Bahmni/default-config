@@ -1,10 +1,10 @@
-SELECT  NULL AS 'Age Groups', 
-		NULL AS 'SEX', 
-        NULL AS '\# started on ART', 
-        NULL AS '\# of breast Feeding  women at initiation', 
-        NULL AS 'Age', 
-        NULL AS 'Sex', 
-        NULL AS '\# current on ART' 
+SELECT  NULL AS 'Newly started on ART- Age', 
+		NULL AS 'Newly started on ART- sex', 
+        NULL AS '\# Newly started on ART', 
+        NULL AS '\# Newly started on ART Breast feeding women on initiation', 
+        NULL AS 'Currently on ART -Age', 
+        NULL AS 'Currently on ART -Sex', 
+        NULL AS '\# Current on ART ' 
 FROM  DUAL
 
 UNION ALL
@@ -289,8 +289,9 @@ FROM
     
     
 GROUP BY observed_age_group.id
-
-
+UNION ALL 
+SELECT  NULL, NULL, NULL, NULL, NULL, NULL, NULL 
+FROM  DUAL
 UNION ALL
 
 SELECT   CONCAT('Reporting Month : ',quarter.month) AS 'Age Groups', 
@@ -562,6 +563,9 @@ FROM
     
     
 GROUP BY observed_age_group.id
+UNION ALL 
+SELECT  NULL, NULL, NULL, NULL, NULL, NULL, NULL 
+FROM  DUAL
 
 UNION ALL
 
