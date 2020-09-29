@@ -3,6 +3,12 @@
         "translationKey":"DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault":true,
         "maxRecentlyViewedPatients":10,
+        "printing": {
+            "title": "TBGH Hospital",
+            "header": "General Summary Report",
+            "logo": "../images/bahmniLogo.jpg",
+            "showNameAndImage": true
+        },
         "sections":{  
             "patientInformation":{  
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
@@ -308,6 +314,12 @@
     "trends":{  
         "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
         "maxRecentlyViewedPatients":10,
+        "printing": {
+            "title": "TBGH Hospital",
+            "header": "Trends Summary Report",
+            "logo": "../images/bahmniLogo.jpg",
+            "showNameAndImage": true
+        },
         "sections":{  
             "patientInformation":{  
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
@@ -472,6 +484,12 @@
     "patientSummary":{  
         "translationKey":"DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
         "maxRecentlyViewedPatients":10,
+        "printing": {
+            "title": "TBGH Hospital",
+            "header": "Patient Summary Report",
+            "logo": "../images/bahmniLogo.jpg",
+            "showNameAndImage": true
+        },
         "sections":{  
             "vitals":{  
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",

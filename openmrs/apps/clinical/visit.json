@@ -3,7 +3,7 @@
         "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "printing": {
-            "title": "Bahmni",
+            "title": "TBGH Hospital",
             "header": "Visit",
             "logo": "../images/bahmniLogo.png"
         },
@@ -48,7 +48,7 @@
     "trends":{
         "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
         "printing": {
-            "title": "Bahmni",
+            "title": "TBGH Hospital",
             "header": "Trends",
             "logo": "../images/bahmniLogo.png"
         },
@@ -145,7 +145,7 @@
     "dischargeSummary":{
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "printing": {
-            "title": "Bahmni",
+            "title": "TBGH Hospital",
             "header": "Discharge Summary",
             "logo": "../images/bahmniLogo.png"
         },
