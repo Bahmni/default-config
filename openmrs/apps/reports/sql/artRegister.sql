@@ -2,12 +2,14 @@ select artnumber as 'Unique ART Number' , datestartedart as 'ART Start Date',
 (case when HIV_Retesting_for_ART_initiation is not null then '1' else '0' end) as 'HIV Retesting for ART initiation. 0=No 1=Yes',
  ClientName as 'Name in Full' , mobile as "Client's Address - Mobile" ,  Age as 'Age (years)', sex as 'Sex (M or F)',
 WEIGHT as 'Weight (kg)' , HEIGHT as 'Height /Length  for Child < 2 years  (cm)', BMI as 'Body Mass Index (BMI) (kg/mSq)', whostage as 'WHO clinical stage', 
-  CD4  as 'CD4 count or (if child <5 years indicate  CD4%)', dateStartedCTXorDapsone as 'CTX  or Dapsone start month/year' , date_started_tbrx as 'TB RX start Month/year
+  CD4  as 'CD4 count or (if child <5 years indicate  CD4%)', dateStartedCTXorDapsone as 'CTX  or Dapsone start month/year' ,
+   isoniazidStartDate1 as 'INH Prophylaxis - Date\n 1', isoniazidStartDate2 as 'INH Prophylaxis - Date\n 2' , isoniazidStartDate3 as 'INH Prophylaxis - Date\n 3' , isoniazidStartDate4 as 'INH Prophylaxis - Date\n 4',isoniazidStartDate5 as 'INH Prophylaxis - Date\n 5', isoniazidStartDate6 as 'INH Prophylaxis - Date\n 6' , 
+   date_started_tbrx as 'TB RX start Month/year
 and TB reg No.', 
 (case when currently_breastfeeding = 'YES' then '1' else '0' end) as 'Breastfeeding (0=No; 1=Yes; 2=N/A)',
 firstregimen as '1st Line Regimen - Original Regimen', firstsubstitutionregimen as '1st Line Regimen - 1st: Substitution drug code' , secondswitchwithinfirstline as '1st Line Regimen - 2nd: Substitution drug code' , secondlinefirst as '2nd Line Regimen - 2nd Line Regimen switched to',
 firstsubstitutionwithinsecond as '2nd Line Regimen - 1st:  Substitution drug code',
-secondsubstitutionwithinsecondline as '2nd Line Regimen - 2nd: Substitution drug code' , tchildfirstregimen as 'Child 1st Line Regimens' , tChildSecondLine as 'Child 2nd Line Regimens'
+secondsubstitutionwithinsecondline as '2nd Line Regimen - 2nd: Substitution drug code' , tchildfirstregimen as 'Child 1st Line Regimens' , tChildSecondLine as 'Child 2nd Line Regimens' 
  from (
 select patient_id, min(date_created) as datestartedart
 from (
@@ -261,3 +263,57 @@ and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 order by patient_id, date_activated) b where row_num = 1
 )tChildSecondLine
 )tChildSecondLineRegimen on tNewPatientDemographics.pid =  tChildSecondLineRegimen.pid
+left join (
+select @row_num := 0 , row_num, patient_id ,date_activated as 'isoniazidStartDate1'  from (
+select  @row_num :=IF(@prev_value=patient_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , date_activated , 
+date_created , patient_id , @prev_value:=patient_id, @prev_drugId:= concept_id from orders 
+where concept_id = (select concept_id from concept_name where name = 'Isoniazid' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and voided = 0
+and date_activated  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tIoniziad  where row_num = 1 
+)tIsoniazidDate1 on tNewPatientDemographics.pid =  tIsoniazidDate1.patient_id
+left join (
+select @row_num := 0 , row_num, patient_id ,date_activated as 'isoniazidStartDate2'  from (
+select  @row_num :=IF(@prev_value=patient_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , date_activated , 
+date_created , patient_id , @prev_value:=patient_id, @prev_drugId:= concept_id from orders 
+where concept_id = (select concept_id from concept_name where name = 'Isoniazid' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and voided = 0
+and date_activated  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tIoniziad  where row_num = 2
+)tIsoniazidDate2 on tNewPatientDemographics.pid =  tIsoniazidDate2.patient_id
+left join (
+select @row_num := 0 , row_num, patient_id ,date_activated as 'isoniazidStartDate3'  from (
+select  @row_num :=IF(@prev_value=patient_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , date_activated , 
+date_created , patient_id , @prev_value:=patient_id, @prev_drugId:= concept_id from orders 
+where concept_id = (select concept_id from concept_name where name = 'Isoniazid' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and voided = 0
+and date_activated  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tIoniziad  where row_num = 3
+)tIsoniazidDate3 on tNewPatientDemographics.pid =  tIsoniazidDate3.patient_id
+left join (
+select @row_num := 0 , row_num, patient_id ,date_activated as 'isoniazidStartDate4'  from (
+select  @row_num :=IF(@prev_value=patient_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , date_activated , 
+date_created , patient_id , @prev_value:=patient_id, @prev_drugId:= concept_id from orders 
+where concept_id = (select concept_id from concept_name where name = 'Isoniazid' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and voided = 0
+and date_activated  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tIoniziad  where row_num = 4
+)tIsoniazidDate4 on tNewPatientDemographics.pid =  tIsoniazidDate4.patient_id
+left join (
+select @row_num := 0 , row_num, patient_id ,date_activated as 'isoniazidStartDate5'  from (
+select  @row_num :=IF(@prev_value=patient_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , date_activated , 
+date_created , patient_id , @prev_value:=patient_id, @prev_drugId:= concept_id from orders 
+where concept_id = (select concept_id from concept_name where name = 'Isoniazid' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and voided = 0
+and date_activated  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tIoniziad  where row_num = 5
+)tIsoniazidDate5 on tNewPatientDemographics.pid =  tIsoniazidDate5.patient_id
+left join (
+select @row_num := 0 , row_num, patient_id ,date_activated as 'isoniazidStartDate6'  from (
+select  @row_num :=IF(@prev_value=patient_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , date_activated , 
+date_created , patient_id , @prev_value:=patient_id, @prev_drugId:= concept_id from orders 
+where concept_id = (select concept_id from concept_name where name = 'Isoniazid' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and voided = 0
+and date_activated  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tIoniziad  where row_num = 6
+)tIsoniazidDate6 on tNewPatientDemographics.pid =  tIsoniazidDate6.patient_id
