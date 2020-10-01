@@ -18,7 +18,7 @@ and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT((
 (select concept_id from concept_name where name = 'Were ARVS Received?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
 a.person_id = c.pid and a.encounter_id = c.maxdate 
 )tArvsReceivedBefore
-left join(
+inner join(
 select pa.person_id as pid, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
 gender as sex , (datediff(curdate(),p.birthdate) / 365) as 'Age'
 from person_attribute as pa 
@@ -152,7 +152,7 @@ and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT((
 (select concept_id from concept_name where name = 'Were ARVS Received?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
 a.person_id = c.pid and a.encounter_id = c.maxdate 
 )tArvsReceivedBefore
-left join(
+inner join(
 select pa.person_id as pid, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
 gender as sex , (datediff(curdate(),p.birthdate) / 365) as 'Age'
 from person_attribute as pa 
