@@ -1,11 +1,10 @@
 select artnumber as 'Unique ART Number' , datestartedart as 'ART Start Date',
 (case when HIV_Retesting_for_ART_initiation is not null then '1' else '0' end) as 'HIV Retesting for ART initiation. 0=No 1=Yes',
- ClientName as 'Name in Full' , mobile as "Client's Address - Mobile" ,  Age as 'Age (years)', sex as 'Sex (M or F)',
+ ClientName as 'Name in Full' , mobile as "Client's Address - Mobile" ,  occupation as 'Occupation', muac as 'Mid Upper Arm Conference', Age as 'Age (years)', sex as 'Sex (M or F)',
 WEIGHT as 'Weight (kg)' , HEIGHT as 'Height /Length  for Child < 2 years  (cm)', BMI as 'Body Mass Index (BMI) (kg/mSq)', whostage as 'WHO clinical stage', 
   CD4  as 'CD4 count or (if child <5 years indicate  CD4%)', dateStartedCTXorDapsone as 'CTX  or Dapsone start month/year' ,
    isoniazidStartDate1 as 'INH Prophylaxis - Date\n 1', isoniazidStartDate2 as 'INH Prophylaxis - Date\n 2' , isoniazidStartDate3 as 'INH Prophylaxis - Date\n 3' , isoniazidStartDate4 as 'INH Prophylaxis - Date\n 4',isoniazidStartDate5 as 'INH Prophylaxis - Date\n 5', isoniazidStartDate6 as 'INH Prophylaxis - Date\n 6' , 
-   date_started_tbrx as 'TB RX start Month/year
-and TB reg No.', 
+   date_started_tbrx as 'TB RX start Month/year and TB reg No.', 
 (case when currently_breastfeeding = 'YES' then '1' else '0' end) as 'Breastfeeding (0=No; 1=Yes; 2=N/A)',
 firstregimen as '1st Line Regimen - Original Regimen', firstsubstitutionregimen as '1st Line Regimen - 1st: Substitution drug code' , secondswitchwithinfirstline as '1st Line Regimen - 2nd: Substitution drug code' , secondlinefirst as '2nd Line Regimen - 2nd Line Regimen switched to',
 firstsubstitutionwithinsecond as '2nd Line Regimen - 1st:  Substitution drug code',
@@ -115,7 +114,6 @@ select concept_id , name from concept_name where concept_name_type = 'FULLY_SPEC
 )tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
 )tWhoStage on tNewPatientDemographics.pid =  tWhoStage.pid
 left join(
-
 select pid, min(date_created) as dateStartedCTXorDapsone
 from (
 select o.patient_id as pid, o.concept_id , dr.name ,  o.encounter_id , o.voided , o.date_activated , o.date_created
@@ -317,3 +315,39 @@ where concept_id = (select concept_id from concept_name where name = 'Isoniazid'
 and date_activated  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
 )tIoniziad  where row_num = 6
 )tIsoniazidDate6 on tNewPatientDemographics.pid =  tIsoniazidDate6.patient_id
+left join(
+select pid , tConceptname.name as 'occupation' from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Occupation' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Occupation' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime 
+ between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)tOccupation on tNewPatientDemographics.pid =  tOccupation.pid
+left join (
+select * from (
+select  person_id, concept_id, obs_datetime , value_numeric as 'muac',encounter_id , voided from obs where concept_id =
+(select concept_id from concept_name where name = 'MUAC, Pregnancy Visit' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'MUAC, Pregnancy Visit' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime  between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')  group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tMuac on tNewPatientDemographics.pid =  tMuac.person_id
+left join(
+select person_id, isPregnant from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'isPregnant', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tIpregnant on tNewPatientDemographics.pid = tIpregnant.person_id
