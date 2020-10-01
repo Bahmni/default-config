@@ -1,6 +1,6 @@
 select artnumber as 'Unique ART Number' , datestartedart as 'ART Start Date',
 (case when HIV_Retesting_for_ART_initiation is not null then '1' else '0' end) as 'HIV Retesting for ART initiation. 0=No 1=Yes',
- ClientName as 'Name in Full' , mobile as "Client's Address - Mobile" ,  occupation as 'Occupation', muac as 'Mid Upper Arm Conference', Age as 'Age (years)', sex as 'Sex (M or F)',
+ ClientName as 'Name in Full' , mobile as "Client's Address - Mobile" ,  occupation as 'Occupation', '' as 'Key Population', muac as 'Mid Upper Arm Conference', Age as 'Age (years)', sex as 'Sex (M or F)',
 WEIGHT as 'Weight (kg)' , HEIGHT as 'Height /Length  for Child < 2 years  (cm)', BMI as 'Body Mass Index (BMI) (kg/mSq)', whostage as 'WHO clinical stage', 
   CD4  as 'CD4 count or (if child <5 years indicate  CD4%)', dateStartedCTXorDapsone as 'CTX  or Dapsone start month/year' ,
    isoniazidStartDate1 as 'INH Prophylaxis - Date\n 1', isoniazidStartDate2 as 'INH Prophylaxis - Date\n 2' , isoniazidStartDate3 as 'INH Prophylaxis - Date\n 3' , isoniazidStartDate4 as 'INH Prophylaxis - Date\n 4',isoniazidStartDate5 as 'INH Prophylaxis - Date\n 5', isoniazidStartDate6 as 'INH Prophylaxis - Date\n 6' , 
