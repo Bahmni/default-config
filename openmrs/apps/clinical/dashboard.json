@@ -101,6 +101,18 @@
                     "numberOfVisits":7
                 }
             },
+            "procedureOrders":{  
+                "orderType":"Procedure Order",
+                "type":"ordersControl",
+                "translationKey":"DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
+                "displayOrder":18,
+                "dashboardConfig":{  
+                    "conceptNames":[  
+                        "Summary"
+                    ],
+                    "numberOfVisits":7
+                }
+            },
             
             "labOrdersDisplayControl":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
