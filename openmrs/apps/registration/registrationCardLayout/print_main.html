@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/print.css" />
+<div id="main-chart-container">
+    <table>
+        <tr>
+            <td style="width:213mm;"></td>
+            <td style="width:193mm;">
+                <div class="mc-title">
+                    <span style="font-family:nyala;font-size:24pt;">የህክምና ካርድ</span> <br />
+                    PATIENT CHART
+                </div>
+
+                <table>
+                    <tr>
+                        <td class="first">
+                            <span class="am-font">የህክምና ካርድ ቁጥር</span><br />
+                            Medical record number <span class="value"
+                                style="font-size:12pt">{{patient.primaryIdentifier.identifier}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <span class="am-font">የተመዘገበበት ቀን</span><br />
+                            Date of registration <span
+                                class="am-value am-font">{{patient.registrationDate | bahmniDate}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="first">
+                            <span class="am-font">ስም</span><br />
+                            Name <span class="value">{{patient.givenName}}</span>
+                        </td>
+                        <td>
+                            <span class="am-font">የአባት ስም</span><br />
+                            Father\'s name <span class="value">{{patient.middleName}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="first">
+                            <span class="am-font">የአያት ስም</span><br />
+                            Grand father\'s Name <span class="value">{{patient.familyName}}</span>
+                        </td>
+                        <td>
+                            <span class="am-font">ፆታ</span><br />
+                            Sex <span class="value"> {{patient.gender}} </span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="first">
+                            <span class="am-font">የልደት ቀን</span><br />
+                            Date of Birth <span class="am-value am-font"> {{patient.birthdate | bahmniDate}} </span>
+                        </td>
+                        <td>
+                            <span class="am-font">እድሜ</span><br />
+                            Age <span class="value"> {{patient.age.years}} </span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="first">
+                            <span class="am-font">አድራሻ</span><br />
+                            Address <span class="value"> </span>
+                        </td>
+                        <td>
+                            <span class="am-font">ክልል</span><br />
+                            Region <span class="value">{{patient.address.stateProvince}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="first">
+                            <span class="am-font">ክፍለ ከተማ</span><br />
+                            Woreda/subcity <span class="value">{{patient.address.longitude}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <table style="width:100%">
+                    <tr>
+                        <td class="first">
+                            <span class="am-font">ወረዳ</span><br />
+                            kebele <span class="value">{{patient.address.cityVillage}}</span>
+                        </td>
+                        <td>
+                            <span class="am-font">የቤት ቁጥር</span><br />
+                            House Number <span class="value">{{patient.address.address2}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="am-font">ስልክ ቁጥር</span><br />
+                            Phone Number <span class="value">{{patient.PhoneNumber}}</span>
+                        </td>
+                    </tr>
+                </table>
+                <table style="width:100%">
+                    <tr>
+                        <td class="mc-mrn-special">
+                            {{patient.primaryIdentifier.identifier}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mc-mrn-special">
+                            <img id="barcode" jsbarcode-value="{{patient.primaryIdentifier.identifier}}"
+                                jsbarcode-width="3" jsbarcode-height="80" jsbarcode-margin="0"
+                                jsbarcode-displayValue="false" jsbarcode-textAlign="left" jsbarcode-textMargin="0"
+                                jsbarcode-fontSize="10" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript" src="/bahmni_config/openmrs/apps/JsBarcode.all.min.js"></script>
+<script>
+    (function () {
+        JsBarcode("#barcode").init();
+    })();
+</script>

@@ -29,18 +29,27 @@
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
+                        "Name",
+                        "Phone",
+                        "Address"
                     ]
                 },
                 "hidden": {
                     "attributes": [
-                        "primaryContact"
+                        "cluster",
+                        "landHolding",
+                        "secondaryContact",
+                        "distanceFromCenter",
+                        "class",
+                        "cluster",
+                        "familyIncome",
+                        "RationCard",
+                        "debt",
+                        "isUrban",
+                        "occupation",
+                        "secondaryIdentifier",
+                        "education",
+                        "caste"
                     ]
                 },
                 "defaults":  {
@@ -49,8 +58,8 @@
                 }
             },
             "addressHierarchy": {
-                "showAddressFieldsTopDown": false,
-                "strictAutocompleteFromLevel": "stateProvince"
+                "showAddressFieldsTopDown": true,
+                "strictAutocompleteFromLevel": ""
             },
             "relationshipTypeMap": {
                 "Doctor":"provider",
@@ -58,7 +67,6 @@
             },
 
             "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
@@ -71,23 +79,13 @@
             "printOptions": [
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-                    "shortcutKey": "p"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_main.html",
                     "shortcutKey": "c"
+                },
+                {
+                "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_index.html",
+                "shortcutKey": "z"
                 }
             ],
             "conceptSetUI": {
@@ -112,15 +110,15 @@
             },
             "patientSearch": {
                 "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
+                  "label": "Woreda/Subcity",
+                  "placeholder": "ወረዳ/ክፍለ ከተማ ",
+                  "field": "City_Village"
                 },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                  "label": "Phone Number",
+                  "placeholder": "ስልክ ቁጥር",
+                  "fields": ["PhoneNumber"]
                 }
-            }
+              }
         }
 }

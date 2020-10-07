@@ -21,7 +21,7 @@
         "onTransferForwardTo": "#",
         "onDischargeForwardTo": "#",
         "defaultVisitType": "IPD",
-        "expectedDateOfDischarge": "",
+        "expectedDateOfDischarge": "IPD Intended Discharge",
         "conceptSetUI": {
             "Expected Date of Discharge": {
                 "disableAddNotes": true,

@@ -149,7 +149,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         },
         template: '<ng-include src="contentUrl"/>'
     }
-}]).directive('patientAppointmentsDashboard', ['$http', '$q', '$window','appService', function ($http, $q, $window, appService) {
+}]).directive('patientAppointmentsDashboard', ['$http', '$q', '$window','appService','$stateParams','$rootScope', function ($http, $q, $window, appService,$stateParams, $rootScope) {
     var link = function ($scope) {
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/patientAppointmentsDashboard.html";
         var getUpcomingAppointments = function () {
@@ -184,7 +184,24 @@ angular.module('bahmni.common.displaycontrol.custom')
         });
 
         $scope.goToListView = function () {
-            $window.open('/bahmni/appointments/#/home/manage/appointments/list');
+           // $window.open('/bahmni/appointments/#/home/manage/appointments/list');
+           var options = $.extend({}, $stateParams);
+            $.extend(options, {
+                patient: $scope.patient,
+                visitUuid: $scope.patient.activeVisitUuid || null,
+                programUuid: $scope.patient.programUuid || null,
+                enrollment:  $scope.patient.enrollment || null,
+                forwardUrl:'/bahmni/appointments/#/home/manage/appointments/list/new' || null,
+                dateEnrolled: $scope.patient.dateEnrolled || null
+            });
+            var link ={
+                url: options.forwardUrl,
+                newTab: false
+            } 
+            if (link.url && link.url !== null) {
+                $rootScope.$broadcast("patientForAppointment", {patientForAppointment:$scope.patient});
+                $window.open(appService.getAppDescriptor().formatUrl(link.url+"//"+$scope.patient.uuid, options, false), link.newTab ? "_blank" : "_self");
+            }
         };
     };
     return {

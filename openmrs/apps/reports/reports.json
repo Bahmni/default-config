@@ -172,6 +172,45 @@
             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/testCount.sql"
         }
     },
+    "hospitalActivities": {
+        "name": "Hospital Activities - Number of Clients Served (New and Total)",
+        "type": "MRSGeneric",
+        "requiredPrivilege": "app:reports",
+        "config": {
+          "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/totalAdmittedPatients_and_totalbeds.sql"
+        }
+    },
+    "qsmtEmergencyReport": {
+        "name": "TBGH 24 hours QSMT Emergency report",
+        "type": "MRSGeneric",
+        "requiredPrivilege": "app:reports",
+        "config": {
+          "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/qsmt_emergency_report.sql"
+        }
+    },
+    "qsmtWardReport": {
+        "name": "TBGH 24 hours QSMT Ward Report list",
+        "type": "MRSGeneric",
+        "config": {
+        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/liaisonReport.sql"
+        }
+    },
+    "qrstReport":{
+        "name": "TBGH 24 hours QSMT Ward report",
+        "type": "MRSGeneric",
+        "requiredPrivilege": "app:reports",
+        "config": {
+          "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/qrst.sql"
+        }
+    },
+    "bedOccupancyRate": {
+        "name": "Bed occupancy rate",
+        "type": "MRSGeneric",
+        "requiredPrivilege": "app:reports",
+        "config": {
+          "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/bedOccupancyRate.sql"
+        }
+    },
     "bloodPressure": {
         "name": "Blood Pressure",
         "type": "obsCount",
@@ -403,6 +442,16 @@
             "visitAttributes": [
                 "Visit Status"
             ]
+        }
+    },
+    "visitAggregateCount": {
+        "name": "Visit Aggregate Count Report",
+        "type": "VisitAggregateCount",
+        "requiredPrivilege": "app:reports",
+        "config": {
+                   "type": "VisitAggregateCountReport",
+                   "locationTagNames": ["Report Location"],
+                   "visitTypes": "OPD','Emergency Ward'"
         }
     },
     "patientReport": {

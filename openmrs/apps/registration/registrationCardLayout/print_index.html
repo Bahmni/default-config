@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/indexStyle.css"/>
+<div class="A7 landscape">
+    <div class="sheet">
+        <div id="indexc-container">  
+                <div class="title">
+                        <!-- <img style="position:absolute;left:5mm;" id="barcode"
+                        jsbarcode-value="{{patient.primaryIdentifier.identifier}}"
+                        jsbarcode-width="1.2"
+                        jsbarcode-height="30"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayValue="false"
+                        jsbarcode-textAlign="left"
+                        jsbarcode-textMargin="0"
+                        jsbarcode-fontSize="10"
+            
+                    /> -->
+                    <span style="font-family:nyala">ካርድ ማውጫ</span> <br/>
+                    INDEX CARD
+                </div>
+            
+                <!-- <table>
+                    <tr>
+                        <td>
+                            <span class="am-font">የተመዘገበበት ቀን</span><br/>
+                            Date of registration  <span class="am-value am-font">{{patient.registrationDate | bahmniDate}}</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table> -->
+                <table>
+                    <tr>
+                        <td class="first">               
+                            <span class="am-font">ስም</span><br/>
+                            Name  <span class="value">{{patient.givenName}} {{patient.middleName}} {{patient.familyName}}</span>               
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td  class="first">
+                            <span class="am-font">ፆታ</span><br/>
+                            Sex  <span class="value"> {{patient.gender}} </span>
+                        </td>
+                        <td>
+                            <span class="am-font">እድሜ</span><br/>
+                            Age  <span class="value"> {{patient.age.years}} </span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="first" style="padding-top:5px;">
+                            <span class="am-font">የህክምና ካርድ ቁጥር</span><br/>
+                            Medical record number  <span class="value" style="font-size:18pt">{{patient.primaryIdentifier.identifier}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top:5px; text-align: center">
+                            <img id="barcode" jsbarcode-value="{{patient.primaryIdentifier.identifier}}"
+                                jsbarcode-width="2" jsbarcode-height="65" jsbarcode-margin="0"
+                                jsbarcode-displayValue="false" jsbarcode-textAlign="left" jsbarcode-textMargin="0"
+                                jsbarcode-fontSize="10" />
+                        </td>
+                    </tr>
+                </table>        
+            </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/bahmni_config/openmrs/apps/JsBarcode.all.min.js"></script>
+<script>
+    (function() {
+        JsBarcode("#barcode").init();
+    })();
+</script>

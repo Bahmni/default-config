@@ -1,0 +1,127 @@
+#indexc-container {
+  font-family: "Times New Roman";
+  display: block;
+  width: 92mm;
+  height: 64mm;
+  border: 0.5mm solid #000;
+  text-align: center;
+  padding-top: 3mm;
+  padding-right: 3mm;
+  padding-left: 3mm;
+  text-transform: uppercase;
+  overflow: hidden;
+  /*page:xsmall;*/
+  page-break-before: always;
+  background-image: url("image/st.paul-full.png");
+  background-size: 20mm auto;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+
+.mc-title {
+  font-size: 18pt;
+  margin-bottom: 10mm;
+}
+
+.title {
+  font-size: 11pt;
+  margin-bottom: 2mm;
+}
+
+.content {
+  font-size: 8pt;
+}
+
+.content div {
+  width: 100%;
+  text-align: left;
+  clear: both;
+  padding-top: 1mm;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.right-unfloat {
+  float: left;
+}
+
+.high-margin {
+  margin-left: 20mm;
+}
+
+.low-margin {
+  margin-left: 10mm;
+}
+
+.value {
+  /*float:left;*/
+  border-bottom: 1pt solid #000;
+  min-width: 30pt;
+  font-weight: bold;
+}
+
+.am-value {
+  /*float:left;*/
+  border-bottom: 1pt solid #000;
+  min-width: 30pt;
+}
+
+#main-chart-container table td {
+  font-size: 14pt;
+  text-transform: uppercase;
+  padding-top: 0mm;
+  padding-bottom: 10mm;
+  padding-left: 0mm;
+  text-align: left;
+  white-space: nowrap;
+}
+
+table {
+  margin: 0mm;
+  padding: 0mm;
+  autosize: 2;
+}
+
+table td {
+  font-size: 9pt;
+  text-transform: uppercase;
+  padding-bottom: 0mm;
+  padding-top: 0.5mm;
+  padding-left: 0mm;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.first {
+  padding-right: 10mm;
+}
+
+.am-font {
+  font-family: nyala;
+  font-size: 10pt;
+}
+
+#main-chart-container .am-font {
+  font-family: nyala;
+  font-size: 18pt;
+}
+
+#main-chart-container table td.mc-mrn-special {
+  font-size: 48pt;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 2mm;
+}
+
+@page {
+  /*sheet-size:420mm 277mm;/*A3 paper size*/
+  size: A7 landscape;
+}

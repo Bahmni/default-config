@@ -3,6 +3,12 @@
         "translationKey":"DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault":true,
         "maxRecentlyViewedPatients":10,
+        "printing": {
+            "title": "TBGH Hospital",
+            "header": "General Summary Report",
+            "logo": "../images/bahmniLogo.jpg",
+            "showNameAndImage": true
+        },
         "sections":{  
             "patientInformation":{  
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
@@ -25,12 +31,12 @@
                 "showCertainty":true,
                 "showOrder":true,
                 "showDetailsButton":true,
-                "displayOrder":1
+                "displayOrder":2
             },
             "navigationLinksControl":{  
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type":"navigationLinksControl",
-                "displayOrder":2,
+                "displayOrder":0,
                 "showLinks":[  
                     "home",
                     "visit",
@@ -40,28 +46,18 @@
                     "visitAttribute"
                 ]
             },
-	          "tuberculosis": {
-                "title": "Tuberculosis Follow Up",
-                "type": "tuberculosis",
-                "isObservation": true,
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "Tuberculosis Followup Template"
-                    ],
-                    "numberOfVisits": 2
-                }
-            },
+	        
             "disposition":{  
                 "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":1,
-                "displayOrder":7
+                "displayOrder":15
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
-                "displayOrder":4,
+                "displayOrder":10,
                 "dashboardConfig":{  
                     "showFlowSheet":true,
                     "showListView":true,
@@ -86,12 +82,12 @@
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "type":"radiology",
                 "showDetailsButton":true,
-                "displayOrder":5
+                "displayOrder":8
             },
             "programs":{  
                 "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
                 "type":"programs",
-                "displayOrder":10
+                "displayOrder":12
             },
             "radiologyOrders":{  
                 "orderType":"Radiology Order",
@@ -102,25 +98,28 @@
                     "conceptNames":[  
                         "Summary"
                     ],
-                    "numberOfVisits":4
+                    "numberOfVisits":7
                 }
             },
-            "pacs":{  
-                "orderType":"Radiology Order",
-                "type":"pacsOrders",
-                "translationKey":"DASHBOARD_TITLE_PACS_KEY",
-                "displayOrder":8,
+            "procedureOrders":{  
+                "orderType":"Procedure Order",
+                "type":"ordersControl",
+                "translationKey":"DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
+                "displayOrder":18,
                 "dashboardConfig":{  
-                    "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
-                    "numberOfVisits":4
+                    "conceptNames":[  
+                        "Summary"
+                    ],
+                    "numberOfVisits":7
                 }
             },
+            
             "labOrdersDisplayControl":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "type":"ordersControl",
                 "orderType":"Lab Order",
                 "showDetailsButton":true,
-                "displayOrder":9,
+                "displayOrder":5,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "Systolic",
@@ -139,17 +138,7 @@
                     "showDetailsButton":true
                 }
             },
-            "bacteriologyResults":{  
-                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "type":"bacteriologyResultsControl",
-                "scope":"All",
-                "orderType":"",
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "BACTERIOLOGY CONCEPT SET"
-                    ]
-                }
-            },
+            
             "labResults":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type":"labOrders",
@@ -172,7 +161,7 @@
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":11,
+                "displayOrder":9,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "HEIGHT",
@@ -202,7 +191,7 @@
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":12,
+                "displayOrder":3,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -232,34 +221,12 @@
                     }
                 }
             },
-            "secondVitals":{  
-                "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
-                "type":"second vitals",
-                "isObservation":true,
-                "displayOrder":13,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
+            
             "historyAndExaminations":{  
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":14,
+                "displayOrder":4,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -278,56 +245,12 @@
                     }
                 }
             },
-            "gynaecology":{  
-                "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
-                "type":"gynaecology",
-                "isObservation":true,
-                "displayOrder":15,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "showDetailsButton":true,
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "obstetrics":{  
-                "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
-                "type":"obstetrics",
-                "isObservation":true,
-                "displayOrder":16,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
+            
+            
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":3,
+                "displayOrder":1,
                 "dashboardConfig":{  
                     "title":null,
                     "maximumNoOfVisits":8,
@@ -376,17 +299,13 @@
             "admissionDetails":{  
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type":"admissionDetails",
-                "displayOrder":19,
+                "displayOrder":13,
                 "showDetailsButton":true
             },
-            "conditions": {
-                "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
-                "type": "conditionsList",
-                "displayOrder": 20
-            },
+            
             "formsDisplay": {
                 "type": "forms",
-                "displayOrder": 21,
+                "displayOrder": 11,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10
@@ -396,7 +315,7 @@
             },
             "patientAppointments": {
                 "type": "custom",
-                "displayOrder": 22,
+                "displayOrder": 14,
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
@@ -407,6 +326,12 @@
     "trends":{  
         "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
         "maxRecentlyViewedPatients":10,
+        "printing": {
+            "title": "TBGH Hospital",
+            "header": "Trends Summary Report",
+            "logo": "../images/bahmniLogo.jpg",
+            "showNameAndImage": true
+        },
         "sections":{  
             "patientInformation":{  
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
@@ -456,6 +381,20 @@
                 },
                 "displayOrder":2
             },
+            "Vital":{  
+                "type":"observationGraph",
+                
+                "config":{  
+                    "yAxisConcepts":[  
+                        "SPO2 Data",
+                        "Temperature Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":2,
+                "title": "Vital Sign"
+            },
             "weight/BMI":{  
                 "type":"observationGraph",
                 "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
@@ -468,6 +407,30 @@
                     "numberOfVisits":10
                 },
                 "displayOrder":3
+            },
+            "AST": {
+                "type": "observationGraph",
+                "config": {
+                    "yAxisConcepts": [
+                        "Lab, AST"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 8,
+                "title": "AST"
+            },
+            "Lab, Hemoglobin test result": {
+                "type": "observationGraph",
+                "config": {
+                    "yAxisConcepts": [
+                        "Haemoglobin"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 6,
+                "title": "Hemoglobin"
             },
             "diabetes/BloodSugar":{  
                 "type":"observationGraph",
@@ -533,22 +496,46 @@
     "patientSummary":{  
         "translationKey":"DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
         "maxRecentlyViewedPatients":10,
+        "printing": {
+            "title": "TBGH Hospital",
+            "header": "Patient Summary Report",
+            "logo": "../images/bahmniLogo.jpg",
+            "showNameAndImage": true
+        },
         "sections":{  
-            "Bacteriology Concept Set":{  
+            "vitals":{  
+                "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
+                "type":"vitals",
+                "isObservation":true,
                 "displayType":"Full-Page",
-                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "type":"obsToObsFlowSheet",
+                "displayOrder":1,
                 "dashboardConfig":{  
-                    "numberOfVisits":1,
-                    "templateName":"BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept":"Specimen Collection Date",
+                    "showDetailsButton":false,
                     "conceptNames":[  
-                        "Specimen Id"
-                    ]
+                        "Vitals"
+                    ],
+                    "numberOfVisits":2
                 },
                 "expandedViewConfig":{  
-                    "templateName":"BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept":"Specimen Collection Date"
+                    "conceptNames":[  
+                        "Vitals"
+                    ],
+                    "numberOfVisits":2,
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+                        "numberOfVisits":"10",
+                        "groupBy":"encounters",
+                        "obsConcepts":[  
+                            "Weight",
+                            "Vitals"
+                        ],
+                        "drugConcepts":[  
+
+                        ],
+                        "labConcepts":[  
+
+                        ]
+                    }
                 }
             },
             "HistoryAndExamination":{  
@@ -565,7 +552,7 @@
                         "Blood Pressure"
                     ]
                 },
-                "displayOrder":6,
+                "displayOrder":2,
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
             },
             "drugOther":{  
@@ -573,43 +560,47 @@
                 "type":"drugOrderDetails",
                 "displayType":"Full-Page",
                 "showDetailsButton":true,
-                "displayOrder":24,
+                "displayOrder":5,
                 "dashboardConfig":{  
                     "showOnlyActive":true,
                     "drugConceptSet":"All Other Drugs"
                 }
             },
-            "malaria":{  
-                "title":"Malaria",
-                "type":"obsToObsFlowSheet",
+            "labResults":{  
+                "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                "type":"labOrders",
+                "displayOrder":3,
                 "displayType":"Full-Page",
-                "displayOrder":26,
                 "dashboardConfig":{  
-                    "groupByConcept":"Malaria, Treatment Start Date",
-                    "templateName":"Malaria",
-                    "conceptNames":[  
-                        "Malaria, Parents Name",
-                        "Malaria, drug regimen",
-                        "Malaria, Malaria Type",
-                        "Malaria, Source"
-                    ]
-                }
-            },
-            "Chronic Treatment Chart":{  
-                "displayType":"Full-Page",
-                "title":"Chronic Treatment Chart",
-                "type":"chronicTreatmentChart",
-                "dashboardConfig":{  
-                    "drugs":[  
-
-                    ]
+                    "title":null,
+                    "numberOfVisits":6,
+                    "showChart":false,
+                    "showTable":true,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "showDetailsButton":false
                 },
                 "expandedViewConfig":{  
-                    "drugs":[  
-
-                    ]
+                    "numberOfVisits":10
                 }
+            },
+            "radiology":{  
+                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
+                "type":"radiology",
+                "displayType":"Full-Page",
+                "showDetailsButton":true,
+                "displayOrder":4
+            },
+            "disposition":{  
+                "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
+                "showDetailsButton":true,
+                "type":"disposition",
+                "displayType":"Full-Page",
+                "numberOfVisits":1,
+                "displayOrder":6
             }
+            
         }
     }
 }
