@@ -1160,5 +1160,17 @@ Bahmni.ConceptSet.FormConditions.rules = {
 
             }
         }   
-    },
+    }
+    // "Social History" : function (formName , formFieldValues){
+    //     var socialHistory = formFieldValues["Social History"];
+    //     if(socialHistory === "Smoking"){
+    //         return {
+    //            show: ["Specify Other Social History"]
+    //         }      
+    //     } else {
+    //         return{
+    //            hide: ["Specify Other Social History"]
+    //         }
+    //     }  
+    // }
  };
