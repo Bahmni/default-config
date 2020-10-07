@@ -30,17 +30,17 @@
         "name": "Patient Information",
         "type": "PatientReport"
     },
-    "dhisSampleReportTest": {
+    "Dhis Sample Report": {
 		"name": "Dhis Sample Report",
 		"DHISProgram": true,
 		"type": "concatenated",
 		"config": {
 		"reports": [
 				{
-					"name": "High Viral Load Patients",
+					"name": "Dhis Sample Report",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/dhisSampleRepportTest.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/Dhis_Sample_Report.sql"
 					}
 				}
 			]
