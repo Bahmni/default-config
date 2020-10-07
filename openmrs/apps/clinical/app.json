@@ -137,7 +137,72 @@
                 "Pain management given": true,
                 "Safe Abortion, Remarks": "Remarks",
                 "Malaria, Death Date": "2015-12-01"
+            },
+            "Safe abortion, Type of uterine evacuation procedure":{
+                "multiSelect": true
+            },
+            "Safe abortion, Contraceptive Method/s provided":{
+                "multiSelect": true
+            },
+            "Safe abortion, if other service provided specify":{
+                "multiSelect": true
+            },
+            "Pattern of food intake": {
+                "multiSelect": true
+            },
+            "Patient has confirmed": {
+                "multiSelect": true
+            },
+            "Method provided":{
+                "multiSelect": true
+            },
+            "Reason for Method Switch":{
+                "multiSelect": true
+            },
+            "Past Medical History":{
+                "multiSelect": true
+            },
+            "Feedback, Patient Name":{
+                "multiSelect": true
+            },
+            "ER, Non Trauma":{
+                "multiSelect": true
+            },
+            "ER, Oby/Gyn":{
+                "multiSelect": true
+            },
+            "Airway and breathing":{
+                "multiSelect": true
+            },
+            "Circulation":{
+                "multiSelect": true
+            },
+            "Dehydration (sever)(only in child with diarrhea) Plus any two of those":{
+                "multiSelect": true
+            },
+            "Ped T":{
+                "multiSelect": true
+            },
+            "Ped P":{
+                "multiSelect": true
+            },
+            "Ped R":{
+                "multiSelect": true
+            },
+            "Underlying disease":{
+                "multiSelect": true
+            },
+            "POS Co Morbidity":{
+                "multiSelect": true
+            },
+            "POS Risk factor":{
+                "multiSelect": true
+            },
+            "Operation Procedure":{
+                "multiSelect": true
             }
+
+
         },
         "visitPage": {
             "observationDisplay": {
