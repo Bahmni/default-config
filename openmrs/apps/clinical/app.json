@@ -143,6 +143,11 @@
             "observationDisplay": {
                 "conceptNames": []
             }
+        },
+        "patientSearch": {
+            "debounceSearch": false,
+            "fetchDelay": 2000,
+            "serializeSearch": false
         }
     }
 }
