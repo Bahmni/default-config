@@ -764,18 +764,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var sexualpartner = formFieldValues["Sexual Partner?"];
         if(sexualpartner ==  true) {
             return{
-                show: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV"],
-                 hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age","Specify other Family Member Relationship"]
+                show: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Was Sexual Partner Contacted?"],
+                 hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age","Specify other Family Member Relationship","Was Family Member Contact Contacted?"]
             }
         }else if (sexualpartner ==  false){
             return{
-                hide: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Specify other Family Member Relationship"],
-                show:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age"]
+                hide: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Specify other Family Member Relationship","Was Sexual Partner Contacted?"],
+                show:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age","Was Family Member Contact Contacted?"]
                
             }
         }else {
             return {
-                hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Sexual Partner Relationship","Sexual partner names","Family Member - Age","Phone Number","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV"]
+                hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Sexual Partner Relationship","Sexual partner names","Family Member - Age","Phone Number","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Was Family Member Contact Contacted?","Was Family Member Contact Tested?","Was Sexual Partner Contacted?","Was Sexual Partner Tested?"]
                 
             }
         }    
@@ -793,15 +793,67 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+    "Was Sexual Partner Contacted?" : function (formName , formFieldValues){
+        var sexualpartnercontacted = formFieldValues["Was Sexual Partner Contacted?"];
+        if(sexualpartnercontacted ==  true) {
+            return{
+                show: ["Was Sexual Partner Tested?"]
+            }
+        }else {
+            return{
+                hide: ["Was Sexual Partner Tested?"]
+               
+            }
+        }    
+    },
+    "Was Sexual Partner Tested?" : function (formName , formFieldValues){
+        var sexualpartnertested = formFieldValues["Was Sexual Partner Tested?"];
+        if(sexualpartnertested ==  true) {
+            return{
+                show: ["Sexual Partner - HIV Status"]
+            }
+        }else {
+            return{
+                hide: ["Sexual Partner - HIV Status"]
+               
+            }
+        }    
+    },
+    "Was Family Member Contact Contacted?" : function (formName , formFieldValues){
+        var familymemberContacted = formFieldValues["Was Family Member Contact Contacted?"];
+        if(familymemberContacted ==  true) {
+            return{
+                show: ["Was Family Member Contact Tested?"]
+            }
+        }else {
+            return{
+                hide: ["Was Family Member Contact Tested?"]
+               
+            }
+        }    
+    },
+    "Was Family Member Contact Tested?" : function (formName , formFieldValues){
+        var familyMemberTested = formFieldValues["Was Family Member Contact Tested?"];
+        if(familyMemberTested ==  true) {
+            return{
+                show: ["Family Member - HIV Status"]
+            }
+        }else {
+            return{
+                hide: ["Family Member - HIV Status"]
+               
+            }
+        }    
+    },
     "Sexual Partner - HIV Status" : function (formName , formFieldValues){
         var partnerstatus = formFieldValues["Sexual Partner - HIV Status"];
         if(partnerstatus !==  "Known") {
             return{
-                hide: ["Sexual Partner - HIV Result","Sexual Partner - Date Tested HIV"]
+                hide: ["Sexual Partner - HIV Result","Sexual Partner - Date Tested HIV","Sexual Partner - Result of HTS"]
             }
         }else {
             return{
-                show: ["Sexual Partner - HIV Result","Sexual Partner - Date Tested HIV"]
+                show: ["Sexual Partner - HIV Result","Sexual Partner - Date Tested HIV","Sexual Partner - Result of HTS"]
                
             }
         }    
@@ -1161,16 +1213,4 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }   
     }
-    // "Social History" : function (formName , formFieldValues){
-    //     var socialHistory = formFieldValues["Social History"];
-    //     if(socialHistory === "Smoking"){
-    //         return {
-    //            show: ["Specify Other Social History"]
-    //         }      
-    //     } else {
-    //         return{
-    //            hide: ["Specify Other Social History"]
-    //         }
-    //     }  
-    // }
  };
