@@ -61,7 +61,7 @@
                     "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                     "type": "patientInformation",
                     "displayOrder": 3,
-                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                    "patientAttributes": ["education", "occupation", "debt", "distanceFromCenter", "RationCard", "familyIncome","isUrban"],
                     "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
                 },
                 "admissionDetails":{

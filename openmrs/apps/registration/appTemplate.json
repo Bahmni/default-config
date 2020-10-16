@@ -7,8 +7,8 @@
         "configOptions": {
             "autoCompleteFields":{
                 "name": "autoCompleteFields",
-                "description": "auto complete fields in patient create page. eg. givenName, familyName, caste, primaryContact, secondaryContact, primaryRelative, secondaryIdentifier",
-                "defaultValue": ["givenName", "familyName", "caste", "primaryContact", "secondaryContact", "primaryRelative", "secondaryIdentifier"]
+                "description": "auto complete fields in patient create page. eg. givenName, familyName, primaryContact, emergencyContPhone, primaryRelative, emergencyConName",
+                "defaultValue": ["givenName", "familyName",  "primaryContact", "emergencyContPhone", "primaryRelative", "emergencyConName"]
             },
             "defaultIdentifierPrefix":{
                 "name": "defaultIdentifierPrefix",

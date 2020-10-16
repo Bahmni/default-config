@@ -2,5 +2,6 @@
   {"code": "es", "nativeName": "Español"},
   {"code": "fr", "nativeName": "Français"},
   {"code": "it", "nativeName": "Italiano"},
+  {"code": "am", "nativeName": "Amharic"},
   {"code": "pt_BR", "nativeName": "Português"}]
 }

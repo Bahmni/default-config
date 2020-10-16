@@ -39,8 +39,6 @@
                     "type": "patientInformation",
                     "displayOrder": 0,
                     "patientAttributes": [
-                        "caste",
-                        "class",
                         "education",
                         "occupation",
                         "debt",

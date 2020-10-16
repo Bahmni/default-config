@@ -58,7 +58,7 @@
                 "displayOrder": 0,
                 "config": {
                     "title": "PatientInformation",
-                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                    "patientAttributes": ["education", "occupation", "debt", "distanceFromCenter", "isUrban","RationCard", "familyIncome"],
                     "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
                 }
             },
