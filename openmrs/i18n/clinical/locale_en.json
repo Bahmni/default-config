@@ -96,5 +96,7 @@
   "DASHBOARD_PATIENT_CONTACTS_KEY": "Patient's Contacts",
   "DASHBOARD_NO_PATIENT_CONTACTS_KEY": "No Patient's Contacts",
   "DASHBOARD_NO_PAST_APPOINTMENTS_KEY": "No past appointments",
+  "DASHBOARD_NO_ELICITED_CONTACTS_KEY": "No Patient's Contacts Information",
+  "DASHBOARD_ELICITED_CONTACTS_INFORMATION_KEY": "Patient Contacts Information",
   "DASHBOARD_NO_UPCOMING_APPOINTMENTS_KEY": "No upcoming appointments"
 }
