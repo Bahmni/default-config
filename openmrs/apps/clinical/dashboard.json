@@ -325,7 +325,16 @@
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
                 }
+            },
+            "patientContacts": {
+                "type": "custom",
+                "displayOrder": 23,
+                "config": {
+                    "title": "DASHBOARD_TITLE_PATIENT_CONTACTS_KEY",
+                    "template": "<patient-appointments-dashboards section='config' patient='patient'></patient-appointments-dashboards>"
+                }
             }
+
         }
     },
     "trends":{  
