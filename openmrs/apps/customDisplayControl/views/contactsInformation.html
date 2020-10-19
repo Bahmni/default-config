@@ -1,0 +1,32 @@
+<section class="app-dashboard-integration">
+    <h2 class="section-title" ng-click="goToListView()"><span style="border-bottom: 1px solid white;">{{ section.title | titleTranslate}}</span></h2>
+
+    <ul style="font-size: 14px;color: #000000">
+        <li style="background-color:#ddd;padding-top:3px;padding-bottom:3px">
+            <span style="padding-left: 10px"> {{::"DASHBOARD_ELICITED_CONTACTS_INFORMATION_KEY" | translate}} </span>
+        </li>
+
+        <ul ng-if="patientContacts.length === 0" class="form-field">
+            <li>{{::"DASHBOARD_NO_ELICITED_CONTACTS_KEY" | translate}}</li>
+        </ul>
+
+        <ul ng-if="patientContacts.length !== 0">
+            <table class="table-header">
+                <thead>
+                <tr>
+                    <th ng-repeat="heading in elicitedContactsHeadings">
+                        {{heading | translate}}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="appointment in elicitedContacts">
+                    <td ng-repeat="detail in appointment">
+                        {{detail}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </ul>
+    </ul>
+</section>
