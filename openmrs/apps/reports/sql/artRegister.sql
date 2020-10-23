@@ -2,9 +2,9 @@ select artnumber as 'Unique ART Number' , datestartedart as 'ART Start Date',
 (case when HIV_Retesting_for_ART_initiation is not null then '1' else '0' end) as 'HIV Retesting for ART initiation. 0=No 1=Yes',
  ClientName as 'Name in Full' , mobile as "Client's Address - Mobile" ,  occupation as 'Occupation', '' as 'Key Population', muac as 'Mid Upper Arm Conference', Age as 'Age (years)', sex as 'Sex (M or F)',
 WEIGHT as 'Weight (kg)' , HEIGHT as 'Height /Length  for Child < 2 years  (cm)', BMI as 'Body Mass Index (BMI) (kg/mSq)', whostage as 'WHO clinical stage', 
-  CD4  as 'CD4 count or (if child <5 years indicate  CD4%)', dateStartedCTXorDapsone as 'CTX  or Dapsone start month/year' ,
-   isoniazidStartDate1 as 'INH Prophylaxis - Date\n 1', isoniazidStartDate2 as 'INH Prophylaxis - Date\n 2' , isoniazidStartDate3 as 'INH Prophylaxis - Date\n 3' , isoniazidStartDate4 as 'INH Prophylaxis - Date\n 4',isoniazidStartDate5 as 'INH Prophylaxis - Date\n 5', isoniazidStartDate6 as 'INH Prophylaxis - Date\n 6' , 
-   date_started_tbrx as 'TB RX start Month/year and TB reg No.', 
+CD4  as 'CD4 count or (if child <5 years indicate  CD4%)', dateStartedCTXorDapsone as 'CTX  or Dapsone start month/year' ,
+isoniazidStartDate1 as 'INH Prophylaxis - Date\n 1', isoniazidStartDate2 as 'INH Prophylaxis - Date\n 2' , isoniazidStartDate3 as 'INH Prophylaxis - Date\n 3' , isoniazidStartDate4 as 'INH Prophylaxis - Date\n 4',isoniazidStartDate5 as 'INH Prophylaxis - Date\n 5', isoniazidStartDate6 as 'INH Prophylaxis - Date\n 6' , 
+date_started_tbrx as 'TB RX start Month/year and TB reg No.', Pregnancy1 as 'Pregnancy\n1' , Pregnancy2  as 'Pregnancy\n2',Pregnancy3  as 'Pregnancy\n3' , Pregnancy4  as 'Pregnancy\n4' ,
 (case when currently_breastfeeding = 'YES' then '1' else '0' end) as 'Breastfeeding (0=No; 1=Yes; 2=N/A)',
 firstregimen as '1st Line Regimen - Original Regimen', firstsubstitutionregimen as '1st Line Regimen - 1st: Substitution drug code' , secondswitchwithinfirstline as '1st Line Regimen - 2nd: Substitution drug code' , secondlinefirst as '2nd Line Regimen - 2nd Line Regimen switched to',
 firstsubstitutionwithinsecond as '2nd Line Regimen - 1st:  Substitution drug code',
@@ -351,3 +351,179 @@ and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT((
 (select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
 a.person_id = c.pid and a.encounter_id = c.maxdate 
 )tIpregnant on tNewPatientDemographics.pid = tIpregnant.person_id
+left join (
+select pidd , 
+(case when TIMESTAMPDIFF(MONTH, date_activated, PregnancyOneEdd) <= 9 then 'YM' else 'N/A' end) as 'Pregnancy1'  from (
+select distinct(patient_id) as pidd,row_num,  date_activated , name  as 'firstregimen' , PregnancyOneEdd from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , 
+o.date_activated , o.date_created , PregnancyOneEdd
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+left join (
+select  person_id as pid ,
+(case when row_num = 1 then pregnancyOneEdd else 'N/A' end ) as 'PregnancyOneEdd'  from (
+select  @row_num := 0 , row_num, person_id ,obs_datetime as 'obscreateddate' , obs_group_id , obs_group1 ,pregnancyOneEdd   from (
+select @row_num :=IF(@prev_value=person_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , person_id , obs_datetime ,
+date_created ,  @prev_value:=person_id, @prev_drugId:= concept_id , obs_group_id from obs 
+where concept_id = (select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+and voided = 0 and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tPregnancies 
+inner join (
+select @row_nm := 0 , row_nm, person_id as pid ,obs_datetime as 'obsdatetime' , obs_group_id as 'obs_group1' , 
+value_datetime as 'pregnancyOneEdd' from (
+select  @row_nm :=IF(@prev_value=person_id and @prev_drugId = concept_id ,@row_nm+1, 1)  AS row_nm,
+concept_id , voided , person_id , obs_datetime ,
+date_created ,  @prev_value:=person_id, @prev_drugId:= concept_id , obs_group_id , value_datetime from obs 
+where concept_id = (select concept_id from concept_name where name = 'EDD' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+and voided = 0 and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)EDD 
+)tPregnancyEDD on tPregnancies.obs_group_id = tPregnancyEDD.obs_group1 
+)tt where row_num = 1
+)ss on o.patient_id = ss.pid
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b 
+)tfirstlinereg  where date_activated < PregnancyOneEdd and TIMESTAMPDIFF(MONTH, date_activated, PregnancyOneEdd) <= 9 group by pidd
+)tPregrancyOne on tNewPatientDemographics.pid =  tPregrancyOne.pidd
+left join (
+
+select pidd , 
+(case when TIMESTAMPDIFF(MONTH, date_activated, PregnancyTwoEdd) <= 9 then 'YM' else 'N/A' end) as 'Pregnancy2'  from (
+select distinct(patient_id) as pidd,row_num,  date_activated , name  as 'firstregimen' , PregnancyTwoEdd from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , 
+o.date_activated , o.date_created , PregnancyTwoEdd
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+left join (
+select  person_id as pid ,
+(case when row_num = 2 then pregnancyTwoEdd else 'N/A' end ) as 'PregnancyTwoEdd'  from (
+select  @row_num := 0 , row_num, person_id ,obs_datetime as 'obscreateddate' , obs_group_id , obs_group1 ,pregnancyTwoEdd   from (
+select @row_num :=IF(@prev_value=person_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , person_id , obs_datetime ,
+date_created ,  @prev_value:=person_id, @prev_drugId:= concept_id , obs_group_id from obs 
+where concept_id = (select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+and voided = 0 and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tPregnancies 
+inner join (
+select @row_nm := 0 , row_nm, person_id as pid ,obs_datetime as 'obsdatetime' , obs_group_id as 'obs_group1' , 
+value_datetime as 'pregnancyTwoEdd' from (
+select  @row_nm :=IF(@prev_value=person_id and @prev_drugId = concept_id ,@row_nm+1, 1)  AS row_nm,
+concept_id , voided , person_id , obs_datetime ,
+date_created ,  @prev_value:=person_id, @prev_drugId:= concept_id , obs_group_id , value_datetime from obs 
+where concept_id = (select concept_id from concept_name where name = 'EDD' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+and voided = 0 and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)EDD 
+)tPregnancyEDD on tPregnancies.obs_group_id = tPregnancyEDD.obs_group1 
+)tt where row_num = 2
+)ss on o.patient_id = ss.pid
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b 
+)tfirstlinereg  where date_activated < PregnancyTwoEdd and TIMESTAMPDIFF(MONTH, date_activated, PregnancyTwoEdd) <= 9 group by pidd
+)tPregnancyTwo on tNewPatientDemographics.pid =  tPregnancyTwo.pidd
+left join (
+
+select pidd , 
+(case when TIMESTAMPDIFF(MONTH, date_activated, PregnancyThreeEdd) <= 9 then 'YM' else 'N/A' end) as 'Pregnancy3'  from (
+select distinct(patient_id) as pidd,row_num,  date_activated , name  as 'firstregimen' , PregnancyThreeEdd from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , 
+o.date_activated , o.date_created , PregnancyThreeEdd
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+left join (
+select  person_id as pid ,
+(case when row_num = 3 then PregnancyThreeEdd else 'N/A' end ) as 'PregnancyThreeEdd'  from (
+select  @row_num := 0 , row_num, person_id ,obs_datetime as 'obscreateddate' , obs_group_id , obs_group1 ,PregnancyThreeEdd   from (
+select @row_num :=IF(@prev_value=person_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , person_id , obs_datetime ,
+date_created ,  @prev_value:=person_id, @prev_drugId:= concept_id , obs_group_id from obs 
+where concept_id = (select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+and voided = 0 and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tPregnancies 
+inner join (
+select @row_nm := 0 , row_nm, person_id as pid ,obs_datetime as 'obsdatetime' , obs_group_id as 'obs_group1' , 
+value_datetime as 'PregnancyThreeEdd' from (
+select  @row_nm :=IF(@prev_value=person_id and @prev_drugId = concept_id ,@row_nm+1, 1)  AS row_nm,
+concept_id , voided , person_id , obs_datetime ,
+date_created ,  @prev_value:=person_id, @prev_drugId:= concept_id , obs_group_id , value_datetime from obs 
+where concept_id = (select concept_id from concept_name where name = 'EDD' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+and voided = 0 and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)EDD 
+)tPregnancyEDD on tPregnancies.obs_group_id = tPregnancyEDD.obs_group1 
+)tt where row_num = 3
+)ss on o.patient_id = ss.pid
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b 
+)tfirstlinereg  where date_activated < PregnancyThreeEdd and TIMESTAMPDIFF(MONTH, date_activated, PregnancyThreeEdd) <= 9 group by pidd
+)tPregnancyThree on tNewPatientDemographics.pid =  tPregnancyThree.pidd
+left join (
+
+select pidd , 
+(case when TIMESTAMPDIFF(MONTH, date_activated, PregnancyFourEdd) <= 9 then 'YM' else 'N/A' end) as 'Pregnancy4'  from (
+select distinct(patient_id) as pidd,row_num,  date_activated , name  as 'firstregimen' , PregnancyFourEdd from(
+select @row_num :=IF(@prev_value=patient_id and @prev_drugId <> o.concept_id ,@row_num+1, 1)  AS row_num, 
+@prev_value:=patient_id, @prev_drugId:= o.concept_id, o.patient_id, o.concept_id , dr.name ,  o.encounter_id , o.voided , 
+o.date_activated , o.date_created , PregnancyFourEdd
+from orders o 
+left join drug dr on o.concept_id = dr.concept_id
+left join (
+select  person_id as pid ,
+(case when row_num = 4 then PregnancyFourEdd else 'N/A' end ) as 'PregnancyFourEdd'  from (
+select  @row_num := 0 , row_num, person_id ,obs_datetime as 'obscreateddate' , obs_group_id , obs_group1 ,PregnancyFourEdd   from (
+select @row_num :=IF(@prev_value=person_id and @prev_drugId = concept_id ,@row_num+1, 1)  AS row_num,
+concept_id , voided , person_id , obs_datetime ,
+date_created ,  @prev_value:=person_id, @prev_drugId:= concept_id , obs_group_id from obs 
+where concept_id = (select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+and voided = 0 and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)tPregnancies 
+inner join (
+select @row_nm := 0 , row_nm, person_id as pid ,obs_datetime as 'obsdatetime' , obs_group_id as 'obs_group1' , 
+value_datetime as 'PregnancyFourEdd' from (
+select  @row_nm :=IF(@prev_value=person_id and @prev_drugId = concept_id ,@row_nm+1, 1)  AS row_nm,
+concept_id , voided , person_id , obs_datetime ,
+date_created ,  @prev_value:=person_id, @prev_drugId:= concept_id , obs_group_id , value_datetime from obs 
+where concept_id = (select concept_id from concept_name where name = 'EDD' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+and voided = 0 and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+)EDD 
+)tPregnancyEDD on tPregnancies.obs_group_id = tPregnancyEDD.obs_group1 
+)tt where row_num = 4
+)ss on o.patient_id = ss.pid
+where o.voided = 0 and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and
+ concept_name_type = 'FULLY_SPECIFIED' and voided = 0 ) 
+and dr.name in ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
+'1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') 
+and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') 
+order by patient_id, date_activated) b 
+)tfirstlinereg  where date_activated < PregnancyFourEdd and TIMESTAMPDIFF(MONTH, date_activated, PregnancyFourEdd) <= 9 group by pidd
+)tPregnancyFour on tNewPatientDemographics.pid =  tPregnancyFour.pidd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
