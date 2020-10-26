@@ -21,7 +21,8 @@ and o.date_created <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
 )tDateStartedArt inner join
 (
 select * from (
-select person_id as 'pid' , value as 'newpatientid' from person_attribute where person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient'
+select person_id as 'pid' , value as 'newpatientid' from person_attribute where person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type 
+where name = 'TypeofPatient'
 )  and value =(select concept_id  from concept_name where name = 'NewPatient' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and voided = 0
 )tNewPatient
 inner join (

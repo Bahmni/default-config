@@ -27,6 +27,13 @@
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artMonthlyViralLoadReport.sql"
 		}
 	},
+	"htsMonthlyReport": {
+		"name": "HTS Montly Report",
+		"type": "MRSGeneric",
+		"config": {
+			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hts_report.sql"
+		}
+	},
     "indexTestingReport": {
 		"name": "Master Contact Listing Report",
 		"type": "concatenated",
