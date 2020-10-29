@@ -1,0 +1,21 @@
+{
+    "orgUnit": "ImspTQPwCqd",
+    "reports": {
+      "Exposed Infant Report": {
+        "dataValues": [
+          {
+            "categoryOptionCombo": "K1Y6SgEllGt",
+            "dataElement": "OUXxVEWIxuM",
+            "row": 1,
+            "column": 2
+          },
+          {
+            "categoryOptionCombo": "K1Y6SgEllGt",
+            "dataElement": "qvjvq1hK7Lc",
+            "row":1 ,
+            "column": 3
+          }
+        ]
+      }
+    }
+  }
