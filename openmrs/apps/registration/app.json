@@ -141,7 +141,7 @@
 			"showEnterID": false,
 			"dobMandatory": true,
             "autoCompleteFields":["familyName", "givenName"],
-            "defaultVisitType": "OPD",
+            "defaultVisitType": "FIELD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
             "showLastName": true,
