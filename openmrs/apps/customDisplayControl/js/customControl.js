@@ -186,6 +186,10 @@ angular.module('bahmni.common.displaycontrol.custom')
         $scope.goToListView = function () {
             $window.open('/bahmni/appointments/#/home/manage/appointments/list');
         };
+        $scope.openJitsiMeet = function (appointment) {
+            var jitsiMeetingUrl = 'https://meet.jit.si/' + appointment.uuid;
+            $window.open(jitsiMeetingUrl);
+        }; 
     };
     return {
         restrict: 'E',
