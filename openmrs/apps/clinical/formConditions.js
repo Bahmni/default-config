@@ -644,11 +644,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var ontbtreatment = formFieldValues["On TB Treatment"];
         if(ontbtreatment == true){
             return{
-                show: ["TB Unit Number","Date Started TB Treatment","TB Clinic Enrolled"]
+                show: ["TB Unit Number","Date Started TB Treatment","TB Clinic Enrolled","Date Started TB RX"]
             }
         }else {
             return{
-                hide: ["TB Unit Number","Date Started TB Treatment","TB Clinic Enrolled"]
+                hide: ["TB Unit Number","Date Started TB Treatment","TB Clinic Enrolled","Date Started TB RX"]
             }
         }    
     },
@@ -1212,5 +1212,44 @@ Bahmni.ConceptSet.FormConditions.rules = {
 
             }
         }   
-    }
+    },
+    "Tested as Couple" : function (formName , formFieldValues){
+        var testedAsCouple = formFieldValues["Tested as Couple"];
+        if(testedAsCouple == true) {
+            return{
+                show:["Joint Couple Pre-testing Counselling"]
+            }
+        }else {
+            return{
+                hide:["Joint Couple Pre-testing Counselling"]
+                
+            }
+        }    
+    }, 
+    "TB Diagnosed?" : function (formName , formFieldValues){
+        var tbDiagnosized = formFieldValues["TB Diagnosed?"];
+        if(tbDiagnosized == true) {
+            return{
+                show:["Tuberculosis, Type"]
+            }
+        }else {
+            return{
+                hide:["Tuberculosis, Type"]
+                
+            }
+        }    
+    },
+    "INH" : function (formName , formFieldValues){
+        var inh = formFieldValues["INH"];
+        if(inh == true) {
+            return{
+                show:["Number of Pill Dispensed(INH)"]
+            }
+        }else {
+            return{
+                hide:["Number of Pill Dispensed(INH)"]
+                
+            }
+        }    
+    },
  };
