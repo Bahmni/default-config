@@ -52,13 +52,6 @@
 			"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/currentOnARTThisMonth.sql"
 					  }
-		 },
-		 {
-			"name": "Contacts Tested Report",
-			"type": "MRSGeneric",
-			"config": {
-			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/contactsTested.sql"
-					  }
 		 }
 	]
 }		
