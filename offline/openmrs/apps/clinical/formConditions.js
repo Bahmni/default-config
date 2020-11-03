@@ -1161,4 +1161,17 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }   
     },
+    "Tested as Couple" : function (formName , formFieldValues){
+        var testedAsCouple = formFieldValues["Tested as Couple"];
+        if(testedAsCouple == true) {
+            return{
+                show:["Joint Couple Pre-testing Counselling"]
+            }
+        }else {
+            return{
+                hide:["Joint Couple Pre-testing Counselling"]
+                
+            }
+        }    
+    }, 
  };
