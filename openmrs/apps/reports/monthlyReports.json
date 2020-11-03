@@ -28,7 +28,7 @@
 		}
 	},
 	"htsMonthlyReport": {
-		"name": "HTS Montly Report",
+		"name": "HTS Monthly Report",
 		"type": "MRSGeneric",
 		"config": {
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hts_report.sql"
