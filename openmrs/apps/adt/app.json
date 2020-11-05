@@ -34,54 +34,102 @@
                 "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
                 "conceptName": "Adt Notes",
                 "sections": {
-                "vitals":{
-                    "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
-                    "type": "vitals",
-                    "displayOrder": 2,
-                    "isObservation": true,
-                    "dashboardConfig": {
-                        "conceptNames": ["Vitals"],
-                        "numberOfVisits": 2
+                    "navigationLinksControl":{
+                        "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                        "type": "navigationLinksControl",
+                        "displayOrder": 0,
+                        "showLinks" : ["home", "visit", "registration", "inpatient", "enrolment", "visitAttribute", "trends"]
+                    },
+                    "patientInformation":{
+                        "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                        "type": "patientInformation",
+                        "displayOrder": 1,
+                        "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                        "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
+                    },
+                    "diagnosis":{
+                        "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                        "type": "diagnosis",
+                        "numberOfVisits": 1,
+                        "showDetailsButton":true,
+                        "displayOrder": 2
+                    },
+                    "vitals":{
+                        "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
+                        "type": "vitals",
+                        "displayOrder": 3,
+                        "isObservation": true,
+                        "dashboardConfig": {
+                            "conceptNames": ["Vitals"],
+                            "numberOfVisits": 2
+                        }
+                    },
+                    "HistoryAndExamination":{  
+                        "type":"historyAndExamination",
+                        "isObservation":true,
+                        "dashboardConfig":{  
+                            "showGroupDateTime":false,
+                            "conceptNames":[  
+                                "Chief Complaint Data",
+                                "Examination Notes",
+                                "Smoking History",
+                                "Clief COmplaint Notes",
+                                "Blood Pressure"
+                            ]
+                        },
+                        "displayOrder":4,
+                        "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
+                    },
+                    "conditions": {
+                        "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
+                        "type": "conditionsList",
+                        "displayOrder": 5
+                    },
+                    "admissionDetails":{
+                        "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
+                        "type":"admissionDetails",
+                        "displayOrder": 6
+                    },
+                    "disposition":{
+                        "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
+                        "type": "disposition",
+                        "numberOfVisits": 1,
+                        "displayOrder": 7
+                    },
+                    "labResults":{  
+                        "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
+                        "type":"labOrders",
+                        "displayOrder":8,
+                        "dashboardConfig":{  
+                            "numberOfVisits":6,
+                            "showChart":false,
+                            "showTable":true,
+                            "showNormalLabResults": true,
+                            "showCommentsExpanded": true,
+                            "showAccessionNotes": true,
+                            "showDetailsButton":false
+                        },
+                        "expandedViewConfig":{  
+                            "numberOfVisits":10
+                        }
+                    },
+                    "radiology":{  
+                        "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
+                        "type":"radiology",
+                        "showDetailsButton":true,
+                        "displayOrder":9
+                    },
+                    "pacs":{
+                        "orderType":"Radiology Order",
+                        "type":"pacsOrders",
+                        "translationKey":"DASHBOARD_TITLE_PACS_KEY",
+                        "displayOrder":9,
+                        "dashboardConfig":{
+                            "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
+                            "numberOfVisits":4
+                        }
                     }
-                },
-                "patientInformation":{
-                    "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                    "type": "patientInformation",
-                    "displayOrder": 1,
-                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                    "addressFields": ["address1", "address2", "cityVillage", "countyDistrict"]
-                },
-                "disposition":{
-                    "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
-                    "type": "disposition",
-                    "numberOfVisits": 1,
-                    "displayOrder": 2
-                },
-                "diagnosis":{
-                    "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                    "type": "diagnosis",
-                    "numberOfVisits": 1,
-                    "showDetailsButton":true,
-                    "displayOrder": 2
-                },
-                
-                "admissionDetails":{
-                    "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
-                    "type":"admissionDetails",
-                    "displayOrder": 4
-                },
-                "navigationLinksControl":{
-                    "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                    "type": "navigationLinksControl",
-                    "displayOrder": 0,
-                    "showLinks" : ["home", "visit", "registration", "inpatient", "enrolment", "visitAttribute", "trends"]
-                },
-                "conditions": {
-                    "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
-                    "type": "conditionsList",
-                    "displayOrder": 6
                 }
-            }}
-
+            }
         }
 }
