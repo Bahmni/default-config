@@ -325,6 +325,45 @@
                         ]
                     }
                 }
+            },
+            "allObservationTemplate":{
+                "title":"All Observation",
+                "templateName":"All Observation Templates",
+                "type":"diseaseTemplate",
+                "displayOrder":18,
+                "dashboardConfig":{
+                    "showOnly":[
+
+                    ]
+                },
+                "expandedViewConfig":{
+                    "showDetailsButton":true,
+                    "pivotTable":{
+                        "numberOfVisits":"15",
+                        "groupBy":"encounters",
+                        "obsConcepts":[
+                            "Weight",
+                            "Height",
+                            "Systolic",
+                            "Diastolic",
+                            "Diabetes, Foot Exam",
+                            "Diabetes, Eye Exam"
+                        ],
+                        "drugConcepts":[
+                            "Ipratropium Pressurised",
+                            "Garbhpal Rasa"
+                        ],
+                        "labConcepts":[
+                            "RBS",
+                            "FBS",
+                            "PP2BS",
+                            "Hb1AC",
+                            "Creatinine",
+                            "Albumin",
+                            "Polymorph"
+                        ]
+                    }
+                }
             }
         }
     },
