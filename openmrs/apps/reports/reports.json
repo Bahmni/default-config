@@ -45,5 +45,37 @@
 				}
 			]
 		}
+    },
+    "HIV Exposed Infant Monthly Report": {
+		"name": "HIV Exposed Infant Monthly Report",
+		"DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+		"reports": [
+				{
+					"name": "HIV Exposed Infant Monthly Report",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/HIV_Exposed_Infant_Monthly_Report.sql"
+					}
+				}
+			]
+		}
+    },
+    "ART Monthly Report Viral Load": {
+        "name": "ART Monthly Report Viral Load",
+        "DHISProgram": true,
+		"type": "concatenated",
+		"config": {
+		"reports": [
+				{
+					"name": "ART Monthly Report Viral Load",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ART_Monthly_Report_Viral_Load.sql"
+					}
+				}
+			]
+		}
 	}
 }
