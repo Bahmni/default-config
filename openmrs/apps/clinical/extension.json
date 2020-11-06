@@ -78,7 +78,7 @@
     },
     "label": "Active",
     "order": 3,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:clinical2"
   },
   "bahmniClinicalPatientsASearchActivePatientsByProvider": {
     "id": "bahmni.clinical.patients.search.activePatientsByProvider",
@@ -129,7 +129,7 @@
     },
     "label": "All",
     "order": 6,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:clinical2"
   },
   "bahmniClinicalConceptSetGroupObservationsHistory": {
     "id": "bahmni.clinical.conceptSetGroup.observations.history",
