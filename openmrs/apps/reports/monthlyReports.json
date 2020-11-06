@@ -21,12 +21,21 @@
 		}
 	},
 	"artMonthlyViralLoadReport": {
-		"name": "ART Monthly Report - Viral Load",
-		"type": "MRSGeneric",
+		"name": "ART Monthly Report Viral Load",
+		"type": "concatenated",
 		"config": {
-			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/artMonthlyViralLoadReport.sql"
+		"reports": [
+				{
+					"name": "ART Monthly Report Viral Load",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ART_Monthly_Report_Viral_Load.sql"
+					}
+				}
+			]
 		}
 	},
+
 	"htsMonthlyReport": {
 		"name": "HTS Monthly Report",
 		"type": "MRSGeneric",
@@ -130,11 +139,19 @@
 			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/highViralloadReport.sql"
 		}
 	},
-    "hivExposedInfants": {
+	"hivExposedInfants": {
 		"name": "HIV Exposed Infant Monthly Report",
-		"type": "MRSGeneric",
+		"type": "concatenated",
 		"config": {
-			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfants.sql"
+		"reports": [
+				{
+					"name": "HIV Exposed Infant Monthly Report",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/HIV_Exposed_Infant_Monthly_Report.sql"
+					}
+				}
+			]
 		}
 	},
 	"PMTCTAllreports": {

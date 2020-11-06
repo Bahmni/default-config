@@ -4,8 +4,8 @@
       "Dhis Sample Report": {
         "dataValues": [
           {
-            "categoryOptionCombo": "K1Y6SgEllGt",
-            "dataElement": "OUXxVEWIxuM",
+            "categoryOptionCombo": "OUXxVEWIxuM",
+            "dataElement": "K1Y6SgEllGt",
             "row": 1,
             "column": 1
           }
