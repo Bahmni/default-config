@@ -85,7 +85,7 @@
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
-      "searchHandler": "emrapi.sqlSearch.activePatientsByProvider",
+      "searchHandler": "emrapi.sqlSearch.activePatientsByLocation",
       "translationKey": "MODULE_LABEL_MY_PATIENTS_KEY",
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
@@ -104,7 +104,7 @@
     },
     "label": "OPD-1",
     "order": 4,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:clinical2"
   },
   "activePatientsByLocation": {
     "id": "bahmni.clinical.patients.search.activePatientsByLocation",
@@ -117,7 +117,7 @@
     },
     "label": "Active",
     "order": 5,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:clinical2"
   },
   "bahmniClinicalPatientsSearchAllPatients": {
     "id": "bahmni.clinical.patients.search.allPatients",
