@@ -77,5 +77,21 @@
 				}
 			]
 		}
+	},
+	"PMTCT ANC visits Syphilis and HBV Testing": {
+		"name": "PMTCT ANC visits Syphilis and HBV Testing",
+		"type": "concatenated",
+		"DHISProgram": true,
+		"config": {
+		"reports": [
+				{
+					"name": "PMTCT ANC visits Syphilis and HBV Testing",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_ANC_visits_Syphilis_and_HBV_Testing.sql"
+					}
+				}
+			]
+		}
 	}
 }
