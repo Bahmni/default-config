@@ -274,6 +274,9 @@
             "AFB Microscopic":{
                 "isTabular": true
             },
+            "Newly Tested HIV Results":{
+                "required":true
+            },
             "FNA":{
                 "isTabular": true
             },

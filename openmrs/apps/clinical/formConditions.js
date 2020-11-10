@@ -1252,4 +1252,16 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
+    "TB Screening - HIV Status" : function (formName , formFieldValues){
+        var hivstatus = formFieldValues["TB Screening - HIV Status"];
+        if(hivstatus === "Newly Tested"){
+            return {
+               show: ["Newly Tested HIV Results"]
+            }      
+        } else {
+            return{
+               hide: ["Newly Tested HIV Results"]
+            }
+        }   
+    },
  };
