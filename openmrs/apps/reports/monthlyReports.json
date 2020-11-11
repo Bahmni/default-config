@@ -155,7 +155,7 @@
 		}
 	},
 	"PMTCTAllreports": {
-		"name": "PMTCT ANC visits Syphilis and HBV Testing",
+		"name": "PMTCT Monthly Report",
 		"type": "concatenated",
 		"config": {
 		"reports": [
@@ -167,10 +167,10 @@
 					}
 				},
 				{
-					"name": "HIV Counseling and Testing at the ANC Clinic",
+					"name": "PMTCT HIV Counseling and Testing at the ANC Clinic",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtcHiv.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_HIV_Counseling_and_Testing_at_the_ANC_Clinic.sql"
 					}
 				},
 				{

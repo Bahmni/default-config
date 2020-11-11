@@ -93,5 +93,21 @@
 				}
 			]
 		}
+	},
+	"PMTCT HIV Counseling and Testing at the ANC Clinic": {
+		"name": "PMTCT HIV Counseling and Testing at the ANC Clinic",
+		"type": "concatenated",
+		"DHISProgram": true,
+		"config": {
+		"reports": [
+				{
+					"name": "PMTCT HIV Counseling and Testing at the ANC Clinic",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_HIV_Counseling_and_Testing_at_the_ANC_Clinic.sql"
+					}
+				}
+			]
+		}
 	}
 }
