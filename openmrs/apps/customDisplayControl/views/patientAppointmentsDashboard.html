@@ -28,7 +28,7 @@
                         {{detail}}
                     </td>
                     <td>
-                        <button ng-click="openJitsiMeet($index)">
+                        <button ng-if="appointment.DASHBOARD_APPOINTMENTS_STATUS_KEY != 'Cancelled'" ng-click="openJitsiMeet($index)">
                             Join Teleconsultation
                          </button>
                     </td>
