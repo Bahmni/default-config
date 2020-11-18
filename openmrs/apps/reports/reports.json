@@ -94,6 +94,22 @@
 			]
 		}
 	},
+	"PMTCT Counseling and Testing Maternity": {
+		"name": "PMTCT Counseling and Testing Maternity",
+		"type": "concatenated",
+		"DHISProgram": true,
+		"config": {
+		"reports": [
+				{
+					"name": "PMTCT Counseling and Testing Maternity",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_Counseling_and_Testing_Maternity.sql"
+					}
+				}
+			]
+		}
+	},
 	"HTS Monthly Report": {
 		"name": "HTS Monthly Report",
 		"type": "concatenated",
@@ -110,17 +126,17 @@
 			]
 		}
 	},
-	"PMTCT HIV Counseling and Testing In ANC Clinic": {
-		"name": "PMTCT HIV Counseling and Testing In ANC Clinic",
+	"PMTCT Counseling and Testing ANC Clinic": {
+		"name": "PMTCT Counseling and Testing ANC Clinic",
 		"type": "concatenated",
 		"DHISProgram": true,
 		"config": {
 		"reports": [
 				{
-					"name": "PMTCT HIV Counseling and Testing In ANC Clinic",
+					"name": "PMTCT Counseling and Testing ANC Clinic",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_HIV_Counseling_and_Testing_In_ANC_Clinic.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_Counseling_and_Testing_ANC_Clinic.sql"
 					}
 				}
 			]

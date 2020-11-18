@@ -181,10 +181,17 @@
 					}
 				},
 				{
-					"name": "Number of PMTCT clients who received ART during the reporting period by regimen",
+					"name": "PMTCT Counseling and Testing Maternity",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtctHIVcounselling.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_Counseling_and_Testing_Maternity.sql"
+					}
+				},
+				{
+					"name": "PMTCT Counseling and Testing ANC Clinic",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_Counseling_and_Testing_ANC_Clinic.sql"
 					}
 				}
 			]
@@ -236,21 +243,6 @@
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/dhisSampleRepportTest.sql"
-					}
-				}
-			]
-		}
-	},
-	"pmtctInAncClinic": {
-		"name": "PMTCT HIV Counseling and Testing In ANC Clinic",
-		"type": "concatenated",
-		"config": {
-		"reports": [
-				{
-					"name": "PMTCT HIV Counseling and Testing In ANC Clinic",
-					"type": "MRSGeneric",
-					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_HIV_Counseling_and_Testing_In_ANC_Clinic.sql"
 					}
 				}
 			]
