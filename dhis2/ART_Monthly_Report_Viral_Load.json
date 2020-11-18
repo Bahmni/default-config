@@ -1,7 +1,7 @@
 {
     "orgUnit": "OV9zi20DDXP",
     "reports": {
-        "Dhis Sample Report": {
+        "ART Monthly Report Viral Load": {
             "dataValues": [
                 {
                     "categoryOptionCombo": "BLgIprli0vS",
@@ -866,7 +866,7 @@
                     "dataElement": "pLrESr7Oa4o",
                     "row": 12,
                     "column": 20
-                },
+                }
                 
             ]
         }
