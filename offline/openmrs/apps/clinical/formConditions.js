@@ -1174,4 +1174,17 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     }, 
+    "Final Status" : function (formName , formFieldValues){
+        var infantFinalStatus = formFieldValues["Final Status"];
+        if(infantFinalStatus === "Final Status(Transferred)") {
+            return{
+                show:["Facility Transferred to"]
+            }
+        }else {
+            return{
+                hide:["Facility Transferred to"]
+                
+            }
+        }    
+    }
  };
