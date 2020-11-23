@@ -174,7 +174,7 @@
 					}
 				},
 				{
-					"name": "HIV Counseling and Testing at Maternity",
+					"name": "ANC Partner/Index contact HIV Counseling and testing",
 					"type": "MRSGeneric",
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtcANCpartnerindex.sql"
