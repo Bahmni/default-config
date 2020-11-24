@@ -167,17 +167,17 @@
 					}
 				},
 				{
-					"name": "ANC Partner/Index contact HIV Counseling and testing",
+					"name": "PMTCT Clients who received ART",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtctArtandTb.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_Clients_who_received_ART.sql"
 					}
 				},
 				{
-					"name": "ANC Partner/Index contact HIV Counseling and testing",
+					"name": "ANC Partner Index Contact Counselling",
 					"type": "MRSGeneric",
 					"config": {
-						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pmtcANCpartnerindex.sql"
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ANC_Partner_Index_Contact_Counselling.sql"
 					}
 				},
 				{

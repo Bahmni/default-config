@@ -141,5 +141,37 @@
 				}
 			]
 		}
+	},
+	"PMTCT Clients who received ART": {
+		"name": "PMTCT Clients who received ART",
+		"type": "concatenated",
+		"DHISProgram": true,
+		"config": {
+		"reports": [
+				{
+					"name": "PMTCT Clients who received ART",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/PMTCT_Clients_who_received_ART.sql"
+					}
+				}
+			]
+		}
+	},
+	"ANC Partner Index Contact Counselling": {
+		"name": "ANC Partner Index Contact Counselling",
+		"type": "concatenated",
+		"DHISProgram": true,
+		"config": {
+		"reports": [
+				{
+					"name": "ANC Partner Index Contact Counselling",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ANC_Partner_Index_Contact_Counselling.sql"
+					}
+				}
+			]
+		}
 	}
 }
