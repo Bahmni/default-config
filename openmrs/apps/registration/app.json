@@ -35,12 +35,13 @@
                         "RationCard",
                         "familyIncome",
                         "debt",
-                        "cluster"
+                        "cluster",
+                        "primaryContact",
+                        "email"
                     ]
                 },
                 "hidden": {
                     "attributes": [
-                        "primaryContact"
                     ]
                 },
                 "defaults":  {
@@ -103,6 +104,7 @@
                 }
             },
             "fieldValidation" : {
+                "email" : {"pattern" : "^(?=.{1,40}$)(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,4})$", "errorMessage" : "Should be a valid email address"},
                 "primaryContact" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be 12 characters starting with 91 (country code)"},
                 "landHolding" : {"pattern" : "[0-9]{0,3}", "errorMessage" : "Should be between 1 to 999 acres"},
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
