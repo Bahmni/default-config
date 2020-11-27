@@ -36,12 +36,12 @@
                         "familyIncome",
                         "debt",
                         "cluster",
-                        "primaryContact",
                         "email"
                     ]
                 },
                 "hidden": {
                     "attributes": [
+                        "primaryContact"
                     ]
                 },
                 "defaults":  {

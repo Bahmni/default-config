@@ -138,7 +138,7 @@
     "url": "../appointments",
     "icon": "fa fa-calendar",
     "order": 14,
-    "requiredPrivilege": "app:admin"
+    "requiredPrivilege": "app:appointments"
   }
 
 }
