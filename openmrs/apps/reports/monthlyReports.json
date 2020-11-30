@@ -229,6 +229,27 @@
 					"config": {
 						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfantRegisterReportTabSecond.sql"
 					}
+				},
+				{
+					"name": "Follow up Visits - Page 1",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfantRegisterTabThird.sql"
+					}
+				},
+				{
+					"name": "Follow Up Visits - Page 2",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfantRegisterForthTab.sql"
+					}
+				},
+				{
+					"name": "Confirmatory HIV Rapid Test",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/hivExposedInfantRegisterTabFive.sql"
+					}
 				}
 			]
 		}
