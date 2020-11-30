@@ -50,6 +50,9 @@
     "colorsForListView": {
       "Missed": "#fceab6",
       "Cancelled": "#fcb6b6"
+    },
+    "recurrence": {
+      "defaultNumberOfOccurrences": 10
     }
   }
 }

@@ -401,6 +401,34 @@
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
                     "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
                 }
+            },
+	    "Forms-2.0": {
+                "type": "formsV2",
+                "displayOrder": 23,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 1
+                },
+                "formGroup": [ ],
+                "translationKey": "DASHBOARD_TITLE_FORMS2_DISPLAY_CONTROL_KEY"
+            },
+            "Form 2 Obs To Obs": {
+                "displayType": "Half-Page",
+                "translationKey": "DASHBOARD_TITLE_FORMS2_OBS_TO_OBS_DISPLAY_CONTROL_KEY",
+                "type": "obsToObsFlowSheet",
+                "dashboardConfig": {
+                    "numberOfVisits": 1,
+                    "formNames": [],
+                    "groupByConcept": "",
+                    "isEditable": true,
+                    "conceptNames": []
+                },
+                "expandedViewConfig": {
+                    "formNames": [],
+                    "isEditable": true,
+                    "groupByConcept": "",
+                    "conceptNames": []
+                }
             }
         }
     },
