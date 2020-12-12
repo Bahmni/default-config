@@ -19,7 +19,18 @@
                     "countyDistrict"
                 ]
             },
-            "diagnosis":{  
+            "validationForms-2.0": {
+                "type": "formsV2",
+                "displayOrder": 2,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 5
+                },
+                "formGroup": [
+                ],
+                "translationKey": "Edit Forms (2.0)"
+            },
+            "diagnosis":{
                 "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
                 "type":"diagnosis",
                 "showCertainty":true,
