@@ -26,9 +26,8 @@
                     "title": null,
                     "maximumNoOfVisits": 5
                 },
-                "formGroup": [
-                ],
-                "translationKey": "Edit Forms (2.0)"
+                "formGroup": [ ],
+                "translationKey": "Display and Edit Forms (2.0)"
             },
             "diagnosis":{
                 "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
