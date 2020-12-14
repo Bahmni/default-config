@@ -19,7 +19,7 @@
                     "countyDistrict"
                 ]
             },
-            "validationForms-2.0": {
+            "Forms2Validations": {
                 "type": "formsV2",
                 "displayOrder": 2,
                 "dashboardConfig": {
