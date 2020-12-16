@@ -6,9 +6,9 @@ placetestedhiv  as 'Previous HIV test result (recent/ within 6 months)\nPlace Te
 (case when finalresultaftertestinginmaternity = 'Positive' then durationinartResults else 'N/A' end)  as 'Duration on ART' ,
  infantriskstatusResults as "Infant's Risk Status" , 
 (case when finalresultaftertestinginmaternity = 'Positive' then concat("1  : ", "  ", artRegimenDuringPregnancyResults) when finalresultaftertestinginmaternity = 'Negative' then 0 else 'N/A' end) as 'ART: Newly Started in Labour:\n(0=No 1= yes 2=N/A):\nIf yes, indicate the regimen in the lower cell' ,
-(case when infantpmtctarvsresults = 'NVP' then 1 when  infantpmtctarvsresults = 'AZT+NVP' then 2 else 'N/A' end) as 'Infant ARV Prophylaxis 1=NVP , 2=AZT+NVP:\nARV Code',
-(case when infantpmtctarvsresults = 'NVP' then nvpDate when  infantpmtctarvsresults = 'AZT+NVP' then aztnvpDate else 'N/A' end) as 'Infant ARV Prophylaxis 1=NVP , 2=AZT+NVP:\nDate Given',
-(case when infantpmtctarvsresults = 'NVP' then 1 when  infantpmtctarvsresults = 'AZT+NVP' then 2 else 'N/A' end) as 'ARV Baby Discharged with :\n1=NVP ,  2=AZT+NVP',
+(case when infantpmtctarvsresults = 'Daily NVP' then 1 when  infantpmtctarvsresults = 'AZT+NVP' then 2 else 'N/A' end) as 'Infant ARV Prophylaxis 1=NVP , 2=AZT+NVP:\nARV Code',
+(case when infantpmtctarvsresults = 'Daily NVP' then nvpDate when  infantpmtctarvsresults = 'AZT+NVP' then aztnvpDate else 'N/A' end) as 'Infant ARV Prophylaxis 1=NVP , 2=AZT+NVP:\nDate Given',
+(case when infantpmtctarvsresults = 'Daily NVP' then 1 when  infantpmtctarvsresults = 'AZT+NVP' then 2 else 'N/A' end) as 'ARV Baby Discharged with :\n1=NVP ,  2=AZT+NVP',
 (case when infantdeedingResults = 'EBF' then 1 when  infantdeedingResults = 'RF' then 2 when  infantdeedingResults = 'Mixed Feeding(> 6 Months)' then 3 else 'N/A' end) as 'Infant Feeding practice:\n 1=EBF 2=RF 3=MF',
 heinumber as 'Exposed Infant Number'
 from (

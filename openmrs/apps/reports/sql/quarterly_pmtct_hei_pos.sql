@@ -18,19 +18,21 @@ FROM  (
          
 UNION ALL 
 
-SELECT DISTINCT NULL AS 'Serial \#', 
-		DATE_FORMAT(date_delivered.value_datetime, "%d/%m/%Y") AS 'Date result was delivered to the facility ', 
-        eid_number.value_numeric AS 'EID Number', 
+select @a:=@a+1 as Serial, Dateresult_was_delivered_to_the_facility, EID_Number , Sex , Age_at_enrolment , 0_2_months_of_age, 2_12_months_of_age,Date_EID_sample_collecetd,
+Date_ART_initiated,Unique_ART,  Reason_if_HIV_infected_infant_not_initiated_on_ART   from (
+SELECT (SELECT @a:= 0), 
+		DATE_FORMAT(date_delivered.value_datetime, "%d/%m/%Y") AS 'Dateresult_was_delivered_to_the_facility', 
+        eid_number.value_numeric AS 'EID_Number', 
         p.gender AS 'Sex', 
-        NULL AS 'Age at enrolment ' ,
+        NULL AS 'Age_at_enrolment' ,
         IF(eid_age.value_numeric IS NOT NULL, IF(eid_age.value_numeric <=2, 1, ''),
-			IF(date_delivered.value_datetime IS NOT NULL AND TIMESTAMPDIFF( MONTH, p.birthdate, date_delivered.value_datetime) <=2 , 1 , '')) AS '0 - 2 months of age',
+			IF(date_delivered.value_datetime IS NOT NULL AND TIMESTAMPDIFF( MONTH, p.birthdate, date_delivered.value_datetime) <=2 , 1 , '')) AS '0_2_months_of_age',
         IF(eid_age.value_numeric IS NOT NULL, IF(eid_age.value_numeric BETWEEN 3 AND 12 , 1, ''),
-			IF(date_delivered.value_datetime IS NOT NULL AND TIMESTAMPDIFF( MONTH, p.birthdate, date_delivered.value_datetime)  BETWEEN 3 AND 12 , 1 , '')) AS ' 2-12 months of age',
-        DATE_FORMAT(date_sample_collected.value_datetime, "%d/%m/%Y") AS 'Date EID sample collecetd',
-        DATE_FORMAT(date_art_initiated.value_datetime, "%d/%m/%Y") AS 'Date ART initiated (DD/MM/YYY)',
-        pid.identifier AS 'Unique ART \#',
-        reason.value_text AS 'Reason if HIV infected infant not initiated on ART'
+			IF(date_delivered.value_datetime IS NOT NULL AND TIMESTAMPDIFF( MONTH, p.birthdate, date_delivered.value_datetime)  BETWEEN 3 AND 12 , 1 , '')) AS ' 2_12_months_of_age',
+        DATE_FORMAT(date_sample_collected.value_datetime, "%d/%m/%Y") AS 'Date_EID_sample_collecetd',
+        DATE_FORMAT(date_art_initiated.value_datetime, "%d/%m/%Y") AS 'Date_ART_initiated',
+        pid.identifier AS 'Unique_ART',
+        reason.value_text AS 'Reason_if_HIV_infected_infant_not_initiated_on_ART'
 FROM  
 	patient pt
     INNER JOIN
@@ -72,3 +74,4 @@ FROM
         AND reason.concept_id = (SELECT cv.concept_id FROM concept_view cv where cv.concept_full_name= 'HEI Treatment,Reason if HIV infected infant not initiated on ART')
         AND reason.voided = 0
         AND date_art_initiated.value_datetime IS NULL
+)p
