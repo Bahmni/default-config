@@ -123,6 +123,7 @@
                     "placeholder": "रुग्णाचे नाव",
                     "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
                 }
-            }
+            },
+            "showEnterID": false
         }
 }
