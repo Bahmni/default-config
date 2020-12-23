@@ -124,6 +124,7 @@
                     "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
                 }
             },
-            "showEnterID": false
+            "showEnterID": false,
+            "afterVisitSaveForwardUrl" : "../clinical/#/default/patient/{{patientUuid}}/dashboard/concept-set-group/observations"
         }
 }
