@@ -117,7 +117,8 @@
                     "label": "Email/Mobile No.",
                     "placeholder": "Enter email/mobile",
                     "fields": ["email", "mobile"]
-                }
+                },
+                "searchByPatientIdentifier": false
             },
             "showEnterID": false,
             "afterVisitSaveForwardUrl" : "../clinical/#/default/patient/{{patientUuid}}/dashboard/concept-set-group/observations"
