@@ -44,13 +44,7 @@
                     "numberOfVisits": 2
                 }
             },
-            "disposition":{  
-                "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
-                "showDetailsButton":true,
-                "type":"disposition",
-                "numberOfVisits":1,
-                "displayOrder":7
-            },
+          
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
@@ -143,31 +137,6 @@
                 "dashboardConfig":{  
                     "conceptNames":[  
                        "CD4 Details"             
-                    ],
-                    "showDetailsButton":true,
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "CD4 Details"
-                    ],
-                    "numberOfVisits":24,
-                    "scope":"latest",
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "Contacts":{  
-                "translationKey":"DASHBOARD_TITLE_CONTACTS_INFO",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":3,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                       "Number of Contacts Elicited(Brought)",
-                       "Number of contacts tested"             
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
@@ -302,11 +271,6 @@
                     "maximumNoOfVisits":8,
                     "groupByVisits":true
                 }
-            },
-            "conditions": {
-                "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
-                "type": "conditionsList",
-                "displayOrder": 20
             },
             "formsDisplay": {
                 "type": "forms",
