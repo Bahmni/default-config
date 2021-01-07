@@ -11,28 +11,7 @@
     "order": 1,
     "requiredPrivilege": "app:clinical:observationTab"
   },
-  "diagnosis": {
-    "id": "bahmni.clinical.consultation.diagnosis",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Diagnosis",
-    "translationKey":"DIAGNOSIS_BOARD_LABEL_KEY",
-    "url": "diagnosis",
-    "icon": "fa-user-md",
-    "order": 2,
-    "requiredPrivilege": "app:clinical:diagnosisTab"
-  },
-  "disposition": {
-    "id": "bahmni.clinical.consultation.disposition",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Disposition",
-    "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
-    "url": "disposition",
-    "icon": "fa-user-md",
-    "order": 3,
-    "requiredPrivilege": "app:clinical:dispositionTab"
-  },
+  
   "consultationSummary": {
     "id": "bahmni.clinical.consultation.summary",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
