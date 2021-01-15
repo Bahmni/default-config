@@ -28,7 +28,7 @@
                         {{detail}}
                     </td>
                     <td>
-                        <button style="background: #669998; color: white;" ng-if="appointment.DASHBOARD_APPOINTMENTS_STATUS_KEY == 'Scheduled'" ng-click="openJitsiMeet($index)">
+                        <button style="background: #669998; color: white;" ng-if="appointment.DASHBOARD_APPOINTMENTS_STATUS_KEY == 'Scheduled' && appointment.DASHBOARD_APPOINTMENTS_TELECONSULTATION == true" ng-click="openJitsiMeet($index)">
                             Join Teleconsultation
                          </button>
                     </td>
