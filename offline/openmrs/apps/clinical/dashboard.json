@@ -33,48 +33,9 @@
                     "visitAttribute"
                 ]
             },
-	          "tuberculosis": {
-                "title": "Tuberculosis Follow Up",
-                "type": "tuberculosis",
-                "isObservation": true,
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "Tuberculosis Followup Template"
-                    ],
-                    "numberOfVisits": 2
-                }
-            },
-            "disposition":{  
-                "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
-                "showDetailsButton":true,
-                "type":"disposition",
-                "numberOfVisits":1,
-                "displayOrder":7
-            },
-            "treatments":{  
-                "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
-                "type":"treatment",
-                "displayOrder":4,
-                "dashboardConfig":{  
-                    "showFlowSheet":true,
-                    "showListView":true,
-                    "showRoute":true,
-                    "showDrugForm":true,
-                    "numberOfVisits":5,
-                    "showOtherActive":true,
-                    "showDetailsButton":true
-                },
-                "expandedViewConfig":{  
-                    "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
-                    "showFlowSheet":true,
-                    "showListView":true,
-                    "showRoute":true,
-                    "showDrugForm":true,
-                    "numberOfVisits":10,
-                    "showOtherActive":true,
-                    "showDetailsButton":true
-                }
-            },
+	    
+            
+            
             "nutritionalValues":{  
                 "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
                 "type":"vitals",
@@ -196,29 +157,6 @@
                     "title":null,
                     "maximumNoOfVisits":8,
                     "groupByVisits":true
-                }
-            },
-            "conditions": {
-                "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
-                "type": "conditionsList",
-                "displayOrder": 20
-            },
-            "formsDisplay": {
-                "type": "forms",
-                "displayOrder": 21,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "formGroup": [ ],
-                "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
-            },
-            "patientAppointments": {
-                "type": "custom",
-                "displayOrder": 22,
-                "config": {
-                    "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
-                    "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
                 }
             }
         }
