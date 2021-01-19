@@ -764,18 +764,18 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var sexualpartner = formFieldValues["Sexual Partner?"];
         if(sexualpartner ==  true) {
             return{
-                show: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV"],
-                 hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age","Specify other Family Member Relationship"]
+                show: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner, Phone Number","Sexual Partner - HIV Status","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Was Sexual Partner Contacted?"],
+                 hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age","Specify other Family Member Relationship","Was Family Member Contact Contacted?","Family Member,Phone Number"]
             }
         }else if (sexualpartner ==  false){
             return{
-                hide: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Specify other Family Member Relationship"],
-                show:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age"]
+                hide: ["Sexual Partner Relationship","Sexual partner names","Sexual Partner, Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Specify other Family Member Relationship","Was Sexual Partner Contacted?"],
+                show:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Family Member - Age","Was Family Member Contact Contacted?","Family Member,Phone Number"]
                
             }
         }else {
             return {
-                hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Sexual Partner Relationship","Sexual partner names","Family Member - Age","Phone Number","Sexual Partner - Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV"]
+                hide:["Family Member - Relationship","Family Member names","Family Member - Sex","Family Member - HIV Status","Sexual Partner Relationship","Sexual partner names","Family Member - Age","Family Member,Phone Number","Sexual Partner, Phone Number","Sexual Partner - HIV Status","Sexual Partner - HIV Result","Is Sexual Partner in ART Care?","Sexual Partner - Result of HTS","Sexual Partner - Sex","Sexual Partner - Age","Sexual Partner - ART Number","Sexual Partner - Date Tested HIV","Was Family Member Contact Contacted?","Was Family Member Contact Tested?","Was Sexual Partner Contacted?","Was Sexual Partner Tested?"]
                 
             }
         }    

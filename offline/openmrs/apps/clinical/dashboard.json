@@ -308,17 +308,6 @@
                 "displayOrder":6,
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
             },
-            "drugOther":{  
-                "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
-                "type":"drugOrderDetails",
-                "displayType":"Full-Page",
-                "showDetailsButton":true,
-                "displayOrder":1,
-                "dashboardConfig":{  
-                    "showOnlyActive":true,
-                    "drugConceptSet":"All Other Drugs"
-                }
-            },
             "malaria":{  
                 "title":"Malaria",
                 "type":"obsToObsFlowSheet",
