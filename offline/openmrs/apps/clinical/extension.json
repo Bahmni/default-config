@@ -306,20 +306,6 @@
     },
     "order": 6,
     "requiredPrivilege": "Discharge Summary"
-  },
-  "bahmniClinicalBillingTreatment": {
-    "id": "bahmni.clinical.billing.treatment",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Medications",
-    "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
-    "extensionParams":{
-      "tabConfigName": "allMedicationTabConfig"
-    },
-    "url": "treatment",
-    "icon": "fa-user-md",
-    "order": 7,
-    "requiredPrivilege": "app:clinical:treatmentTab"
   }
 }
 
