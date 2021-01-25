@@ -179,9 +179,12 @@ angular.module('bahmni.common.displaycontrol.custom')
         $q.all([getUpcomingAppointments(), getPastAppointments()]).then(function (response) {
             $scope.upcomingAppointments = response[0].data;
             $scope.upcomingAppointmentsUUIDs = [];
+            $scope.teleconsultationAppointments = [];
             for (var i=0; i<$scope.upcomingAppointments.length; i++) {
                 $scope.upcomingAppointmentsUUIDs[i] = $scope.upcomingAppointments[i].uuid;
+                $scope.teleconsultationAppointments[i] = $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_TELECONSULTATION;
                 delete $scope.upcomingAppointments[i].uuid;
+                delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_TELECONSULTATION;
             }
             $scope.upcomingAppointmentsHeadings = _.keys($scope.upcomingAppointments[0]);
             $scope.pastAppointments = response[1].data;
@@ -197,7 +200,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         };
         $scope.showJoinTeleconsultationOption = function (appointmentIndex) {
             return $scope.upcomingAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_STATUS_KEY == 'Scheduled' && 
-                    $scope.upcomingAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_TELECONSULTATION == true;
+                    $scope.teleconsultationAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_TELECONSULTATION == true;
         }
     };
     return {
