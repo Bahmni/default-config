@@ -200,7 +200,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         };
         $scope.showJoinTeleconsultationOption = function (appointmentIndex) {
             return $scope.upcomingAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_STATUS_KEY == 'Scheduled' && 
-                    $scope.teleconsultationAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_TELECONSULTATION == true;
+                    $scope.teleconsultationAppointments[appointmentIndex];
         }
     };
     return {
