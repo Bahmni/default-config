@@ -1,7 +1,8 @@
 select  @a:=@a+1 as 'Serial'  , date_of_birth as 'Date Of Birth', artnumber as 'EID Number' , Sex ,  date_eid_sample_collected as 'Date EID sample collected' ,zerototwomonths as 'Age of child at first EID sample collection\n(put 1 where the age belongs):\n0 - 2 months of age' ,
 abovetwomonths as 'Age of child at first EID sample collection\n(put 1 where the age belongs):\n2 - 12 months of age' , 
 (case when Outcomeat24months = 'HIV Infected' then 1 when Outcomeat24months = 'HIV uninfected' then 2 when Outcomeat24months = 'HIV Final Status Unknown' then 3 when Outcomeat24months = 'Died without status known' then 4 else 'N/A' end ) 
-as 'Final outcome at 24 months of age  \n(1. HIV infected; 2- HIV-uninfected; 3-HIV final status unknown;4-Died without status known:' from(
+as 'Final outcome at 24 months of age  \n(1. HIV infected; 2- HIV-uninfected; 3-HIV final status unknown;4-Died without status known:' from (
+
 select (SELECT @a:= 0) AS a , pa.person_id, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
 gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age' 
 from person_attribute as pa 
@@ -10,7 +11,8 @@ INNER JOIN person as p on pa.person_id = p.person_id
 LEFT JOIN person_name as pn on p.person_id = pn.person_id 
 LEFT JOIN patient as pt on p.person_id = pt.patient_id
 where pa.person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'HIVExposedInfant(HEI)No') 
-and (datediff(curdate(),p.birthdate) / 365) < 2  and p.birthdate between '#startDate#' and '#endDate#' 
+and (datediff(curdate(),p.birthdate) / 365) < 2  and p.birthdate between DATE_SUB(DATE_FORMAT('#startDate#','%Y-%m-01'), INTERVAL 2 YEAR)
+ and DATE_SUB(DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'),INTERVAL 2 YEAR)
 )tDemogrpahics
 left join 
 (
