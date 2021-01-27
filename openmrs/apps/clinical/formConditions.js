@@ -784,11 +784,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
         var results = formFieldValues["Result"];
         if(results ===  "Positive") {
             return{
-                show: ["Is Family Member in ART Care?","Result of HTS"]
+                show: ["Is Family Member in ART Care?"]
             }
         }else {
             return{
-                hide: ["Is Family Member in ART Care?","Result of HTS"]
+                hide: ["Is Family Member in ART Care?"]
                
             }
         }    
