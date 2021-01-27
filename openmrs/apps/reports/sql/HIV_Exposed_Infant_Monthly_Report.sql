@@ -15,7 +15,7 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tDateStartedProphylaxis
 inner join (
 select pa.person_id as pid, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
-gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age' 
+gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff('#endDate#',p.birthdate) / 365) as 'Age' 
 from person_attribute as pa 
 INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
 INNER JOIN person as p on pa.person_id = p.person_id 
@@ -23,7 +23,7 @@ LEFT JOIN person_name as pn on p.person_id = pn.person_id
 LEFT JOIN patient as pt on p.person_id = pt.patient_id
 where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
 pa.value in (select concept_id from concept_name where name = 'HeiRelationship' and concept_name_type = 'FULLY_SPECIFIED')
-and (datediff(curdate(),p.birthdate) / 365) < 2 
+and (datediff('#endDate#',p.birthdate) / 365) < 2 
 )tDemogrpahics on tDateStartedProphylaxis.person_id = tDemogrpahics.pid
 inner join (
 select person_id, isEnrolled from (  
@@ -56,7 +56,7 @@ a.person_id = c.pid and a.encounter_id = c.maxdate
 )tDateStartedProphylaxis
 inner join (
 select pa.person_id as pid, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
-gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff(curdate(),p.birthdate) / 365) as 'Age' 
+gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff('#endDate#',p.birthdate) / 365) as 'Age' 
 from person_attribute as pa 
 INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
 INNER JOIN person as p on pa.person_id = p.person_id 
@@ -64,7 +64,7 @@ LEFT JOIN person_name as pn on p.person_id = pn.person_id
 LEFT JOIN patient as pt on p.person_id = pt.patient_id
 where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
 pa.value in (select concept_id from concept_name where name in ('HeiRelationship',"ExistingHeiRelationship") and concept_name_type = 'FULLY_SPECIFIED')
-and (datediff(curdate(),p.birthdate) / 365) < 2 
+and (datediff('#endDate#',p.birthdate) / 365) < 2 
 )tDemogrpahics on tDateStartedProphylaxis.person_id = tDemogrpahics.pid
 left join (
 select person_id, isEnrolled from (  
@@ -427,7 +427,7 @@ LEFT JOIN person_name as pn on p.person_id = pn.person_id
 LEFT JOIN patient as pt on p.person_id = pt.patient_id
 where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
 pa.value in (select concept_id from concept_name where name in ('HeiRelationship',"ExistingHeiRelationship") and concept_name_type = 'FULLY_SPECIFIED')
-and (datediff(curdate(),p.birthdate) / 365) < 2 
+and (datediff('#endDate#',p.birthdate) / 365) < 2 
 )tDemogrpahics 
 left join ( 
 select person_b as 'mother_id' , relationship , person_a as 'hei_id' from relationship where 
@@ -463,7 +463,7 @@ LEFT JOIN person_name as pn on p.person_id = pn.person_id
 LEFT JOIN patient as pt on p.person_id = pt.patient_id
 where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
 pa.value in (select concept_id from concept_name where name in ('HeiRelationship',"ExistingHeiRelationship") and concept_name_type = 'FULLY_SPECIFIED')
-and (datediff(curdate(),p.birthdate) / 365) < 2 
+and (datediff('#endDate#',p.birthdate) / 365) < 2 
 )tDemogrpahics 
 left join ( 
 select person_b as 'mother_id' , relationship , person_a as 'hei_id' from relationship where 
@@ -509,7 +509,7 @@ INNER JOIN person as p on pa.person_id = p.person_id
 LEFT JOIN person_name as pn on p.person_id = pn.person_id 
 LEFT JOIN patient as pt on p.person_id = pt.patient_id
 where pa.person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'HIVExposedInfant(HEI)No') 
-and (datediff(curdate(),p.birthdate) / 365) < 2 and (datediff(DATE_FORMAT('#startDate#','%Y-%m-01'),p.birthdate) / 7) <= 6
+and (datediff('#endDate#',p.birthdate) / 365) < 2 and (datediff(DATE_FORMAT('#endDate#','%Y-%m-01'),p.birthdate) / 7) <= 6
 )tDemogrpahics on tDateStartedProphylaxis.person_id = tDemogrpahics.pid
 
 
@@ -661,207 +661,150 @@ FROM (
 
 UNION ALL
 
-SELECT
-   'Exposed infant at 18months HIV- positive' as 'Title',
-   count(maleGender) as 'Male',
-   count(femaleGender) as 'Female',
-   count(totalAll) as 'Total'
-  FROM (
-    SELECT
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE())  between 0 and 18) and gender = 'M' and heiResult = cnpr.concept_id  and rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id) THEN 1 END maleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18) and gender = 'F' and heiResult = cnpr.concept_id  and rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id) THEN 1 END femaleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18) and  heiResult = cnpr.concept_id and  rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id) THEN 1 END totalAll 
-    FROM person pn 
-
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',  o.obs_datetime AS 'obsDate', o.value_coded AS 'heiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (First PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'rapidheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Rapid Test At 9 Months Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS rr ON (rr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'secondheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Second PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS sr ON (sr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'repeatheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Repeat PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS er ON (er.visitPatientId = pn.person_id)   
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'eightrapidheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (18Months Rapid Test  Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id) 
-    JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship"))
-    JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient")  
-    JOIN concept_name cnpr ON (cnpr.concept_name_type = "FULLY_SPECIFIED" AND cnpr.voided is false AND cnpr.name="HEI Results Positive") 
- ) p 
+select 'Exposed infant at 18months HIV- positive',
+count(distinct(case when pid is not null and Results18months = 'Positive' and sex = 'M' then pid end)) as 'Male',
+count(distinct(case when pid is not null and Results18months = 'Positive' and sex = 'F' then pid end)) as 'Female',
+count(distinct(case when pid is not null and Results18months = 'Positive' and sex in ('M','F') then pid end)) as 'Total'
+ from (
+select pa.person_id as pidd, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff(DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'),p.birthdate) / 365) as 'Age' 
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
+pa.value in (select concept_id from concept_name where name in ('HeiRelationship',"ExistingHeiRelationship") and concept_name_type = 'FULLY_SPECIFIED')
+and DATE_FORMAT(p.birthdate,'%Y-%m') = DATE_FORMAT(DATE_SUB(LAST_DAY('#endDate#'), INTERVAL 18 MONTH),'%Y-%m') 
+)tDemographics 
+inner join(
+select pid , tConceptname.name as 'Results18months' from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test  Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test  Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)t18MonthsOutcome on tDemographics.pidd = t18MonthsOutcome.pid
 
 
 UNION ALL
 
-SELECT
-   'Exposed infant at 18months HIV- negative and breastfeeding' as 'Title',
-   count(maleGender) as 'Male',
-   count(femaleGender) as 'Female',
-   count(totalAll) as 'Total'
-  FROM (
-    SELECT
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE())  between 0 and 18) and gender = 'M' and heiResult = cnpr.concept_id  and rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id and pcrResult1 is not null and rapidTestresult1 is not null and secondresult1 is not null and repeatresult1 is not null ) THEN 1 END maleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18) and gender = 'F' and heiResult = cnpr.concept_id  and rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id and pcrResult1 is not null and rapidTestresult1 is not null and secondresult1 is not null and repeatresult1 is not null ) THEN 1 END femaleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18) and  heiResult = cnpr.concept_id and  rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id and pcrResult1 is not null and rapidTestresult1 is not null and secondresult1 is not null and repeatresult1 is not null ) THEN 1 END totalAll 
-    FROM person pn 
-     JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship"))
-    JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient") 
-     JOIN concept_name cnpr ON (cnpr.concept_name_type = "FULLY_SPECIFIED" AND cnpr.voided is false AND cnpr.name="HEI Results Positive") 
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',  o.obs_datetime AS 'obsDate', o.value_coded AS 'heiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (First PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'rapidheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Rapid Test At 9 Months Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS rr ON (rr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'secondheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Second PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS sr ON (sr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'repeatheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Repeat PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS er ON (er.visitPatientId = pn.person_id)   
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'eightrapidheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (18Months Rapid Test  Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id) 
-    
-   
-    JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate', o.value_coded AS 'pcrResult1' FROM obs o 
-    JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (First PCR Feeding Method)" AND o.concept_id = cn.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-   JOIN visit v ON v.visit_id = enc.visit_id 
-   GROUP BY v.patient_id 
-   ORDER BY v.visit_id DESC) AS vr1 ON (vr1.visitPatientId = pn.person_id)
-   JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate2', o.value_coded AS 'rapidTestresult1' FROM obs o 
-   JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Rapid Test At 9 Months Feeding Method)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-   JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate3', o.value_coded AS 'secondresult1' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Second PCR Feeding Method)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS sr1 ON (sr1.visitPatientId = pn.person_id)
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate4', o.value_coded AS 'repeatresult1' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Repeat PCR Feeding Method)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS rr1 ON (rr1.visitPatientId = pn.person_id)
- ) p 
+select 'Exposed infant at 18months HIV- negative and breastfeeding',
+count(distinct(case when pid is not null and Results18months = 'Negative' and breastfeedingResults = 'EBF' and sex = 'M' then pid end)) as 'Male',
+count(distinct(case when pid is not null and Results18months = 'Negative' and breastfeedingResults = 'EBF' and sex = 'F' then pid end)) as 'Female',
+count(distinct(case when pid is not null and Results18months = 'Negative' and breastfeedingResults = 'EBF' and sex in ('M','F') then pid end)) as 'Total'
+ from (
+select pa.person_id as pidd, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff(DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'),p.birthdate) / 365) as 'Age' 
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
+pa.value in (select concept_id from concept_name where name in ('HeiRelationship',"ExistingHeiRelationship") and concept_name_type = 'FULLY_SPECIFIED')
+and DATE_FORMAT(p.birthdate,'%Y-%m') = DATE_FORMAT(DATE_SUB(LAST_DAY('#endDate#'), INTERVAL 18 MONTH),'%Y-%m') 
+)tDemographics 
+inner join(
+select pid , tConceptname.name as 'Results18months' from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test  Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test  Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)t18MonthsOutcome on tDemographics.pidd = t18MonthsOutcome.pid
+left join (
+select breastfeeding_pid , tConceptname.name as 'breastfeedingResults' from (
+select distinct(person_id) as breastfeeding_pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test Feeding Method)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test Feeding Method)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)tBreastFeeding on tDemographics.pidd = tBreastFeeding.breastfeeding_pid
 
 
 UNION ALL
 
-SELECT
-   'Exposed infant at 18months HIV- negative and no longer breastfeeding' as 'Title',
-   count(maleGender) as 'Male',
-   count(femaleGender) as 'Female',
-   count(totalAll) as 'Total'
-  FROM (
-    SELECT
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE())  between 0 and 18) and gender = 'M' and heiResult = cnpr.concept_id  and rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id and heiResult1 = cnpr1.concept_id  and rapidheiResult1 = cnpr1.concept_id and  secondheiResult1 = cnpr1.concept_id and  repeatheiResult1 = cnpr1.concept_id and  eightrapidheiResult1 = cnpr1.concept_id) THEN 1 END maleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18) and gender = 'F' and heiResult = cnpr.concept_id  and rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id and heiResult1 = cnpr1.concept_id  and rapidheiResult1 = cnpr1.concept_id and  secondheiResult1 = cnpr1.concept_id and  repeatheiResult1 = cnpr1.concept_id and  eightrapidheiResult1 = cnpr1.concept_id) THEN 1 END femaleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 0 and 18) and  heiResult = cnpr.concept_id and  rapidheiResult = cnpr.concept_id and  secondheiResult = cnpr.concept_id and  repeatheiResult = cnpr.concept_id and  eightrapidheiResult = cnpr.concept_id and heiResult1 = cnpr1.concept_id  and rapidheiResult1 = cnpr1.concept_id and  secondheiResult1 = cnpr1.concept_id and  repeatheiResult1 = cnpr1.concept_id and  eightrapidheiResult1 = cnpr1.concept_id) THEN 1 END totalAll 
-    FROM person pn 
-    JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship"))
-    JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient")  
-    JOIN concept_name cnpr ON (cnpr.concept_name_type = "FULLY_SPECIFIED" AND cnpr.voided is false AND cnpr.name="HEI Results Negative") 
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',  o.obs_datetime AS 'obsDate', o.value_coded AS 'heiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (First PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'rapidheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Rapid Test At 9 Months Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS rr ON (rr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'secondheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Second PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS sr ON (sr.visitPatientId = pn.person_id)
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'repeatheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Repeat PCR Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS er ON (er.visitPatientId = pn.person_id)   
-    LEFT JOIN (SELECT distinct v.patient_id AS 'visitPatientId',o.value_coded AS 'eightrapidheiResult' FROM obs o 
-    JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (18Months Rapid Test  Results)" and o.concept_id = cnr.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-    GROUP BY v.patient_id 
-    ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id) 
-
-    JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate', o.value_coded AS 'heiResult1' FROM obs o 
-    JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (First PCR Feeding Method)" AND o.concept_id = cn.concept_id) 
-    JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-    JOIN visit v ON v.visit_id = enc.visit_id 
-   GROUP BY v.patient_id 
-   ORDER BY v.visit_id DESC) AS vr1 ON (vr1.visitPatientId = pn.person_id)
-   JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate2', o.value_coded AS 'rapidheiResult1' FROM obs o 
-   JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Rapid Test At 9 Months Feeding Method)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-   JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate3', o.value_coded AS 'secondheiResult1' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Second PCR Feeding Method)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS sr1 ON (sr1.visitPatientId = pn.person_id)
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate4', o.value_coded AS 'repeatheiresult1' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (Repeat PCR Feeding Method)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS rr1 ON (rr1.visitPatientId = pn.person_id)
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate4', o.value_coded AS 'eightrapidheiResult1' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (18Months Rapid Test Feeding Method)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr2 ON (vr2.visitPatientId = pn.person_id)
-  JOIN concept_name cnpr1 ON (cnpr1.concept_name_type = "FULLY_SPECIFIED" AND cnpr1.voided is false AND cnpr1.name="No longer Breastfeed")
- ) p 
-
+select 'Exposed infant at 18months HIV- negative and no longer breastfeeding',
+count(distinct(case when pid is not null and Results18months = 'Negative' and breastfeedingResults = 'No longer Breastfeed' and sex = 'M' then pid end)) as 'Male',
+count(distinct(case when pid is not null and Results18months = 'Negative' and breastfeedingResults = 'No longer Breastfeed' and sex = 'F' then pid end)) as 'Female',
+count(distinct(case when pid is not null and Results18months = 'Negative' and breastfeedingResults = 'No longer Breastfeed' and sex in ('M','F') then pid end)) as 'Total'
+ from (
+select pa.person_id as pidd, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex ,p.birthdate as 'date_of_birth' ,floor(datediff(DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'),p.birthdate) / 365) as 'Age' 
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
+pa.value in (select concept_id from concept_name where name in ('HeiRelationship',"ExistingHeiRelationship") and concept_name_type = 'FULLY_SPECIFIED')
+and DATE_FORMAT(p.birthdate,'%Y-%m') = DATE_FORMAT(DATE_SUB(LAST_DAY('#endDate#'), INTERVAL 18 MONTH),'%Y-%m') 
+)tDemographics 
+inner join(
+select pid , tConceptname.name as 'Results18months' from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test  Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test  Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)t18MonthsOutcome on tDemographics.pidd = t18MonthsOutcome.pid
+left join (
+select breastfeeding_pid , tConceptname.name as 'breastfeedingResults' from (
+select distinct(person_id) as breastfeeding_pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test Feeding Method)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Testing (18Months Rapid Test Feeding Method)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)tBreastFeeding on tDemographics.pidd = tBreastFeeding.breastfeeding_pid
 
