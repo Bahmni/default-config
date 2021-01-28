@@ -108,62 +108,104 @@ SELECT
 
  UNION ALL
 
-SELECT
-   'PCR test for HIV-Exposed Infants between 2-12 Months of age' as 'Title',
-   count(maleGender) as 'Male',
-   count(femaleGender) as 'Female',
-   count(totalAll) as 'Total'
-  FROM(
-  SELECT
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12) and gender = 'M' and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and pcrDateResult between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')) THEN 1 END maleGender,
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12) and gender = 'F' and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and pcrDateResult between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')) THEN 1 END femaleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 2 and 12) and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and pcrDateResult between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')) THEN 1 END totalAll 
-  FROM person pn 
-  JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship"))
-  JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient") 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate', o.value_datetime AS 'pcrDateResult' FROM obs o 
-  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (First PCR Test Date)" AND o.concept_id = cn.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id)
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'heiResultDate', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'heiResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (First PCR Results)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
- ) p
+
+Select 
+'PCR test for HIV-Exposed Infants between 2-12 Months of age',
+count(distinct(case when pid is not null and firstPcrTest is not null and TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) >= 2 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) <= 12 and TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) >= 2 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) <= 12 and sex = 'M' then pid end)) as 'Male',
+count(distinct(case when pid is not null and firstPcrTest is not null and TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) >= 2 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) <= 12 and TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) >= 2 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) <= 12 and sex = 'F' then pid end)) as 'Female',
+count(distinct(case when pid is not null and firstPcrTest is not null and TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) >= 2 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) <= 12 and TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) >= 2 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) <= 12 and sex in ('F','M') then pid end)) as 'Total'
+
+ from (
+select pa.person_id as pidd, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex ,p.birthdate as 'date_of_birth' ,TIMESTAMPDIFF(MONTH, p.birthdate, DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))  as 'Age' 
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
+pa.value in (select concept_id from concept_name where name in ('HeiRelationship',"ExistingHeiRelationship") and concept_name_type = 'FULLY_SPECIFIED')
+and TIMESTAMPDIFF(MONTH, p.birthdate, DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')) >= 2 and  TIMESTAMPDIFF(MONTH, p.birthdate, DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')) <= 12 
+)tDemographics
+inner join (
+select pid , tConceptname.name as 'firstPcrTest', obs_datetime as 'firstpcrTestResultDate'   from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Testing (First PCR Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Testing (First PCR Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)tFirstPCrTest on tDemographics.pidd = tFirstPCrTest.pid
+left join (
+select person_id , firstPcrTestDate from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_datetime as 'firstPcrTestDate', voided from obs where concept_id = 
+(select concept_id from concept_name where name  = 'HEI Testing (First PCR Test Date)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+ and obs_datetime <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
+ and voided = 0 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name  = 'HEI Testing (First PCR Test Date)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+ and obs_datetime <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tFirstPCRTestDate on tDemographics.pidd = tFirstPCRTestDate.person_id
 
 
 UNION ALL
 
-SELECT
-    'PCR test for HIV-Exposed Infants between 12-18 Months of age' as 'Title',
-   count(maleGender) as 'Male',
-   count(femaleGender) as 'Female',
-   count(totalAll) as 'Total'
-  FROM(
-  SELECT
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and gender = 'M' and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and pcrDateResult between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')) THEN 1 END maleGender,
-    CASE WHEN ( (TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and gender = 'F' and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and pcrDateResult between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')) THEN 1 END femaleGender,
-    CASE WHEN ((TIMESTAMPDIFF(MONTH, birthdate, CURDATE()) between 12 and 18) and MONTH(obsDate) = MONTH(CURDATE()) AND YEAR(obsDate) = YEAR(CURDATE()) and pcrDateResult is not null and pcrDateResult between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')) THEN 1 END totalAll 
-  FROM person pn 
-  JOIN person_attribute pa on pa.person_id = pn.person_id and pa.value in (select concept_id from concept_name where name in ("HeiRelationship", "ExistingHeiRelationship"))
-  JOIN person_attribute_type pat on (pat.person_attribute_type_id = pa.person_attribute_type_id and pat.retired = 0 and pat.name = "TypeofPatient") 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'obsDate', o.value_datetime AS 'pcrDateResult' FROM obs o 
-  JOIN concept_name cn ON (cn.concept_name_type = "FULLY_SPECIFIED" AND cn.voided is false AND cn.name="HEI Testing (First PCR Test Date)" AND o.concept_id = cn.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS vr ON (vr.visitPatientId = pn.person_id)
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', o.obs_datetime AS 'heiResultDate', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'heiResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="HEI Testing (First PCR Results)" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
- ) p
+Select 
+'PCR test for HIV-Exposed Infants between 12-18 Months of age',
+count(distinct(case when pid is not null and firstPcrTest is not null and TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) >= 12 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) <= 18 and TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) >= 12 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) <= 18 and sex = 'M' then pid end)) as 'Male',
+count(distinct(case when pid is not null and firstPcrTest is not null and TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) >= 12 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) <= 18 and TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) >= 12 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) <= 18 and sex = 'F' then pid end)) as 'Female',
+count(distinct(case when pid is not null and firstPcrTest is not null and TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) >= 12 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstpcrTestResultDate) <= 18 and TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) >= 12 and  TIMESTAMPDIFF(MONTH,date_of_birth, firstPcrTestDate) <= 18 and sex in ('F','M') then pid end)) as 'Total'
+
+ from (
+select pa.person_id as pidd, pa.value as 'artnumber' , concat(coalesce(given_name, ''), "  ", coalesce(middle_name, ''), ' ', coalesce(family_name , '') ) as 'ClientName', 
+gender as sex ,p.birthdate as 'date_of_birth' ,TIMESTAMPDIFF(MONTH, p.birthdate, DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))  as 'Age' 
+from person_attribute as pa 
+INNER JOIN person_attribute_type as pat on pa.person_attribute_type_id = pat.person_attribute_type_id  
+INNER JOIN person as p on pa.person_id = p.person_id 
+LEFT JOIN person_name as pn on p.person_id = pn.person_id 
+LEFT JOIN patient as pt on p.person_id = pt.patient_id
+where pa.person_attribute_type_id = (SELECT person_attribute_type_id FROM openmrs.person_attribute_type where name = 'TypeofPatient') and 
+pa.value in (select concept_id from concept_name where name in ('HeiRelationship',"ExistingHeiRelationship") and concept_name_type = 'FULLY_SPECIFIED')
+and TIMESTAMPDIFF(MONTH, p.birthdate, DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')) >= 12 and  TIMESTAMPDIFF(MONTH, p.birthdate, DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59')) <= 18 
+)tDemographics
+inner join (
+select pid , tConceptname.name as 'firstPcrTest', obs_datetime as 'firstpcrTestResultDate'   from (
+select distinct(person_id) as pid, obs_datetime , value_coded 
+ from (
+select  person_id, concept_id, obs_datetime , encounter_id , value_coded, voided from obs where concept_id =
+(select concept_id from concept_name where name = 'HEI Testing (First PCR Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join 
+(select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'HEI Testing (First PCR Results)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime  <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tCodedAnswers 
+left join 
+(
+select concept_id , name from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tCodedAnswers.value_coded = tConceptname.concept_id
+)tFirstPCrTest on tDemographics.pidd = tFirstPCrTest.pid
+left join (
+select person_id , firstPcrTestDate from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_datetime as 'firstPcrTestDate', voided from obs where concept_id = 
+(select concept_id from concept_name where name  = 'HEI Testing (First PCR Test Date)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+ and obs_datetime <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')
+ and voided = 0 )a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name  = 'HEI Testing (First PCR Test Date)' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+ and obs_datetime <= DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tFirstPCRTestDate on tDemographics.pidd = tFirstPCRTestDate.person_id
+
 
 UNION ALL
 
