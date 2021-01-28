@@ -119,7 +119,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -128,7 +128,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -146,7 +146,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -294,7 +294,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -303,7 +303,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -321,7 +321,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -470,7 +470,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -479,7 +479,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -497,7 +497,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -645,7 +645,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -654,7 +654,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -672,7 +672,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -820,7 +820,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -829,7 +829,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -847,7 +847,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -995,7 +995,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1004,7 +1004,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1022,7 +1022,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1171,7 +1171,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1180,7 +1180,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1198,7 +1198,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1348,7 +1348,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1357,7 +1357,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1375,7 +1375,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1525,7 +1525,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1534,7 +1534,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1552,7 +1552,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1701,7 +1701,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1710,7 +1710,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1728,7 +1728,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1876,7 +1876,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1885,7 +1885,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -1903,7 +1903,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2051,7 +2051,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2060,7 +2060,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2078,7 +2078,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2227,7 +2227,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2236,7 +2236,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2254,7 +2254,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2403,7 +2403,7 @@ where concept_id = (select concept_id from concept_name where name = 'Family Mem
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'family_member_hts_result'
+) then 'Positive' else 'Negative' end ) as 'family_member_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2412,7 +2412,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result of 
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_hts_result'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_hts_result'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
@@ -2430,7 +2430,7 @@ where concept_id = (select concept_id from concept_name where name = 'Result' an
 left join (
 select person_id , encounter_id , obs_datetime , obs_group_id ,
 (case when value_coded = (select concept_id from concept_name where name = 'Positive' and concept_name_type = 'FULLY_SPECIFIED'
-) then 'Positive' else 'NO' end ) as 'sexual_partner_known_positives'
+) then 'Positive' else 'Negative' end ) as 'sexual_partner_known_positives'
 from obs o 
 where concept_id = (select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED')
  and voided = 0 and obs_datetime 
