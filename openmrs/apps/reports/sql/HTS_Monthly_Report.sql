@@ -1600,7 +1600,7 @@ and voided = 0 and obs_datetime
 union all 
 select 
 'Index Case Contact +ve' as 'Title',
-count(distinct(case when Names is not null and ContactsAge < 1 and wasContactTested = 'YES' and PatnerGender = 'M'  then Names end)) as '< 1 YRS MALE',
+count(distinct(case when Names is not null and ContactsAge < 1 and wasContactTested = 'YES' and (newHivResults is not null or KnownPositiveResults is not null) and PatnerGender = 'M'  then Names end)) as '< 1 YRS MALE',
 count(distinct(case when Names is not null and ContactsAge >= 1 and ContactsAge < 5 and wasContactTested = 'YES'  and (newHivResults is not null or KnownPositiveResults is not null) and PatnerGender = 'M'  then Names end)) as '1 - 4 YRS MALE',
 count(distinct(case when Names is not null and ContactsAge >= 5 and ContactsAge < 10 and wasContactTested = 'YES'  and (newHivResults is not null or KnownPositiveResults is not null) and PatnerGender = 'M'  then Names end)) as '5 - 9 YRS MALE',
 count(distinct(case when Names is not null and ContactsAge >= 10 and ContactsAge < 15 and wasContactTested = 'YES'  and (newHivResults is not null or KnownPositiveResults is not null) and PatnerGender = 'M'  then Names end)) as '10 - 14 YRS MALE',
