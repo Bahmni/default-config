@@ -54,6 +54,6 @@
     "recurrence": {
       "defaultNumberOfOccurrences": 10
     },
-    "additionalInfoColumns": {"Language": "English", "OtherLanguage": "Hindi"}
+    "additionalInfoColumns": {"Language": "English"}
   }
 }
