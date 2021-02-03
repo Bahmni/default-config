@@ -53,6 +53,7 @@
     },
     "recurrence": {
       "defaultNumberOfOccurrences": 10
-    }
+    },
+    "additionalInfoColumns": {"Language": "English"}
   }
 }
