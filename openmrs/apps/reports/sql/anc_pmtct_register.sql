@@ -1,6 +1,6 @@
 select concat(coalesce(given_name,''),' ', coalesce(middle_name,'') ,' ',coalesce(family_name,'') ) as 'Full Names', ancRegistrationDate , results as 'Occupation' , ancNo as 'ANC Number/Surveillance ID', pmtctEntry as 'Entry to PMTCT' , treatmentStatus as 'Treatment Status',
 (case when hivRetestingDate is not null then 'Yes' else 'No' end) as 'HIV Retesting for ART initiation?', uartNumber as 'Unique ART No.', artStartDate as 'Date Initiated On ART', Cohort ,Age ,concat("Address : ", (case when Address is null then 'N/A' else mobile end) , "\n", "Mobile : ", mobile) as 'Address',
-LNMP , edd as 'EDD' , gestationPeriodWeeks as 'Gestational age in weeks (GA)', weight as 'Weight(Kgs)' , muac as 'Mid-Upper Arm Circumference (MUAC)', TBStatus as 'TB Status', whoResults as 'WHO Stage', cd4 as 'CD4' ,Ctxresults as 'CTX=Contrimoxazole  or DAP=Dapsone' , tbRxDate as 'TB Rx start Date', TbUnitNumber as 'Tb Reg No.',
+LNMP , edd as 'EDD' , gestationPeriodWeeks as 'Gestational age in weeks (GA)', weight as 'Weight(Kgs)' , muac as 'Mid-Upper Arm Circumference (MUAC)', TBStatus as 'TB Status', whoResults as 'WHO Stage', cd4 as 'CD4' ,partnerResult as 'Partner Result', Ctxresults as 'CTX=Contrimoxazole  or DAP=Dapsone' , tbRxDate as 'TB Rx start Date', TbUnitNumber as 'Tb Reg No.',
 dateVlCollected as 'Date VL SampleCollected', VlResults as 'VL result (Value)',firstregimen as '1st Line Regimen - Original Regimen', firstsubstitutionregimen as '1st Line Regimen - 1st: Substitution drug code' , secondswitchwithinfirstline as '1st Line Regimen - 2nd: Substitution drug code' , secondlinefirst as '2nd Line Regimen - 2nd Line Regimen switched to',
 firstsubstitutionwithinsecond as '2nd Line Regimen - 1st:  Substitution drug code',
 secondsubstitutionwithinsecondline as '2nd Line Regimen - 2nd: Substitution drug code', dateOfDelivery as 'Date Of Delivery' , PlaceOfDeliveryresults as 'Place of Delivery', DeliveryOutocomeresults as 'Delivery Outcome', prophylaxisResults as 'Infant Received Prophylaxis?' ,heinumber as 'Exposed Infant Number'
@@ -410,3 +410,37 @@ left join (
 select person_id , value as 'uartNumber' from person_attribute where person_attribute_type_id = 
 (select person_attribute_type_id from person_attribute_type where name = 'UniqueArtNo')
 )tUniqueArtNumber on tDemographics.personid = tUniqueArtNumber.person_id
+left join (
+select pidd, (case when hiv_result is null and hts_result is null then 'N/A' else case when hiv_result is not null and hts_result is not null then hts_result else case when hiv_result is not null and hts_result is null 
+then hiv_result else case when hiv_result is null and hts_result is not null then hts_result end end end end) as 'partnerResult'  from (
+select person_id as pidd, spouse, obs_group_id from (  
+select person_id, concept_id, obs_datetime  , obs_group_id, encounter_id , value_coded as 'spouse', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Sexual Partner Relationship' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = (
+select concept_id from concept_name where name = 'Spouse' and concept_name_type = 'FULLY_SPECIFIED') and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(obs_group_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Sexual Partner Relationship' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.obs_group_id = c.maxdate 
+)tIsSpouse
+left join (
+select person_id, (select name from concept_name where concept_id = HivKnownStatus and concept_name_type = 'SHORT') as 'hiv_result', obs_group_id from (  
+select person_id, concept_id, obs_datetime  , obs_group_id, encounter_id , value_coded as 'HivKnownStatus', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Sexual Partner - HIV Result' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tSpouseHivResult on tIsSpouse.obs_group_id = tSpouseHivResult.obs_group_id 
+left join (
+select person_id, (select name from concept_name where concept_id = NewTestedResult and concept_name_type = 'SHORT') as 'hts_result', obs_group_id from (  
+select person_id, concept_id, obs_datetime  , obs_group_id, encounter_id , value_coded as 'NewTestedResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Sexual Partner - Result of HTS' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tSpouseHivResultAfterTesting on tIsSpouse.obs_group_id = tSpouseHivResultAfterTesting.obs_group_id
+)tSpouseHivStatus on tDemographics.personid = tSpouseHivStatus.pidd
