@@ -24,7 +24,7 @@
 		"name": "ART Monthly Report Viral Load",
 		"type": "concatenated",
 		"config": {
-		"reports": [
+			"reports": [
 				{
 					"name": "ART Monthly Report Viral Load",
 					"type": "MRSGeneric",
@@ -35,7 +35,6 @@
 			]
 		}
 	},
-
 	"htsMonthlyReport": {
 		"name": "HTS Monthly Report",
 		"type": "MRSGeneric",
@@ -46,93 +45,91 @@
 	"currentOnArt": {
 		"name": "ART Monthly Report - Current On ART",
 		"type": "concatenated",
-	   "config": {
-	   "reports": [
-		 {
-			"name": "ARV regimen at end of Last Month",
-			"type": "MRSGeneric",
-			"config": {
-			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/currentOnArtLastMonth.sql"
-					  }
-		 },
-		 {
-			"name": "Clients who received ART this reporting period by Regimen",
-			"type": "MRSGeneric",
-			"config": {
-			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/currentOnARTThisMonth.sql"
-					  }
-		 }
-	]
-}		
-},
-    "indexTestingReport": {
-		"name": "Master Contact Listing Report",
-		"type": "concatenated",
-	   "config": {
-	   "reports": [
-		 {
-			"name": "Master Contact Listing Report",
-			"type": "MRSGeneric",
-			"config": {
-			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/indextesting_masterindex.sql"
-					  }
-		 },
-		 {
-			"name": "Contacts Not Tested Report",
-			"type": "MRSGeneric",
-			"config": {
-			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/contactsNotTested.sql"
-					  }
-		 },
-		 {
-			"name": "Contacts Tested Report",
-			"type": "MRSGeneric",
-			"config": {
-			"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/contactsTested.sql"
-					  }
-		 }
-	]
-}		
-},
-    "ancMonthlyReport": {
-                "name": "ANC PMTCT Register",
-		        "type": "concatenated",
-		       "config": {
-               "reports": [
-                 {
-                    "name": "ANC PMTCT REGISTER",
-			        "type": "MRSGeneric",
-			        "config": {
-			        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ancreport.sql"
-				              }
-				 },
-				 {
-                    "name": "ANC PMTCT REGISTER CONTINUATION",
-			        "type": "MRSGeneric",
-			        "config": {
-			        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/AncPmtctReportTabOne.sql"
-				              }
-				 }, 
-				 {
-                    "name": "ANC PMTCT REGISTER CONTINUATION",
-			        "type": "MRSGeneric",
-			        "config": {
-			        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/AncPmtctReportTabSecond.sql"
-				              }
-                 },
-                  {
-                    "name": "ANC PMTCT Discharge Information",
-			        "type": "MRSGeneric",
-			        "config": {
-			        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ancpmtctDischargeTab.sql"
-				              }
-                 }
-
-                      
-      ]		
+		"config": {
+			"reports": [
+				{
+					"name": "ARV regimen at end of Last Month",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/currentOnArtLastMonth.sql"
+					}
+				},
+				{
+					"name": "Clients who received ART this reporting period by Regimen",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/currentOnARTThisMonth.sql"
+					}
+				}
+			]
 		}
 	},
-    "highViralloadReport": {
+	"indexTestingReport": {
+		"name": "Master Contact Listing Report",
+		"type": "concatenated",
+		"config": {
+			"reports": [
+				{
+					"name": "Master Contact Listing Report",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/indextesting_masterindex.sql"
+					}
+				},
+				{
+					"name": "Contacts Not Tested Report",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/contactsNotTested.sql"
+					}
+				},
+				{
+					"name": "Contacts Tested Report",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/contactsTested.sql"
+					}
+				}
+			]
+		}
+	},
+	"ancMonthlyReport": {
+		"name": "ANC PMTCT Register",
+		"type": "concatenated",
+		"config": {
+			"reports": [
+				{
+					"name": "ANC PMTCT Register",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/anc_pmtct_register.sql"
+					}
+				},
+				{
+					"name": "ANC PMTCT REGISTER CONTINUATION",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/AncPmtctReportTabOne.sql"
+					}
+				},
+				{
+					"name": "ANC PMTCT REGISTER CONTINUATION",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/AncPmtctReportTabSecond.sql"
+					}
+				},
+				{
+					"name": "ANC PMTCT Discharge Information",
+					"type": "MRSGeneric",
+					"config": {
+						"sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ancpmtctDischargeTab.sql"
+					}
+				}
+			]
+		}
+	},
+	"highViralloadReport": {
 		"name": "High Viral Load Register",
 		"type": "MRSGeneric",
 		"config": {
@@ -143,7 +140,7 @@
 		"name": "HIV Exposed Infant Monthly Report",
 		"type": "concatenated",
 		"config": {
-		"reports": [
+			"reports": [
 				{
 					"name": "HIV Exposed Infant Monthly Report",
 					"type": "MRSGeneric",
@@ -158,7 +155,7 @@
 		"name": "PMTCT Monthly Report",
 		"type": "concatenated",
 		"config": {
-		"reports": [
+			"reports": [
 				{
 					"name": "PMTCT ANC visits Syphilis and HBV Testing",
 					"type": "MRSGeneric",
@@ -197,7 +194,7 @@
 			]
 		}
 	},
-    "ArtCohortAnalysisForm": {
+	"ArtCohortAnalysisForm": {
 		"name": "ART Cohort Analysis Form",
 		"type": "MRSGeneric",
 		"config": {
@@ -215,7 +212,7 @@
 		"name": "Exposed Infant Register",
 		"type": "concatenated",
 		"config": {
-		"reports": [
+			"reports": [
 				{
 					"name": "Exposed Infant Register Page 1",
 					"type": "MRSGeneric",
@@ -258,7 +255,7 @@
 		"name": "Dhis Sample Report",
 		"type": "concatenated",
 		"config": {
-		"reports": [
+			"reports": [
 				{
 					"name": "High Viral Load Patients",
 					"type": "MRSGeneric",

@@ -169,7 +169,7 @@ left join
 select obs.person_id,obs.concept_id , obs.value_datetime as 'dateVLSampleCollected' 
 from obs obs
 left join concept_name cn on obs.concept_id = cn.concept_id
-where cn.name = 'Date VL Sample Collected? ' and cn.concept_name_type = 'fully_specified' and obs.voided = 0 group by obs.person_id
+where cn.name = 'Date VL Sample Collected?' and cn.concept_name_type = 'fully_specified' and obs.voided = 0 group by obs.person_id
 )tDateVLCollected on tUniqueART.personid = tDateVLCollected.person_id
 left join
 (
