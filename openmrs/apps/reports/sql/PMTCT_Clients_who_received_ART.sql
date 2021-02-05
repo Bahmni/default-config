@@ -16,463 +16,499 @@ SELECT
   From DUAL
 
 UNION All
+select 
+'1a = AZT/3TC+ EFV' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-SELECT
-  '1a = AZT/3TC+ EFV' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('1a = AZT/3TC+EFV') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1a") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1a") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1a") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1a") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1a") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1a") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1a") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1a") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1a") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1a" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1a" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-) p
+
+
+
+
+
+UNION ALL
+select 
+'1b = AZT/3TC/NVP' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
+
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('1b = AZT/3TC/NVP') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
+
+
+
 
 UNION ALL
 
-SELECT
-  '1b = AZT/3TC/NVP' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'1c = TDF/3TC/DTG' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1b") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1b") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1b") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1b") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1b") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1b") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1b") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1b") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1b") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1b" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1b" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('1c = TDF/3TC/DTG') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
-UNION ALL
-
-SELECT
-  '1c = TDF/3TC/DTG' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
-
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1c") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1c") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1c") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1c") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1c") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1c") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1c") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1c") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1c") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1c" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1c" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
 
 UNION ALL
 
-SELECT
-  '1d = ABC/3TC (600/300) /DTG' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'1d=ABC/3TC (600/300)/DTG' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1d") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1d") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1d") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1d") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1d") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1d") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1d") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1d") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1d") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1d" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1d" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('1d=ABC/3TC (600/300)/DTG') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
-UNION ALL
-
-SELECT
-  '1e = AZT/3TC + DTG' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
-
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1e") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1e") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1e") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1e") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1e") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1e") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1e") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1e") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1e") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1e" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1e" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
 
 UNION ALL
 
-SELECT
-  '1f  = TDF/3TC/EFV' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'1e = AZT/3TC +DTG' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1f") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1f") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1f") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1f") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1f") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1f") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1f") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1f") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1f") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1f" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1f" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
-
-UNION ALL
-
-SELECT
-  '1g = TDF/3TC+NVP' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
-
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1g") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1g") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1g") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1g") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1g") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1g") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1g") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1g") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1g") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1g" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1g" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('1e = AZT/3TC +DTG') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
-SELECT
-  '1h = TDF/FTC/ EFV' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'1f = TDF/3TC+EFV' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1h") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1h") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1h") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1h") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1h") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1h") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1h") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1h") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1h") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1h" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1h" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('1f = TDF/3TC+EFV') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
+
+UNION ALL
+select 
+'1g = TDF/3TC+NVP' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
+
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('1g = TDF/3TC+NVP') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
-SELECT
-  '1J  = TDF/FTC+NVP' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'1h = TDF/FTC/EFV' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "1j") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "1j") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "1j") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "1j") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "1j") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "1j") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "1j") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "1j") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "1j") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "1j" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "1j" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('1h = TDF/FTC/EFV') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
@@ -493,564 +529,669 @@ From DUAL
 
 UNION ALL
 
-SELECT
-  '2a = AZT/3TC + DTG' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2a") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2a") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2a") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2a") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2a") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2a") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2a") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2a") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2a") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2a" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2a" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+'2a=AZT/3TC+DTG' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-UNION ALL
-
-SELECT
-  '2b = ABC/3TC + DTG' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
-
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2b") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2b") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2b") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2b") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2b") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2b") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2b") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2b") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2b") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2b" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2b" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2a=AZT/3TC+DTG') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
-SELECT
-  '2c = TDF+3TC+LPV/r' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'2b=ABC/3TC+DTG' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2c") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2c") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2c") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2c") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2c") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2c") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2c") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2c") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2c") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2c" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2c" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
-
-UNION ALL
-
-SELECT
-  '2d = TDF/3TC+ATV/r' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
-
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2d") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2d") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2d") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2d") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2d") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2d") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2d") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2d") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2d") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2d" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2d" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2b=ABC/3TC+DTG') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
-SELECT
-  '2e = TDF/FTC-LPV/r' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'2c=TDF+3TC+LPV/r' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2e") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2e") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2e") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2e") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2e") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2e") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2e") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2e") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2e") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2e" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2e" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
-
-UNION ALL
-
-SELECT
-  '2f = TDF/FTC-ATV/r' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
-
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2f") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2f") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2f") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2f") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2f") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2f") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2f") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2f") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2f") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2f" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2f" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2c=TDF+3TC+LPV/r') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
-SELECT
-  '2g = AZT/3TC+LPV/r' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'2d=TDF/3TC+ATV/r' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2g") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2g") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2g") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2g") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2g") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2g") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2g") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2g") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2g") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2g" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2g" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
-
-UNION ALL
-
-SELECT
-  '2h = AZT/3TC+ATV/r' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
-
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2h") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2h") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2h") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2h") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2h") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2h") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2h") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2h") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2h") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2h" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2h" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2d=TDF/3TC+ATV/r') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
-SELECT
-  '2i = ABC/3TC + LPV/r' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'2e=TDF/FTC-LPV/r' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2i") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2i") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2i") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2i") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2i") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2i") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2i") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2i") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2i") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2i" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2i" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2e=TDF/FTC-LPV/r') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
+
+UNION ALL
+select 
+'2f=TDF/FTC-ATV/r' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
+
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2f=TDF/FTC-ATV/r') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
+
+UNION ALL
+select 
+'2g=AZT/3TC+LPV/r' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
+
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2g=AZT/3TC+LPV/r') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
+
+UNION ALL
+select 
+'2h=AZT/3TC+ATV/r' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
+
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2h=AZT/3TC+ATV/r') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
-SELECT
-  '2J = ABC/3TC + ATV/r' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
+select 
+'2i=ABC/3TC+LPV/r' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2j") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2j") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2j") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2j") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2j") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2j") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2j") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2j") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2j") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2j" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2j" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2i=ABC/3TC+LPV/r') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
+UNION ALL
+select 
+'2j=ABC/3TC+ATV/r' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
+
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2j=ABC/3TC+ATV/r') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
+select 
+'2k=TDF/3TC/DTG' as 'Regimen',
+'N/A' as '<10 Male',
+count(distinct(case when patient_id is not null and Age < 10 and gender = 'F' then patient_id end)) as '<10 Female',
+'N/A' as '10 - 15 Male',
+count(distinct(case when patient_id is not null and Age >= 10 and Age  <15 and gender = 'F' then patient_id end)) as '10 - 15 Female',
+'N/A' as '15 - 49 Male',
+count(distinct(case when patient_id is not null and Age >= 15 and Age < 50 and gender = 'F'  then patient_id end)) as '15 - 49 Female',
+'N/A' as '50+ Male',
+count(distinct(case when patient_id is not null and Age >= 50 and gender = 'F'  then patient_id end)) as '50+ Female',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F'  then patient_id end)) as 'Total',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and breastFeeding = 'YES' then patient_id end)) as 'Breastfeeding',
+count(distinct(case when patient_id is not null and Age > 0 and gender = 'F' and pregnant = 'YES'  then patient_id end)) as 'Pregant'
 
-SELECT
-  '2k = TDF/3TC/DTG' as 'Regimen',
-  count(belowtenmale) as '<10 Male',
-  count(belowtenfemale) as '<10 Female',
-  count(tenTofifteenmale) as '10-15 Male',
-  count(tenTofifteenfemale) as '10-15 Female',
-  count(fifteenTOfourtyninemale) as '15-49 Male',
-  count(fifteenTOfourtyninefemale) as '15-49 Female',
-  count(overFiftymale) as '50+ Male',
-  count(overFiftyfemale) as '50+ Female',
-  count(totalAll) as 'Total',
-  count(breastfeeding) as 'BreastFeeding',
-  count(pregnant) as 'Pregnant'
-
-FROM (
-  SELECT
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'M' and arvResult = "2k") THEN 1 END belowtenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 0 and 10 and gender = 'F' and arvResult = "2k") THEN 1 END belowtenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'M' and arvResult = "2k") THEN 1 END tenTofifteenmale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 10 and 15 and gender = 'F' and arvResult = "2k") THEN 1 END tenTofifteenfemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'M' and arvResult = "2k") THEN 1 END fifteenTOfourtyninemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 15 and 49 and gender = 'F' and arvResult = "2k") THEN 1 END fifteenTOfourtyninefemale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'M' and arvResult = "2k") THEN 1 END overFiftymale,
-    CASE WHEN (TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) between 50 and 115 and gender = 'F' and arvResult = "2k") THEN 1 END overFiftyfemale,
-    CASE WHEN (arvResult = "2k") THEN 1 END totalAll,
-    CASE WHEN (arvResult = "2k" and bresResult = "True") THEN 1 END breastfeeding,
-    CASE WHEN (arvResult = "2k" and pregResult = "True") THEN 1 END Pregnant
- 
-  FROM person pn 
-  JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'arvResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="ARV Regimen" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr ON (pr.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'pregResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="FP Pregnant" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr1 ON (pr1.visitPatientId = pn.person_id)
-  Left JOIN (SELECT distinct v.patient_id AS 'visitPatientId', (select name from concept_name where concept_id = o.value_coded and concept_name_type = "FULLY_SPECIFIED")  AS 'bresResult' FROM obs o 
-  JOIN concept_name cnr ON (cnr.concept_name_type = "FULLY_SPECIFIED" AND cnr.voided is false AND cnr.name="Currently Breastfeeding?" and o.concept_id = cnr.concept_id) 
-  JOIN encounter enc ON enc.encounter_id = o.encounter_id 
-  JOIN visit v ON v.visit_id = enc.visit_id 
-  GROUP BY v.patient_id 
-  ORDER BY v.visit_id DESC) AS pr2 ON (pr2.visitPatientId = pn.person_id)
-  ) p
+from(
+select patient_id, Age, gender
+from (
+select o.patient_id , o.concept_id , o.date_activated , o.voided , o.encounter_id , dr.name , o.date_stopped , p.birthdate , p.gender ,
+(TIMESTAMPDIFF(YEAR, p.birthdate, '#endDate#')) as 'Age'
+from orders o 
+inner join drug dr on o.concept_id = dr.concept_id 
+left join person p on o.patient_id = p.person_id
+where  o.date_stopped is null and order_reason_non_coded is null 
+and date_activated  between DATE_FORMAT('#startDate#','%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#endDate#'),'%Y-%m-%d 23:59:59'))
+and name = ('2k=TDF/3TC/DTG') 
+)a  inner join ( select patient_id as pid, concept_id as cid, max(date_activated) maxdate from orders 
+where date_stopped is null
+group by pid ) c on a.patient_id = c.pid and a.date_activated = c.maxdate and gender = 'F'
+)t1a left join (
+select person_id , (case when  pregnantResult = 1 then 'YES' else 'NO' end) as 'pregnant' from (
+select person_id, pregnantResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'pregnantResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'FP Pregnant' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'pregnant' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.pregnantResult = tConceptname.concept_id
+)tpregnant on t1a.patient_id = tpregnant.person_id
+left join(
+select person_id , (case when  breastFeedingResult = 1 then 'YES' else 'NO' end) as 'breastFeeding' from (
+select person_id, breastFeedingResult from (  
+select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'breastFeedingResult', voided from obs where concept_id =
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
+and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59')  and value_coded = 1 and voided = 0
+)a inner join (select person_id as pid , concept_id as cid, max(encounter_id) maxdate from obs where concept_id = 
+(select concept_id from concept_name where name = 'Currently Breastfeeding?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
+a.person_id = c.pid and a.encounter_id = c.maxdate 
+)tresults left join
+(
+select concept_id , name as 'breastfeeding' from concept_name where concept_name_type = 'SHORT' and voided = 0
+)tConceptname on tresults.breastFeedingResult = tConceptname.concept_id
+)tBreastFeeding on t1a.patient_id = tBreastFeeding.person_id
 
 UNION ALL
 
