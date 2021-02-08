@@ -147,7 +147,7 @@ and obs_datetime > '#startDate#' and obs_datetime <= DATE_FORMAT(('#endDate#'),'
 a.person_id = c.pid and a.encounter_id = c.maxdate 
 )tMuac on tDemographics.personid = tMuac.person_id
 left join (
-select person_id , (case when  tbResults = 1 then 'Positive' else 'Negative' end) as 'TBStatus' from (
+select person_id , (case when  tbDiaognised = 1 then 'Positive' else 'Negative' end) as 'TBStatus' from (
 select person_id, tbDiaognised from (  
 select person_id, concept_id, obs_datetime  , encounter_id , value_coded as 'tbDiaognised', voided from obs where concept_id =
 (select concept_id from concept_name where name = 'TB Diagnosed?' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) 
