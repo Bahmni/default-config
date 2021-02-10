@@ -86,4 +86,5 @@
         </sql>
     </changeSet>
     <include file ="addObsPathSplitterProperty.xml"/>
+    <include file ="addMultiSelectObsSplitterProperty.xml"/>
 </databaseChangeLog>
