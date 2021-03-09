@@ -63,5 +63,7 @@
   "PATIENT_VISIT_PAGE_KEY":"Pág. Visita de Paciente",
   "HOME_DASHBOARD_KEY":"Início Painel",
   "MEDICATION_CHANGE_DURATION_BUTTON": "Alterar Duração",
-  "DASHBOARD_TITLE_Consultation_KEY": "Anotações da Consulta"
+  "DASHBOARD_TITLE_Consultation_KEY": "Anotações da Consulta",
+  "DASHBOARD_JOIN_TELECON_KEY" : "Join teleconsulta",
+  "DASHBOARD_TELECON_KEY" : "Teleconsulta"
 }
