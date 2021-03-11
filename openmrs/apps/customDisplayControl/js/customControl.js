@@ -176,6 +176,11 @@ angular.module('bahmni.common.displaycontrol.custom')
                 withCredentials: true
             });
         };
+        var convertUTCtoLocal = function (start_date_time, end_date_time) {
+            var date = Bahmni.Common.Util.DateUtil.formatDateWithoutTime(start_date_time);
+            var timeSlot = Bahmni.Common.Util.DateUtil.formatTime(start_date_time) + " - " + Bahmni.Common.Util.DateUtil.formatTime(end_date_time);
+            return [date, timeSlot];
+        };
         $q.all([getUpcomingAppointments(), getPastAppointments()]).then(function (response) {
             $scope.upcomingAppointments = response[0].data;
             $scope.upcomingAppointmentsUUIDs = [];
@@ -184,6 +189,11 @@ angular.module('bahmni.common.displaycontrol.custom')
                 $scope.upcomingAppointmentsUUIDs[i] = $scope.upcomingAppointments[i].uuid;
                 $scope.teleconsultationAppointments[i] = $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_TELECONSULTATION;
                 delete $scope.upcomingAppointments[i].uuid;
+                const [date, timeSlot] = convertUTCtoLocal($scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_START_DATE_KEY, $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_END_DATE_KEY);
+                delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_START_DATE_KEY;
+                delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_END_DATE_KEY;
+                $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_DATE_KEY = date;
+                $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY = timeSlot;
                 delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_TELECONSULTATION;
             }
             $scope.upcomingAppointmentsHeadings = _.keys($scope.upcomingAppointments[0]);
@@ -199,7 +209,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             appService.setTeleConsultationVars(jitsiMeetingId, true);
         };
         $scope.showJoinTeleconsultationOption = function (appointmentIndex) {
-            return $scope.upcomingAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_STATUS_KEY == 'Scheduled' && 
+            return $scope.upcomingAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_STATUS_KEY == 'Scheduled' &&
                     $scope.teleconsultationAppointments[appointmentIndex];
         }
     };
