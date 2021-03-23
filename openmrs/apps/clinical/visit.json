@@ -4,17 +4,26 @@
         "displayByDefault": true,
         "defaultSections": true,
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aampipal Hospital",
             "header": "Visit",
-            "logo": "../images/nepalEhrLogoFull.png"
-        }
+            "logo": "../images/APH_logo.png"       
+         }, 
+	"defaultSections": true,
+        "sections": {
+	      "conditions": {
+                "title": "Conditions",
+                "type": "conditionsList",
+                "displayOrder": 2,
+                "config": { }
+            }
+	}  
     },
     "discharge_summary": {
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aampippal Hospital",
             "header": "Discharge Summary",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/APH_logo.png"
         },
         "sections": {
             "patientinformation": {
@@ -111,9 +120,9 @@
     "opdSummary": {
         "title": "OPD Summary",
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aampippal Hospital",
             "header": "OPD Summary",
-            "logo": "../images/nhn-logo.png",
+            "logo": "../images/APH_logo.png",
             "showNameAndImage": true
         },
         "sections": {
@@ -203,9 +212,9 @@
     "testSummary": {
         "title": "OPD One Pager",
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aampippal Hospital",
             "header": "OPD One Pager",
-            "logo": "../images/nhn-logo.png",
+            "logo": "../images/APH_logo.png",
             "showNameAndImage": true
         },
         "sections": {

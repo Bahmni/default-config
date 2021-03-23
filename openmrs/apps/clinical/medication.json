@@ -1,11 +1,60 @@
 {
-  "commonConfig": {},
+  "shouldOverRideConfig": true,
+  "commonConfig": {
+  },
   "tabConfig": {
-    "allMedicationTabConfig": {
-      "orderSet": {
-        "calculateDoseOnlyOnCurrentVisitValues": false
-      },
+    "nonTabConfig": {
+      "hideBulkChangeDurationButton": true,
       "inputOptionsConfig": {
+        "duration": {
+          "required": false 
+        },
+        "drugConceptSet": "All Other Orders",
+        "isDropDown": false,
+		"hideOrderSet" : true,
+        "dosingInstructions": [
+          "As directed",
+          "Before meals"
+        ],
+		"doseUnits": [
+          "IU"
+        ],
+        "dispensingUnits": [],
+        "hiddenFields": [
+          "dosingTypeToggle",
+          "duration",
+          "durationUnits",
+          "dosingInstructions",
+          "dose",
+          "frequency",
+          "startDate",
+          "frequencyUnits",
+          "sos",
+          "route",
+          "routes",
+		  "dispensingUnits",
+		  "defaultDurationUnit",
+		  "frequencyDefaultDurationUnitsMap"
+		],
+        "defaultStartDate": true,
+        "defaultDurationUnit": "Day(s)",
+        "defaultInstructions": "As directed",
+        "drugFormDefaults": { 
+			"Tablet": {
+            "doseUnits": "IU",
+            "route": "Oral"
+          }
+		}
+         
+
+      }
+    },
+	
+	
+  "allMedicationTabConfig": {
+      "inputOptionsConfig": {
+		
+        "drugConceptSet": "All Other Drugs",
         "defaultDurationUnit": "Day(s)",
         "hideOrderSet": false,
         "defaultInstructions": "As directed",

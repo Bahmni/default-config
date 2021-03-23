@@ -4,9 +4,9 @@
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "printing": {
-            "title": "Nepal EHR",
+            "title": "Aamppipal Hospital",
             "header": "General Summary",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/APH_logo.png"
         },
         "sections": {
             "patientInformation": {
@@ -38,16 +38,6 @@
                 }
             },
 	    
-            "pacs": {
-                "orderType": "Radiology Order",
-                "type": "pacsOrders",
-                "translationKey": "DASHBOARD_TITLE_PACS_KEY",
-                "displayOrder": 8,
-                "dashboardConfig": {
-                    "pacsImageUrl": "/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}&serverName=dcm4chee",
-                    "numberOfVisits": 4
-                }
-            },
             "visits": {
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "type": "visits",
@@ -80,18 +70,41 @@
                     "title": null,
                     "maximumNoOfVisits": 1
                 },
-                "formGroup": ["Patient Vitals", "Acute OPD visit", "Acute Abdominal Complaint", "Acute HEENT Complaint",
-                    "Acute MSK Complaint", "Acute Skin Complaint", "Acute GU Complaint", "ANC", "Asthma, Progress", "Childhood Illness (Children aged below 2 months)",
-                    "Childhood Illness( Children aged 2 months to 5 years)", "CHP Antenatal Care", "CHP Chronic Disease Counseling", "CHP Registration",
-                    "Chronic Kidney Disease, Progress", "COPD, Progress", "Congestive Heart Failure, Progress", "Death Note", "Delivery note", "Dental", "Dental Note",
-                    "Depression Note", "Depression-Followup Visit", "Depression-Initial Visit", "PTSD-PCL Initial Note", "Diabetes, Progress", "Discharge Note", "DRTuberculosis, Intake", "ECG Notes", "ER General Notes", "Family Planning Template",
-                    "HIV Testing and Counseling Intake Template", "HIV Treatment and Care Intake Template", "HIV Treatment and Care Progress Template", "Hypertension, Progress",
-                    "IMAM Program", "Kalaazar, Template", "Leprosy, Template", "Mental Health", "Mental Health Screener", "Malaria", "Nutrition", "Operative Notes",
-                    "Opioid Substitution Therapy Intake Template", "Opioid Substitution Therapy Intake Template", "Opportunistic Infection Template", "Orthopaedic Examination",
-                    "PNC Note", "Post Delivery Family Planning Checklist", "Prevention of Mother-to-Child Transmission Intake Template", "Procedure Notes", "Psychiatrist's Recommendation",
-                    "Psychosis Followup Note", "PTSD-PCL Follow Up", "Psychosis Intake Note", "Rheumatoid Arthritis, Progress", "Rheumatic Heart Disease, Progress", "Safe Abortion", "Seizure Disorder, Progress",
-                    "Sextually Transmitted Infections Intake Template", "Stroke OPD", "Trauma Notes", "Tuberculosis, Intake", "USG Notes", "TEST TEMPLATE (टेस्ट टेम्प्लेट)"
-                ],
+                "formGroup": ["Vitals", "Vaccine note",
+  "CBIMNCI (<2 months child)",
+  "CBIMNCI (2 to 59 months child)",
+  "Nutrition note",
+  "ANC note",
+  "Delivery note",
+  "PNC note",
+  "Family planning and reproductive health(FRH) note",
+  "Safe abortion (SA) note",
+  "Leprosy note",
+  "TB intake note",
+  "TB follow(TB FU) up note",
+  "DR TB intake note",
+  "DR TB follow up (DRTB FU) note",
+  "Kalazar note",
+  "HIV testing and counseling(HTC) note",
+  "HIV treatment and care(HIVTC) intake template",
+  "HIV treatment and care(HIVTC) follow up note",
+  "Sexually transmitted infections(STI) note",
+  "Prevention of mother to child transmission(PMTCT) note",
+  "OPD visit note",
+  "ER general note",
+  "Animal bite note",
+  "Newborn admission (NBA) note",
+  "Procedure note",
+  "Pre anesthesia check up note",
+  "Discharge note",
+  "Burn note",
+  "Death note",
+  "Operative note",
+  "Dental note",
+  "IMAM note",
+  "Malaria note",
+  "USG note",
+  "Eye clinical note"],
                 "displayOrder": 3
             },
             "deathNote": {
@@ -134,7 +147,25 @@
                 },
                 "displayOrder": 4
             },
-            "labResults": {
+               "radiology":{  
+                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
+                "type":"radiology",
+                "showDetailsButton":true,
+                "displayOrder":5
+            },
+            "radiologyOrders":{  
+                "orderType":"Radiology Order",
+                "type":"ordersControl",
+                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
+                "displayOrder":17,
+                "dashboardConfig":{  
+                    "conceptNames":[  
+                        "Summary"
+                    ],
+                    "numberOfVisits":4
+                }
+            },
+              "labResults": {
                 "translationKey": "DASHBOARD_TITLE_LAB_RESULTS_KEY",
                 "type": "labOrders",
                 "dashboardConfig": {
@@ -200,7 +231,7 @@
                         "labConcepts": ""
                     }
                 },
-                "displayOrder": 7
+                "displayOrder": 3
             },
             "generalConsultation": {
                 "translationKey": "DASHBOARD_TITLE_GENERAL_CONSULTATION_KEY",
@@ -462,9 +493,9 @@
     "hiv": {
         "dashboardName": "HIV",
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aamppipal Hospital",
             "header": "HIV Summary",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/APH_logo.png"
         },
         "sections": {
             "patientInformation": {
@@ -510,9 +541,9 @@
     "motherhood": {
         "dashboardName": "Motherhood",
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aamppipal Hospital",
             "header": "Motherhood Summary",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/APH_logo.png"
         },
         "sections": {
             "patientInformation": {
@@ -547,9 +578,9 @@
     "operationsAndProcedures": {
         "dashboardName": "Operations and Procedures",
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aamppipal Hospital",
             "header": "Operations and Procedures Summary",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/APH_logo.png"
         },
         "sections": {
             "patientInformation": {
@@ -584,9 +615,9 @@
     "imam": {
         "dashboardName": "IMAM",
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aamppipal Hospital",
             "header": "IMAM Summary",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/APH_logo.png"
         },
         "sections": {
             "patient_information": {
@@ -621,9 +652,9 @@
     "communityHealth": {
         "dashboardName": "Community Health",
         "printing": {
-            "title": "NepalEHR",
+            "title": "Aamppipal Hospital",
             "header": "Community Health Summary",
-            "logo": "../images/nhn-logo.png"
+            "logo": "../images/APH_logo.png"
         },
         "sections": {
             "Patient Information": {

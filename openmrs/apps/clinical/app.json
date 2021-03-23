@@ -25,8 +25,8 @@
 		"enableNepaliCalendar": true,
 		"displayNepaliDates": true,
 		"filterObservationTemplates": true,
-		"defaultVisitType": "General",
-		"visitTypeForRetrospectiveEntries": "General",
+		"defaultVisitType": "OPD",
+		"visitTypeForRetrospectiveEntries": "OPD",
 		"obsIgnoreList": ["Patient file"],
 		"patientConfig": {
 			"showMiddleNameOn": ["patient-profile", "patient-context"]
@@ -94,1714 +94,398 @@
 				"durationRequired": false,
 				"conciseText": true
 			},
-			"Followed previously at": {
-				"conciseText": true
-			},
-			"Diagnosis location": {
-				"conciseText": true
-			},
-			"Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Current Medicines - Details": {
-				"conciseText": true
-			},
-			"Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Current Medicines - Reason": {
-				"conciseText": true
-			},
-			"Congestive Heart Failure - Examination / Follow Up - Onset - Chief Complaint Data - Chief Complaint": {
-				"conciseText": true
-			},
-			"Details": {
-				"conciseText": true
-			},
-			"Reason": {
-				"conciseText": true
-			},
-			"Quit since": {
-				"conciseText": true
-			},
-			"Image": {
-				"multiple": 3
-			},
-			"CAD - Symptoms of Angina today": {
-				"multiSelect": true
-			},
-			"Congestive Heart Failure - Intake - Major comorbidities": {
-				"multiSelect": true
-			},
-			"Congestive Heart Failure - Examination / Follow Up - Reason for Decompensation / Etiology - Reason for decompensation / Likely Etiology": {
-				"multiSelect": true
-			},
-			"Meets all 5 criteria": {
-				"multiSelect": true
-			},
-			"Meets all 3 criteria": {
-				"multiSelect": true
-			},
-			"Congestive Heart Failure - Examination / Follow Up - Assessment / Follow up - Assessment": {
-				"multiSelect": true
-			},
-			"CAD - Diagnosis": {
-				"multiSelect": true
-			},
-			"CAD - Risk factors": {
-				"multiSelect": true
-			},
-			"CAD - Soft risk factors": {
-				"multiSelect": true
-			},
-			"Exercise": {
-				"multiSelect": true
-			},
-			"CAD - Assessment": {
-				"multiSelect": true
-			},
-			"Diagnostic clues - COPD": {
-				"multiSelect": true
-			},
-			"Considered top differential diagnosis": {
-				"multiSelect": true
-			},
-			"Congestive Heart Failure - Examination / Follow Up - Diagnostic Clues - Symptoms of Heart Failure": {
-				"multiSelect": true
-			},
-			"Hypertension - Risk factors": {
-				"multiSelect": true
-			},
-			"HTC, Risk Group": {
-				"multiSelect": true
-			},
-			"PMTCT, Risk Group": {
-				"multiSelect": true
-			},
-			"STI, STI Diagnosis Syndrome": {
-				"multiSelect": true
-			},
-			"STI, Risk Group": {
-				"multiSelect": true
-			},
-			"HIVTC, Risk Group": {
-				"multiSelect": true
-			},
-			"HIVTC, TB Type": {
-				"multiSelect": true
-			},
-			"HIVTC, Opportunistic Infection Diagnosis": {
-				"multiSelect": true
-			},
-			"HIVTC, ART cohort": {
-				"multiSelect": true
-			},
-			"ART, Risk Group": {
-				"multiSelect": true
-			},
-			"ART, If substitution therapy": {
-				"multiSelect": true
-			},
-			"ART, If alcoholism how": {
-				"multiSelect": true
-			},
-			"ART, Place of ART taken": {
-				"multiSelect": true
-			},
-			"ART, TB Type": {
-				"multiSelect": true
-			},
-			"ART, TB treatment category": {
-				"multiSelect": true
-			},
-			"ART, Reason for treatment substitution": {
-				"multiSelect": true
-			},
-			"ART, Reason for treatment switching": {
-				"multiSelect": true
-			},
-			"ART, Reason for stopping treatment": {
-				"multiSelect": true
-			},
-			"ART, ART Family Planning method": {
-				"multiSelect": true
-			},
-			"ART, ART opportunistic infections": {
-				"multiSelect": true
-			},
-			"ART, ART ART side effects": {
-				"multiSelect": true
-			},
-			"CHP Registration, VDC Number": {
-				"required": true
-			},
-			"CHP Registration, Ward Number": {
-				"required": true
-			},
-			"CHP Registration, House Number": {
-				"required": true
-			},
-			"CHP Registration, Family Member Number": {
-				"required": true
-			},
-			"CHP ANC, Diagnosis, If other, specify": {
-				"conciseText": true
-			},
-			"ANC, Diagnosis, If other, specify": {
-				"conciseText": true
-			},
-			"CHP ANC, Visit date": {
-				"required": true
-			},
-			"CHP ANC, Visit type": {
-				"required": true
-			},
-			"CHP ANC, Follow up": {
-				"required": false
-			},
-			"CHP ANC, Diagnosis, High Risk Low Touch": {
-				"multiSelect": true,
-				"required": true
-			},
-			"CHP ANC, Diagnosis, High Risk High Touch": {
-				"multiSelect": true,
-				"required": true
-			},
-			"ANC, Diagnosis, CHP High Risk Low Touch": {
-				"multiSelect": true,
-				"required": true
-			},
-			"ANC, Diagnosis, CHP High Risk High Touch": {
-				"multiSelect": true,
-				"required": true
-			},
-			"HTC, Other reason for test": {
-				"conciseText": true
-			},
-			"HTC, Other Risk Group": {
-				"conciseText": true
-			},
-			"PMTCT, Other Risk Group": {
-				"conciseText": true
-			},
-			"PMTCT, Place of transfer out for continuum": {
-				"conciseText": true
-			},
-			"STI, Other STI Diagnosis Syndrome": {
-				"conciseText": true
-			},
-			"STI, Other Risk Group": {
-				"conciseText": true
-			},
-			"HIVTC, Other Risk Group": {
-				"conciseText": true
-			},
-			"HIVTC, Other Entry Point": {
-				"conciseText": true
-			},
-			"HIVTC, Transferred in from": {
-				"conciseText": true
-			},
-			"HIVTC, Transferred out to": {
-				"conciseText": true
-			},
-			"HIVTC, Viral Load": {
-				"conciseText": true
-			},
-			"HIVTC, Other Opportunistic Infection Diagnosis": {
-				"conciseText": true
-			},
-			"HIVTC, Opportunistic Infection Treatment": {
-				"conciseText": true
-			},
-			"ART, HIV +ve confirmed place": {
-				"conciseText": true
-			},
-			"ART, Other chronic diseases": {
-				"conciseText": true
-			},
-			"ART, Other chronic disease drugs": {
-				"conciseText": true
-			},
-			"ART, Transferred in from": {
-				"conciseText": true
-			},
-			"ART, Transferred out to": {
-				"conciseText": true
-			},
-			"ART, Other Entry Point": {
-				"conciseText": true
-			},
-			"ART, Other Risk Group": {
-				"conciseText": true
-			},
-			"ART, Name of family member": {
-				"conciseText": true
-			},
-			"ART, Relation with patient": {
-				"conciseText": true
-			},
-			"ART, Family member regd. no.": {
-				"conciseText": true
-			},
-			"ART, Viral Load": {
-				"conciseText": true
-			},
-			"ART, TB registration number": {
-				"conciseText": true
-			},
-			"ART, Name of health facility for TB": {
-				"conciseText": true
-			},
-			"ART, Other reason for treatment substitution": {
-				"conciseText": true
-			},
-			"ART, Other reason for stopping treatment": {
-				"conciseText": true
-			},
-			"ART, Name of health facility": {
-				"conciseText": true
-			},
-			"ART, Mortality code": {
-				"conciseText": true
-			},
-			"ART, ART other opportunistic infections": {
-				"conciseText": true
-			},
-			"ART, ART drugs prescribed for prophylaxis": {
-				"conciseText": true
-			},
-			"ART, ART ARV drugs and dose prescribed": {
-				"conciseText": true
-			},
-			"ART, ART Other ART side effects": {
-				"conciseText": true
-			},
-			"ART, ART lab results when available": {
-				"conciseText": true
-			},
-			"ART, ART referred to": {
-				"conciseText": true
-			},
-			"Delivery Note, Liveborn infant details": {
-				"allowAddMore": true
-			},
-			"Dental Note, Tooth number": {
-				"multiSelect": true
-			},
-			"Dental Note, Treatment": {
-				"allowAddMore": true
-			},
-			"Out Patient Details, Chief Complaint": {
-				"required": true
-			},
-			"Out Patient Details, Duration": {
-				"conciseText": true
-			},
-			"Out Patient Details, Timing": {
-				"conciseText": true
-			},
-			"Out Patient Details, Constitutional": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Eyes": {
-				"multiSelect": true
-			},
-			"Out Patient Details, ENT": {
-				"multiSelect": true
-			},
-			"Out Patient Details, CV": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Respair": {
-				"multiSelect": true
-			},
-			"Out Patient Details, GI": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Urinary": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Genital": {
-				"multiSelect": true
-			},
-			"Out Patient Details, MSK": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Skin / Breast": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Neuro": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Psych": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Endocrine": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Heme / Lymph": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Allergic / Immunologic": {
-				"multiSelect": true
-			},
-			"Out Patient Details, Lives Where": {
-				"conciseText": true
-			},
-			"Out Patient Details, Lives With": {
-				"conciseText": true
-			},
-			"Out Patient Details, Problem": {
-				"allowAddMore": true
-			},
-			"Chronic OPD Details, Duration": {
-				"conciseText": true
-			},
-			"Chronic OPD Details, Timing": {
-				"conciseText": true
-			},
-			"Chronic OPD Details, Constitutional": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Eyes": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, ENT": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, CV": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Respair": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, GI": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Urinary": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Genital": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, MSK": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Skin / Breast": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Neuro": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Psych": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Endocrine": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Heme / Lymph": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Allergic / Immunologic": {
-				"multiSelect": true
-			},
-			"Chronic OPD Details, Lives Where": {
-				"conciseText": true
-			},
-			"Chronic OPD Details, Lives With": {
-				"conciseText": true
-			},
-			"Chronic OPD Details, Problem": {
-				"allowAddMore": true
-			},
-			"ER General Notes, Duration": {
-				"conciseText": true
-			},
-			"ER General Notes, Timing": {
-				"conciseText": true
-			},
-			"ER General Notes, Constitutional": {
-				"multiSelect": true
-			},
-			"ER General Notes, Eyes": {
-				"multiSelect": true
-			},
-			"ER General Notes, ENT": {
-				"multiSelect": true
-			},
-			"ER General Notes, CV": {
-				"multiSelect": true
-			},
-			"ER General Notes, Respair": {
-				"multiSelect": true
-			},
-			"ER General Notes, GI": {
-				"multiSelect": true
-			},
-			"ER General Notes, Urinary": {
-				"multiSelect": true
-			},
-			"ER General Notes, Genital": {
-				"multiSelect": true
-			},
-			"ER General Notes, MSK": {
-				"multiSelect": true
-			},
-			"ER General Notes, Skin / Breast": {
-				"multiSelect": true
-			},
-			"ER General Notes, Neuro": {
-				"multiSelect": true
-			},
-			"ER General Notes, Psych": {
-				"multiSelect": true
-			},
-			"ER General Notes, Endocrine": {
-				"multiSelect": true
-			},
-			"ER General Notes, Heme / Lymph": {
-				"multiSelect": true
-			},
-			"ER General Notes, Allergic / Immunologic": {
-				"multiSelect": true
-			},
-			"ER General Notes, Lives Where": {
-				"conciseText": true
-			},
-			"ER General Notes, Lives With": {
-				"conciseText": true
-			},
-			"ER General Notes, Problem": {
-				"allowAddMore": true
-			},
-			"Chronic Kidney Disease, Comorbidities": {
-				"multiSelect": true
-			},
-			"Congestive Heart Failure, Major comorbidities": {
-				"multiSelect": true
-			},
-			"Coronary Artery Disease, Risk factors": {
-				"multiSelect": true
-			},
-			"Diabetes, Comorbidities": {
-				"multiSelect": true
-			},
-			"Diabetes, Complications": {
-				"multiSelect": true
-			},
-			"Hypertension, Secondary Hypertension": {
-				"multiSelect": true
-			},
-			"Post Delivery FP Checklist, Contraception Used in Past": {
-				"multiSelect": true
-			},
-			"Post Delivery FP Checklist, Reason for Discontinue": {
-				"multiSelect": true
-			},
-			"Post Delivery FP Checklist, Interested in": {
-				"multiSelect": true
-			},
-			"Post Delivery FP Checklist, FP Method Patient Went Home With": {
-				"multiSelect": true,
-				"required": true
-			},
-			"Post Delivery FP Checklist, Patient Interested In": {
-				"multiSelect": true
-			},
-			"Post Delivery FP Checklist, Referred to Higher Center for FP": {
-				"multiSelect": true
-			},
-			"Surgical Abortion, Immediate complications": {
-				"multiSelect": true
-			},
-			"Surgical Abortion, Late complications": {
-				"multiSelect": true
-			},
-			"Medical Abortion complications": {
-				"multiSelect": true
-			},
-			"Accepted Family Planning methods": {
-				"multiSelect": true
-			},
-			"Coronary Artery Disease, EKG": {
-				"conciseText": true
-			},
-			"Death Note, Provider Name": {
-				"conciseText": true
-			},
-			"Death Note, MDGP Notified at": {
-				"conciseText": true
-			},
-			"Delivery Note, Main Attendant Name": {
-				"conciseText": true
-			},
-			"Delivery Note, Suturing": {
-				"conciseText": true
-			},
-			"Diabetes, A1C": {
-				"conciseText": true
-			},
-			"Diabetes, LDL": {
-				"conciseText": true
-			},
-			"Diabetes, Near Vision Check": {
-				"conciseText": true
-			},
-			"Diabetes, Distance Vision Check": {
-				"conciseText": true
-			},
-			"Discharge Note, Name of Doctor to contact for more information": {
-				"conciseText": true
-			},
-			"Hypertension, Last Cr": {
-				"conciseText": true
-			},
-			"Hypertension, Last LDL": {
-				"conciseText": true
-			},
-			"Kalaazar, Parents Name": {
-				"conciseText": true
-			},
-			"Leprosy, Parents Name": {
-				"conciseText": true
-			},
-			"Malaria, Parents Name": {
-				"conciseText": true
-			},
-			"Operative Notes, Fluid Amount and Unit": {
-				"conciseText": true
-			},
-			"Operative Notes, Tourniquet Time": {
-				"conciseText": true
-			},
-			"Procedure Notes, Fluid Amount and Unit": {
-				"conciseText": true
-			},
-			"Stroke, LDL": {
-				"conciseText": true
-			},
-			"Stroke, A1c": {
-				"conciseText": true
-			},
-			"Death Note, Primary Cause of Death": {
-				"required": true,
-				"answersConceptName": "Death Note, Cause, Answers",
-				"autocomplete": true
-			},
-			"Death Note, Secondary Cause of Death": {
-				"answersConceptName": "Death Note, Cause, Answers",
-				"autocomplete": true
-			},
-			"Death Note, Tertiary Cause of Death": {
-				"answersConceptName": "Death Note, Cause, Answers",
-				"autocomplete": true
-			},
-			"Vitals": {
-				"allowAddMore": true
-			},
-			"Acute OPD visit": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"ANC": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Asthma, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Childhood Illness( Children aged below 2 months)": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Childhood Illness( Children aged 2 months to 5 years)": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Chronic Kidney Disease, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Chronic OPD Visit": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"COPD, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Congestive Heart Failure, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Coronary Artery Disease, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Diabetes, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"ER General Notes": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"HIV Treatment and Care Progress Template": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"HIV Testing and Counseling Intake Template": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"HIV Treatment and Care Intake Template": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Death Note": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Delivery note": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Discharge Note": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"DRTuberculosis, Intake": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"ECG Notes": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Operative Notes": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Opioid Substitution Therapy Intake Template": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Opportunistic Infection Template": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Orthopaedic Examination": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Post Delivery Family Planning Checklist": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Prevention of Mother-to-Child Transmission Intake Template": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Procedure Notes": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Safe Abortion": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Sextually Transmitted Infections Intake Template": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Tuberculosis, Intake": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Hypertension, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Kalaazar": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Leprosy": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Mental Health": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Malaria": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Nutrition": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"PNC": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Rheumatoid Arthritis, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Rheumatic Heart Disease, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Seizure Disorder, Progress": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Stroke OPD": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"Trauma Notes": {
-				"showPreviousButton": true,
-				"numberOfVisits": 1
-			},
-			"HIVTC, FP methods used by the patient": {
-				"multiSelect": true
-			},
-			"HIVTC, Death cause": {
-				"answersConceptName": "Death Note, Cause, Answers",
-				"autocomplete": true
-			},
-			"Out Patient Details, Free Health Service Code": {
-				"required": true
-			},
-			"ANC, Visit Month": {
-				"required": true
-			},
-			"ANC, Albendazole given": {
-				"required": true
-			},
-			"ANC, Number of IFA Tablets given": {
-				"required": true
-			},
-			"ANC, Blood Transfusion Provided": {
-				"required": true
-			},
-			"ANC, Blood Transfusion Quantity": {
-				"required": true
-			},
-			"Childhood Illness, Acute Respiratory Infection present": {
-				"required": true
-			},
-			"Childhood Illness, Diarrhoea present": {
-				"required": true
-			},
-			"Childhood Illness, Dehydration Status": {
-				"required": true
-			},
-			"Childhood Illness, Albendazole Given": {
-				"required": true
-			},
-			"Childhood Illness, Vitamin A Capsules Provided": {
-				"required": true
-			},
-			"Difficult feeding": {
-				"required": true
-			},
-			"Breastfed": {
-				"required": true
-			},
-			"Weight condition": {
-				"required": true
-			},
-			"Childhood Illness, Referred out": {
-				"required": true
-			},
-			"ER General Notes, Free Health Service Code": {
-				"required": true
-			},
-			"Chronic OPD Details, Free Health Service Code": {
-				"required": true
-			},
-			"Delivery Note, Delivery service done by": {
-				"required": true
-			},
-			"Delivery Note, Method of Delivery": {
-				"required": true
-			},
-			"Delivery Note, Outcome of Delivery": {
-				"required": true
-			},
-			"Delivery Note, Fetal Presentation": {
-				"required": true
-			},
-			"Delivery Note, Blood transfusion provided": {
-				"required": true
-			},
-			"Delivery Note, Blood transfusion quantity": {
-				"required": true
-			},
-			"Discharge note, Inpatient outcome": {
-				"required": true
-			},
-			"FP, Family Planning Method": {
-				"required": true
-			},
-			"FP, Units provided": {
-				"required": true
-			},
-			"FP, Users Type": {
-				"required": true
-			},
-			"Nutrition, Nutritional Status": {
-				"required": true
-			},
-			"Nutrition, Bal Vita Provided by FCHV": {
-				"required": true
-			},
-			"PNC, PNC visit": {
-				"allowAddMore": true
-			},
-			"PNC, PNC visit date": {
-				"required": true
-			},
-			"PNC, Visit Time": {
-				"required": true
-			},
-			"PNC, Blood Transfusion Provided": {
-				"required": true
-			},
-			"PNC, Blood Transfusion Quantity": {
-				"required": true
-			},
-			"PNC, IFA Tablets Provided": {
-				"required": true
-			},
-			"PNC, Vitamin A Capsules Provided": {
-				"required": true
-			},
-			"Procedure Notes, Procedure": {
-				"required": true
-			},
-			"ANC, ANC Visit": {
-				"required": true,
-				"multiSelect": true
-			},
-			"ANC, Completed 4 ANC visits": {
-				"required": true
-			},
-			"HIVTC, Problem": {
-				"allowAddMore": true
-			},
-			"IMAM Program": {
-				"allowAddMore": true
-			},
-			"Family Planning Template": {
-				"allowAddMore": true
-			},
-			"OP Details, Date of LMP": {
-				"conciseText": true
-			},
-			"ER General Notes, Date of LMP": {
-				"conciseText": true
-			},
-			"CHPCDC, Hypertension": {
-				"multiSelect": true
-			},
-			"CHPCDC, Diabetes Mellitus type II": {
-				"multiSelect": true
-			},
-			"CHPCDC, Coronary Artery Disease": {
-				"multiSelect": true
-			},
-			"CHPCDC, Congestive Heart Failure": {
-				"multiSelect": true
-			},
-			"CHPCDC, COPD": {
-				"multiSelect": true
-			},
-			"CHPCDC, Bronchial Asthma": {
-				"multiSelect": true
-			},
-			"CHPCDC, Chronic Kidney Disease": {
-				"multiSelect": true
-			},
-			"CHPCDC, Epilepsy or Seizure disorder": {
-				"multiSelect": true
-			},
-			"CHPCDC, Tuberculosis": {
-				"multiSelect": true
-			},
-			"CHPCDC, Other Chronic Disease": {
-				"multiSelect": true
-			},
-			"ART, Self visit": {
-				"multiSelect": true
-			},
-			"PSBI/LBI/NBI, Symptoms": {
-				"multiSelect": true
-			},
-			"Umbilicus Infection": {
-				"multiSelect": true
-			},
-			"Diarrhoea, Symptoms": {
-				"multiSelect": true
-			},
-			"Childhood Illness, 2 months, Counseling purpose": {
-				"multiSelect": true
-			},
-			"Asthma, Exacerbations in last 3 months": {
-				"required": true
-			},
-			"Asthma, Asthma, FollowUp": {
-				"required": true
-			},
-			"COPD, Exacerbations in Last 3 Months": {
-				"required": true
-			},
-			"COPD, FollowUp": {
-				"required": true
-			},
-			"CHF, Exacerbations in Last 3 Months": {
-				"required": true
-			},
-			"CHF, Followup": {
-				"required": true
-			},
-			"Diabetes, Urine sugar outcome": {
-				"required": true
-			},
-			"Diabetes, Followup": {
-				"required": true
-			},
-			"CKD, BP less than 140/90": {
-				"required": true
-			},
-			"CKD, FollowUp": {
-				"required": true
-			},
-			"RA, Pain exacerbations in the past 3 months": {
-				"required": true
-			},
-			"RA, FollowUp": {
-				"required": true
-			},
-			"CHD, BP less than 140/90": {
-				"required": true
-			},
-			"CHD, Followup": {
-				"required": true
-			},
-			"Seizure Disorder, Number of seizures in last 3 months": {
-				"required": true
-			},
-			"Seizure Disorder, FollowUp": {
-				"required": true
-			},
-			"Tuberculosis, Treatment Outcome": {
-				"required": true
-			},
-			"Tuberculosis, FollowUp": {
-				"required": true
-			},
-			"HIVTC, CD4 count": {
-				"required": false
-			},
-			"HIVTC, Followup": {
-				"required": true
-			},
-			"Hypertension, Patient at Treatment Goal": {
-				"required": true
-			},
-			"Hypertension, FollowUp": {
-				"required": true
-			},
-			"Acute HEENT Complaint-Other symptoms": {
-				"multiSelect": true
-			},
-			"Acute HEENT Complaint-Plan": {
-				"multiSelect": true
-			},
-			"Acute Abdominal Complaint-Other Symptoms": {
-				"multiSelect": true
-			},
-			"Acute Abdominal Complaint-Plan": {
-				"multiSelect": true
-			},
-			"Acute MSK Complaint-Other symptoms": {
-				"multiSelect": true
-			},
-			"Acute MSK Complaint-Plan": {
-				"multiSelect": true
-			},
-			"Acute Skin Complaint-Other Symptoms": {
-				"multiSelect": true
-			},
-			"Acute Skin Complaint-Plan": {
-				"multiSelect": true
-			},
-			"Acute GU Complaint-Other symptoms": {
-				"multiSelect": true
-			},
-			"Acute GU Complaint-Plan": {
-				"multiSelect": true
-			},
-			"COPD, Co-morbidity": {
-				"multiSelect": true
-			},
-			"Depression-PHQ9 Total": {
-				"required": true
-			},
-			"Psychiatrist's Rec, Pyschiatrist's Name": {
-				"conciseText": true
-			},
-			"Psychiatrist's Rec, Reasoning/rationale": {
-				"required": true
-			},
-			"Psychiatrist's Rec, Recommendation": {
-				"required": true
-			},
-			"Left Upper Jaw": {
-				"multiSelect": true
-			},
-			"Right Upper Jaw": {
-				"multiSelect": true
-			},
-			"Left Lower Jaw": {
-				"multiSelect": true
-			},
-			"Right Lower Jaw": {
-				"multiSelect": true
-			},
-			"ANC, Expected Delivery Date": {
-				"allowFutureDates": true
-			},
-			"CHP ANC, EDD (Gregorian)": {
-				"allowFutureDates": true
-			},
-			"Mental Health, Followup": {
-				"allowFutureDates": true
-			},
-			"ANC, HIV Testing": {
-				"required": true
-			},
-			"ANC, HIV Counseling": {
-				"required": true
-			},
-			"Referred In": {
-				"required": true
-			},
-			"Discharge Note-Type of Delivery": {
-				"multiSelect": true
-			},
-			"Childhood Illness, Fever present": {
-				"required": true
-			},
-			"Malaria, Classification": {
-				"required": true
-			},
-			"Discharge Note-Major surgery this admission": {
-				"required": true
-			},
-			"Diabetes-Diabetes in control per last lab value": {
-				"required": true
-			},
-			"Diabetes-Reviewed last lab value": {
-				"required": true
-			},
-			"HIVTC, Any OI in past 3 months?": {
-				"required": true
-			},
-			"HIVTC, CD4 count performed in last 6 months and greater than 350": {
-				"required": true
-			},
-			"COPD-Hospitalizations due to COPD in last 3 months": {
-				"required": true
-			},
-			"COPD-Meets Criteria for COPD Exacerbation": {
-				"required": true
-			},
-			"COPD-Sent to chronic disease counseling": {
-				"required": true
-			},
-			"COPD-Med Side Effects-Salbutamol": {
-				"multiSelect": true
-			},
-			"COPD-Med Side Effects-Theophylline": {
-				"multiSelect": true
-			},
-			"COPD-Pulmonary Exam": {
-				"multiSelect": true
-			},
-			"COPD-Cardiovascular exam": {
-				"multiSelect": true
-			},
-			"COPD-Discuss": {
-				"required": true
-			},
-			"COPD-Complications of COPD": {
-				"required": true
-			},
-			"COPD-Smoking Status": {
-				"required": true
-			},
-			"CD, Smoking status": {
-				"required": true
-			},
-			"COPD-Discuss lifestyle modifications": {
-				"required": true
-			},
-			"COPD-Correct Medication Use": {
-				"required": true
-			},
-			"COPD-Discuss signs of COPD exacerbation": {
-				"required": true
-			},
-			"COPD-Follow Up": {
-				"required": true
-			},
-			"MHS-In the last two weeks": {
-				"required": true
-			},
-			"MHS-Medical conditions": {
-				"required": true
-			},
-			"HTN-Discuss Hypertension": {
-				"required": true
-			},
-			"HTN-Discuss complications of Hypertension": {
-				"required": true
-			},
-			"HTN-Blood Pressure Level": {
-				"required": true
-			},
-			"HTN-Discuss signs of worsening hypertension": {
-				"required": true
-			},
-			"HTN-Follow up": {
-				"required": true
-			},
-			"Diabetes-Discuss diabetes": {
-				"required": true
-			},
-			"Diabetes-Discuss complications of diabetes": {
-				"required": true
-			},
-			"HTN-Is Blood sugar controlled?": {
-				"required": true
-			},
-			"Diabetes-Discuss lifestyle modifications": {
-				"required": true
-			},
-			"Diabetes-Correct Medication Use": {
-				"required": true
-			},
-			"Diabetes-Discuss signs of worsening diabetes": {
-				"required": true
-			},
-			"Diabetes-Discuss signs of low blood sugar": {
-				"required": true
-			},
-			"HTN-Discuss lifestyle modifications": {
-				"required": true
-			},
-			"HTN-Correct Medication Use": {
-				"required": true
-			},
-			"COPD-Hospitalizations due to COPD": {
-				"required": true
-			},
-			"Discharge Note, Diagnosis": {
-				"required": true
-			},
-			"Childhood Illness - Treatment - Treated with 2-59": {
-				"multiSelect": true
-			},
-			"Delivery Note, Delivery date and time": {
-				"required": true
-			},
-			"FRH-Procedure Follow Up": {
-				"allowFutureDates": true
-			},
-			"Operative Notes, Procedure": {
-				"required": true
-			},
-			"HTC, Informed Consent": {
-				"required": true
-			},
-			"HTC, Confirmatory": {
-				"required": true
-			},
-			"HTC, Tie Breaker": {
-				"required": true
-			},
-			"Zoonotic Disease-Biting animal": {
-				"required": true
-			},
-			"Zoonotic Disease-Category of bite": {
-				"required": true
-			},
-			"Zoonotic Disease-Pre exposure prophylaxis": {
-				"required": true
-			},
-			"Zoonotic Disease-Post exposure treatment": {
-				"required": true
-			},
-			"Zoonotic Disease-Vaccination provided": {
-				"multiSelect": true,
-				"required": true
-			},
-			"Safe abortion-Follow up": {
-				"allowFutureDates": true
-			},
-			"Safe abortion-Visit Type": {
-				"required": true
-			},
-			"Safe abortion-Surgical procedure": {
-				"required": true
-			},
-			"Safe abortion-Medical Procedure": {
-				"required": true
-			},
-			"PAC Cause": {
-				"required": true
-			},
-			"PTSD-Follow Up": {
-				"allowFutureDates": true
-			},
-			"Depression Initial-Follow Up": {
-				"allowFutureDates": true
-			},
-			"Depression-Follow Up": {
-				"allowFutureDates": true
-			},
-			"Psychosis-Follow Up": {
-				"allowFutureDates": true
-			},
-			"Mental health-Primary Complaint": {
-				"required": true
-			},
-			"Mental health-Medical ruleout": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Mental Health-Signs and Symptoms": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Burn Note-Complication of burn": {
-				"multiSelect": true
-			},
-			"PTSD Follow up-Patient history": {
-				"required": true
-			},
-			"Situation Compared to Previous Visit": {
-				"required": true
-			},
-			"PTSD Followup-Signs of Mania": {
-				"required": true
-			},
-			"PTSD Follow up-Medical adherence": {
-				"required": true
-			},
-			"PTSD Followup-If No Medical Adherence ?": {
-				"required": true
-			},
-			"PTSD Followup-Counselling benefits": {
-				"required": true
-			},
-			"PTSD Follow up-Counselling provided for": {
-				"required": true,
-				"multiSelect": true
-			},
-			"PTSD Follow up-Goal of treatment": {
-				"required": true
-			},
-			"PTSD Follow up-Follow up visit": {
-				"required": true
-			},
-			"PTSD Follow up-Consent for household visit": {
-				"required": true
-			},
-			"PTSD Follow up-Psychiatrist's recommended followed": {
-				"required": true
-			},
-			"PTSD-Patient History": {
-				"required": true
-			},
-			"PTSD-History of Trauma": {
-				"required": true
-			},
-			"PTSD-Time of Trauma": {
-				"required": true
-			},
-			"PTSD-Symptoms Duration": {
-				"required": true
-			},
-			"PTSD-Symptoms Prior to Event": {
-				"required": true
-			},
-			"PTSD-ASR": {
-				"required": true
-			},
-			"PTSD-Extreme Sleeplessness": {
-				"required": true
-			},
-			"PTSD PCL C-Confirm PTSD": {
-				"required": true
-			},
-			"PTSD Initial counselling-Counselling provided for": {
-				"required": true,
-				"multiSelect": true
-			},
-			"PTSD Initial-Goal of treatment": {
-				"required": true
-			},
-			"PTSD Initial Note-Follow up visit": {
-				"required": true
-			},
-			"PTSD Initial-Consent for Houselold Visit": {
-				"required": true
-			},
-			"PTSD Initial-Trauma": {
-				"required": true
-			},
-			"PTSD Initial-Repeated Disturbing Memories": {
-				"required": true
-			},
-			"PTSD Initial-Repeated Disturbing Dreams": {
-				"required": true
-			},
-			"PTSD Initial-Reliving Stressful Events": {
-				"required": true
-			},
-			"PTSD Initial-Upset When Reminded Of The Event": {
-				"required": true
-			},
-			"PTSD Initial-Physical Reactions": {
-				"required": true
-			},
-			"PTSD Initial-Avoiding Thinking or Talking": {
-				"required": true
-			},
-			"PTSD Initial-Avoiding Activities or Situations": {
-				"required": true
-			},
-			"PTSD Initial-Trouble Remembering": {
-				"required": true
-			},
-			"PTSD Initial-Loss of interest": {
-				"required": true
-			},
-			"PTSD Initial-Feeling Distant": {
-				"required": true
-			},
-			"PTSD Initial-Emotionally Numb": {
-				"required": true
-			},
-			"PTSD Initial-Future Somehow will be cut Short?": {
-				"required": true
-			},
-			"PTSD Initial-Trouble falling or staying asleep?": {
-				"required": true
-			},
-			"PTSD Initial-Angry Outbursts": {
-				"required": true
-			},
-			"PTSD Initial-Difficulty Concentrating?": {
-				"required": true
-			},
-			"PTSD Initial-Being Superalert": {
-				"required": true
-			},
-			"PTSD Initial-Feeling Jumpy or Easily startled?": {
-				"required": true
-			},
-			"PTSD Initial-PCL Total": {
-				"required": true
-			},
-			"PTSD Initial-Daily Activities": {
-				"required": true
-			},
-			"PTSD1-Trauma": {
-				"required": true
-			},
-			"PTSD Followup-Repeated Disturbing Memories": {
-				"required": true
-			},
-			"PTSD Followup-Repeated Disturbing Dreams": {
-				"required": true
-			},
-			"PTSD Followup-Reliving Stressful Events": {
-				"required": true
-			},
-			"PTSD Followup-Upset When Reminded Of The Event": {
-				"required": true
-			},
-			"PTSD Followup-Physical Reactions": {
-				"required": true
-			},
-			"PTSD Followup-Avoiding Thinking or Talking": {
-				"required": true
-			},
-			"PTSD Followup-Avoiding Activities or Situations": {
-				"required": true
-			},
-			"PTSD Followup-Trouble Remembering": {
-				"required": true
-			},
-			"PTSD Followup-Loss of interest": {
-				"required": true
-			},
-			"PTSD Followup-Feeling Distant": {
-				"required": true
-			},
-			"PTSD Followup-Emotionally Numb": {
-				"required": true
-			},
-			"PTSD Followup-Future Somehow will be cut Short?": {
-				"required": true
-			},
-			"PTSD Followup-Trouble falling or staying asleep?": {
-				"required": true
-			},
-			"PTSD Followup-Angry Outbursts": {
-				"required": true
-			},
-			"PTSD Followup-Difficulty Concentrating?": {
-				"required": true
-			},
-			"PTSD Followup-Feeling Jumpy or Easily startled?": {
-				"required": true
-			},
-			"PTSD Followup-Being Superalert": {
-				"required": true
-			},
-			"PTSD Followup-PCL Total": {
-				"required": true
-			},
-			"PTSD Followup-Daily Activities": {
-				"required": true
-			},
-			"Psychosis_Intake-Patient history": {
-				"required": true
-			},
-			"Psychosis_Intake-Symptoms of Psychosis": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Psychosis_Intake-Differential diagnosis": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Psychosis_Intake-Suicidal tendencies": {
-				"required": true
-			},
-			"Psychosis_Intake-Self harm": {
-				"required": true
-			},
-			"Psychosis_Intake-Counselling provided for": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Psychosis_Intake-Progress toward goal of treatment": {
-				"required": true
-			},
-			"Psychosis_Intake-Follow up": {
-				"required": true
-			},
-			"Psychosis_Intake-Consent for HH visit": {
-				"required": true
-			},
-			"Psychosis_FU-Situation compared to previous visit": {
-				"required": true
-			},
-			"Psychosis FU-Current Symptoms": {
-				"multiSelect": true
-			},
-			"Psychosis FU-Meds-HPD side effects-EPS": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Psychosis_FU-Medical adherence": {
-				"required": true
-			},
-			"Psychosis_FU-If no medical adherence": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Psychosis_FU-Counselling benefit": {
-				"required": true
-			},
-			"Psychosis_FU-Counselling provided for": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Psychosis_FU- Progress toward goal of treatment": {
-				"required": true
-			},
-			"Psychosis_FU-Follow up": {
-				"required": true
-			},
-			"Psychosis_FU-Psychiatrist's recommendation followed": {
-				"required": true
-			},
-			"Psychosis_FU-Patient history": {
-				"required": true
-			},
-			"Psychosis_FU-Current symptoms": {
-				"required": true,
-				"multiSelect": true
-			},
-			"DRTB F/U, Test order": {
-				"multiSelect": true
-			},
-			"DRTB F/U, Monthly Baseline Test Performed ?": {
-				"required": true
-			},
-			"DRTB F/U, Treatment Category": {
-				"required": true
-			},
-			"Discharge Note-Post op surgery complications": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Mental health-Visit type": {
-				"required": true
-			},
-			"Depression-Patient History": {
-				"required": true
-			},
-			"Depression Followup-Improvement": {
-				"required": true
-			},
-			"Depression-Signs of mania": {
-				"required": true
-			},
-			"Depression-Medical Adherence": {
-				"required": true
-			},
-			"Depression-Counseling benefits": {
-				"required": true
-			},
-			"Depression Initial-Counselling": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Depression F/U-Follow up": {
-				"required": true
-			},
-			"Depression-Consent for Household Visit": {
-				"required": true
-			},
-			"Depression-Recommendation Rationale Followed": {
-				"required": true
-			},
-			"Depression Initial-Patient History": {
-				"required": true
-			},
-			"Depression Initial-Grief": {
-				"required": true
-			},
-			"Depression Initial-History of Mania": {
-				"required": true
-			},
-			"Depression-Severity of depression": {
-				"required": true
-			},
-			"Depression Initial-Progress Toward Goal of Treatment": {
-				"required": true
-			},
-			"Depression Initial-Follow up visit": {
-				"required": true
-			},
-			"Depression Initial-Consent for Household Visit": {
-				"required": true
-			},
-			"Depression Follow up-Conselling": {
-				"required": true,
-				"multiSelect": true
-			},
-			"Depression-F/U-PHQ9-1": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-2": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-3": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-4": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-5": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-6": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-7": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-8": {
-				"required": true
-			},
-			"Depression-F/U-PHQ9-9": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-1": {
-				"required": true
-			},
-			"Depression Initail-PHQ9-2": {
-				"required": true
-			},
-			"Depression Initial -PHQ9-3": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-4": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-5": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-6": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-7": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-8": {
-				"required": true
-			},
-			"Depression Initial-PHQ9-9": {
-				"required": true
-			},
-			"Depression Initial-PHQ9 Effect": {
-				"required": true
-			},
-			"Depression Initial-PHQ9 Total": {
-				"required": true
-			},
-			"Depression-Progress toward Goal of treatment": {
-				"required": true
-			},
-			"Burn Note-Site of burn": {
-				"multiSelect": true
-			},
-			"Burn Note-Degree of burn": {
-				"multiSelect": true
-			},
-			"Psychosis_FU-Consent for household visit": {
-				"required": true
-			},
-			"IMAM, Visit Type": {
-				"required": true
-			},
-			"Mental health-Consent for household visit": {
-				"required": true
-			},
-			"NBA-Sepsis risk factor": {
-				"multiSelect": true
-			},
-			"Delivery Note-Complication Present": {
-				"multiSelect": true
+			
+      "OPD visit note": {
+      "showPreviousButton": true,
+      "numberOfVisits": 1
+      },
+      "ANC note": {
+      "showPreviousButton": true,
+        "numberOfVisits": 1
+        
+        },
+        "CBIMNCI (<2 months child)": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "CBIMNCI (2 to 59 months child)": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "ER general note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "HIV treatment and care(HIVTC) follow up note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "HIV treatment and care(HIVTC) intake template": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Death note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Delivery note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+            
+        
+        "Discharge note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "DR TB intake note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "USG note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Operative note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Prevention of Mother to child transmission(PMTCT) note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Procedure note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Safe abortion (SA) note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Sexually transmitted infections(STI) note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "TB intake note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Kalazar note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Leprosy note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Malaria note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "Nutrition note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "PNC note": {
+        "showPreviousButton": true,
+        "numberOfVisits": 1
+        },
+        "ANC-Expected delivery date": {
+        "allowFutureDates": true
+        },
+        "FRH-Procedure follow up": {
+        "allowFutureDates": true
+        },
+        "FRH-FRH-Procedure follow up": {
+        "allowFutureDates": true
+        },
+        "SA-Follow up": {
+        "allowFutureDates": true
+        
+        
+        
+        },
+        "Discharge-Inpatient outcome": {
+        "required": true
+        },
+        "Discharge-Major surgery in this admission": {
+        "required": true
+        },
+        "Discharge-Post operative complications": {
+        "required": true,
+        "multiSelect": true
+        },
+        "Discharge-Transportation incentive": {
+        "required": true
+        },
+        "Discharge-ANC incentive": {
+        "required": true
+        },
+        "ANC-Visit month": {
+        "required": true
+        },
+        "ANC-ANC visit": {
+        "required": true
+        },
+        "ANC-Completed 4 ANC visits": {
+        "required": true
+        },
+        "Referred in": {
+        "required": true
+        },
+        "ANC-High risk pregnancy diagnosis": {
+        "required": true,
+        "multiSelect": true
+        },
+        "ANC-HIV counseling": {
+        "required": true
+        },
+        "ANC-HIV testing": {
+        "required": true
+        },
+        "Delivery-Delivery service done by": {
+        "required": true
+        },
+        "Delivery-Delivery date and time": {
+        "required": true
+        },
+        "Delivery-Outcome of delivery": {
+        "required": true
+        },
+        "Delivery-Stillbirth type": {
+        "required": true
+        },
+        
+        "Delivery-Method of delivery": {
+        "required": true
+        },
+        "Delivery-Fetal presentation": {
+        "required": true
+        },
+        "Delivery-Blood transfusion quantity": {
+        "required": true
+        },
+        "Delivery-Complication present": {
+        "required": true,
+        "multiSelect": true
+        },
+        "Infant sex": {
+        "required": true
+        },
+        
+        "PNC-IFA tablets provided": {
+        "required": true
+        },
+        "PNC-Vitamin A capsules provided": {
+        "required": true
+        },
+        "FRH-Users type": {
+        "required": true
+        },
+        "FRH-Units provided": {
+        "required": true
+        },
+        "SA-Visit type": {
+        "required": true
+        },
+        "SA-Surgical procedure": {
+        "required": true
+        },
+        "SA-Medical procedure": {
+        "required": true
+        },
+        "PAC cause": {
+        "required": true
+        },
+        "TB intake-Type": {
+        "required": true
+        },
+        "TB intake-Referred by": {
+        "required": true
+        },
+        "Smoking status": {
+        "required": true
+        },
+        "TB intake-Treatment type": {
+        "required": true
+        },
+        "TB FU-Diagnosis category(PBC)": {
+        "required": true
+        },
+        "DRTB intake-Diagnosis category": {
+        "required": true
+        },
+        "DRTB intake-Is patient on CPT": {
+        "required": true
+        },
+        "DRTB FU-Treatment category": {
+        "required": true
+        },
+        "DRTB FU-Monthly baseline test performed": {
+        "required": true
+        },
+        "Burn-Site of burn": {
+        "required": true,
+        "multiSelect": true
+        },
+        "Burn-Degree of burn": {
+        "required": true
+        },
+        "HTC-Reason for test": {
+        "required": true
+        },
+        "HTC-Risk group": {
+        "required": true
+        },
+        "HTC-Informed consent": {
+        "required": true
+        },
+        "HIVTC-Risk group": {
+        "required": true
+        },
+        "HIVTC-HIV care WHO staging": {
+        "required": true
+        },
+        "HIVTC-HIV care CPT started": {
+        "required": true
+        },
+        "HIVTC-HIV care IPT started": {
+        "required": true
+        },
+        "HIVTC FU-Visit": {
+        "required": true
+        },
+        "HIVTC FU-Opportunistic infection diagnosis": {
+        "required": true
+        },
+        "HIVTC FU-Any oi in past 3 months": {
+        "required": true
+        },
+        "HIVTC FU-ART treatment adherence": {
+        "required": true
+        },
+        "HIVTC FU-CD4 count performed in last 6 months": {
+        "required": true
+        },
+        "STI-Syndromic diagnosis": {
+        "required": true
+        },
+        "STI-Etiological diagnosis": {
+        "required": true
+        },
+        "STI-Risk group": {
+        "required": true
+        },
+        "STI-Sydromic treatment": {
+        "required": true
+        },
+        "STI-Etiological treatment": {
+        "required": true
+        },
+        "Death note-Primary cause of death": {
+        "required": true
+        },
+        "Death note-Pronounced death date and time": {
+        "required": true
+        },
+        "Procedure-Procedure": {
+        "required": true
+        },
+        "Procedure-Surgeons": {
+        "required": true
+        },
+        "Scrub nurse": {
+        "required": true
+        },
+        "Circulating nurse": {
+        "required": true
+        },
+        "Procedure-Other staff": {
+        "required": true
+        },
+        "Operative note-Procedure": {
+        "required": true
+        },
+        "Operative note-Surgeons": {
+        "required": true
+        },
+        "Operative note-Anesthetist": {
+        "required": true
+        },
+        "Leprosy-Finding type": {
+        "required": true
+        },
+        "Leprosy-Case type": {
+        "required": true
+        },
+        "Leprosy-Leprosy type": {
+        "required": true
+        },
+        "Leprosy-Disability grade": {
+        "required": true
+        },
+        "Kalaazar-Receptivity": {
+        "required": true
+        },
+        "Kalaazar-Source": {
+        "required": true
+        },
+        "Malaria-Malaria type": {
+        "required": true
+        },
+        "Malaria-Classification": {
+        "required": true
+        },
+        "PMTCT-Risk group": {
+        "required": true
+        },
+        "PMTCT-Women identified HIV +ve during": {
+        "required": true
+        },
+        "PMTCT-WHO clinical staging": {
+        "required": true
+        },
+        "PMTCT-Started ART during": {
+        "required": true
+        },
+        "CBIMNCI<2-Case": {
+        "required": true
+        },
+        "PSBI/LBI/NBI-Symptoms": {
+        "required": true
+        },
+        "Childhood illness-Diarrhoea present": {
+        "required": true
+        },
+        "Childhood illness-Dehydration status": {
+        "required": true
+        },
+        "CBIMNCI 2 to 59-Case": {
+        "required": true
+        },
+        "CBIMNCI 2 to 59-ARI classification": {
+        "required": true
+        },
+        "Childhood Illness-Diarrhoea present": {
+        "required": true
+        },
+        "Childhood Illness-Dehydration status": {
+        "required": true
+        },
+        "CBIMNCI 2 to 59-If other diagnosis": {
+        "required": true
+        },
+        "Nutrition-Visit type": {
+        "required": true
+        },
+        "Nutrition-Nutritional status": {
+        "required": true
+        },
+        "IMAM-Visit type": {
+        "required": true
+        },
+        "IMAM-Indicator": {
+        "required": true
 			},
 			"defaults": {
 				"Number of living children": 1,
