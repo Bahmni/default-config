@@ -88,5 +88,13 @@
   "DASHBOARD_NO_PAST_APPOINTMENTS_KEY": "No past appointments",
   "DASHBOARD_NO_UPCOMING_APPOINTMENTS_KEY": "No upcoming appointments",
   "DASHBOARD_TELECON_KEY": "Teleconsultation",
-  "DASHBOARD_JOIN_TELECON_KEY": "Join teleconsultation"
+  "DASHBOARD_JOIN_TELECON_KEY": "Join teleconsultation",
+  "DASHBOARD_TITLE_FORMS2_DISPLAY_EDIT_FORMS2_FORMS": "Display and Edit Forms (2.0)",
+  "PROGRAM_HIV_PROGRAM": "HIV Program",
+  "PROGRAM_TB_PROGRAM": "TB Program",
+  "PROGRAM_ID_NUMBER": "ID Number",
+  "PROGRAM_TREATMENT_DATE": "Treatment Date",
+  "PROGRAM_COMORBIDITES": "Co-morbidites",
+  "PROGRAM_DOCTORINCHARGE": "Doctor In-Charge",
+  "PROGRAM_PATIENT_STAGE": "Patient Stage"
 }
