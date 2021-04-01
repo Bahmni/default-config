@@ -28,26 +28,20 @@
   "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY":"Bacteriology Results",
   "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY":"Forms",
   "DASHBOARD_TITLE_FORMS2_DISPLAY_EDIT_FORMS2_FORMS": "Afficher et modifier Forms (2.0)",
-
   "DASHBOARD_TAB_GENERAL_KEY": "général",
   "DASHBOARD_TAB_TRENDS_KEY": "tendances",
   "DASHBOARD_TAB_PATIENT_SUMMARY_KEY": "Patient Summary",
   "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY": "Résumé de décharge",
   "DASHBOARD_TAB_ORDERS_KEY": "Orders",
-
   "LAB_INVESTIGATIONS_KEY":"Enquêtes de laboratoire",
   "PACS_ORDERS_VISIT_PAGE_KEY": "Visitez la page Pacs commandes",
-
   "DISCHARGE_SUMMARY_DIAGNOSIS_KEY" :"diagnostic",
-
   "DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY": "Conseils sur la décharge",
   "DISCHARGE_SUMMARY_AT_ADMISSION_KEY": "à l'admission",
   "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY": "Détails d'admission",
   "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY": "Clinical Notes",
   "DISCHARGE_SUMMARY_AT_DISCHARGE_KEY": "At Discharge",
   "DISCHARGE_SUMMARY_TREATMENTS_KEY": "traitements",
-
-
   "OBSERVATIONS_BOARD_LABEL_KEY":"observations",
   "MEDICATIONS_BOARD_LABEL_KEY":"médicaments",
   "ORDERS_BOARD_LABEL_KEY":"ordres",
@@ -55,10 +49,8 @@
   "CONSULTATION_BOARD_LABEL_KEY":"Consultation",
   "DISPOSITION_BOARD_LABEL_KEY":"disposition",
   "DIAGNOSIS_BOARD_LABEL_KEY":"diagnostic",
-
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT": "Need Print for this order.",
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT_BUTTON": "Needs Print",
-
   "CONSULTATION_PAGE_KEY" :"Consultation",
   "PROGRAM_MANAGEMENT_PAGE_KEY":"Programme des pages de gestion",
   "DISCHARGE_SUMMARY_PAGE_KEY":"Décharge page Sommaire",
@@ -68,7 +60,6 @@
   "HOME_DASHBOARD_KEY":"Accueil Tableau de bord",
   "MEDICATION_CHANGE_DURATION_BUTTON": "Change Duration",
   "DASHBOARD_TITLE_Consultation_KEY": "Consultation Notes",
-
   "DASHBOARD_TITLE_APPOINTMENTS_KEY": "Appointments",
   "DASHBOARD_APPOINTMENTS_SLOT_KEY": "Slot",
   "DASHBOARD_APPOINTMENTS_SERVICE_KEY": "Service",
@@ -83,7 +74,6 @@
   "DASHBOARD_NO_UPCOMING_APPOINTMENTS_KEY": "No upcoming appointments",
   "DASHBOARD_JOIN_TELECON_KEY" : "Join téléconsultation",
   "DASHBOARD_TELECON_KEY" : "Téléconsultation",
-
   "DASHBOARD_TITLE_FORMS2_DISPLAY_CONTROL_KEY":"Forms-2",
   "DASHBOARD_TITLE_FORMS2_OBS_TO_OBS_DISPLAY_CONTROL_KEY":"Forms-2 ObsToObs"
 }
