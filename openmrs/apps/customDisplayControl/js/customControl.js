@@ -149,7 +149,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         },
         template: '<ng-include src="contentUrl"/>'
     }
-}]).directive('patientAppointmentsDashboard', ['$http', '$q', '$window','appService', function ($http, $q, $window, appService) {
+}]).directive('patientAppointmentsDashboard', ['$http', '$q', '$window','appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
     var link = function ($scope) {
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/patientAppointmentsDashboard.html";
         var getUpcomingAppointments = function () {
@@ -185,16 +185,19 @@ angular.module('bahmni.common.displaycontrol.custom')
             $scope.upcomingAppointments = response[0].data;
             $scope.upcomingAppointmentsUUIDs = [];
             $scope.teleconsultationAppointments = [];
+            $scope.upcomingAppointmentsLinks = [];
             for (var i=0; i<$scope.upcomingAppointments.length; i++) {
                 $scope.upcomingAppointmentsUUIDs[i] = $scope.upcomingAppointments[i].uuid;
-                $scope.teleconsultationAppointments[i] = $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_TELECONSULTATION;
+                $scope.teleconsultationAppointments[i] = 'Virtual' === $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_KIND;
                 delete $scope.upcomingAppointments[i].uuid;
                 const [date, timeSlot] = convertUTCtoLocal($scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_START_DATE_KEY, $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_END_DATE_KEY);
                 delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_START_DATE_KEY;
                 delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_END_DATE_KEY;
                 $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_DATE_KEY = date;
                 $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_SLOT_KEY = timeSlot;
-                delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_TELECONSULTATION;
+                $scope.upcomingAppointmentsLinks[i] = $scope.upcomingAppointments[i].tele_health_video_link || "";
+                delete $scope.upcomingAppointments[i].DASHBOARD_APPOINTMENTS_KIND;
+                delete $scope.upcomingAppointments[i].tele_health_video_link;
             }
             $scope.upcomingAppointmentsHeadings = _.keys($scope.upcomingAppointments[0]);
             $scope.pastAppointments = response[1].data;
@@ -205,8 +208,9 @@ angular.module('bahmni.common.displaycontrol.custom')
             $window.open('/bahmni/appointments/#/home/manage/appointments/list');
         };
         $scope.openJitsiMeet = function (appointmentIndex) {
-            var jitsiMeetingId = $scope.upcomingAppointmentsUUIDs[appointmentIndex];
-            appService.setTeleConsultationVars(jitsiMeetingId, true);
+            var uuid = $scope.upcomingAppointmentsUUIDs[appointmentIndex];
+            var link = $scope.upcomingAppointmentsLinks[appointmentIndex];
+            virtualConsultService.launchMeeting(uuid, link);
         };
         $scope.showJoinTeleconsultationOption = function (appointmentIndex) {
             return $scope.upcomingAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_STATUS_KEY == 'Scheduled' &&
