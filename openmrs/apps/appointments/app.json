@@ -8,6 +8,7 @@
     }
   ],
   "config": {
+    "allowVirtualConsultation": false,
     "minCharLengthToTriggerPatientSearch": 3,
     "enableSpecialities": true,
     "startOfWeek": "Monday",
