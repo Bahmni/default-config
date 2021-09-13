@@ -1,4 +1,5 @@
 <section class="app-dashboard-integration">
+<ul show-if-privilege="{{::section.dashboardConfig.requiredPrivilege}}">
     <h2 class="section-title" ng-click="goToListView()"><span style="border-bottom: 1px solid white;">{{ section.title | titleTranslate}}</span></h2>
 
     <ul style="font-size: 14px;color: #000000">
@@ -67,4 +68,5 @@
             </table>
         </ul>
     </ul>
+</ul>	
 </section>

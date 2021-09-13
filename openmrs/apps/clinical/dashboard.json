@@ -35,7 +35,10 @@
                 "showCertainty":true,
                 "showOrder":true,
                 "showDetailsButton":true,
-                "displayOrder":1
+                "displayOrder":1,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "navigationLinksControl":{  
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
@@ -58,7 +61,8 @@
                     "conceptNames": [
                         "Tuberculosis Followup Template"
                     ],
-                    "numberOfVisits": 2
+                    "numberOfVisits": 2,
+		     "requiredPrivilege":"app:clinical"
                 }
             },
             "disposition":{  
@@ -66,7 +70,10 @@
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":1,
-                "displayOrder":7
+                "displayOrder":7,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
@@ -79,7 +86,8 @@
                     "showDrugForm":true,
                     "numberOfVisits":5,
                     "showOtherActive":true,
-                    "showDetailsButton":true
+                    "showDetailsButton":true,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
@@ -96,12 +104,18 @@
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "type":"radiology",
                 "showDetailsButton":true,
-                "displayOrder":5
+                "displayOrder":5,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "programs":{  
                 "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
                 "type":"programs",
-                "displayOrder":10
+                "displayOrder":10,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "radiologyOrders":{  
                 "orderType":"Radiology Order",
@@ -112,7 +126,8 @@
                     "conceptNames":[  
                         "Summary"
                     ],
-                    "numberOfVisits":4
+                    "numberOfVisits":4,
+		     "requiredPrivilege":"app:clinical"
                 }
             },
             "pacs":{  
@@ -122,7 +137,8 @@
                 "displayOrder":8,
                 "dashboardConfig":{  
                     "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
-                    "numberOfVisits":4
+                    "numberOfVisits":4,
+		     "requiredPrivilege":"app:clinical"
                 }
             },
             "labOrdersDisplayControl":{  
@@ -137,7 +153,8 @@
                         "Diastolic",
                         "Posture",
                         "Temperature"
-                    ]
+                    ],
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
@@ -157,7 +174,8 @@
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "BACTERIOLOGY CONCEPT SET"
-                    ]
+                    ],
+		     "requiredPrivilege":"app:clinical"
                 }
             },
             "labResults":{  
@@ -172,7 +190,8 @@
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
-                    "showDetailsButton":false
+                    "showDetailsButton":false,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "numberOfVisits":10
@@ -191,7 +210,8 @@
                         "BMI Status Data"
                     ],
                     "showDetailsButton":true,
-                    "numberOfVisits":2
+                    "numberOfVisits":2,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
@@ -218,7 +238,8 @@
                     "conceptNames":[  
                         "Vitals"
                     ],
-                    "numberOfVisits":2
+                    "numberOfVisits":2,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
@@ -252,7 +273,8 @@
                     "conceptNames":[  
                         "Second Vitals"
                     ],
-                    "numberOfVisits":2
+                    "numberOfVisits":2,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
@@ -275,7 +297,8 @@
                     "conceptNames":[  
                         "History and Examination"
                     ],
-                    "numberOfVisits":2
+                    "numberOfVisits":2,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
@@ -298,7 +321,8 @@
                         "Gynaecology"
                     ],
                     "showDetailsButton":true,
-                    "numberOfVisits":2
+                    "numberOfVisits":2,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
@@ -321,7 +345,8 @@
                     "conceptNames":[  
                         "Obstetrics"
                     ],
-                    "numberOfVisits":2
+                    "numberOfVisits":2,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
@@ -341,7 +366,8 @@
                 "dashboardConfig":{  
                     "title":null,
                     "maximumNoOfVisits":8,
-                    "groupByVisits":true
+                    "groupByVisits":true,
+		     "requiredPrivilege":"app:clinical"
                 }
             },
             "diabetes":{  
@@ -387,19 +413,26 @@
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type":"admissionDetails",
                 "displayOrder":19,
-                "showDetailsButton":true
+                "showDetailsButton":true,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "conditions": {
                 "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
                 "type": "conditionsList",
-                "displayOrder": 20
+                "displayOrder": 20,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "formsDisplay": {
                 "type": "forms",
                 "displayOrder": 21,
                 "dashboardConfig": {
                     "title": null,
-                    "maximumNoOfVisits": 10
+                    "maximumNoOfVisits": 10,
+		     "requiredPrivilege":"app:clinical"
                 },
                 "formGroup": [ ],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
@@ -409,7 +442,10 @@
                 "displayOrder": 22,
                 "config": {
                     "title": "DASHBOARD_TITLE_APPOINTMENTS_KEY",
-                    "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>"
+                    "template": "<patient-appointments-dashboard section='config' patient='patient'></patient-appointments-dashboard>",
+					"dashboardConfig": {
+						"requiredPrivilege":"app:clinical"
+					}
                 }
             },
 	    "Forms-2.0": {
@@ -479,7 +515,10 @@
                     "referenceData":"growthChartReference.csv",
                     "numberOfVisits":20
                 },
-                "displayOrder":1
+                "displayOrder":1,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "BP":{  
                 "type":"observationGraph",
@@ -492,7 +531,10 @@
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
                 },
-                "displayOrder":2
+                "displayOrder":2,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "weight/BMI":{  
                 "type":"observationGraph",
@@ -505,7 +547,10 @@
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
                 },
-                "displayOrder":3
+                "displayOrder":3,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "diabetes/BloodSugar":{  
                 "type":"observationGraph",
@@ -518,7 +563,10 @@
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
                 },
-                "displayOrder":4
+                "displayOrder":4,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "observationGraph":{  
                 "type":"observationGraph",
@@ -530,7 +578,10 @@
                     "xAxisConcept":"observationDateTime",
                     "numberOfVisits":10
                 },
-                "displayOrder":5
+                "displayOrder":5,
+		 "dashboardConfig":{
+			 "requiredPrivilege":"app:clinical"
+		 }
             },
             "diabetes":{  
                 "title":"Diabetes",
@@ -582,7 +633,8 @@
                     "groupByConcept":"Specimen Collection Date",
                     "conceptNames":[  
                         "Specimen Id"
-                    ]
+                    ],
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "templateName":"BACTERIOLOGY CONCEPT SET",
@@ -601,7 +653,8 @@
                         "Smoking History",
                         "Clief COmplaint Notes",
                         "Blood Pressure"
-                    ]
+                    ],
+		     "requiredPrivilege":"app:clinical"
                 },
                 "displayOrder":6,
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
@@ -614,7 +667,8 @@
                 "displayOrder":24,
                 "dashboardConfig":{  
                     "showOnlyActive":true,
-                    "drugConceptSet":"All Other Drugs"
+                    "drugConceptSet":"All Other Drugs",
+	             "requiredPrivilege":"app:clinical"
                 }
             },
             "malaria":{  
@@ -630,7 +684,8 @@
                         "Malaria, drug regimen",
                         "Malaria, Malaria Type",
                         "Malaria, Source"
-                    ]
+                    ],
+		     "requiredPrivilege":"app:clinical"
                 }
             },
             "Chronic Treatment Chart":{  
@@ -640,7 +695,8 @@
                 "dashboardConfig":{  
                     "drugs":[  
 
-                    ]
+                    ],
+		     "requiredPrivilege":"app:clinical"
                 },
                 "expandedViewConfig":{  
                     "drugs":[  
