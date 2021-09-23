@@ -121,7 +121,7 @@
                 "translationKey":"DASHBOARD_TITLE_PACS_KEY",
                 "displayOrder":8,
                 "dashboardConfig":{  
-                    "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
+                    "pacsImageUrl":"/oviyam2/oviyam?patientID={{patientID}}&accessionNumber={{orderNumber}}",
                     "numberOfVisits":4
                 }
             },
