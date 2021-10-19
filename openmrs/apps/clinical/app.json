@@ -27,6 +27,7 @@
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
         "quickPrints":false,
+        "allowAdhocTeleConsultation": false,
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
             "networkStatusCheckInterval": 20000,
