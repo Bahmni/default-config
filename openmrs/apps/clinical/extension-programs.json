@@ -135,5 +135,30 @@
         "icon": "fa-user-md",
         "order": 5,
         "requiredPrivilege": "app:clinical:consultationTab"
+    },
+    "bahmniClinicalBillingTreatment": {
+        "id": "bahmni.clinical.billing.treatment",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Medications",
+        "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
+        "extensionParams":{
+            "tabConfigName": "allMedicationTabConfig"
+        },
+        "url": "treatment",
+        "icon": "fa-user-md",
+        "order": 7,
+        "requiredPrivilege": "app:clinical:treatmentTab"
+    },
+    "bahmniClinicalConsultationOrders": {
+        "id": "bahmni.clinical.consultation.orders",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Orders",
+        "translationKey":"ORDERS_BOARD_LABEL_KEY",
+        "url": "orders",
+        "icon": "icon-user-md",
+        "order": 6,
+        "requiredPrivilege": "app:clinical:ordersTab"
     }
 }
