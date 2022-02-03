@@ -1,0 +1,16 @@
+name: Generate default_config.zip
+
+on:
+ push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run : ./scripts/package.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        name: default_config
+        path: ui/target/default_config.zip
