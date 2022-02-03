@@ -11,11 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run : mkdir target
-    - run : ./scripts/package.sh
-    - run : ls -la
-    - run : ls -la target
-    - uses: actions/upload-artifact@v2
+    - name: Generate Artifact
+      run : ./scripts/package.sh
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
       with:
         name: default_config
         path: target/*
