@@ -1,13 +1,10 @@
 name: Continuous Integration
 on:
-  # workflow_run:
-  #   workflows: [Generate default_config.zip]
-  #   types:
-  #     - completed
-  push:
-    branches:
-      - master
-      - BAH-*
+  workflow_run:
+    workflows: [Generate default_config.zip]
+    types:
+      - completed
+  
 env:
   ORG_NAME: Bahmni
   EVENT_TYPE: default-config-trigger
@@ -15,7 +12,7 @@ jobs:
   demo:
     name: Trigger Workflows
     runs-on: ubuntu-latest
-    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     strategy:
       matrix:
         dependent-repos: ["OpenElis","openmrs-module-bahmniapps","openmrs-distro-bahmni"]
