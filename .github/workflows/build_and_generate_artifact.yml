@@ -4,6 +4,7 @@ on:
  push:
     branches:
       - master
+      - BAH-*
 
 jobs:
   build:
@@ -16,4 +17,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: default_config
-        path: target/*
+        path: target/default_config.zip
