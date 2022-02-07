@@ -1,4 +1,4 @@
-name: Continuous Integration-v0.94
+name: Continuous Integration
 on:
   # workflow_run:
   #   workflows: [Generate default_config.zip]
@@ -10,7 +10,7 @@ on:
       - BAH-*
 env:
   ORG_NAME: Bahmni
-  EVENT_TYPE: default-config-0.94-trigger
+  EVENT_TYPE: default-config-trigger
 jobs:
   demo:
     name: Trigger Workflows
