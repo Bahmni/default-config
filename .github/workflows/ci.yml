@@ -1,16 +1,29 @@
 name: Continuous Integration
 on:
-  workflow_run:
-    workflows: [Generate default_config.zip]
-    types:
-      - completed
-  
+  push:
+    branches: 
+      - master
+    paths-ignore:
+      - '**.md'
+    
 env:
   ORG_NAME: Bahmni
   EVENT_TYPE: default-config-trigger
 jobs:
-  demo:
+  build-and-upload-artifact:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Generate Artifact
+      run : ./scripts/package.sh
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: default_config
+        path: target/default_config.zip
+  trigger:
     name: Trigger Workflows
+    needs: build-and-upload-artifact
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     strategy:
