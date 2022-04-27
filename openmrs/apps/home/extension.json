@@ -129,6 +129,15 @@
     "icon": "fa fa-calendar",
     "order": 14,
     "requiredPrivilege": "app:appointments"
+  },
+  "labLite": {
+    "id": "bahmni.lab",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_LAB_ENTRY_KEY",
+    "url": "/lab/home",
+    "icon": "fa fa-flask",
+    "order": 15,
+    "requiredPrivilege": "app:lab-lite"
   }
-
 }
