@@ -135,7 +135,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_LAB_ENTRY_KEY",
-    "url": "/lab/home",
+    "url": "/lab",
     "icon": "fa fa-flask",
     "order": 15,
     "requiredPrivilege": "app:lab-lite"
