@@ -1,0 +1,23 @@
+    {
+    "MODULE_LABEL_REGISTRATION_KEY": "التسجيل",
+    "MODULE_LABEL_CLINICAL_KEY": "سريري",
+    "MODULE_LABEL_INPATIENT_KEY": "مريض داخلي",
+    "MODULE_LABEL_RADIOLOGY_UPLOAD_KEY": "تحميل الأشعة",
+    "MODULE_LABEL_PATIENT_DOCUMENTS_KEY": "وثائق المريض",
+    "MODULE_LABEL_ADMIN_KEY": "مشرف",
+    "MODULE_LABEL_REPORTS_KEY": "التقارير",
+    "MODULE_LABEL_APOOINTMENTS_KEY": "تعيينات",
+    "MODULE_LABEL_ORDERS_KEY": "أوامر",
+    "MODULE_LABEL_PROGRAMS_KEY": "برنامج",
+    "MODULE_LABEL_IMPLEMENTER_INTERFACE_KEY": "Implementer Interface",
+    "MODULE_LABEL_ATOMFEED_CONSOLE_KEY": "AtomFeed Console",
+    "MODULE_LABEL_APPOINTMENT_SCHEDULING_KEY": "جدولة المواعيد",
+    "MODULE_LABEL_BED_MANAGEMENT_KEY": "إدارة السرير",
+    "General Ward" : "جناح العام",
+    "Labour Ward": "جناح الولادة",
+    "OPD-1": "قسم العيادات الخارجية",
+    "Registration Desk": "مكتب التسجيل",
+    "Subcenter 1 (BAM)": "المركز الفرعي 1 (بام)",
+    "Subcenter 2 (SEM)": "المركز الفرعي 2 (SEM)",
+    "Subcenter 3 (SIV)": "المركز الفرعي 3 (SIV)"
+}
