@@ -47,7 +47,8 @@
                     "registration",
                     "inpatient",
                     "enrolment",
-                    "visitAttribute"
+                    "visitAttribute",
+                    "labLite"
                 ]
             },
 	          "tuberculosis": {
