@@ -6,39 +6,30 @@ on:
     paths-ignore:
       - "**.md"
 
-env:
-  ORG_NAME: Bahmni
-  EVENT_TYPE: default-config-trigger
 jobs:
   build-upload-artifact:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Generate Artifact
-        run: ./scripts/package.sh
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: default_config
-          path: target/default_config.zip
-  trigger-dependent-repos:
-    name: Trigger Workflows
-    needs: build-upload-artifact
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dependent-repos:
-          ["OpenElis", "openmrs-module-bahmniapps", "openmrs-distro-bahmni"]
-    steps:
-      - name: Create repository_dispatch
-        env:
-          REPOSITORY_NAME: ${{ matrix.dependent-repos }}
+      - name: Verify app version
         run: |
-          trigger_result=$(curl -s -o trigger_response.txt -w "%{http_code}" -X POST -H "Accept: application/vnd.github.v3+json" -H 'authorization: Bearer ${{ secrets.BAHMNI_PAT }}' https://api.github.com/repos/${ORG_NAME}/${REPOSITORY_NAME}/dispatches -d '{"event_type":"'"${EVENT_TYPE}"'"}')
-          if [ $trigger_result == 204 ];then
-            echo "Trigger to $ORG_NAME/$REPOSITORY_NAME Success"
-          else
-            echo "Trigger to $ORG_NAME/$REPOSITORY_NAME Failed"
-            cat trigger_response.txt
+          APP_VERSION=$(cat package/.appversion)
+          if [ $(git tag -l "$APP_VERSION") ]; then 
+            echo "App version $APP_VERSION already released. Please update app version in package/.appversion to represent next major/minor/patch increment"
             exit 1
+          else
+            echo "setting artifact version to $(echo $APP_VERSION-${{github.run_number}})"
+            echo "ARTIFACT_VERSION=$(echo $APP_VERSION-${{github.run_number}})" >> $GITHUB_ENV
           fi
+      - name: Docker - Login
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+      - name: Docker - Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: package/docker/Dockerfile
+          push: true
+          tags: bahmni/default-config:${{env.ARTIFACT_VERSION}},bahmni/default-config:latest

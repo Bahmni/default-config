@@ -23,10 +23,22 @@ Replace the {Build_Number} variable in the link:
 https://ci-bahmni.thoughtworks.com/go/files/Bahmni_MRS_Master/{Build_Number}/BuildStage/Latest/FunctionalTests/deployables/
 ```
 
+## Docker Image Build
+The docker image bahmni/default-config is generated using Github Actions. 
 
+In order to build the image in local you can run the following command
+```shell
+docker build -t bahmni/default-config -f package/docker/Dockerfile .
+```
 
+To dockerise your implementation specific config repository, follow the steps below:
+1. Copy the package/docker directory to your repository
+2. Add/ remove COPY statements in Dockerfile based on the needs.
+3. Run the following command after updating image repository and image name.
+    > docker build -t {repository}/{image-name} -f package/docker/Dockerfile .
+4. Also you can add Github Actions from `.github/workflows` directory.
 
-#### Configurations 
+## Configurations 
  
  1) Clinical app.json: example -  (Details in comments)
 
