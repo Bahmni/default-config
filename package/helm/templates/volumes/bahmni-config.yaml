@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: {{ .Chart.Name }}
+    environment: {{ .Values.metadata.labels.environment }}
+  name: bahmni-config-pvc
+spec:
+  storageClassName: {{ .Values.global.storageClass }}
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: {{ .Values.volumes.bahmniConfig.capacity }}

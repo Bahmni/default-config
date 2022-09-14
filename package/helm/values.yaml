@@ -1,0 +1,24 @@
+replicaCount: 1
+
+global:
+  storageClass: ""
+  nodeSelector: {}
+  affinity: {}
+  tolerations: {}
+
+metadata:
+  labels:
+    environment: dev
+
+image:
+  repository: bahmni
+  name: default-config
+  tag: latest
+
+volumes:
+  bahmniConfig:
+    capacity: "2Gi"
+
+nodeSelector: {}
+affinity: {}
+tolerations: {}

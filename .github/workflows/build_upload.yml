@@ -9,6 +9,8 @@ on:
 jobs:
   build-upload-artifact:
     runs-on: ubuntu-latest
+    env:
+      HELM_CHART_PATH: package/helm
     steps:
       - uses: actions/checkout@v2
       - name: Verify app version
@@ -22,7 +24,7 @@ jobs:
             echo "ARTIFACT_VERSION=$(echo $APP_VERSION-${{github.run_number}})" >> $GITHUB_ENV
           fi
       - name: Docker - Login
-        uses: docker/login-action@v1 
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
@@ -33,3 +35,38 @@ jobs:
           file: package/docker/Dockerfile
           push: true
           tags: bahmni/default-config:${{env.ARTIFACT_VERSION}},bahmni/default-config:latest
+
+      - name: Update Version and Image Tag
+        run: |
+          yq --inplace '.image.tag = "${{ env.ARTIFACT_VERSION }}"' $HELM_CHART_PATH/values.yaml
+          yq --inplace '.version = "${{ env.ARTIFACT_VERSION }}"' $HELM_CHART_PATH/Chart.yaml
+
+      - name: Helm Lint
+        run: helm lint $HELM_CHART_PATH
+
+      - name: Helm Package
+        run: helm package $HELM_CHART_PATH
+
+      - name: Checkout Charts Repository
+        uses: actions/checkout@v2
+        with:
+          repository: Bahmni/helm-charts
+          ref: gh-pages
+          path: helm-charts
+          persist-credentials: false
+
+      - name: Copy Helm Archive
+        run: cp default-config-${{ env.ARTIFACT_VERSION }}.tgz helm-charts/default-config/
+
+      - name: Helm Index
+        working-directory: helm-charts/
+        run: helm repo index --merge index.yaml --url https://bahmni.github.io/helm-charts/  .
+
+      - name: Commit and Push Chart Repository
+        working-directory: helm-charts/
+        run: |
+          git config user.name ${{ secrets.BAHMNI_USERNAME}}
+          git config user.email ${{ secrets.BAHMNI_EMAIL}}
+          git add .
+          git commit -m "Release of default-config-${{ env.ARTIFACT_VERSION }}"
+          git push 'https://${{ secrets.BAHMNI_USERNAME}}:${{ secrets.BAHMNI_PAT}}@github.com/bahmni/helm-charts.git' gh-pages
