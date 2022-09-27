@@ -13,7 +13,7 @@
   "VIEWED_VISIT_PRINT_MESSAGE": "User {{userId}} accessed the Visit Print of patient {{patientId}}.",
   "VIEWED_PATIENTPROGRAM_MESSAGE": "User {{userId}} accessed the program dashboard of patient {{patientId}}.",
   "VIEWED_DASHBOARD_OBSERVATION_MESSAGE": "User {{userId}} accessed the Edit Form on  Dashboard of patient {{patientId}}.",
-  "VIEWED_DIAGNOSIS_TAB_MESSAGE": "User {{userId}} accessed the diagnosis tab of patient {{patientId}}.",
+  "VIEWED_DIAGNOSIS_TAB_MESSAGE": "User {{userId}} accessed the diagnoses tab of patient {{patientId}}.",
   "RUN_REPORT_MESSAGE": "Report {{params.reportName}} was run by user {{userId}}.",
   "EVENT_ID": "Event ID",
   "CREATED_AT": "Created At",
