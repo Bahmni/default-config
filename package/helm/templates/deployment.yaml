@@ -49,11 +49,24 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          lifecycle:
+            postStart:
+              exec:
+                command: [ "/bin/sh", "-c", "/etc/scripts/restart-dependencies.sh" ]
           volumeMounts:
             - mountPath: /usr/local/bahmni_config
               name: bahmni-config
+            - name: restart-dependencies-script
+              mountPath: /etc/scripts
+              readOnly: true
+
       restartPolicy: Always
+      serviceAccountName: {{ .Chart.Name }}-sa
       volumes:
         - name: bahmni-config
           persistentVolumeClaim:
             claimName: bahmni-config-pvc
+        - name: restart-dependencies-script
+          configMap:
+            defaultMode: 0700
+            name: restart-dependencies-script
