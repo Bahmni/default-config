@@ -39,7 +39,7 @@
 			"name": "crater",
 			"title": "Payment & Billing",
 			"logo": "/bahmni/images/bills.png",
-			"linkPrefix": "/payments"
+			"linkPrefix": "payments"
 		},
 		{
 			"enabled": true,
