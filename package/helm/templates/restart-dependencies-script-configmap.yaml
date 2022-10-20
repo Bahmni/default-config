@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: restart-dependencies-script
+data:
+  restart-dependencies.sh: |-
+    #!/bin/sh
+    apk add curl
+    APISERVER=https://kubernetes.default.svc
+    SERVICEACCOUNT=/var/run/secrets/kubernetes.io/serviceaccount
+    NAMESPACE=$(cat ${SERVICEACCOUNT}/namespace)
+    TOKEN=$(cat ${SERVICEACCOUNT}/token)
+    CACERT=${SERVICEACCOUNT}/ca.crt
+    curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" \
+      --header 'Content-Type: application/strategic-merge-patch+json' \
+      -X PATCH ${APISERVER}/apis/apps/v1/namespaces/$NAMESPACE/deployments/openmrs \
+      --data-raw '{"spec":{"template":{"metadata":{"annotations":{"config-restart-timestamp":"'"$(date)"'"}}}}}'
+
