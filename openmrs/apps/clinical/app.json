@@ -29,6 +29,7 @@
         "quickPrints":false,
         "allowAdhocTeleConsultation": false,
         "teleConsultationDomain": "meet.jit.si",
+        "targetTerminologyServer": "snomed",
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
             "networkStatusCheckInterval": 20000,
