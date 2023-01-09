@@ -54,6 +54,13 @@
 			"title": "Radiology",
 			"logo": "/bahmni/images/pac.png",
 			"link": "/dcm4chee-web3"
+		},
+		{
+			"enabled": true,
+			"name": "metabase",
+			"title": "Analytics",
+			"logo": "/bahmni/images/analytics.png",
+			"link": "/metabase"
 		}
 	]
 }
