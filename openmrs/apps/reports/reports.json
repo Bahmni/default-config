@@ -139,9 +139,25 @@
             ]
         }
     },
+    "diagnosisCountMalaria": {
+        "name": "Diagnosis Count Report for Malaria",
+        "type": "snomedDiagnosis",
+        "requiredPrivilege": "app:reports",
+        "config": {     
+            "snomedParentCode": "61462000"
+        }
+    },
+    "diagnosisCountAsthma": {
+        "name": "Diagnosis Count Report for Asthma",
+        "type": "snomedDiagnosis",
+        "requiredPrivilege": "app:reports",
+        "config": {
+            "snomedParentCode": "195967001"   
+        }
+    },
     "inpatientMorbidity": {
         "name": "Inpatient Morbidity",
-        "type": "diagnosisCount",
+        "type": "obsCount",
         "requiredPrivilege": "app:reports",
         "config": {
             "visitTypes": [
