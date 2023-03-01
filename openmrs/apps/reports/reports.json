@@ -144,7 +144,9 @@
         "type": "snomedDiagnosis",
         "requiredPrivilege": "app:reports",
         "config": {     
-            "snomedParentCode": "61462000"
+            "snomedParentCode": "61462000",
+            "displaySnomedCode": "false",
+            "displayGenderGroup": "true"
         }
     },
     "diagnosisCountAsthma": {
@@ -152,7 +154,19 @@
         "type": "snomedDiagnosis",
         "requiredPrivilege": "app:reports",
         "config": {
-            "snomedParentCode": "195967001"   
+            "snomedParentCode": "195967001",
+            "displaySnomedCode": "true",
+            "displayGenderGroup": "false"   
+        }
+    },
+    "diagnosisCountCOVID19": {
+        "name": "Diagnosis Count Report for COVID-19",
+        "type": "snomedDiagnosis",
+        "requiredPrivilege": "app:reports",
+        "config": {
+            "snomedParentCode": "840539006",
+            "displaySnomedCode": "true",
+            "displayGenderGroup": "true"   
         }
     },
     "inpatientMorbidity": {
