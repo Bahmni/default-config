@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - snomed-master
+      - load-procedure
       - 'snomed-release-*'
     tags:
       - 'snomed-[0-9]+.[0-9]+.[0-9]+'
