@@ -150,6 +150,16 @@
             "debounceSearch": false,
             "fetchDelay": 2000,
             "serializeSearch": false
-        }
+        },
+        "cdssAuditOptions": [
+            "False positive alert",
+            "Not applicable to the patient",
+            "Already resolved by medication adjustment",
+            "Already managed by other means",
+            "Patient declined recommended action",
+            "Clinician judgment overrode recommendation",
+            "Alert triggered in error",
+            "Insufficient information to act on alert"
+        ]
     }
 }
