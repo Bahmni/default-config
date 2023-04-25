@@ -139,6 +139,39 @@
             ]
         }
     },
+    "diagnosisCountMalaria": {
+        "name": "Diagnosis Count Report for Malaria",
+        "type": "tsIntDiagnosis",
+        "requiredPrivilege": "app:reports",
+        "config": {
+            "tsConceptSource": "SNOMED",
+            "terminologyParentCode": "61462000",
+            "displayTerminologyCode": "false",
+            "displayGenderGroup": "true"
+        }
+    },
+    "diagnosisCountAsthma": {
+        "name": "Diagnosis Count Report for Asthma",
+        "type": "tsIntDiagnosis",
+        "requiredPrivilege": "app:reports",
+        "config": {
+            "tsConceptSource": "SNOMED",
+            "terminologyParentCode": "195967001",
+            "displayTerminologyCode": "true",
+            "displayGenderGroup": "false"
+        }
+    },
+    "diagnosisCountCOVID19": {
+        "name": "Diagnosis Count Report for COVID-19",
+        "type": "tsIntDiagnosis",
+        "requiredPrivilege": "app:reports",
+        "config": {
+            "tsConceptSource": "SNOMED",
+            "terminologyParentCode": "840539006",
+            "displayTerminologyCode": "true",
+            "displayGenderGroup": "true"
+        }
+    },
     "inpatientMorbidity": {
         "name": "Inpatient Morbidity",
         "type": "diagnosisCount",
