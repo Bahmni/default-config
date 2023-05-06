@@ -4,6 +4,7 @@ on:
     branches:
       - snomed-master
       - 'snomed-release-*'
+      - BS-55-51-24-temp
     tags:
       - 'snomed-[0-9]+.[0-9]+.[0-9]+'
     paths-ignore:
