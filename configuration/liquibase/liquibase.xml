@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="bs-30-202305030530" author="Siva Reddy">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from order_type where name = 'Procedure Order';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding new order type for 'Procedure Order'</comment>
+        <sql>
+            insert into order_type (name, description, creator, date_created, retired, uuid, java_class_name) values('Procedure Order', 'Procedures to patients', 1, now(), 0, uuid(), 'org.openmrs.Order');
+        </sql>
+    </changeSet>
+
+    <changeSet id="bs-30-202305030531" author="Siva Reddy">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from order_type_class_map map join order_type type on map.order_type_id = type.order_type_id where type.name = 'Procedure Order';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Procedure Order to order_type_class_map</comment>
+        <sql>
+            SET @procedure_order_type_id = 0;
+            SET @procedure_concept_class_id = 0;
+
+            SELECT order_type_id into @procedure_order_type_id from order_type where name = 'Procedure Order';
+            SELECT concept_class_id into @procedure_concept_class_id from concept_class where name = 'Procedure';
+
+            insert into order_type_class_map (order_type_id, concept_class_id) values(@procedure_order_type_id, @procedure_concept_class_id);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
