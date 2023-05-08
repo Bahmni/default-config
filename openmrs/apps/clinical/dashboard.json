@@ -116,6 +116,16 @@
                     "numberOfVisits":4
                 }
             },
+            "procedureOrders":{
+                "orderType":"Procedure Order",
+                "type":"ordersControl",
+                "translationKey":"DASHBOARD_TITLE_PROCEDURE_ORDERS_KEY",
+                "displayOrder":20,
+                "dashboardConfig":{
+                    "conceptNames":[],
+                    "numberOfVisits":4
+                }
+            },
             "pacs":{  
                 "orderType":"Radiology Order",
                 "type":"pacsOrders",
