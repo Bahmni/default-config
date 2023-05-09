@@ -11,6 +11,7 @@
     "allowVirtualConsultation": false,
     "minCharLengthToTriggerPatientSearch": 3,
     "enableSpecialities": true,
+    "maxAppointmentProviders": 4,
     "startOfWeek": "Monday",
     "calendarSlotDuration": "00:30",
     "calendarSlotLabelInterval": "01:00",
