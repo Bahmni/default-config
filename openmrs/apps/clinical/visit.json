@@ -43,7 +43,12 @@
                 "displayOrder": 2,
                 "config": { }
             }
-        }
+        },
+            "encounterContext": {
+                "filterEncounterTypes": [
+                    "Consultation"
+                ]
+            }
     },
     "dischargeSummary":{
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
@@ -157,7 +162,12 @@
                     "scope": "latest"
                 }
             }
-        }
+        },
+            "encounterContext": {
+                "filterEncounterTypes": [
+                    "Consultation"
+                ]
+            }
     },
     "orders":{
       "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
