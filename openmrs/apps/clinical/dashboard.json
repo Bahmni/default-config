@@ -273,14 +273,22 @@
                 "displayOrder":14,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
-                    "conceptNames":[  
-                        "History and Examination"
+                    "conceptNames":[
+                        "Chief Complaint Data",
+                        "Trauma Notes, History of Present Illness",
+                        "Smoking status",
+                        "Consultation Images",
+                        "Consultation Videos"
                     ],
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "History and Examination"
+                    "conceptNames":[
+                        "Chief Complaint Data",
+                        "Trauma Notes, History of Present Illness",
+                        "Smoking status",
+                        "Consultation Images",
+                        "Consultation Videos"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,

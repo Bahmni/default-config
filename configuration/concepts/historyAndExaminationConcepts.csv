@@ -1,0 +1,10 @@
+Uuid,Void/Retire,Same as mappings,Fully specified name:en,Short name:en,Description:en,Fully specified name:fr,Short name:fr,Description:fr,Data class,Data type,Complex data handler,Answers,Members,Allow decimals,Units,Normal low,Normal high,Absolute low,Absolute high,_version:1,_order:200
+c393fd1d-3f10-11e4-adec-0800271c1b75,true,,History and Examination,,,,,,,,,,,,,,,,,,
+c3949eb6-3f10-11e4-adec-0800271c1b75,true,,Chief Complaint Data,,,,,,,,,,,,,,,,,,
+9bb0795c-4ff0-0305-1990-000000000001,,,Sign/symptom duration SNOMED,Sign/symptom duration,	The numeric value of the duration of the sign or symptom.,,,,Question,Numeric,,,,,,,,,,,
+9bb0795c-4ff0-0305-1990-000000000002,,,Chief Complaint Coded SNOMED,Chief Complaint Coded,,,,,Misc,Coded,,"",,,,,,,,,
+9bb0795c-4ff0-0305-1990-000000000003,,,Chief complaint (text) SNOMED,Chief complaint (text),,,,,Finding,Text,,,,,,,,,,,
+9bb0795c-4ff0-0305-1990-000000000004,,,Chief Complaint Duration SNOMED,Units,The units which correspond to the numeric value entered for a duration,,,,Misc,Coded,,"",,,,,,,,,
+9bb0795c-4ff0-0305-1990-000000000005,,,Chief Complaint Data,Chief Complaint,,,,,Concept Details,N/A,,,Chief Complaint Coded SNOMED;Chief complaint (text) SNOMED;Sign/symptom duration SNOMED;Chief Complaint Duration SNOMED;,,,,,,,,
+9bb0795c-4ff0-0305-1990-000000000006,,,Consultation Videos,,,,,,Misc,N/A,,,Patient Video,,,,,,,,
+9bb0795c-4ff0-0305-1990-000000000007,,,Smoking status,,,,,,Question,Coded,,,,,,,,,,,

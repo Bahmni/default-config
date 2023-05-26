@@ -136,7 +136,7 @@
     "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
     "type": "config",
     "extensionParams": {
-      "conceptName": "History and Examination",
+      "formName": "History and Examination",
       "default": true
     },
     "order": 1,

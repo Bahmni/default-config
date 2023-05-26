@@ -29,6 +29,10 @@
         "quickPrints":false,
         "allowAdhocTeleConsultation": false,
         "teleConsultationDomain": "meet.jit.si",
+        "terminologyService": {
+            "source": "SNOMED",
+            "limit": 30
+        },
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
             "networkStatusCheckInterval": 20000,
