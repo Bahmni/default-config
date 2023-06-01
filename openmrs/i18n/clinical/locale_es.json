@@ -14,7 +14,7 @@
   "DASHBOARD_TITLE_PROGRAMS_KEY": "Programas",
   "DASHBOARD_TITLE_TREATMENTS_KEY": "Tratamientos",
   "DASHBOARD_TITLE_DISPOSITION_KEY": "Disposición",
-  "DASHBOARD_TITLE_DIAGNOSIS_KEY": "Diagnoses",
+  "DASHBOARD_TITLE_DIAGNOSIS_KEY": "Diagnóstico"",
   "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY": "Detalles de admisión",
   "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY": "Valores Nutricionales",
   "DASHBOARD_TITLE_SECOND_VITALS_KEY": "Signos Vitales secundarios",
@@ -27,6 +27,7 @@
   "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY": "Información del paciente",
   "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY":"Resultados de Bacteriología",
   "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY":"Formularios",
+  
   "DASHBOARD_TITLE_GROWTH_CHART": "Tabla de crecimiento",
   "DASHBOARD_TITLE_BLOOD_PRESSURE": "PA",
   "DASHBOARD_TITLE_WEIGHT_BMI": "Peso/índice de masa corporal",
@@ -44,15 +45,13 @@
   "LAB_INVESTIGATIONS_KEY":"Investigaciones de Laboratorio",
   "PACS_ORDERS_VISIT_PAGE_KEY": "Visitar página de órdenes PACS",
 
-  "DISCHARGE_SUMMARY_DIAGNOSIS_KEY" :"Diagnoses",
-
+  "DISCHARGE_SUMMARY_DIAGNOSIS_KEY" :"Diagnóstico",
   "DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY": "Consejos para el alta",
   "DISCHARGE_SUMMARY_AT_ADMISSION_KEY": "En admisión",
   "DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY": "Detalles de admisión",
   "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY": "Notas Clínicas",
   "DISCHARGE_SUMMARY_AT_DISCHARGE_KEY": "En Alta",
   "DISCHARGE_SUMMARY_TREATMENTS_KEY": "Tratamientos",
-
 
   "OBSERVATIONS_BOARD_LABEL_KEY":"Observaciones",
   "MEDICATIONS_BOARD_LABEL_KEY":"Medicamentos",
@@ -72,6 +71,7 @@
   "PATIENT_DASHBOARD_KEY":"Panel del paciente",
   "PATIENT_VISIT_PAGE_KEY":"Página de visitas del paciente",
   "HOME_DASHBOARD_KEY":"Panel de inicio",
+  
   "MEDICATION_CHANGE_DURATION_BUTTON": "Cambiar Duración",
   "DASHBOARD_TITLE_Consultation_KEY": "Notas de la consulta",
   "DASHBOARD_TITLE_APPOINTMENTS_KEY": "Cita",
@@ -86,14 +86,15 @@
   "DASHBOARD_UPCOMING_APPOINTMENTS_KEY_LINK": "Vista de listado",
   "DASHBOARD_NO_PAST_APPOINTMENTS_KEY": "Sin citas pasadas",
   "DASHBOARD_NO_UPCOMING_APPOINTMENTS_KEY": "SIn citas futuras",
+  
   "DASHBOARD_TELECON_KEY": "Teleconsulta",
-  "DASHBOARD_JOIN_TELECON_KEY": "Unirse a teleconsulta",
+  "DASHBOARD_JOIN_TELECON_KEY": "Iniciar  teleconsulta",
   "DASHBOARD_TITLE_FORMS2_DISPLAY_EDIT_FORMS2_FORMS": "Mostrar y editar formas (2.0)",
   "PROGRAM_HIV_PROGRAM": "Programa de VIH",
   "PROGRAM_TB_PROGRAM": "Programa de TB",
   "PROGRAM_ID_NUMBER": "Número de ID",
   "PROGRAM_TREATMENT_DATE": "Fecha de Tratamiento",
-  "PROGRAM_COMORBIDITES": "Re- Incidencias",
+  "PROGRAM_COMORBIDITES": "Comorbilidades",
   "PROGRAM_DOCTORINCHARGE": "Doctor a cargo",
-  "PROGRAM_PATIENT_STAGE": "Estado del Paciente"
+  "PROGRAM_PATIENT_STAGE": "Etapa del Paciente"
 }
