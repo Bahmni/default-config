@@ -38,7 +38,7 @@ jobs:
           file: package/docker/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: bahmni/default-config:${{env.ARTIFACT_VERSION}},bahmni/default-config:latest
+          tags: juanjortega/default-config:${{env.ARTIFACT_VERSION}},juanjortega/default-config:latest
 
       - name: Update Version and Image Tag
         run: |
@@ -54,7 +54,7 @@ jobs:
       - name: Checkout Charts Repository
         uses: actions/checkout@v2
         with:
-          repository: Bahmni/helm-charts
+          repository: juanjortega/helm-charts
           ref: gh-pages
           path: helm-charts
           persist-credentials: false
