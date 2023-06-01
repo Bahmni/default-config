@@ -1,0 +1,23 @@
+{
+"MODULE_LABEL_ALL_KEY": "Todos",
+"MODULE_LABEL_TO_DISCHARGE_KEY": "Para descargar",
+"MODULE_LABEL_ADMITTED_KEY": "Aceptado",
+"MODULE_LABEL_TO_ADMIT_KEY": "Admitir",
+
+"CONSULTATION_PAGE_KEY" :"Consulta",
+"PROGRAM_MANAGEMENT_PAGE_KEY":"Página de gestión de programas",
+"DISCHARGE_SUMMARY_PAGE_KEY":"Página de resumen de alta",
+"PATIENT_ADT_PAGE_KEY":"Página de ADT del paciente",
+"PATIENT_DASHBOARD_KEY":"Panel de pacientes",
+"PATIENT_VISIT_PAGE_KEY":"Página de visita al paciente",
+"HOME_DASHBOARD_KEY":"Dashboard de inicio",
+
+"DASHBOARD_TITLE_VITALS_KEY":"Partes vitales",
+"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY": "Información del paciente",
+"DISCHARGE_SUMMARY_ADMISSION_DETAILS_KEY": "Detalles de admisión",
+"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY": "Control de enlaces de navegación",
+"DASHBOARD_TITLE_DIAGNOSIS_KEY": "Diagnóstico",
+"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY": "Detalles de admisión",
+"DASHBOARD_TITLE_DISPOSITION_KEY": "Disposición",
+"DASHBOARD_TAB_GENERAL_KEY": "General"
+}
