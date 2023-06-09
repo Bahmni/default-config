@@ -28,7 +28,7 @@
         "showLastName": true,
         "defaultVisitType":"OPD",
         "isLastNameMandatory": true,
-        "patientNameDisplayOrder": ["firstName", "middleName", "lastName", "2do Apellido"],
+        "patientNameDisplayOrder": ["firstName", "middleName", "lastName"],
         "showSaveConfirmDialog": true,
         "showBirthTime": true,
         "enableDashboardRedirect": true,
