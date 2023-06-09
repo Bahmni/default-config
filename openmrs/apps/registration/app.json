@@ -1,0 +1,81 @@
+{
+    "id": "bahmni.registration",
+    "instanceOf":"bahmni.template.registration",
+    "description": "Bahmni Patient Registration App",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.registration.patient.search.result.action",
+            "description": "Bahmni Patient Search Result Action"
+        },
+        {
+            "id": "org.bahmni.registration.patient.next",
+            "description": "After Bahmni Patient Registration, forward url configuration"
+        },
+        {
+            "id": "org.bahmni.registration.navigation",
+            "description": "Navigation within registration first and second page"
+        },
+        {
+            "id": "org.bahmni.registration.conceptSetGroup.observations",
+            "description": "Registration Second Page Forms"
+        }
+    ],
+    "config" : {
+        "mandatoryPersonAttributes" : [],
+        "patientInformation": {},
+        "defaultIdentifierPrefix": "RUT",
+        "showMiddleName": true,
+        "showLastName": true,
+        "defaultVisitType":"OPD",
+        "isLastNameMandatory": true,
+        "patientNameDisplayOrder": ["firstName", "middleName", "lastName", "2do Apellido"],
+        "showSaveConfirmDialog": true,
+        "showBirthTime": true,
+        "enableDashboardRedirect": true,
+        "dashboardUrl": "/bahmni/clinical/index.html#/default/patient/{{patientUuid}}/dashboard",
+        "registrationMessage": "REGISTRATION_MESSAGE",
+        "enableWhatsAppButton": true,
+        "printOptions": [
+            {
+                "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
+                "shortcutKey": "l"
+            },
+            {
+                "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+                "shortcutKey": "p"
+            },
+            {
+                "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+                "shortcutKey": "r"
+            },
+            {
+                "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
+                "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
+                "shortcutKey": "c"
+            }
+        ],
+        "fieldValidation" : {
+            "email" : {"pattern" : "^(?=.{1,40}$)(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,4})$", "errorMessage" : "Should be a valid email address"},
+            "familyName" : {"pattern" : "[a-zA-Zñáéíóúü\\s]{0,}", "errorMessage" : "The last name should contain only alphabets without space."},
+            "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "The first name should contain only alphabets without space."},
+            "middleName" : {"pattern" : "[a-zA-Zñáéíóúü\\s]{0,}", "errorMessage" : "The Middle name should contain only alphabets without space."},
+            "address1":{"pattern":"^[a-zA-Z0-9\\s'\\-\\/]{1,}", "errorMessage":"Only Alphanumerics and following special characters are allowed. Special characters - [ '-/]"},
+            "address2":{"pattern":"^[a-zA-Z0-9\\s,'\\-.\\/]{1,}", "errorMessage":"Only Alphanumerics and following special characters are allowed. Special characters - [ ,'-./]"},
+            "cityVillage":{"pattern":"^[a-zA-Zñáéíóúü\\s,'\\-.\\/]{2,}", "errorMessage":"Only Alphanumerics and following special characters are allowed. Special characters - [ ,'-./]"}
+        },
+        "patientSearch": { 
+            "customAttributes": {
+                "label": "Phone Number",
+                "placeholder": "Phone Number",
+                "fields": ["phoneNumber","alternatePhoneNumber"]
+            }
+        },
+        "addressHierarchy": {
+            "showAddressFieldsTopDown": false,
+            "strictAutocompleteFromLevel": "postalCode"
+        }
+    }
+}
