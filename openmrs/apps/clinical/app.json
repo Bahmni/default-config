@@ -23,14 +23,24 @@
         "visitUuid"
     ],
     "config": {
+        "preferExtraIdInSearchResults": true,
         "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
-        "quickPrints":false,
-        "allowAdhocTeleConsultation": false,
+        "quickPrints":true,
+        "allowAdhocTeleConsultation": true,
         "teleConsultationDomain": "meet.jit.si",
+        "conceptSetUI": {
+            "Chief Complaint Data": {
+                "autocomplete":true,
+                "codedConceptName":"Chief Complaint",
+                "nonCodedConceptName":"Non-Coded Chief Complaint",
+                "durationRequired": false,
+                "allowAddMore": true
+            }
+        },
         "networkConnectivity" : {
-            "showNetworkStatusMessage": false,
+            "showNetworkStatusMessage": true,
             "networkStatusCheckInterval": 20000,
             "locales" : [
                 { "locale" : "fr", "css" : "offline-language-french"},
@@ -58,6 +68,7 @@
             		"Id_Number",
             		"Doctor",
             		"Stage"
+                    "phoneNumber"
         		],
         		"personAttributes": [
             		"class",
