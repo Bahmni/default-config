@@ -35,7 +35,7 @@
               ]
             },
             "allFlowSheetDetails": {
-              "latestCount": "10",
+              "latestCount": "11",
               "groupBy": "obstime",
               "obsConcepts": [
                 "Pulse",
@@ -73,7 +73,7 @@
             "conditions": {
                 "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
                 "type": "conditionsList",
-                "displayOrder": 20
+                "displayOrder": 2
             },
             "treatments":{
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
@@ -121,7 +121,7 @@
                 "displayOrder":5,
                 "dashboardConfig":{
                     "title":null,
-                    "numberOfVisits":6,
+                    "numberOfVisits":4,
                     "showChart":false,
                     "showTable":true,
                     "showNormalLabResults": true,
@@ -140,7 +140,7 @@
                 "displayOrder":4,
                 "dashboardConfig":{
                     "title":null,
-                    "maximumNoOfVisits":8,
+                    "maximumNoOfVisits":5,
                     "groupByVisits":true
                 }
             },
@@ -148,7 +148,7 @@
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":7,
+                "displayOrder":6,
                 "dashboardConfig":{
                     "showDetailsButton":true,
                     "conceptNames":[
@@ -293,192 +293,8 @@
                     "isEditable": true,
                     "groupByConcept": "",
                     "conceptNames": []
-                }
-            } 
-        }
-    },
-    "trends":{  
-        "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
-        "maxRecentlyViewedPatients":10,
-        "sections":{  
-            "patientInformation":{  
-                "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                "type":"patientInformation",
-                "patientAttributes":[  
-                    "education",
-                    "occupation"
-                ],
-                "addressFields":[  
-                    "address1",
-                    "address2",
-                    "cityVillage",
-                    "countyDistrict"
-                ],
-                "displayOrder":0
-            },
-            "growthChart":{  
-                "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_GROWTH_CHART",
-                "config":{  
-                    "yAxisConcepts":[  
-                        "Weight"
-                    ],
-                    "referenceData":"growthChartReference.csv",
-                    "numberOfVisits":20
                 },
-                "displayOrder":1
-            },
-            "BP":{  
-                "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_BLOOD_PRESSURE",
-                "config":{  
-                    "yAxisConcepts":[  
-                        "Systolic Data",
-                        "Diastolic Data"
-                    ],
-                    "xAxisConcept":"observationDateTime",
-                    "numberOfVisits":10
-                },
-                "displayOrder":2
-            },
-            "weight/BMI":{  
-                "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
-                "config":{  
-                    "yAxisConcepts":[  
-                        "Weight",
-                        "BMI"
-                    ],
-                    "xAxisConcept":"observationDateTime",
-                    "numberOfVisits":10
-                },
-                "displayOrder":3
-            },
-            "diabetes/BloodSugar":{  
-                "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_DIABETES_BLOOD_SUGAR",
-                "config":{  
-                    "yAxisConcepts":[  
-                        "Blood Sugar Fasting",
-                        "Blood Sugar P.P"
-                    ],
-                    "xAxisConcept":"observationDateTime",
-                    "numberOfVisits":10
-                },
-                "displayOrder":4
-            },
-            "observationGraph":{  
-                "type":"observationGraph",
-                "translationKey": "DASHBOARD_TITLE_PULSE",
-                "config":{  
-                    "yAxisConcepts":[  
-                        "Pulse Data"
-                    ],
-                    "xAxisConcept":"observationDateTime",
-                    "numberOfVisits":10
-                },
-                "displayOrder":5
-            },
-            "diabetes":{  
-                "title":"Diabetes",
-                "templateName":"Diabetes, Progress",
-                "type":"diseaseTemplate",
-                "dashboardConfig":{  
-                    "showOnly":[  
-
-                    ]
-                },
-                "expandedViewConfig":{  
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-                        "numberOfVisits":"10",
-                        "groupBy":"visits",
-                        "obsConcepts":[  
-                            "Diabetes, Blood Pressure",
-                            "Diabetes, A1C",
-                            "Diabetes, LDL",
-                            "Diabetes, Ulcers on Feet",
-                            "Blood Sugar Fasting",
-                            "Blood Sugar PP"
-                        ],
-                        "labConcepts":[  
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Cholesterol"
-                        ]
-                    }
-                },
-                "displayOrder":6
-            }
-        }
-    },
-    "patientSummary":{  
-        "translationKey":"DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
-        "maxRecentlyViewedPatients":10,
-        "sections":{  
-            "Bacteriology Concept Set":{  
-                "displayType":"Full-Page",
-                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "type":"obsToObsFlowSheet",
-                "dashboardConfig":{  
-                    "numberOfVisits":1,
-                    "templateName":"BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept":"Specimen Collection Date",
-                    "conceptNames":[  
-                        "Specimen Id"
-                    ]
-                },
-                "expandedViewConfig":{  
-                    "templateName":"BACTERIOLOGY CONCEPT SET",
-                    "groupByConcept":"Specimen Collection Date"
-                }
-            },
-            "HistoryAndExamination":{  
-                "type":"historyAndExamination",
-                "isObservation":true,
-                "displayType":"Full-Page",
-                "dashboardConfig":{  
-                    "showGroupDateTime":false,
-                    "conceptNames":[  
-                        "Chief Complaint Data",
-                        "Examination Notes",
-                        "Smoking History",
-                        "Clief COmplaint Notes",
-                        "Blood Pressure"
-                    ]
-                },
-                "displayOrder":6,
-                "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
-            },
-            "drugOther":{  
-                "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
-                "type":"drugOrderDetails",
-                "displayType":"Full-Page",
-                "showDetailsButton":true,
-                "displayOrder":24,
-                "dashboardConfig":{  
-                    "showOnlyActive":true,
-                    "drugConceptSet":"All Other Drugs"
-                }
-            },
-            "Chronic Treatment Chart":{  
-                "displayType":"Full-Page",
-                "title":"Chronic Treatment Chart",
-                "type":"chronicTreatmentChart",
-                "dashboardConfig":{  
-                    "drugs":[  
-
-                    ]
-                },
-                "expandedViewConfig":{  
-                    "drugs":[  
-
-                    ]
-                }
-            },
+		,
             "forms2Validations": {
                 "type": "formsV2",
                 "displayOrder": 2,
@@ -729,6 +545,191 @@
                 },
                 "formGroup": [ ],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
+            }
+            } 
+        }
+    },
+    "trends":{  
+        "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
+        "maxRecentlyViewedPatients":10,
+        "sections":{  
+            "patientInformation":{  
+                "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type":"patientInformation",
+                "patientAttributes":[  
+                    "education",
+                    "occupation"
+                ],
+                "addressFields":[  
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countyDistrict"
+                ],
+                "displayOrder":0
+            },
+            "growthChart":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_GROWTH_CHART",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Weight"
+                    ],
+                    "referenceData":"growthChartReference.csv",
+                    "numberOfVisits":20
+                },
+                "displayOrder":1
+            },
+            "BP":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_BLOOD_PRESSURE",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Systolic Data",
+                        "Diastolic Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":2
+            },
+            "weight/BMI":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_WEIGHT_BMI",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Weight",
+                        "BMI"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":3
+            },
+            "diabetes/BloodSugar":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_DIABETES_BLOOD_SUGAR",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Blood Sugar Fasting",
+                        "Blood Sugar P.P"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":4
+            },
+            "observationGraph":{  
+                "type":"observationGraph",
+                "translationKey": "DASHBOARD_TITLE_PULSE",
+                "config":{  
+                    "yAxisConcepts":[  
+                        "Pulse Data"
+                    ],
+                    "xAxisConcept":"observationDateTime",
+                    "numberOfVisits":10
+                },
+                "displayOrder":5
+            },
+            "diabetes":{  
+                "title":"Diabetes",
+                "templateName":"Diabetes, Progress",
+                "type":"diseaseTemplate",
+                "dashboardConfig":{  
+                    "showOnly":[  
+
+                    ]
+                },
+                "expandedViewConfig":{  
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+                        "numberOfVisits":"10",
+                        "groupBy":"visits",
+                        "obsConcepts":[  
+                            "Diabetes, Blood Pressure",
+                            "Diabetes, A1C",
+                            "Diabetes, LDL",
+                            "Diabetes, Ulcers on Feet",
+                            "Blood Sugar Fasting",
+                            "Blood Sugar PP"
+                        ],
+                        "labConcepts":[  
+                            "RBS",
+                            "FBS",
+                            "PP2BS",
+                            "Hb1AC",
+                            "Creatinine",
+                            "Cholesterol"
+                        ]
+                    }
+                },
+                "displayOrder":6
+            }
+        }
+    },
+    "patientSummary":{  
+        "translationKey":"DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
+        "maxRecentlyViewedPatients":10,
+        "sections":{  
+            "Bacteriology Concept Set":{  
+                "displayType":"Full-Page",
+                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
+                "type":"obsToObsFlowSheet",
+                "dashboardConfig":{  
+                    "numberOfVisits":1,
+                    "templateName":"BACTERIOLOGY CONCEPT SET",
+                    "groupByConcept":"Specimen Collection Date",
+                    "conceptNames":[  
+                        "Specimen Id"
+                    ]
+                },
+                "expandedViewConfig":{  
+                    "templateName":"BACTERIOLOGY CONCEPT SET",
+                    "groupByConcept":"Specimen Collection Date"
+                }
+            },
+            "HistoryAndExamination":{  
+                "type":"historyAndExamination",
+                "isObservation":true,
+                "displayType":"Full-Page",
+                "dashboardConfig":{  
+                    "showGroupDateTime":false,
+                    "conceptNames":[  
+                        "Chief Complaint Data",
+                        "Examination Notes",
+                        "Smoking History",
+                        "Clief COmplaint Notes",
+                        "Blood Pressure"
+                    ]
+                },
+                "displayOrder":6,
+                "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
+            },
+            "drugOther":{  
+                "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
+                "type":"drugOrderDetails",
+                "displayType":"Full-Page",
+                "showDetailsButton":true,
+                "displayOrder":24,
+                "dashboardConfig":{  
+                    "showOnlyActive":true,
+                    "drugConceptSet":"All Other Drugs"
+                }
+            },
+            "Chronic Treatment Chart":{  
+                "displayType":"Full-Page",
+                "title":"Chronic Treatment Chart",
+                "type":"chronicTreatmentChart",
+                "dashboardConfig":{  
+                    "drugs":[  
+
+                    ]
+                },
+                "expandedViewConfig":{  
+                    "drugs":[  
+
+                    ]
+                }
             }
         }
     },
