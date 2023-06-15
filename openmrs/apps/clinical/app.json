@@ -30,15 +30,6 @@
         "quickPrints":true,
         "allowAdhocTeleConsultation": true,
         "teleConsultationDomain": "meet.jit.si",
-        "conceptSetUI": {
-            "Chief Complaint Data": {
-                "autocomplete":true,
-                "codedConceptName":"Chief Complaint",
-                "nonCodedConceptName":"Non-Coded Chief Complaint",
-                "durationRequired": false,
-                "allowAddMore": true
-            }
-        },
         "networkConnectivity" : {
             "showNetworkStatusMessage": true,
             "networkStatusCheckInterval": 20000,
