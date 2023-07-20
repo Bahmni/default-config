@@ -9,9 +9,8 @@
                 "type":"patientInformation",
                 "displayOrder":0,
                 "ageLimit":100,
-                "patientAttributes":[  
-
-                ],
+                "patientAttributes":[],
+                "additionalPatientIdentifiers": [],
                 "addressFields":[  
                     "address1",
                     "address2",
