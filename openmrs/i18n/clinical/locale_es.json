@@ -59,7 +59,7 @@
   "BACTERIOLOGY_BOARD_LABEL_KEY":"Bacteriología",
   "CONSULTATION_BOARD_LABEL_KEY":"Consulta",
   "DISPOSITION_BOARD_LABEL_KEY":"Disposición",
-  "DIAGNOSIS_BOARD_LABEL_KEY":"Diagnoses",
+  "DIAGNOSIS_BOARD_LABEL_KEY":"Diagnóstico",
 
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT": "Necesita impresora para esta orden",
   "CLINICAL_ORDER_RADIOLOGY_NEED_PRINT_BUTTON": "Necesita impresora",
