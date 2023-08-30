@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.18.3
 
 COPY openmrs /etc/bahmni_config/openmrs
 COPY openelis /etc/bahmni_config/openelis
