@@ -39,7 +39,11 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: bahmni/default-config:${{env.ARTIFACT_VERSION}},bahmni/default-config:latest
-
+      - name: Push Translations to Transifex
+        run: |
+          bash .github/scripts/transifex.sh
+        env:
+          TX_TOKEN: ${{ secrets.TX_TOKEN }}
       - name: Update Version and Image Tag
         run: |
           yq --inplace '.image.tag = "${{ env.ARTIFACT_VERSION }}"' $HELM_CHART_PATH/values.yaml
