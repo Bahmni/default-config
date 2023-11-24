@@ -11,6 +11,7 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.bahmniemrapi.obscalculator.ObsValueCalculator;
 import org.openmrs.module.bahmniemrapi.encountertransaction.contract.BahmniEncounterTransaction
 import org.openmrs.module.emrapi.encounter.domain.EncounterTransaction;
+import org.openmrs.util.LocaleUtility;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Months;
@@ -232,6 +233,12 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
     static BahmniObservation createObs(String conceptName, BahmniObservation parent, BahmniEncounterTransaction encounterTransaction, Date obsDatetime) {
         def concept = Context.getConceptService().getConceptByName(conceptName)
+        if (concept == null && !LocaleUtility.getDefaultLocale().equals(Context.getLocale())) {
+            List<Concept> conceptsByName = Context.getConceptService().getConceptsByName(conceptName, LocaleUtility.getDefaultLocale(), false);
+            if (!conceptsByName.isEmpty()) {
+                concept = conceptsByName[0];
+            }
+        }
         BahmniObservation newObservation = new BahmniObservation()
         newObservation.setConcept(new EncounterTransaction.Concept(concept.getUuid(), conceptName))
         newObservation.setObservationDateTime(obsDatetime);
