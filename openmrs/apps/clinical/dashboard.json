@@ -206,7 +206,8 @@
                     "pivotTable":{  
 
                     }
-                }
+                },
+                "hideEmptyDisplayControl": true
             },
             "vitals":{  
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
