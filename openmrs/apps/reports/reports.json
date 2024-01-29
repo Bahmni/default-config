@@ -231,12 +231,14 @@
         "config": {
             "ageGroupName": "All Ages",
             "conceptNames": [
-                "Diabetes Intake"
+                "Diabetes, Intake"
             ],
             "visitTypes": [
                 "OPD",
                 "IPD"
-            ]
+            ],
+            "countOnlyClosedVisits": "false",
+            "countOncePerPatient": "false"
         }
     },
     "codedValueRangeBasedReport": {
