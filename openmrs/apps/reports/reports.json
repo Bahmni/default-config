@@ -427,7 +427,8 @@
             "conceptNames": [
                 "Pulse",
                 "WEIGHT",
-                "Vitals, Systolic",
+                "Vitals",
+                "Systolic",
                 "Temperature"
             ],
             "visitIndependentConcept": [
@@ -622,7 +623,8 @@
                         "conceptNames": [
                             "Pulse",
                             "WEIGHT",
-                            "Vitals, Systolic",
+                            "Vitals",
+                            "Systolic",
                             "Temperature"
                         ],
                         "visitIndependentConcept": [
