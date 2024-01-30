@@ -1,0 +1,66 @@
+{
+	"formJson": {
+		"id": 3,
+		"uuid": "d5575e70-5189-4e8b-a9dc-18ce9d56615e",
+		"name": "Vitals_Form2",
+		"version": "1",
+		"published": true,
+		"auditInfo": {
+			"creator": {
+				"uuid": "c1c21e11-3f10-11e4-adec-0800271c1b75",
+				"display": "superman",
+				"links": [
+					{
+						"rel": "self",
+						"uri": "http://localhost/openmrs/ws/rest/v1/user/c1c21e11-3f10-11e4-adec-0800271c1b75",
+						"resourceAlias": "user"
+					}
+				]
+			},
+			"dateCreated": "2024-01-30T05:52:25.000+0000",
+			"changedBy": {
+				"uuid": "c1c21e11-3f10-11e4-adec-0800271c1b75",
+				"display": "superman",
+				"links": [
+					{
+						"rel": "self",
+						"uri": "http://localhost/openmrs/ws/rest/v1/user/c1c21e11-3f10-11e4-adec-0800271c1b75",
+						"resourceAlias": "user"
+					}
+				]
+			},
+			"dateChanged": "2024-01-30T07:43:30.000+0000"
+		},
+		"resources": [
+			{
+				"value": "{\"name\":\"Vitals_Form2\",\"id\":3,\"uuid\":\"d5575e70-5189-4e8b-a9dc-18ce9d56615e\",\"defaultLocale\":\"en\",\"controls\":[{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"PULSE_1\",\"id\":\"1\",\"units\":\"(/min)\",\"type\":\"label\",\"value\":\"Pulse\"},\"properties\":{\"mandatory\":false,\"notes\":true,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":0},\"abnormal\":true},\"id\":\"1\",\"concept\":{\"name\":\"Pulse\",\"uuid\":\"c36bc411-3f10-11e4-adec-0800271c1b75\",\"datatype\":\"Numeric\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":true}},\"units\":\"/min\",\"hiNormal\":72,\"lowNormal\":72,\"hiAbsolute\":null,\"lowAbsolute\":null},{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"SPO2_2\",\"id\":\"2\",\"units\":\"(%)\",\"type\":\"label\",\"value\":\"SPO2\"},\"properties\":{\"mandatory\":false,\"notes\":true,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":1},\"abnormal\":true},\"id\":\"2\",\"concept\":{\"name\":\"SPO2\",\"uuid\":\"c3838414-3f10-11e4-adec-0800271c1b75\",\"datatype\":\"Numeric\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":true}},\"units\":\"%\",\"hiNormal\":null,\"lowNormal\":97,\"hiAbsolute\":null,\"lowAbsolute\":null},{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"RR_4\",\"id\":\"4\",\"units\":\"(/min)\",\"type\":\"label\",\"value\":\"RR\"},\"properties\":{\"mandatory\":false,\"notes\":true,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":1},\"abnormal\":true},\"id\":\"4\",\"concept\":{\"name\":\"RR\",\"uuid\":\"c37e0f37-3f10-11e4-adec-0800271c1b75\",\"datatype\":\"Numeric\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":true}},\"units\":\"/min\",\"hiNormal\":20,\"lowNormal\":16,\"hiAbsolute\":null,\"lowAbsolute\":null},{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"TEMPERATURE_3\",\"id\":\"3\",\"units\":\"(F)\",\"type\":\"label\",\"value\":\"Temperature\"},\"properties\":{\"mandatory\":false,\"notes\":true,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":2},\"abnormal\":true},\"id\":\"3\",\"concept\":{\"name\":\"Temperature\",\"uuid\":\"c37bd733-3f10-11e4-adec-0800271c1b75\",\"datatype\":\"Numeric\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":true}},\"units\":\"F\",\"hiNormal\":98.6,\"lowNormal\":98.6,\"hiAbsolute\":null,\"lowAbsolute\":null},{\"type\":\"section\",\"label\":{\"translationKey\":\"SECTION_6\",\"type\":\"label\",\"value\":\"Blood Pressure\",\"id\":\"6\"},\"properties\":{\"addMore\":false,\"location\":{\"column\":0,\"row\":3}},\"id\":\"6\",\"controls\":[{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"DIASTOLIC_7\",\"id\":\"7\",\"units\":\"(mm Hg)\",\"type\":\"label\",\"value\":\"Diastolic\"},\"properties\":{\"mandatory\":false,\"notes\":true,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":0},\"abnormal\":true},\"id\":\"7\",\"concept\":{\"name\":\"Diastolic\",\"uuid\":\"c379aa1d-3f10-11e4-adec-0800271c1b75\",\"datatype\":\"Numeric\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":true}},\"units\":\"mm Hg\",\"hiNormal\":85,\"lowNormal\":70,\"hiAbsolute\":null,\"lowAbsolute\":null,\"events\":{\"onValueChange\":\"function(form) {\\n  if (form.get('Systolic').getValue() && form.get('Diastolic').getValue()) {\\n    form.get('Posture').setEnabled(true);\\n  } else\\n    form.get('Posture').setEnabled(false);\\n}\"}},{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"SYSTOLIC_8\",\"id\":\"8\",\"units\":\"(mm Hg)\",\"type\":\"label\",\"value\":\"Systolic\"},\"properties\":{\"mandatory\":false,\"notes\":true,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":true,\"location\":{\"column\":0,\"row\":1},\"abnormal\":true},\"id\":\"8\",\"concept\":{\"name\":\"Systolic\",\"uuid\":\"c36e9c8b-3f10-11e4-adec-0800271c1b75\",\"datatype\":\"Numeric\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":true}},\"units\":\"mm Hg\",\"hiNormal\":140,\"lowNormal\":110,\"hiAbsolute\":null,\"lowAbsolute\":null,\"events\":{\"onValueChange\":\"function(form) {\\n  if (form.get('Systolic').getValue() && form.get('Diastolic').getValue()) {\\n    form.get('Posture').setEnabled(true);\\n  } else\\n    form.get('Posture').setEnabled(false);\\n}\"}},{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"POSTURE_9\",\"id\":\"9\",\"units\":\"\",\"type\":\"label\",\"value\":\"Posture\"},\"properties\":{\"mandatory\":false,\"notes\":true,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":true,\"location\":{\"column\":0,\"row\":2},\"multiSelect\":false,\"dropDown\":false,\"url\":\"\",\"autoComplete\":false},\"id\":\"9\",\"concept\":{\"name\":\"Posture\",\"uuid\":\"c44c3c37-3f10-11e4-adec-0800271c1b75\",\"datatype\":\"Coded\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[{\"uuid\":\"c44cfed2-3f10-11e4-adec-0800271c1b75\",\"name\":{\"display\":\"Sitting\",\"uuid\":\"c44d0752-3f10-11e4-adec-0800271c1b75\",\"name\":\"Sitting\",\"locale\":\"en\",\"localePreferred\":true,\"conceptNameType\":\"FULLY_SPECIFIED\",\"links\":[{\"rel\":\"self\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44cfed2-3f10-11e4-adec-0800271c1b75/name/c44d0752-3f10-11e4-adec-0800271c1b75\",\"resourceAlias\":\"name\"},{\"rel\":\"full\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44cfed2-3f10-11e4-adec-0800271c1b75/name/c44d0752-3f10-11e4-adec-0800271c1b75?v=full\",\"resourceAlias\":\"name\"}],\"resourceVersion\":\"1.9\"},\"names\":[{\"display\":\"Sitting\",\"uuid\":\"c44d0752-3f10-11e4-adec-0800271c1b75\",\"name\":\"Sitting\",\"locale\":\"en\",\"localePreferred\":true,\"conceptNameType\":\"FULLY_SPECIFIED\",\"links\":[{\"rel\":\"self\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44cfed2-3f10-11e4-adec-0800271c1b75/name/c44d0752-3f10-11e4-adec-0800271c1b75\",\"resourceAlias\":\"name\"},{\"rel\":\"full\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44cfed2-3f10-11e4-adec-0800271c1b75/name/c44d0752-3f10-11e4-adec-0800271c1b75?v=full\",\"resourceAlias\":\"name\"}],\"resourceVersion\":\"1.9\"},{\"display\":\"Sitting\",\"uuid\":\"c44d02f5-3f10-11e4-adec-0800271c1b75\",\"name\":\"Sitting\",\"locale\":\"en\",\"localePreferred\":false,\"conceptNameType\":\"SHORT\",\"links\":[{\"rel\":\"self\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44cfed2-3f10-11e4-adec-0800271c1b75/name/c44d02f5-3f10-11e4-adec-0800271c1b75\",\"resourceAlias\":\"name\"},{\"rel\":\"full\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44cfed2-3f10-11e4-adec-0800271c1b75/name/c44d02f5-3f10-11e4-adec-0800271c1b75?v=full\",\"resourceAlias\":\"name\"}],\"resourceVersion\":\"1.9\"}],\"displayString\":\"Sitting\",\"resourceVersion\":\"2.0\",\"translationKey\":\"SITTING_9\"},{\"uuid\":\"c44d6b8e-3f10-11e4-adec-0800271c1b75\",\"name\":{\"display\":\"Supine\",\"uuid\":\"c44d728a-3f10-11e4-adec-0800271c1b75\",\"name\":\"Supine\",\"locale\":\"en\",\"localePreferred\":true,\"conceptNameType\":\"FULLY_SPECIFIED\",\"links\":[{\"rel\":\"self\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44d6b8e-3f10-11e4-adec-0800271c1b75/name/c44d728a-3f10-11e4-adec-0800271c1b75\",\"resourceAlias\":\"name\"},{\"rel\":\"full\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44d6b8e-3f10-11e4-adec-0800271c1b75/name/c44d728a-3f10-11e4-adec-0800271c1b75?v=full\",\"resourceAlias\":\"name\"}],\"resourceVersion\":\"1.9\"},\"names\":[{\"display\":\"Supine\",\"uuid\":\"c44d728a-3f10-11e4-adec-0800271c1b75\",\"name\":\"Supine\",\"locale\":\"en\",\"localePreferred\":true,\"conceptNameType\":\"FULLY_SPECIFIED\",\"links\":[{\"rel\":\"self\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44d6b8e-3f10-11e4-adec-0800271c1b75/name/c44d728a-3f10-11e4-adec-0800271c1b75\",\"resourceAlias\":\"name\"},{\"rel\":\"full\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44d6b8e-3f10-11e4-adec-0800271c1b75/name/c44d728a-3f10-11e4-adec-0800271c1b75?v=full\",\"resourceAlias\":\"name\"}],\"resourceVersion\":\"1.9\"},{\"display\":\"Supine\",\"uuid\":\"c44d6f5f-3f10-11e4-adec-0800271c1b75\",\"name\":\"Supine\",\"locale\":\"en\",\"localePreferred\":false,\"conceptNameType\":\"SHORT\",\"links\":[{\"rel\":\"self\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44d6b8e-3f10-11e4-adec-0800271c1b75/name/c44d6f5f-3f10-11e4-adec-0800271c1b75\",\"resourceAlias\":\"name\"},{\"rel\":\"full\",\"uri\":\"http://localhost/openmrs/ws/rest/v1/concept/c44d6b8e-3f10-11e4-adec-0800271c1b75/name/c44d6f5f-3f10-11e4-adec-0800271c1b75?v=full\",\"resourceAlias\":\"name\"}],\"resourceVersion\":\"1.9\"}],\"displayString\":\"Supine\",\"resourceVersion\":\"2.0\",\"translationKey\":\"SUPINE_9\"}],\"properties\":{\"allowDecimal\":null}},\"units\":null,\"hiNormal\":null,\"lowNormal\":null,\"hiAbsolute\":null,\"lowAbsolute\":null}]}],\"events\":{\"onFormSave\":\"\",\"onFormInit\":\"\"},\"translationsUrl\":\"/openmrs/ws/rest/v1/bahmniie/form/translations\",\"referenceVersion\":0,\"referenceFormUuid\":\"d5575e70-5189-4e8b-a9dc-18ce9d56615e\"}",
+				"dataType": "org.bahmni.customdatatype.datatype.FileSystemStorageDatatype",
+				"uuid": "31ba2188-742f-4ae4-b116-f60fd5f9a100"
+			}
+		]
+	},
+	"translations": [
+		{
+			"locale": "en",
+			"labels": {
+				"SECTION_6": "Blood Pressure"
+			},
+			"concepts": {
+				"SYSTOLIC_8": "Systolic",
+				"DIASTOLIC_7": "Diastolic",
+				"RR_4": "RR",
+				"SITTING_9": "Sitting",
+				"TEMPERATURE_3": "Temperature",
+				"SUPINE_9": "Supine",
+				"POSTURE_9": "Posture",
+				"SPO2_2": "SPO2",
+				"PULSE_1": "Pulse"
+			},
+			"formName": "Vitals_Form2",
+			"formUuid": null,
+			"version": "1",
+			"referenceVersion": null,
+			"referenceFormUuid": null
+		}
+	]
+}
