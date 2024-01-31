@@ -37,6 +37,21 @@
                     "orderType": "Radiology Order"
                 }
             },
+            "labInvestigations":{
+                "type": "labOrders",
+                "displayOrder": 6,
+                "config": {
+                    "translationKey":"LAB_INVESTIGATION",
+                    "showChart": true,
+                    "showTable": false,
+                    "showNormalLabResults": true,
+                    "showCommentsExpanded": true,
+                    "showAccessionNotes": true,
+                    "numberOfVisits": 10,
+                    "initialAccessionCount": 1,
+                    "latestAccessionCount": 1
+                }
+            },
             "conditions": {
                 "title": "Conditions",
                 "type": "conditionsList",
@@ -97,6 +112,7 @@
             "diagnoses":{
                 "type": "diagnosis",
                 "displayOrder": 4,
+                "title": "Diagnosis",
                 "config": {
                     "translationKey" : "DISCHARGE_SUMMARY_DIAGNOSIS_KEY",
                     "showCertainty": false,
@@ -121,7 +137,7 @@
                 }
             },
             "labInvestigations":{
-                "type": "investigationResult",
+                "type": "labOrders",
                 "displayOrder": 6,
                 "config": {
                     "translationKey":"LAB_INVESTIGATION",
@@ -136,11 +152,11 @@
                 }
             },
             "Treatments": {
-                "type": "treatment",
+                "translationKey": "VISIT_TITLE_TREATMENTS_KEY",
+                "type":"prescription",
                 "displayOrder": 6,
                 "config": {
-                    "translationKey": "VISIT_TITLE_TREATMENTS_KEY",
-                    "showFlowSheet": true,
+                    "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": false,
                     "showDetailsButton": true,
