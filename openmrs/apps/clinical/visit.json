@@ -31,15 +31,15 @@
             },
             "pacsOrders":{
                 "type":"pacsOrders",
-                "displayOrder": 1,
-                "translationKey": "PACS_ORDERS_VISIT_PAGE_KEY",
+                "displayOrder": 4,
+                "translationKey": "RADIOLOGY_ORDERS_KEY",
                 "config":{
                     "orderType": "Radiology Order"
                 }
             },
             "labInvestigations":{
                 "type": "labOrders",
-                "displayOrder": 6,
+                "displayOrder": 2,
                 "config": {
                     "translationKey":"LAB_INVESTIGATION",
                     "showChart": true,
@@ -55,15 +55,15 @@
             "conditions": {
                 "title": "Conditions",
                 "type": "conditionsList",
-                "displayOrder": 2,
+                "displayOrder": 1,
                 "config": { }
             }
         },
-            "encounterContext": {
-                "filterEncounterTypes": [
-                    "Consultation"
-                ]
-            }
+        "encounterContext": {
+            "filterEncounterTypes": [
+                "Consultation"
+            ]
+        }
     },
     "dischargeSummary":{
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
@@ -202,6 +202,5 @@
               }
           }
       }
-
     }
 }
