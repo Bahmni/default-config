@@ -175,7 +175,9 @@
                     "showDetailsButton":false
                 },
                 "expandedViewConfig":{  
-                    "numberOfVisits":10
+                    "numberOfVisits":10,
+                    "showChart":true,
+                    "showTable":false
                 }
             },
             "nutritionalValues":{  
