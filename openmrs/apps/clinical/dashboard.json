@@ -174,7 +174,8 @@
                     "showAccessionNotes": true,
                     "showDetailsButton":false,
                     "chartConfig": {
-                        "sortLabOrdersByName":true
+                        "sortLabOrdersByName":true,
+                        "sortResultColumnsLatestFirst":true
                     }  
                 },
                 "expandedViewConfig":{  
@@ -182,7 +183,8 @@
                     "showChart":true,
                     "showTable":false,
                     "chartConfig": {
-                        "sortLabOrdersByName":true
+                        "sortLabOrdersByName":true,
+                        "sortResultColumnsLatestFirst":true
                     }  
                 }
             },
