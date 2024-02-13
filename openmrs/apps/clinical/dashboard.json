@@ -174,8 +174,8 @@
                     "showAccessionNotes": true,
                     "showDetailsButton":false,
                     "chartConfig": {
-                        "sortLabOrdersByName":true,
-                        "sortResultColumnsLatestFirst":true
+                        "sortLabOrdersByName":false,
+                        "sortResultColumnsLatestFirst":false
                     }  
                 },
                 "expandedViewConfig":{  
