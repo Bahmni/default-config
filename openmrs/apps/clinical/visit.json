@@ -48,9 +48,11 @@
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
                     "numberOfVisits": 10,
-                    "initialAccessionCount": 1,
-                    "latestAccessionCount": 1,
-                    "hideResultsColumn": false
+                    "hideResultsColumn": false,
+                    "chartConfig": {
+                        "sortLabOrdersByName":true,
+                        "sortResultColumnsLatestFirst":true
+                    } 
                 }
             },
             "conditions": {
@@ -150,7 +152,11 @@
                     "numberOfVisits": 10,
                     "initialAccessionCount": 1,
                     "latestAccessionCount": 1,
-                    "hideResultsColumn": false
+                    "hideResultsColumn": false,
+                    "chartConfig": {
+                        "sortLabOrdersByName":true,
+                        "sortResultColumnsLatestFirst":true
+                    } 
                 }
             },
             "Treatments": {

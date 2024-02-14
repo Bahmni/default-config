@@ -172,10 +172,20 @@
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
-                    "showDetailsButton":false
+                    "showDetailsButton":false,
+                    "chartConfig": {
+                        "sortLabOrdersByName":false,
+                        "sortResultColumnsLatestFirst":false
+                    }  
                 },
                 "expandedViewConfig":{  
-                    "numberOfVisits":10
+                    "numberOfVisits":10,
+                    "showChart":true,
+                    "showTable":false,
+                    "chartConfig": {
+                        "sortLabOrdersByName":true,
+                        "sortResultColumnsLatestFirst":true
+                    }  
                 }
             },
             "nutritionalValues":{  
