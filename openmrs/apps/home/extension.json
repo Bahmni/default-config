@@ -118,7 +118,7 @@
     "url": "/atomfeed-console",
     "icon": "fa fa-terminal",
     "order": 13,
-    "requiredPrivilege": "app:admin"
+    "requiredPrivilege": "app:atomfeed-console"
   },
   "appointmentScheduling": {
     "id": "bahmni.appointment.scheduling",
