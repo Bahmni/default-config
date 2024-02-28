@@ -27,10 +27,15 @@
                     <td ng-repeat="detail in appointment">
                         {{detail}}
                     </td>
-                    <td>
-                        <button style="background: #669998; color: white;" ng-if="showJoinTeleconsultationOption($index)" ng-click="openJitsiMeet($index)">
-                                 {{::"DASHBOARD_JOIN_TELECON_KEY" | translate}}
-                         </button>
+                    <td style="background: #669998; vertical-align: middle; font-size: 16px;">
+                        <span style="color: white; cursor: pointer;" ng-if="showJoinTeleconsultationOption($index)"
+                                ng-click="openJitsiMeet($index,true)">
+                            <i class="fa fa-phone fa-white"></i>
+                         </span>
+                        <span style="color: white; cursor: pointer; margin-left: 10px" ng-if="showJoinTeleconsultationOption($index)"
+                              ng-click="openJitsiMeet($index,false)">
+                            <i class="fa fa-video-camera fa-white"></i>
+                        </span>
                     </td>
                 </tr>
                 </tbody>
