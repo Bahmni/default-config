@@ -85,8 +85,19 @@
             INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id, @location_tag_id);
         </sql>
     </changeSet>
-    <include file ="addObsPathSplitterProperty.xml"/>
-    <include file ="addMoreObsSplitterProperty.xml"/>
-    <include file ="addMultiSelectObsSplitterProperty.xml"/>
-    <include file ="addLabRoleWithPrivilege.xml"/>
+    <changeSet id="default-202207261900" author="Rohit">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from user_role where user_id = (select user_id from users where username='superman') and role = 'OT: FullAccess';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add OT role for superman user</comment>
+        <sql>
+            insert into user_role(user_id, role) values((select user_id from users where username='superman'), 'OT: FullAccess');
+        </sql>
+    </changeSet>
+    <include file ="addObsPathSplitterProperty.xml" relativeToChangelogFile="true" />
+    <include file ="addMoreObsSplitterProperty.xml" relativeToChangelogFile="true" />
+    <include file ="addMultiSelectObsSplitterProperty.xml" relativeToChangelogFile="true" />
+    <include file ="addLabRoleWithPrivilege.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>
