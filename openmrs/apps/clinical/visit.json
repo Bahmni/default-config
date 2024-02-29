@@ -50,8 +50,8 @@
                     "numberOfVisits": 10,
                     "hideResultsColumn": false,
                     "chartConfig": {
-                        "sortLabOrdersByName":true,
-                        "sortResultColumnsLatestFirst":true
+                        "sortResultColumnsLatestFirst":true,
+                        "groupByPanel":true
                     } 
                 }
             },
@@ -154,8 +154,8 @@
                     "latestAccessionCount": 1,
                     "hideResultsColumn": false,
                     "chartConfig": {
-                        "sortLabOrdersByName":true,
-                        "sortResultColumnsLatestFirst":true
+                        "sortResultColumnsLatestFirst":true,
+                        "groupByPanel":true
                     } 
                 }
             },
