@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20240229606-update-identifier-source" author="Bahmni">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">SELECT COUNT(*) FROM idgen_identifier_source WHERE name = 'GAN'</sqlCheck>
+        </preConditions>
+        <sql>
+            UPDATE idgen_seq_id_gen SET max_length = 9 WHERE id = (SELECT id FROM idgen_identifier_source WHERE name = 'GAN');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
