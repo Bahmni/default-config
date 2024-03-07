@@ -90,6 +90,11 @@
                     "numberOfVisits":10,
                     "showOtherActive":true,
                     "showDetailsButton":true
+                },
+                "prescriptionPrint":{
+                    "title": "Bahmni",
+                    "header": "Prescriptions",
+                    "logo": "../images/bahmniLogo.png"
                 }
             },
             "radiology":{  
