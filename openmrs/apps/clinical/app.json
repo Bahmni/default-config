@@ -139,6 +139,12 @@
                 "Pain management given": true,
                 "Safe Abortion, Remarks": "Remarks",
                 "Malaria, Death Date": "2015-12-01"
+            },
+            "Follow up Date" : {
+                "allowFutureDates": true
+            },
+            "Date of Operation" : {
+                "allowFutureDates": true
             }
         },
         "visitPage": {
