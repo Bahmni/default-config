@@ -176,10 +176,11 @@ angular.module('bahmni.common.displaycontrol.custom')
                 withCredentials: true
             });
         };
-        var transformDate = function (dateTime) {
-            return Bahmni.Common.Util.DateUtil.formatDateWithoutTimeToLocal(
-                dateTime,
-            )
+
+        var transformDate = function (dateTimeArray) {
+            var dateTime = dateTimeArray.slice();
+            dateTime[1] = dateTime[1] - 1
+            return Bahmni.Common.Util.DateUtil.formatDateWithoutTimeToLocal(dateTime)
         }
 
         var transformTime = function (dateTime) {
