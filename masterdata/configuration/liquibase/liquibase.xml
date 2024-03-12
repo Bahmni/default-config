@@ -15,5 +15,18 @@
             UPDATE idgen_seq_id_gen SET max_length = 9 WHERE id = (SELECT id FROM idgen_identifier_source WHERE name = 'GAN');
         </sql>
     </changeSet>
-
+    <changeSet id="BAH-3581-update-location-attribute-type-20241103" author="Bahmni-Config">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) FROM location_attribute_type where name="Print Header";
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding location attribute type print Header</comment>
+        <sql>
+            INSERT INTO location_attribute_type (name, description, datatype, preferred_handler, min_occurs, creator, date_created,
+            retired, uuid)
+            VALUES ("Print Header","Clinical address used on header for any print",
+            "org.openmrs.customdatatype.datatype.LongFreeTextDatatype", "org.openmrs.web.attribute.handler.LongFreeTextTextareaHandler", 0, 1, NOW(), 0, "6cd01df8-4418-4079-95bf-9716413dc8f5");
+        </sql>
+    </changeSet>
 </databaseChangeLog>
