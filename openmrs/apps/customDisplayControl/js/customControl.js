@@ -226,7 +226,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         });
 
         $scope.goToListView = function () {
-            $window.open('/bahmni/appointments/#/home/manage/appointments/list');
+            $window.open('/appointments/#/home/manage/appointments/list');
         };
         $scope.openJitsiMeet = function (appointmentIndex) {
             var uuid = $scope.upcomingAppointmentsUUIDs[appointmentIndex];
