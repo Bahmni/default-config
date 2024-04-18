@@ -6,5 +6,11 @@
                 "description": "Bahmni patient search, lookup Page"
             }
         ],
-        "contextModel": []
+        "contextModel": [],
+        "config": {
+            "filterOutAttributeForAllSearch": [{
+                "attrName": "confirmedPatient",
+                "attrValue": "false"
+            }]
+        }
 }

@@ -41,7 +41,8 @@
                 },
                 "hidden": {
                     "attributes": [
-                        "primaryContact"
+                        "primaryContact",
+                        "confirmedPatient"
                     ]
                 },
                 "defaults":  {
@@ -69,6 +70,11 @@
             "showSaveConfirmDialog": false,
             "showBirthTime": true,
             "showCasteSameAsLastNameCheckbox": false,
+            "relatedIdentifierAttribute": {
+                "name": "confirmedPatient",
+                "hideOrDisable": "hide",
+                "hideOnValue": "true"
+            },
             "printOptions": [
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",

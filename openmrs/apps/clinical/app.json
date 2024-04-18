@@ -38,6 +38,10 @@
                 { "locale" : "pt", "css": "offline-language-portuguese-brazil"}
             ]
         },
+        "filterOutAttributeForAllSearch": [{
+            "attrName": "confirmedPatient",
+            "attrValue": "false"
+        }],
     	"diagnosisStatus": "Inactive",
             "program": {
                 "patientInformation": {
