@@ -19,6 +19,7 @@
     "filterOutAttributeForAllSearch": [{
       "attrName": "confirmedPatient",
       "attrValue": "false"
-    }]
+    }],
+    "additionalCustomParam": "patientObservations"
   }
 }

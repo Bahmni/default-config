@@ -1,0 +1,12 @@
+<config>
+  <globalProperties>
+    <globalProperty>
+      <property>obs.conceptMappingsForOT</property>
+      <value>org.openmrs.module.emrapi:Coded Diagnosis,org.openmrs.module.emrapi:Non-coded Diagnosis</value>
+      <description>Comma separated source:code key value pairs of concept mappings for getting observations to be displayed in the OT module List view.
+      For example, if we want to get the observations captured under the concept mappings, one with the source "org.openmrs.module.emrapi" and code "Coded Diagnosis" and other with the source "org.openmrs.module.emrapi" and code "Non-coded Diagnosis" 
+      then we can set the value like "org.openmrs.module.emrapi:Coded Diagnosis,org.openmrs.module.emrapi:Non-coded Diagnosis" (without quotes).
+      The key value pair of source and code is separated by colon symbol</description>
+    </globalProperty>
+  </globalProperties>
+</config>
