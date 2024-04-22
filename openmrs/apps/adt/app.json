@@ -80,7 +80,11 @@
                     "type": "conditionsList",
                     "displayOrder": 6
                 }
-            }}
+            }},
+            "filterOutAttributeForAllSearch": [{
+                "attrName": "confirmedPatient",
+                "attrValue": "false"
+            }]
 
         }
 }

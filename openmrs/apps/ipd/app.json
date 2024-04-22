@@ -28,6 +28,10 @@
                 "allowFutureDates": true
             }
         },
+        "filterOutAttributeForAllSearch": [{
+            "attrName": "confirmedPatient",
+            "attrValue": "false"
+        }],
         "hideStartNewVisitPopUp": false,
         "patientForwardUrl": "../bedmanagement/#/patient/{{patientUuid}}/visit/{{visitUuid}}/dashboard",
         "dashboard": {
