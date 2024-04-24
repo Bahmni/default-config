@@ -6,5 +6,9 @@
                 "description": "Bahmni patient search, lookup Page"
             }
         ],
+        "config": {
+            "ignoredTabularViewHeadings": ["uuid","activeVisitUuid","hasBeenAdmitted","display","image","$$hashKey","birthDate","extraIdentifiers","personId","deathDate","addressFieldValue","dateCreated","customAttribute","patientProgramAttributeValue"],
+            "identifierHeadings": ["identifier"]
+        },
         "contextModel": []
 }

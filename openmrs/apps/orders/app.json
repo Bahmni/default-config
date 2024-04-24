@@ -8,6 +8,8 @@
         ],
     "config" : {
       "maxConceptSetLevels": 3,
+      "ignoredTabularViewHeadings": ["uuid","activeVisitUuid","hasBeenAdmitted","display","image","$$hashKey"],
+      "identifierHeadings": ["identifier"],
       "conceptSetUI": {
         "Grid1": {
           "grid": true
