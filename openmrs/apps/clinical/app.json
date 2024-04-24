@@ -86,6 +86,8 @@
         "visitTypeForRetrospectiveEntries": "Special OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
+        "ignoredTabularViewHeadings": ["uuid","activeVisitUuid","hasBeenAdmitted","display","image","$$hashKey","birthDate","extraIdentifiers","personId","deathDate","addressFieldValue","dateCreated","customAttribute","patientProgramAttributeValue"],
+        "identifierHeadings": ["identifier"],
         "conceptSetUI": {
             "Chief Complaint Data": {
                 "autocomplete":true,

@@ -3,6 +3,8 @@
   "extensionPoints": [
   ],
   "config": {
+    "ignoredTabularViewHeadings": ["uuid","display","image","$$hashKey"],
+    "identifierHeadings": ["identifier"],
     "patientDashboardUrl": {
       "link": "/bahmni/clinical/#/default/patient/{{patientUuid}}/dashboard",
       "errorMessage": "The patient is not enrolled to the program"

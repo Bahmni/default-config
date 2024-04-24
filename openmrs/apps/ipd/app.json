@@ -22,6 +22,8 @@
         "onDischargeForwardTo": "#",
         "defaultVisitType": "IPD",
         "expectedDateOfDischarge": "",
+        "ignoredTabularViewHeadings": ["uuid","activeVisitUuid","hasBeenAdmitted","display","image","$$hashKey","birthDate","extraIdentifiers","personId","deathDate","addressFieldValue","dateCreated","customAttribute","patientProgramAttributeValue"],
+        "identifierHeadings": ["identifier"],
         "conceptSetUI": {
             "Expected Date of Discharge": {
                 "disableAddNotes": true,
