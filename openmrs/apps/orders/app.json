@@ -25,6 +25,10 @@
         "conceptNames": ["Radiology Notes"],
         "numberOfVisits": 2,
         "scope": "latest"
-      }
+      },
+      "filterOutAttributeForAllSearch": [{
+        "attrName": "confirmedPatient",
+        "attrValue": "false"
+      }]
     }
 }

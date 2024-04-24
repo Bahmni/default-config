@@ -29,4 +29,16 @@
             "org.openmrs.customdatatype.datatype.LongFreeTextDatatype", "org.openmrs.web.attribute.handler.LongFreeTextTextareaHandler", 0, 1, NOW(), 0, "6cd01df8-4418-4079-95bf-9716413dc8f5");
         </sql>
     </changeSet>
+    <changeSet id="RELATED_IDENTIFIER_ATTR_TYPE_202404181317" author="BAHMNI-CONFIG">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'confirmedPatient';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add person_attribute_type 'confirmedPatient' to differentiate potential and actual patients</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
+            VALUES ('confirmedPatient', 'confirmedPatient', 'java.lang.Boolean', '0', 1, curdate(), 0, 30, uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>
