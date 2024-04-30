@@ -17,10 +17,6 @@
       "dayViewEnd": "18:00",
       "dayViewSplit": "60"
     },
-    "startOfWeek": "Monday",
-    "filterOutAttributeForAllSearch": [{
-      "attrName": "confirmedPatient",
-      "attrValue": "false"
-    }]
+    "startOfWeek": "Monday"
   }
 }
