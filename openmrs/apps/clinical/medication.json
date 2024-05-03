@@ -5,7 +5,10 @@
     "allMedicationTabConfig": {
       "orderSet": {
         "calculateDoseOnlyOnCurrentVisitValues": false,
-        "showRulesInMedication":true
+        "showRulesInMedication":true,
+        "dosageRuleUnitsMap": {
+          "mg/kg": ["mg","ml"]
+        }
       },
       "inputOptionsConfig": {
         "defaultDurationUnit": "Day(s)",
