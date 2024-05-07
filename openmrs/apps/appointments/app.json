@@ -57,6 +57,7 @@
       "defaultNumberOfOccurrences": 10
     },
     "additionalInfoColumns": {"Language": "English"},
-    "enableAppointmentStatusOption": true
+    "enableAppointmentStatusOption": true,
+    "enableDetailedSummaryView": true
   }
 }
