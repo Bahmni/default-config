@@ -8,7 +8,7 @@
     }
   ],
   "config": {
-    "allowVirtualConsultation": false,
+    "allowVirtualConsultation": true,
     "minCharLengthToTriggerPatientSearch": 3,
     "enableSpecialities": true,
     "maxAppointmentProviders": 4,
