@@ -26,6 +26,50 @@
         "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
+        "allMedicinesInPrescriptionAvailableForIPD": false,
+        "enableIPDFeature": true,
+        "enable24HourTimers": true,
+        "drugChartScheduleFrequencies": [
+            {
+              "name": "Twice a day / Every 12 hours",
+              "frequencyPerDay": 2,
+              "scheduleTiming": [
+                "6:00",
+                "18:00"
+              ]
+            },
+            {
+              "name": "Three times a day / Every 8 hours",
+              "frequencyPerDay": 3,
+              "scheduleTiming": [
+                "6:00",
+                "14:00",
+                "22:00"
+              ]
+            },
+            {
+              "name": "Four times a day / Every 6 hours",
+              "frequencyPerDay": 4,
+              "scheduleTiming": [
+                "6:00",
+                "12:00",
+                "18:00",
+                "23:45"
+              ]
+            }
+        ],
+        "drugChartStartTimeFrequencies": [
+            "Every Hour",
+            "Every 2 hours",
+            "Every 3 hours",
+            "Every 4 hours",
+            "Once a day",
+            "Nocte (At Night)",
+            "Every 30 minutes",
+            "STAT (Immediately)",
+            "In Morning",
+            "In Afternoon"
+        ],
         "quickPrints":false,
         "allowAdhocTeleConsultation": false,
         "teleConsultationDomain": "meet.jit.si",
