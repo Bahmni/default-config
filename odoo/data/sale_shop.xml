@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_shop_pharmacy" model="sale.shop">
+            <field name="name">Pharmacy</field>            
+            <field name="warehouse_id">1</field>            
+            <field name="location_id">8</field>            
+            <field name="payment_default_id">1</field>            
+        </record>               
+    </data>
+</odoo>
