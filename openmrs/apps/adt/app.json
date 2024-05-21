@@ -82,7 +82,8 @@
                     "type": "conditionsList",
                     "displayOrder": 6
                 }
-            }}
+            }},
+            "enableIPDFeature": true
 
         }
 }

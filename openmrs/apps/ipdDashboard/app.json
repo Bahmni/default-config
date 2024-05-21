@@ -1,0 +1,132 @@
+{
+  "sections": [
+    {
+      "title": "Vitals and Nutritional Values",
+      "componentKey": "VT",
+      "displayOrder": 1,
+      "refreshKey": 1
+    },
+    {
+      "title": "Allergies",
+      "componentKey": "AL",
+      "displayOrder": 2,
+      "refreshKey": 2
+    },
+    {
+      "title": "Diagnosis",
+      "componentKey": "DG",
+      "displayOrder": 3,
+      "refreshKey": 3
+    },
+    {
+      "title": "Treatments",
+      "componentKey": "TR",
+      "displayOrder": 4,
+      "refreshKey": 4
+    },
+    {
+      "title": "Nursing Tasks",
+      "componentKey": "NT",
+      "displayOrder": 5,
+      "refreshKey": 5
+    },
+    {
+      "title": "Drug Chart",
+      "componentKey": "DC",
+      "displayOrder": 6,
+      "refreshKey": 6
+    },
+    {
+      "title": "Intake / Output",
+      "componentKey": "IO",
+      "displayOrder": 7,
+      "refreshKey": 7
+    },
+    {
+      "title": "Patient Feeding Record",
+      "componentKey": "PFR",
+      "displayOrder": 9,
+      "refreshKey": 9
+    }
+  ],
+  "nursingTasks": {
+    "timeInMinutesFromNowToShowTaskAsRelevant": 30,
+    "timeInMinutesFromNowToShowPastTaskAsLate": 60,
+    "timeInMinutesFromStartTimeToShowAdministeredTaskAsLate": 60
+  },
+  "drugChart": {
+    "timeInMinutesFromNowToShowPastTaskAsLate": 60,
+    "timeInMinutesFromStartTimeToShowAdministeredTaskAsLate": 60
+  },
+  "drugChartSlider": {
+    "timeInMinutesToDisableSlotPostScheduledTime": 60
+  },
+  "enable24HourTime": false,
+  "medicationTags": {
+    "asNeeded": "Rx-PRN",
+    "STAT (Immediately)": "Rx-STAT",
+    "default": "Rx",
+    "emergency": "EMERG"
+  },
+  "shiftDetails": {
+    "1": { "shiftStartTime": "08:00", "shiftEndTime": "19:00" },
+    "2": { "shiftStartTime": "19:00", "shiftEndTime": "08:00" }
+  },
+  "intakeOutputConfig": {
+    "periodDetails": {
+      "startTime": "08:00",
+      "durationInHours": "24"
+    },
+    "normalHighValue": 10000,
+    "normalLowValue": 0,
+    "timeConceptNames": ["Intake Date & Time", "Output Date & Time"],
+    "intakeRouteConcept": "Intake Route",
+    "intakeQuantityConcept": "Intake Quantity",
+    "outputRouteConcept": "Output Route",
+    "outputQuantityConcept": "Output Quantity",
+    "dashboardConfig": {
+      "numberOfVisits": 10,
+      "conceptNames": ["Intake Section", "Output Section"]
+    }
+  },
+  "patientFeedingRecordConfig":{
+    "shiftValueConcept": "Shift",
+    "routeValueConcept": "Patient Feeding Route",
+    "feedTypeConcept": "Feed Type",
+    "amountValueConcept": "Patient Feeding Amount",
+    "timeConceptNames": ["Date and Time"],
+    "periodDetails": {
+      "startTime": "08:00",
+      "durationInHours": "24"
+    },
+    "dashboardConfig": {
+      "numberOfVisits": 10,
+      "conceptNames": ["Patient Feeding"]
+    }
+  },
+  "vitalsConfig": {
+    "latestVitalsConceptValues": {
+      "spO2": "Arterial Blood Oxygen Saturation (Pulse Oximeter)",
+      "weight": "Weight",
+      "bmi": "BMI",
+      "respiratoryRate": "Respiratory Rate",
+      "systolicPressure": "Systolic blood pressure",
+      "diastolicPressure": "Diastolic blood pressure",
+      "temperature": "Temperature",
+      "pulse": "Pulse",
+      "height": "Height"
+    },
+    "vitalsHistoryConceptValues": {
+      "spO2": "Arterial Blood Oxygen Saturation (Pulse Oximeter)",
+      "weight": "Weight",
+      "bmi": "BMI",
+      "respiratoryRate": "Respiratory Rate",
+      "systolicPressure": "Systolic blood pressure",
+      "diastolicPressure": "Diastolic blood pressure",
+      "temperature": "Temperature",
+      "pulse": "Pulse",
+      "height": "Height",
+      "muac": "Mid-upper arm circumference"
+    }
+  }
+}
