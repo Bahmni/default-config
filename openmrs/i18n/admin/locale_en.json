@@ -49,5 +49,12 @@
   "MODULE_LABEL_ADMIN_KEY": "Admin",
   "MODULE_LABEL_REPORTS_KEY": "Reports",
   "MODULE_LABEL_LOGOUT_KEY": "Logout",
-  "MODULE_LABEL_LOGIN_KEY": "Login"
+  "MODULE_LABEL_LOGIN_KEY": "Login",
+  "VIEWED_WARD_LEVEL_DASHBOARD_MESSAGE": "User {{userId}} accessed the ward level dashboard.",
+  "CREATE_SCHEDULED_MEDICATION_TASK_MESSAGE": "User {{userId}} added a medication task for patient {{patientId}}.",
+  "EDIT_SCHEDULED_MEDICATION_TASK_MESSAGE": "User {{userId}} edited a medication task for patient {{patientId}}.",
+  "ADMINISTER_MEDICATION_TASK_MESSAGE": "User {{userId}} administered a medication task for patient {{patientId}}.",
+  "STOP_SCHEDULED_MEDICATION_TASK_MESSAGE": "User {{userId}} stopped a medication task for patient {{patientId}}.",
+  "SKIP_SCHEDULED_MEDICATION_TASK_MESSAGE": "User {{userId}} skipped a medication task for patient {{patientId}}.",
+  "CREATE_EMERGENCY_MEDICATION_TASK_MESSAGE": "User {{userId}} added a emergency medication task for patient {{patientId}}."
 }
