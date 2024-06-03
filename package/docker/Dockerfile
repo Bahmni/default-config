@@ -1,5 +1,9 @@
 FROM alpine:3.18.3
 
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache curl libcurl
+
 COPY openmrs /etc/bahmni_config/openmrs
 COPY masterdata /etc/bahmni_config/masterdata
 COPY openelis /etc/bahmni_config/openelis
