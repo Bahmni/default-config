@@ -35,18 +35,6 @@
       "componentKey": "DC",
       "displayOrder": 6,
       "refreshKey": 6
-    },
-    {
-      "title": "Intake / Output",
-      "componentKey": "IO",
-      "displayOrder": 7,
-      "refreshKey": 7
-    },
-    {
-      "title": "Patient Feeding Record",
-      "componentKey": "PFR",
-      "displayOrder": 8,
-      "refreshKey": 8
     }
   ],
   "nursingTasks": {
