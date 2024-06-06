@@ -26,7 +26,7 @@
         "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
-        "allMedicinesInPrescriptionAvailableForIPD": false,
+        "allMedicinesInPrescriptionAvailableForIPD": true,
         "enableIPDFeature": true,
         "enable24HourTimers": true,
         "drugChartScheduleFrequencies": [
