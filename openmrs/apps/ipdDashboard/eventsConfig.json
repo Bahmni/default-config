@@ -1,71 +1,14 @@
 [
     {
         "type": "PATIENT_ADMIT",
-        "tasks": [
-            {
-                "name": "Complete Nursing Initial Assessment form"
-            },
-            {
-                "name": "Complete Nursing Physical Assessment Form"
-            },
-            {
-                "name": "Complete Fall Risk Assessment Form"
-            },
-            {
-                "name": "Check Ward Instructions"
-            },
-            {
-                "name": "Complete Multi-disciplinary Patient & Family Education Record form"
-            },
-            {
-                "name" : "Capture patient weight upon admission"
-            },
-            {
-                "name": "Complete Nursing Care Plan"
-            },
-            {
-                "name": "Capture Vital Signs"
-            },
-            {
-                "name": "Complete Patient Feeding Charts"
-            }
-        ]
+        "tasks": []
     },
     {
         "type": "SHIFT_START_TASK",
-        "tasks": [
-            {
-                "name": "Complete Nursing Care Plan"
-            },
-            {
-                "name": "Capture Vital Signs"
-            },
-            {
-                "name": "Complete Patient Feeding Charts"
-            }
-        ]
+        "tasks": []
     },
     {
         "type": "ROLLOVER_TASK",
-        "tasks": [
-            {
-                "name": "Complete Nursing Initial Assessment form"
-            },
-            {
-                "name": "Complete Nursing Physical Assessment Form"
-            },
-            {
-                "name": "Complete Fall Risk Assessment Form"
-            },
-            {
-                "name": "Check Ward Instructions"
-            },
-            {
-                "name": "Complete Multi-disciplinary Patient & Family Education Record form"
-            },
-            {
-                "name" : "Capture patient weight upon admission"
-            }
-        ]
+        "tasks": []
     }
 ]
