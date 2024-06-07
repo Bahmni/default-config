@@ -1,0 +1,14 @@
+[
+    {
+        "type": "PATIENT_ADMIT",
+        "tasks": []
+    },
+    {
+        "type": "SHIFT_START_TASK",
+        "tasks": []
+    },
+    {
+        "type": "ROLLOVER_TASK",
+        "tasks": []
+    }
+]
