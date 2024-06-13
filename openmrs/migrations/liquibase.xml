@@ -85,6 +85,28 @@
             INSERT INTO location_tag_map(location_id, location_tag_id) VALUES(@location_id, @location_tag_id);
         </sql>
     </changeSet>
+    <changeSet id="default-202301171054" author="Madhuri, Samridhi">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from user_role WHERE user_id = (select user_id from users where username='superman') AND role = 'OT: FullAccess';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add OT FullAccess role for superman</comment>
+        <sql>
+            INSERT INTO user_role(user_id, role) values((SELECT user_id FROM users where username='superman'), 'OT: FullAccess');
+        </sql>
+    </changeSet>
+    <changeSet id="default-202301171110" author="Madhuri, Samridhi">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT count(*) from user_role WHERE user_id = (select user_id from users where username='superman') AND role = 'Appointments:FullAccess';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Appointment FullAccess role to superman</comment>
+        <sql>
+            INSERT INTO user_role(user_id, role) values((SELECT user_id FROM users where username='superman'), 'Appointments:FullAccess');
+        </sql>
+    </changeSet>
     <include file ="addObsPathSplitterProperty.xml"/>
     <include file ="addMoreObsSplitterProperty.xml"/>
     <include file ="addMultiSelectObsSplitterProperty.xml"/>
