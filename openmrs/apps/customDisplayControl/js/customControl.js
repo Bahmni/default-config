@@ -228,10 +228,10 @@ angular.module('bahmni.common.displaycontrol.custom')
         $scope.goToListView = function () {
             $window.open('/appointments/#/home/manage/appointments/list');
         };
-        $scope.openJitsiMeet = function (appointmentIndex) {
+        $scope.openJitsiMeet = function (appointmentIndex, startWithVideoMuted) {
             var uuid = $scope.upcomingAppointmentsUUIDs[appointmentIndex];
             var link = $scope.upcomingAppointmentsLinks[appointmentIndex];
-            virtualConsultService.launchMeeting(uuid, link);
+            virtualConsultService.launchMeeting(uuid, link, startWithVideoMuted);
         };
         $scope.showJoinTeleconsultationOption = function (appointmentIndex) {
             return $scope.upcomingAppointments[appointmentIndex].DASHBOARD_APPOINTMENTS_STATUS_KEY == 'Scheduled' &&
