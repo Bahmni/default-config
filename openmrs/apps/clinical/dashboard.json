@@ -23,7 +23,8 @@
                 "displayOrder": 2,
                 "dashboardConfig": {
                     "title": null,
-                    "maximumNoOfVisits": 5
+                    "maximumNoOfVisits": 5,
+                    "printing": { }
                 },
                 "formGroup": [ ],
                 "translationKey":"DASHBOARD_TITLE_FORMS2_DISPLAY_EDIT_FORMS2_FORMS"
@@ -415,7 +416,8 @@
                 "displayOrder": 21,
                 "dashboardConfig": {
                     "title": null,
-                    "maximumNoOfVisits": 10
+                    "maximumNoOfVisits": 10,
+                    "printing": { }
                 },
                 "formGroup": [ ],
                 "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY"
@@ -429,11 +431,12 @@
                 }
             },
 	    "Forms-2.0": {
-                "type": "formsV2",
+                "type": "formsV2React",
                 "displayOrder": 23,
                 "dashboardConfig": {
                     "title": null,
-                    "maximumNoOfVisits": 1
+                    "maximumNoOfVisits": 1,
+                    "printing": { }
                 },
                 "formGroup": [ ],
                 "translationKey": "DASHBOARD_TITLE_FORMS2_DISPLAY_CONTROL_KEY"
