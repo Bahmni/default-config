@@ -1,0 +1,104 @@
+{
+    "sections": [
+        {
+            "name": "Procedures",
+            "translationKey": "DASHBOARD_TITLE_PROCEDURES_KEY",
+            "icon": "fa-flask",
+            "controls": [
+                {
+                "type": "ordersControl",
+                "config": {
+                    "orderType": "Procedure Order"
+                }
+                }
+            ]
+        },
+        {
+            "name": "Lab Investigations",
+            "translationKey": "DASHBOARD_TITLE_LAB_INVESTIGATIONS_KEY",
+            "icon": "fa-flask",
+            "controls": [
+                {
+                    "type": "labOrders",
+                    "config": {
+                        "orderType": "Lab order",
+                        "numberOfVisits": 5
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Radiology Investigations",
+            "translationKey": "DASHBOARD_TITLE_RADIOLOGY_INVESTIGATIONS_KEY",
+            "icon": "fa-x-ray",
+            "controls": [
+                {
+                    "type": "pacsOrders",
+                    "config": {
+                        "orderType": "Radiology order",
+                        "numberOfVisits": 5,
+                        "pacsViewerUrl": "/ohif/viewer?StudyInstanceUIDs={{StudyInstanceUIDs}}&multimonitor=secondary"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Observations",
+            "translationKey": "DASHBOARD_TITLE_OBSERVATIONS_KEY",
+            "icon": "fa-user",
+            "controls": [
+                {
+                    "type": "observations",
+                    "config": {
+                        "titleTranslationKey": "DASHBOARD_TITLE_VITALS_KEY",
+                        "conceptNames": [
+                            "Pulse",
+                            "Height (cm)",
+                            "Weight (kg)"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Forms",
+            "translationKey": "DASHBOARD_TITLE_FORMS_DISPLAY_CONTROL_KEY",
+            "icon": "fa-clipboard-list",
+            "controls": [
+                {
+                    "type": "forms",
+                    "config": {
+                        "numberOfVisits": 10,
+                        "showEditForActiveEncounter": true
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Vaccinations",
+            "translationKey": "DASHBOARD_TITLE_VACCINATION_KEY",
+            "icon": "fa-syringe",
+            "controls": [
+                {
+                    "type": "treatment",
+                    "config": {
+                        "code": [
+                            "http://hl7.org/fhir/sid/cvx|"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Medications",
+            "translationKey": "DASHBOARD_TITLE_MEDICATIONS_KEY",
+            "icon": "fa-pills",
+            "controls": [
+                {
+                    "type": "treatment",
+                    "config": {}
+                }
+            ]
+        }
+    ]
+}

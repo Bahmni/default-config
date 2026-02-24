@@ -1,5 +1,10 @@
 {
   "patientInformation": {},
+  "contextInformation": {
+    "program": {
+      "fields": ["ID_Number", "startDate", "endDate", "outcome"]
+    }
+  },
   "actions": [],
   "dashboards": [
     {
@@ -8,6 +13,13 @@
       "icon": "fa fa-dashboard",
       "default": true,
       "url": "general.json"
+    },
+    {
+      "name": "Program Dashboard",
+      "requiredPrivileges": [""],
+      "icon": "fa fa-dashboard",
+      "default": true,
+      "url": "program.json"
     }
   ],
   "consultationPad": {
