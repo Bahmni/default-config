@@ -28,6 +28,7 @@
       "foodAllergenUuid": "162553AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
       "environmentalAllergenUuid": "162554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
       "allergyReactionUuid": "162555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-    }
+    },
+    "statDurationInMilliseconds": 7200000 
   }
 }
