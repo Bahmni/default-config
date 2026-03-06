@@ -1,3 +1,4 @@
+
 {
   "sections": [
     {
@@ -44,6 +45,24 @@
       "controls": [
         {
           "type": "allergies"
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "translationKey": "DOCUMENTS_TABLE_HEADING",
+      "icon": "fa-file-alt",
+      "controls": [
+        {
+          "type": "patientDocuments",
+          "config": {
+            "fields": [
+              "documentIdentifier",
+              "documentType",
+              "uploadedOn",
+              "uploadedBy"
+            ]
+          }
         }
       ]
     },
