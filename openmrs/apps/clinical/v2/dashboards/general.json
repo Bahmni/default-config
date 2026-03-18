@@ -60,7 +60,8 @@
               "documentIdentifier",
               "documentType",
               "uploadedOn",
-              "uploadedBy"
+              "uploadedBy",
+              "action"
             ]
           }
         }
