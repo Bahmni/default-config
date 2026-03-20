@@ -2,4 +2,4 @@ apiVersion: v2
 name: default-config
 description: Helm chart for default-config of Bahmni
 type: application
-version: 1.0.0
+version: 1.0.1
