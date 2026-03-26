@@ -62,8 +62,7 @@
               "uploadedOn",
               "uploadedBy",
               "action"
-            ],
-            "pageSize": 5
+            ]
           }
         }
       ]
