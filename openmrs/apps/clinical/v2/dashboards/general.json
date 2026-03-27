@@ -55,6 +55,7 @@
       "controls": [
         {
           "type": "patientDocuments",
+          "requiredPrivileges": ["Get Patient Documents", "View Patient Documents"],
           "config": {
             "fields": [
               "documentIdentifier",
@@ -73,6 +74,7 @@
       "controls": [
         {
           "type": "programs",
+          "requiredPrivileges": ["Get Programs", "View Programs"],
           "config": {
             "fields": [
               "programName",
@@ -93,6 +95,7 @@
       "controls": [
         {
           "type": "forms",
+          "requiredPrivileges": ["Get Forms", "View Forms"],
           "config": {
             "numberOfVisits": 10,
             "showEditForActiveEncounter": true
@@ -106,10 +109,12 @@
       "icon": "fa-stethoscope",
       "controls": [
         {
-          "type": "conditions"
+          "type": "conditions",
+          "requiredPrivileges": ["Get Conditions", "View Conditions"]
         },
         {
-          "type": "diagnoses"
+          "type": "diagnoses",
+          "requiredPrivileges": ["Get Diagnoses", "View Diagnoses"]
         }
       ]
     },
@@ -132,7 +137,8 @@
       "icon": "fa-pills",
       "controls": [
         {
-          "type": "treatment"
+          "type": "treatment",
+          "requiredPrivileges": ["Get Medications", "View Medications"]
         }
       ]
     },
