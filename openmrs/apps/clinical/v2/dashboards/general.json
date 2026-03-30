@@ -55,7 +55,10 @@
       "controls": [
         {
           "type": "patientDocuments",
-          "requiredPrivileges": ["Get Patient Documents", "View Patient Documents"],
+          "requiredPrivileges": [
+            "Get DocumentReference",
+            "View DocumentReference"
+          ],
           "config": {
             "fields": [
               "documentIdentifier",
