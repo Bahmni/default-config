@@ -59,6 +59,8 @@
     },
     "additionalInfoColumns": {"Language": "English"},
     "enableAppointmentStatusOption": true,
-    "enableDetailedSummaryView": true
+    "enableDetailedSummaryView": true,
+    "enableAppointmentReasons": false,
+    "appointmentReasonConceptSet": ""
   }
 }
