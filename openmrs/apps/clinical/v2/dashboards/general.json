@@ -78,7 +78,7 @@
       "controls": [
         {
           "type": "programs",
-          "requiredPrivileges": ["Get Programs", "View Programs"],
+          "requiredPrivileges": ["Get Patient Programs", "View Patient Programs"],
           "config": {
             "fields": [
               "programName",
