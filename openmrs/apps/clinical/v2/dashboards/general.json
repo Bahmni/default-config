@@ -142,7 +142,7 @@
       "controls": [
         {
           "type": "treatment",
-          "requiredPrivileges": ["Get Medications", "View Medications"]
+          "requiredPrivileges": ["Get Orders", "View Orders"]
         }
       ]
     },
