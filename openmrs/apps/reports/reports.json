@@ -1,4 +1,12 @@
 {
+    "patientWithComorbidities": {
+        "name": "Patient With Co-morbidities",
+        "type": "MRSGeneric",
+        "requiredPrivilege": "app:reports",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/patientWithComorbiditiesReport.sql"
+        }
+    },
     "visitReport10": {
         "name": "Visit Report",
         "type": "visits",
