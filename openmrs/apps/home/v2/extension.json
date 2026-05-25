@@ -140,5 +140,25 @@
     "order": 14,
     "requiredPrivilege": "app:lab-lite",
     "captureTestResults": true
+  },
+
+  "cmdPaletteNavOpenMRS": {
+    "id": "org.bahmni.commandpalette.nav.openmrs",
+    "extensionPointId": "org.bahmni.commandpalette.navItem",
+    "label": "OpenMRS",
+    "url": "/openmrs",
+    "icon": "fa-external-link",
+    "newTab": true,
+    "order": 6,
+    "requiredPrivilege": "app:admin"
+  },
+  "cmdPaletteNavBahmniWiki": {
+    "id": "org.bahmni.commandpalette.nav.bahmniwiki",
+    "extensionPointId": "org.bahmni.commandpalette.navItem",
+    "label": "Bahmni Wiki",
+    "url": "https://bahmni.atlassian.net/wiki/spaces/BAH/overview",
+    "icon": "fa-book",
+    "newTab": true,
+    "order": 7
   }
 }

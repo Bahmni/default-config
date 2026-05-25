@@ -1,0 +1,11 @@
+{
+  "cmdPaletteNavOT": {
+    "id": "org.bahmni.commandpalette.nav.ot",
+    "extensionPointId": "org.bahmni.commandpalette.navItem",
+    "label": "Operating Theatre",
+    "url": "/bahmni/ot/",
+    "icon": "fa-hospital-o",
+    "order": 5,
+    "requiredPrivilege": "app:ot"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "cmdPaletteActionClinical": {
+    "id": "org.bahmni.commandpalette.action.clinical",
+    "extensionPointId": "org.bahmni.commandpalette.patientAction",
+    "label": "Clinical",
+    "icon": "fa-stethoscope",
+    "pathTemplate": "/bahmni-new/clinical/{{patientUuid}}",
+    "order": 2,
+    "requiredPrivilege": "app:clinical"
+  }
+}

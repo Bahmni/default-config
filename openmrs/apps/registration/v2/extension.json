@@ -1,0 +1,30 @@
+{
+  "cmdPaletteNavRegistration": {
+    "id": "org.bahmni.commandpalette.nav.registration",
+    "extensionPointId": "org.bahmni.commandpalette.navItem",
+    "label": "Go to Registration",
+    "url": "/bahmni-new/registration/search",
+    "icon": "fa-registered",
+    "newTab": true,
+    "order": 1,
+    "requiredPrivilege": "app:registration"
+  },
+  "cmdPaletteNavCreatePatient": {
+    "id": "org.bahmni.commandpalette.nav.createpatient",
+    "extensionPointId": "org.bahmni.commandpalette.navItem",
+    "label": "Create New Patient",
+    "url": "/bahmni-new/registration/patient/new",
+    "icon": "fa-user-plus",
+    "order": 3,
+    "requiredPrivilege": "app:registration"
+  },
+  "cmdPaletteActionRegistration": {
+    "id": "org.bahmni.commandpalette.action.registration",
+    "extensionPointId": "org.bahmni.commandpalette.patientAction",
+    "label": "Registration",
+    "icon": "fa-clipboard-list",
+    "pathTemplate": "/bahmni-new/registration/patient/{{patientUuid}}",
+    "order": 1,
+    "requiredPrivilege": "app:registration"
+  }
+}

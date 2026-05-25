@@ -19,6 +19,7 @@
       "type": "combination",
       "keys": "cmd+k"
     },
+    "extensionApps": ["home", "registration", "clinical", "appointments", "adt", "ot"],
     "searchAnnotations": [
       {
         "prefix": "@phone",
@@ -37,7 +38,7 @@
     ],
     "patientFields": {
       "primaryFields": ["name", "identifier"],
-      "additionalFields": ["age", "gender", "birthDate", "addressFieldValue", "customAttribute"]
+      "additionalFields": ["age", "gender"]
     }
   }
 }

@@ -1,0 +1,11 @@
+{
+  "cmdPaletteNavAppointments": {
+    "id": "org.bahmni.commandpalette.nav.appointments",
+    "extensionPointId": "org.bahmni.commandpalette.navItem",
+    "label": "Go to Appointments",
+    "url": "/appointments/",
+    "icon": "fa-calendar-alt",
+    "order": 2,
+    "requiredPrivilege": "app:appointments"
+  }
+}

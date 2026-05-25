@@ -1,0 +1,11 @@
+{
+  "cmdPaletteNavBedManagement": {
+    "id": "org.bahmni.commandpalette.nav.bedmanagement",
+    "extensionPointId": "org.bahmni.commandpalette.navItem",
+    "label": "Bed Management",
+    "url": "/bahmni/bedmanagement/",
+    "icon": "fa-bed",
+    "order": 4,
+    "requiredPrivilege": "app:adt"
+  }
+}
