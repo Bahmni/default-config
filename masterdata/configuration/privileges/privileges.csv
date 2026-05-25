@@ -2,3 +2,4 @@ Uuid,Privilege name,Description
 ,app:atomfeed-console,Able to access atomfeed console.
 ,Send SMS,Privilege to send SMS
 ,app:clinical:addImmunizations,Privilege to add immunizations in clinical module.
+,app:clinical:legacyPatientTabs,Privilege to view legacy patient tabs

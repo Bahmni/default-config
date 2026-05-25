@@ -9,12 +9,22 @@
     "order": 1,
     "requiredPrivilege": "app:registration"
   },
+    "registrationOld": {
+    "id": "bahmni.registration",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_REGISTRATION_OLD_KEY",
+    "url": "../bahmni/v1/registration/index.html",
+    "icon": "fa-user",
+    "order": 1,
+    "requiredPrivilege": "app:registration"
+  },
   "programs": {
     "id": "bahmni.programs",
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_PROGRAMS_KEY",
-    "url": "/bahmni/clinical/#/programs/patient/search",
+    "url": "/bahmni/v1/clinical/#/programs/patient/search",
     "icon": "fa-hands-holding-child",
     "order": 2,
     "requiredPrivilege": "app:clinical"
@@ -24,7 +34,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_CLINICAL_KEY",
-    "url": "/bahmni/clinical/index.html#/v2/patient/search",
+    "url": "/bahmni/v1/clinical/index.html#/v2/patient/search",
     "icon": "fa-stethoscope",
     "order": 3,
     "requiredPrivilege": "app:clinical"
@@ -34,7 +44,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_RADIOLOGY_UPLOAD_KEY",
-    "url": "/bahmni/document-upload/?encounterType=RADIOLOGY&topLevelConcept=All Radiology orders",
+    "url": "/bahmni/v1/document-upload/?encounterType=RADIOLOGY&topLevelConcept=All Radiology orders",
     "icon": "fa-x-ray",
     "order": 4,
     "requiredPrivilege": "app:radiology-upload"
@@ -44,7 +54,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_PATIENT_DOCUMENTS_KEY",
-    "url": "/bahmni/document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
+    "url": "/bahmni/v1/document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
     "icon": "fa-file-medical",
     "order": 5,
     "requiredPrivilege": "app:patient-documents"
@@ -55,7 +65,7 @@
     "type": "link",
     "translationKey": "MODULE_LABEL_BED_MANAGEMENT_KEY",
     "label": "InPatient",
-    "url": "/bahmni/bedmanagement/#/home",
+    "url": "/bahmni/v1/bedmanagement/#/home",
     "icon": "fa-bed",
     "order": 6,
     "requiredPrivilege": "app:adt"
@@ -65,7 +75,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_ADMIN_KEY",
-    "url": "/bahmni/admin/#/dashboard/home",
+    "url": "/bahmni/v1/admin/#/dashboard/home",
     "icon": "fa-user-gear",
     "order": 7,
     "requiredPrivilege": "app:admin"
@@ -75,7 +85,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_REPORTS_KEY",
-    "url": "/bahmni/reports/#/dashboard",
+    "url": "/bahmni/v1/reports/#/dashboard",
     "icon": "fa-file-lines",
     "order": 8,
     "requiredPrivilege": "app:reports"
@@ -85,7 +95,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "Operation Theatre",
-    "url": "/bahmni/ot/",
+    "url": "/bahmni/v1/ot/",
     "icon": "fa-hospital",
     "order": 9,
     "requiredPrivilege": "app:ot"
@@ -95,7 +105,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_ORDERS_KEY",
-    "url": "/bahmni/orders/#/search",
+    "url": "/bahmni/v1/orders/#/search",
     "icon": "fa-clipboard-list",
     "order": 10,
     "requiredPrivilege": "app:orders"
