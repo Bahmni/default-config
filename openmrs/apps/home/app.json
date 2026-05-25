@@ -4,6 +4,40 @@
     {
       "id": "org.bahmni.home.dashboard",
       "description": "Bahmni Home Page"
+    },
+    {
+      "id": "org.bahmni.commandpalette.navItem",
+      "description": "Command Palette Navigation Items"
+    },
+    {
+      "id": "org.bahmni.commandpalette.patientAction",
+      "description": "Command Palette Patient Actions — rendered as action buttons after patient search"
     }
-  ]
+  ],
+  "commandPalette": {
+    "trigger": {
+      "type": "combination",
+      "keys": "cmd+k"
+    },
+    "searchAnnotations": [
+      {
+        "prefix": "@phone",
+        "label": "Phone",
+        "searchType": "patientAttribute",
+        "fieldType": "person",
+        "fieldsToSearch": ["phoneNumber"]
+      },
+      {
+        "prefix": "@email",
+        "label": "Email",
+        "searchType": "patientAttribute",
+        "fieldType": "person",
+        "fieldsToSearch": ["email"]
+      }
+    ],
+    "patientFields": {
+      "primaryFields": ["name", "identifier"],
+      "additionalFields": ["age", "gender", "birthDate", "addressFieldValue", "customAttribute"]
+    }
+  }
 }

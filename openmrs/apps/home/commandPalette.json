@@ -33,37 +33,37 @@
       "icon": "fa-calendar-alt",
       "newTab": false
     },
-     {
+    {
       "id": "createnew",
       "label": "Create New Patient",
       "path": "/bahmni-new/registration/patient/new",
       "icon": "fa-calendar-alt"
     },
-         {
+    {
       "id": "bahmniwiki",
       "label": "Bahmni Wiki",
       "path": "https://bahmni.atlassian.net/wiki/spaces/BAH/overview",
       "icon": "fa-calendar-alt"
     },
-  {
+    {
       "id": "openmrs",
       "label": "Openmrs",
       "path": "/openmrs",
       "icon": "fa-calendar-alt",
       "newTab": true
     },
-      {
+    {
       "id": "bedmanagement",
       "label": "Bed Management",
       "path": "/bahmni/bedmanagement/",
       "icon": "fa-calendar-alt"
     },
-      {
-        "id": "OperatingTheatre",
-        "label": "Operating Theatre",
-        "path": "/bahmni/ot/",
-        "icon": "fa-calendar-alt"
-      }
+    {
+      "id": "OperatingTheatre",
+      "label": "Operating Theatre",
+      "path": "/bahmni/ot/",
+      "icon": "fa-calendar-alt"
+    }
   ],
   "patientActions": [
     {
