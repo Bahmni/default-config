@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="automated_nursing_task_concept_202307271045" author="Bahmni">  
+      <preConditions onFail="MARK_RAN">  
+          <sqlCheck expectedResult="0">  
+              SELECT COUNT(*) FROM concept where short_name='Nursing Activity System' and  
+              description='Nursing Activity System Generated Task Type';  
+          </sqlCheck>  
+          <sqlCheck expectedResult="0">  
+              SELECT COUNT(*) FROM concept_name where name ='Automated Nursing Tasks';  
+          </sqlCheck>  
+      </preConditions>    <comment>Add concept Nursing Activity System</comment>  
+      <sql>        insert into concept (retired, short_name, description, datatype_id, class_id, is_set, creator, date_created,  
+          changed_by, date_changed, uuid)  
+          values (0, 'Nursing Activity System', 'Nursing Activity System Generated Task Type',  
+          (select concept_datatype_id from concept_datatype where name = 'Text'),  
+          (select concept_class_id from concept_class where name = 'Misc'),  
+          0, 1, now(), 1, now(), uuid());  
+    
+          insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created,  
+          concept_name_type, voided, uuid)  
+          values ((select concept_id from concept where short_name='Nursing Activity System'),  
+          'Automated Nursing Tasks', 'en', 1, 1, now(), 'FULLY_SPECIFIED', 0, uuid());  
+      </sql>
+  </changeSet>
+
+  <changeSet id="manual_nursing_task_concept_202307271045" author="Bahmni">  
+      <preConditions onFail="MARK_RAN">  
+          <sqlCheck expectedResult="0">  
+              SELECT COUNT(*) FROM concept where short_name='Nursing Activity' and description='Nursing Activity Task Type';  
+          </sqlCheck>  
+          <sqlCheck expectedResult="0">  
+              SELECT COUNT(*) FROM concept_name where name ='Manual Nursing Tasks';  
+          </sqlCheck>  
+      </preConditions>    
+      <comment>Add concept for Manual Nursing Tasks</comment>  
+      <sql>        
+          insert into concept (retired, short_name, description, datatype_id, class_id, is_set, creator, date_created,  
+          changed_by, date_changed, uuid)  
+          values (0, 'Nursing Activity', 'Nursing Activity Task Type',  
+          (select concept_datatype_id from concept_datatype where name = 'Text'),  
+          (select concept_class_id from concept_class where name = 'Misc'),  
+          0, 1, now(), 1, now(), uuid());  
+    
+          insert into concept_name (concept_id, name, locale, locale_preferred, creator, date_created,  
+          concept_name_type, voided, uuid)  
+          values ((select concept_id from concept where short_name='Nursing Activity'),  
+          'Manual Nursing Tasks', 'en', 1, 1, now(), 'FULLY_SPECIFIED', 0, uuid());  
+      </sql>
+  </changeSet>
+</databaseChangeLog>
