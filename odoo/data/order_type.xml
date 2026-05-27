@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="order_type_drug" model="order.type">
+        <field name="name">Drug Order</field>
+        <field name="description">This order type is used for prescribing medications to patients. It includes details such as the name of the medication, dosage, frequency, and duration of treatment.</field>
+    </record>
+    <record id="order_type_lab" model="order.type">
+        <field name="name">Lab Order</field>
+        <field name="description">Lab orders are used to request various laboratory tests and investigations for patients. They specify the type of test required, along with any specific instructions or details for the lab to follow.</field>
+    </record>
+    <record id="order_type_radiology" model="order.type">
+        <field name="name">Radiology Order</field>
+        <field name="description">Radiology orders are used to request imaging studies such as X-rays, CT scans, MRI scans, and ultrasound examinations for patients. These orders provide details about the type of imaging study needed, the body part to be examined, and any relevant clinical information.</field>
+    </record>
+    <record id="order_type_shop_map_drug" model="order.type.shop.map">              
+        <field name="order_type" ref="order_type_drug"/>
+        <field name="shop_id" ref="sale_shop_pharmacy"/>
+        <field name="location_name">General Ward</field>
+        <field name="location_id">8</field>
+    </record>
+    <record id="order_type_shop_map_lab" model="order.type.shop.map">
+		<field name="order_type" ref="order_type_lab"/>
+        <field name="shop_id" ref="sale_shop_pharmacy"/>
+        <field name="location_name">General Ward</field>
+        <field name="location_id">8</field>
+    </record>
+    <record id="order_type_shop_map_radio" model="order.type.shop.map">
+		<field name="order_type" ref="order_type_radiology"/>
+        <field name="shop_id" ref="sale_shop_pharmacy"/>
+        <field name="location_name">General Ward</field>
+        <field name="location_id">8</field>
+    </record>
+</odoo>

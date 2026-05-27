@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="uom_category_bahmni" model="uom.category">
+        <field name="name">Bahmni</field>
+    </record>
+    <record id="uom_uom_1" model="uom.uom">
+        <field name="name">Unit(s)</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">reference</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_2" model="uom.uom">
+        <field name="name">Tablet(s)</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">bigger</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_3" model="uom.uom">
+        <field name="name">Capsule(s)</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">bigger</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_4" model="uom.uom">
+        <field name="name">International Unit</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">smaller</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_5" model="uom.uom">
+        <field name="name">ml</field>
+        <field name="category_id" ref="uom.product_uom_categ_vol"/>
+        <field name="factor">1000.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">smaller</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_6" model="uom.uom">
+        <field name="name">mg</field>
+        <field name="category_id" ref="uom.product_uom_categ_kgm"/>
+        <field name="factor">1000000.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">smaller</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_7" model="uom.uom">
+        <field name="name">Drops</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">smaller</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_8" model="uom.uom">
+        <field name="name">Teaspoon</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">smaller</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_9" model="uom.uom">
+        <field name="name">Tablespoon</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">smaller</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_10" model="uom.uom">
+        <field name="name">Puffs</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">smaller</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="uom_uom_11" model="uom.uom">
+        <field name="name">Service</field>
+        <field name="category_id" ref="uom_category_bahmni"/>
+        <field name="factor">1.0</field>
+        <field name="rounding">0.01</field>
+        <field name="uom_type">smaller</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="syncable_units_mapping_1" model="syncable.units.mapping">
+        <field name="name">Unit(s)</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_2" model="syncable.units.mapping">
+        <field name="name">Tablet(s)</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_3" model="syncable.units.mapping">
+        <field name="name">Capsule(s)</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_4" model="syncable.units.mapping">
+        <field name="name">International Unit</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_5" model="syncable.units.mapping">
+        <field name="name">ml</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_6" model="syncable.units.mapping">
+        <field name="name">mg</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_7" model="syncable.units.mapping">
+        <field name="name">Drops</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_8" model="syncable.units.mapping">
+        <field name="name">Teaspoon</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_9" model="syncable.units.mapping">
+        <field name="name">Tablespoon</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_10" model="syncable.units.mapping">
+        <field name="name">Puffs</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+    <record id="syncable_units_mapping_11" model="syncable.units.mapping">
+        <field name="name">Service</field>
+        <field name="unit_of_measure" ref="uom.product_uom_unit"/>
+    </record>
+</odoo>
