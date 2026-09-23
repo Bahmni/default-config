@@ -65,7 +65,7 @@
     "extensionPointId": "org.bahmni.home.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_ADMIN_KEY",
-    "url": "/bahmni/admin/#/dashboard/home",
+    "url": "/bahmni-v2/admin",
     "icon": "fa-user-gear",
     "order": 7,
     "requiredPrivilege": "app:admin"

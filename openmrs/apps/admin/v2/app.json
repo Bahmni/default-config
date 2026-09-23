@@ -1,0 +1,10 @@
+{
+        "id": "bahmni.v2.admin",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.admin.v2.dashboard",
+                "description": "Bahmni Admin Page"
+            }
+        ]
+
+}

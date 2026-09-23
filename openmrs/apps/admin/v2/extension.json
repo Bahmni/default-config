@@ -1,0 +1,57 @@
+{
+  "csvUpload": {
+    "id": "bahmni.admin.csv",
+    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_CSV_UPLOAD_KEY",
+    "label": "CSV Upload",
+    "url": "/bahmni/admin/index.html#/csv",
+    "icon": "fa-upload",
+    "order": 1,
+    "requiredPrivilege": "app:admin"
+  },
+  "csvExport": {
+    "id": "bahmni.admin.csvExport",
+    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_CSV_EXPORT_KEY",
+    "label": "CSV Export",
+    "url": "/bahmni/admin/index.html#/csvExport",
+    "icon": "fa-download",
+    "order": 2,
+    "requiredPrivilege": "app:admin"
+  },
+  "auditLog": {
+    "id": "bahmni.admin.auditLog",
+    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_AUDIT_LOG_KEY",
+    "label": "Audit Log",
+    "url": "/bahmni/admin/index.html#/auditLog",
+    "icon": "fa-eye",
+    "order": 3,
+    "requiredPrivilege": "app:admin"
+  },
+  "orderSet": {
+    "id": "bahmni.admin.orderSet",
+    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_ORDER_SET_KEY",
+    "label": "Order Set",
+    "url": "/bahmni/admin/index.html#/ordersetdashboard",
+    "icon": "fa-layer-group",
+    "order": 4,
+    "requiredPrivilege": "app:admin"
+  },
+  "beds": {
+    "id": "bahmni.admin.adt",
+    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "type": "link",
+    "translationKey": "MODULE_LABEL_BEDS_KEY",
+    "label": "Beds",
+    "url": "/openmrs/owa/bedmanagement/admissionLocations.html",
+    "icon": "fa-bed",
+    "order": 5,
+    "requiredPrivilege": "app:admin"
+  }
+}
