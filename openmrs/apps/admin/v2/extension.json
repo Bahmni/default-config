@@ -1,7 +1,7 @@
 {
   "csvUpload": {
     "id": "bahmni.admin.csv",
-    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "extensionPointId": "org.bahmni.admin.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_CSV_UPLOAD_KEY",
     "label": "CSV Upload",
@@ -12,7 +12,7 @@
   },
   "csvExport": {
     "id": "bahmni.admin.csvExport",
-    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "extensionPointId": "org.bahmni.admin.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_CSV_EXPORT_KEY",
     "label": "CSV Export",
@@ -23,7 +23,7 @@
   },
   "auditLog": {
     "id": "bahmni.admin.auditLog",
-    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "extensionPointId": "org.bahmni.admin.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_AUDIT_LOG_KEY",
     "label": "Audit Log",
@@ -34,7 +34,7 @@
   },
   "orderSet": {
     "id": "bahmni.admin.orderSet",
-    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "extensionPointId": "org.bahmni.admin.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_ORDER_SET_KEY",
     "label": "Order Set",
@@ -45,7 +45,7 @@
   },
   "beds": {
     "id": "bahmni.admin.adt",
-    "extensionPointId": "org.bahmni.admin.v2.dashboard",
+    "extensionPointId": "org.bahmni.admin.dashboard",
     "type": "link",
     "translationKey": "MODULE_LABEL_BEDS_KEY",
     "label": "Beds",
