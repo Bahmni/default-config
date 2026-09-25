@@ -54,12 +54,5 @@
   "MODULE_LABEL_CSV_EXPORT_KEY": "Exportar CSV",
   "MODULE_LABEL_AUDIT_LOG_KEY": "Registro de auditoría",
   "MODULE_LABEL_ORDER_SET_KEY": "Conjunto de órdenes",
-  "MODULE_LABEL_BEDS_KEY": "Camas",
-  "VIEWED_WARD_LEVEL_DASHBOARD_MESSAGE": "User {{userId}} accessed the ward level dashboard.",
-  "CREATE_SCHEDULED_MEDICATION_TASK_MESSAGE": "Usuario {{userId}} ha añadido una tarea de medicación para el paciente {{patientId}}.",
-  "EDIT_SCHEDULED_MEDICATION_TASK_MESSAGE": "Usario {{userId}} ha editado una tarea de medicación para el paciente {{patientId}}.",
-  "ADMINISTER_MEDICATION_TASK_MESSAGE": "Usuario {{userId}} ha administrado una tarea de medicación para el paciente {{patientId}}.",
-  "STOP_SCHEDULED_MEDICATION_TASK_MESSAGE": "Usuario {{userId}} ha parado una tarea de medicación para el paciente {{patientId}}.",
-  "SKIP_SCHEDULED_MEDICATION_TASK_MESSAGE": "Usuario {{userId}} ha saltado una tarea de medicación para el paciente {{patientId}}.",
-  "CREATE_EMERGENCY_MEDICATION_TASK_MESSAGE": "Usuario {{userId}} ha añadido una tarea de emergencia de medicación para el paciente {{patientId}}."
+  "MODULE_LABEL_BEDS_KEY": "Camas"
 }
