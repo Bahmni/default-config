@@ -29,5 +29,6 @@
   "HOME_MODULE_RADIOLOGY": "Radiology Upload",
   "HOME_MODULE_REGISTRATION": "Registration",
   "HOME_MODULE_REPORTS": "Reports",
-  "MODULE_LABEL_REGISTRATION_LEGACY_KEY": "Registration (Legacy)"
+  "MODULE_LABEL_REGISTRATION_LEGACY_KEY": "Registration (Legacy)",
+  "MODULE_LABEL_APPOINTMENT_SCHEDULING_LEGACY_KEY": "Appointment Scheduling (Legacy)"
 }

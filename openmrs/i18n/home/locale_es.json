@@ -29,5 +29,6 @@
   "HOME_MODULE_RADIOLOGY": "Subir Documentos de Radiología",
   "HOME_MODULE_REGISTRATION": "Registro",
   "HOME_MODULE_REPORTS": "Reportes",
-  "MODULE_LABEL_REGISTRATION_LEGACY_KEY": "Registro (Legado)"
+  "MODULE_LABEL_REGISTRATION_LEGACY_KEY": "Registro (Legado)",
+  "MODULE_LABEL_APPOINTMENT_SCHEDULING_LEGACY_KEY": "Calendarización de Cita (Legado)"
 }
