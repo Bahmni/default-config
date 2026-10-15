@@ -277,13 +277,23 @@
           "requiredPrivileges": ["Get DocumentReference"],
           "config": {
             "fields": [
-              "documentIdentifier",
               "documentType",
+              "documentIdentifier",
               "attachments",
               "uploadedOn",
               "uploadedBy"
             ],
-            "pageSize": 5
+            "pageSize": 5,
+            "actions": [
+                         {
+                          "type": "add",
+                          "label": "DOCUMENTS_ADD_ACTION",
+                          "encounterType": "Patient Document",
+                          "editOnly": "documents",
+                          "editTitle": "DOCUMENTS_UPLOAD_TITLE",
+                          "requiredPrivilege": ["Add Encounters"]
+                            }
+                        ]
           }
         }
       ]
